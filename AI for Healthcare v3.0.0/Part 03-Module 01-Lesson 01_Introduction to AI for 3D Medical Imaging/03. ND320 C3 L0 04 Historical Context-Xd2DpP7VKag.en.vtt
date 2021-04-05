@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.505
+So let us talk about some of the historical contexts for
+
+00:00:02.505 --> 00:00:05.895
+AI and 3D medical imaging and medical imaging in general.
+
+00:00:05.895 --> 00:00:09.150
+So a very quick refresher on what's had been
+
+00:00:09.150 --> 00:00:12.255
+happening in AI throughout the course of modern human history.
+
+00:00:12.255 --> 00:00:13.965
+So as we've discussed,
+
+00:00:13.965 --> 00:00:17.055
+AI term was first coined in the '50s,
+
+00:00:17.055 --> 00:00:20.850
+and that's when people started talking about information theory and Turing tests.
+
+00:00:20.850 --> 00:00:23.760
+There has been a lot of research in the space,
+
+00:00:23.760 --> 00:00:27.260
+and there was a little bit of a disappointment, if you will,
+
+00:00:27.260 --> 00:00:31.235
+about what the AI is capable of and we entered this era of AI winter.
+
+00:00:31.235 --> 00:00:33.770
+In the '70s, there was another boom when
+
+00:00:33.770 --> 00:00:36.620
+computers became smarter and more personal then again,
+
+00:00:36.620 --> 00:00:38.015
+we had another IA winter.
+
+00:00:38.015 --> 00:00:40.475
+Where we are now, as you're probably well aware,
+
+00:00:40.475 --> 00:00:42.530
+we're in this age of deep learning revolution.
+
+00:00:42.530 --> 00:00:45.095
+So we have larger computers right now,
+
+00:00:45.095 --> 00:00:47.010
+we have better networks,
+
+00:00:47.010 --> 00:00:51.935
+we have very good capabilities for doing distributed computing,
+
+00:00:51.935 --> 00:00:53.975
+and we have seen what's possible with
+
+00:00:53.975 --> 00:00:56.990
+applying deep learning to various computer vision tasks,
+
+00:00:56.990 --> 00:01:00.005
+like just recognizing humans from a camera videos,
+
+00:01:00.005 --> 00:01:03.680
+or labeling your photo collections or taking people in the photos.
+
+00:01:03.680 --> 00:01:09.710
+This is where we are now and this is what the medical industry is looking at.
+
+00:01:09.710 --> 00:01:12.950
+Medical industry is excited about thinking of what is possible with
+
+00:01:12.950 --> 00:01:16.325
+this deep learning when it's applied to solve the key problems of health care.
+
+00:01:16.325 --> 00:01:19.520
+So let's look specific as what has been happening in
+
+00:01:19.520 --> 00:01:23.690
+the field of radiology over the past century.
+
+00:01:23.690 --> 00:01:26.360
+Since its inception, radiology has undergone
+
+00:01:26.360 --> 00:01:29.675
+several paradigm shifts with respect to the way images are viewed.
+
+00:01:29.675 --> 00:01:31.325
+During the field's infancy,
+
+00:01:31.325 --> 00:01:33.770
+images were hung up and reviewed at the light box.
+
+00:01:33.770 --> 00:01:35.555
+Films that needed an emergent read,
+
+00:01:35.555 --> 00:01:37.580
+where sometimes hung up while they were still drawing from
+
+00:01:37.580 --> 00:01:41.000
+the development process giving rise to the term wet read,
+
+00:01:41.000 --> 00:01:45.470
+a phrase that's still used today to describe an emergent preliminary interpretation.
+
+00:01:45.470 --> 00:01:49.010
+The advent of digital image storage and viewing systems represented
+
+00:01:49.010 --> 00:01:50.900
+a fundamental departure from the manner in
+
+00:01:50.900 --> 00:01:53.165
+which images were viewed and who could view them.
+
+00:01:53.165 --> 00:01:56.990
+No longer were images locally isolated to the radiologist reading room,
+
+00:01:56.990 --> 00:02:00.875
+but could be transmitted across the hospital or even across different sites.
+
+00:02:00.875 --> 00:02:03.290
+Moreover, computer peripherals allowed for
+
+00:02:03.290 --> 00:02:05.705
+a more substantive interaction with imaging data,
+
+00:02:05.705 --> 00:02:08.315
+further refining diagnostic capabilities.
+
+00:02:08.315 --> 00:02:11.465
+Currently, there's a promise of yet another transition,
+
+00:02:11.465 --> 00:02:15.500
+the adoption of AI-driven applications in day-to-day workflow to facilitate
+
+00:02:15.500 --> 00:02:17.780
+more efficient and accurate interpretation and
+
+00:02:17.780 --> 00:02:20.695
+potentially unlock new imaging research possibilities.
+
+00:02:20.695 --> 00:02:22.475
+So we've gone over the history,
+
+00:02:22.475 --> 00:02:27.210
+now let's see what the current state is in AI for medical imaging.
+

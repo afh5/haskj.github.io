@@ -1,0 +1,394 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.690
+So now, let's talk a little bit about the course content.
+
+00:00:03.690 --> 00:00:06.210
+What did we decide to include into this course?
+
+00:00:06.210 --> 00:00:09.690
+So first, let's talk about what this course is not.
+
+00:00:09.690 --> 00:00:11.685
+This course is not a course on deep learning.
+
+00:00:11.685 --> 00:00:14.040
+We will touch on some of the concepts of deep learning.
+
+00:00:14.040 --> 00:00:16.185
+You might learn something new about deep learning,
+
+00:00:16.185 --> 00:00:18.540
+but we do not have the objective of teaching you
+
+00:00:18.540 --> 00:00:21.495
+how deep learning works and how to build deep learning networks.
+
+00:00:21.495 --> 00:00:25.470
+This is not a course on PyTorch or any other specific libraries.
+
+00:00:25.470 --> 00:00:27.450
+We will be using PyTorch quite a bit.
+
+00:00:27.450 --> 00:00:29.505
+We assume that you have some basic knowledge.
+
+00:00:29.505 --> 00:00:31.770
+Really, if you take the tutorial course on PyTorch,
+
+00:00:31.770 --> 00:00:35.170
+you will be well set up to be successful in this project,
+
+00:00:35.170 --> 00:00:40.190
+but we do not intend to teach you how PyTorch works and how it does its magic.
+
+00:00:40.190 --> 00:00:42.455
+This is not a course on high performance computing.
+
+00:00:42.455 --> 00:00:45.500
+You might think that we are dealing with large data sets that
+
+00:00:45.500 --> 00:00:48.575
+take a lot of memory and needs a large scale computing.
+
+00:00:48.575 --> 00:00:51.350
+We will talk about some of the tricks and optimizations that
+
+00:00:51.350 --> 00:00:53.990
+could be used to leverage distributed systems
+
+00:00:53.990 --> 00:00:56.750
+but we will not go into much detail about that and we'll post
+
+00:00:56.750 --> 00:00:59.675
+some links if you would like to research that further and lastly,
+
+00:00:59.675 --> 00:01:02.195
+this is not a course on diagnostic medical imaging.
+
+00:01:02.195 --> 00:01:06.170
+Mazen here will talk a little bit about how radiologists think and how radiologists
+
+00:01:06.170 --> 00:01:10.130
+approach diagnosing from the 3D medical volumes but at the same time,
+
+00:01:10.130 --> 00:01:11.300
+this is not a clinical course,
+
+00:01:11.300 --> 00:01:15.755
+so we're not planning to teach you how to read a CT scan.
+
+00:01:15.755 --> 00:01:18.260
+Which brings us to what is this course?
+
+00:01:18.260 --> 00:01:21.005
+What is this about? Mazen, would you tell us?
+
+00:01:21.005 --> 00:01:22.925
+Yes. I'll tell you a little bit about that.
+
+00:01:22.925 --> 00:01:25.220
+So we're going to be introducing you to
+
+00:01:25.220 --> 00:01:28.775
+biomedical imaging for software engineers and data scientists,
+
+00:01:28.775 --> 00:01:30.370
+complete with a clinical motivation
+
+00:01:30.370 --> 00:01:32.005
+and that's something that I'm going to take you through,
+
+00:01:32.005 --> 00:01:33.895
+giving you the clinical background.
+
+00:01:33.895 --> 00:01:36.650
+We'll also introduce some of the applications of
+
+00:01:36.650 --> 00:01:40.445
+machine learning techniques to 3D medical imaging data.
+
+00:01:40.445 --> 00:01:45.530
+You'll also get a perspective on end-to-end design of medical imaging AI systems.
+
+00:01:45.530 --> 00:01:47.825
+It's not only important to develop algorithms,
+
+00:01:47.825 --> 00:01:50.930
+but you'd be able to integrate them in a real world scenario.
+
+00:01:50.930 --> 00:01:54.200
+So let's talk a little bit about the structure of this course.
+
+00:01:54.200 --> 00:01:56.180
+How did we decide to set it up?
+
+00:01:56.180 --> 00:01:59.600
+This course has four lessons in addition to this one,
+
+00:01:59.600 --> 00:02:01.820
+which is the introduction and the final project.
+
+00:02:01.820 --> 00:02:03.560
+In the first lesson, we will talk about
+
+00:02:03.560 --> 00:02:07.100
+the clinical background and some of the physics of medical imaging.
+
+00:02:07.100 --> 00:02:11.210
+In the second lessons, we will dive a little bit into the exploratory data analysis for
+
+00:02:11.210 --> 00:02:14.000
+3D medical imaging data sets and we will talk about
+
+00:02:14.000 --> 00:02:17.900
+the formats which are used to store and transmit medical imaging data.
+
+00:02:17.900 --> 00:02:19.370
+In the next lesson,
+
+00:02:19.370 --> 00:02:21.560
+we will dive a little bit into the topic of
+
+00:02:21.560 --> 00:02:24.725
+machine learning and we will look at some of the machine learning algorithms.
+
+00:02:24.725 --> 00:02:29.000
+We will train a little simple neural network and we will talk little bit
+
+00:02:29.000 --> 00:02:33.320
+about some computer vision concepts like convolutions and in the next lesson,
+
+00:02:33.320 --> 00:02:36.390
+we will talk about deploying machine learning algorithms in the real world.
+
+00:02:36.390 --> 00:02:40.010
+We'll talk about some of the tools that radiologists use and some
+
+00:02:40.010 --> 00:02:43.700
+of the tools that you could use to emulate a clinical environment
+
+00:02:43.700 --> 00:02:48.410
+in your testing scenario and we will also talk about some of
+
+00:02:48.410 --> 00:02:51.530
+the regulatory aspects of bringing
+
+00:02:51.530 --> 00:02:56.165
+your machine learning models and AI tools into the real world.
+
+00:02:56.165 --> 00:02:59.540
+Lastly, we will have an awesome final project for you to try
+
+00:02:59.540 --> 00:03:02.960
+out all the skills that you will have gained from the previous lessons.
+
+00:03:02.960 --> 00:03:06.695
+So let's go into a little bit more detail on each one of those.
+
+00:03:06.695 --> 00:03:08.225
+So in the first lesson,
+
+00:03:08.225 --> 00:03:10.595
+we'll be going over some clinical fundamentals.
+
+00:03:10.595 --> 00:03:13.550
+We'll be talking about what are 3D medical images,?
+
+00:03:13.550 --> 00:03:16.340
+Who are the people that use them and why?
+
+00:03:16.340 --> 00:03:19.300
+How do CT and MR scanners work?
+
+00:03:19.300 --> 00:03:23.375
+We'll also see some common tasks related to 3D medical images.
+
+00:03:23.375 --> 00:03:25.910
+For example, reconstruction of images,
+
+00:03:25.910 --> 00:03:28.880
+volumetric rendering, and registration.
+
+00:03:28.880 --> 00:03:30.440
+So in the next lesson,
+
+00:03:30.440 --> 00:03:32.090
+we will talk little bit about
+
+00:03:32.090 --> 00:03:36.800
+the 3D medical imaging data formats and the analysis of 3D medical imaging data sets.
+
+00:03:36.800 --> 00:03:39.905
+We will talk about how 3D medical images are represented.
+
+00:03:39.905 --> 00:03:45.110
+What are the digital file formats which are used to store and transmit 3D medical images.
+
+00:03:45.110 --> 00:03:48.680
+Specifically, we will talk about two of the most common ones,
+
+00:03:48.680 --> 00:03:50.060
+which is the DICOM format,
+
+00:03:50.060 --> 00:03:52.460
+which is ubiquitous and used by any 3D medical imaging
+
+00:03:52.460 --> 00:03:55.340
+modality and we will talk about NIFTI file format,
+
+00:03:55.340 --> 00:03:57.620
+which is more pervasive on the research side of things.
+
+00:03:57.620 --> 00:04:00.440
+We'll look at how do you load and how to analyze
+
+00:04:00.440 --> 00:04:04.910
+a 3D medical volume and how to analyze this 3D medical imaging data set.
+
+00:04:04.910 --> 00:04:07.370
+We will write some Python code and we will look at
+
+00:04:07.370 --> 00:04:10.660
+some Python libraries that will help you accomplish this task.
+
+00:04:10.660 --> 00:04:13.130
+Following that, you'll begin to learn how to
+
+00:04:13.130 --> 00:04:15.650
+apply machine learning for 3D medical imaging,
+
+00:04:15.650 --> 00:04:18.545
+covering segmentation and classification tasks.
+
+00:04:18.545 --> 00:04:22.640
+You learn about a radiologist perspective on classification and segmentation problems.
+
+00:04:22.640 --> 00:04:25.850
+I'll be providing you with some real world use cases.
+
+00:04:25.850 --> 00:04:27.890
+You'll learn about convolutional filters for
+
+00:04:27.890 --> 00:04:31.750
+3D medical images and get hands-on with U-net,
+
+00:04:31.750 --> 00:04:36.845
+an algorithm that's well-known for its ability to perform well in segmentation tasks.
+
+00:04:36.845 --> 00:04:40.850
+You'll also learn how to evaluate the performance of your algorithms and identify
+
+00:04:40.850 --> 00:04:42.410
+ways to accurately communicate
+
+00:04:42.410 --> 00:04:45.505
+that information to the people who will be using the algorithms.
+
+00:04:45.505 --> 00:04:47.750
+Lastly, in the final lesson of the course,
+
+00:04:47.750 --> 00:04:51.245
+we will talk about deployment of machine learning algorithms in the real world.
+
+00:04:51.245 --> 00:04:55.340
+So we will get an introduction into clinical networks and how do they operate,
+
+00:04:55.340 --> 00:04:59.090
+how do all the imaging modalities that take those images in the clinic,
+
+00:04:59.090 --> 00:05:00.680
+how do they talk to each other and where
+
+00:05:00.680 --> 00:05:03.080
+the images stored and what are the archives and actors
+
+00:05:03.080 --> 00:05:07.295
+involved in the process of transmitting data across the system.
+
+00:05:07.295 --> 00:05:09.980
+We will talk about what are the good places to integrate
+
+00:05:09.980 --> 00:05:13.220
+AI algorithms into these complex systems and how would you do that.
+
+00:05:13.220 --> 00:05:17.120
+We will talk about some of the tools which are used to emulate and debug
+
+00:05:17.120 --> 00:05:21.020
+such systems and how can you model such a system in your local environment?
+
+00:05:21.020 --> 00:05:24.245
+How can you try out the algorithm without actually
+
+00:05:24.245 --> 00:05:27.740
+go into the clinic and disrupting any workflows and then we will
+
+00:05:27.740 --> 00:05:32.210
+close by covering regulatory landscape and we will talk about how FDA
+
+00:05:32.210 --> 00:05:36.800
+and other medical device regulators operates and we will talk about the privacy law,
+
+00:05:36.800 --> 00:05:39.740
+specifically HIPAA in the US and there is a GDPR law
+
+00:05:39.740 --> 00:05:42.935
+in the European Union and many similar other laws across the world.
+
+00:05:42.935 --> 00:05:46.550
+We will talk about what do those mean for you, as an AI engineer,
+
+00:05:46.550 --> 00:05:49.250
+when you are starting to work with medical data and we will
+
+00:05:49.250 --> 00:05:52.220
+talk about the important points of anonymizing data set.
+
+00:05:52.220 --> 00:05:56.995
+What does anonymization mean and how would you do that with the medical imaging data set?
+
+00:05:56.995 --> 00:05:58.635
+In the final project,
+
+00:05:58.635 --> 00:06:00.170
+you're going to try your hands out on
+
+00:06:00.170 --> 00:06:03.365
+a real world clinical problem and that's an Alzheimer's dementia,
+
+00:06:03.365 --> 00:06:05.015
+the most common dementia,
+
+00:06:05.015 --> 00:06:08.090
+a situation where there's accelerated memory loss.
+
+00:06:08.090 --> 00:06:09.320
+You'll do this by training
+
+00:06:09.320 --> 00:06:12.650
+a segmentation model that's going to measure hippocampal volume,
+
+00:06:12.650 --> 00:06:14.885
+a structure implicated in this disease.
+
+00:06:14.885 --> 00:06:16.955
+Once you have your algorithm tuned up,
+
+00:06:16.955 --> 00:06:20.030
+you'll learn how to integrate it into a clinical viewer system,
+
+00:06:20.030 --> 00:06:22.280
+much as would be used in the real world.
+
+00:06:22.280 --> 00:06:25.100
+Yeah, so we had a lot of fun building this course.
+
+00:06:25.100 --> 00:06:27.665
+We hope you enjoy it and will learn a lot from it.
+
+00:06:27.665 --> 00:06:31.080
+So let's get onto it.
+

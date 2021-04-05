@@ -1,0 +1,202 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.330
+So this course is called AI for 3D medical imaging.
+
+00:00:03.330 --> 00:00:07.485
+Let's level set by discussing who is an AI engineer,
+
+00:00:07.485 --> 00:00:09.690
+and what is AI for 3D medical imaging,
+
+00:00:09.690 --> 00:00:11.355
+and what is AI?
+
+00:00:11.355 --> 00:00:15.030
+The first definition of AI is considered to be this one,
+
+00:00:15.030 --> 00:00:18.495
+which was coined in 1956 where a group of very smart people
+
+00:00:18.495 --> 00:00:21.960
+who are thought to be the fathers of the modern information theory got together and
+
+00:00:21.960 --> 00:00:24.510
+thought about what should we do and how should we think about
+
+00:00:24.510 --> 00:00:29.820
+this emerging capability of teaching computers to make decisions.
+
+00:00:29.820 --> 00:00:32.950
+The definition that they came up with was as follows,
+
+00:00:32.950 --> 00:00:36.245
+"An attempt will be made to find how to make machines use language,
+
+00:00:36.245 --> 00:00:38.060
+form abstractions and concepts,
+
+00:00:38.060 --> 00:00:41.975
+solve kinds of problems now reserved for humans, and improve themselves.
+
+00:00:41.975 --> 00:00:43.280
+For the present purpose,
+
+00:00:43.280 --> 00:00:47.060
+the artificial intelligence problem is taken to be that of making a machine
+
+00:00:47.060 --> 00:00:51.970
+behave in a way that would be called intelligent if a human was so behaving."
+
+00:00:51.970 --> 00:00:57.370
+So this understanding of definition of AI has evolved through the years.
+
+00:00:57.370 --> 00:00:58.970
+We have seen the explosion of
+
+00:00:58.970 --> 00:01:02.795
+various machine learning techniques in the past several years.
+
+00:01:02.795 --> 00:01:05.930
+I think when we think about AI in this course,
+
+00:01:05.930 --> 00:01:08.260
+this is the definition that we could adopt.
+
+00:01:08.260 --> 00:01:13.070
+AI is an application of machine learning techniques to a real-world problem,
+
+00:01:13.070 --> 00:01:16.120
+improving human productivity and capability.
+
+00:01:16.120 --> 00:01:19.790
+The reason why we decide to take this definition is that,
+
+00:01:19.790 --> 00:01:26.210
+originally AI is all about making machines behave so that they are very human-like.
+
+00:01:26.210 --> 00:01:29.795
+So it is not only about developing better algorithms,
+
+00:01:29.795 --> 00:01:32.420
+it is not only about writing better code,
+
+00:01:32.420 --> 00:01:35.900
+it is about building systems which integrate end to end,
+
+00:01:35.900 --> 00:01:37.615
+and can make humans better.
+
+00:01:37.615 --> 00:01:42.635
+A few important things to note here is that machine learning,
+
+00:01:42.635 --> 00:01:44.910
+we think of it as a smaller field than AI.
+
+00:01:44.910 --> 00:01:51.065
+Machine learning is about building algorithms that do not need to be coded explicitly,
+
+00:01:51.065 --> 00:01:55.960
+but can improve themselves from the data that's being supplied to them.
+
+00:01:55.960 --> 00:01:57.825
+Which brings us to the question of,
+
+00:01:57.825 --> 00:01:59.790
+who is an AI engineer?
+
+00:01:59.790 --> 00:02:02.555
+So who are we building this course for?
+
+00:02:02.555 --> 00:02:06.395
+I would like to draw a parallel to a concept of full-stack web developer.
+
+00:02:06.395 --> 00:02:09.830
+If you have been in the software engineering world the past 10 years,
+
+00:02:09.830 --> 00:02:14.135
+all the craze in web development has been about being the full-stack web developer.
+
+00:02:14.135 --> 00:02:17.690
+Unlike the olden days where you had people who would focus on back end,
+
+00:02:17.690 --> 00:02:19.670
+and you'd have people who would focus on business logic,
+
+00:02:19.670 --> 00:02:22.280
+and you'd have people who would focus on front-end.
+
+00:02:22.280 --> 00:02:25.780
+The concept of full-stack web developer emerged not so long ago,
+
+00:02:25.780 --> 00:02:29.730
+and the idea was that we need to people who actually understand systems end to end,
+
+00:02:29.730 --> 00:02:30.930
+who know how to build front-end,
+
+00:02:30.930 --> 00:02:32.510
+who knows how to build back-end,
+
+00:02:32.510 --> 00:02:34.580
+and who can bring these things together.
+
+00:02:34.580 --> 00:02:37.640
+I'd like to make a case that AI engineer is very similar
+
+00:02:37.640 --> 00:02:40.760
+to this concept of full-stack web developer.
+
+00:02:40.760 --> 00:02:42.740
+AI engineer needs to know the data tier,
+
+00:02:42.740 --> 00:02:43.985
+needs to understand data,
+
+00:02:43.985 --> 00:02:45.860
+need to understand what it takes to curate
+
+00:02:45.860 --> 00:02:50.165
+good datasets and label good datasets for particular machine learning problems.
+
+00:02:50.165 --> 00:02:53.200
+AI engineer needs to understand this business logic tier,
+
+00:02:53.200 --> 00:02:56.420
+which is all about applying machine learning algorithms to
+
+00:02:56.420 --> 00:03:00.800
+a particular clinical problem and applying them in a way that's actually meaningful,
+
+00:03:00.800 --> 00:03:04.175
+that yields results which make clinicians better.
+
+00:03:04.175 --> 00:03:06.650
+AI engineer needs to know the front end,
+
+00:03:06.650 --> 00:03:08.945
+which is deployment of those AI algorithms.
+
+00:03:08.945 --> 00:03:11.150
+Where will they work? What will be the environment?
+
+00:03:11.150 --> 00:03:13.100
+What will be the performance characteristics?
+
+00:03:13.100 --> 00:03:15.860
+Because this is important to understanding what trade-offs
+
+00:03:15.860 --> 00:03:18.724
+they need to make when developing your algorithms.
+
+00:03:18.724 --> 00:03:19.895
+So all in all,
+
+00:03:19.895 --> 00:03:22.670
+an AI engineer needs to be able to see systems end to
+
+00:03:22.670 --> 00:03:26.700
+end to bring the best results to the end users.
+
