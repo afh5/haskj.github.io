@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.320
+Here is what I want you to take away from the final lesson that we have in this course.
+
+00:00:04.320 --> 00:00:07.740
+You can be an amazing data scientist who can develop
+
+00:00:07.740 --> 00:00:13.200
+the fanciest architectures of CNNs with great performance on benchmark data sets.
+
+00:00:13.200 --> 00:00:16.800
+But if you don't know how your algorithm can fit into
+
+00:00:16.800 --> 00:00:19.170
+the real clinical setting and be used by
+
+00:00:19.170 --> 00:00:22.784
+clinicians to help treat real patients with real diseases,
+
+00:00:22.784 --> 00:00:25.530
+your impact is going to be a lot lower.
+
+00:00:25.530 --> 00:00:27.510
+You know that age-old saying,
+
+00:00:27.510 --> 00:00:29.175
+"If a tree falls in the forest,
+
+00:00:29.175 --> 00:00:30.645
+but no one is there to hear it,
+
+00:00:30.645 --> 00:00:32.130
+does it make a sound?"
+
+00:00:32.130 --> 00:00:33.915
+You can apply that here.
+
+00:00:33.915 --> 00:00:36.645
+If you create an algorithm for medical imaging,
+
+00:00:36.645 --> 00:00:39.945
+but radiologists can't use it, is it impactful?
+
+00:00:39.945 --> 00:00:43.400
+For me personally, the steepest learning curve that I had to
+
+00:00:43.400 --> 00:00:46.565
+climb when making the transition from academia to industry
+
+00:00:46.565 --> 00:00:49.730
+was learning how the regulatory landscape would change
+
+00:00:49.730 --> 00:00:53.695
+my approach to building deep learning algorithms for clinical use.
+
+00:00:53.695 --> 00:00:56.950
+In the various industry roles that I have had in this space,
+
+00:00:56.950 --> 00:01:03.410
+I've taken several multi-day courses on all of the nuances of the FDA 510k process.
+
+00:01:03.410 --> 00:01:09.185
+So today is designed to give you a big picture and you should definitely pursue more
+
+00:01:09.185 --> 00:01:12.140
+in-depth education on this topic if you end up
+
+00:01:12.140 --> 00:01:16.260
+working in an industry role for AI in medical imaging.
+

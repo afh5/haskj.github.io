@@ -1,0 +1,286 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.985
+You just learned about how certain types of machine learning
+
+00:00:02.985 --> 00:00:06.360
+algorithms may be useful for different clinical applications,
+
+00:00:06.360 --> 00:00:11.130
+and here we're going to dive deeper into how we assess and interpret their performance.
+
+00:00:11.130 --> 00:00:14.910
+These performance interpretations will then allow us to recommend
+
+00:00:14.910 --> 00:00:18.940
+how an algorithm should be used in a clinical decision-making setting.
+
+00:00:18.940 --> 00:00:23.480
+One of the biggest challenges that you may face as an algorithm developer for
+
+00:00:23.480 --> 00:00:28.210
+2D medical imaging is in obtaining disease labels for your images.
+
+00:00:28.210 --> 00:00:32.135
+With other types of non-clinical images, for example,
+
+00:00:32.135 --> 00:00:35.060
+cats versus dogs, it doesn't take an expert to
+
+00:00:35.060 --> 00:00:38.120
+determine if there is a cat or a dog in the image.
+
+00:00:38.120 --> 00:00:40.340
+However, it's not so easy with
+
+00:00:40.340 --> 00:00:44.450
+medical imaging because you need experts to label your images.
+
+00:00:44.450 --> 00:00:49.165
+These experts are radiologists whose time is expensive and limited.
+
+00:00:49.165 --> 00:00:52.220
+We'll talk more in Lesson 3 about other ways to generate
+
+00:00:52.220 --> 00:00:55.945
+labels to use in your machine learning assessments.
+
+00:00:55.945 --> 00:00:58.445
+After we get these labels though,
+
+00:00:58.445 --> 00:01:01.565
+we must evaluate how our algorithm performs.
+
+00:01:01.565 --> 00:01:04.520
+For classification algorithms, the performance is
+
+00:01:04.520 --> 00:01:08.665
+evaluated by comparing its prediction to the real label.
+
+00:01:08.665 --> 00:01:14.495
+Consider an algorithm that's intended to classify if cancer is present in images.
+
+00:01:14.495 --> 00:01:18.020
+Cancer is denoted as positive if it's in the image,
+
+00:01:18.020 --> 00:01:21.325
+and the image is negative if there is no cancer in the image.
+
+00:01:21.325 --> 00:01:25.775
+If the algorithm predicts the presence of cancer and the label agrees,
+
+00:01:25.775 --> 00:01:30.365
+then we would say this prediction made by the algorithm is a true positive.
+
+00:01:30.365 --> 00:01:33.935
+If the algorithm predicts the absence of cancer,
+
+00:01:33.935 --> 00:01:36.365
+but the clinical label disagrees,
+
+00:01:36.365 --> 00:01:41.530
+we would say that this prediction by the algorithm is a false negative.
+
+00:01:41.530 --> 00:01:46.655
+If the algorithm predicts the presence of cancer and the labels as the same,
+
+00:01:46.655 --> 00:01:50.000
+we would say this prediction is a true negative.
+
+00:01:50.000 --> 00:01:53.390
+Finally, if the algorithm says that there is cancer in
+
+00:01:53.390 --> 00:01:56.560
+the image but the label says that there's no sign of cancer,
+
+00:01:56.560 --> 00:02:00.910
+we would call this prediction made by the algorithm a false positive.
+
+00:02:00.910 --> 00:02:04.070
+We can arrange the table we just obtained into
+
+00:02:04.070 --> 00:02:07.615
+a two-by-two matrix that contains the same information.
+
+00:02:07.615 --> 00:02:10.735
+We call this matrix a confusion matrix.
+
+00:02:10.735 --> 00:02:14.420
+Confusion matrices are very important since they provide us with
+
+00:02:14.420 --> 00:02:19.750
+the information about where the algorithm does right and where it does wrong.
+
+00:02:19.750 --> 00:02:25.450
+In classification problems, we want to work specifically with positive or negative cases.
+
+00:02:25.450 --> 00:02:31.310
+Sensitivity is a metric that will tell us among all the positive cases in the data set,
+
+00:02:31.310 --> 00:02:35.150
+how many of them were successfully identified by the algorithm.
+
+00:02:35.150 --> 00:02:37.750
+In other words, the true positives.
+
+00:02:37.750 --> 00:02:43.945
+Sensitivity measures the proportion of accurately identified positive cases.
+
+00:02:43.945 --> 00:02:47.150
+Mathematically, sensitivity is the number of
+
+00:02:47.150 --> 00:02:53.510
+accurately identified positive cases over all of the positive cases in the data set.
+
+00:02:53.510 --> 00:02:58.390
+It is often also referred to as the true positive rate or recall.
+
+00:02:58.390 --> 00:03:04.130
+Recall that sensitivity measures the proportion of accurately identified positive cases.
+
+00:03:04.130 --> 00:03:10.990
+You can think of a highly sensitive test as being very good for ruling out a disease.
+
+00:03:10.990 --> 00:03:16.280
+Algorithms with high sensitivity are good for catching actual cases of a disease.
+
+00:03:16.280 --> 00:03:19.460
+A test with 100 percent sensitivity will
+
+00:03:19.460 --> 00:03:23.075
+successfully recognize all patients with the disease.
+
+00:03:23.075 --> 00:03:27.590
+So if someone has a negative results on a highly sensitive test,
+
+00:03:27.590 --> 00:03:31.790
+it is extremely likely that they don't have the disease.
+
+00:03:31.790 --> 00:03:36.710
+A high sensitivity test is reliable when the result is negative,
+
+00:03:36.710 --> 00:03:40.720
+since it rarely misdiagnosis those who have the disease.
+
+00:03:40.720 --> 00:03:45.560
+A clinical situation where this might be useful is for a screening study,
+
+00:03:45.560 --> 00:03:47.930
+where your goal is to make sure that you're not missing
+
+00:03:47.930 --> 00:03:51.190
+patients who are a suspect for a disease.
+
+00:03:51.190 --> 00:03:54.345
+Specificity is another metric.
+
+00:03:54.345 --> 00:03:58.265
+This tells us among all of the negative cases in the data set,
+
+00:03:58.265 --> 00:04:02.210
+how many of them were successfully identified by the algorithm.
+
+00:04:02.210 --> 00:04:04.435
+In other words, the true negatives.
+
+00:04:04.435 --> 00:04:10.480
+Sensitivity measures the proportion of accurately identified negative cases.
+
+00:04:10.480 --> 00:04:14.075
+Mathematically, specificity is the number of
+
+00:04:14.075 --> 00:04:19.820
+accurately identified negative cases over all of the negative cases in the data set.
+
+00:04:19.820 --> 00:04:22.940
+So recall that specificity measures
+
+00:04:22.940 --> 00:04:26.300
+the proportion of accurately identified negative cases.
+
+00:04:26.300 --> 00:04:28.550
+What this means is that you can think of
+
+00:04:28.550 --> 00:04:33.740
+highly specific tests as being good for ruling in disease.
+
+00:04:33.740 --> 00:04:40.100
+A test with 100 percent specificity will recognize all patients without the disease.
+
+00:04:40.100 --> 00:04:44.120
+If someone has a positive results on a highly specific test,
+
+00:04:44.120 --> 00:04:47.455
+it's extremely likely that they have the disease.
+
+00:04:47.455 --> 00:04:52.309
+A high specificity test is reliable when the test is positive,
+
+00:04:52.309 --> 00:04:56.720
+since it rarely misdiagnosis those who don't have the disease.
+
+00:04:56.720 --> 00:05:02.785
+A clinical situation where this might be useful is in an early detection pregnancy test.
+
+00:05:02.785 --> 00:05:05.600
+If it's positive, you are definitely pregnant.
+
+00:05:05.600 --> 00:05:07.505
+However, if it's negative,
+
+00:05:07.505 --> 00:05:09.070
+it might not be that meaningful,
+
+00:05:09.070 --> 00:05:13.535
+and you may need a second type of test to confirm if you are pregnant or not.
+
+00:05:13.535 --> 00:05:18.655
+We just went over how to assess performances for classification algorithms.
+
+00:05:18.655 --> 00:05:20.840
+Here we will talk a little bit about
+
+00:05:20.840 --> 00:05:25.345
+performance assessments for segmentation and localization algorithms.
+
+00:05:25.345 --> 00:05:26.900
+We won't dive too deep,
+
+00:05:26.900 --> 00:05:29.335
+but an overview is provided here.
+
+00:05:29.335 --> 00:05:34.340
+In this image, the blue colored area is showing the chest wall,
+
+00:05:34.340 --> 00:05:36.860
+which is a muscle that we might want to separate from
+
+00:05:36.860 --> 00:05:40.990
+the breast tissue as identified by a segmentation algorithm.
+
+00:05:40.990 --> 00:05:46.595
+An expert labeler has also segmented the chest wall in orange.
+
+00:05:46.595 --> 00:05:51.095
+Performance of segmentation algorithms is assessed by calculating
+
+00:05:51.095 --> 00:05:56.285
+the overlap between the algorithm segmentation and the expert labeler segmentation,
+
+00:05:56.285 --> 00:05:58.225
+which is shown here in red.
+
+00:05:58.225 --> 00:06:02.820
+This calculated overlap is called the dice coefficient.
+
+00:06:02.820 --> 00:06:07.030
+To represent the dice coefficient using a mathematical equation,
+
+00:06:07.030 --> 00:06:14.000
+it is two times the intersection of X and Y divided by the sum of X and Y,
+
+00:06:14.000 --> 00:06:18.870
+where X is the algorithm output and Y is the label.
+

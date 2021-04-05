@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.270
+We just learned that as we pass training data through our model,
+
+00:00:03.270 --> 00:00:07.635
+we evaluate our loss function on both the training and validation sets.
+
+00:00:07.635 --> 00:00:10.860
+So we have a training loss and a validation loss at the end of
+
+00:00:10.860 --> 00:00:14.580
+each epoch that we can use to monitor our model's performance.
+
+00:00:14.580 --> 00:00:17.595
+But how do we know when enough is enough?
+
+00:00:17.595 --> 00:00:21.330
+Recall that the training loss and validation loss measures to how well
+
+00:00:21.330 --> 00:00:25.365
+the CNN performs on training data and validation data respectively.
+
+00:00:25.365 --> 00:00:27.930
+Lower loss means higher performance.
+
+00:00:27.930 --> 00:00:30.960
+If your algorithm is learning from your training data,
+
+00:00:30.960 --> 00:00:34.755
+after several epochs, you will see this training loss go down.
+
+00:00:34.755 --> 00:00:38.210
+Since the validation is something that the algorithm has never seen,
+
+00:00:38.210 --> 00:00:41.990
+if your algorithm is truly learning about what the real-world looks like,
+
+00:00:41.990 --> 00:00:45.145
+you will also start to see the validation loss go down.
+
+00:00:45.145 --> 00:00:47.600
+Over many epochs, you will likely see
+
+00:00:47.600 --> 00:00:50.360
+your training loss continue to decrease as your model
+
+00:00:50.360 --> 00:00:52.820
+learns the features that discriminate classes in
+
+00:00:52.820 --> 00:00:55.885
+this particular set of images better and better.
+
+00:00:55.885 --> 00:00:57.900
+At a certain point however,
+
+00:00:57.900 --> 00:00:59.665
+you will see your loss plateau,
+
+00:00:59.665 --> 00:01:02.600
+because your model cannot learn how to discriminate between
+
+00:01:02.600 --> 00:01:06.550
+image classes any better with its current architecture and parameters.
+
+00:01:06.550 --> 00:01:09.045
+Now, while this may look great,
+
+00:01:09.045 --> 00:01:13.355
+in that our model learned a lot about how to discriminate classes in our training data,
+
+00:01:13.355 --> 00:01:17.900
+what we really care about is how it's performing on our validation data,
+
+00:01:17.900 --> 00:01:21.655
+or the data that it is not using to update its weights from.
+
+00:01:21.655 --> 00:01:24.975
+Oftentimes, we'll see something that looks like this,
+
+00:01:24.975 --> 00:01:27.005
+where our validation loss dips,
+
+00:01:27.005 --> 00:01:30.280
+then rises, then dips again and plateaus.
+
+00:01:30.280 --> 00:01:32.930
+When we see this happen where our model is
+
+00:01:32.930 --> 00:01:35.885
+still learning how to better classify our training data,
+
+00:01:35.885 --> 00:01:39.895
+but not our validation data, it's called Overfitting.
+
+00:01:39.895 --> 00:01:44.960
+The best validation loss that our model achieved was actually way back here,
+
+00:01:44.960 --> 00:01:46.160
+when it was lowest.
+
+00:01:46.160 --> 00:01:49.615
+So technically, that's when our network stopped learning.
+
+00:01:49.615 --> 00:01:52.295
+This would be considered the best epoch
+
+00:01:52.295 --> 00:01:55.615
+for which you might want to stop and save your filter weights.
+
+00:01:55.615 --> 00:02:00.200
+What we really want to see however are smooth loss functions like this,
+
+00:02:00.200 --> 00:02:03.020
+where we can see loss decreases in both training
+
+00:02:03.020 --> 00:02:06.715
+and validation data over a longer period of time.
+
+00:02:06.715 --> 00:02:11.085
+We can then save our weights at the point that's more stable.
+
+00:02:11.085 --> 00:02:12.740
+When we train a model,
+
+00:02:12.740 --> 00:02:15.590
+we use a function in Keras called Fit generator,
+
+00:02:15.590 --> 00:02:18.320
+where we give it our training and validation data.
+
+00:02:18.320 --> 00:02:22.880
+We can set an output of this training to a variable called history.
+
+00:02:22.880 --> 00:02:27.080
+Then we can use the different fields of this history variable to
+
+00:02:27.080 --> 00:02:31.175
+extract lost values from our training and validation sets over time.
+
+00:02:31.175 --> 00:02:35.660
+This can be helpful for plotting our performance after.
+

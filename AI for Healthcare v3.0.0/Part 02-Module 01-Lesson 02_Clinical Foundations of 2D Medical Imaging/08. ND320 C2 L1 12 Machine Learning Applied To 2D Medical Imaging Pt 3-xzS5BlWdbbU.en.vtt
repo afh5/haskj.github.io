@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.440
+Once you understand the types of machine learning algorithms for 2D imaging,
+
+00:00:04.440 --> 00:00:07.230
+you can start to get creative with how you apply them.
+
+00:00:07.230 --> 00:00:10.740
+Keep in mind that not every algorithm is useful.
+
+00:00:10.740 --> 00:00:14.640
+AI for 2D imaging is most effective when it can be
+
+00:00:14.640 --> 00:00:18.570
+applied to helping radiologists to read critical studies faster,
+
+00:00:18.570 --> 00:00:20.880
+reduce their burnout and reading fatigue,
+
+00:00:20.880 --> 00:00:23.665
+and help them make more accurate assessments.
+
+00:00:23.665 --> 00:00:26.390
+Let's go over several different applications where
+
+00:00:26.390 --> 00:00:29.509
+machine learning could have a positive clinical impact.
+
+00:00:29.509 --> 00:00:31.220
+First, let's look at how
+
+00:00:31.220 --> 00:00:35.200
+a machine-learning algorithm could help reduce radiologists burnout.
+
+00:00:35.200 --> 00:00:40.545
+Do you know that millions of mammographies are taken each year in the US?
+
+00:00:40.545 --> 00:00:43.055
+Each image actually, by law,
+
+00:00:43.055 --> 00:00:45.710
+requires two radiologists to read it,
+
+00:00:45.710 --> 00:00:48.740
+but about 85 percent of them are normal.
+
+00:00:48.740 --> 00:00:53.135
+What this means is that highly skilled radiologists are spending
+
+00:00:53.135 --> 00:00:58.415
+a lot of time just reading normal studies which can lead to burnout.
+
+00:00:58.415 --> 00:01:02.150
+Having a machine learning classification algorithm to serve
+
+00:01:02.150 --> 00:01:06.045
+as a second reader could reduce radiologists burnout.
+
+00:01:06.045 --> 00:01:10.690
+We discussed earlier that algorithms can't yet replace radiologists.
+
+00:01:10.690 --> 00:01:12.715
+But in this situation,
+
+00:01:12.715 --> 00:01:15.475
+since there would still be a second human reader,
+
+00:01:15.475 --> 00:01:19.570
+it could be a special case where AI could be used in a way that
+
+00:01:19.570 --> 00:01:24.785
+technically replaces a radiologist in the workflow if its accuracy is high enough.
+
+00:01:24.785 --> 00:01:27.940
+The second machine-learning application would be
+
+00:01:27.940 --> 00:01:32.105
+the optimization of image reading workflows in the emergency room.
+
+00:01:32.105 --> 00:01:36.745
+Radiologists read images in a first-in-first-out queue,
+
+00:01:36.745 --> 00:01:39.325
+which means that images delivered to them first
+
+00:01:39.325 --> 00:01:42.350
+will be read first under all circumstances.
+
+00:01:42.350 --> 00:01:45.010
+However, emergency cases such as
+
+00:01:45.010 --> 00:01:48.340
+brain bleeds are fatal and they need to be discovered quickly,
+
+00:01:48.340 --> 00:01:52.420
+otherwise, patients could die before their images even get read.
+
+00:01:52.420 --> 00:01:54.380
+In order to avoid this,
+
+00:01:54.380 --> 00:01:58.040
+we could have a classification algorithm that reads the image as
+
+00:01:58.040 --> 00:02:02.305
+soon as it is acquired and pushes critical cases to the top of the queue.
+
+00:02:02.305 --> 00:02:05.405
+In the exercise that you do at the end of this lesson,
+
+00:02:05.405 --> 00:02:09.560
+you will actually reorder a radiologist queue based on results from
+
+00:02:09.560 --> 00:02:12.170
+classification algorithms and you will see how
+
+00:02:12.170 --> 00:02:15.940
+machine learning makes a difference in optimizing clinical workflows.
+
+00:02:15.940 --> 00:02:19.340
+Another great area where machine learning algorithms can have
+
+00:02:19.340 --> 00:02:24.050
+a clinical impact is in helping to assess tumor growth over time.
+
+00:02:24.050 --> 00:02:26.120
+Patients who have lung cancer,
+
+00:02:26.120 --> 00:02:29.465
+often undergo chemotherapy to kill lung tumors.
+
+00:02:29.465 --> 00:02:31.205
+If the therapy is working,
+
+00:02:31.205 --> 00:02:36.215
+we expect that the tumor will shrink and the number of lung nodules will decrease.
+
+00:02:36.215 --> 00:02:40.460
+Segmentation algorithms can assist radiologists in calculating
+
+00:02:40.460 --> 00:02:45.389
+the area of tumors and counting the number of lung nodules overtime.
+

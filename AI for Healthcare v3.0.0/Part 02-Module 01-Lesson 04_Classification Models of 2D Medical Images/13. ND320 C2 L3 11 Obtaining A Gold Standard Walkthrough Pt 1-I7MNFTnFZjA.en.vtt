@@ -1,0 +1,181 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+In all of the previous exercises and lessons,
+
+00:00:02.580 --> 00:00:05.730
+you've been given a label for a given image that gives you
+
+00:00:05.730 --> 00:00:10.035
+some sort of classification of the image such as disease or no disease.
+
+00:00:10.035 --> 00:00:12.015
+But where do these labels come from,
+
+00:00:12.015 --> 00:00:13.635
+and how accurate are they?
+
+00:00:13.635 --> 00:00:16.740
+These are two very important questions to answer in
+
+00:00:16.740 --> 00:00:20.040
+order to evaluate how good your algorithm actually is,
+
+00:00:20.040 --> 00:00:21.750
+and to explain to the FDA how
+
+00:00:21.750 --> 00:00:26.235
+your algorithm's performance looks next to the best available solution.
+
+00:00:26.235 --> 00:00:30.200
+The gold standard for a particular type of data refers to
+
+00:00:30.200 --> 00:00:34.715
+the method that detects disease with the highest sensitivity and accuracy.
+
+00:00:34.715 --> 00:00:37.730
+This method is different for different diseases.
+
+00:00:37.730 --> 00:00:41.145
+Any new method that is developed, for example,
+
+00:00:41.145 --> 00:00:42.655
+a deep learning algorithm,
+
+00:00:42.655 --> 00:00:46.355
+can then be compared to this to determine its performance.
+
+00:00:46.355 --> 00:00:49.240
+Let's take pneumonia as an example.
+
+00:00:49.240 --> 00:00:53.145
+The gold standard for pneumonia detection is a biopsy.
+
+00:00:53.145 --> 00:00:58.370
+This however, can take a really long time to come back from the lab,
+
+00:00:58.370 --> 00:01:02.675
+and patients usually need to be started on antibiotics asap.
+
+00:01:02.675 --> 00:01:07.340
+Because of this, we often just rely on the radiologist interpretation
+
+00:01:07.340 --> 00:01:09.590
+clinically so that patients can start on
+
+00:01:09.590 --> 00:01:13.315
+a treatment and then get a confirmation later from the lab.
+
+00:01:13.315 --> 00:01:15.915
+Now let's take a look at mammography.
+
+00:01:15.915 --> 00:01:18.120
+In a typical mammography screen,
+
+00:01:18.120 --> 00:01:20.255
+radiologists are looking to evaluate
+
+00:01:20.255 --> 00:01:24.355
+breast density as well as to look for any suspicious findings.
+
+00:01:24.355 --> 00:01:29.695
+The gold standard for determining breast density is a radiologists read.
+
+00:01:29.695 --> 00:01:32.670
+If however, a mass is found,
+
+00:01:32.670 --> 00:01:37.985
+the gold standard for determining if a mass is malignant or benign is a biopsy,
+
+00:01:37.985 --> 00:01:42.175
+because you can't tell from an image what type of mass something is.
+
+00:01:42.175 --> 00:01:44.335
+This, like with pneumonia,
+
+00:01:44.335 --> 00:01:46.670
+takes time to come back from the lab.
+
+00:01:46.670 --> 00:01:50.690
+For this reason, if a woman shows a mass on her biopsy,
+
+00:01:50.690 --> 00:01:55.399
+the clinical approach is to contact her informing her of a suspicious mass,
+
+00:01:55.399 --> 00:02:00.265
+but not making a diagnosis of malignancy until the biopsy results come back.
+
+00:02:00.265 --> 00:02:05.960
+If a deep learning algorithm could determine malignant versus benign from an image,
+
+00:02:05.960 --> 00:02:08.960
+imagine how much emotional turmoil this could remove from
+
+00:02:08.960 --> 00:02:12.790
+all of the women who have to wait to find out their biopsy results.
+
+00:02:12.790 --> 00:02:17.629
+Often times, the gold standard is unattainable for the algorithm developer.
+
+00:02:17.629 --> 00:02:19.130
+More often than not,
+
+00:02:19.130 --> 00:02:21.725
+you will only get a large set of DICOMs.
+
+00:02:21.725 --> 00:02:26.270
+While these DICOMs will have some information about the studies and the patients,
+
+00:02:26.270 --> 00:02:29.299
+a lot of information is not available from DICOMs,
+
+00:02:29.299 --> 00:02:34.345
+for example, radiologists reports which can often be the gold standard.
+
+00:02:34.345 --> 00:02:38.260
+Even if you can find accompanying radiologists reports,
+
+00:02:38.260 --> 00:02:41.000
+what happens if you have one million studies?
+
+00:02:41.000 --> 00:02:43.775
+It probably isn't feasible for you to parse through
+
+00:02:43.775 --> 00:02:47.155
+each one manually to extract the diagnosis.
+
+00:02:47.155 --> 00:02:48.895
+As we just mentioned,
+
+00:02:48.895 --> 00:02:52.205
+biopsy is another common type of golden standard,
+
+00:02:52.205 --> 00:02:55.850
+but the information is stored outside of the PACS,
+
+00:02:55.850 --> 00:02:59.240
+and often you only get data that's been transferred from the PACS,
+
+00:02:59.240 --> 00:03:00.950
+and not the full EMR,
+
+00:03:00.950 --> 00:03:02.974
+which doesn't contain biopsy.
+
+00:03:02.974 --> 00:03:05.690
+So you still need to establish
+
+00:03:05.690 --> 00:03:09.485
+some ground-truth that you can use to compare your algorithm to,
+
+00:03:09.485 --> 00:03:12.485
+and it should be pretty close to the gold standard.
+
+00:03:12.485 --> 00:03:15.685
+In ways that your ground-truth is sub-par,
+
+00:03:15.685 --> 00:03:20.640
+you will have to caveat your approach to the FDA and other stakeholders.
+

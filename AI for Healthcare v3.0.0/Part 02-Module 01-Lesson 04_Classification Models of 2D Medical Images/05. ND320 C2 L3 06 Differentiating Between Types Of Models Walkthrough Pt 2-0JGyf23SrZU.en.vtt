@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.635
+As we mentioned earlier,
+
+00:00:01.635 --> 00:00:06.240
+there are many use cases for which classic Machine Learning is sufficient and reliable.
+
+00:00:06.240 --> 00:00:11.655
+One example is the Otsu's method used to segment and classify tissues.
+
+00:00:11.655 --> 00:00:15.630
+To paint a picture of how good classic Machine Learning could be,
+
+00:00:15.630 --> 00:00:18.015
+we'll take a look at Otsu's method.
+
+00:00:18.015 --> 00:00:21.820
+It's often used for separating images from their background,
+
+00:00:21.820 --> 00:00:24.765
+a technique called background extraction,
+
+00:00:24.765 --> 00:00:28.110
+which is often something we do in medical imaging.
+
+00:00:28.110 --> 00:00:31.920
+Remember how much we've done with intensity distributions,
+
+00:00:31.920 --> 00:00:34.605
+Otsu's method relies on these.
+
+00:00:34.605 --> 00:00:39.200
+It takes the intensity distribution of an image and searches it to find
+
+00:00:39.200 --> 00:00:42.065
+the intensity threshold along the x-axis
+
+00:00:42.065 --> 00:00:45.515
+that minimizes the variance in each of the two classes,
+
+00:00:45.515 --> 00:00:48.840
+one class being background and one being foreground.
+
+00:00:48.840 --> 00:00:51.379
+Once it discovers that threshold,
+
+00:00:51.379 --> 00:00:55.460
+it considers every pixel on one side of that to be background,
+
+00:00:55.460 --> 00:00:58.300
+and on the other side to be image.
+
+00:00:58.300 --> 00:01:01.160
+Otsu's method works really well and is
+
+00:01:01.160 --> 00:01:05.225
+an excellent example of Classic Machine Learning for segmentation.
+
+00:01:05.225 --> 00:01:09.815
+Here, since the background and the breast have different intensity profiles,
+
+00:01:09.815 --> 00:01:12.055
+we can separate them easily.
+
+00:01:12.055 --> 00:01:16.725
+You could extend Otsu's method to classification if you get creative.
+
+00:01:16.725 --> 00:01:21.605
+Let's say we have a bunch of images that belong to two different tissue types,
+
+00:01:21.605 --> 00:01:25.505
+one is healthy lung tissue and one is lung tissue from a smoker.
+
+00:01:25.505 --> 00:01:28.850
+Then let's say we applied Otsu's method just like
+
+00:01:28.850 --> 00:01:32.665
+before to remove the background from all images.
+
+00:01:32.665 --> 00:01:34.460
+We could then look at
+
+00:01:34.460 --> 00:01:38.300
+the intensity distributions for each of the two tissue types without
+
+00:01:38.300 --> 00:01:44.375
+any background pixels and identify where their intensity peaks or modes are.
+
+00:01:44.375 --> 00:01:46.850
+Finally, for any new image,
+
+00:01:46.850 --> 00:01:49.805
+you could try to classify which type of tissue it was
+
+00:01:49.805 --> 00:01:53.705
+based on where its peak or mode of intensity values lies.
+
+00:01:53.705 --> 00:01:57.755
+In this example, the image would be closest to healthy lungs,
+
+00:01:57.755 --> 00:01:59.790
+so you would predict healthy.
+
+00:01:59.790 --> 00:02:02.330
+Stretch yourself and think about this as you
+
+00:02:02.330 --> 00:02:05.700
+work through the exercise at the end of this lesson.
+

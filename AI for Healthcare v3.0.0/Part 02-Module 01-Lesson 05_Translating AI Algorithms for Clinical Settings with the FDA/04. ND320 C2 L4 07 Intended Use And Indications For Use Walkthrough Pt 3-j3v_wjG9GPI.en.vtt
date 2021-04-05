@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.175
+Unlike your intended use statement,
+
+00:00:02.175 --> 00:00:05.910
+which is directly tied to your algorithm's risk category in the eyes of
+
+00:00:05.910 --> 00:00:10.650
+the FDA and states exactly what you would use your algorithm for,
+
+00:00:10.650 --> 00:00:13.425
+the indications for use describe
+
+00:00:13.425 --> 00:00:18.360
+precise situations and reasons where and why you would use this device.
+
+00:00:18.360 --> 00:00:21.360
+If we go back to our scalpel example,
+
+00:00:21.360 --> 00:00:26.220
+where we stated an extremely general intended use that got us to class 1,
+
+00:00:26.220 --> 00:00:31.010
+we could use the indications for use statement of our FDA submission to
+
+00:00:31.010 --> 00:00:35.645
+encourage physicians to use it for other things like eye surgery,
+
+00:00:35.645 --> 00:00:38.720
+which is what we had initially wanted to label it as.
+
+00:00:38.720 --> 00:00:42.200
+We could say something like indicated for use as
+
+00:00:42.200 --> 00:00:46.745
+a cutting device during surgical pathology and minor medical procedures.
+
+00:00:46.745 --> 00:00:50.315
+If we revisit our mammography algorithm example again,
+
+00:00:50.315 --> 00:00:53.420
+where our intended use was to assist the radiologist,
+
+00:00:53.420 --> 00:00:56.915
+some indications for use that we might want to say are;
+
+00:00:56.915 --> 00:01:00.725
+indicated for use in screening mammography studies.
+
+00:01:00.725 --> 00:01:05.135
+We might also want to add in what age range or algorithm is indicated for.
+
+00:01:05.135 --> 00:01:07.670
+Let's say we trained our algorithm on a set of
+
+00:01:07.670 --> 00:01:11.230
+mammograms for women between the ages of 20 and 60.
+
+00:01:11.230 --> 00:01:13.925
+Human anatomy does change over time,
+
+00:01:13.925 --> 00:01:16.940
+so we don't actually know how well it will perform on,
+
+00:01:16.940 --> 00:01:22.675
+say, an 80-year-old, and would want to state its intended use for the 20-60 age range.
+
+00:01:22.675 --> 00:01:24.080
+It may seem obvious,
+
+00:01:24.080 --> 00:01:26.690
+but we would definitely want to state that this was
+
+00:01:26.690 --> 00:01:29.875
+intended for mammography in the female population.
+
+00:01:29.875 --> 00:01:34.580
+Finally, is there a component of the patient's history we think is important?
+
+00:01:34.580 --> 00:01:36.665
+Depending on the data we trained on,
+
+00:01:36.665 --> 00:01:40.775
+we may want to exclude women who have had breast cancer in the past.
+
+00:01:40.775 --> 00:01:45.140
+In that case, we would state with no prior history of breast cancer.
+
+00:01:45.140 --> 00:01:48.485
+If it were to be run on someone who fell in this category,
+
+00:01:48.485 --> 00:01:50.330
+it wouldn't be the end of the world,
+
+00:01:50.330 --> 00:01:52.925
+but we're stating explicitly to the end-user,
+
+00:01:52.925 --> 00:01:58.765
+here the radiologist, that it's not really intended to be reliable in this population.
+
+00:01:58.765 --> 00:02:00.555
+Seem confusing?
+
+00:02:00.555 --> 00:02:02.070
+It totally is.
+
+00:02:02.070 --> 00:02:03.950
+When working in the industry, though,
+
+00:02:03.950 --> 00:02:05.915
+depending on the size of your company,
+
+00:02:05.915 --> 00:02:10.639
+you as the algorithm developer may have to be very involved in this process.
+
+00:02:10.639 --> 00:02:12.410
+I myself once worked at
+
+00:02:12.410 --> 00:02:18.215
+a five-person medical imaging AI startup where I was deeply involved in this process.
+
+00:02:18.215 --> 00:02:19.700
+I then transitioned to
+
+00:02:19.700 --> 00:02:24.020
+a very large technology company with a division in medical imaging,
+
+00:02:24.020 --> 00:02:25.460
+where I had a whole team of
+
+00:02:25.460 --> 00:02:28.805
+regulatory people helping with the algorithm I was working on.
+
+00:02:28.805 --> 00:02:33.545
+Regardless, the FDA will act as your partner and help you through this process.
+
+00:02:33.545 --> 00:02:38.640
+In addition, there are tons of resources out there to help you better understand this.
+
+00:02:38.640 --> 00:02:43.460
+This lesson is intended to introduce you to the complexities of the regulatory system,
+
+00:02:43.460 --> 00:02:45.920
+so they can be in the back of your mind as you think
+
+00:02:45.920 --> 00:02:49.470
+about how your algorithm might be used clinically.
+

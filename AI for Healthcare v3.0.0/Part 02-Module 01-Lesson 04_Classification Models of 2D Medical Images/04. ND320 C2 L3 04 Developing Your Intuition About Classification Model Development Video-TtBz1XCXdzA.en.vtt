@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+There is quite a lot to consider when we start
+
+00:00:02.580 --> 00:00:05.595
+building deep learning algorithms for the health care system.
+
+00:00:05.595 --> 00:00:08.850
+The exploratory data analysis that you did in lesson 2
+
+00:00:08.850 --> 00:00:12.795
+gave you a sense of how to explore some key components of your data.
+
+00:00:12.795 --> 00:00:17.835
+Now we want to learn how to translate that into an intuition of how to build our models.
+
+00:00:17.835 --> 00:00:21.345
+One of the key intuitions you will start to develop here is
+
+00:00:21.345 --> 00:00:25.305
+when and if you actually need deep learning for your applications.
+
+00:00:25.305 --> 00:00:27.360
+If you find that you do need deep learning,
+
+00:00:27.360 --> 00:00:31.590
+you'll also start to develop an intuition about how to efficiently build,
+
+00:00:31.590 --> 00:00:37.800
+train, and/or fine-tune CNN architectures for your classification tasks.
+

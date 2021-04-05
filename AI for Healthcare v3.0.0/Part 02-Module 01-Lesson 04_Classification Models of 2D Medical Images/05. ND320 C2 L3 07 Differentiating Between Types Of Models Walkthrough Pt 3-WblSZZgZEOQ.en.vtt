@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.710
+A few minutes ago, we discussed how classic machine-learning involves the development of
+
+00:00:04.710 --> 00:00:07.800
+specific features that an algorithm developer deems
+
+00:00:07.800 --> 00:00:11.310
+important for classifying images of certain classes.
+
+00:00:11.310 --> 00:00:15.810
+We discussed how radiologists are sometimes brought into the mix because they can offer
+
+00:00:15.810 --> 00:00:18.075
+their expertise of what they know is important
+
+00:00:18.075 --> 00:00:20.920
+from looking at tens of thousands of images.
+
+00:00:20.920 --> 00:00:25.700
+The creation of the convolutional neural network architecture was inspired by
+
+00:00:25.700 --> 00:00:28.640
+this idea that humans learn complex features
+
+00:00:28.640 --> 00:00:31.670
+of images by being exposed to thousands of examples.
+
+00:00:31.670 --> 00:00:37.175
+So its architecture was designed to mirror the human visual cortex in the brain.
+
+00:00:37.175 --> 00:00:42.485
+The boxes labeled in the figure each represent a layer of the visual cortex.
+
+00:00:42.485 --> 00:00:45.035
+Cells in the first layer, V1,
+
+00:00:45.035 --> 00:00:50.015
+have receptive fields that correspond to very small areas of the physical world.
+
+00:00:50.015 --> 00:00:54.230
+Several of these cells then feed into a single V2 cell,
+
+00:00:54.230 --> 00:00:59.240
+which in turn has information from a slightly larger area of the physical world.
+
+00:00:59.240 --> 00:01:02.735
+As receptive fields get larger and higher layers,
+
+00:01:02.735 --> 00:01:05.210
+each layer becomes responsible for detecting
+
+00:01:05.210 --> 00:01:10.520
+more complex features about the visual world until finally at the last layer,
+
+00:01:10.520 --> 00:01:13.825
+distinct faces and objects can be recognized.
+
+00:01:13.825 --> 00:01:17.550
+This figure shows a typical CNN architecture.
+
+00:01:17.550 --> 00:01:21.740
+First, there's an actual image that is fed into the network.
+
+00:01:21.740 --> 00:01:25.190
+There is then a set of convolutional layers in
+
+00:01:25.190 --> 00:01:29.720
+black that can be likened to those of V1 cells in the human brain.
+
+00:01:29.720 --> 00:01:34.505
+They are made up of a set of filters that are looking for very simple features,
+
+00:01:34.505 --> 00:01:36.635
+such as a directional line.
+
+00:01:36.635 --> 00:01:40.370
+Note that the input image here has a size of 224 by
+
+00:01:40.370 --> 00:01:44.790
+224 that matches the first set of convolutional layers.
+
+00:01:44.790 --> 00:01:47.980
+This first set of filter layers is then down
+
+00:01:47.980 --> 00:01:51.460
+sampled so that filters in the second set of convolutional layers
+
+00:01:51.460 --> 00:01:54.220
+have a larger receptive fields and can
+
+00:01:54.220 --> 00:01:58.195
+therefore distinguish more complex features like shapes.
+
+00:01:58.195 --> 00:02:01.120
+This continues as sets of layers which are
+
+00:02:01.120 --> 00:02:03.970
+down-sampled and fed into higher level layers that can
+
+00:02:03.970 --> 00:02:10.030
+detect more complex features such as objects and finally specific faces.
+
+00:02:10.030 --> 00:02:11.905
+When we train a CNN,
+
+00:02:11.905 --> 00:02:15.505
+we are training the parameters of each filter in each layer
+
+00:02:15.505 --> 00:02:19.390
+to recognize what's important about the images that we are interested in.
+
+00:02:19.390 --> 00:02:23.270
+We'll talk about these layers in more depth later in the lesson.
+
+00:02:23.270 --> 00:02:27.750
+Unlike classification algorithms that typically employ a CNN,
+
+00:02:27.750 --> 00:02:31.745
+one of the most common architectures for segmentation is a UNet.
+
+00:02:31.745 --> 00:02:34.880
+You will learn more about these in the 3D imaging course.
+
+00:02:34.880 --> 00:02:37.430
+It's important to note though that a limitation of
+
+00:02:37.430 --> 00:02:41.765
+2D imaging is the inability to measure the volume of structures,
+
+00:02:41.765 --> 00:02:45.155
+which is often more clinically relevant than the area.
+
+00:02:45.155 --> 00:02:46.610
+If you think about it,
+
+00:02:46.610 --> 00:02:48.665
+when a patient gets an x-ray taken,
+
+00:02:48.665 --> 00:02:53.300
+the angle at which their body is positioned with respect to the x-ray machine can have
+
+00:02:53.300 --> 00:02:58.615
+a big impact on how the area of a given structure appears in a 2D image.
+
+00:02:58.615 --> 00:03:01.910
+Using the area in 2D medical imaging as
+
+00:03:01.910 --> 00:03:06.540
+a reliable clinical measure may be limited in its utility.
+

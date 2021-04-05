@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.310
+Now that you've learned a little more about
+
+00:00:02.310 --> 00:00:05.700
+the imaging workflow and where machine learning can fit in.
+
+00:00:05.700 --> 00:00:09.855
+Let's talk about the main types of machine learning algorithms that can be developed,
+
+00:00:09.855 --> 00:00:12.765
+and for what clinical indications they might be applied.
+
+00:00:12.765 --> 00:00:16.920
+Machine learning can be used for many different reasons as 2D imaging.
+
+00:00:16.920 --> 00:00:21.015
+You may want to determine whether or not a structure in an image is healthy,
+
+00:00:21.015 --> 00:00:25.545
+where an abnormality in an image is or the area of a tumor.
+
+00:00:25.545 --> 00:00:28.815
+These require all different types of algorithms.
+
+00:00:28.815 --> 00:00:33.660
+The first type of machine learning algorithm we will talk about here is classification.
+
+00:00:33.660 --> 00:00:37.530
+Classification algorithms assess a whole image and return
+
+00:00:37.530 --> 00:00:42.405
+an output stating whether or not a disease or a finding exists in the image.
+
+00:00:42.405 --> 00:00:47.930
+For example, an algorithm intended to diagnose images for lung nodules
+
+00:00:47.930 --> 00:00:53.719
+would read this image and return one of two outputs nodules or no nodules.
+
+00:00:53.719 --> 00:00:55.520
+If the algorithm is accurate,
+
+00:00:55.520 --> 00:01:00.625
+it would output the results of nodules sense there is a nodule in the image.
+
+00:01:00.625 --> 00:01:06.260
+Classification algorithms can be used for binary or multi-class classification or
+
+00:01:06.260 --> 00:01:09.020
+a single algorithm can classify for the presence or
+
+00:01:09.020 --> 00:01:12.455
+absence of multiple types of findings or diseases.
+
+00:01:12.455 --> 00:01:14.900
+Note that the radiologist or
+
+00:01:14.900 --> 00:01:19.370
+the diagnosing clinician could be the end user of a classification algorithm.
+
+00:01:19.370 --> 00:01:22.190
+If we create an algorithm that is so good at
+
+00:01:22.190 --> 00:01:26.150
+diagnosing based on an image that we no longer need a radiologist,
+
+00:01:26.150 --> 00:01:29.600
+then the diagnosing clinician could be our only end-user.
+
+00:01:29.600 --> 00:01:32.200
+But in 2020, we're not there yet,
+
+00:01:32.200 --> 00:01:36.619
+and so the radiologist is usually going to be your primary end-user.
+
+00:01:36.619 --> 00:01:39.380
+The second type of machine learning algorithm that
+
+00:01:39.380 --> 00:01:41.930
+we are going to talk about is segmentation.
+
+00:01:41.930 --> 00:01:45.530
+Segmentation algorithms identify specific pixels
+
+00:01:45.530 --> 00:01:48.835
+in an image that contain a structure or a finding.
+
+00:01:48.835 --> 00:01:54.080
+For example, a segmentation algorithm intended to identify nodules in
+
+00:01:54.080 --> 00:01:59.945
+this image would return a set of colored pixels that contain the presence of the nodule.
+
+00:01:59.945 --> 00:02:05.755
+This algorithm creates a border around the nodule that allows us to calculate its area.
+
+00:02:05.755 --> 00:02:11.210
+Segmentation algorithms are typically used to measure the size of a particular finding,
+
+00:02:11.210 --> 00:02:14.195
+or its a count, the number of findings in an image.
+
+00:02:14.195 --> 00:02:18.650
+For example, they are often used to count cells in microscopy data,
+
+00:02:18.650 --> 00:02:22.280
+where each cell in an image is segmented individually.
+
+00:02:22.280 --> 00:02:28.190
+Again, radiologists are most likely the end-user of segmentation algorithms.
+
+00:02:28.190 --> 00:02:33.455
+The last type of machine learning algorithm we'll talk about here is localization.
+
+00:02:33.455 --> 00:02:36.800
+Localization algorithms identify the area
+
+00:02:36.800 --> 00:02:39.725
+of an image that contain a structure or a finding.
+
+00:02:39.725 --> 00:02:44.800
+They output a set of coordinates that create a bounding box around that finding.
+
+00:02:44.800 --> 00:02:48.650
+For example, a localization algorithm intended to aid
+
+00:02:48.650 --> 00:02:53.250
+radiologists in determining where the nodule is in this image,
+
+00:02:53.250 --> 00:02:56.500
+would output a box around the nodule.
+
+00:02:56.500 --> 00:03:00.830
+These localization algorithms can be very useful for drawing
+
+00:03:00.830 --> 00:03:03.110
+radiologists attention to certain types of
+
+00:03:03.110 --> 00:03:05.570
+findings that are difficult to see on an image.
+
+00:03:05.570 --> 00:03:11.430
+Again, radiologists will be your end-user for localization algorithms.
+

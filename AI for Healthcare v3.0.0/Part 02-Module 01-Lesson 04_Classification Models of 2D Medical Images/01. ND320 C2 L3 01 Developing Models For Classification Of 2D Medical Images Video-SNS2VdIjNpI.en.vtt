@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.460
+Welcome to lesson 3 of the AI for 2D Medical Imaging course.
+
+00:00:03.460 --> 00:00:05.325
+You guys are halfway there.
+
+00:00:05.325 --> 00:00:06.645
+In the last lesson,
+
+00:00:06.645 --> 00:00:10.440
+we talked about DICOM files and how to extract information from them.
+
+00:00:10.440 --> 00:00:14.040
+In this lesson, we'll dive deep into classification tasks
+
+00:00:14.040 --> 00:00:17.715
+for 2D Medical Imaging using different machine learning models.
+
+00:00:17.715 --> 00:00:19.935
+We'll focus mostly on deep learning,
+
+00:00:19.935 --> 00:00:25.305
+particularly CNN architectures and we will talk about how to pre-process data,
+
+00:00:25.305 --> 00:00:28.110
+train, test, and validate deep learning algorithms to
+
+00:00:28.110 --> 00:00:32.680
+classify images for different clinical applications accurately.
+

@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.085
+DICOM is short for Digital Imaging and Communications in Medicine,
+
+00:00:05.085 --> 00:00:08.010
+which is the standard for the communication and management
+
+00:00:08.010 --> 00:00:11.085
+of medical imaging information and related data.
+
+00:00:11.085 --> 00:00:15.510
+Throughout this course, I will refer to DICOM files a lot,
+
+00:00:15.510 --> 00:00:18.390
+and that just means a medical imaging file that is
+
+00:00:18.390 --> 00:00:21.705
+in the format that conforms to the DICOM standard.
+
+00:00:21.705 --> 00:00:27.375
+A DICOM file contains the information about the imaging acquisition method,
+
+00:00:27.375 --> 00:00:32.835
+the actual medical images, and patient information.
+
+00:00:32.835 --> 00:00:35.140
+Remember how in the last lesson,
+
+00:00:35.140 --> 00:00:38.690
+we talked about how there was this storage system called PACS,
+
+00:00:38.690 --> 00:00:41.965
+where images went between the patient and the radiologist.
+
+00:00:41.965 --> 00:00:47.270
+Well, there's actually even more that happens before the image gets to the PACS.
+
+00:00:47.270 --> 00:00:50.030
+First, those radiation waves and
+
+00:00:50.030 --> 00:00:54.110
+their absorption levels from the x-ray are turned into an actual image,
+
+00:00:54.110 --> 00:00:57.040
+by a medical imaging devices software.
+
+00:00:57.040 --> 00:01:04.045
+Next, a medical imaging tech inputs information about the patient, and finally,
+
+00:01:04.045 --> 00:01:07.520
+the medical imaging system combines the imaging data,
+
+00:01:07.520 --> 00:01:10.760
+information about how the image was acquired and
+
+00:01:10.760 --> 00:01:15.550
+the data input by the tech into a single file format called DICOM.
+
+00:01:15.550 --> 00:01:19.270
+Why is DICOM important and why was it created?
+
+00:01:19.270 --> 00:01:24.300
+DICOM was developed by the American College of Radiologists in 1993,
+
+00:01:24.300 --> 00:01:27.380
+to allow for something called interoperability.
+
+00:01:27.380 --> 00:01:30.290
+What this means is that an image acquired at
+
+00:01:30.290 --> 00:01:35.420
+one hospital can be read by the systems at any other hospital.
+
+00:01:35.420 --> 00:01:37.490
+DICOM is considered to be one of
+
+00:01:37.490 --> 00:01:43.440
+the most successful implementations of an interoperable standard in all of healthcare.
+

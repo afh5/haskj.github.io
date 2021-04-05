@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.100
+Making algorithms is fun,
+
+00:00:02.100 --> 00:00:05.055
+but if you want them to actually be used in a clinical setting,
+
+00:00:05.055 --> 00:00:07.080
+you need to know who uses them,
+
+00:00:07.080 --> 00:00:09.750
+who regulates them, and how they do it.
+
+00:00:09.750 --> 00:00:12.390
+This learning objective will introduce you to how to
+
+00:00:12.390 --> 00:00:15.390
+take your algorithms from bench to bedside.
+
+00:00:15.390 --> 00:00:17.579
+Every month, there are hundreds,
+
+00:00:17.579 --> 00:00:23.000
+if not thousands of new academic publications for AI in 2D medical imaging.
+
+00:00:23.000 --> 00:00:25.910
+Algorithms are constantly being improved upon,
+
+00:00:25.910 --> 00:00:29.740
+and new open source datasets are being released for training.
+
+00:00:29.740 --> 00:00:36.935
+Why then is the field of clinical radiology not completely overrun with AI applications?
+
+00:00:36.935 --> 00:00:40.609
+In this section, we'll learn about the regulatory landscape,
+
+00:00:40.609 --> 00:00:43.685
+and the challenges in bringing an algorithm to a market.
+
+00:00:43.685 --> 00:00:46.400
+In other words, from bench to bedside.
+
+00:00:46.400 --> 00:00:51.020
+Stakeholders for AI algorithms in 2D medical imaging fall into
+
+00:00:51.020 --> 00:00:59.620
+three main categories: clinical, industry, and regulatory.
+
+00:00:59.620 --> 00:01:05.135
+We've covered the main clinical stakeholders so far in this lesson: radiologists,
+
+00:01:05.135 --> 00:01:07.610
+diagnosing clinicians, and patients.
+
+00:01:07.610 --> 00:01:10.745
+But we'll talk a little bit more about how they're involved.
+
+00:01:10.745 --> 00:01:18.425
+Now radiologists are likely going to be the end user of an AI application for 2D imaging.
+
+00:01:18.425 --> 00:01:23.090
+Radiologists really care about disruption to their workflow.
+
+00:01:23.090 --> 00:01:27.245
+What this means is that no matter how good your algorithm is,
+
+00:01:27.245 --> 00:01:31.520
+if it creates more work for the radiologist such as needing
+
+00:01:31.520 --> 00:01:35.915
+to load in a separate type of software or viewing system for each image,
+
+00:01:35.915 --> 00:01:39.975
+they will never use it and it will not get adopted clinically.
+
+00:01:39.975 --> 00:01:46.160
+Radiologists also play an important advisory role in the algorithm development process.
+
+00:01:46.160 --> 00:01:48.700
+They will be one of your main resources when
+
+00:01:48.700 --> 00:01:51.190
+you figure out how your algorithm might fit into
+
+00:01:51.190 --> 00:01:54.280
+a clinical setting as they will be the ones who can describe
+
+00:01:54.280 --> 00:01:58.595
+the real pain points in the medical imaging system as they currently stands.
+
+00:01:58.595 --> 00:02:02.080
+They can also give you lots of advice about what is typically seen
+
+00:02:02.080 --> 00:02:05.800
+in the real world that will help you approach your algorithm design.
+
+00:02:05.800 --> 00:02:07.945
+Clinicians, on the other hand,
+
+00:02:07.945 --> 00:02:12.280
+have less visibility into the inner workings of an algorithm.
+
+00:02:12.280 --> 00:02:16.915
+They do, however, also care about low disruption to their workflows.
+
+00:02:16.915 --> 00:02:18.865
+While for a radiologist,
+
+00:02:18.865 --> 00:02:22.585
+disruption may be having to introduce a new type of software,
+
+00:02:22.585 --> 00:02:27.850
+disruption to a clinician is more along the lines of having to wait longer for results.
+
+00:02:27.850 --> 00:02:30.590
+If your algorithm is really accurate but takes
+
+00:02:30.590 --> 00:02:33.890
+twice as long as a radiologist to generate a report,
+
+00:02:33.890 --> 00:02:36.400
+it won't fly with the clinician.
+
+00:02:36.400 --> 00:02:41.690
+Clinicians are also very concerned about the interpretability of your algorithm output.
+
+00:02:41.690 --> 00:02:43.850
+Your algorithm should not be outputting
+
+00:02:43.850 --> 00:02:47.665
+some new crazy metric that a clinician is not familiar with.
+
+00:02:47.665 --> 00:02:51.815
+While it's good to introduce new types of metrics to make medicine better,
+
+00:02:51.815 --> 00:02:55.025
+you want to make sure that whatever your algorithm reports,
+
+00:02:55.025 --> 00:02:58.220
+it's something that makes sense to a clinician and doesn't leave them with
+
+00:02:58.220 --> 00:03:00.425
+a greater cognitive load to interpret
+
+00:03:00.425 --> 00:03:03.580
+than what they're used to from a radiologist's report.
+
+00:03:03.580 --> 00:03:09.800
+Finally, another important clinical stake holder to always keep in mind is the patient.
+
+00:03:09.800 --> 00:03:11.090
+At the end of the day,
+
+00:03:11.090 --> 00:03:13.700
+the patient may be your most important stakeholder,
+
+00:03:13.700 --> 00:03:16.670
+and the FDA looks at your algorithm through the lens of
+
+00:03:16.670 --> 00:03:20.405
+protecting the patient from all unnecessary risks.
+
+00:03:20.405 --> 00:03:26.165
+Patients may never know that AI was involved in understanding their medical images,
+
+00:03:26.165 --> 00:03:28.250
+but they really do care,
+
+00:03:28.250 --> 00:03:30.395
+just like radiologists and clinicians,
+
+00:03:30.395 --> 00:03:34.860
+about timeliness and receiving accurate test results.
+

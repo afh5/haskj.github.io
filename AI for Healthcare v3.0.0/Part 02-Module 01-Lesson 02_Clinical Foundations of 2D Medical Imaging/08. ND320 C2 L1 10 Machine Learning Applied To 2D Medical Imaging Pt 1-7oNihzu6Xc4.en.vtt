@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.050 --> 00:00:05.160
+Before we dive into how we can apply machine learning to medical imaging,
+
+00:00:05.160 --> 00:00:09.960
+let's learn some basics about clinical workflows that involve 2D imaging.
+
+00:00:09.960 --> 00:00:12.885
+Here again, we'll focus on x-rays.
+
+00:00:12.885 --> 00:00:18.170
+Previously, we learned about this medical imaging workflow that starts with the patient,
+
+00:00:18.170 --> 00:00:20.540
+moves to the radiologist who produces
+
+00:00:20.540 --> 00:00:24.455
+a report which is then read by a diagnosing clinician.
+
+00:00:24.455 --> 00:00:28.085
+Before we dive into how we can apply machine learning to this,
+
+00:00:28.085 --> 00:00:31.715
+let's learn some basics in the process that involved 2D imaging.
+
+00:00:31.715 --> 00:00:37.280
+Machine learning is mainly involved before the images arrive at the radiologist.
+
+00:00:37.280 --> 00:00:40.260
+Before images get to a radiologist's hands,
+
+00:00:40.260 --> 00:00:44.340
+they are stored in a Picture Archiving and Communication System.
+
+00:00:44.340 --> 00:00:47.915
+Every imaging center and hospital has a PACS.
+
+00:00:47.915 --> 00:00:51.260
+These systems allow all medical images to be stored in
+
+00:00:51.260 --> 00:00:55.875
+the hospital's servers and transferred to different departments throughout the hospital.
+
+00:00:55.875 --> 00:00:57.790
+In the clinical workflow,
+
+00:00:57.790 --> 00:01:03.610
+we can broadly bucket imaging into two categories, diagnostic and screening.
+
+00:01:03.610 --> 00:01:07.570
+Diagnostic imaging happens when a clinician believes that there
+
+00:01:07.570 --> 00:01:11.350
+may be something wrong with the patient and they need imaging to verify.
+
+00:01:11.350 --> 00:01:14.230
+An example of diagnostic imaging
+
+00:01:14.230 --> 00:01:18.505
+is in a patient's brain to verify if he has a brain tumor.
+
+00:01:18.505 --> 00:01:24.970
+Diagnostic imaging can happen in emergency settings as well as non-emergency settings.
+
+00:01:24.970 --> 00:01:28.254
+Screening imaging happens when a clinician
+
+00:01:28.254 --> 00:01:31.705
+doesn't necessarily believe there's something wrong with the patient,
+
+00:01:31.705 --> 00:01:34.810
+but the patient falls into a high risk category
+
+00:01:34.810 --> 00:01:38.310
+and needs to be scanned regularly for early detection.
+
+00:01:38.310 --> 00:01:41.810
+For example, individuals over a certain age with
+
+00:01:41.810 --> 00:01:46.600
+a family history of colon cancer are given annual screening colonoscopies.
+
+00:01:46.600 --> 00:01:48.665
+In these types of imaging studies,
+
+00:01:48.665 --> 00:01:51.605
+the majority of patients have negative results.
+
+00:01:51.605 --> 00:01:55.655
+Screening usually happens in non-emergency settings.
+
+00:01:55.655 --> 00:01:59.630
+Let's talk more about diagnostic imaging in the workflow.
+
+00:01:59.630 --> 00:02:04.174
+In emergency situations, a diagnosis may be very time sensitive.
+
+00:02:04.174 --> 00:02:09.770
+For example, surgeons need to verify if a patient in the OR has a bleed in their brain.
+
+00:02:09.770 --> 00:02:14.555
+So a machine learning algorithm in this situation would be used very early
+
+00:02:14.555 --> 00:02:16.820
+on in the imaging workflow in order to
+
+00:02:16.820 --> 00:02:20.150
+obtain insights from the image as fast as possible.
+
+00:02:20.150 --> 00:02:23.990
+In non-emergency situations where the radiologist may
+
+00:02:23.990 --> 00:02:27.215
+not need to read an image right away, for example,
+
+00:02:27.215 --> 00:02:30.470
+assessing tumor growth of a pre-existing cancerous tumor in
+
+00:02:30.470 --> 00:02:35.355
+the lungs or a patient waiting for results of potential bone fracture in their arm.
+
+00:02:35.355 --> 00:02:38.660
+In these cases, it's okay if your algorithm doesn't run
+
+00:02:38.660 --> 00:02:43.460
+immediately and it may not be necessary until later in the workflow.
+
+00:02:43.460 --> 00:02:47.450
+In screening imaging, it's almost always the case that
+
+00:02:47.450 --> 00:02:50.990
+your algorithm does not need to be run immediately in the workflow,
+
+00:02:50.990 --> 00:02:53.390
+as these types of studies are never urgent.
+
+00:02:53.390 --> 00:02:58.979
+For example, a six year-old smoker routinely has lung cancer screenings.
+

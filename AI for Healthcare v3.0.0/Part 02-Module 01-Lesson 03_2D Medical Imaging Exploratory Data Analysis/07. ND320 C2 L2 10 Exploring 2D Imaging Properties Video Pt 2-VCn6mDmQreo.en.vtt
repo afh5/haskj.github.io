@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.670
+So now let's expand our usage of intensity beyond looking at just individual images.
+
+00:00:05.670 --> 00:00:11.745
+We can ask, do all images with the same label have the same intensity profiles?
+
+00:00:11.745 --> 00:00:14.400
+In other words, is there something inherent to
+
+00:00:14.400 --> 00:00:17.535
+an image label in its intensity distribution?
+
+00:00:17.535 --> 00:00:19.125
+You can see here,
+
+00:00:19.125 --> 00:00:22.050
+all of these images of healthy lungs have the label
+
+00:00:22.050 --> 00:00:26.685
+No Finding and the intensity distributions are below for the images.
+
+00:00:26.685 --> 00:00:30.345
+At first glance, we may think that they look nothing alike,
+
+00:00:30.345 --> 00:00:32.430
+but let's take a closer look.
+
+00:00:32.430 --> 00:00:35.190
+Do you see that the peak intensity,
+
+00:00:35.190 --> 00:00:36.390
+aside from the background,
+
+00:00:36.390 --> 00:00:42.100
+which is zero, is around 160-180 on the x-axis for each image?
+
+00:00:42.100 --> 00:00:43.625
+In addition to that,
+
+00:00:43.625 --> 00:00:45.840
+each image has another small peak,
+
+00:00:45.840 --> 00:00:49.045
+somewhere between 200 and 225.
+
+00:00:49.045 --> 00:00:54.580
+One final thing to note is that the distributions seem to have very different heights,
+
+00:00:54.580 --> 00:00:57.290
+but when you look more closely at the y-axis,
+
+00:00:57.290 --> 00:00:59.930
+you'll notice that the peaks of each, again,
+
+00:00:59.930 --> 00:01:05.795
+around 160-180, are actually all about 1,100-1,800 pixels.
+
+00:01:05.795 --> 00:01:09.370
+The plot on the right is the one that's the most misleading here
+
+00:01:09.370 --> 00:01:13.135
+and that's because of the huge spike at intensity zero.
+
+00:01:13.135 --> 00:01:14.850
+Where is this coming from?
+
+00:01:14.850 --> 00:01:16.880
+If we go back to the image,
+
+00:01:16.880 --> 00:01:20.645
+we see that the image on the right has a black border around it.
+
+00:01:20.645 --> 00:01:22.355
+This may seem small,
+
+00:01:22.355 --> 00:01:24.470
+but all of those pixels add up.
+
+00:01:24.470 --> 00:01:26.765
+Since the image backgrounds are black,
+
+00:01:26.765 --> 00:01:30.230
+all images have some spike around intensity zero.
+
+00:01:30.230 --> 00:01:33.020
+But the border on the right one is making the number of pixels
+
+00:01:33.020 --> 00:01:36.400
+much higher and causing that spike at zero.
+
+00:01:36.400 --> 00:01:40.115
+There are some other things that you can do to play with intensity.
+
+00:01:40.115 --> 00:01:44.390
+You can compare intensity profiles of images with different labels.
+
+00:01:44.390 --> 00:01:47.500
+So for example, disease versus no disease.
+
+00:01:47.500 --> 00:01:51.605
+You can compare intensity profiles of different sections of an image,
+
+00:01:51.605 --> 00:01:55.160
+such as the center pixels versus a different part of the image,
+
+00:01:55.160 --> 00:01:56.330
+like the lower third,
+
+00:01:56.330 --> 00:02:01.990
+and you can also normalize images to bring their intensity values closer to zero.
+
+00:02:01.990 --> 00:02:05.510
+This just means subtracting the image mean from
+
+00:02:05.510 --> 00:02:10.490
+every pixel and dividing every pixel by the pixel standard intensity value.
+
+00:02:10.490 --> 00:02:15.390
+In Lesson 3, we will cover more about preprocessing images.
+

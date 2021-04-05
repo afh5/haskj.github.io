@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+One of the key pieces of fine-tuning is the last layer.
+
+00:00:03.390 --> 00:00:08.350
+In this CNN, the final layer has the dimensions of 1x1x1,000.
+
+00:00:08.660 --> 00:00:15.225
+This means that it has the capability to classify between 1,000 different image classes.
+
+00:00:15.225 --> 00:00:17.985
+If we wanted to use this architecture to say,
+
+00:00:17.985 --> 00:00:22.320
+classify between 10 different types of diseases found on a chest x-ray,
+
+00:00:22.320 --> 00:00:27.480
+we would need to replace this layer with a layer whose dimensions were 1x1x10.
+
+00:00:27.480 --> 00:00:31.080
+Besides retraining waves on the last few layers,
+
+00:00:31.080 --> 00:00:32.485
+as we talked about earlier,
+
+00:00:32.485 --> 00:00:36.035
+we can also add new layers to train from scratch.
+
+00:00:36.035 --> 00:00:39.230
+Experimenting with different combinations of these options is
+
+00:00:39.230 --> 00:00:43.075
+a lot of trial and error and truly is an art.
+
+00:00:43.075 --> 00:00:46.790
+There are tons of existing CNN architectures and
+
+00:00:46.790 --> 00:00:50.575
+weights that have been trained and released into the deep learning community.
+
+00:00:50.575 --> 00:00:55.970
+Nearly every day, incremental improvements to existing architectures are being made and
+
+00:00:55.970 --> 00:00:57.920
+new publications are being written about
+
+00:00:57.920 --> 00:01:02.375
+the accuracy increases scene by different weights and architectures.
+
+00:01:02.375 --> 00:01:07.440
+The architecture that we've been using as an example in these slides is VGG16,
+
+00:01:07.440 --> 00:01:09.830
+which was trained on a set of images called
+
+00:01:09.830 --> 00:01:14.240
+ImageNet that contains over 14 million images.
+
+00:01:14.240 --> 00:01:17.165
+The researchers who initially did this,
+
+00:01:17.165 --> 00:01:21.575
+classified all of the images in ImageNet into 1,000 categories,
+
+00:01:21.575 --> 00:01:24.890
+and train the VGG16 architecture to accurately
+
+00:01:24.890 --> 00:01:28.745
+classify images between all 1,000 of those categories.
+
+00:01:28.745 --> 00:01:31.340
+They then released not only their architecture,
+
+00:01:31.340 --> 00:01:35.120
+but also the weights of their model to the general deep learning community.
+
+00:01:35.120 --> 00:01:38.630
+This was revolutionary, and was one of the first pieces of
+
+00:01:38.630 --> 00:01:42.790
+work to truly ignite the field of deep learning for image recognition.
+
+00:01:42.790 --> 00:01:47.270
+Now you'll see that it's common practice for researchers interested in all types of
+
+00:01:47.270 --> 00:01:52.100
+imaging to take these pre-trained weights and fine-tune them for their specific use case.
+
+00:01:52.100 --> 00:01:54.110
+That's in fact what we will do in
+
+00:01:54.110 --> 00:01:58.670
+our final course project for classification of disease and chest x-rays.
+
+00:01:58.670 --> 00:02:02.840
+If we have an existing model architecture like VGG16,
+
+00:02:02.840 --> 00:02:05.140
+and we want to freeze them layers,
+
+00:02:05.140 --> 00:02:09.890
+all we need to do is set each layer's trainable parameter to be false.
+
+00:02:09.890 --> 00:02:15.260
+Here, I'm setting the first 17 layers to be untrainable or frozen.
+
+00:02:15.260 --> 00:02:19.485
+If I want to then add layers that are trainable and are new,
+
+00:02:19.485 --> 00:02:21.255
+I would do the following.
+
+00:02:21.255 --> 00:02:26.045
+I would take a new model and add my frozen VGG model to it.
+
+00:02:26.045 --> 00:02:30.475
+Then I would just use the add function to add new types of layers.
+
+00:02:30.475 --> 00:02:33.495
+Here, I'm adding a dense layer with
+
+00:02:33.495 --> 00:02:38.450
+1024 parameters and the value activation function to my new model,
+
+00:02:38.450 --> 00:02:42.600
+following my frozen VGG16 architecture.
+

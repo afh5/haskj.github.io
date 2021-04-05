@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.485
+Before we move on though,
+
+00:00:01.485 --> 00:00:05.340
+another very specific type of 2D imaging is called fundal
+
+00:00:05.340 --> 00:00:10.110
+imaging and it looks at the integrity of the tiny vessels in the eye.
+
+00:00:10.110 --> 00:00:13.485
+The fundus is the interior surface of the eye,
+
+00:00:13.485 --> 00:00:17.880
+and images of it can be taken to diagnose diabetic retinopathy.
+
+00:00:17.880 --> 00:00:22.440
+In this condition, blood vessels at the back of the eye become damaged.
+
+00:00:22.440 --> 00:00:26.260
+We won't be covering this type of 2D imaging in this course,
+
+00:00:26.260 --> 00:00:28.925
+but it is important to know because there are many
+
+00:00:28.925 --> 00:00:32.390
+open-source fundal imaging data sets available for
+
+00:00:32.390 --> 00:00:35.360
+machine learning imaging researchers and there are also
+
+00:00:35.360 --> 00:00:39.215
+many academic and industry groups that are working in this space.
+
+00:00:39.215 --> 00:00:42.620
+There's still one more entirely different branch of
+
+00:00:42.620 --> 00:00:46.100
+2D medical imaging that we won't cover much in this course.
+
+00:00:46.100 --> 00:00:48.410
+But it's worth mentioning as there is
+
+00:00:48.410 --> 00:00:52.390
+a big area in the worlds of applying AI to microscopy.
+
+00:00:52.390 --> 00:00:56.855
+Microscopy refers to physical slides of biological material
+
+00:00:56.855 --> 00:01:01.715
+taken from a patient that can be viewed at the cell level through a microscope.
+
+00:01:01.715 --> 00:01:04.880
+These slides often have a stain applied to them that
+
+00:01:04.880 --> 00:01:08.765
+causes different cell structures to appear in different colors.
+
+00:01:08.765 --> 00:01:11.620
+These stains help pathologists tell the difference
+
+00:01:11.620 --> 00:01:15.330
+between normal cell structures and pathological structures.
+
+00:01:15.330 --> 00:01:19.060
+Since these images are not acquired with a digital machine,
+
+00:01:19.060 --> 00:01:22.615
+they are not inherently digital like X-rays are.
+
+00:01:22.615 --> 00:01:25.810
+As a result, an additional step of digitizing
+
+00:01:25.810 --> 00:01:29.465
+these images is required before applying AI.
+
+00:01:29.465 --> 00:01:34.810
+One thing that's important to note with digital pathology is that it is not interpreted
+
+00:01:34.810 --> 00:01:40.195
+by a radiologist as other 2D images are in the previous workflow we introduced.
+
+00:01:40.195 --> 00:01:44.885
+With microscopy, a cell sample is first taken from the patient,
+
+00:01:44.885 --> 00:01:49.555
+it is then interpreted by a pathologist, not a radiologist,
+
+00:01:49.555 --> 00:01:55.720
+who generates a report that is then read and ingested by the diagnosing and care team.
+
+00:01:55.720 --> 00:01:58.940
+Note that the digitization process is not
+
+00:01:58.940 --> 00:02:02.215
+necessary for this interpretation by a pathologist.
+
+00:02:02.215 --> 00:02:05.060
+The efforts in this area to digitize are
+
+00:02:05.060 --> 00:02:07.895
+being made specifically to increase the potential for
+
+00:02:07.895 --> 00:02:14.340
+AI for medical imaging in this space and also for better microscopy sample archiving.
+

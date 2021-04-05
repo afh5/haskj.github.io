@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.710
+In this lesson, we will first learn about what the DICOM standard is.
+
+00:00:04.710 --> 00:00:09.435
+Then we'll talk about how to read images and different image properties.
+
+00:00:09.435 --> 00:00:12.075
+Next, we'll talk about how to prepare
+
+00:00:12.075 --> 00:00:16.845
+non-image data and extract information for training machine learning models.
+
+00:00:16.845 --> 00:00:20.790
+Finally, we'll talk about exploring medical metadata.
+
+00:00:20.790 --> 00:00:22.395
+At the end of this lesson,
+
+00:00:22.395 --> 00:00:25.245
+you'll be a pro at dissecting medical images,
+
+00:00:25.245 --> 00:00:28.590
+starting with the standard file formats that they're stored in,
+
+00:00:28.590 --> 00:00:33.610
+all the way down to the pixel-level data that comprises the image itself.
+

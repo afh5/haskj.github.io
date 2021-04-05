@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:04.380
+I really asked you to stretch your mind with this exercise.
+
+00:00:04.380 --> 00:00:08.400
+I wanted you to synthesize your understanding so far of medical imaging,
+
+00:00:08.400 --> 00:00:11.865
+clinical settings, stakeholders, and the FDA.
+
+00:00:11.865 --> 00:00:14.880
+There isn't necessarily a right or a wrong answer here,
+
+00:00:14.880 --> 00:00:16.680
+but I'm going to give you an example of something
+
+00:00:16.680 --> 00:00:18.930
+that I might have said for this exercise.
+
+00:00:18.930 --> 00:00:23.175
+So my hypothetical algorithm would use digital pathology,
+
+00:00:23.175 --> 00:00:26.310
+and it would be a segmentation algorithm used to
+
+00:00:26.310 --> 00:00:30.400
+segment and count red versus white blood cells in a blood smear.
+
+00:00:30.400 --> 00:00:35.480
+This would have to occur in the workflow after the microscopy data was digitized.
+
+00:00:35.480 --> 00:00:37.895
+But before I got to the pathologist,
+
+00:00:37.895 --> 00:00:41.210
+I would use this to help pathologists quickly count
+
+00:00:41.210 --> 00:00:45.409
+the number of red and white blood cells to compute the exact ratio.
+
+00:00:45.409 --> 00:00:48.125
+If the value is high of red to white,
+
+00:00:48.125 --> 00:00:50.545
+this could indicate leukemia.
+
+00:00:50.545 --> 00:00:53.795
+Since my algorithm would give an exact ratio,
+
+00:00:53.795 --> 00:00:57.425
+I think that this might be beneficial to a pathologist because
+
+00:00:57.425 --> 00:01:01.370
+it's better than them just estimating the ratio by looking at it.
+
+00:01:01.370 --> 00:01:04.070
+If that worked, this could be a good tool,
+
+00:01:04.070 --> 00:01:08.840
+maybe for early detection of leukemia or other types of infections.
+
+00:01:08.840 --> 00:01:12.679
+Since I haven't learned that much yet about risk scores,
+
+00:01:12.679 --> 00:01:15.020
+I'm going to guess that in the eyes of the FDA,
+
+00:01:15.020 --> 00:01:18.425
+this would be a class 1 or a class 2 device,
+
+00:01:18.425 --> 00:01:20.810
+because I don't think that something like this would be
+
+00:01:20.810 --> 00:01:23.915
+high risk and be considered class 3.
+
+00:01:23.915 --> 00:01:25.805
+If my algorithm is wrong,
+
+00:01:25.805 --> 00:01:29.555
+the pathologist is still going to look at the blood smear anyways,
+
+00:01:29.555 --> 00:01:31.835
+so they would be able to correct anything
+
+00:01:31.835 --> 00:01:36.390
+incorrect and the patient wouldn't really be at high risk.
+

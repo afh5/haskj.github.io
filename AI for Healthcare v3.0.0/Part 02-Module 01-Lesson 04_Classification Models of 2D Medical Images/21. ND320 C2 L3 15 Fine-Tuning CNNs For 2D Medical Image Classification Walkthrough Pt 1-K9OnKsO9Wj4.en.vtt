@@ -1,0 +1,196 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.865
+Here we get to actually building our model.
+
+00:00:02.865 --> 00:00:05.310
+While you can build CNNs from scratch,
+
+00:00:05.310 --> 00:00:07.650
+pre-trained models can be fine-tuned to
+
+00:00:07.650 --> 00:00:10.965
+perform really well for medical imaging applications,
+
+00:00:10.965 --> 00:00:14.040
+and this requires less training time and computing power.
+
+00:00:14.040 --> 00:00:16.110
+So that's what we'll focus on here.
+
+00:00:16.110 --> 00:00:18.570
+Recall from earlier in this lesson when we
+
+00:00:18.570 --> 00:00:21.100
+learned about the basic architecture of the CNN,
+
+00:00:21.100 --> 00:00:24.615
+and how it has a series of convolutional layers that feed
+
+00:00:24.615 --> 00:00:29.115
+into each other to identify more complex features about an image.
+
+00:00:29.115 --> 00:00:31.830
+We drew a parallel between these layers,
+
+00:00:31.830 --> 00:00:35.630
+and the layers of the human visual cortex whose cells recognize
+
+00:00:35.630 --> 00:00:41.015
+more and more complex features about the visual world as they feed into one another.
+
+00:00:41.015 --> 00:00:44.735
+Let's take a deeper dive into one of these layers.
+
+00:00:44.735 --> 00:00:48.245
+This layer is made up of 128 filters,
+
+00:00:48.245 --> 00:00:51.400
+each with a size of 112 by 112.
+
+00:00:51.400 --> 00:00:56.120
+It has been downsampled from the layer before that was 224 by 224,
+
+00:00:56.120 --> 00:00:58.685
+using a technique called Max pooling,
+
+00:00:58.685 --> 00:01:01.600
+which we won't go into depth about in this course.
+
+00:01:01.600 --> 00:01:05.480
+Each filter, we'll learn how to discriminate one simple feature,
+
+00:01:05.480 --> 00:01:07.450
+such as a basic line or shape,
+
+00:01:07.450 --> 00:01:10.835
+and 128 filters mean that at this level,
+
+00:01:10.835 --> 00:01:16.625
+the network is learning how to discriminate between 128 unique types of features.
+
+00:01:16.625 --> 00:01:20.635
+So let's take a closer look at what some of those filters might look like.
+
+00:01:20.635 --> 00:01:25.915
+Each box in this image represents a single filter from a convolutional layer.
+
+00:01:25.915 --> 00:01:30.350
+For example, this filter recognizes areas of an image where there are
+
+00:01:30.350 --> 00:01:34.760
+several sets of lines oriented at roughly a 45-degree angle.
+
+00:01:34.760 --> 00:01:38.270
+This filter becomes activated anytime a series
+
+00:01:38.270 --> 00:01:42.245
+of lines at a 45-degree angle is seen in an image.
+
+00:01:42.245 --> 00:01:48.020
+This filter recognizes areas of an image that have pink in the lower left quadrant,
+
+00:01:48.020 --> 00:01:50.045
+and green in the upper right quadrant,
+
+00:01:50.045 --> 00:01:54.810
+and becomes activated if there is a place in an image with this feature.
+
+00:01:54.880 --> 00:01:59.120
+Finally, this filter becomes activated when series
+
+00:01:59.120 --> 00:02:03.080
+of close together vertical lines are detected in an image.
+
+00:02:03.080 --> 00:02:04.790
+As we just learned,
+
+00:02:04.790 --> 00:02:08.120
+lots of filters in the early layers of a network recognized
+
+00:02:08.120 --> 00:02:11.885
+features from only a small area of the visual field of an image,
+
+00:02:11.885 --> 00:02:14.645
+like line orientations and color patterns.
+
+00:02:14.645 --> 00:02:17.235
+No matter what your classification task is,
+
+00:02:17.235 --> 00:02:20.155
+this will be true for all CNNs.
+
+00:02:20.155 --> 00:02:22.925
+So let's say that a researcher developed
+
+00:02:22.925 --> 00:02:28.115
+a very powerful CNN architecture that has been trained on millions of car images,
+
+00:02:28.115 --> 00:02:31.955
+so they could be accurately classified into different types of cars.
+
+00:02:31.955 --> 00:02:34.790
+This CNN model could then be used by
+
+00:02:34.790 --> 00:02:38.180
+another researcher to classify different types of cats.
+
+00:02:38.180 --> 00:02:40.235
+You may wonder how that's possible,
+
+00:02:40.235 --> 00:02:42.890
+but the reality is CNN architecture and
+
+00:02:42.890 --> 00:02:46.340
+weight are a lot more adaptive than you could probably imagine.
+
+00:02:46.340 --> 00:02:48.490
+The idea behind it is this.
+
+00:02:48.490 --> 00:02:53.180
+The first several layers of filters trained on car images are only going to
+
+00:02:53.180 --> 00:02:54.800
+learn how to detect line and
+
+00:02:54.800 --> 00:02:58.310
+shape-based features because their visual fields are so small.
+
+00:02:58.310 --> 00:03:01.100
+So what these layers would learn if they were trained on
+
+00:03:01.100 --> 00:03:04.470
+cat images would be pretty much the same i.e.
+
+00:03:04.470 --> 00:03:06.615
+line and shape-based features.
+
+00:03:06.615 --> 00:03:09.410
+So the researcher can reuse or freeze
+
+00:03:09.410 --> 00:03:12.710
+the pre-trained weights of the first few layers and only
+
+00:03:12.710 --> 00:03:14.600
+need to train filter weights to detect
+
+00:03:14.600 --> 00:03:18.440
+higher order features that are more relevant to our specific use case.
+
+00:03:18.440 --> 00:03:20.205
+In this case, cats.
+
+00:03:20.205 --> 00:03:23.180
+We call this process that only makes adjustments of
+
+00:03:23.180 --> 00:03:26.455
+weights in the last few layers, fine-tuning.
+
+00:03:26.455 --> 00:03:29.990
+This process can be used on 2D medical imaging as well.
+
+00:03:29.990 --> 00:03:37.110
+For example, fine tuning a pre-trained VGG16 model to detect tumors and chest x-rays
+

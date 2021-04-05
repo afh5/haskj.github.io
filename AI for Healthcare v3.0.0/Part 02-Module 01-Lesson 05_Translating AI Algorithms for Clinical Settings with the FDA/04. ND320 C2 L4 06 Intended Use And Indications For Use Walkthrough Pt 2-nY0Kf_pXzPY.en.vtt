@@ -1,0 +1,283 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.834
+When you bring your algorithm to the FDA,
+
+00:00:02.834 --> 00:00:07.635
+your intended use statement will tie directly to these risk categories.
+
+00:00:07.635 --> 00:00:10.815
+Let's take a non-algorithm example first.
+
+00:00:10.815 --> 00:00:13.350
+This is a classic example right off of
+
+00:00:13.350 --> 00:00:17.385
+the FDA's website that's used by many experts in the industry.
+
+00:00:17.385 --> 00:00:20.325
+Let's say you developed a new scalpel,
+
+00:00:20.325 --> 00:00:22.080
+but there's nothing special about it.
+
+00:00:22.080 --> 00:00:25.905
+It's just a run-of-the-mill reusable surgical scalpel.
+
+00:00:25.905 --> 00:00:28.920
+If you were to label it with the general labels of
+
+00:00:28.920 --> 00:00:32.325
+being intended to use to cut through tissue,
+
+00:00:32.325 --> 00:00:37.675
+this would actually be a Class 1 device and would be exempt from the FDA process.
+
+00:00:37.675 --> 00:00:42.400
+All it needs is labeling around its hazards and some guidelines for using it.
+
+00:00:42.400 --> 00:00:46.790
+But since it's not labeled as some things supporting, or sustaining life,
+
+00:00:46.790 --> 00:00:50.765
+or of substantial importance in preventing impairment to human health,
+
+00:00:50.765 --> 00:00:52.660
+it can be considered Class 1.
+
+00:00:52.660 --> 00:00:57.200
+Now, imagine you took that exact same scalpel and label
+
+00:00:57.200 --> 00:01:01.954
+it as being intended for use in optimal logic settings and eye surgery.
+
+00:01:01.954 --> 00:01:06.500
+Then it immediately becomes a Class 3 device since that usually
+
+00:01:06.500 --> 00:01:11.780
+sustains or supports life and presents potential unreasonable risk of illness or injury.
+
+00:01:11.780 --> 00:01:14.195
+Seems confusing, doesn't it?
+
+00:01:14.195 --> 00:01:18.595
+How can one device have two very different risk categories?
+
+00:01:18.595 --> 00:01:24.545
+Also, why would someone manufacturing the scalpel use this example of intended use,
+
+00:01:24.545 --> 00:01:28.625
+knowing that it would send them down a much more difficult regulatory path?
+
+00:01:28.625 --> 00:01:31.550
+There are lots of these types of nuances with
+
+00:01:31.550 --> 00:01:35.735
+the regulatory process and we could spend an entire course discussing them.
+
+00:01:35.735 --> 00:01:39.080
+What's important for you to know is that how you say
+
+00:01:39.080 --> 00:01:43.460
+your device or for you algorithm is intended to be used,
+
+00:01:43.460 --> 00:01:46.640
+is critically important when dealing with the FDA.
+
+00:01:46.640 --> 00:01:49.190
+Let's talk about an example more
+
+00:01:49.190 --> 00:01:52.700
+directly tied to what we've learned in this course so far.
+
+00:01:52.700 --> 00:01:56.510
+Suppose we developed a CNN that could classify
+
+00:01:56.510 --> 00:02:00.940
+whether or not a screening mammogram has a malignant tumor in it.
+
+00:02:00.940 --> 00:02:04.340
+If we stated it's intended use was for
+
+00:02:04.340 --> 00:02:07.550
+the identification of breast cancer from mammography,
+
+00:02:07.550 --> 00:02:09.770
+what class do you think it would be?
+
+00:02:09.770 --> 00:02:11.840
+Let's think about risk.
+
+00:02:11.840 --> 00:02:16.010
+Class 3 risk states that a device would fall into this category if it
+
+00:02:16.010 --> 00:02:20.405
+presents a potential unreasonable risk of illness or injury.
+
+00:02:20.405 --> 00:02:22.465
+Do you think this is the case?
+
+00:02:22.465 --> 00:02:28.190
+Ask yourself this, what would happen if your algorithm missed a diagnosis of cancer?
+
+00:02:28.190 --> 00:02:31.340
+The patient could die because they didn't start treatment.
+
+00:02:31.340 --> 00:02:36.205
+So given this, your device would likely be labeled as Class 3.
+
+00:02:36.205 --> 00:02:39.500
+The next question you might ask yourself is,
+
+00:02:39.500 --> 00:02:44.545
+is there already a device on the market that does this that the FDA has approved?
+
+00:02:44.545 --> 00:02:47.030
+In other words, a predicate device?
+
+00:02:47.030 --> 00:02:51.800
+If the FDA has already approved a device that has the same intended use
+
+00:02:51.800 --> 00:02:56.675
+as yours and you can demonstrate that your device is substantially equivalent,
+
+00:02:56.675 --> 00:03:00.650
+then you may be able to go down the 510(k) regulatory path,
+
+00:03:00.650 --> 00:03:03.055
+which is far less burdensome.
+
+00:03:03.055 --> 00:03:08.135
+If, however, you are unable to identify a predicate device on the market,
+
+00:03:08.135 --> 00:03:12.500
+your algorithm would have to seek pre-market approval or a PMA,
+
+00:03:12.500 --> 00:03:15.670
+which is far more burdensome and takes a lot longer.
+
+00:03:15.670 --> 00:03:19.100
+You may be surprised to know that in 2020,
+
+00:03:19.100 --> 00:03:22.730
+there is no such predicate device that exist on the market.
+
+00:03:22.730 --> 00:03:26.990
+So you would have to take the PMA route with an algorithm like this.
+
+00:03:26.990 --> 00:03:30.130
+Now, let's change our intended use statement.
+
+00:03:30.130 --> 00:03:33.860
+We'll instead say that our algorithm is intended to assist
+
+00:03:33.860 --> 00:03:38.795
+the radiologist in the detection of breast abnormalities on mammogram.
+
+00:03:38.795 --> 00:03:42.610
+The key words here are assisting the radiologist.
+
+00:03:42.610 --> 00:03:45.875
+In this case, it states that the burden of diagnosis
+
+00:03:45.875 --> 00:03:49.280
+is still on the radiologist at the end of the day,
+
+00:03:49.280 --> 00:03:53.035
+and that your algorithm is merely assisting their diagnosis.
+
+00:03:53.035 --> 00:03:56.015
+Perhaps this is by creating a bounding box
+
+00:03:56.015 --> 00:03:58.940
+around the suspicious areas to draw their eye to them,
+
+00:03:58.940 --> 00:04:01.280
+which may reduce the amount of time that they need to
+
+00:04:01.280 --> 00:04:04.315
+spend reading a study to find an abnormality.
+
+00:04:04.315 --> 00:04:07.595
+This is something that's referred to in the industry as
+
+00:04:07.595 --> 00:04:11.600
+Computer-Assisted Diagnosis or CADx.
+
+00:04:11.600 --> 00:04:14.750
+If we go back to the Class 3 risk statement,
+
+00:04:14.750 --> 00:04:16.920
+do we still think that this is true?
+
+00:04:16.920 --> 00:04:21.200
+If your algorithm puts the patient at any additional risk of injury,
+
+00:04:21.200 --> 00:04:24.130
+it is, but I don't think that's the case here.
+
+00:04:24.130 --> 00:04:27.905
+Of course, there's always the risk that the radiologists could be wrong,
+
+00:04:27.905 --> 00:04:30.050
+but that's a risk that already exists in
+
+00:04:30.050 --> 00:04:33.980
+the current medical imaging setting and is not due to your algorithm.
+
+00:04:33.980 --> 00:04:37.075
+So we can say it's probably not true.
+
+00:04:37.075 --> 00:04:39.480
+But now what? Is it Class 1,
+
+00:04:39.480 --> 00:04:40.905
+or is it Class 2?
+
+00:04:40.905 --> 00:04:45.545
+In theory, the radiologist is doing nothing different than they normally do.
+
+00:04:45.545 --> 00:04:47.980
+So this would be low-risk, right?
+
+00:04:47.980 --> 00:04:50.175
+Actually wrong.
+
+00:04:50.175 --> 00:04:53.600
+The FDA assumes that with technologies like this,
+
+00:04:53.600 --> 00:04:56.600
+the radiologists will probably end up relying on
+
+00:04:56.600 --> 00:04:59.810
+the software even though it's not labeled that way.
+
+00:04:59.810 --> 00:05:02.420
+In that case, they could end up relying on
+
+00:05:02.420 --> 00:05:05.720
+the software too much and miss a suspicious binding,
+
+00:05:05.720 --> 00:05:08.560
+because the algorithm didn't think that there was one.
+
+00:05:08.560 --> 00:05:14.605
+So historically, CADx devices had been considered Class 3 by the FDA.
+
+00:05:14.605 --> 00:05:18.334
+However, with the boom of AI in medical imaging,
+
+00:05:18.334 --> 00:05:22.280
+the FDA has started to change their tune over the past couple of years,
+
+00:05:22.280 --> 00:05:25.850
+and has started to classify a CADx devices as Class 2.
+
+00:05:25.850 --> 00:05:29.675
+But this still means that without a predicate device,
+
+00:05:29.675 --> 00:05:33.660
+your algorithm would have to go down the PMA pathway.
+

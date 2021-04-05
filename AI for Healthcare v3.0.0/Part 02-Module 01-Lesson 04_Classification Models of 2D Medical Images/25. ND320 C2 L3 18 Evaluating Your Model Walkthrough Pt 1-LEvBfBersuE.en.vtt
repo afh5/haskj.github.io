@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.695
+After you build a model,
+
+00:00:01.695 --> 00:00:02.730
+you'll have to train it.
+
+00:00:02.730 --> 00:00:05.670
+It's important to know when to stop training so that
+
+00:00:05.670 --> 00:00:09.240
+your performance is maximized on a hold-out validations set.
+
+00:00:09.240 --> 00:00:12.510
+Monitoring the performance of the model on both training and
+
+00:00:12.510 --> 00:00:17.205
+validation sets is informative and plays a role in your FDA submission process.
+
+00:00:17.205 --> 00:00:20.820
+First, we'll talk about how to actually train our models.
+
+00:00:20.820 --> 00:00:22.695
+In the previous part of this lesson,
+
+00:00:22.695 --> 00:00:27.390
+we learned about splitting our data into two sets, training and validation.
+
+00:00:27.390 --> 00:00:30.495
+Now that we've learned how to build a CNN architecture,
+
+00:00:30.495 --> 00:00:32.610
+we're going to learn how to use these sets to
+
+00:00:32.610 --> 00:00:35.580
+train our filter weights and evaluate performance.
+
+00:00:35.580 --> 00:00:38.050
+First, let start with the training set.
+
+00:00:38.050 --> 00:00:43.270
+This set of data is going to be fed into your CNN over and over again,
+
+00:00:43.270 --> 00:00:46.520
+while it tries to learn important features of your data.
+
+00:00:46.520 --> 00:00:50.300
+Each time the entire dataset is passed through the CNN,
+
+00:00:50.300 --> 00:00:52.594
+we call this one epoch.
+
+00:00:52.594 --> 00:00:56.660
+At each epoch, we may decide to apply augmentation to some of
+
+00:00:56.660 --> 00:01:02.920
+our training images so that our CNN doesn't see quite the same images every single time.
+
+00:01:02.920 --> 00:01:04.985
+At the end of each epoch,
+
+00:01:04.985 --> 00:01:08.090
+our CNN has something called a loss function to
+
+00:01:08.090 --> 00:01:12.470
+calculate how different it's prediction is from the ground truth of the training image.
+
+00:01:12.470 --> 00:01:15.520
+We can call this difference the training loss.
+
+00:01:15.520 --> 00:01:17.195
+If the loss is small,
+
+00:01:17.195 --> 00:01:22.775
+it means the CNN did well in classifying the training images that it saw in our epoch.
+
+00:01:22.775 --> 00:01:27.380
+The network then uses the training loss to go back and update
+
+00:01:27.380 --> 00:01:31.715
+the weights of every single filter in the layers that we want to train.
+
+00:01:31.715 --> 00:01:34.670
+This technique is called backpropagation.
+
+00:01:34.670 --> 00:01:39.880
+It updates weights in a way that makes weights more accurate in the next epoch.
+
+00:01:39.880 --> 00:01:42.185
+Once these weights are updated,
+
+00:01:42.185 --> 00:01:45.185
+the training data is processed again in a second epoch,
+
+00:01:45.185 --> 00:01:46.895
+and the process repeats.
+
+00:01:46.895 --> 00:01:50.240
+Choosing how many epochs to train for is important.
+
+00:01:50.240 --> 00:01:54.155
+Training as many epochs as possible is not always useful.
+
+00:01:54.155 --> 00:01:56.345
+Next, we'll learn how to monitor this loss
+
+00:01:56.345 --> 00:01:59.300
+over time to know when we should stop training.
+
+00:01:59.300 --> 00:02:03.020
+So where does our validation data fit in here?
+
+00:02:03.020 --> 00:02:05.060
+At the end of each epoch,
+
+00:02:05.060 --> 00:02:08.660
+we learned that we use a loss function for the training loss that
+
+00:02:08.660 --> 00:02:12.675
+measures how the prediction matches the ground truth of training images.
+
+00:02:12.675 --> 00:02:17.795
+This training loss was then used to update our filter weights through backpropagation.
+
+00:02:17.795 --> 00:02:24.245
+Well, we also use that loss function to evaluate the loss on our held-out validation set.
+
+00:02:24.245 --> 00:02:27.095
+That is, we calculate a validation loss
+
+00:02:27.095 --> 00:02:30.630
+that measures how the prediction matches the validation data.
+
+00:02:30.630 --> 00:02:33.590
+Same here, a smaller loss indicates that
+
+00:02:33.590 --> 00:02:37.120
+the CNN did while classifying a validation image,
+
+00:02:37.120 --> 00:02:38.675
+except for at this step,
+
+00:02:38.675 --> 00:02:40.420
+we don't update our weights.
+
+00:02:40.420 --> 00:02:44.420
+The validation set is just a test of performance of our model,
+
+00:02:44.420 --> 00:02:47.370
+not teaching it how to be better.
+

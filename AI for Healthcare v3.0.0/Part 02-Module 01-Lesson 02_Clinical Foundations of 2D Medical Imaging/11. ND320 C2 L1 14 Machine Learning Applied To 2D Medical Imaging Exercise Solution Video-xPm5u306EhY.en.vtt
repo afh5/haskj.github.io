@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.495
+You can view my whole solution notebook for this exercise,
+
+00:00:03.495 --> 00:00:05.535
+but I'll walk you through a piece of it.
+
+00:00:05.535 --> 00:00:09.700
+You can see that I added some columns to my original data frame.
+
+00:00:09.700 --> 00:00:12.735
+I created this max_prob column,
+
+00:00:12.735 --> 00:00:16.485
+which takes the max of either brain bleed probability,
+
+00:00:16.485 --> 00:00:19.135
+or aortic dissection probability.
+
+00:00:19.135 --> 00:00:23.150
+I then reordered my data frame according to this max_prob.
+
+00:00:23.150 --> 00:00:27.185
+So the images with larger probabilities were put to the top of the queue.
+
+00:00:27.185 --> 00:00:31.580
+Next, I created a time to read prioritized column,
+
+00:00:31.580 --> 00:00:35.375
+that was simply values incremented by six minutes per row.
+
+00:00:35.375 --> 00:00:39.890
+This is the new reading time based on the reordered queue.
+
+00:00:39.890 --> 00:00:44.015
+Finally, I calculated a timedelta column.
+
+00:00:44.015 --> 00:00:48.665
+This is time to read minus time to read prioritized,
+
+00:00:48.665 --> 00:00:53.830
+so that I could get a sense of how much time was saved from the original order.
+
+00:00:53.830 --> 00:00:56.750
+Here I'm showing all of the scans,
+
+00:00:56.750 --> 00:01:00.900
+where at least 30 minutes were saved on head CTs.
+

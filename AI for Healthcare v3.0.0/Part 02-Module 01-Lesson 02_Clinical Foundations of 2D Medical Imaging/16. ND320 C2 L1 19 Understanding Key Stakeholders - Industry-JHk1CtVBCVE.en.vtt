@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.135
+Now let's talk about the industry stakeholders.
+
+00:00:03.135 --> 00:00:05.610
+They include medical device companies,
+
+00:00:05.610 --> 00:00:08.280
+software companies, and hospitals.
+
+00:00:08.280 --> 00:00:12.569
+Many medical device companies who manufacture X-ray, CT,
+
+00:00:12.569 --> 00:00:17.250
+and MRI devices typically have accompanying imaging software.
+
+00:00:17.250 --> 00:00:22.410
+They also build their own AI algorithms to run on their hardware and are subject
+
+00:00:22.410 --> 00:00:27.930
+to the same regulatory guidelines for their algorithms as standalone software companies.
+
+00:00:27.930 --> 00:00:31.535
+Good examples of this are Siemens and GE,
+
+00:00:31.535 --> 00:00:34.675
+who manufacture CT and MRI devices.
+
+00:00:34.675 --> 00:00:39.545
+They can build AI algorithms into their software that reconstructs images.
+
+00:00:39.545 --> 00:00:41.900
+So for example, every time
+
+00:00:41.900 --> 00:00:45.979
+a chest x-ray is taken with one of their machines and send to a pax,
+
+00:00:45.979 --> 00:00:49.210
+it could be automatically assessed for lung nodules.
+
+00:00:49.210 --> 00:00:55.310
+The industry around standalone software companies is growing every day with many startups
+
+00:00:55.310 --> 00:01:01.160
+popping up that focus specifically on AI algorithms for particular types of imaging,
+
+00:01:01.160 --> 00:01:02.900
+such as digital pathology,
+
+00:01:02.900 --> 00:01:05.465
+or for particular clinical applications,
+
+00:01:05.465 --> 00:01:08.815
+such as algorithms for breast cancer detection.
+
+00:01:08.815 --> 00:01:12.275
+These software companies can act more dynamically
+
+00:01:12.275 --> 00:01:15.520
+because they are not tied to a specific hardware system.
+
+00:01:15.520 --> 00:01:19.265
+But this also poses a regulatory challenge for them,
+
+00:01:19.265 --> 00:01:22.670
+because the FDA wants to know if an algorithm performs the
+
+00:01:22.670 --> 00:01:26.255
+same across all hardware systems and if not,
+
+00:01:26.255 --> 00:01:28.720
+which ones it's appropriate for.
+
+00:01:28.720 --> 00:01:32.824
+Some good examples of companies in this space are Zebra,
+
+00:01:32.824 --> 00:01:36.529
+who actually provides a work-list Prioritization solution
+
+00:01:36.529 --> 00:01:39.605
+similar to the one you performed earlier in this lesson,
+
+00:01:39.605 --> 00:01:45.400
+as well as a bone health diagnostic for CT and breast health diagnostic for mammography.
+
+00:01:45.400 --> 00:01:49.505
+Another interesting company in this space is called Path.AI,
+
+00:01:49.505 --> 00:01:53.465
+who does disease diagnostics from digital pathology images.
+
+00:01:53.465 --> 00:01:56.689
+Finally, hospitals are a key stakeholder,
+
+00:01:56.689 --> 00:01:59.890
+as they are typically the customer for such algorithms.
+
+00:01:59.890 --> 00:02:02.105
+Hospitals must be sure that they have
+
+00:02:02.105 --> 00:02:05.120
+adequate infrastructure needed for algorithm deployment,
+
+00:02:05.120 --> 00:02:08.875
+such as cloud resources or on-site GPUs.
+
+00:02:08.875 --> 00:02:12.125
+More than that, in order to purchase an algorithm,
+
+00:02:12.125 --> 00:02:14.690
+a hospital or radiology department must
+
+00:02:14.690 --> 00:02:17.785
+be convinced that it will save them money in the long run.
+
+00:02:17.785 --> 00:02:22.850
+This could be through optimizing clinical workflows and saving radiologists time,
+
+00:02:22.850 --> 00:02:26.930
+or by reducing the need for certain types of expensive imaging.
+
+00:02:26.930 --> 00:02:30.650
+Hospitals are also interested in getting better care to patients.
+
+00:02:30.650 --> 00:02:34.640
+But remember, radiologists are very good at their jobs and
+
+00:02:34.640 --> 00:02:37.310
+a smart market strategy is not necessarily to
+
+00:02:37.310 --> 00:02:40.295
+be better than the radiologist at making diagnoses,
+
+00:02:40.295 --> 00:02:44.490
+but rather helping them to perform their jobs more easily.
+

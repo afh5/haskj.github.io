@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.820
+What did you guys think of this exercise?
+
+00:00:02.820 --> 00:00:05.235
+Image augmentation is pretty cool.
+
+00:00:05.235 --> 00:00:07.965
+I'll walk you through how I approached it.
+
+00:00:07.965 --> 00:00:12.164
+Here, I just started by looking at some of my plain images.
+
+00:00:12.164 --> 00:00:17.880
+Next, I added a bunch of augmentation using the parameters for image data generator.
+
+00:00:17.880 --> 00:00:23.100
+You can see that I used a lot of similar parameters to what we covered in the lesson.
+
+00:00:23.100 --> 00:00:26.250
+You will also notice that I used a function called
+
+00:00:26.250 --> 00:00:30.090
+"Flow From Data Frame" instead of "Flow From Directory",
+
+00:00:30.090 --> 00:00:31.755
+like I covered in the lesson.
+
+00:00:31.755 --> 00:00:36.890
+This is just easier because I had all of my file image path stored in a data frame,
+
+00:00:36.890 --> 00:00:40.130
+and it is identical in function to "Flow From Directory".
+
+00:00:40.130 --> 00:00:43.045
+This may be a handy tool in your project.
+
+00:00:43.045 --> 00:00:47.105
+Then I inspected what my augmentation did to my images.
+
+00:00:47.105 --> 00:00:50.345
+These look different, but not too different.
+
+00:00:50.345 --> 00:00:56.345
+I then added different types of augmentation including vertical flip,
+
+00:00:56.345 --> 00:00:59.045
+which I told you guys not to do.
+
+00:00:59.045 --> 00:01:03.790
+Hopefully, here you can see why I wouldn't want to use vertical flip.
+
+00:01:03.790 --> 00:01:07.175
+These images all appear nearly upside down,
+
+00:01:07.175 --> 00:01:11.160
+which I'd never see in a real-world's clinical setting.
+

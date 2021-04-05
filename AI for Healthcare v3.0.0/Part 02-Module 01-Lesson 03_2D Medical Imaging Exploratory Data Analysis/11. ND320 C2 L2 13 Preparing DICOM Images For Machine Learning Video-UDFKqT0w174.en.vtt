@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.600
+Recall that a DICOM file contains a header which stores
+
+00:00:03.600 --> 00:00:08.940
+all non-image attributes and an image component that have image attributes.
+
+00:00:08.940 --> 00:00:14.010
+Now that we know how to look at the image component of our DICOM files, in this video,
+
+00:00:14.010 --> 00:00:17.565
+we will talk about how to extract non-image information,
+
+00:00:17.565 --> 00:00:21.105
+i.e the header component from our DICOM files.
+
+00:00:21.105 --> 00:00:26.925
+Recall that when we read DICOM attributes using the pydicom dcm read command,
+
+00:00:26.925 --> 00:00:32.625
+we can look at all of the other useful header data that comes with the DICOM file.
+
+00:00:32.625 --> 00:00:34.400
+As you may know,
+
+00:00:34.400 --> 00:00:36.980
+there's usually a lot of data in a data set that
+
+00:00:36.980 --> 00:00:39.815
+we might use when training our machine learning model.
+
+00:00:39.815 --> 00:00:45.380
+It's really not efficient to access DICOM headers for every image every time.
+
+00:00:45.380 --> 00:00:51.335
+Instead, we want fast access to useful information across the entire data set.
+
+00:00:51.335 --> 00:00:54.530
+The best way to do this is to extract all data from
+
+00:00:54.530 --> 00:00:57.805
+DICOM headers into a dataframe in advance.
+
+00:00:57.805 --> 00:01:03.125
+So what are the key attributes in a header that are useful to train our model?
+
+00:01:03.125 --> 00:01:05.360
+Well, of course, it depends on your model,
+
+00:01:05.360 --> 00:01:08.225
+but here's a few that can get you started.
+
+00:01:08.225 --> 00:01:12.035
+Patient ID will uniquely identify each patient,
+
+00:01:12.035 --> 00:01:14.825
+which is critical for algorithm training set up.
+
+00:01:14.825 --> 00:01:20.050
+You never want to include the same patient in both the training and the validation sets.
+
+00:01:20.050 --> 00:01:23.600
+Patient sex is also probably important for algorithm training,
+
+00:01:23.600 --> 00:01:26.180
+as you probably want to make sure that your training and
+
+00:01:26.180 --> 00:01:30.580
+validating on data that has equal male, female proportions.
+
+00:01:30.580 --> 00:01:34.700
+Patient age is also probably important for algorithm training,
+
+00:01:34.700 --> 00:01:37.370
+as you probably want to make sure that your training in
+
+00:01:37.370 --> 00:01:41.425
+validating on data sets that have equal age distributions.
+
+00:01:41.425 --> 00:01:46.880
+You may have multiple studies per patient and within each study, multiple series.
+
+00:01:46.880 --> 00:01:49.370
+Similar to the case where we want to make sure we're
+
+00:01:49.370 --> 00:01:52.085
+not training and validating on the same patient,
+
+00:01:52.085 --> 00:01:57.230
+we also want to make sure that we're not over training on repeated study in series.
+
+00:01:57.230 --> 00:02:01.940
+The DICOM header has some other applications besides just training models.
+
+00:02:01.940 --> 00:02:03.560
+As we learned in Lesson 1,
+
+00:02:03.560 --> 00:02:06.650
+the FDA is concerned with device safety and making
+
+00:02:06.650 --> 00:02:10.345
+sure that your device is used the way it's labeled for intended use.
+
+00:02:10.345 --> 00:02:15.215
+We can mitigate some risks of the algorithm from using just the DICOM header.
+
+00:02:15.215 --> 00:02:18.320
+For example, you may want to screen the header for
+
+00:02:18.320 --> 00:02:23.590
+patient age to make sure that this patient is appropriate for use with this algorithm.
+
+00:02:23.590 --> 00:02:28.490
+The DICOM header can also be used to optimize the image processing.
+
+00:02:28.490 --> 00:02:32.270
+One example would be to use the series data in the header to
+
+00:02:32.270 --> 00:02:36.415
+pre-select images for interest in processing by your algorithm.
+
+00:02:36.415 --> 00:02:40.975
+Remember how we talked about how a patient study contains many series?
+
+00:02:40.975 --> 00:02:44.615
+Well, often only part of that study will be relevant.
+
+00:02:44.615 --> 00:02:48.170
+For example, the part of the body that you may be interested
+
+00:02:48.170 --> 00:02:52.070
+in for your algorithm may only be visible in one series.
+
+00:02:52.070 --> 00:02:54.560
+In this case, how will your algorithm be
+
+00:02:54.560 --> 00:02:57.695
+smart enough to know which images it should process?
+
+00:02:57.695 --> 00:03:01.655
+Of course, you could take the brute force approach of running the algorithm on
+
+00:03:01.655 --> 00:03:05.745
+every image in the study but that doesn't really make much sense.
+
+00:03:05.745 --> 00:03:08.420
+Alternatively, and a much better way,
+
+00:03:08.420 --> 00:03:11.030
+would be to use the DICOM header data to
+
+00:03:11.030 --> 00:03:16.020
+pre-select images using the DICOM header that need to be processed.
+

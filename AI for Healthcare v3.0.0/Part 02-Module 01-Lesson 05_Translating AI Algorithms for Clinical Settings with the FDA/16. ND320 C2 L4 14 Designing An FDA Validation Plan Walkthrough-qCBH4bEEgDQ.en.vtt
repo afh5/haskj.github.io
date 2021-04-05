@@ -1,0 +1,328 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.350
+In our last lesson,
+
+00:00:01.350 --> 00:00:06.165
+we discussed gold standards against which to evaluate the performance of our algorithms.
+
+00:00:06.165 --> 00:00:08.265
+This is very important for the FDA
+
+00:00:08.265 --> 00:00:10.950
+because typically you want to be able to say that your tool
+
+00:00:10.950 --> 00:00:12.360
+really has been compared to
+
+00:00:12.360 --> 00:00:16.365
+the best available tools so that you can say it's adding value.
+
+00:00:16.365 --> 00:00:18.910
+If it's not better than the gold standard,
+
+00:00:18.910 --> 00:00:21.660
+big improvements to other aspects can be defended as
+
+00:00:21.660 --> 00:00:24.720
+making the algorithm better than the existing.
+
+00:00:24.720 --> 00:00:26.760
+Recall from Lesson 3,
+
+00:00:26.760 --> 00:00:28.530
+we talked a lot about training
+
+00:00:28.530 --> 00:00:31.710
+your algorithm and then validating it with a health outset.
+
+00:00:31.710 --> 00:00:35.490
+It's common to create algorithms from data that exists publicly,
+
+00:00:35.490 --> 00:00:38.470
+which is what you'll actually be doing in your final project.
+
+00:00:38.470 --> 00:00:41.680
+For the final step in submitting to the FDA though,
+
+00:00:41.680 --> 00:00:44.750
+you'll need to perform a standalone clinical assessment of
+
+00:00:44.750 --> 00:00:48.740
+your tool that uses an FDA validation set from a real-world
+
+00:00:48.740 --> 00:00:52.280
+setting to prove to the FDA that your algorithm works on
+
+00:00:52.280 --> 00:00:56.740
+data that looks more similar to what you'd see coming directly from a hospital.
+
+00:00:56.740 --> 00:01:00.440
+You can think of this dataset as production data that
+
+00:01:00.440 --> 00:01:04.490
+your algorithm is trying to perform it based on just once,
+
+00:01:04.490 --> 00:01:06.460
+now that it's been fully produced.
+
+00:01:06.460 --> 00:01:10.280
+You will run this production through your algorithm only one time after you
+
+00:01:10.280 --> 00:01:14.860
+fully build the software around it and feel that it has its best performance.
+
+00:01:14.860 --> 00:01:18.350
+These validation plans also sometimes involve
+
+00:01:18.350 --> 00:01:21.320
+deploying your algorithm in a real clinical setting and
+
+00:01:21.320 --> 00:01:24.410
+assessing its performance in real time while it runs in
+
+00:01:24.410 --> 00:01:27.895
+the background of clinicians performing their regular workflows.
+
+00:01:27.895 --> 00:01:32.435
+This may be especially important if you're claiming that your algorithm saves time.
+
+00:01:32.435 --> 00:01:36.830
+For instance, if you are demonstrating that your algorithm can read the same number of
+
+00:01:36.830 --> 00:01:41.645
+scans as a radiologist in half the time with a similar level of accuracy,
+
+00:01:41.645 --> 00:01:45.260
+you'd probably want to show that in a real clinical workflow.
+
+00:01:45.260 --> 00:01:48.980
+You'll need to identify a clinical partner who you can work with to
+
+00:01:48.980 --> 00:01:53.035
+gather this FDA validation set for your validation plan.
+
+00:01:53.035 --> 00:01:57.050
+This partner will collect data from a real-world clinical setting that you
+
+00:01:57.050 --> 00:02:02.000
+describe so that you can see how your algorithm performs under these specifications.
+
+00:02:02.000 --> 00:02:05.920
+First, you'll want to describe who you want the data from.
+
+00:02:05.920 --> 00:02:10.190
+For example, if your algorithm is only intended and indicated for
+
+00:02:10.190 --> 00:02:14.750
+women between the ages of 20-80 with no prior history of breast cancer,
+
+00:02:14.750 --> 00:02:19.730
+then you would ask your clinical partner for data from patients who fit this demographic.
+
+00:02:19.730 --> 00:02:23.590
+You'll also want to specify what types of images you're looking for.
+
+00:02:23.590 --> 00:02:28.025
+If your algorithm is only intended to be used on screening mammography studies,
+
+00:02:28.025 --> 00:02:32.180
+which have a different imaging protocol than other types of mammography studies,
+
+00:02:32.180 --> 00:02:35.630
+then specify this for your data collection as well.
+
+00:02:35.630 --> 00:02:38.720
+Next, you will need to choose a way that you create
+
+00:02:38.720 --> 00:02:43.115
+the ground truth of all of the clinical data that your partner provided you with.
+
+00:02:43.115 --> 00:02:47.650
+The choice of your ground truth ties back once again to your intended use statement.
+
+00:02:47.650 --> 00:02:52.040
+Let's look at an algorithm that detects masses on mammography screens.
+
+00:02:52.040 --> 00:02:57.260
+If your claim is that your device is intended to determine if a mass is malignant,
+
+00:02:57.260 --> 00:03:00.625
+you will need a biopsy to create the ground truth.
+
+00:03:00.625 --> 00:03:03.410
+But if you are making something that's
+
+00:03:03.410 --> 00:03:07.580
+card xed to help identify suspicious findings on imaging,
+
+00:03:07.580 --> 00:03:12.040
+the gold standard for that clinically would just be a radiologist read.
+
+00:03:12.040 --> 00:03:14.765
+Since you're not creating something that's replacing
+
+00:03:14.765 --> 00:03:18.130
+the radiologist or intended to be better than the radiologist,
+
+00:03:18.130 --> 00:03:20.265
+this is a fine ground truth.
+
+00:03:20.265 --> 00:03:24.980
+So you can make a case to the FDA that a perfectly reasonable ground truth
+
+00:03:24.980 --> 00:03:27.080
+is a radiologist labels and that you're going to
+
+00:03:27.080 --> 00:03:29.815
+compare your algorithm performance to these.
+
+00:03:29.815 --> 00:03:31.835
+Even stronger ground truth,
+
+00:03:31.835 --> 00:03:33.545
+if you have the time and money for it,
+
+00:03:33.545 --> 00:03:36.530
+would be to create that silver standard that we discussed
+
+00:03:36.530 --> 00:03:40.315
+back in Lesson 3 using multiple radiologists.
+
+00:03:40.315 --> 00:03:42.345
+For your validation plan,
+
+00:03:42.345 --> 00:03:45.380
+you want to tell the FDA what a good score is
+
+00:03:45.380 --> 00:03:48.785
+for your algorithm and have evidence to support your reasoning.
+
+00:03:48.785 --> 00:03:51.980
+As a result, we need a performance standard.
+
+00:03:51.980 --> 00:03:55.685
+This is a great opportunity to leverage the literature.
+
+00:03:55.685 --> 00:04:01.175
+While you could conduct your own study to see how accurate a bunch of radiologists are,
+
+00:04:01.175 --> 00:04:03.380
+you should first see if it's reported somewhere in
+
+00:04:03.380 --> 00:04:06.310
+the literature as this will be a lot easier.
+
+00:04:06.310 --> 00:04:09.560
+You will come across a bunch of studies that you can
+
+00:04:09.560 --> 00:04:12.715
+use to gather radiologist performance statistics.
+
+00:04:12.715 --> 00:04:15.665
+Let's say that after reading through a bunch of papers,
+
+00:04:15.665 --> 00:04:19.100
+you find that there is a range of F1 scores and decide that
+
+00:04:19.100 --> 00:04:23.875
+your algorithm should have at least an F1 score that is the average from these studies.
+
+00:04:23.875 --> 00:04:28.465
+You can use this as evidence of good performance on a device for the FDA.
+
+00:04:28.465 --> 00:04:31.339
+Depending on the use case for your algorithm,
+
+00:04:31.339 --> 00:04:33.770
+part of your validation plan may need to
+
+00:04:33.770 --> 00:04:37.190
+include assessing how fast your algorithm can read a study.
+
+00:04:37.190 --> 00:04:39.395
+This becomes a little more complex,
+
+00:04:39.395 --> 00:04:42.260
+but I wanted to touch on it just for completeness.
+
+00:04:42.260 --> 00:04:45.425
+Let's say part of your algorithm's indications for use,
+
+00:04:45.425 --> 00:04:48.020
+say that it could be used in an emergency setting,
+
+00:04:48.020 --> 00:04:52.865
+like the example we've been using about brain bleeds in workflow prioritization.
+
+00:04:52.865 --> 00:04:56.825
+You'll want to demonstrate how fast your algorithm can read an image.
+
+00:04:56.825 --> 00:04:59.645
+Again, I don't want to dive too deep into this,
+
+00:04:59.645 --> 00:05:02.720
+but you may need to show that your algorithm can do this in
+
+00:05:02.720 --> 00:05:06.785
+an actual clinical setting to prove not only that it can run fast,
+
+00:05:06.785 --> 00:05:10.435
+but it can run fast on a hospital's actual infrastructure.
+
+00:05:10.435 --> 00:05:15.350
+If your algorithm depends on such software to actually return a timely answer,
+
+00:05:15.350 --> 00:05:18.350
+then this would fall into your algorithmic limitations as
+
+00:05:18.350 --> 00:05:21.965
+well as indications for use sections that we talked about earlier.
+
+00:05:21.965 --> 00:05:26.195
+You also may need a third party to verify that your algorithm returned
+
+00:05:26.195 --> 00:05:30.875
+accurate results in the specified amount of time if this is part of your labeling.
+
+00:05:30.875 --> 00:05:33.560
+Let's recap and put everything together that we
+
+00:05:33.560 --> 00:05:36.575
+just learned about a validation plan for the FDA.
+
+00:05:36.575 --> 00:05:38.510
+First, you'll need to define
+
+00:05:38.510 --> 00:05:41.000
+an FDA validation dataset that you can
+
+00:05:41.000 --> 00:05:44.255
+obtain from your clinical partner to test your algorithm.
+
+00:05:44.255 --> 00:05:47.090
+Next, you'll need to gather ground truth labels
+
+00:05:47.090 --> 00:05:50.780
+likely from a radiologist or a group of radiologists.
+
+00:05:50.780 --> 00:05:53.840
+Next, you'll need to define a performance standard for
+
+00:05:53.840 --> 00:05:58.325
+your algorithm that you can use backing up with literature references.
+
+00:05:58.325 --> 00:06:01.670
+Finally, run your algorithm on the data to prove that it meets
+
+00:06:01.670 --> 00:06:05.470
+the performance standard and you'll be all set to submit to the FDA.
+
+00:06:05.470 --> 00:06:07.880
+Hopefully, your device or algorithm will be
+
+00:06:07.880 --> 00:06:11.520
+approved and ready for use to make some impact.
+

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.545
+There's a key point that I want to make sure I make before we start this course together.
+
+00:00:04.545 --> 00:00:07.905
+Radiologists are really good at their jobs.
+
+00:00:07.905 --> 00:00:11.160
+They're trained for years to be able to accurately assess
+
+00:00:11.160 --> 00:00:15.315
+images from all different types of imaging modalities that assess
+
+00:00:15.315 --> 00:00:18.810
+every cubic inch of the human body so that they can
+
+00:00:18.810 --> 00:00:23.265
+rapidly diagnose tens of thousands of diseases and disorders.
+
+00:00:23.265 --> 00:00:27.900
+It is truly remarkable to watch a trained radiologist in action.
+
+00:00:27.900 --> 00:00:31.530
+To this end, what I want to make clear is that AI should
+
+00:00:31.530 --> 00:00:36.090
+not be thought of something that should be used to replace the radiologist,
+
+00:00:36.090 --> 00:00:38.610
+at least not in 2020.
+
+00:00:38.610 --> 00:00:41.930
+You may be able to develop an algorithm that performs
+
+00:00:41.930 --> 00:00:45.455
+better than a radiologist in a very specific setting,
+
+00:00:45.455 --> 00:00:47.615
+but as you will learn throughout this course,
+
+00:00:47.615 --> 00:00:51.380
+your algorithm needs to perform well on lots of different data sets,
+
+00:00:51.380 --> 00:00:54.530
+in lots of different settings to really stand the test
+
+00:00:54.530 --> 00:00:58.220
+of becoming a tool that can be deployed into a clinical setting.
+
+00:00:58.220 --> 00:01:00.980
+To that end, you should think of AI as
+
+00:01:00.980 --> 00:01:03.965
+something that you create to make the lives of radiologists and
+
+00:01:03.965 --> 00:01:07.220
+other clinicians involved better and more
+
+00:01:07.220 --> 00:01:11.550
+able to do their jobs rather than something to replace them.
+

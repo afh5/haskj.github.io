@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.175
+So you've probably had some experience building classification models before.
+
+00:00:05.175 --> 00:00:08.610
+If you're like me, you were first introduced to deep learning for
+
+00:00:08.610 --> 00:00:12.254
+images using the classic cats versus dogs example.
+
+00:00:12.254 --> 00:00:16.230
+The big picture with this lesson is to understand how and why
+
+00:00:16.230 --> 00:00:22.185
+those exact same CNN deep network architectures are useful for medical images,
+
+00:00:22.185 --> 00:00:24.750
+but also what the extra work is that you will
+
+00:00:24.750 --> 00:00:27.555
+need to do to repurpose them for clinical use.
+
+00:00:27.555 --> 00:00:30.810
+The world becomes messier and the stakes become higher when we
+
+00:00:30.810 --> 00:00:34.170
+move from cats and dogs to X-rays and mammograms,
+
+00:00:34.170 --> 00:00:38.560
+but we've already laid all the foundation that you need to do this.
+

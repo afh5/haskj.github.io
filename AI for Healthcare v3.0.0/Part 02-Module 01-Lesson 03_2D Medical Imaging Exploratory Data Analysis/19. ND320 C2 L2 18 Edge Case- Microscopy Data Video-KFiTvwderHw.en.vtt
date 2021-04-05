@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.795
+In lesson 1, we touched briefly upon microscopy data,
+
+00:00:03.795 --> 00:00:06.480
+a special type of 2D imaging data.
+
+00:00:06.480 --> 00:00:08.415
+Now let's dive deeper.
+
+00:00:08.415 --> 00:00:12.300
+Not all 2D medical images are stored as DICOM.
+
+00:00:12.300 --> 00:00:17.340
+Microscopy images are not stored in DICOM since they do not come from a digital machine.
+
+00:00:17.340 --> 00:00:20.520
+Instead, they are biological data and they come
+
+00:00:20.520 --> 00:00:24.135
+from smeared physical cells onto a slide from patients.
+
+00:00:24.135 --> 00:00:26.510
+They often need to be transformed into
+
+00:00:26.510 --> 00:00:30.620
+digital mages using a camera before we can apply machine learning to them.
+
+00:00:30.620 --> 00:00:34.810
+This transformation technique is called digital pathology.
+
+00:00:34.810 --> 00:00:38.130
+The first step of transforming microscopy data to
+
+00:00:38.130 --> 00:00:41.595
+a digital image is to get the sample from the patient,
+
+00:00:41.595 --> 00:00:46.175
+then cells are dyed into different colors based on their structure,
+
+00:00:46.175 --> 00:00:48.140
+and viewed by a microscope.
+
+00:00:48.140 --> 00:00:53.755
+The microscopy data is then captured by a camera to form a digital image.
+
+00:00:53.755 --> 00:00:56.075
+Once images are digitized,
+
+00:00:56.075 --> 00:00:58.790
+they can be processed with machine learning in the same way
+
+00:00:58.790 --> 00:01:02.760
+as you would use the pixel data extracted from DICOMs.
+

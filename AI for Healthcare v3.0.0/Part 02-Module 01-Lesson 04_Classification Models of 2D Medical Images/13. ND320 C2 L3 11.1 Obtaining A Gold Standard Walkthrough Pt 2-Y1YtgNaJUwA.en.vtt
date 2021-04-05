@@ -1,0 +1,229 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+The ground truth of a dataset represents the set of
+
+00:00:03.390 --> 00:00:07.350
+labels that determine which class each data element belongs to.
+
+00:00:07.350 --> 00:00:13.110
+Bounding boxes that designate the area of a finding for localization tasks or actual
+
+00:00:13.110 --> 00:00:15.120
+pixel level image masks that show
+
+00:00:15.120 --> 00:00:19.170
+the exact pixels that contain a finding for segmentation.
+
+00:00:19.170 --> 00:00:22.560
+Ground truths can be created in many different ways,
+
+00:00:22.560 --> 00:00:26.890
+and these depend on the resources that are available to the algorithm developer.
+
+00:00:26.890 --> 00:00:29.210
+The method by which they're created, however,
+
+00:00:29.210 --> 00:00:32.450
+can have a significant impact on the overall accuracy of
+
+00:00:32.450 --> 00:00:36.260
+the algorithm and also its reliability in a clinical setting.
+
+00:00:36.260 --> 00:00:40.689
+Typical sources of ground truth are biopsy based labeling,
+
+00:00:40.689 --> 00:00:47.485
+NLP extraction, expert labeling and labeling by another state of the art algorithm.
+
+00:00:47.485 --> 00:00:51.315
+There are a lot of challenges in obtaining ground truth.
+
+00:00:51.315 --> 00:00:53.570
+As we mentioned, if you are looking to use
+
+00:00:53.570 --> 00:00:56.705
+biopsy data as your ground truth for training an algorithm,
+
+00:00:56.705 --> 00:00:59.360
+it will require that you get data from more than
+
+00:00:59.360 --> 00:01:02.660
+just the packs from your clinical partner since biopsy data
+
+00:01:02.660 --> 00:01:04.940
+is stored elsewhere and that can often be
+
+00:01:04.940 --> 00:01:09.150
+difficult and more expensive to obtain from your clinical partner.
+
+00:01:09.150 --> 00:01:11.570
+If you have radiology reports,
+
+00:01:11.570 --> 00:01:14.210
+one option that many researchers take is using
+
+00:01:14.210 --> 00:01:18.545
+a natural language processing tool to extract diagnosis from.
+
+00:01:18.545 --> 00:01:21.575
+One challenge here is that you either need to have
+
+00:01:21.575 --> 00:01:25.339
+access to that tool or you will need to build it yourself.
+
+00:01:25.339 --> 00:01:28.550
+Another challenge here is that your NLP tool will
+
+00:01:28.550 --> 00:01:32.750
+probably not be 100 percent accurate in extracting diagnoses.
+
+00:01:32.750 --> 00:01:34.930
+Let's take the following examples.
+
+00:01:34.930 --> 00:01:36.735
+A report may say,
+
+00:01:36.735 --> 00:01:39.135
+image does not contain pneumonia.
+
+00:01:39.135 --> 00:01:41.630
+It would be relatively easy to make sure that
+
+00:01:41.630 --> 00:01:45.800
+your NLP tool understands this type of negation and picks up on,
+
+00:01:45.800 --> 00:01:51.460
+not contain pneumonia as there not being a diagnosis of pneumonia in the image.
+
+00:01:51.460 --> 00:01:53.805
+But what about this example?
+
+00:01:53.805 --> 00:01:56.810
+It is unlikely, given the findings in the report,
+
+00:01:56.810 --> 00:01:59.375
+that pneumonia is present in this study.
+
+00:01:59.375 --> 00:02:02.210
+NLP has a harder time understanding
+
+00:02:02.210 --> 00:02:07.165
+complicated negations like this that are separate by a lot of contextual language.
+
+00:02:07.165 --> 00:02:10.730
+In fact, the dataset that you use in your final project
+
+00:02:10.730 --> 00:02:14.210
+uses NLP extracted labels from radiology reports.
+
+00:02:14.210 --> 00:02:17.270
+The authors of the dataset indicate that they believe
+
+00:02:17.270 --> 00:02:21.475
+the labels to be a little bit more than 90 percent accurate.
+
+00:02:21.475 --> 00:02:26.665
+What happens if you're given a dataset of only DICOM and X-rays?
+
+00:02:26.665 --> 00:02:28.420
+This can happen sometimes,
+
+00:02:28.420 --> 00:02:32.719
+and it's one of the most difficult situations to be in as an algorithm developer.
+
+00:02:32.719 --> 00:02:37.685
+Having a set of one million X-rays can feel like you're sitting on a pile of gold,
+
+00:02:37.685 --> 00:02:41.960
+but they're actually pretty useless if you don't have labels to go with them.
+
+00:02:41.960 --> 00:02:44.180
+In situations like these,
+
+00:02:44.180 --> 00:02:47.495
+if you work for a well-funded company or research organization,
+
+00:02:47.495 --> 00:02:50.000
+the tactic that is usually taken is to hire
+
+00:02:50.000 --> 00:02:55.450
+a radiologist or team of radiologists to go through each image and label them.
+
+00:02:55.450 --> 00:03:01.450
+This, however, is really expensive and also requires a lot of time on your part.
+
+00:03:01.450 --> 00:03:04.010
+You will have to come up with a labeling protocol for
+
+00:03:04.010 --> 00:03:09.140
+the radiologist and spend a lot of time communicating with them throughout the process.
+
+00:03:09.140 --> 00:03:13.700
+Similar to using NLP to extract diagnoses from reports,
+
+00:03:13.700 --> 00:03:17.450
+researchers are also starting to take the approach of using a state of
+
+00:03:17.450 --> 00:03:21.550
+the art image based algorithm to create ground truth labels.
+
+00:03:21.550 --> 00:03:24.205
+Just like in the NLP solution, however,
+
+00:03:24.205 --> 00:03:26.975
+you won't have perfect accuracy with the solution,
+
+00:03:26.975 --> 00:03:28.700
+at least not in 2020.
+
+00:03:28.700 --> 00:03:30.620
+Coming back to our example,
+
+00:03:30.620 --> 00:03:33.320
+where an organization hires a radiologist to
+
+00:03:33.320 --> 00:03:36.755
+label a bunch of images specifically for a project,
+
+00:03:36.755 --> 00:03:40.300
+how do we make sure that we don't have the problem of inaccuracy?
+
+00:03:40.300 --> 00:03:43.410
+Radiologists are human beings and they make mistakes.
+
+00:03:43.410 --> 00:03:47.975
+Additionally, some diseases are really hard to detect on imaging alone,
+
+00:03:47.975 --> 00:03:50.375
+like we showed earlier with pneumonia and with
+
+00:03:50.375 --> 00:03:53.320
+determining if a breast tumor was malignant.
+
+00:03:53.320 --> 00:03:58.115
+So there is a technique called creating a silver standard,
+
+00:03:58.115 --> 00:04:01.490
+that a lot of organizations who have the resources use.
+
+00:04:01.490 --> 00:04:03.650
+This technique involves hiring
+
+00:04:03.650 --> 00:04:07.975
+several radiologists to each make their own diagnosis of an image.
+
+00:04:07.975 --> 00:04:10.685
+The final diagnosis is then determined by
+
+00:04:10.685 --> 00:04:15.415
+a voting system across all of the radiologists labels for each image.
+
+00:04:15.415 --> 00:04:19.130
+Note that sometimes radiologists experience levels are taken
+
+00:04:19.130 --> 00:04:23.730
+into account and votes are weighted by years of experience.
+

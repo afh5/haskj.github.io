@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.600
+So far we've learned how to read a DICOM,
+
+00:00:03.600 --> 00:00:07.769
+inspect images extracted from single DICOM series,
+
+00:00:07.769 --> 00:00:11.320
+and inspect header data from single DICOM files.
+
+00:00:11.320 --> 00:00:13.470
+Now, let's zoom out.
+
+00:00:13.470 --> 00:00:16.755
+In the industry, it's quite common that you'll receive
+
+00:00:16.755 --> 00:00:20.670
+a large set of DICOM data that represent a population.
+
+00:00:20.670 --> 00:00:25.160
+Metadata is a set of data that describes the population.
+
+00:00:25.160 --> 00:00:30.470
+Here an example of metadata would be average age of the population.
+
+00:00:30.470 --> 00:00:36.275
+This type of metadata will be relevant for your particular algorithm or use case.
+
+00:00:36.275 --> 00:00:40.490
+Now, unless you're running a study or have a lot of money
+
+00:00:40.490 --> 00:00:43.940
+to collect and select a very specific data set,
+
+00:00:43.940 --> 00:00:49.080
+you'll likely be working with a data set with relevant and irrelevant data.
+
+00:00:49.080 --> 00:00:54.755
+It's your job as the data scientist to determine and select relevant subsets.
+
+00:00:54.755 --> 00:01:00.755
+Some metadata may come from the DICOM headers of all of the studies in your data set.
+
+00:01:00.755 --> 00:01:03.050
+For example, patient ID,
+
+00:01:03.050 --> 00:01:06.190
+patient age, and sex can all be found here.
+
+00:01:06.190 --> 00:01:09.980
+You will likely need to join this with another data source though,
+
+00:01:09.980 --> 00:01:11.495
+such as patient history,
+
+00:01:11.495 --> 00:01:14.525
+to fully understand your patient population.
+
+00:01:14.525 --> 00:01:17.305
+Finally, you need your image labels.
+
+00:01:17.305 --> 00:01:19.650
+This must be part of your data set,
+
+00:01:19.650 --> 00:01:21.650
+or else how will you know if you have
+
+00:01:21.650 --> 00:01:24.815
+enough positive and negative cases to train an algorithm?
+
+00:01:24.815 --> 00:01:27.170
+If you're looking for diagnostic labels,
+
+00:01:27.170 --> 00:01:31.100
+you'll often have to go into the actual radiology reports or
+
+00:01:31.100 --> 00:01:35.695
+get a new radiologist to come in and label them if you don't have the reports.
+
+00:01:35.695 --> 00:01:38.405
+Before you can start training an algorithm,
+
+00:01:38.405 --> 00:01:42.590
+you need to first explore the features of the data set to make sure that it's useful.
+
+00:01:42.590 --> 00:01:46.700
+For example, if you are trying to build something to detect breast cancer,
+
+00:01:46.700 --> 00:01:48.800
+but there's no breast cancer in the data,
+
+00:01:48.800 --> 00:01:51.175
+then the data set is useless.
+
+00:01:51.175 --> 00:01:54.110
+Histograms and scatterplots are
+
+00:01:54.110 --> 00:01:58.100
+too powerful tools that can help us discover data features.
+
+00:01:58.100 --> 00:02:03.095
+Histograms help us look at distributions of single variables.
+
+00:02:03.095 --> 00:02:08.590
+Sometimes we only want to look at distributions within a single class of our data.
+
+00:02:08.590 --> 00:02:12.110
+For example, we can use histograms to explore
+
+00:02:12.110 --> 00:02:16.639
+the age range across people with lung cancer or gender distribution,
+
+00:02:16.639 --> 00:02:19.675
+specifically in patients with Type 2 diabetes.
+
+00:02:19.675 --> 00:02:25.280
+Scatterplots are useful for assessing relationships between two variables.
+
+00:02:25.280 --> 00:02:28.190
+For example, we can use scatterplots to look
+
+00:02:28.190 --> 00:02:31.415
+at the relationship between tumor size and age,
+
+00:02:31.415 --> 00:02:36.775
+or the relationship between number of nodules and years of smoking history.
+
+00:02:36.775 --> 00:02:42.890
+The Pearson correlation coefficient measures how two variables are linearly related.
+
+00:02:42.890 --> 00:02:48.220
+The value of the Pearson correlation coefficient ranges from negative one to one.
+
+00:02:48.220 --> 00:02:54.410
+A value of one or negative one means that two variables are perfectly linearly related,
+
+00:02:54.410 --> 00:02:59.600
+and a value of zero implies there is no linear relationship between the two variables.
+
+00:02:59.600 --> 00:03:03.635
+Finally, another useful tool is the co-occurrence matrix,
+
+00:03:03.635 --> 00:03:08.675
+which is useful for assessing how frequently different classifications co-occur together.
+
+00:03:08.675 --> 00:03:12.140
+For example, if we want to explore the frequency of
+
+00:03:12.140 --> 00:03:14.660
+heart disease co-occurrence in the data set
+
+00:03:14.660 --> 00:03:17.945
+with many other diseases like Type 2 diabetes,
+
+00:03:17.945 --> 00:03:19.595
+obesity, and lung cancer,
+
+00:03:19.595 --> 00:03:21.980
+we can plot a co-occurrence matrix.
+
+00:03:21.980 --> 00:03:28.260
+A higher value indicates that two diseases are more likely to co-occur together.
+
