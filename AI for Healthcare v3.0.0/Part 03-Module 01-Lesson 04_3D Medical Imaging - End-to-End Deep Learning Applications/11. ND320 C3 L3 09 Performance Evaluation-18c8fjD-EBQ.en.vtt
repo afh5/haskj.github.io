@@ -1,0 +1,238 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.875
+Once you've developed your algorithm,
+
+00:00:01.875 --> 00:00:04.545
+you're going to want to know how it performs on real-world data,
+
+00:00:04.545 --> 00:00:07.230
+and even more importantly to be able to communicate
+
+00:00:07.230 --> 00:00:10.725
+those performance metrics to those who are going to be using it in practice.
+
+00:00:10.725 --> 00:00:12.690
+Let's find out how to do just that.
+
+00:00:12.690 --> 00:00:17.040
+Recall from the prior lesson the following expression of Bayes Theorem and how
+
+00:00:17.040 --> 00:00:19.740
+the likelihood ratio captured whether a test result
+
+00:00:19.740 --> 00:00:23.550
+usefully changes the probability that a condition or disease is present.
+
+00:00:23.550 --> 00:00:26.160
+Will now learn how to calculate that ratio for
+
+00:00:26.160 --> 00:00:30.080
+a diagnostic test by understanding the performance metrics that underpin it,
+
+00:00:30.080 --> 00:00:32.430
+that is sensitivity and specificity.
+
+00:00:32.430 --> 00:00:34.245
+Let's start with sensitivity.
+
+00:00:34.245 --> 00:00:38.130
+Sensitivity is a metric that quantifies the probability of a test being
+
+00:00:38.130 --> 00:00:42.270
+positive given that a patient has the underlying disease or condition.
+
+00:00:42.270 --> 00:00:44.475
+Here it is expressed mathematically.
+
+00:00:44.475 --> 00:00:49.040
+On the other hand, specificity is a metric that quantifies the probability of
+
+00:00:49.040 --> 00:00:51.380
+a test being negative given that a patient does
+
+00:00:51.380 --> 00:00:54.035
+not have the underlying disease or condition.
+
+00:00:54.035 --> 00:00:56.815
+Again, here it is expressed mathematically.
+
+00:00:56.815 --> 00:01:00.350
+Now that we understand what sensitivity and specificity are,
+
+00:01:00.350 --> 00:01:02.590
+let's see how they'd be calculated from our data.
+
+00:01:02.590 --> 00:01:06.125
+To do so, we'll use a familiar friend, the confusion matrix.
+
+00:01:06.125 --> 00:01:08.555
+If we read down the columns here,
+
+00:01:08.555 --> 00:01:13.810
+we can see that this represents all of the patients with the disease.
+
+00:01:13.810 --> 00:01:20.130
+These are the patients without disease and then across these rows are the test results.
+
+00:01:20.130 --> 00:01:21.935
+For example, in this case,
+
+00:01:21.935 --> 00:01:25.430
+the patient has the disease and the test result is positive,
+
+00:01:25.430 --> 00:01:27.305
+resulting in a true positive.
+
+00:01:27.305 --> 00:01:31.385
+In this situation, the disease is positive but the test is negative,
+
+00:01:31.385 --> 00:01:33.335
+resulting in a false negative.
+
+00:01:33.335 --> 00:01:36.530
+Let's say we had a case where we had 200 patients,
+
+00:01:36.530 --> 00:01:38.420
+100 with the disease,
+
+00:01:38.420 --> 00:01:42.125
+and 100 without, which you can get to by adding these columns down.
+
+00:01:42.125 --> 00:01:47.735
+In this circumstance, we're able to calculate sensitivity by taking the number of
+
+00:01:47.735 --> 00:01:50.600
+true positives and then dividing it by
+
+00:01:50.600 --> 00:01:54.395
+the number of all the patients with the disease, as seen here.
+
+00:01:54.395 --> 00:01:57.320
+To obtain specificity, we'll take the number of
+
+00:01:57.320 --> 00:02:01.865
+true negatives and then divide it by all of the patients without the disease,
+
+00:02:01.865 --> 00:02:03.935
+which is some down this column.
+
+00:02:03.935 --> 00:02:06.950
+In doing so, we see that the sensitivity of
+
+00:02:06.950 --> 00:02:11.545
+this exam is 80 percent and the specificity is 70 percent.
+
+00:02:11.545 --> 00:02:14.090
+Notice that we're using the phrase patients who
+
+00:02:14.090 --> 00:02:16.805
+truly have the disease and those who don't.
+
+00:02:16.805 --> 00:02:18.875
+In these types of studies,
+
+00:02:18.875 --> 00:02:20.300
+this is determined by using
+
+00:02:20.300 --> 00:02:25.010
+a gold standard reference test and this isn't always an imaging study.
+
+00:02:25.010 --> 00:02:27.950
+So consider, how did we come to this conclusion?
+
+00:02:27.950 --> 00:02:29.210
+Was it a blood test?
+
+00:02:29.210 --> 00:02:30.745
+Was it a biopsy?
+
+00:02:30.745 --> 00:02:34.775
+It's always worth asking yourself where is ground truth coming from?
+
+00:02:34.775 --> 00:02:38.480
+Okay, we now have sensitivity and specificity under our belt.
+
+00:02:38.480 --> 00:02:40.540
+Let's talk about the likelihood ratio.
+
+00:02:40.540 --> 00:02:42.740
+As you recall, the likelihood ratio is
+
+00:02:42.740 --> 00:02:45.620
+a diagnostic performance metric used to determine whether
+
+00:02:45.620 --> 00:02:51.250
+a test result usefully changes the probability that a condition or diseases is present.
+
+00:02:51.250 --> 00:02:56.120
+A value of one indicates no effect on the posterior odds of disease and as
+
+00:02:56.120 --> 00:02:57.770
+the value increases so does
+
+00:02:57.770 --> 00:03:01.990
+the posterior odds or post-test probability that a disease is present.
+
+00:03:01.990 --> 00:03:04.504
+If a test result is positive,
+
+00:03:04.504 --> 00:03:08.405
+you can calculate the positive likelihood ratio with the following formulation,
+
+00:03:08.405 --> 00:03:13.565
+which turns out to be the sensitivity divided by one minus specificity.
+
+00:03:13.565 --> 00:03:15.560
+If the test result is negative,
+
+00:03:15.560 --> 00:03:17.675
+we use the negative likelihood ratio,
+
+00:03:17.675 --> 00:03:21.445
+which is one minus sensitivity over specificity,
+
+00:03:21.445 --> 00:03:24.365
+and that is how sensitivity and specificity
+
+00:03:24.365 --> 00:03:27.695
+are related to the all-important likelihood ratio.
+
+00:03:27.695 --> 00:03:32.300
+So now we know how to calculate the likelihood ratio of a test is positive or negative,
+
+00:03:32.300 --> 00:03:35.125
+but how do these values apply to real-world situations?
+
+00:03:35.125 --> 00:03:37.070
+This useful table maps the value of
+
+00:03:37.070 --> 00:03:40.670
+the likelihood ratio to the approximate change in probability of a condition,
+
+00:03:40.670 --> 00:03:43.595
+as well as the subjective magnitude of the increase,
+
+00:03:43.595 --> 00:03:45.970
+this assumes the test was positive.
+
+00:03:45.970 --> 00:03:50.825
+Here's the corresponding table for a test with a negative result. So good job.
+
+00:03:50.825 --> 00:03:52.400
+Now you understand sensitivity,
+
+00:03:52.400 --> 00:03:56.545
+specificity, and how to use those to calculate the likelihood ratio.
+
+00:03:56.545 --> 00:03:58.970
+This will be critical when you're evaluating
+
+00:03:58.970 --> 00:04:01.340
+your algorithm's performance and trying to communicate
+
+00:04:01.340 --> 00:04:04.800
+those results to the people who will eventually be using it.
+

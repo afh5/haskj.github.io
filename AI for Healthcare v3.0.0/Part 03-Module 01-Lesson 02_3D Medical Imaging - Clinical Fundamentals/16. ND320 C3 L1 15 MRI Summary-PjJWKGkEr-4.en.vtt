@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.095
+With this, we're getting towards the end of our physics detour.
+
+00:00:04.095 --> 00:00:08.550
+Some of the key takeaways for the MRI data flow.
+
+00:00:08.550 --> 00:00:12.690
+Although T1 and T2-weighted sequences are quite popular,
+
+00:00:12.690 --> 00:00:14.990
+there are many more types of MRI sequences.
+
+00:00:14.990 --> 00:00:17.940
+You might see things like FLAIR, diffusion-weighted imaging,
+
+00:00:17.940 --> 00:00:21.950
+diffusion tensor imaging, proton density imaging, and so on.
+
+00:00:21.950 --> 00:00:25.050
+On top of that, scanner manufacturers sometimes include
+
+00:00:25.050 --> 00:00:27.030
+their own proprietary pulse sequences and
+
+00:00:27.030 --> 00:00:30.360
+reconstruction algorithms and give them unique names.
+
+00:00:30.360 --> 00:00:32.929
+As you have heard from Maslow's presentation,
+
+00:00:32.929 --> 00:00:35.660
+some sequences also are taken with contrast media
+
+00:00:35.660 --> 00:00:38.585
+injected to highlight certain types of structures.
+
+00:00:38.585 --> 00:00:42.335
+So as someone who would be building algorithms that analyzes data,
+
+00:00:42.335 --> 00:00:46.220
+you need to be aware that not all MRI sequences are created equal,
+
+00:00:46.220 --> 00:00:49.285
+and things will show up differently depending on the sequence type.
+
+00:00:49.285 --> 00:00:51.665
+Also, unlike CT data,
+
+00:00:51.665 --> 00:00:55.220
+there is no such thing as Hounsfield unit scale for MR data.
+
+00:00:55.220 --> 00:00:58.925
+The absolute values in MR imaging carry little meaning,
+
+00:00:58.925 --> 00:01:01.555
+although they are consistent for the same pulse sequence type.
+
+00:01:01.555 --> 00:01:03.930
+Radiologists talk about hypointensity or
+
+00:01:03.930 --> 00:01:07.940
+hyperintensity when they discuss brighter or darker areas on MRIs.
+
+00:01:07.940 --> 00:01:10.610
+Lastly, even more so than with CT,
+
+00:01:10.610 --> 00:01:12.740
+there are MRI data potentially presents
+
+00:01:12.740 --> 00:01:15.520
+lots of interesting opportunities for the data scientists.
+
+00:01:15.520 --> 00:01:18.350
+The design of pulse sequences, reconstruction pipelines,
+
+00:01:18.350 --> 00:01:19.940
+fraud data analysis, are
+
+00:01:19.940 --> 00:01:23.015
+all areas that could benefit from robust machine learning algorithm.
+
+00:01:23.015 --> 00:01:24.410
+However, in this course,
+
+00:01:24.410 --> 00:01:25.760
+we will not go into these areas,
+
+00:01:25.760 --> 00:01:27.715
+we will focus on image analysis.
+
+00:01:27.715 --> 00:01:31.100
+But at the same time, we will post some links in the concluding part of
+
+00:01:31.100 --> 00:01:36.720
+this module and move on to some of the common 3D image analysis and visualization tasks.
+

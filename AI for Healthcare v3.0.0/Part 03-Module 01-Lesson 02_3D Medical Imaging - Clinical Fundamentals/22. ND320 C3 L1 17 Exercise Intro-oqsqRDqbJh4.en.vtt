@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+In this exercise, you will be working with
+
+00:00:02.730 --> 00:00:07.110
+the Jupyter Notebook to implement two very simple 3D reconstruction algorithms.
+
+00:00:07.110 --> 00:00:09.180
+You will build an image using information,
+
+00:00:09.180 --> 00:00:11.220
+and all the voxels of the 3D volume.
+
+00:00:11.220 --> 00:00:12.630
+If you do this correctly,
+
+00:00:12.630 --> 00:00:14.910
+you will hopefully be able to figure out what
+
+00:00:14.910 --> 00:00:18.550
+exactly is the volume that you are looking at. Good luck.
+

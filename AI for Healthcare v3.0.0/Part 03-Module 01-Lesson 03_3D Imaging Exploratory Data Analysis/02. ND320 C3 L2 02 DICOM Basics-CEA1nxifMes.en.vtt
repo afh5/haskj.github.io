@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.395
+First, let us talk about the DICOM standard.
+
+00:00:03.395 --> 00:00:07.680
+DICOM standard is a standard which has been around since the '80s.
+
+00:00:07.680 --> 00:00:11.385
+Dicom stands for Digital Imaging and Communication in Medicine.
+
+00:00:11.385 --> 00:00:13.380
+The standard defines two things;
+
+00:00:13.380 --> 00:00:14.925
+it defines the file format,
+
+00:00:14.925 --> 00:00:17.030
+which is basically how you store the data,
+
+00:00:17.030 --> 00:00:21.390
+and it defines a set of what's called DIMSE or DICOM web services that
+
+00:00:21.390 --> 00:00:23.790
+define the networking operations and define
+
+00:00:23.790 --> 00:00:26.715
+how the data can be moved around clinical networks.
+
+00:00:26.715 --> 00:00:28.515
+It's a free and open standard,
+
+00:00:28.515 --> 00:00:29.910
+it is published online.
+
+00:00:29.910 --> 00:00:34.110
+Anyone can go online and reference the standard and read what fields
+
+00:00:34.110 --> 00:00:38.785
+are in all those DICOM files mean and how this DICOM files are structured.
+
+00:00:38.785 --> 00:00:42.140
+It is used by all scanners to
+
+00:00:42.140 --> 00:00:45.950
+produce images and to send these images over to clinical network.
+
+00:00:45.950 --> 00:00:49.100
+If you are working with 3D medical imaging data sets,
+
+00:00:49.100 --> 00:00:51.940
+most likely you will be seeing DICOM files.
+
+00:00:51.940 --> 00:00:55.670
+In this lesson, we will look at some of the most important details of
+
+00:00:55.670 --> 00:00:59.725
+the DICOM standard and how metadata is stored in DICOM files.
+
+00:00:59.725 --> 00:01:01.760
+DICOM standard is published by
+
+00:01:01.760 --> 00:01:05.675
+the National Association of Electrical Equipment and Medical Imaging Manufacturers.
+
+00:01:05.675 --> 00:01:08.840
+It is available on the website and free to download for anyone.
+
+00:01:08.840 --> 00:01:11.005
+Let's take a quick look at the website.
+
+00:01:11.005 --> 00:01:13.230
+This is the DICOM website,
+
+00:01:13.230 --> 00:01:18.260
+you can go here in the standard tab and you can look up the current edition,
+
+00:01:18.260 --> 00:01:20.400
+you can look up the prior editions.
+
+00:01:20.400 --> 00:01:22.840
+As you can see, if we go, for example,
+
+00:01:22.840 --> 00:01:27.380
+into the file storage here,
+
+00:01:27.380 --> 00:01:32.765
+you can see that they maintain all the versions of the standard after 2014 currently,
+
+00:01:32.765 --> 00:01:34.760
+and you can go into the most recent one and you
+
+00:01:34.760 --> 00:01:36.895
+can even download everything as a zip file.
+
+00:01:36.895 --> 00:01:38.765
+As you can see, the standard is pretty large,
+
+00:01:38.765 --> 00:01:41.275
+even zipped its about 150 megabytes.
+
+00:01:41.275 --> 00:01:44.180
+But keep in mind, you don't have to know it all, nobody knows it all,
+
+00:01:44.180 --> 00:01:46.430
+and unless you are developing medical imaging equipment
+
+00:01:46.430 --> 00:01:49.190
+or medical imaging viewing software,
+
+00:01:49.190 --> 00:01:52.235
+you will not need to know all the details of the standards.
+
+00:01:52.235 --> 00:01:55.070
+However, there are some important bits of the standards which are very
+
+00:01:55.070 --> 00:01:59.360
+relevant analyzing medical imaging data sets
+
+00:01:59.360 --> 00:02:01.480
+and preparing them for machine learning workflows,
+
+00:02:01.480 --> 00:02:04.290
+and we will touch on those bits further on.
+
+00:02:04.290 --> 00:02:06.760
+When analyzing DICOM data sets,
+
+00:02:06.760 --> 00:02:10.880
+it is important to understand how the concepts within the DICOM data set are related.
+
+00:02:10.880 --> 00:02:14.210
+So the top-level objects of a DICOM data set is the patient,
+
+00:02:14.210 --> 00:02:15.800
+which is the person being imaged.
+
+00:02:15.800 --> 00:02:19.280
+The next level under the person you have the concept of a study.
+
+00:02:19.280 --> 00:02:21.920
+Study is one imaging session with the scanner.
+
+00:02:21.920 --> 00:02:25.655
+Remember how we talked about different sequences that MRI scanner can make.
+
+00:02:25.655 --> 00:02:27.890
+So the time that the patient spends with
+
+00:02:27.890 --> 00:02:31.250
+the scanner while all these sequences are made is called a study.
+
+00:02:31.250 --> 00:02:33.830
+One of those sequences will be called series,
+
+00:02:33.830 --> 00:02:36.785
+so series is a collection of images that represent
+
+00:02:36.785 --> 00:02:41.090
+one sweep through a patient and acquiring all those different slices.
+
+00:02:41.090 --> 00:02:42.905
+As you can imagine,
+
+00:02:42.905 --> 00:02:44.750
+the next level down under series,
+
+00:02:44.750 --> 00:02:47.719
+you have what's called in DICOM language instances.
+
+00:02:47.719 --> 00:02:52.190
+One instance in 3D medical imaging data sets typically represents one image,
+
+00:02:52.190 --> 00:02:54.350
+and the series is a collection of those instances.
+
+00:02:54.350 --> 00:02:57.540
+Within instances, you have two types of data;
+
+00:02:57.540 --> 00:02:58.985
+you have the pixel data,
+
+00:02:58.985 --> 00:03:03.170
+which are the actual pixels that have been acquired and reconstructed from the scanner,
+
+00:03:03.170 --> 00:03:06.170
+and you have what's called in DICOM language data elements,
+
+00:03:06.170 --> 00:03:07.310
+which has the metadata,
+
+00:03:07.310 --> 00:03:11.435
+which is associated with the acquisition.
+
+00:03:11.435 --> 00:03:14.165
+The metadata contains such things as patient name,
+
+00:03:14.165 --> 00:03:17.735
+acquisition unique identifier, data, and many other things.
+
+00:03:17.735 --> 00:03:20.070
+We will look into this later.
+

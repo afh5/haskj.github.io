@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.885
+So now on to basic principles of MR physics.
+
+00:00:03.885 --> 00:00:06.480
+First, what does MRI stands for?
+
+00:00:06.480 --> 00:00:08.835
+It stands for magnetic resonance imaging,
+
+00:00:08.835 --> 00:00:11.190
+which hints at the basic physical principle that
+
+00:00:11.190 --> 00:00:13.800
+drives in MRI scanner, magnetic resonance.
+
+00:00:13.800 --> 00:00:18.210
+MRI imaging is a quite complex field that stretches the boundaries of human knowledge by
+
+00:00:18.210 --> 00:00:19.860
+spanning multiple research fields from
+
+00:00:19.860 --> 00:00:23.005
+mechanical engineering to quantum physics to Computer Science.
+
+00:00:23.005 --> 00:00:24.620
+By no means, we're going to cover,
+
+00:00:24.620 --> 00:00:25.815
+it's all in this lesson.
+
+00:00:25.815 --> 00:00:28.830
+So we will touch upon some of the key concepts of the field,
+
+00:00:28.830 --> 00:00:30.930
+such as gradient fields,
+
+00:00:30.930 --> 00:00:34.155
+reconstruction, pulse sequences, and k-space.
+
+00:00:34.155 --> 00:00:37.350
+Again, it is quite important to have the basic idea of
+
+00:00:37.350 --> 00:00:39.420
+this things so that you understand where
+
+00:00:39.420 --> 00:00:42.160
+the pixels in your 3D medical images are coming from.
+
+00:00:42.160 --> 00:00:43.805
+If this term sound familiar,
+
+00:00:43.805 --> 00:00:45.940
+you may want to skip this portion of the lesson.
+
+00:00:45.940 --> 00:00:50.210
+First, MRI scanners operate using the principles of magnetic resonance by
+
+00:00:50.210 --> 00:00:54.685
+inducing large magnetic fields and measuring electrical currents that arise from that.
+
+00:00:54.685 --> 00:00:58.340
+Therefore, they emit no ionizing radiation and thus,
+
+00:00:58.340 --> 00:01:01.595
+there is less risk of exposure for the patients that get scanned.
+
+00:01:01.595 --> 00:01:04.220
+Second, there are no large moving parts inside
+
+00:01:04.220 --> 00:01:06.995
+the MRI scanners other than the bed with the patient.
+
+00:01:06.995 --> 00:01:09.830
+Lastly, there is way more flexibility in how
+
+00:01:09.830 --> 00:01:12.050
+MRI scanners operate due to the number of
+
+00:01:12.050 --> 00:01:14.825
+ways in which the magnetic field can be constructed.
+
+00:01:14.825 --> 00:01:19.265
+So there are many more imaging scan types possible with superior soft tissue contrast,
+
+00:01:19.265 --> 00:01:23.100
+and we will get into those a little bit later in this lesson.
+

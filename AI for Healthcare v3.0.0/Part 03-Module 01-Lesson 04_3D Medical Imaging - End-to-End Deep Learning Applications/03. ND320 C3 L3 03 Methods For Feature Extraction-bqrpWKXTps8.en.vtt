@@ -1,0 +1,316 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.435
+Now, let's look for some methods for a feature extraction
+
+00:00:03.435 --> 00:00:07.350
+for convolutional neural networks that you will be applying in this lesson.
+
+00:00:07.350 --> 00:00:10.700
+First, a quick reminder on what a convolution is.
+
+00:00:10.700 --> 00:00:14.280
+A convolutional filter is a processing algorithm where you would take
+
+00:00:14.280 --> 00:00:17.985
+an image like this one and you would apply a filter kernel,
+
+00:00:17.985 --> 00:00:19.740
+which will take patches of the image and
+
+00:00:19.740 --> 00:00:22.260
+computes a linear operation which would result in
+
+00:00:22.260 --> 00:00:26.820
+some value and this value would be an input into the different image.
+
+00:00:26.820 --> 00:00:28.840
+Depending on the shape of this filter and on
+
+00:00:28.840 --> 00:00:31.620
+the values in this filter and the nature of the computation,
+
+00:00:31.620 --> 00:00:34.640
+we are able to extract certain features from the images.
+
+00:00:34.640 --> 00:00:36.360
+Like in this case, our filter is
+
+00:00:36.360 --> 00:00:39.705
+an edge extractor filter and we're extracting edges from the images.
+
+00:00:39.705 --> 00:00:42.330
+As you can see, edges stand out here.
+
+00:00:42.330 --> 00:00:46.165
+Now, a quick reminder on the architecture of convolutional neural networks.
+
+00:00:46.165 --> 00:00:47.745
+This is a diagram of one.
+
+00:00:47.745 --> 00:00:49.290
+In a convolutional neural network,
+
+00:00:49.290 --> 00:00:51.800
+you would be looking at several input channels.
+
+00:00:51.800 --> 00:00:55.130
+These input channels would have convolutional filters applied to them,
+
+00:00:55.130 --> 00:00:57.515
+which would extract features from those.
+
+00:00:57.515 --> 00:01:01.745
+Then you would have max pooling layers which would reduce resolution of those images.
+
+00:01:01.745 --> 00:01:05.210
+Then you would apply convolutions again and again you would apply the pooling filters,
+
+00:01:05.210 --> 00:01:10.220
+thus decreasing the resolution of the images and increasing the context of the features,
+
+00:01:10.220 --> 00:01:11.750
+so you would be getting rid of
+
+00:01:11.750 --> 00:01:14.380
+the small details and looking at the big picture, so to say.
+
+00:01:14.380 --> 00:01:15.470
+Then in the end,
+
+00:01:15.470 --> 00:01:17.150
+in a classification network you have
+
+00:01:17.150 --> 00:01:21.320
+some fully connected layer which maps to a limited set of classes which you are
+
+00:01:21.320 --> 00:01:24.290
+trying to predict through the process of training
+
+00:01:24.290 --> 00:01:27.690
+the neural networks through running a back propagation steps.
+
+00:01:27.690 --> 00:01:31.220
+You figure out which are the weights and what are the kernels that should be used in
+
+00:01:31.220 --> 00:01:36.305
+this convolution so that our network can extract relevant features from those images.
+
+00:01:36.305 --> 00:01:41.635
+So what options do we have on our hands when we think about medical images?
+
+00:01:41.635 --> 00:01:44.660
+There are several methods which are being used for building
+
+00:01:44.660 --> 00:01:47.720
+convolutional networks in medical images.
+
+00:01:47.720 --> 00:01:51.230
+So first, we need to remember that 3D images are stacks
+
+00:01:51.230 --> 00:01:55.070
+of 2D pictures and many processing methods rely on that.
+
+00:01:55.070 --> 00:01:58.955
+Unless you have seen, we have extracted two-dimensional slides and visualized them.
+
+00:01:58.955 --> 00:02:02.270
+So a natural way of dealing with 3D medical images,
+
+00:02:02.270 --> 00:02:04.610
+so just treat each slice individually.
+
+00:02:04.610 --> 00:02:07.400
+This is a two-dimensional approach and you can basically then
+
+00:02:07.400 --> 00:02:10.130
+treat a 3D classification problem or
+
+00:02:10.130 --> 00:02:12.455
+object detection problem as a series of
+
+00:02:12.455 --> 00:02:15.655
+two-dimensional classification or object detection problems.
+
+00:02:15.655 --> 00:02:19.690
+You can also combine this method with looking into neighboring slices.
+
+00:02:19.690 --> 00:02:22.190
+So you would still have a slice that you're focusing
+
+00:02:22.190 --> 00:02:25.250
+on but when computing convolutions or other feature layers,
+
+00:02:25.250 --> 00:02:27.680
+you would be drawing upon the slices that
+
+00:02:27.680 --> 00:02:30.800
+are next to the one that you are currently focusing on.
+
+00:02:30.800 --> 00:02:34.910
+You can treat an image as a volume and you can have full 3D convolutions which
+
+00:02:34.910 --> 00:02:37.910
+would have a coronal that essentially
+
+00:02:37.910 --> 00:02:41.470
+is represented by a three-dimensional cuboid structure.
+
+00:02:41.470 --> 00:02:44.755
+Let's look at those a little bit in more detail.
+
+00:02:44.755 --> 00:02:47.510
+With 2D convolution as we have discussed,
+
+00:02:47.510 --> 00:02:50.645
+you basically can apply your neural network methods to
+
+00:02:50.645 --> 00:02:54.950
+every slice and then this problem becomes very similar to what is being
+
+00:02:54.950 --> 00:02:58.460
+used in regular domain images for tasks like classifying
+
+00:02:58.460 --> 00:03:02.465
+photo libraries or detecting objects from cameras.
+
+00:03:02.465 --> 00:03:05.420
+That gives you a lot of flexibility because there is a lot of
+
+00:03:05.420 --> 00:03:08.700
+algorithms out there which have been implemented and tried and are true.
+
+00:03:08.700 --> 00:03:12.305
+The algorithms are even parts of popular deep learning frameworks.
+
+00:03:12.305 --> 00:03:13.910
+These algorithms have been studied.
+
+00:03:13.910 --> 00:03:16.280
+We have beautiful visualizations like that or you
+
+00:03:16.280 --> 00:03:19.250
+can think about the tradeoffs between different algorithms.
+
+00:03:19.250 --> 00:03:24.455
+If your neural network does a good job in classifying medical volumes by
+
+00:03:24.455 --> 00:03:27.320
+using one of those popular algorithms then it's great and
+
+00:03:27.320 --> 00:03:30.580
+you won't have to tinker a lot with the parameters of the neural network.
+
+00:03:30.580 --> 00:03:34.220
+If you want to look deeper and extract a more complex features,
+
+00:03:34.220 --> 00:03:37.835
+if you want to leverage some of the three-dimensional nature of the images,
+
+00:03:37.835 --> 00:03:40.865
+you have options of 2.5D and 3D convolutions.
+
+00:03:40.865 --> 00:03:43.145
+So with 2.5D methods,
+
+00:03:43.145 --> 00:03:44.570
+there are many approaches here.
+
+00:03:44.570 --> 00:03:50.419
+You can look at slices which are next to each other in 3D space across the Z-axis,
+
+00:03:50.419 --> 00:03:51.980
+or you can do something like this,
+
+00:03:51.980 --> 00:03:55.700
+like the authors of this paper did where they took patches from the image
+
+00:03:55.700 --> 00:03:59.660
+and they extracted coronal and sagittal slices in addition to the axial slice,
+
+00:03:59.660 --> 00:04:01.970
+which is the primary method of a study.
+
+00:04:01.970 --> 00:04:06.860
+They use them as a three channel input into their convolutional filter,
+
+00:04:06.860 --> 00:04:09.260
+which is also a valid approach and you're encouraged to take
+
+00:04:09.260 --> 00:04:11.540
+a look at this paper if you're interested.
+
+00:04:11.540 --> 00:04:15.770
+They have some interesting results and we will touch upon this method in our exercise.
+
+00:04:15.770 --> 00:04:18.050
+Then we have the full 3D convolutions.
+
+00:04:18.050 --> 00:04:19.625
+So full 3D convolutions,
+
+00:04:19.625 --> 00:04:22.340
+you basically take a cuboid volume,
+
+00:04:22.340 --> 00:04:25.760
+as we have discussed, and you use that as your convolutional filter.
+
+00:04:25.760 --> 00:04:29.840
+This method definitely uses the full three-dimensional nature of your image.
+
+00:04:29.840 --> 00:04:34.220
+It is capable of extracting the features which would take into
+
+00:04:34.220 --> 00:04:38.645
+account the complexity of a 3D configuration of different anatomical structures.
+
+00:04:38.645 --> 00:04:43.900
+This method also uses more memory and uses up more compute time.
+
+00:04:43.900 --> 00:04:49.530
+So it is up to you to decide which method is suitable for your machine learning problem.
+
+00:04:49.530 --> 00:04:53.750
+One other thing to note here is as you are building machine learning algorithms and
+
+00:04:53.750 --> 00:04:58.610
+networks and you are thinking of more types of convolutional filters to apply,
+
+00:04:58.610 --> 00:05:00.560
+one popular optimization strategy,
+
+00:05:00.560 --> 00:05:04.010
+which has been used in many medical imaging applications,
+
+00:05:04.010 --> 00:05:05.630
+is the strategy of patching.
+
+00:05:05.630 --> 00:05:08.840
+Like the authors of this paper were not applying
+
+00:05:08.840 --> 00:05:13.150
+their filters and ingesting the entire images into their neural network but rather
+
+00:05:13.150 --> 00:05:16.880
+they were extracting rectangular patches from
+
+00:05:16.880 --> 00:05:20.885
+their images and feeding this patches as multiple channels into their network.
+
+00:05:20.885 --> 00:05:23.420
+This is a perfectly valid way of doing things,
+
+00:05:23.420 --> 00:05:26.060
+especially if you're looking for some smaller structures and you know
+
+00:05:26.060 --> 00:05:28.815
+that your network might not really change it's
+
+00:05:28.815 --> 00:05:33.080
+performance if you feed the entire images to that but you can save a lot of space and it
+
+00:05:33.080 --> 00:05:38.550
+can parallelize better if you can do the patched data loading in the network.
+

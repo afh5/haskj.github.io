@@ -1,0 +1,190 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.255
+In this section, we will talk about the Computer Tomography scanners or CT scanners.
+
+00:00:05.255 --> 00:00:08.280
+The core operational agents of a CT scanner are
+
+00:00:08.280 --> 00:00:12.130
+photons or electromagnetic waves of high frequency.
+
+00:00:12.130 --> 00:00:15.090
+As a reminder about electromagnetic spectrum,
+
+00:00:15.090 --> 00:00:16.695
+let's look at this diagram.
+
+00:00:16.695 --> 00:00:20.070
+You can see RF waves here were things like
+
+00:00:20.070 --> 00:00:24.030
+FM and AM radio wave are residing in the low frequency area,
+
+00:00:24.030 --> 00:00:25.725
+and as frequency goes up,
+
+00:00:25.725 --> 00:00:31.395
+we have the visible light spectrum and then ultraviolet spectrum or the X-rays.
+
+00:00:31.395 --> 00:00:33.425
+X-rays are followed by Gamma rays,
+
+00:00:33.425 --> 00:00:35.120
+which are well known to be one form of
+
+00:00:35.120 --> 00:00:38.245
+penetrating radiation produced by radioactive decay.
+
+00:00:38.245 --> 00:00:40.815
+Gamma radiation is ionizing radiation,
+
+00:00:40.815 --> 00:00:44.075
+and such radiation is known to be harmful to living organisms.
+
+00:00:44.075 --> 00:00:47.690
+X-rays, while not usually a result of radioactive decay,
+
+00:00:47.690 --> 00:00:52.360
+are also a form of ionizing radiation and therefore can be harmful in large quantities.
+
+00:00:52.360 --> 00:00:55.250
+A relevant impact on what we do here is
+
+00:00:55.250 --> 00:00:58.520
+that CT scanning tends to carry risks to the patient,
+
+00:00:58.520 --> 00:01:01.760
+and the ordering physician would be less likely to prescribe this form of
+
+00:01:01.760 --> 00:01:05.755
+scanning if there is no harm that can result from not doing the scan.
+
+00:01:05.755 --> 00:01:07.530
+When we'll look at this diagram,
+
+00:01:07.530 --> 00:01:10.015
+we see the basic principle of an X-ray machine.
+
+00:01:10.015 --> 00:01:14.465
+A patient is positioned between the X-ray source and an X-ray detector.
+
+00:01:14.465 --> 00:01:17.930
+The X-rays passing through the body are attenuated by
+
+00:01:17.930 --> 00:01:22.110
+the patient's anatomy and are captured by the detector like in a digital camera.
+
+00:01:22.110 --> 00:01:23.955
+In a CT scanner,
+
+00:01:23.955 --> 00:01:27.965
+we also have a device called collimator which shapes X-rays
+
+00:01:27.965 --> 00:01:32.010
+to a narrow beam that only passes through one slice of the patient body.
+
+00:01:32.010 --> 00:01:35.180
+The T in a CT scanner stands for tomography,
+
+00:01:35.180 --> 00:01:37.715
+and tomography means cross-sectional imaging.
+
+00:01:37.715 --> 00:01:40.435
+Here's how it works in the case of CT scanners.
+
+00:01:40.435 --> 00:01:42.980
+A single image is sticking from
+
+00:01:42.980 --> 00:01:45.845
+a given angle by emitting a beam that passes through the body,
+
+00:01:45.845 --> 00:01:47.165
+gets attenuated by it,
+
+00:01:47.165 --> 00:01:49.135
+and it's captured by the detector.
+
+00:01:49.135 --> 00:01:52.460
+A snapshot from a single point of view is not enough to
+
+00:01:52.460 --> 00:01:56.390
+understand the spatial relationship between the different structures inside the body,
+
+00:01:56.390 --> 00:02:00.650
+and thus we need to have what's called the gantry in the case of CT machines.
+
+00:02:00.650 --> 00:02:03.710
+A gantry is a cylinder with a mechanism inside
+
+00:02:03.710 --> 00:02:07.010
+that allows the X-ray source to rotate around the center.
+
+00:02:07.010 --> 00:02:09.560
+A patient is positioned into the center,
+
+00:02:09.560 --> 00:02:12.560
+and thus as a source rotates around the patient,
+
+00:02:12.560 --> 00:02:16.730
+the detector can take images of projections from different angles.
+
+00:02:16.730 --> 00:02:20.270
+Combining these projections through a process called back projection
+
+00:02:20.270 --> 00:02:24.430
+allows us to reconstruct a single slice through the patient body.
+
+00:02:24.430 --> 00:02:25.760
+Later in the lesson,
+
+00:02:25.760 --> 00:02:29.930
+you will get the chance to build a simple algorithm that reconstructs such a slice.
+
+00:02:29.930 --> 00:02:34.180
+Now, this idea of slices bring us into the third dimension.
+
+00:02:34.180 --> 00:02:36.815
+If we position the patient on a moving table,
+
+00:02:36.815 --> 00:02:38.480
+have the stable move slowly through
+
+00:02:38.480 --> 00:02:41.660
+the gantry while our detectors spin around the patient,
+
+00:02:41.660 --> 00:02:43.970
+we can image a stack of slices with
+
+00:02:43.970 --> 00:02:48.595
+a very small distance between them and going as low as fractions of a millimeter,
+
+00:02:48.595 --> 00:02:51.320
+and this is exactly what the CT scanner is doing.
+
+00:02:51.320 --> 00:02:52.730
+This is an image of one.
+
+00:02:52.730 --> 00:02:54.980
+You have a moving table in the middle here,
+
+00:02:54.980 --> 00:02:56.675
+you have your gantry here,
+
+00:02:56.675 --> 00:02:59.480
+and you have all the machinery inside that is
+
+00:02:59.480 --> 00:03:02.690
+needed to support the rotation of the detectors and emitters.
+
+00:03:02.690 --> 00:03:05.570
+In the next section, we will see how MRI scanners
+
+00:03:05.570 --> 00:03:08.390
+work and why they are different while looking quite similar.
+
+00:03:08.390 --> 00:03:12.300
+But before that, let's have you do a small exercise.
+

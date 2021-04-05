@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.000
+So previously, we have talked about back projections on
+
+00:00:03.000 --> 00:00:05.805
+X-rays and you did an exercise where you reconstructed
+
+00:00:05.805 --> 00:00:08.280
+a 2D slice by accumulating
+
+00:00:08.280 --> 00:00:12.900
+intensity values through summing up the values from projections taken at multiple angles.
+
+00:00:12.900 --> 00:00:14.800
+But what are those values?
+
+00:00:14.800 --> 00:00:18.515
+It turns out that they are quite meaningful and even have a name.
+
+00:00:18.515 --> 00:00:23.165
+As we have seen, a CT scanner measures the attenuation of X-rays,
+
+00:00:23.165 --> 00:00:24.620
+which largely depends on
+
+00:00:24.620 --> 00:00:27.940
+the physical density of the material that rays are passing through.
+
+00:00:27.940 --> 00:00:31.640
+Back projection process allows us to compute
+
+00:00:31.640 --> 00:00:35.165
+values that represent attenuation at a very specific point in space,
+
+00:00:35.165 --> 00:00:37.075
+as we have seen in our exercise.
+
+00:00:37.075 --> 00:00:39.980
+Because the rate of rotation is known and the rate of
+
+00:00:39.980 --> 00:00:43.085
+attenuation by different types of tissues is also known,
+
+00:00:43.085 --> 00:00:46.370
+these values are typically calibrated so that zero
+
+00:00:46.370 --> 00:00:49.550
+corresponds to attenuation of water and the rest of the values
+
+00:00:49.550 --> 00:00:52.825
+fall into the range of roughly minus 1,000-1,000
+
+00:00:52.825 --> 00:00:56.930
+and represent physical density of the matter in relation to that of water.
+
+00:00:56.930 --> 00:01:02.060
+These calibrated values are called Hounsfield units or CT numbers.
+
+00:01:02.060 --> 00:01:06.065
+Their range can be represented with a scale where zero is water,
+
+00:01:06.065 --> 00:01:08.370
+air is roughly minus 1,000.
+
+00:01:08.370 --> 00:01:11.700
+Denser bones sits in the range of 500-1000,
+
+00:01:11.700 --> 00:01:13.965
+and soft tissues are in between.
+
+00:01:13.965 --> 00:01:16.550
+When such images are shown on the screen,
+
+00:01:16.550 --> 00:01:19.940
+the Hounsfield unit values need to be mapped to a linear scale of
+
+00:01:19.940 --> 00:01:24.115
+displayable colors and typically the grayscale is chosen for that.
+
+00:01:24.115 --> 00:01:26.945
+So to sum it up, in this section,
+
+00:01:26.945 --> 00:01:30.710
+we have learned about the basic principles of operation of CT scanners.
+
+00:01:30.710 --> 00:01:35.090
+Key thing to remember here is that CT images are quite easy to start with
+
+00:01:35.090 --> 00:01:39.425
+because they are quite consistent and we have the beauty of Hounsfield scale,
+
+00:01:39.425 --> 00:01:43.975
+which allows us to infer the nature of tissue by just looking at pixel values.
+
+00:01:43.975 --> 00:01:47.360
+CT scans are acquired one slice at a time,
+
+00:01:47.360 --> 00:01:50.330
+thus there is a notion of primary acquisition plane.
+
+00:01:50.330 --> 00:01:55.285
+CT images are acquired from raw digital data through a process called reconstruction.
+
+00:01:55.285 --> 00:01:57.230
+This potentially can spawn
+
+00:01:57.230 --> 00:01:58.970
+some interesting machine learning problems
+
+00:01:58.970 --> 00:02:01.445
+related to direct processing of signer grim data,
+
+00:02:01.445 --> 00:02:03.410
+either for some clinical purpose or for
+
+00:02:03.410 --> 00:02:06.055
+the purpose of improving the reconstruction quality.
+
+00:02:06.055 --> 00:02:09.620
+In the next section, we will learn about MR scanners and what
+
+00:02:09.620 --> 00:02:14.310
+makes imaging with them less consistent but much more versatile.
+

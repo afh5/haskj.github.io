@@ -1,0 +1,325 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.950
+Now, just a few quick words and some of the important parameters of 3D medical images,
+
+00:00:04.950 --> 00:00:08.984
+which are really unique to specifically a 3D datasets.
+
+00:00:08.984 --> 00:00:15.015
+So one important concept is the orientation of the 3D medical images.
+
+00:00:15.015 --> 00:00:17.430
+So in DICOM you have this notion of
+
+00:00:17.430 --> 00:00:20.010
+reference coordinate system which is the coordinate system,
+
+00:00:20.010 --> 00:00:23.640
+which is associated with the patient and there is the scanner coordinate system,
+
+00:00:23.640 --> 00:00:26.040
+which is associated with the stationary scanner.
+
+00:00:26.040 --> 00:00:32.135
+Sometimes, the images are not perfectly aligned against the scanner coordinate system.
+
+00:00:32.135 --> 00:00:34.640
+So in the DICOM format,
+
+00:00:34.640 --> 00:00:37.280
+there are two values that will hint at what is
+
+00:00:37.280 --> 00:00:40.805
+the orientation of the image with respect to the scanner coordinate system.
+
+00:00:40.805 --> 00:00:42.690
+They are called the image position patients.
+
+00:00:42.690 --> 00:00:44.930
+So this value tells you where exactly the image is
+
+00:00:44.930 --> 00:00:47.510
+positioned and image orientation patients.
+
+00:00:47.510 --> 00:00:50.540
+So this value stores the two vectors that gives
+
+00:00:50.540 --> 00:00:53.950
+you the orientation of the image with respect to a scanner.
+
+00:00:53.950 --> 00:00:56.280
+Again, note that there is nothing in
+
+00:00:56.280 --> 00:00:59.150
+DICOM format that will tell you which plane is axial,
+
+00:00:59.150 --> 00:01:00.890
+which is coronal, which is sagittal.
+
+00:01:00.890 --> 00:01:03.860
+So typically, you infer this information from
+
+00:01:03.860 --> 00:01:07.435
+either series description or prior knowledge and this two values,
+
+00:01:07.435 --> 00:01:10.410
+image position patient and image orientation per patient,
+
+00:01:10.410 --> 00:01:13.190
+are the closest thing to having this information about
+
+00:01:13.190 --> 00:01:16.775
+the exact planar configuration of the image that you are dealing with.
+
+00:01:16.775 --> 00:01:20.060
+These two parameters are the most common ones.
+
+00:01:20.060 --> 00:01:22.870
+There are some other parameters which are less prevalent
+
+00:01:22.870 --> 00:01:25.580
+and if you really want to understand how your image is oriented,
+
+00:01:25.580 --> 00:01:28.460
+you will have to dig through the DICOM standard unfortunately.
+
+00:01:28.460 --> 00:01:32.990
+But one trick, one useful trick to keep in mind when you are trying to figure out
+
+00:01:32.990 --> 00:01:37.595
+what's the orientation is just load the image into a tool like 3D slicer,
+
+00:01:37.595 --> 00:01:41.045
+which we've just have looked and makes sure that the orientation that you are seeing
+
+00:01:41.045 --> 00:01:45.655
+there is the orientation that you would expect when you're processing your dataset.
+
+00:01:45.655 --> 00:01:50.750
+So to recap, there are two important data elements in the DICOM format which
+
+00:01:50.750 --> 00:01:52.340
+define the map between
+
+00:01:52.340 --> 00:01:54.050
+the scanner coordinate system and
+
+00:01:54.050 --> 00:01:56.740
+the reference coordinate system associated with the patient.
+
+00:01:56.740 --> 00:02:00.860
+These two data elements are image orientation patient and image position patient.
+
+00:02:00.860 --> 00:02:06.770
+The IOP defines the two vectors that tell you how the image is oriented in space and
+
+00:02:06.770 --> 00:02:09.095
+the IPP image position patient defines
+
+00:02:09.095 --> 00:02:13.525
+the points in 3D space which are the coordinates of the image.
+
+00:02:13.525 --> 00:02:16.220
+Now, let's look at how the Pixel Spacing
+
+00:02:16.220 --> 00:02:19.795
+information and resolution information is stored in the DICOM files.
+
+00:02:19.795 --> 00:02:23.075
+One other important parameter of the DICOM files,
+
+00:02:23.075 --> 00:02:28.085
+one other data element that you might want to read and analyze this called Pixel Spacing.
+
+00:02:28.085 --> 00:02:30.130
+As I have already hinted,
+
+00:02:30.130 --> 00:02:32.390
+DICOM pixels in DICOM files,
+
+00:02:32.390 --> 00:02:33.910
+they do not have to be square.
+
+00:02:33.910 --> 00:02:38.330
+So it is not uncommon to have a DICOM file where pixels in the x-dimension will be
+
+00:02:38.330 --> 00:02:40.550
+smaller than in the y-dimension and
+
+00:02:40.550 --> 00:02:43.745
+the pixel spacing is the data element that stores this information.
+
+00:02:43.745 --> 00:02:48.670
+When you go into 3D and when you think about how tall are your pixel,
+
+00:02:48.670 --> 00:02:50.725
+so how big are they in the z-dimension,
+
+00:02:50.725 --> 00:02:53.510
+you would be looking at the data element called Slice Thickness.
+
+00:02:53.510 --> 00:02:55.550
+So basically you have multiple slices and
+
+00:02:55.550 --> 00:02:58.655
+Slice Thickness defines the distance between those slices.
+
+00:02:58.655 --> 00:03:02.720
+It is very common to see Slice Thickness which is different from Pixel Spacing.
+
+00:03:02.720 --> 00:03:06.800
+But at the same time, Pixel Spacing would be the same across x and y dimension.
+
+00:03:06.800 --> 00:03:09.830
+So pixels would have rectangular shapes.
+
+00:03:09.830 --> 00:03:12.320
+One other important thing to remember is
+
+00:03:12.320 --> 00:03:16.370
+the Slice Thickness is one of those DICOM elements that do not have to be there.
+
+00:03:16.370 --> 00:03:19.940
+So it could be that you will not have a Slice Thickness elements.
+
+00:03:19.940 --> 00:03:24.980
+Some other things to look at in that case would be the image position patients elements,
+
+00:03:24.980 --> 00:03:26.290
+which we just talked about.
+
+00:03:26.290 --> 00:03:30.860
+So image position patient element defines the three coordinates which
+
+00:03:30.860 --> 00:03:33.080
+defines where exactly in space the image is
+
+00:03:33.080 --> 00:03:36.080
+located and you would be looking maybe at the less coordinate,
+
+00:03:36.080 --> 00:03:40.355
+the z-axis, the z location of the slice to define what is
+
+00:03:40.355 --> 00:03:42.830
+the Slice Thickness that you are dealing with
+
+00:03:42.830 --> 00:03:45.890
+and sometimes you have an element called Slice Location,
+
+00:03:45.890 --> 00:03:50.105
+which can also help you understand how thick are your slices.
+
+00:03:50.105 --> 00:03:52.880
+So in a quick word, when it comes to NIFTI files,
+
+00:03:52.880 --> 00:03:55.655
+some of the important detail elements in the NIFTI files
+
+00:03:55.655 --> 00:03:58.760
+are also orientation data elements,
+
+00:03:58.760 --> 00:03:59.975
+similar to the DICOM,
+
+00:03:59.975 --> 00:04:01.910
+IOP and IPP fields,
+
+00:04:01.910 --> 00:04:05.480
+NIFTI file stores these matrices,
+
+00:04:05.480 --> 00:04:07.550
+the srow and qoffset,
+
+00:04:07.550 --> 00:04:10.420
+vectors, which define the orientation of the image.
+
+00:04:10.420 --> 00:04:14.760
+NIFTI files also define the pixdim field and pixdim field
+
+00:04:14.760 --> 00:04:19.130
+stores the pixel dimensions in the three-dimensional space.
+
+00:04:19.130 --> 00:04:21.680
+NIFTI file formats defined using units of
+
+00:04:21.680 --> 00:04:24.305
+measurements as I have mentioned and the field called
+
+00:04:24.305 --> 00:04:27.230
+xyzt _units is the field that she would read to
+
+00:04:27.230 --> 00:04:31.235
+understand what are the units of measurements used in the NIFTI files.
+
+00:04:31.235 --> 00:04:35.285
+Lastly, so far when we were talking about the important parameters,
+
+00:04:35.285 --> 00:04:40.145
+we have talked about parameters that define the spatial aspects of pixel in the 3D space,
+
+00:04:40.145 --> 00:04:44.450
+another important set of parameters in DICOM and NIFTI files are the parameters that
+
+00:04:44.450 --> 00:04:49.145
+define the photometric aspects of pixels in the color space.
+
+00:04:49.145 --> 00:04:51.260
+They define what are the different values,
+
+00:04:51.260 --> 00:04:55.400
+what are the brightness's mean and how they map to the digital representation.
+
+00:04:55.400 --> 00:05:00.715
+A key component of that are the data elements that has to do with bit depth.
+
+00:05:00.715 --> 00:05:09.570
+So we have seen how the values in DICOM file can range from minus 3,000 to plus 3,000,
+
+00:05:09.570 --> 00:05:11.340
+we've talked about Hounsfield units.
+
+00:05:11.340 --> 00:05:14.270
+DICOM files actually tell you how many bits
+
+00:05:14.270 --> 00:05:17.240
+are used to store the color information about one pixel,
+
+00:05:17.240 --> 00:05:18.830
+the grayscale range information about
+
+00:05:18.830 --> 00:05:21.560
+one pixels and these are the values that you will be looking at.
+
+00:05:21.560 --> 00:05:23.900
+You will be looking at things like bits allocated,
+
+00:05:23.900 --> 00:05:27.185
+bit stored in maybe high bit which will define whether you're
+
+00:05:27.185 --> 00:05:30.835
+dealing with a little endian or big endian data-type.
+
+00:05:30.835 --> 00:05:35.090
+So we have looked at some of the important parameters of the DICOM and NIFTI files.
+
+00:05:35.090 --> 00:05:37.940
+Again, this may seem like a little bit overwhelming right now.
+
+00:05:37.940 --> 00:05:41.960
+We will keep coming back to this concept as we will do exercises and we'll go through
+
+00:05:41.960 --> 00:05:47.405
+further lectures and right now to help you internalize a little bit of this knowledge,
+
+00:05:47.405 --> 00:05:49.745
+let me walk you through an examples of
+
+00:05:49.745 --> 00:05:51.590
+exploratory data analysis of
+
+00:05:51.590 --> 00:05:56.220
+3D medical imaging data sets and let's jump into a Jupyter Notebook.
+

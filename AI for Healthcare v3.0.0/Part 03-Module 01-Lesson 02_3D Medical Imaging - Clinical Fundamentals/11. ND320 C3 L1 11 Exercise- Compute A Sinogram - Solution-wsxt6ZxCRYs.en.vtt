@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.880
+During the exercise, you have seen how
+
+00:00:02.880 --> 00:00:07.155
+backprojection is constructed through simulation of a CT scan in operation.
+
+00:00:07.155 --> 00:00:08.925
+One thing to note here though,
+
+00:00:08.925 --> 00:00:10.410
+is that in our simulation,
+
+00:00:10.410 --> 00:00:13.290
+we have been computing projections that contribute to our sign,
+
+00:00:13.290 --> 00:00:17.790
+a grim by walking across the image along x-axis in parallel lines.
+
+00:00:17.790 --> 00:00:21.000
+This is not exactly what happens in a CT scanner,
+
+00:00:21.000 --> 00:00:23.415
+because our detector is a single point,
+
+00:00:23.415 --> 00:00:26.415
+and thus the beams are cast along the axis,
+
+00:00:26.415 --> 00:00:30.180
+that are positioned at an angle to each other in a fan like shape.
+
+00:00:30.180 --> 00:00:34.920
+This is the actual term for a CT scanner that works like that, fan-beam CT.
+
+00:00:34.920 --> 00:00:39.140
+The backprojection algorithm, works on a fan-beam CT in a similar way,
+
+00:00:39.140 --> 00:00:41.695
+though, only the math is a bit more complex.
+
+00:00:41.695 --> 00:00:44.695
+Another difference is that to speed the scans up,
+
+00:00:44.695 --> 00:00:47.030
+the table with the patient is not stationary.
+
+00:00:47.030 --> 00:00:48.245
+When the emitters rotate,
+
+00:00:48.245 --> 00:00:49.875
+but it's continuously moving,
+
+00:00:49.875 --> 00:00:51.890
+and the reconstruction algorithm accounts
+
+00:00:51.890 --> 00:00:54.020
+for the helical pattern that the details come in,
+
+00:00:54.020 --> 00:00:57.625
+hence, the term helical CT which you also might hear.
+
+00:00:57.625 --> 00:01:00.270
+One other important thing about CT scanners,
+
+00:01:00.270 --> 00:01:02.300
+relate to the physical meaning of
+
+00:01:02.300 --> 00:01:05.120
+the values that we compute during the backprojection process,
+
+00:01:05.120 --> 00:01:08.220
+and that is what we are going to talk about next.
+

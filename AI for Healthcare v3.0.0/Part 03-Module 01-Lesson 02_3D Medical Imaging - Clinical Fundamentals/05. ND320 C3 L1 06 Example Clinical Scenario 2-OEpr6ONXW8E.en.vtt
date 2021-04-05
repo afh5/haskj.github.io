@@ -1,0 +1,346 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.805
+Ultimately, the purpose behind a medical test is to influence clinical decision-making.
+
+00:00:04.805 --> 00:00:08.820
+In this lesson, we'll build a framework for thinking about how the result of
+
+00:00:08.820 --> 00:00:10.590
+an imaging study would influence
+
+00:00:10.590 --> 00:00:14.730
+clinical decision-making with the goal of setting you up for future lessons.
+
+00:00:14.730 --> 00:00:17.370
+In those lessons, you'll learn how to calculate
+
+00:00:17.370 --> 00:00:20.625
+the diagnostic performance metrics that underpin this framework.
+
+00:00:20.625 --> 00:00:23.130
+These metrics will serve as relevant measures of
+
+00:00:23.130 --> 00:00:25.710
+how well your algorithms perform compared to
+
+00:00:25.710 --> 00:00:28.470
+an established gold standard test and will quickly
+
+00:00:28.470 --> 00:00:32.340
+communicate to potential users how effective your algorithm is.
+
+00:00:32.340 --> 00:00:37.325
+First, let's revisit a theorem which will be familiar to many of you. Bayes' theorem.
+
+00:00:37.325 --> 00:00:41.450
+As you may recall, Bayes' theorem describes the probability of an event
+
+00:00:41.450 --> 00:00:45.830
+based on prior knowledge of conditions that might be related to the event.
+
+00:00:45.830 --> 00:00:48.920
+In medicine, this will be the probability that the patient has
+
+00:00:48.920 --> 00:00:52.174
+a given condition based on all available information.
+
+00:00:52.174 --> 00:00:57.170
+In medicine, we express Bayes' theorem in terms of odds rather than probabilities,
+
+00:00:57.170 --> 00:00:59.420
+partly due to the ease of calculation when
+
+00:00:59.420 --> 00:01:02.180
+taking into account the results of a diagnostic test.
+
+00:01:02.180 --> 00:01:04.335
+Here's the common expression.
+
+00:01:04.335 --> 00:01:06.125
+Here is the same formula,
+
+00:01:06.125 --> 00:01:08.000
+but I'll now flip the right and left
+
+00:01:08.000 --> 00:01:10.970
+sides so that it's stylistically expressed in the order in
+
+00:01:10.970 --> 00:01:16.285
+which we'd be thinking in daily circumstances so that our prior belief comes first.
+
+00:01:16.285 --> 00:01:20.130
+Let's go through each of these terms in a high level sense.
+
+00:01:20.130 --> 00:01:24.710
+The term prior odds reflects your prior belief about the presence of a given disease or
+
+00:01:24.710 --> 00:01:29.365
+condition in the absence of information from the diagnostic tests in question.
+
+00:01:29.365 --> 00:01:31.945
+Without any additional clinical information,
+
+00:01:31.945 --> 00:01:36.445
+this usually represents the local population prevalence of a particular condition.
+
+00:01:36.445 --> 00:01:38.555
+In medicine, we sometimes say,
+
+00:01:38.555 --> 00:01:40.340
+if you hear hoofs outside your window,
+
+00:01:40.340 --> 00:01:42.260
+think horses, not zebras.
+
+00:01:42.260 --> 00:01:45.410
+This is to capture the idea that the base rate of a disease in
+
+00:01:45.410 --> 00:01:48.784
+the population should influence your pre-test probability.
+
+00:01:48.784 --> 00:01:51.545
+That is, unless you live in a zebra enclosure,
+
+00:01:51.545 --> 00:01:54.765
+then it's more likely a zebra, base rates matter.
+
+00:01:54.765 --> 00:01:57.200
+The middle term, the likelihood ratio is
+
+00:01:57.200 --> 00:01:59.840
+a diagnostic performance metric used to determine
+
+00:01:59.840 --> 00:02:02.000
+whether a test result usefully changes
+
+00:02:02.000 --> 00:02:05.360
+the probability that a condition or disease is present.
+
+00:02:05.360 --> 00:02:08.240
+We will learn how to calculate it in a later lecture.
+
+00:02:08.240 --> 00:02:12.845
+But for now, notice that its value ranges from zero to infinity, theoretically.
+
+00:02:12.845 --> 00:02:14.030
+With a value of one,
+
+00:02:14.030 --> 00:02:15.620
+meaning that test result provides
+
+00:02:15.620 --> 00:02:19.265
+no useful information and our prior belief is unchanged.
+
+00:02:19.265 --> 00:02:20.765
+If the value is large,
+
+00:02:20.765 --> 00:02:25.490
+we will be more confident that a disease is present and the smaller the value below one,
+
+00:02:25.490 --> 00:02:28.150
+the less likely that disease is present.
+
+00:02:28.150 --> 00:02:32.210
+Finally, the posterior odds reflects our belief about a disease
+
+00:02:32.210 --> 00:02:36.245
+being present after incorporating the results of our diagnostic test.
+
+00:02:36.245 --> 00:02:40.780
+Let's see how all of this fits in into a practical example.
+
+00:02:40.780 --> 00:02:45.485
+We'll go over three cases and for all of these cases will be in the emergency department,
+
+00:02:45.485 --> 00:02:46.850
+a setting in which rapid,
+
+00:02:46.850 --> 00:02:49.355
+accurate decision-making is of the essence.
+
+00:02:49.355 --> 00:02:54.170
+In our first case, Ms. Smith comes in with the worst headache of her life.
+
+00:02:54.170 --> 00:02:57.830
+The emergency room provider knows
+
+00:02:57.830 --> 00:03:01.685
+that the most common cause is going to be something like a simple headache.
+
+00:03:01.685 --> 00:03:05.650
+But there are more dangerous causes such as intracranial hemorrhage.
+
+00:03:05.650 --> 00:03:07.175
+That means bleeding in the brain,
+
+00:03:07.175 --> 00:03:09.095
+and he needs to be certain.
+
+00:03:09.095 --> 00:03:12.980
+To do so, he will order a head CT. Head CT is
+
+00:03:12.980 --> 00:03:17.345
+obtained and the radiologist states that indeed subarachnoid hemorrhage is present.
+
+00:03:17.345 --> 00:03:19.370
+That means there is bleeding in the brain.
+
+00:03:19.370 --> 00:03:23.900
+Now notice, the prior belief of the emergency room physician was
+
+00:03:23.900 --> 00:03:28.370
+that hemorrhage or any other dangerous finding was actually very low.
+
+00:03:28.370 --> 00:03:34.325
+But because the CT is so good at picking up on bleeds and it is so specific for them,
+
+00:03:34.325 --> 00:03:38.390
+the likelihood ratio has a very large positive value and thus
+
+00:03:38.390 --> 00:03:41.360
+the emergency room physicians belief is now
+
+00:03:41.360 --> 00:03:45.020
+changed such that he is certain that hemorrhage is present.
+
+00:03:45.020 --> 00:03:48.740
+That's an example of where a positive result with
+
+00:03:48.740 --> 00:03:54.380
+a very large likelihood ratio can tip someone from not believing something is the case,
+
+00:03:54.380 --> 00:03:59.420
+to being almost certain that the disease is present and changing treatment accordingly.
+
+00:03:59.420 --> 00:04:01.130
+With that information at hand,
+
+00:04:01.130 --> 00:04:05.485
+the emergency room physician refers Ms. Smith to a neurosurgeon.
+
+00:04:05.485 --> 00:04:10.700
+In this scenario, Ms. Smith comes in instead with new left-sided weakness,
+
+00:04:10.700 --> 00:04:14.120
+meaning weakness of her arm and leg that came on suddenly.
+
+00:04:14.120 --> 00:04:17.705
+Now that history is very suspicious for a stroke,
+
+00:04:17.705 --> 00:04:20.610
+it at least needs to be ruled out and
+
+00:04:20.610 --> 00:04:24.965
+the emergency room provider has a very high pre-test probability that it's the case.
+
+00:04:24.965 --> 00:04:29.390
+However, because the treatment for such a disease is in no way benign,
+
+00:04:29.390 --> 00:04:33.005
+meaning can have complications if used in the wrong context,
+
+00:04:33.005 --> 00:04:36.395
+it needs to get a study to make sure that that's the case.
+
+00:04:36.395 --> 00:04:38.795
+The ER doc decides to get a Brain MRI,
+
+00:04:38.795 --> 00:04:42.715
+which is very good at picking up on the changes in the brain associated with a stroke.
+
+00:04:42.715 --> 00:04:46.730
+The radiologists interprets the study and finds out that it's negative.
+
+00:04:46.730 --> 00:04:51.110
+Now, even though the ER docs initial belief was that stroke was very likely,
+
+00:04:51.110 --> 00:04:55.430
+he knows that the MRI is so good at picking up on these changes that if it's negative,
+
+00:04:55.430 --> 00:04:58.145
+essentially the probability is near null
+
+00:04:58.145 --> 00:05:02.205
+that a stroke is the cause of Ms. Smith's symptoms.
+
+00:05:02.205 --> 00:05:05.890
+This is an example of where a very small value for
+
+00:05:05.890 --> 00:05:08.830
+the likelihood ratio can tip someone from
+
+00:05:08.830 --> 00:05:12.325
+being almost certain about a disease to essentially excluding it.
+
+00:05:12.325 --> 00:05:16.450
+In this case, the ER doc holds often using clot busting drugs and
+
+00:05:16.450 --> 00:05:20.765
+needs to go back to the drawing board to figure out what is going on with Ms. Smith.
+
+00:05:20.765 --> 00:05:23.655
+Now, things aren't always so cut and dry.
+
+00:05:23.655 --> 00:05:26.785
+In this case, Ms. Smith comes in with a headache,
+
+00:05:26.785 --> 00:05:29.990
+but she also has a known history of breast cancer.
+
+00:05:29.990 --> 00:05:34.090
+One of the main concerns of the ER doc in this case is,
+
+00:05:34.090 --> 00:05:36.670
+could a metastasis be the explanation for the headache?
+
+00:05:36.670 --> 00:05:39.515
+Meaning, has the cancer traveled to the brain?
+
+00:05:39.515 --> 00:05:44.835
+To exclude any really dangerous causes or emergent causes explaining the headache,
+
+00:05:44.835 --> 00:05:46.565
+start with a head CT.
+
+00:05:46.565 --> 00:05:49.550
+The radiologists interprets the head CT saying that there
+
+00:05:49.550 --> 00:05:52.170
+isn't any acute findings in the head CT,
+
+00:05:52.170 --> 00:05:54.890
+though cautions that this study is not
+
+00:05:54.890 --> 00:05:59.735
+the ideal study to look for small metastasis and they may be missed.
+
+00:05:59.735 --> 00:06:03.140
+In this case, you can think of the likelihood ratio as
+
+00:06:03.140 --> 00:06:07.115
+essentially a value of one for that particular disease state.
+
+00:06:07.115 --> 00:06:09.500
+It doesn't really change our belief.
+
+00:06:09.500 --> 00:06:11.580
+So with the results of the CT study,
+
+00:06:11.580 --> 00:06:13.760
+the ER doc is now comfortable that there isn't
+
+00:06:13.760 --> 00:06:17.330
+a large mass or a brain bleed causing the headache,
+
+00:06:17.330 --> 00:06:22.535
+but still not sure whether metastasis could be present in explaining it.
+
+00:06:22.535 --> 00:06:26.120
+Thus he moves on to the more ideal study and MRI with
+
+00:06:26.120 --> 00:06:31.800
+contrast and thin sections to further refine the diagnosis.
+

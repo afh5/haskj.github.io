@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.605
+Hello. My name is Ivan,
+
+00:00:01.605 --> 00:00:03.780
+and I will be taking you through the rest of the lesson.
+
+00:00:03.780 --> 00:00:05.940
+So you have just heard from [inaudible] about
+
+00:00:05.940 --> 00:00:10.005
+the various 3D medical imaging modalities and the clinical specialties that use them.
+
+00:00:10.005 --> 00:00:12.570
+Hopefully, this helps you understand better where 3D
+
+00:00:12.570 --> 00:00:15.345
+medical imaging stand in the practice of care.
+
+00:00:15.345 --> 00:00:17.580
+In the next few sessions below,
+
+00:00:17.580 --> 00:00:18.810
+we will get technical,
+
+00:00:18.810 --> 00:00:20.310
+and we are going to dive deeper into
+
+00:00:20.310 --> 00:00:24.225
+the basic physical principles that drive the two medical imaging modalities,
+
+00:00:24.225 --> 00:00:25.890
+CT and MRI scanners.
+
+00:00:25.890 --> 00:00:28.230
+Also, we are going to cover some of
+
+00:00:28.230 --> 00:00:31.875
+the basic tasks that people discuss in relation to 3D imaging,
+
+00:00:31.875 --> 00:00:36.550
+windowing, multi-planet reconstruction, 3D reconstruction, and registration.
+
+00:00:36.550 --> 00:00:38.720
+We are focusing on these two modalities,
+
+00:00:38.720 --> 00:00:41.734
+because of all the 3D medical imaging procedures,
+
+00:00:41.734 --> 00:00:45.320
+CT and MRI scans are by far the most prevalent,
+
+00:00:45.320 --> 00:00:47.765
+and therefore, you're likely to encounter them
+
+00:00:47.765 --> 00:00:50.515
+one way or another in your AI explorations.
+
+00:00:50.515 --> 00:00:54.695
+So why are we talking about physics of CT and MRI scanners?
+
+00:00:54.695 --> 00:00:59.320
+CT and MRI scanners are based on different physical principles, and thus,
+
+00:00:59.320 --> 00:01:02.060
+the nature of the images that are acquired by them,
+
+00:01:02.060 --> 00:01:05.290
+the meaning of the pixel intensity values are different.
+
+00:01:05.290 --> 00:01:09.935
+As you are building algorithms that process the data acquired by these scanners,
+
+00:01:09.935 --> 00:01:13.670
+it is important to understand the nature of this data as it will help you
+
+00:01:13.670 --> 00:01:18.385
+develop the intuition required for building algorithms and generalize better.
+
+00:01:18.385 --> 00:01:22.250
+Understanding basic physics will help you get an idea of
+
+00:01:22.250 --> 00:01:26.090
+what type of artifacts are possible and what outliers might look like.
+
+00:01:26.090 --> 00:01:28.470
+So let's dive in.
+

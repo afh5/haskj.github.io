@@ -1,0 +1,223 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.020
+So now let's talk about ground truth for segmentation.
+
+00:00:04.020 --> 00:00:06.660
+You have seen in the exercise that you have just done,
+
+00:00:06.660 --> 00:00:09.510
+you had a mask which had the ground truth
+
+00:00:09.510 --> 00:00:12.795
+for the liver segmentation that your network was performing.
+
+00:00:12.795 --> 00:00:15.945
+Let us talk about where the ground truth is coming from.
+
+00:00:15.945 --> 00:00:22.619
+So ground truth for segmentation is an interesting question because usually,
+
+00:00:22.619 --> 00:00:27.825
+there are very few clinical workflows which create ground rules for medical imaging.
+
+00:00:27.825 --> 00:00:29.445
+One is radiation therapy,
+
+00:00:29.445 --> 00:00:31.215
+which Mazen has mentioned previously,
+
+00:00:31.215 --> 00:00:33.720
+and this is something where segmentations or
+
+00:00:33.720 --> 00:00:36.780
+contours are routinely created because radiation needs to be targeted.
+
+00:00:36.780 --> 00:00:39.830
+But for many cases like quantitative radiology,
+
+00:00:39.830 --> 00:00:42.635
+ground truth is not generated in the clinic.
+
+00:00:42.635 --> 00:00:44.870
+If you're working on a segmentation project,
+
+00:00:44.870 --> 00:00:48.170
+you will need to think of how to obtain such ground truth
+
+00:00:48.170 --> 00:00:51.730
+by maybe involving clinicians who will be creating the ground truth.
+
+00:00:51.730 --> 00:00:55.070
+But then it's an interesting question of how well do
+
+00:00:55.070 --> 00:00:58.490
+these people agree with each other when they counter the same anatomy.
+
+00:00:58.490 --> 00:01:00.440
+As you have seen in some of the images,
+
+00:01:00.440 --> 00:01:02.975
+it is not always that obvious where
+
+00:01:02.975 --> 00:01:06.620
+the delineations of organs and structures within the human body are.
+
+00:01:06.620 --> 00:01:09.280
+Sometimes, as Mazen has talked about,
+
+00:01:09.280 --> 00:01:11.495
+the contrast resolution and the spatial resolution,
+
+00:01:11.495 --> 00:01:16.010
+the edges of structures are pretty obvious, sometimes they're not.
+
+00:01:16.010 --> 00:01:19.430
+As we can see in the images here,
+
+00:01:19.430 --> 00:01:21.860
+these images come from a study which was made
+
+00:01:21.860 --> 00:01:24.665
+by some people at the University of Cambridge Hospital,
+
+00:01:24.665 --> 00:01:26.630
+where they asked a few observers,
+
+00:01:26.630 --> 00:01:30.245
+a few clinicians to contour the same five cases
+
+00:01:30.245 --> 00:01:35.150
+of head and neck cancer on a computer tomography images.
+
+00:01:35.150 --> 00:01:38.725
+They measured the level of conformity between those people.
+
+00:01:38.725 --> 00:01:41.600
+You can see that the levels of conformity are not too high.
+
+00:01:41.600 --> 00:01:43.910
+So on case 1, for example,
+
+00:01:43.910 --> 00:01:47.330
+the level of agreement was only 38 percent.
+
+00:01:47.330 --> 00:01:51.350
+Which means that mostly people were not delineating the same pixels.
+
+00:01:51.350 --> 00:01:52.490
+There are some images here,
+
+00:01:52.490 --> 00:01:54.800
+you can see the parotid gland,
+
+00:01:54.800 --> 00:01:59.075
+for example, and the different colors here represent the different contours.
+
+00:01:59.075 --> 00:02:01.835
+You can see how people were countering things differently.
+
+00:02:01.835 --> 00:02:04.775
+Or for example, in the brainstem structure on the right here,
+
+00:02:04.775 --> 00:02:06.680
+you can see how first,
+
+00:02:06.680 --> 00:02:09.870
+the brainstem is not really visible on a CT.
+
+00:02:09.870 --> 00:02:12.425
+The structures in the brain, as we have seen,
+
+00:02:12.425 --> 00:02:16.325
+have very little gradient and finesse to them.
+
+00:02:16.325 --> 00:02:19.310
+Here we can see how people were approaching
+
+00:02:19.310 --> 00:02:23.485
+the contouring differently without having a proper contouring protocol.
+
+00:02:23.485 --> 00:02:26.195
+So what does this all mean to you as a data scientist?
+
+00:02:26.195 --> 00:02:28.790
+Well, it means that when you are creating
+
+00:02:28.790 --> 00:02:31.895
+ground truth for your machine learning training sets,
+
+00:02:31.895 --> 00:02:36.695
+you need to think of how consistent are users in labeling the ground truth,
+
+00:02:36.695 --> 00:02:38.150
+in creating the ground truth,
+
+00:02:38.150 --> 00:02:41.029
+and you might want to talk to the annotators
+
+00:02:41.029 --> 00:02:46.260
+about instituting maybe common protocols for labeling the ground truth,
+
+00:02:46.260 --> 00:02:49.115
+or if you're ground truth is coming from an external source,
+
+00:02:49.115 --> 00:02:53.240
+you need to think about how well are
+
+00:02:53.240 --> 00:02:57.925
+users agreeing with each other when the ground truth has been created.
+
+00:02:57.925 --> 00:03:02.630
+So now, let us talk about some of the tooling for segmentation,
+
+00:03:02.630 --> 00:03:04.910
+for creating ground truth in segmentation.
+
+00:03:04.910 --> 00:03:07.340
+Just a quick note, the tooling
+
+00:03:07.340 --> 00:03:13.160
+for annotating datasets for segmentation is not that prevalent.
+
+00:03:13.160 --> 00:03:15.665
+There are some clinical tools that exist out there.
+
+00:03:15.665 --> 00:03:18.800
+One tool which is popular and which we will touch upon in
+
+00:03:18.800 --> 00:03:21.995
+the next lesson more closely is 3D Slicer.
+
+00:03:21.995 --> 00:03:24.080
+But all of the tooling requires
+
+00:03:24.080 --> 00:03:28.400
+some knowledge of both anatomy and some mastery of the tool.
+
+00:03:28.400 --> 00:03:30.350
+So if you are engaged in, again,
+
+00:03:30.350 --> 00:03:33.605
+in a labeling project for a segmentation dataset,
+
+00:03:33.605 --> 00:03:36.050
+you need to really think about making
+
+00:03:36.050 --> 00:03:39.185
+your tooling consistent and accessible for all the annotators.
+
+00:03:39.185 --> 00:03:41.540
+So these are just a few notes on
+
+00:03:41.540 --> 00:03:45.275
+the ground truth for segmentation and classification in general.
+
+00:03:45.275 --> 00:03:47.240
+So in the next section,
+
+00:03:47.240 --> 00:03:53.430
+let us talk about some of the performance metric for your segmentation models.
+

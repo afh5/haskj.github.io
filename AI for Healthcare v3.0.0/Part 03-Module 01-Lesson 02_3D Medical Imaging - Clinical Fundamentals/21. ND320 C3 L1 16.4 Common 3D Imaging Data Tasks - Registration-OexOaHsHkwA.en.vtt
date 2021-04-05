@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.785
+Yet another important 3D medical imaging concept is called registration.
+
+00:00:04.785 --> 00:00:10.020
+Registration refers to the process of aligning images up together in 3D space.
+
+00:00:10.020 --> 00:00:14.100
+Sometimes this needs to be performed when you have two volumes that have been acquired
+
+00:00:14.100 --> 00:00:18.270
+by different modalities or by the same modality but the different points of time.
+
+00:00:18.270 --> 00:00:19.650
+Such task, for example,
+
+00:00:19.650 --> 00:00:21.600
+may come up with if a physician wants to compare
+
+00:00:21.600 --> 00:00:24.435
+the internal anatomy before and after surgery.
+
+00:00:24.435 --> 00:00:29.010
+Registration is essentially the process of shifting all voxels from one image,
+
+00:00:29.010 --> 00:00:31.365
+also called moving image, to another one,
+
+00:00:31.365 --> 00:00:32.760
+also called fixed image,
+
+00:00:32.760 --> 00:00:34.950
+so that some constraints are fulfilled.
+
+00:00:34.950 --> 00:00:37.380
+Thus, rigid registration, for example,
+
+00:00:37.380 --> 00:00:39.660
+refers to transformation where only rotation
+
+00:00:39.660 --> 00:00:42.390
+and translation is applied to the entire volume.
+
+00:00:42.390 --> 00:00:45.625
+Such procedure retains absolute dimensions of the moving image,
+
+00:00:45.625 --> 00:00:47.590
+but not orientation or position.
+
+00:00:47.590 --> 00:00:52.195
+Affine registration allow scaling and addition to transformation and rotation.
+
+00:00:52.195 --> 00:00:53.500
+With a fine registration,
+
+00:00:53.500 --> 00:00:58.370
+straight lines of the moving image remains straight what sizes are no longer preserved.
+
+00:00:58.370 --> 00:01:01.420
+Deformability registration refers to the process of applying
+
+00:01:01.420 --> 00:01:05.095
+transform to each single point of the moving volume individually.
+
+00:01:05.095 --> 00:01:08.720
+In this example, we're looking at CT and MRI scans of the brain.
+
+00:01:08.720 --> 00:01:12.410
+Sometimes it's important to superimpose one on top of the other.
+
+00:01:12.410 --> 00:01:14.800
+For example, with this two images,
+
+00:01:14.800 --> 00:01:17.560
+in keys of radiation therapy or the calculation of
+
+00:01:17.560 --> 00:01:21.040
+estimators radiation dose needs to be performed on a CT scan.
+
+00:01:21.040 --> 00:01:22.930
+MRI Scan is used to get
+
+00:01:22.930 --> 00:01:27.520
+a much better contrast resolution and have more accuracy in targeting the radiation beam.
+
+00:01:27.520 --> 00:01:29.975
+So overlaying one on top of the other
+
+00:01:29.975 --> 00:01:33.055
+allows the physicians to perform procedures more precisely.
+
+00:01:33.055 --> 00:01:35.960
+In this case, a deformable registration process may be
+
+00:01:35.960 --> 00:01:39.485
+used to map the MRI image on top of the CT image.
+
+00:01:39.485 --> 00:01:43.175
+This concludes our section on common 3D imaging tasks
+
+00:01:43.175 --> 00:01:47.520
+and you are invited to do a little exercise before a lesson comes to a close.
+

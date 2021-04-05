@@ -1,0 +1,297 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Important Parameters of 3D Medical Images</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>3D Imaging Exploratory Data Analysis</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. The DICOM Standard.html">02. The DICOM Standard</a>
+    </li>
+    <li class="">
+      <a href="03. Anatomy of DICOM Datasets.html">03. Anatomy of DICOM Datasets</a>
+    </li>
+    <li class="">
+      <a href="04. NIFTI File Format.html">04. NIFTI File Format</a>
+    </li>
+    <li class="">
+      <a href="05. Viewing 3D Medical Images.html">05. Viewing 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Load Image.html">06. Exercise 1: Load Image</a>
+    </li>
+    <li class="">
+      <a href="07. Important Parameters of 3D Medical Images.html">07. Important Parameters of 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="08. Basic DICOM Volume EDA.html">08. Basic DICOM Volume EDA</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 2 3D Volume MPR.html">09. Exercise 2: 3D Volume MPR</a>
+    </li>
+    <li class="">
+      <a href="10. Basic 3D DICOM Dataset EDA.html">10. Basic 3D DICOM Dataset EDA</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 3D Dataset EDA and Curation.html">11. Exercise 3: 3D Dataset EDA and Curation</a>
+    </li>
+    <li class="">
+      <a href="12. Lesson Summary.html">12. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Important Parameters of 3D Medical Images</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Important parameters of 3D medical images Heading</p></h3>
+  <div>
+  <h1 id="important-parameters-of-medical-images">Important Parameters of Medical Images</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L2 06 Important Parameters Of 3D Medical Images</p></h3>
+  <video controls>
+  <source src="07. ND320 C3 L2 06 Important Parameters Of 3D Medical Images--16DOQebcfY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. ND320 C3 L2 06 Important Parameters Of 3D Medical Images--16DOQebcfY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>summary of video</p></h3>
+  <div>
+  <p>We have learned about some of the important parameters that you should be on the lookout for when analyzing medical imaging datasets.</p>
+<p>These are parameters that have to do with geometric and photometric aspects of medical images.</p>
+<h2 id="orientation-parameters">Orientation parameters</h2>
+<p>For DICOM two parameters that define the relative position of a 2D in the 3D space would be:  </p>
+<p><strong>(0020,0037) Image Orientation Patient</strong> - a parameter that stores two vectors (directional cosines to be precise) that define the orientation of the first row and first column of the image.  </p>
+<p><strong>(0020,0032) Image Position Patient</strong> - a parameter that stores x, y, and z coordinates of the upper left-hand corner of the image.  </p>
+<p>Both of these are Type 1 (mandatory) parameters for MR and CT IODs, so it is generally safe to rely on them.</p>
+<p>For NIFTI, the same purpose is served by srow_*, qoffset_* vectors.</p>
+<h2 id="physical-spacing-parameters">Physical spacing parameters</h2>
+<p><strong>(0028,0030) Pixel Spacing</strong> - two values that store the physical distance between centers of pixels across x and y axes.</p>
+<p><strong>(0018,0050) Slice Thickness</strong> - thickness of a single slice. Note that this one is a Type 2 (required, but can be zero) parameter for CT and MR data. If you find those unavailable, you can deduce slice thickness from IPP parameters. This can happen if your volume has non-uniform slice thickness.</p>
+<h2 id="photometric-parameters">Photometric parameters</h2>
+<p>There are quite a few of those, as DICOM can store both grayscale and color data, so lots of parameters deal with color palettes. CT and MR images usually have monochrome pixel representation (defined by tag <em>(0028,0004) Photometric Interpretation</em>).</p>
+<p>Most notable ones of this group are:</p>
+<p><strong>(0028,0100) Bits Allocated</strong> - parameter that defines the number of bits allocated per pixel (since we have CPUs that operate in bytes, this parameter is always a multiple of 8).  </p>
+<p><strong>(0028,0101) Bits Stored</strong> - parameter that defines the number of bits that are actually used - quite often, you could see Bits Allocated set to 16, but Bits Stored set to 12.  </p>
+<h3 id="image-size-parameters">Image size parameters</h3>
+<p>Of worthy mention are parameters that define the size of the 3D volume. There are Type 1 parameters that define the width and height of each 2D slice:</p>
+<p><strong>(0020,0010) Rows</strong> - this is the height of the slice, in voxels   </p>
+<p><strong>(0020,0011) Columns</strong> - width of the slice, in voxels  </p>
+<p>Both of these need to be consistent across all DICOM files that comprise a series.  </p>
+<p>Note that there isn’t really anything in DICOM metadata that has to tell you how many slices you have in the series. There are tags that can hint at this (like <em>(0054,0081) Number of Slices</em>, or <em>(0020,0013) Instance Number</em>), but none of them are mandatory, Type 1 tags for CT or MR data. The most reliable way to determine the number of slices in the DICOM series is to look at the number of files that you have, and ideally validate that they make up a correct volume by checking for the consistency of IPP values.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Dimensions of DICOM volume</p></h3>
+  <div>
+  <div>
+    <p><strong>QUESTION:</strong> <p>Compute the dimensions of a DICOM volume where you have 120 files with the following metadata:  </p>
+<p><strong>(0028,0010) Rows</strong> = 512  <br />
+<strong>(0028,0011) Columns</strong> = 512  <br />
+<strong>(0028,0030) Pixel spacing</strong> = 0.56\0.75  <br />
+<strong>(0018,0050) Slice Thickness</strong> = 5  </p>
+<p>Specify the width, height, and depth of the image as voxels in the format <em>(W, H, D)</em>.</p></p>
+    <div class="" form-group">
+      <label for="answer"><strong>ANSWER:</strong></label>
+      <textarea class="form-control" id="answer"></textarea>
+    </div>
+  </div>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <p><i>These answers need to be solved by yourself, I believe you can do it</i></p>
+
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Physical dimensions</p></h3>
+  <div>
+  <div>
+    <p><strong>QUESTION:</strong> <p>Compute the dimensions of a DICOM volume where you have 120 files with the following metadata:  </p>
+<p><strong>(0028,0010) Rows</strong> = 500  <br />
+<strong>(0028,0011) Columns</strong> = 600  <br><br />
+<strong>(0028,0030) Pixel spacing</strong> = 0.56\0.75  <br />
+<strong>(0018,0050) Slice Thickness</strong> = 5  </p>
+<p>Specify the width, height, and depth of the image as millimeters in the format <em>(W, H, D)</em>.</p></p>
+    <div class="" form-group">
+      <label for="answer"><strong>ANSWER:</strong></label>
+      <textarea class="form-control" id="answer"></textarea>
+    </div>
+  </div>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <p><i>These answers need to be solved by yourself, I believe you can do it</i></p>
+
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary, Further Research, New Vocab Terms</p></h3>
+  <div>
+  <h1 id="further-resources">Further Resources</h1>
+<p>If you want to dive deeper into the subjects of coordinate spaces for medical images, and parameters of DICOM files in general, some useful resources:</p>
+<ul>
+<li>Section on IPP and IOP parameters in the DICOM standard: <a href="http://dicom.nema.org/medical/dicom/2020a/output/chtml/part03/sect_C.7.6.2.html" rel="noopener noreferrer" target="_blank">http://dicom.nema.org/medical/dicom/2020a/output/chtml/part03/sect_C.7.6.2.html</a></li>
+<li>A solid explanation of how coordinate systems work in NIFTI: <a href="https://nipy.org/nibabel/coordinate_systems.html" rel="noopener noreferrer" target="_blank">https://nipy.org/nibabel/coordinate_systems.html</a></li>
+<li>A company called Innolitics (a vendor of various DICOM software) maintains a great reference of the DICOM standard which sometimes could be quite a bit more convenient than the official standard: <a href="https://dicom.innolitics.com/ciods" rel="noopener noreferrer" target="_blank">https://dicom.innolitics.com/ciods</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Basic DICOM Volume EDA.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Important Parameters of 3D Medical Images')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

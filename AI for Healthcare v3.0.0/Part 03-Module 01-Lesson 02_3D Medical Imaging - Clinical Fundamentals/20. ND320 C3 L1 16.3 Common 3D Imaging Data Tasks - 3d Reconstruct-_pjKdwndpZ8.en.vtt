@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.850
+Another typical task connected to 3D medical imaging is called 3D reconstruction.
+
+00:00:05.850 --> 00:00:07.380
+As we have seen,
+
+00:00:07.380 --> 00:00:11.205
+images in the 3D imaging modalities are acquired in slices.
+
+00:00:11.205 --> 00:00:14.475
+A slice consists of pixels in a 3D space.
+
+00:00:14.475 --> 00:00:18.030
+A pixel that has a location in third dimension is called the voxel.
+
+00:00:18.030 --> 00:00:23.730
+3D reconstruction refers to the production of 3D voxel image from a set of 2D slices,
+
+00:00:23.730 --> 00:00:25.380
+like in this beautiful reconstruction of
+
+00:00:25.380 --> 00:00:29.775
+an abdominal CT scan with a contrast media on that we can see on the right in this slide.
+
+00:00:29.775 --> 00:00:31.470
+One important thing to keep in mind,
+
+00:00:31.470 --> 00:00:34.035
+as we discuss 3D reconstruction of medical images,
+
+00:00:34.035 --> 00:00:35.865
+is the distinction between the surface,
+
+00:00:35.865 --> 00:00:38.095
+or polygon meshes, and volume meshes.
+
+00:00:38.095 --> 00:00:41.030
+Essentially, in many 3D computer applications,
+
+00:00:41.030 --> 00:00:42.695
+like games and CAD software,
+
+00:00:42.695 --> 00:00:45.530
+3D objects are build by placing a set of points in
+
+00:00:45.530 --> 00:00:48.515
+3D space and then connecting them with colored polygons,
+
+00:00:48.515 --> 00:00:51.490
+which are then textured and you get these beautiful 3D models.
+
+00:00:51.490 --> 00:00:54.710
+Such object representation as sparse collection of points and
+
+00:00:54.710 --> 00:00:58.720
+polygons that connects them in 3D space is called a surface mesh.
+
+00:00:58.720 --> 00:01:01.640
+Another way of representing a 3D object though,
+
+00:01:01.640 --> 00:01:06.200
+involves storing information about every single voxel that the object consists of,
+
+00:01:06.200 --> 00:01:10.180
+and then displaying the collection of these colored voxels on the screen.
+
+00:01:10.180 --> 00:01:12.080
+This method could be used when you have
+
+00:01:12.080 --> 00:01:14.930
+a dense collection of points with high spatial resolution.
+
+00:01:14.930 --> 00:01:19.925
+As you might have guessed, most medical 3D visualizations are done using volume meshes.
+
+00:01:19.925 --> 00:01:22.160
+This is an important thing to keep in mind as,
+
+00:01:22.160 --> 00:01:25.370
+for example, PyTorch has recently released PyTorch3D,
+
+00:01:25.370 --> 00:01:29.525
+which is aimed though at improving your experience when working with 3D meshes,
+
+00:01:29.525 --> 00:01:32.140
+but not quite touches on the voxel volumes.
+
+00:01:32.140 --> 00:01:34.820
+Some methods for 3D medical image rendering
+
+00:01:34.820 --> 00:01:37.400
+do involve though connecting voxels with polygons,
+
+00:01:37.400 --> 00:01:40.970
+but that will be getting into the field of photo-realistic medical image rendering,
+
+00:01:40.970 --> 00:01:42.715
+which is out of scope for this lesson.
+
+00:01:42.715 --> 00:01:44.520
+But at the same time, it's very interesting,
+
+00:01:44.520 --> 00:01:49.980
+and we'll post some links to nice papers at the end of this section.
+

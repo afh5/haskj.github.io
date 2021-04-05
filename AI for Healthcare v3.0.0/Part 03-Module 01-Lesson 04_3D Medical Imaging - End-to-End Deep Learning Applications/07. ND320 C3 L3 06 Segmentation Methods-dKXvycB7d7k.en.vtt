@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.180
+So now that we have heard about some of
+
+00:00:03.180 --> 00:00:07.335
+the clinical applications for potential segmentation algorithms,
+
+00:00:07.335 --> 00:00:13.500
+let us talk about some of the methods for building segmentation neural networks.
+
+00:00:13.500 --> 00:00:19.005
+So a key concept behind the segmentation network is that you add
+
+00:00:19.005 --> 00:00:21.030
+some kind of up-sampling path to
+
+00:00:21.030 --> 00:00:24.750
+the downsampling path that we have seen in a classification network,
+
+00:00:24.750 --> 00:00:25.890
+because in the end,
+
+00:00:25.890 --> 00:00:28.745
+you do what could be thought of dance prediction,
+
+00:00:28.745 --> 00:00:30.875
+where you are basically classifying
+
+00:00:30.875 --> 00:00:34.550
+every single voxel of an image and you treat that as a classification problem,
+
+00:00:34.550 --> 00:00:37.840
+but your classification space is very large.
+
+00:00:37.840 --> 00:00:42.725
+The diagram like that is typical to different kinds of segmentation networks.
+
+00:00:42.725 --> 00:00:46.160
+A segmentation network, which has been particularly
+
+00:00:46.160 --> 00:00:50.390
+successful for segmenting medical imaging data sets is called U-NET.
+
+00:00:50.390 --> 00:00:55.820
+The first paper has been published in 2015 and this network has been shown successful in
+
+00:00:55.820 --> 00:00:58.820
+segmenting both non-radiological imaging like
+
+00:00:58.820 --> 00:01:02.450
+pathologist's lights and 3G medical imaging data sets.
+
+00:01:02.450 --> 00:01:07.010
+U-NET works well, even if you have now that's many examples,
+
+00:01:07.010 --> 00:01:10.760
+which is another attribute of segmentation algorithm that you need to
+
+00:01:10.760 --> 00:01:14.750
+be aware of because the ground truth for segmentation is expensive.
+
+00:01:14.750 --> 00:01:17.375
+U-NET is pretty robust to image warping,
+
+00:01:17.375 --> 00:01:21.170
+but it has a higher demand on the memory footprint.
+
+00:01:21.170 --> 00:01:23.170
+This is a diagram of a U-NET network.
+
+00:01:23.170 --> 00:01:26.410
+So you can see that it consists of a series of convolutional layers
+
+00:01:26.410 --> 00:01:29.870
+which reduce the dimensions of an image and stack together
+
+00:01:29.870 --> 00:01:33.530
+several convolutional maps and then you have the max pooling
+
+00:01:33.530 --> 00:01:37.790
+layer and you go down like that till it hit what's called a bottleneck,
+
+00:01:37.790 --> 00:01:41.870
+where you grow the amount of channels that you're dealing with,
+
+00:01:41.870 --> 00:01:45.620
+amount of different feature maps that the network is discovering.
+
+00:01:45.620 --> 00:01:47.180
+From this bottleneck, you start
+
+00:01:47.180 --> 00:01:51.380
+your up convolution path and at every stage of the up convolution,
+
+00:01:51.380 --> 00:01:53.900
+you concatenate the results of
+
+00:01:53.900 --> 00:01:58.865
+the corresponding step from the down-sampling path which adds
+
+00:01:58.865 --> 00:02:01.955
+robustness to the network and gives it interesting context of
+
+00:02:01.955 --> 00:02:06.950
+both high resolution but a less contextual features and lower resolution,
+
+00:02:06.950 --> 00:02:09.310
+but features bearing higher context.
+
+00:02:09.310 --> 00:02:13.910
+We will look at how U-NET operates exactly in the exercise that's coming.
+
+00:02:13.910 --> 00:02:15.364
+So in the exercise,
+
+00:02:15.364 --> 00:02:21.560
+you're invited to train a U-NET algorithm on a tiny data set and
+
+00:02:21.560 --> 00:02:28.800
+see how it converges on predicting the shape of a spleen on a CT scan of the abdomen.
+

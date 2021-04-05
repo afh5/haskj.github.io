@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.380
+In this lesson, we have talked about convolutional neural networks and how they could be
+
+00:00:04.380 --> 00:00:09.270
+applied to the problems of classification and segmentation of 3D medical images.
+
+00:00:09.270 --> 00:00:12.570
+You have had some hands-on experience with the unit and hopefully,
+
+00:00:12.570 --> 00:00:14.250
+you have played with it and you have had a chance
+
+00:00:14.250 --> 00:00:16.140
+to see how the network makes predictions.
+
+00:00:16.140 --> 00:00:20.370
+Now, that we did not spend too much time on actual classification algorithms,
+
+00:00:20.370 --> 00:00:24.390
+this is actually quite well-covered in the AI for 2D medical imaging,
+
+00:00:24.390 --> 00:00:27.180
+less of course in this nanodegree.
+
+00:00:27.180 --> 00:00:31.230
+I just want you to keep in mind that by no means applications
+
+00:00:31.230 --> 00:00:35.355
+of machine learning stop at classification and segmentation problems.
+
+00:00:35.355 --> 00:00:39.630
+There are many other very interesting things that people have looked at and that people
+
+00:00:39.630 --> 00:00:41.660
+were thinking about when applying
+
+00:00:41.660 --> 00:00:44.900
+deep learning or machine learning methods for radiology.
+
+00:00:44.900 --> 00:00:47.090
+I will pull out just a few of those.
+
+00:00:47.090 --> 00:00:51.605
+One problem which lends itself well to analysis by deep learning methods is registration.
+
+00:00:51.605 --> 00:00:53.930
+As we have seen, registration has to do with aligning
+
+00:00:53.930 --> 00:00:57.460
+two volumes and it could be posed as an optimization problem.
+
+00:00:57.460 --> 00:01:00.275
+Another problem which we have talked about
+
+00:01:00.275 --> 00:01:03.485
+is automatic discovery of reconstruction pipelines.
+
+00:01:03.485 --> 00:01:07.240
+You have raw data which just come in off CT and MRI scanners.
+
+00:01:07.240 --> 00:01:09.710
+You have a trade-off between the quality of raw data
+
+00:01:09.710 --> 00:01:12.515
+and the quality of image that the physician gets in the end.
+
+00:01:12.515 --> 00:01:15.590
+This as well could be presented as an optimization problem of
+
+00:01:15.590 --> 00:01:18.875
+discovery of an optimal reconstruction pipeline.
+
+00:01:18.875 --> 00:01:23.690
+Another problem which is popular in traditional computer vision is image retrieval,
+
+00:01:23.690 --> 00:01:28.295
+finding similar images, and finding similar images which have clinical contexts.
+
+00:01:28.295 --> 00:01:32.690
+Images that just looks similar or maybe images that have similar parameters
+
+00:01:32.690 --> 00:01:37.435
+of a certain structures is something which is very interested to radiologists.
+
+00:01:37.435 --> 00:01:41.900
+Another interesting problem that people have looked at is the ground truth augmentation.
+
+00:01:41.900 --> 00:01:45.980
+This is quite relevant when you have highly imbalanced datasets, like for example,
+
+00:01:45.980 --> 00:01:49.220
+where you're looking to do something with rare disease and it is not that
+
+00:01:49.220 --> 00:01:52.655
+easy to get a good enough amounts of positive cases.
+
+00:01:52.655 --> 00:01:56.810
+People have looked at generating positive cases as in generating tumors and putting
+
+00:01:56.810 --> 00:02:01.860
+them into images of healthy patients so that your dataset is more balanced.
+

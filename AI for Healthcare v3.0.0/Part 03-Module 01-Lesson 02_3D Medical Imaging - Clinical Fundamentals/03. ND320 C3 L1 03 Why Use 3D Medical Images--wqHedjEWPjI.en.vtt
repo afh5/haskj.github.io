@@ -1,0 +1,358 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.170
+So why would we choose to use 3D medical images over 2D?
+
+00:00:04.170 --> 00:00:06.780
+Often, these studies are better at telling us,
+
+00:00:06.780 --> 00:00:08.685
+is there a finding of interest?
+
+00:00:08.685 --> 00:00:12.030
+If so, where is it precisely?
+
+00:00:12.030 --> 00:00:15.150
+Often, we can use the findings imaging characteristics to
+
+00:00:15.150 --> 00:00:19.200
+determine what it is or at least have a short differential diagnosis.
+
+00:00:19.200 --> 00:00:20.850
+To achieve these advantages,
+
+00:00:20.850 --> 00:00:23.820
+we need to think critically about what imaging modality we want to
+
+00:00:23.820 --> 00:00:27.360
+use for a given patient and their suspected condition.
+
+00:00:27.360 --> 00:00:33.615
+Factors to take into account would include contrast resolution, spatial resolution,
+
+00:00:33.615 --> 00:00:36.255
+both important terms I will define shortly,
+
+00:00:36.255 --> 00:00:38.235
+invasiveness of the study,
+
+00:00:38.235 --> 00:00:41.780
+radiation dose from modalities which use ionizing radiation,
+
+00:00:41.780 --> 00:00:45.200
+and often, cost has to be taken into account.
+
+00:00:45.200 --> 00:00:49.865
+Let's go over the terms contrast and spacial resolution in more detail.
+
+00:00:49.865 --> 00:00:51.875
+First, contrast resolution.
+
+00:00:51.875 --> 00:00:54.140
+Contrast resolution refers to the ability of
+
+00:00:54.140 --> 00:00:57.880
+an imaging modality to distinguish between differences in image intensity.
+
+00:00:57.880 --> 00:01:02.330
+Practically speaking, this comes down to choosing the right imaging modality to have
+
+00:01:02.330 --> 00:01:06.850
+the tissue or condition of interest stand out from the background normal tissue.
+
+00:01:06.850 --> 00:01:09.665
+Some modalities work better for certain diseases
+
+00:01:09.665 --> 00:01:13.045
+and the appropriate modality choice is very context-driven.
+
+00:01:13.045 --> 00:01:14.865
+Here's a concrete example.
+
+00:01:14.865 --> 00:01:19.955
+In this patient, the finding of concern is an area of injured brain tissue from a stroke.
+
+00:01:19.955 --> 00:01:23.180
+On the CT, we see several dark areas,
+
+00:01:23.180 --> 00:01:25.435
+which to the trained eye can be picked up,
+
+00:01:25.435 --> 00:01:27.380
+though in more subtle cases,
+
+00:01:27.380 --> 00:01:30.955
+can be very hard to distinguish against the background of normal brain.
+
+00:01:30.955 --> 00:01:32.630
+Now, compare this appearance to
+
+00:01:32.630 --> 00:01:35.300
+the MRI diffusion-weighted sequence and we can
+
+00:01:35.300 --> 00:01:38.150
+see that the areas of injury light up like a light bulb,
+
+00:01:38.150 --> 00:01:41.390
+such that even a non-trained observer could see that there's a difference
+
+00:01:41.390 --> 00:01:44.965
+between the normal and damaged tissue in terms of voxel intensity.
+
+00:01:44.965 --> 00:01:49.999
+To recap, each imaging modality has its own intrinsic contrast resolution,
+
+00:01:49.999 --> 00:01:54.890
+which can be adjusted by tweaking certain imaging parameters prior to image acquisition.
+
+00:01:54.890 --> 00:01:57.200
+However, we can further modify
+
+00:01:57.200 --> 00:02:00.950
+signal intensities between different tissues by the use of contrast media,
+
+00:02:00.950 --> 00:02:02.995
+also known as a contrast agent.
+
+00:02:02.995 --> 00:02:07.655
+Note that these terms can be confusing because they both contain the term contrast.
+
+00:02:07.655 --> 00:02:12.310
+Contrast resolution talks about a perimeter intrinsic to the imaging modality.
+
+00:02:12.310 --> 00:02:15.275
+Contrast media, or contrast agent, on the other hand,
+
+00:02:15.275 --> 00:02:20.000
+are a substance that are given to the patient most often intravenously or orally,
+
+00:02:20.000 --> 00:02:23.065
+which stands out against the background tissue.
+
+00:02:23.065 --> 00:02:27.620
+Tissues differ in their rate of contrast media uptake and whichever ones take up
+
+00:02:27.620 --> 00:02:32.105
+the substance most avidly stand out most clearly against the tissues that don't.
+
+00:02:32.105 --> 00:02:36.410
+In CT studies, Iodine-based contrast agents are most often used.
+
+00:02:36.410 --> 00:02:42.285
+In MRI, gadolinium-based agents are most often used. Here's an example.
+
+00:02:42.285 --> 00:02:44.705
+When these agents are given intravenously,
+
+00:02:44.705 --> 00:02:46.880
+they follow the course of the circulatory system.
+
+00:02:46.880 --> 00:02:48.635
+First returning to the heart,
+
+00:02:48.635 --> 00:02:50.150
+pumped through the arteries,
+
+00:02:50.150 --> 00:02:51.950
+delivered to the organs,
+
+00:02:51.950 --> 00:02:53.255
+returned into the veins,
+
+00:02:53.255 --> 00:02:58.240
+and eventually are excreted through the urinary system and hepatobiliary system.
+
+00:02:58.240 --> 00:03:01.520
+We often can take advantage of the cycle by imaging at
+
+00:03:01.520 --> 00:03:03.680
+different time points such that we capture
+
+00:03:03.680 --> 00:03:06.745
+the contrast in different anatomical locations.
+
+00:03:06.745 --> 00:03:10.460
+For example, here's a CT of the abdomen in which we've
+
+00:03:10.460 --> 00:03:14.540
+captured images of the upper abdomen at four different time points.
+
+00:03:14.540 --> 00:03:17.089
+Prior to contrast injection,
+
+00:03:17.089 --> 00:03:21.530
+approximately 20 seconds later when the artery stand out most,
+
+00:03:21.530 --> 00:03:25.865
+75 seconds later when the liver and the venous system are highlighted,
+
+00:03:25.865 --> 00:03:28.145
+and finally, at a delayed time point,
+
+00:03:28.145 --> 00:03:31.525
+which can be useful in diagnosing some diseases accurately.
+
+00:03:31.525 --> 00:03:34.085
+When exploring datasets in your own projects,
+
+00:03:34.085 --> 00:03:38.030
+ask yourself whether the images are non-contrasts or post-contrasts,
+
+00:03:38.030 --> 00:03:40.460
+and if a contrast agent was administered,
+
+00:03:40.460 --> 00:03:42.655
+which phase the patient was imaged in.
+
+00:03:42.655 --> 00:03:45.135
+Now let's talk about spatial resolution.
+
+00:03:45.135 --> 00:03:47.510
+Spatial resolution refers to the ability of
+
+00:03:47.510 --> 00:03:50.330
+an imaging modality to differentiate two objects.
+
+00:03:50.330 --> 00:03:54.265
+Let's use the spatial resolution of your visual system as an example.
+
+00:03:54.265 --> 00:03:56.675
+Imagine yourself standing on a sidewalk,
+
+00:03:56.675 --> 00:03:59.255
+staring down at a large group of ants.
+
+00:03:59.255 --> 00:04:00.995
+From your high vantage point,
+
+00:04:00.995 --> 00:04:03.035
+you can tell that there's a bunch of ants,
+
+00:04:03.035 --> 00:04:07.890
+but some of them are clustered close together and look like dark blobs moving around.
+
+00:04:07.890 --> 00:04:11.140
+You then decide to get on your knees and elbows and take a closer look.
+
+00:04:11.140 --> 00:04:14.150
+You can now distinguish each individual ant in
+
+00:04:14.150 --> 00:04:17.710
+that former blob and separate them out from their friends.
+
+00:04:17.710 --> 00:04:20.030
+Similar to the difficulty you would have tried to
+
+00:04:20.030 --> 00:04:23.215
+distinguish each individual and when viewing them from afar,
+
+00:04:23.215 --> 00:04:26.330
+some imaging modalities may have two coarse of
+
+00:04:26.330 --> 00:04:31.130
+a spatial resolution to pick up on the small subtleties required for a diagnosis.
+
+00:04:31.130 --> 00:04:33.650
+A practical clinical example would be trying
+
+00:04:33.650 --> 00:04:36.275
+to take a look at the tiny bones of the middle ear.
+
+00:04:36.275 --> 00:04:39.580
+Here we see two studies obtained from the same patient.
+
+00:04:39.580 --> 00:04:42.185
+On the left, a maxillofacial CT
+
+00:04:42.185 --> 00:04:45.335
+optimized to look at the bones of the face, and on the right,
+
+00:04:45.335 --> 00:04:46.730
+a temporal bone CT,
+
+00:04:46.730 --> 00:04:48.650
+with a smaller field of view dedicated to
+
+00:04:48.650 --> 00:04:52.115
+focusing in on the middle ear and inner ear structures.
+
+00:04:52.115 --> 00:04:56.930
+Note that the right image is not simply a cropped image of the left.
+
+00:04:56.930 --> 00:04:59.660
+The image parameters were specifically adjusted in
+
+00:04:59.660 --> 00:05:02.395
+such a way as to focus in on that region.
+
+00:05:02.395 --> 00:05:05.930
+As we can see, the spatial resolution of the temporal bone CT is
+
+00:05:05.930 --> 00:05:10.250
+higher and allows us to more distinctly separate the small bones of the middle ear,
+
+00:05:10.250 --> 00:05:13.685
+as well as delineate the individual structures such as the eardrum,
+
+00:05:13.685 --> 00:05:16.315
+the facial nerve, and cross-section, etc.
+
+00:05:16.315 --> 00:05:19.970
+Both spatial and contrast resolution needs to be taken into
+
+00:05:19.970 --> 00:05:23.725
+account when choosing the appropriate imaging modality for a particular disease.
+
+00:05:23.725 --> 00:05:26.165
+When exploring your own project ideas,
+
+00:05:26.165 --> 00:05:29.270
+make sure that the datasets you have access to are
+
+00:05:29.270 --> 00:05:33.320
+the ideal imaging studies for the given clinical problem you're exploring.
+
+00:05:33.320 --> 00:05:36.905
+Let's put these concepts together with an example.
+
+00:05:36.905 --> 00:05:41.140
+Let's revisit the original scout radiograph and CT you saw earlier.
+
+00:05:41.140 --> 00:05:43.475
+This patient came in with flank pain,
+
+00:05:43.475 --> 00:05:48.095
+a complaint in which a stone in the urinary system is often the culprit.
+
+00:05:48.095 --> 00:05:52.250
+So our search begins and we need to take a look for a stone anywhere
+
+00:05:52.250 --> 00:05:56.270
+from the kidney into the tubing that connects the kidneys and the bladder,
+
+00:05:56.270 --> 00:05:58.685
+called the ureters, and the bladder itself.
+
+00:05:58.685 --> 00:06:00.470
+Taking a look at the scalp,
+
+00:06:00.470 --> 00:06:03.200
+we don't see anything bright to suggest a stone.
+
+00:06:03.200 --> 00:06:07.855
+Moreover, it's fairly challenging to clearly distinguish the organs themselves.
+
+00:06:07.855 --> 00:06:12.425
+Now taking a look at the CT images as we scroll from front to back,
+
+00:06:12.425 --> 00:06:18.305
+we see a bright object here at the base of the bladder and we found our culprit,
+
+00:06:18.305 --> 00:06:20.750
+the stone that's causing the patient's pain.
+
+00:06:20.750 --> 00:06:27.090
+Now we'll discuss who uses 3D medical images in day-to-day practice and why.
+

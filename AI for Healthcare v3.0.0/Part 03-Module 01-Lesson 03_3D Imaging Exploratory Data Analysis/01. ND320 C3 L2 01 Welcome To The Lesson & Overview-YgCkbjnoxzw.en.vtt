@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.340
+Hello and welcome to the lesson about
+
+00:00:02.340 --> 00:00:06.150
+3D medical imaging data set and the analysis of those data sets.
+
+00:00:06.150 --> 00:00:08.310
+In this lesson, we will talk about
+
+00:00:08.310 --> 00:00:11.295
+the common digital representation of 3D medical images.
+
+00:00:11.295 --> 00:00:13.350
+We will talk about the DICOM standard,
+
+00:00:13.350 --> 00:00:15.630
+which is the standard in which all medical images are
+
+00:00:15.630 --> 00:00:19.230
+stored by medical imaging modalities and clinical archives.
+
+00:00:19.230 --> 00:00:23.130
+We will talk a little bit about the NIFTY standard which is the research standard,
+
+00:00:23.130 --> 00:00:25.605
+which is quite common in
+
+00:00:25.605 --> 00:00:30.935
+different competitions and it's common in machine learning operations.
+
+00:00:30.935 --> 00:00:33.410
+We will talk about how to read and
+
+00:00:33.410 --> 00:00:35.920
+manipulate medical image volumes using Python libraries,
+
+00:00:35.920 --> 00:00:40.455
+and we will go through some examples of codes that will extract images.
+
+00:00:40.455 --> 00:00:45.150
+We'll let you understand how to manipulate those images and how to process them.
+

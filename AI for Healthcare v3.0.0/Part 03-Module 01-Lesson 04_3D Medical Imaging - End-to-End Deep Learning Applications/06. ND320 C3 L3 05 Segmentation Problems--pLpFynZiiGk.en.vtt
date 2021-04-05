@@ -1,0 +1,232 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.030
+Now, let's talk about segmentation problems.
+
+00:00:03.030 --> 00:00:05.250
+Segmentation really stands out as far
+
+00:00:05.250 --> 00:00:09.570
+as machine learning problems go with respect to medical images because it
+
+00:00:09.570 --> 00:00:12.930
+potentially opens up a lot of interesting use cases as you have
+
+00:00:12.930 --> 00:00:17.160
+seen from some of the content that we've presented so far.
+
+00:00:17.160 --> 00:00:20.340
+At the same time, segmentations presents [inaudible]
+
+00:00:20.340 --> 00:00:23.190
+challenges because it is not that easy to collect
+
+00:00:23.190 --> 00:00:30.495
+ground truth for supervised machine learning problems that solve segmentation tasks.
+
+00:00:30.495 --> 00:00:34.850
+Let's look at how people approach this problems and how can you approach this problems.
+
+00:00:34.850 --> 00:00:37.940
+First, let's talk about segmentation problem statement.
+
+00:00:37.940 --> 00:00:39.305
+What is segmentation?
+
+00:00:39.305 --> 00:00:41.090
+In traditional computer vision,
+
+00:00:41.090 --> 00:00:46.760
+segmentation is the problem of identifying exactly which pixels or voxels incase of
+
+00:00:46.760 --> 00:00:49.250
+3D correspond to what's object or
+
+00:00:49.250 --> 00:00:53.120
+semantic segmentation would be putting labels to this collections of voxels.
+
+00:00:53.120 --> 00:00:54.860
+It would know that, for example,
+
+00:00:54.860 --> 00:00:57.890
+this patch of voxels represents a person and the green patch of
+
+00:00:57.890 --> 00:01:01.725
+voxels are presents a bicycle and the black one is the background.
+
+00:01:01.725 --> 00:01:05.300
+When it comes to medical imaging and 3D medical imaging,
+
+00:01:05.300 --> 00:01:07.880
+segmentation problems basically mean that you are
+
+00:01:07.880 --> 00:01:11.480
+extracting three-dimensional shapes from 3D medical volume.
+
+00:01:11.480 --> 00:01:13.880
+Sometimes the shapes can have anatomical meaning,
+
+00:01:13.880 --> 00:01:17.180
+like in this image where you can see different lobes
+
+00:01:17.180 --> 00:01:20.690
+of the lung being segmented and colored with different colors.
+
+00:01:20.690 --> 00:01:23.540
+Sometimes the shapes might have some other meaning,
+
+00:01:23.540 --> 00:01:25.910
+some clinical pathological meaning, like, for example,
+
+00:01:25.910 --> 00:01:29.410
+different tissue types that constituted tumor.
+
+00:01:29.410 --> 00:01:33.890
+Now, let's have Mason join us and talk about how machine learning methods for
+
+00:01:33.890 --> 00:01:38.780
+segmentation can be used in a clinical context for solving some of the clinical problems.
+
+00:01:38.780 --> 00:01:41.930
+Okay, you've got some basics of segmentation down.
+
+00:01:41.930 --> 00:01:44.270
+Let's now talk about some use cases.
+
+00:01:44.270 --> 00:01:47.180
+The first deals with quantitation of disease burden or
+
+00:01:47.180 --> 00:01:51.085
+severity over time across multiple scans for a given patient.
+
+00:01:51.085 --> 00:01:53.865
+This workflow lends itself well in oncology
+
+00:01:53.865 --> 00:01:56.450
+where following the size of a tumor during treatment,
+
+00:01:56.450 --> 00:02:00.610
+can be one important factor in determining whether treatment is working.
+
+00:02:00.610 --> 00:02:05.150
+In current practice, tumor measurements are often performed in a rudimentary way,
+
+00:02:05.150 --> 00:02:09.290
+with the largest measurement taken in three planes and reported as
+
+00:02:09.290 --> 00:02:14.960
+three values often compared to the prior three measurements done on a more remote scan.
+
+00:02:14.960 --> 00:02:18.995
+Automated segmentation opens the door to tracking volume over time,
+
+00:02:18.995 --> 00:02:22.565
+which can be a much more precise way of following overall disease burden,
+
+00:02:22.565 --> 00:02:25.835
+especially for irregularly shaped structures.
+
+00:02:25.835 --> 00:02:30.875
+Volumetric measurements are not only useful when considered across multiple studies.
+
+00:02:30.875 --> 00:02:34.310
+Volumes of structures can provide valuable diagnostic information
+
+00:02:34.310 --> 00:02:37.880
+at a single time point when compared to age match controls.
+
+00:02:37.880 --> 00:02:41.359
+For example, in Alzheimer's disease and other dementias,
+
+00:02:41.359 --> 00:02:46.280
+the hippocampus is a structure which is heavily involved and having the data available to
+
+00:02:46.280 --> 00:02:50.930
+see where a particular patient's volume falls with respect to age match cohorts,
+
+00:02:50.930 --> 00:02:53.980
+can provide useful information about disease severity.
+
+00:02:53.980 --> 00:02:58.655
+This example shows just that with segmentations of the left and right hippocampus,
+
+00:02:58.655 --> 00:03:00.290
+which are normal in this case.
+
+00:03:00.290 --> 00:03:03.365
+You will explore this problem more in the final project.
+
+00:03:03.365 --> 00:03:05.690
+Radiation therapy planning is another task
+
+00:03:05.690 --> 00:03:08.225
+which lends itself well to automated segmentation.
+
+00:03:08.225 --> 00:03:11.090
+Radiation therapy planning is the process in which a team
+
+00:03:11.090 --> 00:03:14.629
+consisted of radiation oncologists, radiation therapists,
+
+00:03:14.629 --> 00:03:17.690
+medical physicist, and medical dosimetry's will plan
+
+00:03:17.690 --> 00:03:21.430
+the appropriate radiation fields for a patient with cancer.
+
+00:03:21.430 --> 00:03:26.270
+During this process, contours are drawn around the tumor volume undergoing treatment,
+
+00:03:26.270 --> 00:03:29.210
+as well as critical structures that are to be avoided.
+
+00:03:29.210 --> 00:03:31.685
+The process is often time-consuming,
+
+00:03:31.685 --> 00:03:35.325
+especially if done in a completely manual sense.
+
+00:03:35.325 --> 00:03:38.915
+Automated segmentation could potentially accelerate this process,
+
+00:03:38.915 --> 00:03:43.930
+ideally resulting in an equally effective but more efficient treatment planning session.
+
+00:03:43.930 --> 00:03:46.190
+The last use case invites us to think of
+
+00:03:46.190 --> 00:03:48.965
+the possibilities that are beyond current human capability.
+
+00:03:48.965 --> 00:03:51.155
+For example, radio genomics,
+
+00:03:51.155 --> 00:03:54.920
+a relatively novel area of research which attempts to correlate the imaging features of
+
+00:03:54.920 --> 00:03:59.885
+a particular disease and its various genetic or molecular features.
+
+00:03:59.885 --> 00:04:03.575
+The imaging features are referred to as the imaging phenotype,
+
+00:04:03.575 --> 00:04:07.610
+whereas the genetic or molecular features are referred to as the genomic phenotype.
+
+00:04:07.610 --> 00:04:10.310
+Automated segmentation lends itself well to
+
+00:04:10.310 --> 00:04:13.160
+such research as delineating the volume of tissue that's
+
+00:04:13.160 --> 00:04:16.550
+required in analysis during the pipeline can be
+
+00:04:16.550 --> 00:04:20.215
+tremendously labor-intensive if done manually for a larger dataset.
+
+00:04:20.215 --> 00:04:23.940
+Having an automated pipeline would be of great value.
+

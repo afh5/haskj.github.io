@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.520
+Hello. So now, let's take a look at
+
+00:00:02.520 --> 00:00:06.480
+one small tool that you can use to quickly analyze the DICOM dataset.
+
+00:00:06.480 --> 00:00:08.730
+This tool is called MicroDICOM.
+
+00:00:08.730 --> 00:00:11.250
+It's a free tool, although it's not open source.
+
+00:00:11.250 --> 00:00:14.550
+It is not a full fledged medical imaging diagnostic viewer,
+
+00:00:14.550 --> 00:00:16.500
+but it could be quite useful when you're trying
+
+00:00:16.500 --> 00:00:18.495
+to make sense of a dataset that you might have.
+
+00:00:18.495 --> 00:00:22.140
+So let me load an MR series into this viewer,
+
+00:00:22.140 --> 00:00:23.460
+we have just talked about DICOM,
+
+00:00:23.460 --> 00:00:27.390
+and we have talked about how DICOM has this hierarchy of patient.
+
+00:00:27.390 --> 00:00:31.545
+That's what we can see here, patient with a name the PGBM.
+
+00:00:31.545 --> 00:00:33.720
+We have two studies here,
+
+00:00:33.720 --> 00:00:36.400
+and each study has a number of series here.
+
+00:00:36.400 --> 00:00:40.465
+Let's open one series and we can see the first image of the series.
+
+00:00:40.465 --> 00:00:45.080
+So MicroDICOM just shows you individual DICOM slice and also,
+
+00:00:45.080 --> 00:00:47.839
+it shows you the DICOM metadata.
+
+00:00:47.839 --> 00:00:50.495
+We have talked about DICOM data elements,
+
+00:00:50.495 --> 00:00:54.930
+so these are the DICOM data elements that are contained in this image.
+
+00:00:54.930 --> 00:00:57.860
+We can use our mouse to scroll through the images,
+
+00:00:57.860 --> 00:00:59.600
+so we see different images.
+
+00:00:59.600 --> 00:01:03.125
+One interesting thing to note here is that as we scroll through this images,
+
+00:01:03.125 --> 00:01:05.705
+some data does not change and some data changes.
+
+00:01:05.705 --> 00:01:08.660
+We have talked how DICOM has data redundancy,
+
+00:01:08.660 --> 00:01:13.910
+so a lot of data is stored multiple times in multiple instances, and that's what we get.
+
+00:01:13.910 --> 00:01:15.270
+But at the same time, things like
+
+00:01:15.270 --> 00:01:18.590
+SOP Instance UID which is unique identifier of this instance,
+
+00:01:18.590 --> 00:01:21.350
+it is only stored once per instance.
+
+00:01:21.350 --> 00:01:25.430
+So we had a quick look at the tool called MicroDICOM which is a free tool.
+
+00:01:25.430 --> 00:01:27.005
+You can download it yourself,
+
+00:01:27.005 --> 00:01:31.130
+you can try loading some of the DICOM files that you have been exposed to so far.
+
+00:01:31.130 --> 00:01:36.870
+Now, let's take a quick look at a more complicated tool which is called 3D Slicer.
+

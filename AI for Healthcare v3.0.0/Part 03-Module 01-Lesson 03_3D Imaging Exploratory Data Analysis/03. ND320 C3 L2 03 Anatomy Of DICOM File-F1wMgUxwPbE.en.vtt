@@ -1,0 +1,850 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.525
+So let's look a bit closer into how the DICOM files are organized.
+
+00:00:03.525 --> 00:00:04.770
+A single DICOM file,
+
+00:00:04.770 --> 00:00:06.030
+as we have just mentioned,
+
+00:00:06.030 --> 00:00:09.780
+contains within itself meta information and the DICOM data set,
+
+00:00:09.780 --> 00:00:12.900
+which is the key value, basically,
+
+00:00:12.900 --> 00:00:16.230
+collection of key value pairs that represent the metadata,
+
+00:00:16.230 --> 00:00:19.170
+the text metadata of the DICOM file.
+
+00:00:19.170 --> 00:00:22.365
+Also, it contains the pixel data as we have discussed.
+
+00:00:22.365 --> 00:00:24.840
+Pixel data in general, in DICOM,
+
+00:00:24.840 --> 00:00:26.985
+can contain multiple frames,
+
+00:00:26.985 --> 00:00:29.775
+which is commonly used in ultrasound acquisitions.
+
+00:00:29.775 --> 00:00:34.050
+For 3D medical imaging data sets like a CTUs and Amar's,
+
+00:00:34.050 --> 00:00:35.760
+pixel data elements typically contain
+
+00:00:35.760 --> 00:00:38.785
+just one frame which has a single slice through the patient.
+
+00:00:38.785 --> 00:00:40.340
+When you put it together,
+
+00:00:40.340 --> 00:00:45.020
+you have series, which is represented as collections of such files.
+
+00:00:45.020 --> 00:00:50.435
+Basically, a single image within a series represents,
+
+00:00:50.435 --> 00:00:52.160
+as we have discussed, a single slice,
+
+00:00:52.160 --> 00:00:55.130
+which is one of those cardinal planes that go through the patient.
+
+00:00:55.130 --> 00:00:57.110
+It is important to note here,
+
+00:00:57.110 --> 00:01:02.765
+you might have noticed that the meta information from the DICOM files and the metadata,
+
+00:01:02.765 --> 00:01:05.930
+the key-value pairs, they are repeated in every files,
+
+00:01:05.930 --> 00:01:08.885
+so there's a lot of redundancy in DICOM data sets.
+
+00:01:08.885 --> 00:01:10.430
+A lot of data is being stored,
+
+00:01:10.430 --> 00:01:12.980
+a lot of the same data has being stored in many DICOM files,
+
+00:01:12.980 --> 00:01:14.810
+and this is just something that you have to deal with.
+
+00:01:14.810 --> 00:01:17.060
+So DICOM format is
+
+00:01:17.060 --> 00:01:20.060
+redundant with respect to data and if you want to optimize the storage,
+
+00:01:20.060 --> 00:01:22.865
+it makes sense to combine those data sets somehow.
+
+00:01:22.865 --> 00:01:25.820
+This is why people have thought of other formats which are
+
+00:01:25.820 --> 00:01:29.620
+more suitable for machine learning pipelines.
+
+00:01:29.620 --> 00:01:33.110
+So let us take a quick look at the DICOM data set,
+
+00:01:33.110 --> 00:01:36.140
+which is represented by files on a file system.
+
+00:01:36.140 --> 00:01:38.570
+What we can see here is a set of directories that
+
+00:01:38.570 --> 00:01:41.165
+represent different patients on a file system.
+
+00:01:41.165 --> 00:01:42.800
+If we open one of those,
+
+00:01:42.800 --> 00:01:48.215
+we can see here two studies which represent as we have discussed,
+
+00:01:48.215 --> 00:01:50.570
+different patient sessions with the scanner,
+
+00:01:50.570 --> 00:01:52.880
+and you can see that in this case we're looking
+
+00:01:52.880 --> 00:01:56.405
+the directories that contain the studies that are actually named in meaningful ways.
+
+00:01:56.405 --> 00:01:59.210
+So those are different data points, different time points.
+
+00:01:59.210 --> 00:02:00.980
+If we go into a study,
+
+00:02:00.980 --> 00:02:02.900
+we can see a collection of directories that
+
+00:02:02.900 --> 00:02:05.690
+represent different series within this data set.
+
+00:02:05.690 --> 00:02:08.870
+Again, they are conveniently named in this data set.
+
+00:02:08.870 --> 00:02:10.640
+If we open one of those series,
+
+00:02:10.640 --> 00:02:13.295
+we can see a collection of DICOM files here.
+
+00:02:13.295 --> 00:02:17.225
+So now, let us look at some of the aspects of the DICOM standard.
+
+00:02:17.225 --> 00:02:21.380
+One of the key concept with the DICOM standard is the notion of SOP classes.
+
+00:02:21.380 --> 00:02:24.440
+SOP stands for service object pair.
+
+00:02:24.440 --> 00:02:28.085
+So DICOM objects like MR scans or
+
+00:02:28.085 --> 00:02:32.960
+CT scans are also called a DICOM speak Information object definitions.
+
+00:02:32.960 --> 00:02:36.980
+An SOP, a service object pair defines a pair of
+
+00:02:36.980 --> 00:02:41.340
+a service like storage and an objects like MR object.
+
+00:02:41.340 --> 00:02:43.850
+So there is a list within a DICOM standard that
+
+00:02:43.850 --> 00:02:46.235
+defines all possible objects that could be stored.
+
+00:02:46.235 --> 00:02:47.760
+Let's take a quick look at that.
+
+00:02:47.760 --> 00:02:53.850
+So this is a page within DICOM standard parts 3.4, Parts 5 of that.
+
+00:02:53.850 --> 00:02:56.115
+This is a list of all SOP classes.
+
+00:02:56.115 --> 00:03:01.010
+As you can see, we have different things here like computer through geography image,
+
+00:03:01.010 --> 00:03:04.400
+or here's our CT image information object definition.
+
+00:03:04.400 --> 00:03:07.610
+Here's our MRO image information object definition.
+
+00:03:07.610 --> 00:03:08.840
+There are many others.
+
+00:03:08.840 --> 00:03:10.870
+You are welcome to take a look through that.
+
+00:03:10.870 --> 00:03:13.910
+You can see that each one of those SOP classes,
+
+00:03:13.910 --> 00:03:16.310
+which is a format of storage of one of those objects,
+
+00:03:16.310 --> 00:03:18.115
+has a unique identifier.
+
+00:03:18.115 --> 00:03:22.790
+These identifiers will come up as you're analyzing medical imaging data sets.
+
+00:03:22.790 --> 00:03:27.670
+This identifiers are the most reliable way of telling what exactly are you looking at.
+
+00:03:27.670 --> 00:03:31.165
+For example, this CT image IOD has this identifier,
+
+00:03:31.165 --> 00:03:33.650
+and you can just look up this UID in
+
+00:03:33.650 --> 00:03:36.859
+your data set even if you're just opening it in a hex editor,
+
+00:03:36.859 --> 00:03:39.520
+and it will tell you exactly what the image you're looking at.
+
+00:03:39.520 --> 00:03:43.820
+Now, let's take a look at another important aspect of a DICOM data set,
+
+00:03:43.820 --> 00:03:45.575
+which has a set of data elements.
+
+00:03:45.575 --> 00:03:49.715
+We have talked how DICOM file stores this key-value,
+
+00:03:49.715 --> 00:03:52.940
+collection of key value pairs which represent
+
+00:03:52.940 --> 00:03:57.380
+different metadata that gives us some information about the file.
+
+00:03:57.380 --> 00:04:01.385
+This key-value pairs hold important for information about our files.
+
+00:04:01.385 --> 00:04:03.709
+Let's take a look at the standard,
+
+00:04:03.709 --> 00:04:06.080
+which has the list of all those key-value pairs.
+
+00:04:06.080 --> 00:04:08.975
+So if we look at this Part 3.6 of the standard,
+
+00:04:08.975 --> 00:04:11.825
+we have a registry of all DICOM Data Elements.
+
+00:04:11.825 --> 00:04:13.460
+You are welcome to take a look at that.
+
+00:04:13.460 --> 00:04:17.960
+This is a list of all possible metadata items that DICOM files may contain.
+
+00:04:17.960 --> 00:04:20.240
+You can see there are things here like image type,
+
+00:04:20.240 --> 00:04:23.895
+and there are things here like instance creation time,
+
+00:04:23.895 --> 00:04:26.540
+and there are things here like content date.
+
+00:04:26.540 --> 00:04:29.450
+So everything and anything that you need to
+
+00:04:29.450 --> 00:04:32.720
+know about the image is defined in those data elements.
+
+00:04:32.720 --> 00:04:34.460
+One thing to note here,
+
+00:04:34.460 --> 00:04:36.710
+is that this data elements are not mandatory.
+
+00:04:36.710 --> 00:04:39.785
+They may or may not be present in a DICOM file.
+
+00:04:39.785 --> 00:04:41.990
+This is also defined in the standard.
+
+00:04:41.990 --> 00:04:45.140
+One other important thing to note about this data elements,
+
+00:04:45.140 --> 00:04:50.165
+is that each data element is uniquely identified by the spare of numbers,
+
+00:04:50.165 --> 00:04:53.435
+which is the group identifier and the data element identifier.
+
+00:04:53.435 --> 00:04:56.660
+So some DICOM processing libraries,
+
+00:04:56.660 --> 00:05:00.760
+they allow you to look up the data elements by just using these numbers.
+
+00:05:00.760 --> 00:05:05.360
+Some DICOM data processing libraries will turn these numbers into a meaningful names.
+
+00:05:05.360 --> 00:05:08.840
+We will look at some of those libraries when we will do the exercises
+
+00:05:08.840 --> 00:05:12.275
+and we will look at the anode book later in this lesson,
+
+00:05:12.275 --> 00:05:17.555
+and we'll see how Python libraries can be used to read those data elements.
+
+00:05:17.555 --> 00:05:21.250
+Just a couple of other important things to know about these data elements.
+
+00:05:21.250 --> 00:05:22.850
+First, you can see that there are
+
+00:05:22.850 --> 00:05:25.835
+quite a few data elements that have UID as part of those.
+
+00:05:25.835 --> 00:05:29.420
+So those UID are unique identifiers associated with an image.
+
+00:05:29.420 --> 00:05:32.105
+You can see that we have a thing like SOP instance UID,
+
+00:05:32.105 --> 00:05:34.685
+which uniquely identifies current instance.
+
+00:05:34.685 --> 00:05:36.560
+There is a subclass UID,
+
+00:05:36.560 --> 00:05:39.625
+which uniquely identifies a instance class.
+
+00:05:39.625 --> 00:05:42.915
+So this would be one of those sub-classes that we have just looked at,
+
+00:05:42.915 --> 00:05:44.795
+MR or CT image storage.
+
+00:05:44.795 --> 00:05:48.055
+One other thing to note here is that we have this VR column.
+
+00:05:48.055 --> 00:05:52.220
+VR basically defines the data type that this data element is stored in.
+
+00:05:52.220 --> 00:05:56.345
+For example, this sub instance UID has UIVR,
+
+00:05:56.345 --> 00:05:58.940
+which means that this is a unique identifier.
+
+00:05:58.940 --> 00:06:02.420
+Whereas the specific character sets of data element here
+
+00:06:02.420 --> 00:06:06.415
+has a CS data element which means that it's a string.
+
+00:06:06.415 --> 00:06:10.955
+So another important thing about the data elements is that as you browse through them,
+
+00:06:10.955 --> 00:06:13.205
+you will see that there is a instance UID,
+
+00:06:13.205 --> 00:06:14.540
+there is a series UID,
+
+00:06:14.540 --> 00:06:15.890
+there is a study UID,
+
+00:06:15.890 --> 00:06:18.130
+and all of those are mandatory elements,
+
+00:06:18.130 --> 00:06:20.000
+whereas there is no patient ID.
+
+00:06:20.000 --> 00:06:21.350
+Well, there is a patient ID,
+
+00:06:21.350 --> 00:06:22.790
+but it's not a mandatory element,
+
+00:06:22.790 --> 00:06:24.500
+and it's not a UID element.
+
+00:06:24.500 --> 00:06:27.950
+So it is important to know as you're analyzing DICOM data sets,
+
+00:06:27.950 --> 00:06:31.880
+that actually DICOM format does not define unique ID for the patients.
+
+00:06:31.880 --> 00:06:33.680
+With each data set that you analyze,
+
+00:06:33.680 --> 00:06:37.785
+you need to understand what identifies a patient within this data set.
+
+00:06:37.785 --> 00:06:42.415
+Now, let's take a look at those data types that we have in the DICOM format.
+
+00:06:42.415 --> 00:06:48.685
+Again, as before, the standard has a very nice page in Section 3.5,
+
+00:06:48.685 --> 00:06:51.800
+Chapter 6.2, which has a list of
+
+00:06:51.800 --> 00:06:54.970
+all possible data types that exist in the DICOM Standards.
+
+00:06:54.970 --> 00:06:59.230
+So we have things here, all these acronyms,
+
+00:06:59.230 --> 00:07:03.190
+as you will see when you are browsing through the standard and looking up data elements,
+
+00:07:03.190 --> 00:07:08.080
+they are expended here and there are very precise definitions of what those means.
+
+00:07:08.080 --> 00:07:09.515
+We have things like decimal strings,
+
+00:07:09.515 --> 00:07:11.140
+we have the date/time format,
+
+00:07:11.140 --> 00:07:13.255
+we have floating point numbers,
+
+00:07:13.255 --> 00:07:14.515
+and many other things.
+
+00:07:14.515 --> 00:07:17.230
+As you're analyzing DICOM datasets and as
+
+00:07:17.230 --> 00:07:20.140
+you're thinking of relying upon different data elements,
+
+00:07:20.140 --> 00:07:21.940
+I encourage you to look at the standards,
+
+00:07:21.940 --> 00:07:23.200
+and look at those data elements,
+
+00:07:23.200 --> 00:07:25.195
+and understand how exactly they are stored,
+
+00:07:25.195 --> 00:07:28.400
+and what DICOM standard tells us about
+
+00:07:28.400 --> 00:07:31.990
+the way that the data elements should be formatted.
+
+00:07:31.990 --> 00:07:36.400
+Also keep in mind that DICOM Standard is not very prescriptive,
+
+00:07:36.400 --> 00:07:37.945
+any of the rules can be broken.
+
+00:07:37.945 --> 00:07:42.295
+So nothing in the DICOM Standard really prevents you from storing something
+
+00:07:42.295 --> 00:07:46.930
+in the data element which does not conform with formatting rules.
+
+00:07:46.930 --> 00:07:50.275
+For example, if we look at the standard here, the unique identifier.
+
+00:07:50.275 --> 00:07:53.740
+Unique identifier paragraph here
+
+00:07:53.740 --> 00:07:57.205
+tells us that this should be a numeric component separated by period.
+
+00:07:57.205 --> 00:08:04.145
+If you try to write a set of alphanumeric characters in your unique identifier field,
+
+00:08:04.145 --> 00:08:07.300
+many DICOM libraries won't prevent you from doing that,
+
+00:08:07.300 --> 00:08:10.720
+and this will be considered even as a valid DICOM file by some viewers,
+
+00:08:10.720 --> 00:08:13.435
+but this would not be valid for DICOM Standard.
+
+00:08:13.435 --> 00:08:16.720
+One other thing to be aware of when you're looking at
+
+00:08:16.720 --> 00:08:21.160
+DICOM data is that there is such thing as data element types.
+
+00:08:21.160 --> 00:08:23.770
+As you will be looking up the DICOM Standard for
+
+00:08:23.770 --> 00:08:26.230
+a particular information object definitions like
+
+00:08:26.230 --> 00:08:30.565
+the MR IOD definition that we are going to look at in about a second,
+
+00:08:30.565 --> 00:08:32.630
+you will see that there are
+
+00:08:32.630 --> 00:08:37.025
+different data element types there like type 1 or type 2 elements.
+
+00:08:37.025 --> 00:08:40.085
+So the type defines whether the element
+
+00:08:40.085 --> 00:08:43.270
+has to be present in a particular IOD or whether it's optional.
+
+00:08:43.270 --> 00:08:47.195
+We will see an example of that in our MR IOD definition.
+
+00:08:47.195 --> 00:08:51.200
+So now, let's look at one of those Information Object Definitions.
+
+00:08:51.200 --> 00:08:54.100
+This is how the DICOM standard tells us what has
+
+00:08:54.100 --> 00:08:56.890
+to be in a particular information objects?
+
+00:08:56.890 --> 00:09:02.120
+What are the data elements which are mandatory and optional for a particular data types?
+
+00:09:02.120 --> 00:09:05.515
+Let's look at one for MRI imaging modality.
+
+00:09:05.515 --> 00:09:07.820
+So again, this is the DICOM Standard,
+
+00:09:07.820 --> 00:09:11.120
+Section 3.3, Chapter A.4.3.
+
+00:09:11.120 --> 00:09:14.375
+We have a nice table here that defines a set of modules.
+
+00:09:14.375 --> 00:09:17.935
+So these are groups of DICOM data elements,
+
+00:09:17.935 --> 00:09:20.200
+these are organized in groups for convenience.
+
+00:09:20.200 --> 00:09:23.050
+We can see that we have the patient group,
+
+00:09:23.050 --> 00:09:25.885
+we have the study, we have series, we have image,
+
+00:09:25.885 --> 00:09:30.850
+and we can see that we have these values here which is the usage column,
+
+00:09:30.850 --> 00:09:35.515
+we have values which tells us whether the module is mandatory or user optional.
+
+00:09:35.515 --> 00:09:37.265
+For example, the device module.
+
+00:09:37.265 --> 00:09:38.485
+If you go in here,
+
+00:09:38.485 --> 00:09:40.240
+you will see some fields and you might see that
+
+00:09:40.240 --> 00:09:42.130
+these things might be useful like device ID,
+
+00:09:42.130 --> 00:09:44.035
+for example, or device serial number.
+
+00:09:44.035 --> 00:09:46.450
+Maybe this is how you'd want to tell apart
+
+00:09:46.450 --> 00:09:49.015
+the different scanners that were used to produce the images,
+
+00:09:49.015 --> 00:09:50.890
+but you can see that actually,
+
+00:09:50.890 --> 00:09:54.160
+the entire module here is user optional,
+
+00:09:54.160 --> 00:09:55.355
+so it's not mandatory,
+
+00:09:55.355 --> 00:09:58.975
+so you are unlikely to find it in many datasets.
+
+00:09:58.975 --> 00:10:02.455
+Whereas, the image plane module is mandatory.
+
+00:10:02.455 --> 00:10:07.240
+If you go in there, you will see that every MR IOD, basically,
+
+00:10:07.240 --> 00:10:11.675
+every DICOM file that represents an MRI image should have these values,
+
+00:10:11.675 --> 00:10:13.690
+and these are values like pixel spacing.
+
+00:10:13.690 --> 00:10:15.150
+As we will see later in the course,
+
+00:10:15.150 --> 00:10:18.275
+pixel spacing is quite important to understand what is
+
+00:10:18.275 --> 00:10:22.140
+the resolution of our image and how our images relate to a physical space,
+
+00:10:22.140 --> 00:10:25.325
+and what are the sizes on the screen?
+
+00:10:25.325 --> 00:10:29.095
+Some other important elements are the orientation elements.
+
+00:10:29.095 --> 00:10:32.910
+We will look at those a little bit closer but they basically tell
+
+00:10:32.910 --> 00:10:36.845
+us how the image is oriented with respect to the scanner, and so on.
+
+00:10:36.845 --> 00:10:39.790
+Also, all these modules in IODs,
+
+00:10:39.790 --> 00:10:42.205
+they come with a pretty elaborate description.
+
+00:10:42.205 --> 00:10:44.225
+I encourage you as you're
+
+00:10:44.225 --> 00:10:47.860
+analyzing DICOM datasets to look through those if you would like to
+
+00:10:47.860 --> 00:10:50.315
+understand which elements you should be relying on when
+
+00:10:50.315 --> 00:10:54.070
+analyzing your datasets and we're processing them or especially,
+
+00:10:54.070 --> 00:10:56.975
+as you start getting into things like resampling and resizing
+
+00:10:56.975 --> 00:11:01.340
+your imaging datasets as you prepare them for machine learning workflows.
+
+00:11:01.340 --> 00:11:04.165
+So another quick thing about the DICOM files
+
+00:11:04.165 --> 00:11:07.275
+is that DICOM files are stored as binary on the file system,
+
+00:11:07.275 --> 00:11:11.890
+and even without any tools or even without any DICOM image viewers,
+
+00:11:11.890 --> 00:11:14.495
+you can get a quick idea of what's in the DICOM file.
+
+00:11:14.495 --> 00:11:19.615
+If we look at this DICOM directory here that we looked at earlier,
+
+00:11:19.615 --> 00:11:22.375
+and if we open one of those files in a hex editor,
+
+00:11:22.375 --> 00:11:24.745
+we will see here a lot of binary,
+
+00:11:24.745 --> 00:11:26.045
+but if you look at it closer,
+
+00:11:26.045 --> 00:11:27.160
+you will see some patterns here.
+
+00:11:27.160 --> 00:11:28.870
+So first, every DICOM file in
+
+00:11:28.870 --> 00:11:34.030
+the metadata section has to have 128 bytes of free-space, that's what we have here.
+
+00:11:34.030 --> 00:11:35.290
+Then we have this keyword,
+
+00:11:35.290 --> 00:11:38.095
+DICM, every valid DICOM file has that.
+
+00:11:38.095 --> 00:11:40.410
+This is how you know, even without any special tools,
+
+00:11:40.410 --> 00:11:42.220
+that you are dealing with a DICOM file.
+
+00:11:42.220 --> 00:11:43.865
+Then you start seeing some patterns.
+
+00:11:43.865 --> 00:11:45.655
+So this thing should be familiar,
+
+00:11:45.655 --> 00:11:47.469
+we've talked about unique identifier,
+
+00:11:47.469 --> 00:11:48.950
+so this is exactly what they are.
+
+00:11:48.950 --> 00:11:52.720
+The first one here is actually the subclass UID.
+
+00:11:52.720 --> 00:11:55.470
+So even without having any special tools,
+
+00:11:55.470 --> 00:11:57.625
+I know that this 114,
+
+00:11:57.625 --> 00:11:59.930
+this is an MR subclass IOD,
+
+00:11:59.930 --> 00:12:01.910
+and that I'm dealing with an MR image.
+
+00:12:01.910 --> 00:12:04.435
+So this is a quick hack that will let you
+
+00:12:04.435 --> 00:12:06.775
+understand what type of data you're dealing with
+
+00:12:06.775 --> 00:12:09.075
+and if this data is even a valid DICOM data
+
+00:12:09.075 --> 00:12:11.920
+without having any specialized tools at your disposal.
+
+00:12:11.920 --> 00:12:14.145
+Here is a quick recap of the glossary.
+
+00:12:14.145 --> 00:12:18.005
+DICOM stands for Digital Imaging and Communications in Medicine,
+
+00:12:18.005 --> 00:12:21.850
+this is the standard that defines how medical images are stored and transmitted.
+
+00:12:21.850 --> 00:12:24.815
+SOP stands for service-object pair,
+
+00:12:24.815 --> 00:12:29.135
+this is a pair of an object which is like MR image or a CT image,
+
+00:12:29.135 --> 00:12:30.910
+and a service associated with that.
+
+00:12:30.910 --> 00:12:32.195
+We've talked about storage,
+
+00:12:32.195 --> 00:12:34.600
+this is how images are stored on the hard drive,
+
+00:12:34.600 --> 00:12:38.435
+but there are other services which we'll touch upon in further lessons.
+
+00:12:38.435 --> 00:12:40.600
+VR is the value representation,
+
+00:12:40.600 --> 00:12:43.060
+essentially, a data type of a DICOM element.
+
+00:12:43.060 --> 00:12:46.225
+DICOM elements, also called DICOM tags,
+
+00:12:46.225 --> 00:12:48.955
+these are the key value pairs that store
+
+00:12:48.955 --> 00:12:53.390
+metadata about the DICOM files, your medical images.
+
+00:12:53.390 --> 00:12:57.250
+So this has been a long section and this was a lot to go through.
+
+00:12:57.250 --> 00:12:59.635
+We have looked at the DICOM Standard.
+
+00:12:59.635 --> 00:13:02.050
+DICOM Standard is huge, and it's very important,
+
+00:13:02.050 --> 00:13:04.760
+and it's used by every single medical imaging modality.
+
+00:13:04.760 --> 00:13:07.390
+You don't have to know it all but it is very
+
+00:13:07.390 --> 00:13:09.825
+important to understand that this standard exists,
+
+00:13:09.825 --> 00:13:11.185
+that it's published on the web,
+
+00:13:11.185 --> 00:13:14.605
+and there's always a place where you can go for a reference.
+
+00:13:14.605 --> 00:13:18.110
+We will keep coming back to this concepts throughout the course as we will
+
+00:13:18.110 --> 00:13:21.685
+do in exercises and doing other lectures on the subject.
+
+00:13:21.685 --> 00:13:24.000
+A few key takeaways: one,
+
+00:13:24.000 --> 00:13:27.280
+DICOM files, the 3D medical images,
+
+00:13:27.280 --> 00:13:31.180
+they are stored as files on a file system and they're organized in collections that
+
+00:13:31.180 --> 00:13:35.470
+represent series which are multiple images composing 3D volume,
+
+00:13:35.470 --> 00:13:37.975
+and then studies which are multiple series,
+
+00:13:37.975 --> 00:13:43.455
+and the toll relates to the patient which has images associated with them.
+
+00:13:43.455 --> 00:13:46.340
+DICOM has the concept of valid data,
+
+00:13:46.340 --> 00:13:49.940
+but you can also store invalid data in DICOM files,
+
+00:13:49.940 --> 00:13:56.005
+and you might run across those so keep that in mind as you're analyzing DICOM datasets.
+
+00:13:56.005 --> 00:13:57.700
+So in further lessons,
+
+00:13:57.700 --> 00:14:01.170
+we will look at another important imaging formats called an FT,
+
+00:14:01.170 --> 00:14:03.730
+this is the form of the sure likelihood to run across if
+
+00:14:03.730 --> 00:14:06.250
+you'll be participating in imaging competitions
+
+00:14:06.250 --> 00:14:08.120
+or if you will be preprocessing
+
+00:14:08.120 --> 00:14:12.620
+your DICOM datasets and preparing them for machine learning pipelines.
+

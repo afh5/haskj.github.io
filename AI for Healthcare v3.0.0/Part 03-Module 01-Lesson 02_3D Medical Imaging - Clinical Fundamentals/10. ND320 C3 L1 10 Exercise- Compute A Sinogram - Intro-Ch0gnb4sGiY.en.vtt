@@ -1,0 +1,16 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.930
+In this exercise, you will write some code to simulate a sinogram.
+
+00:00:03.930 --> 00:00:06.870
+This is what raw data coming off CT is called.
+
+00:00:06.870 --> 00:00:09.240
+You will implement a back projection algorithm to
+
+00:00:09.240 --> 00:00:12.850
+reconstruct a two-dimensional image from a sinogram.
+

@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.940
+To summarize, we've talked about 3D reconstruction,
+
+00:00:02.940 --> 00:00:05.100
+which is building 3D volume from voxels,
+
+00:00:05.100 --> 00:00:07.440
+we talked about multi-planar reconstruction,
+
+00:00:07.440 --> 00:00:10.450
+which is extracting non-primary 2D planes from the volume,
+
+00:00:10.450 --> 00:00:11.880
+we've talked about windowing,
+
+00:00:11.880 --> 00:00:15.900
+which is mapping the high range intensity space to 8-bit grayscale screen space,
+
+00:00:15.900 --> 00:00:17.910
+and we've talked about registration,
+
+00:00:17.910 --> 00:00:19.230
+which is bringing volumes to
+
+00:00:19.230 --> 00:00:22.905
+the same coordinate system so that they could be overlaid on top of each other.
+
+00:00:22.905 --> 00:00:24.255
+As a data scientist,
+
+00:00:24.255 --> 00:00:27.075
+you will see that these tasks show up all the time,
+
+00:00:27.075 --> 00:00:31.140
+and it is important to know the lingo and you
+
+00:00:31.140 --> 00:00:36.190
+might have to do this task yourself when you are performing data set analysis.
+

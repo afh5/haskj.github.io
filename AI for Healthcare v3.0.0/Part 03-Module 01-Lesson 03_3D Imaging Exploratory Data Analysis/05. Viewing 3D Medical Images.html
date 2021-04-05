@@ -1,0 +1,248 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Viewing 3D Medical Images</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>3D Imaging Exploratory Data Analysis</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. The DICOM Standard.html">02. The DICOM Standard</a>
+    </li>
+    <li class="">
+      <a href="03. Anatomy of DICOM Datasets.html">03. Anatomy of DICOM Datasets</a>
+    </li>
+    <li class="">
+      <a href="04. NIFTI File Format.html">04. NIFTI File Format</a>
+    </li>
+    <li class="">
+      <a href="05. Viewing 3D Medical Images.html">05. Viewing 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Load Image.html">06. Exercise 1: Load Image</a>
+    </li>
+    <li class="">
+      <a href="07. Important Parameters of 3D Medical Images.html">07. Important Parameters of 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="08. Basic DICOM Volume EDA.html">08. Basic DICOM Volume EDA</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 2 3D Volume MPR.html">09. Exercise 2: 3D Volume MPR</a>
+    </li>
+    <li class="">
+      <a href="10. Basic 3D DICOM Dataset EDA.html">10. Basic 3D DICOM Dataset EDA</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 3D Dataset EDA and Curation.html">11. Exercise 3: 3D Dataset EDA and Curation</a>
+    </li>
+    <li class="">
+      <a href="12. Lesson Summary.html">12. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Viewing 3D Medical Images</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Heading</p></h3>
+  <div>
+  <h1 id="viewing-3d-medical-images">Viewing 3D medical images</h1>
+<p>In this section, I will show you briefly two free tools that you could use to view medical images.</p>
+<h2 id="microdicom">MicroDicom</h2>
+<p>One tool is called MicroDicom and is available for Windows OS. This tool is a lightweight DICOM image viewer and provides a very convenient way to explore the DICOM tags.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L2 05 Viewing Images Pt 1</p></h3>
+  <video controls>
+  <source src="05. ND320 C3 L2 05 Viewing Images Pt 1-r3KFUtWvVco.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND320 C3 L2 05 Viewing Images Pt 1-r3KFUtWvVco.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Slicer intro</p></h3>
+  <div>
+  <h2 id="3d-slicer">3D Slicer</h2>
+<p>Another tool is called 3D slicer and is available for Windows, Linux, and Mac.</p>
+<p>It is an open-source modular 3D medical image viewer with a focus on a research community that can view both DICOM and NIFTI. It is quite complex and has a bit of a learning curve to it, but it is very powerful for a variety of tasks.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L2 05.1 Viewing Images Pt 2</p></h3>
+  <video controls>
+  <source src="05. ND320 C3 L2 05.1 Viewing Images Pt 2-vzHwJztSyt8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND320 C3 L2 05.1 Viewing Images Pt 2-vzHwJztSyt8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary of viewing images video</p></h3>
+  <div>
+  <p>We have seen a quick intro into a couple of tools that you could use for viewing DICOM images. There are many more, both free and commercial. Slicer is particularly powerful for more advanced scenarios and we will get into it in a later lesson. </p>
+<p>If you want to play with these tools now, here are some links:</p>
+<ul>
+<li>Microdicom (Windows only): <a href="http://www.microdicom.com/" rel="noopener noreferrer" target="_blank">http://www.microdicom.com/</a></li>
+<li>3D Slicer: <a href="https://www.slicer.org/" rel="noopener noreferrer" target="_blank">https://www.slicer.org/</a></li>
+</ul>
+<p>Also, here are some other tools that were not covered in the lesson, but could also come in handy:</p>
+<ul>
+<li>Radiant - another medical image viewer: <a href="https://www.radiantviewer.com/" rel="noopener noreferrer" target="_blank">https://www.radiantviewer.com/</a></li>
+<li>Osirix (Mac only): <a href="https://www.osirix-viewer.com/" rel="noopener noreferrer" target="_blank">https://www.osirix-viewer.com/</a></li>
+<li>ViewMyScans - a quick online viewer that doesn’t require a local installation: <a href="https://viewmyscans.com/viewer/" rel="noopener noreferrer" target="_blank">https://viewmyscans.com/viewer/</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Exercise 1 Load Image.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Viewing 3D Medical Images')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

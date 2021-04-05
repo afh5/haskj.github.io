@@ -1,0 +1,250 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.325
+So what are 3D medical images?
+
+00:00:02.325 --> 00:00:05.265
+First, let's revisit 2D medical images.
+
+00:00:05.265 --> 00:00:07.200
+You may recall from prior courses
+
+00:00:07.200 --> 00:00:10.710
+that 2D medical images encompass such things as radiographs,
+
+00:00:10.710 --> 00:00:12.555
+colloquially known as X-rays,
+
+00:00:12.555 --> 00:00:15.060
+digital histology or pathology slides,
+
+00:00:15.060 --> 00:00:17.250
+that is tissues looked at under a microscope,
+
+00:00:17.250 --> 00:00:22.275
+or may include things such as direct clinical photography of a patient's condition.
+
+00:00:22.275 --> 00:00:25.185
+So how do 2D and 3D medical images differ?
+
+00:00:25.185 --> 00:00:30.720
+Intuitively, a 2D image has an xy-plane and is usually viewed as a single image.
+
+00:00:30.720 --> 00:00:34.260
+On the contrary, you can think of a 3D medical image as
+
+00:00:34.260 --> 00:00:38.445
+a series of images stacked up so that you now have a z-axis,
+
+00:00:38.445 --> 00:00:42.815
+like having multiple slices of bread put together so that you have the whole loaf.
+
+00:00:42.815 --> 00:00:45.100
+Here's a more practical example.
+
+00:00:45.100 --> 00:00:47.525
+On the left, we have a scout radiograph.
+
+00:00:47.525 --> 00:00:52.280
+This is a low resolution X-ray taken before a CT scan to help plan the study,
+
+00:00:52.280 --> 00:00:55.520
+which areas we're going to cover and help label the slices.
+
+00:00:55.520 --> 00:00:59.785
+On the right, we have the CT scan itself taken immediately afterwards.
+
+00:00:59.785 --> 00:01:04.340
+You can see on the left we have a good representation of the patient,
+
+00:01:04.340 --> 00:01:06.815
+but all of the structures are overlapping,
+
+00:01:06.815 --> 00:01:09.320
+meaning they are projecting over one another and we have
+
+00:01:09.320 --> 00:01:12.035
+a limited ability to interact with the image.
+
+00:01:12.035 --> 00:01:16.370
+Now on the right, let's take a look at how we can interact with the CT scan and
+
+00:01:16.370 --> 00:01:21.025
+get a much better idea of the patient's underlying anatomy and possible disease state.
+
+00:01:21.025 --> 00:01:25.550
+As we play the clip, we can see that we're going from front to back in the patient,
+
+00:01:25.550 --> 00:01:28.250
+and there's a much better highlighting of
+
+00:01:28.250 --> 00:01:33.775
+the patient's anatomy and a sense that we can localize things better.
+
+00:01:33.775 --> 00:01:35.255
+Later on in the lesson,
+
+00:01:35.255 --> 00:01:37.550
+we'll see how these features of CT and
+
+00:01:37.550 --> 00:01:41.000
+other 3D medical images will help us diagnose disease better.
+
+00:01:41.000 --> 00:01:44.500
+Now let's see some examples of 3D imaging modalities.
+
+00:01:44.500 --> 00:01:48.020
+CT is the most commonly ordered 3D medical imaging study
+
+00:01:48.020 --> 00:01:51.620
+and is a diagnostic work horse for many clinical situations.
+
+00:01:51.620 --> 00:01:54.020
+It's an X-ray based modality and excels at
+
+00:01:54.020 --> 00:01:56.965
+combining speed and good diagnostic performance.
+
+00:01:56.965 --> 00:01:58.895
+In some situations, however,
+
+00:01:58.895 --> 00:02:01.910
+it can lack in its ability to pick up on nuance changes in
+
+00:02:01.910 --> 00:02:05.875
+the soft tissues were distinguished between particular diseases.
+
+00:02:05.875 --> 00:02:08.100
+That's where MRI comes in.
+
+00:02:08.100 --> 00:02:10.760
+MRI uses magnetic field alterations and
+
+00:02:10.760 --> 00:02:13.160
+radio-frequency pulses to obtain data from
+
+00:02:13.160 --> 00:02:16.150
+the patient without the use of ionizing radiation.
+
+00:02:16.150 --> 00:02:20.870
+It's frequently used to supplement information initially gleaned on CT or as
+
+00:02:20.870 --> 00:02:25.825
+the sole modality if the disease in question is known to be most easily picked up on MRI.
+
+00:02:25.825 --> 00:02:28.700
+CT and MRI are the modalities that you'll likely
+
+00:02:28.700 --> 00:02:32.435
+encounter most frequently when working with 3D medical imaging data sets,
+
+00:02:32.435 --> 00:02:34.870
+and are the focus of this course.
+
+00:02:34.870 --> 00:02:38.525
+Positron emission tomography and single photon emission
+
+00:02:38.525 --> 00:02:42.070
+computed tomography are nuclear medicine examinations.
+
+00:02:42.070 --> 00:02:46.055
+Nuclear medicine is a medical specialty that uses radioactive tracers
+
+00:02:46.055 --> 00:02:50.435
+administered to a patient to assess bodily functions and diagnose and treat disease.
+
+00:02:50.435 --> 00:02:52.850
+The energy emitted by the patient after
+
+00:02:52.850 --> 00:02:56.575
+the radio tracer is administered is imaged using a Gamma camera.
+
+00:02:56.575 --> 00:02:58.580
+Radioactive tracers are made up of
+
+00:02:58.580 --> 00:03:02.105
+a carrier molecule that's bound tightly to a radioactive atom.
+
+00:03:02.105 --> 00:03:06.070
+These carrier molecules vary depending on the purpose of the scan.
+
+00:03:06.070 --> 00:03:11.855
+Some tracers employ molecules that interact with a specific protein or sugar in the body,
+
+00:03:11.855 --> 00:03:14.530
+and can even employ the patients on cells.
+
+00:03:14.530 --> 00:03:17.420
+For most diagnostic studies in nuclear medicine,
+
+00:03:17.420 --> 00:03:22.070
+the radioactive tracer is administered to the patient by an intravenous injection.
+
+00:03:22.070 --> 00:03:26.045
+However, it can also be given as an inhaled medication,
+
+00:03:26.045 --> 00:03:29.390
+oral ingestion, or even direct injection to an organ.
+
+00:03:29.390 --> 00:03:32.419
+The choice of tracer and mode of tracer administration
+
+00:03:32.419 --> 00:03:35.665
+is going to depend on the disease process as to be studied.
+
+00:03:35.665 --> 00:03:38.600
+These studies can often add complimentary,
+
+00:03:38.600 --> 00:03:40.970
+functional or even physiologic information,
+
+00:03:40.970 --> 00:03:43.910
+and above and beyond what you can pick up on CT and MRI,
+
+00:03:43.910 --> 00:03:47.690
+though they do tend to comparatively lack in anatomic detail.
+
+00:03:47.690 --> 00:03:53.240
+Lastly, ultrasound is an imaging modality which straddles the 2D and 3D imaging worlds.
+
+00:03:53.240 --> 00:03:55.880
+Ultrasound imaging uses a transducer to
+
+00:03:55.880 --> 00:03:59.000
+generate sound waves that interact with the patient's tissues.
+
+00:03:59.000 --> 00:04:01.220
+The reflected waves are subsequently used to
+
+00:04:01.220 --> 00:04:04.130
+generate images or the structures which they've interacted with.
+
+00:04:04.130 --> 00:04:06.155
+It doesn't use ionizing radiation,
+
+00:04:06.155 --> 00:04:09.970
+is rapidly acquired and can be used directly at the patient's bedside.
+
+00:04:09.970 --> 00:04:12.905
+While most commonly viewed as a series of 2D images,
+
+00:04:12.905 --> 00:04:17.885
+3D image reconstructions and cinematic clips consisting of image stacks are often used.
+
+00:04:17.885 --> 00:04:20.300
+You may encounter such datasets in the wild,
+
+00:04:20.300 --> 00:04:22.805
+though will not be a focus in this course.
+
+00:04:22.805 --> 00:04:25.670
+We now have an idea of what 3D medical images
+
+00:04:25.670 --> 00:04:28.750
+are and the most common modalities used to generate them.
+
+00:04:28.750 --> 00:04:33.510
+We'll now discuss why we would use 3D medical images over 2D.
+

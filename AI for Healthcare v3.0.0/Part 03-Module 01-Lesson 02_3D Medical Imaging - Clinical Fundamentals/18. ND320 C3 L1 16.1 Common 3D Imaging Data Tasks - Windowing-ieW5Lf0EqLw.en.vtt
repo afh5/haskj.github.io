@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.155
+So as we have discussed briefly in the section on CT imaging,
+
+00:00:04.155 --> 00:00:07.890
+radiological images are composed of values on a linear scale.
+
+00:00:07.890 --> 00:00:11.025
+The values typically represent the measured signal intensity.
+
+00:00:11.025 --> 00:00:13.530
+These values are stored as discrete values,
+
+00:00:13.530 --> 00:00:16.140
+and contain the range of roughly 4,000 units for
+
+00:00:16.140 --> 00:00:19.095
+a CT image or larger than that for an MRI.
+
+00:00:19.095 --> 00:00:22.335
+When we want to represent this values on the computer screen,
+
+00:00:22.335 --> 00:00:24.280
+we need to map them to a linear scale.
+
+00:00:24.280 --> 00:00:26.425
+The grayscale is a natural choice,
+
+00:00:26.425 --> 00:00:31.490
+but we only have 256 distinct values of grayscale on the monitor so we need to
+
+00:00:31.490 --> 00:00:32.930
+map the high dynamic range of
+
+00:00:32.930 --> 00:00:36.710
+the measured signal to a screen space range of grayscale values.
+
+00:00:36.710 --> 00:00:39.260
+This process is usually done by performing
+
+00:00:39.260 --> 00:00:42.510
+a linear transformation of a section of original image color space,
+
+00:00:42.510 --> 00:00:44.720
+and this process is also called windowing.
+
+00:00:44.720 --> 00:00:49.795
+It involves selecting the center of the transformation and the transformation width.
+
+00:00:49.795 --> 00:00:53.435
+You will most likely see these values in any medical imaging software,
+
+00:00:53.435 --> 00:00:55.950
+not only for 3D images.
+

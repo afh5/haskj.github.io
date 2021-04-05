@@ -1,0 +1,288 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basic 3D DICOM Dataset EDA</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>3D Imaging Exploratory Data Analysis</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. The DICOM Standard.html">02. The DICOM Standard</a>
+    </li>
+    <li class="">
+      <a href="03. Anatomy of DICOM Datasets.html">03. Anatomy of DICOM Datasets</a>
+    </li>
+    <li class="">
+      <a href="04. NIFTI File Format.html">04. NIFTI File Format</a>
+    </li>
+    <li class="">
+      <a href="05. Viewing 3D Medical Images.html">05. Viewing 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Load Image.html">06. Exercise 1: Load Image</a>
+    </li>
+    <li class="">
+      <a href="07. Important Parameters of 3D Medical Images.html">07. Important Parameters of 3D Medical Images</a>
+    </li>
+    <li class="">
+      <a href="08. Basic DICOM Volume EDA.html">08. Basic DICOM Volume EDA</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 2 3D Volume MPR.html">09. Exercise 2: 3D Volume MPR</a>
+    </li>
+    <li class="">
+      <a href="10. Basic 3D DICOM Dataset EDA.html">10. Basic 3D DICOM Dataset EDA</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 3D Dataset EDA and Curation.html">11. Exercise 3: 3D Dataset EDA and Curation</a>
+    </li>
+    <li class="">
+      <a href="12. Lesson Summary.html">12. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">10. Basic 3D DICOM Dataset EDA</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Heading</p></h3>
+  <div>
+  <h1 id="dicom-volume-dataset-eda">DICOM Volume Dataset EDA</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L2 08 Volume Dataset EDA</p></h3>
+  <video controls>
+  <source src="10. ND320 C3 L2 08 Volume Dataset EDA-U9Up7KUeNuw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="10. ND320 C3 L2 08 Volume Dataset EDA-U9Up7KUeNuw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <p>Methods for dataset analysis basically boil down to using the same tricks as you’d do for individual volume analysis and being on the lookout for inconsistencies in data. </p>
+<p>Inconsistencies usually boil down to two classes:</p>
+<ul>
+<li><p><strong>Clinical anomalies</strong> - the things related to either anatomical anomalies like missing organs, pathologies like tumors or implants such as limb prosthesis, ports/cannulas, surgical implants, presence of contrast media, etc. Sometimes these things can result in artifacts in the images, so it’s good to be aware of them  </p></li>
+<li><p><strong>Informatics anomalies</strong>  - things related to specifics of data acquisition or variations in DICOM encoding coming from different scanners. These would be things like slice spacing consistency, image dimensions, variations in photometric encoding, etc</p></li>
+</ul>
+<p>Basic knowledge of DICOM and intuition for what things could go wrong are always useful when analyzing the datasets. I will post some examples of great dataset EDA at the end of this lesson as well. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Check for Understanding</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What would be relevant things to look at when analyzing a medical volume dataset?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1015105" id="rbk1">
+      <label for="rbk1"><p>Pixel spacing tag</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1015105" id="rbk2">
+      <label for="rbk2"><p>File names</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1015105" id="rbk3">
+      <label for="rbk3"><p>Image Orientation Patient and Image Position Patient tags</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1015105" id="rbk4">
+      <label for="rbk4"><p>Photometric Interpretation tag</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk5" name="1015105" id="rbk5">
+      <label for="rbk5"><p>Series Description tag</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk6" name="1015105" id="rbk6">
+      <label for="rbk6"><p>Rows/Columns tags</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Pixel spacing tag</li>
+      <li>File names</li>
+      <li>Image Orientation Patient and Image Position Patient tags</li>
+      <li>Photometric Interpretation tag</li>
+      <li>Series Description tag</li>
+      <li>Rows/Columns tags</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>WS Intro</p></h3>
+  <div>
+  <p>Below you can find the Jupyter Notebook that has been used in this walkthrough.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="11. Exercise 3 3D Dataset EDA and Curation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Basic 3D DICOM Dataset EDA')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

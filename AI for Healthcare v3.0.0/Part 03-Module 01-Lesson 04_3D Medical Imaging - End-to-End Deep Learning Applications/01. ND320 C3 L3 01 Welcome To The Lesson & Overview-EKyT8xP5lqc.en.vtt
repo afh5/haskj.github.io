@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.210
+Hello and welcome to the lesson where we will focus on some
+
+00:00:03.210 --> 00:00:06.555
+of the machine learning methods for 3D medical imaging.
+
+00:00:06.555 --> 00:00:10.980
+You might have heard terms such as machine learning, computer vision,
+
+00:00:10.980 --> 00:00:14.400
+and deep learning, in this lesson or maybe other places by now,
+
+00:00:14.400 --> 00:00:16.770
+there is a distinction between those.
+
+00:00:16.770 --> 00:00:21.330
+Here we will specifically talk about a couple of problems in machine learning,
+
+00:00:21.330 --> 00:00:24.000
+the problems of classification and segmentation.
+
+00:00:24.000 --> 00:00:27.450
+We will see how the application of those problems to
+
+00:00:27.450 --> 00:00:31.080
+medical imaging puts a twist to those problems.
+
+00:00:31.080 --> 00:00:34.380
+We will be doing some of the exercises in this lesson.
+
+00:00:34.380 --> 00:00:37.664
+In this lesson, the exercises will probably require
+
+00:00:37.664 --> 00:00:43.445
+the most amount of coding from you if you want to do all of them.
+
+00:00:43.445 --> 00:00:48.665
+In the exercises, I tried to minimize the dependencies on external libraries,
+
+00:00:48.665 --> 00:00:50.120
+but in the real world,
+
+00:00:50.120 --> 00:00:52.370
+you're encouraged to seek out some of the accelerators.
+
+00:00:52.370 --> 00:00:54.620
+There are plenty of the libraries out there that will help
+
+00:00:54.620 --> 00:00:58.505
+you preprocess medical images and
+
+00:00:58.505 --> 00:01:02.030
+optimize some of the algorithms that you
+
+00:01:02.030 --> 00:01:05.810
+will do like 2D and 3D convolutions, and things like that.
+
+00:01:05.810 --> 00:01:09.770
+Let's dive in and see what are the lesson objectives here.
+
+00:01:09.770 --> 00:01:11.900
+In this lesson, we will, as I've mentioned,
+
+00:01:11.900 --> 00:01:16.340
+look at some of the use cases for 3D medical imaging classification and object detection.
+
+00:01:16.340 --> 00:01:20.675
+We will look at the methods for feature extraction from 3D medical images.
+
+00:01:20.675 --> 00:01:22.744
+We will look at methods for two dimensional,
+
+00:01:22.744 --> 00:01:25.040
+two and half dimensional methods and 3G or
+
+00:01:25.040 --> 00:01:27.950
+three-dimensional and feature extraction of volumes.
+
+00:01:27.950 --> 00:01:32.000
+We will talk about the use cases for segmentation problems.
+
+00:01:32.000 --> 00:01:35.960
+We will look at one of the segmentation algorithms a bit more closer,
+
+00:01:35.960 --> 00:01:37.955
+the popular units algorithm.
+
+00:01:37.955 --> 00:01:40.835
+We will do an exercise where you will get a chance to
+
+00:01:40.835 --> 00:01:44.530
+apply a U-Net algorithm to the medical imaging volume.
+
+00:01:44.530 --> 00:01:47.149
+We will talk about ground truth for segmentation,
+
+00:01:47.149 --> 00:01:49.595
+what that means, and what things to keep in mind there.
+
+00:01:49.595 --> 00:01:52.520
+We will look at some of the common segmentation metrics,
+
+00:01:52.520 --> 00:01:55.160
+such as Dice and [inaudible] metrics,
+
+00:01:55.160 --> 00:01:57.270
+and how's [inaudible] distance.
+

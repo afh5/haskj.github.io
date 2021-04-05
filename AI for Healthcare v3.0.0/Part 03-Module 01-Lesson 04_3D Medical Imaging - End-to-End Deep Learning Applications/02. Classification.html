@@ -1,0 +1,261 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classification</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>3D Medical Imaging - End-to-End Deep Learning Applications</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Classification.html">02. Classification</a>
+    </li>
+    <li class="">
+      <a href="03. Methods for Feature Extraction.html">03. Methods for Feature Extraction</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Fun with Convolutions.html">04. Exercise 1: Fun with Convolutions</a>
+    </li>
+    <li class="">
+      <a href="05. Classification Summary.html">05. Classification: Summary</a>
+    </li>
+    <li class="">
+      <a href="06. Segmentation.html">06. Segmentation</a>
+    </li>
+    <li class="">
+      <a href="07. Segmentation Methods.html">07. Segmentation Methods</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Segmentation Hands On.html">08. Exercise 2: Segmentation Hands On</a>
+    </li>
+    <li class="">
+      <a href="09. Creating Ground Truth For Segmentation.html">09. Creating Ground Truth For Segmentation</a>
+    </li>
+    <li class="">
+      <a href="10. Evaluating Performance as Data Scientist.html">10. Evaluating Performance as Data Scientist</a>
+    </li>
+    <li class="">
+      <a href="11. Evaluating Performance as a Clinician.html">11. Evaluating Performance as a Clinician</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 3 Measuring Performance.html">12. Exercise 3: Measuring Performance</a>
+    </li>
+    <li class="">
+      <a href="13. Lesson Summary and Looking Beyond.html">13. Lesson Summary and Looking Beyond</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Classification</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="classification-introduction-and-use-cases">Classification: Introduction and Use Cases</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L3 02 Classification And Object Detection Problems</p></h3>
+  <video controls>
+  <source src="02. ND320 C3 L3 02 Classification And Object Detection Problems-M59z9er-w_E.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 C3 L3 02 Classification And Object Detection Problems-M59z9er-w_E.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Which of these is a good use case for whole image classification?</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which one of these is <strong>not</strong> a good use case for an object detection algorithm?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1015142" id="rbk1">
+        <label for="rbk1"><p>Detecting hemorrhages in the brain for scans obtained in an emergency room setting.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1015142" id="rbk2">
+        <label for="rbk2"><p>Detecting incidental findings on routine scans.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1015142" id="rbk3">
+        <label for="rbk3"><p>Detecting pulmonary nodules on cancer screening scans.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Detecting hemorrhages in the brain for scans obtained in an emergency room setting.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary, Further Research, New Vocab Terms</p></h3>
+  <div>
+  <p>We have seen some of the examples of problems that lend themselves well to solutions via automated classification or object detection algorithm. </p>
+<ul>
+<li><p>Detecting <strong>brain hemorrhages</strong>, or bleedings in the brain is particularly important in emergency scenarios when brain damage can happen within minutes. Often, radiologists have a backlog of images that they are going through, and it is not obvious which ones should be prioritized. An algorithm that will spot time-critical conditions will help with such prioritization</p></li>
+<li><p>Screening and monitoring scenarios, such as the presented scenario of <strong>screening for lung nodules</strong>, can be quite tedious because objects that are sought can hide well, and meticulous scrolling through slices is required. Pointing human attention to areas which are likely to be suspicious is helpful and saves time</p></li>
+<li><p>The presented scenario of <strong>incidental findings</strong> deals with an interesting phenomenon of <em>selective attention</em> where humans tend to ignore certain stimuli when multiple are applied. Thus, even trained observers may ignore something otherwise quite obvious, like an adrenal cyst when they know that image was taken with the purpose of evaluating potential vertebral disc degeneration. The famous “<a href="https://www.npr.org/sections/health-shots/2013/02/11/171409656/why-even-radiologists-can-miss-a-gorilla-hiding-in-plain-sight" rel="noopener noreferrer" target="_blank">gorilla study</a>” represents this marvelously. </p></li>
+</ul>
+<blockquote>
+  <p><strong>Note</strong>: when choosing a medical imaging problem to be solved by machine learning, it is tempting to assume that automated detection of certain conditions would be the most valuable thing to solve. However, this is not usually the case. Quite often detecting if a condition is present is not so difficult for a human observer who is already looking for such a condition. Things that bring most value usually lie in the area of productivity increase. Helping prioritize the more important exams, helping focus the attention of a human reader on small things or speed up tedious tasks usually is much more valuable. Therefore it is important to understand the clinical use case that the algorithm will be used well and think of end-user value first.  </p>
+</blockquote>
+<p>When it comes to classification and object detection problems, the key to solving those is identifying relevant features in the images, or <em>feature extraction</em>. Not so long ago, machine learning methods relied on manual feature design. With the advent of CNNs, feature extraction is done automatically by the network, and the job of a machine learning engineer is to define the general shape of such features. As the name implies, features in Convolutional Neural Networks take the shape of <em>convolutions</em>. In the next section, let’s take a closer look at some of the types of convolutions that are used for 3D medical image analysis.</p>
+<h3 id="new-vocabulary">New Vocabulary</h3>
+<ul>
+<li><strong>Classification</strong> - the problem of determining which one of several classes an image belongs to.</li>
+<li><strong>Object Detection</strong> - the problem of finding a (typically rectangular) region within an image that matches with one of several classes of interest. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Methods for Feature Extraction.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Classification')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

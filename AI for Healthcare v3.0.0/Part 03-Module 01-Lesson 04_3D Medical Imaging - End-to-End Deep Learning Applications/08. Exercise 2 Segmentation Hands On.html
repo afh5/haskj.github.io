@@ -1,0 +1,235 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 2: Segmentation Hands On</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>3D Medical Imaging - End-to-End Deep Learning Applications</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Classification.html">02. Classification</a>
+    </li>
+    <li class="">
+      <a href="03. Methods for Feature Extraction.html">03. Methods for Feature Extraction</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Fun with Convolutions.html">04. Exercise 1: Fun with Convolutions</a>
+    </li>
+    <li class="">
+      <a href="05. Classification Summary.html">05. Classification: Summary</a>
+    </li>
+    <li class="">
+      <a href="06. Segmentation.html">06. Segmentation</a>
+    </li>
+    <li class="">
+      <a href="07. Segmentation Methods.html">07. Segmentation Methods</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Segmentation Hands On.html">08. Exercise 2: Segmentation Hands On</a>
+    </li>
+    <li class="">
+      <a href="09. Creating Ground Truth For Segmentation.html">09. Creating Ground Truth For Segmentation</a>
+    </li>
+    <li class="">
+      <a href="10. Evaluating Performance as Data Scientist.html">10. Evaluating Performance as Data Scientist</a>
+    </li>
+    <li class="">
+      <a href="11. Evaluating Performance as a Clinician.html">11. Evaluating Performance as a Clinician</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 3 Measuring Performance.html">12. Exercise 3: Measuring Performance</a>
+    </li>
+    <li class="">
+      <a href="13. Lesson Summary and Looking Beyond.html">13. Lesson Summary and Looking Beyond</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Exercise 2: Segmentation Hands On</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Introduction</p></h3>
+  <div>
+  <h1 id="exercise-2-segmentation-hands-on">Exercise 2: Segmentation Hands-On</h1>
+<p>This exercise will give you the chance to try out a segmentation network in action. I hope you like it!</p>
+<blockquote>
+  <p>Udacity Workspace Note: This workspace is a Jupyter Notebook which has GPU as an option for you to use. At the bottom left of that workspace you will be able to enable/disable GPU. You will only be allocated a set amount of compute hours for the course so while you are just coding you should disable the GPU. When you want to run the training code you can turn it back on to speed the process up. Make sure to also configure PyTorch to use the GPU device. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Closing Remarks</p></h3>
+  <div>
+  <p>I hope you enjoyed the exercise. You can find the solution for the <strong>Exercise 2: Segmentation Hands On</strong> <a href="https://github.com/udacity/nd320-c3-3d-med-imaging/tree/master/3d-imaging-end-to-end-deep-learning-applications/exercises/2-segmentation-hands-on/solution" rel="noopener noreferrer" target="_blank">here</a>. If you managed to complete it - you are officially well versed with DICOM, NIFTI, and PyTorch to begin training and designing your own neural networks for medical imaging classification, object detection, and segmentation problems! However, a few important pieces remain. For example, you have noticed that we used simple cross-entropy loss as our cost function. Is this the best cost function possible? Also, after you have your segmentation - how do you efficiently compare it to your ground truth and evaluate performance? We will talk about these things further in this lesson.  </p>
+<p>A couple of final remarks below. </p>
+<h1 id="further-resources">Further Resources</h1>
+<ul>
+<li>If you looked closer at the code for the segmentation network that you have trained in this exercise, you should have noticed the ConvTranspose2D layers and you might be wondering what those are. Remember the upsampling path in the U-net? This is how this upsampling is done. Going into details of those would be straying too far from this course, so if you are curious to learn more about transposed convolutions, how they work, and why, you can read up this blog post: <a href="https://medium.com/activating-robotic-minds/up-sampling-with-transposed-convolution-9ae4f2df52d0" rel="noopener noreferrer" target="_blank">Up-sampling with Transposed Convolution</a> by Naoki Shibuya.</li>
+<li>A deep dive into the general approach to building segmentation networks: <a href="https://arxiv.org/pdf/1605.06211v1.pdf" rel="noopener noreferrer" target="_blank">Long, Jonathan et al. “Fully convolutional networks for semantic segmentation.” 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (2015): 3431-3440.</a></li>
+<li><a href="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/index.html" rel="noopener noreferrer" target="_blank">A UNet page by the author, Olaf Ronneberger, with a nice video explaining its principles of operation</a></li>
+<li><a href="http://deeplearning.net/tutorial/unet.html" rel="noopener noreferrer" target="_blank">UNet and overall CNN/DeepLearning content</a></li>
+<li>[Another great explanation of UNet](<a href="https://spark-in.me/post/unet-adventures-part-one-getting-acquainted-with-unet" rel="noopener noreferrer" target="_blank">https://spark-in.me/post/unet-adventures-part-one-getting-acquainted-with-unet</a><br />
+)</li>
+<li>An overview of radiogenomics: <a href="https://link.springer.com/article/10.1007/s00261-019-02028-w" rel="noopener noreferrer" target="_blank">Bodalal, Z., Trebeschi, S., Nguyen-Kim, T.D.L. et al. Radiogenomics: bridging imaging and genomics. Abdom Radiol 44, 1960–1984 (2019). https://doi.org/10.1007/s00261-019-02028-w</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Creating Ground Truth For Segmentation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Exercise 2: Segmentation Hands On')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

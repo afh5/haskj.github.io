@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.960
+Another common task is called multi-planar reconstruction.
+
+00:00:03.960 --> 00:00:06.885
+The multi-planar reconstruction, or MPR,
+
+00:00:06.885 --> 00:00:09.960
+refers to the construction of the images in cardinal planes,
+
+00:00:09.960 --> 00:00:12.620
+which are not the main image acquisition plane.
+
+00:00:12.620 --> 00:00:14.940
+A quick word on anatomical cardinal planes.
+
+00:00:14.940 --> 00:00:18.555
+We have three cardinal planes called axial, coronal, and sagittal.
+
+00:00:18.555 --> 00:00:21.675
+Axial plane separates top from the bottom.
+
+00:00:21.675 --> 00:00:24.195
+Coronal plane separates back from the front,
+
+00:00:24.195 --> 00:00:26.940
+and sagittal plane separates left from the right.
+
+00:00:26.940 --> 00:00:31.650
+Typically, one of those planes will be primary and the others will be reconstructed.
+
+00:00:31.650 --> 00:00:34.140
+There is also the term oblique reconstruction,
+
+00:00:34.140 --> 00:00:37.470
+that refers to reconstructing the image at an arbitrary angle.
+
+00:00:37.470 --> 00:00:38.930
+In this example here,
+
+00:00:38.930 --> 00:00:41.030
+you can see how the coronal and sagittal planes
+
+00:00:41.030 --> 00:00:43.265
+have been reconstructed from the axial plane.
+
+00:00:43.265 --> 00:00:46.490
+Quite often, you will see the non-primary acquisition planes will be
+
+00:00:46.490 --> 00:00:50.215
+of a significantly lower resolution or will have artifacts.
+
+00:00:50.215 --> 00:00:52.040
+For example, here you can see
+
+00:00:52.040 --> 00:00:55.895
+the wave emotion artifact in the abdominal area of this sagittal slice.
+
+00:00:55.895 --> 00:00:58.190
+They are there due to the defects of
+
+00:00:58.190 --> 00:01:01.970
+the helical reconstruction while CT table was moving through the gantry,
+
+00:01:01.970 --> 00:01:07.500
+and now you know what exactly CT table and gantry means.
+

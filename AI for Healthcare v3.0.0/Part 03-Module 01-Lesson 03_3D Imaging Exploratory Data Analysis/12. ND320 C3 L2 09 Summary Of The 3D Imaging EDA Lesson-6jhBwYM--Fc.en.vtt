@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.270
+So congratulations, you have made it to the end of this lesson.
+
+00:00:03.270 --> 00:00:04.680
+I know this was a long lesson.
+
+00:00:04.680 --> 00:00:07.860
+In this lesson, we have learned about DICOM format,
+
+00:00:07.860 --> 00:00:09.270
+about the NIFTI format,
+
+00:00:09.270 --> 00:00:10.950
+we learned how the files are stored,
+
+00:00:10.950 --> 00:00:15.105
+we learned about some of the data elements that define the metadata of those files,
+
+00:00:15.105 --> 00:00:18.540
+we have talked about analyzing 3D imaging datasets,
+
+00:00:18.540 --> 00:00:20.140
+we looked at the Jupyter Notebook,
+
+00:00:20.140 --> 00:00:24.990
+and we talked about some of the useful and important techniques for this analysis.
+
+00:00:24.990 --> 00:00:27.225
+Something that you need to keep in mind as you
+
+00:00:27.225 --> 00:00:29.535
+keep working with the medical imaging dataset,
+
+00:00:29.535 --> 00:00:35.085
+to remember that voxels can be non cube-like.
+
+00:00:35.085 --> 00:00:39.095
+So you need to be looking at the shapes and sizes and dimensions of your voxels.
+
+00:00:39.095 --> 00:00:40.940
+You need to keep in mind the photometrics.
+
+00:00:40.940 --> 00:00:43.740
+You need to understand what the value ranges are,
+
+00:00:43.740 --> 00:00:48.320
+and you need to make sure that they map correctly to the greyscale color space.
+
+00:00:48.320 --> 00:00:50.210
+We looked at some techniques that help you
+
+00:00:50.210 --> 00:00:53.270
+understand the outliers in your medical imaging datasets.
+
+00:00:53.270 --> 00:00:54.530
+If you want to look further,
+
+00:00:54.530 --> 00:00:56.465
+if you want to explore this topic further,
+
+00:00:56.465 --> 00:00:57.935
+later in this concept,
+
+00:00:57.935 --> 00:01:01.250
+we will post links to some great resources which will
+
+00:01:01.250 --> 00:01:04.670
+show you how people approach analyzing 3D medical imaging datasets.
+
+00:01:04.670 --> 00:01:06.340
+In the next lesson,
+
+00:01:06.340 --> 00:01:08.420
+we will start looking at applying some of
+
+00:01:08.420 --> 00:01:12.180
+the machine learning techniques to this medical imaging datasets.
+

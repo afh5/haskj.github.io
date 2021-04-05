@@ -1,0 +1,181 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.800
+So we've discussed what 3D medical images are and
+
+00:00:02.800 --> 00:00:05.495
+the advantages they can have over 2D medical images.
+
+00:00:05.495 --> 00:00:08.570
+Let's now cover who uses 3D medical images,
+
+00:00:08.570 --> 00:00:11.650
+as you will likely be working alongside them if you choose to
+
+00:00:11.650 --> 00:00:15.055
+become more seriously involved in AI-driven imaging applications.
+
+00:00:15.055 --> 00:00:19.630
+Let's start with a simplified overview of the most common end users of medical imaging.
+
+00:00:19.630 --> 00:00:21.009
+For the sake of this discussion,
+
+00:00:21.009 --> 00:00:23.305
+let's call them user archetypes.
+
+00:00:23.305 --> 00:00:25.765
+First, there's the primary care provider.
+
+00:00:25.765 --> 00:00:29.150
+This person is often the first person a patient will see.
+
+00:00:29.150 --> 00:00:32.905
+A primary care provider will identify the patient's chief concern,
+
+00:00:32.905 --> 00:00:35.470
+develop a list of possibilities as to what's going on,
+
+00:00:35.470 --> 00:00:37.210
+called the differential diagnosis,
+
+00:00:37.210 --> 00:00:42.705
+and will order both imaging and non-imaging tests as necessary to refine their diagnosis.
+
+00:00:42.705 --> 00:00:44.600
+A primary care provider may use
+
+00:00:44.600 --> 00:00:47.510
+imaging studies to screen their otherwise healthy patients for
+
+00:00:47.510 --> 00:00:50.540
+certain conditions such as a low dose chest CT for
+
+00:00:50.540 --> 00:00:53.960
+lung cancer screening if a patient has particular risk factors,
+
+00:00:53.960 --> 00:00:57.200
+or CT colonography to screen for colon cancer.
+
+00:00:57.200 --> 00:01:00.080
+Moreover, they may order an imaging study
+
+00:01:00.080 --> 00:01:02.960
+for common problems that may need further characterization,
+
+00:01:02.960 --> 00:01:05.600
+for example, an ankle MRI in someone who has
+
+00:01:05.600 --> 00:01:09.095
+twisted their ankle and has not improved over a few weeks.
+
+00:01:09.095 --> 00:01:12.950
+Patients who require more complex or specialized care are often
+
+00:01:12.950 --> 00:01:17.050
+referred by their primary care physician to what we'll refer to as a specialist.
+
+00:01:17.050 --> 00:01:19.580
+We'll use this as a general term for any doctor who has
+
+00:01:19.580 --> 00:01:22.265
+specialized in a particular organ system or disease,
+
+00:01:22.265 --> 00:01:24.575
+such as a neurologist for the nervous system,
+
+00:01:24.575 --> 00:01:26.225
+cardiologist for the heart,
+
+00:01:26.225 --> 00:01:28.840
+or oncologist for cancer, for instance.
+
+00:01:28.840 --> 00:01:32.240
+Specialists will often use advanced medical imaging studies as
+
+00:01:32.240 --> 00:01:36.275
+supplementary tests to really hone down on their diagnosis.
+
+00:01:36.275 --> 00:01:39.700
+For those specialists treating longer-term diseases such as
+
+00:01:39.700 --> 00:01:44.195
+cancer will use images over time to track the patient's disease course.
+
+00:01:44.195 --> 00:01:47.335
+Not all imaging use cases are diagnostic, however.
+
+00:01:47.335 --> 00:01:50.570
+For example, surgeons in procedure-heavy specialties such as
+
+00:01:50.570 --> 00:01:54.860
+interventional radiology will use images to guide surgeries and other procedures
+
+00:01:54.860 --> 00:01:58.940
+either through intraprocedural imaging or through the registration of
+
+00:01:58.940 --> 00:02:01.070
+previously obtained images to
+
+00:02:01.070 --> 00:02:04.265
+the patient and the surgical instruments in the surgical suite,
+
+00:02:04.265 --> 00:02:09.175
+and align them to obtain real time feedback of their instrument location.
+
+00:02:09.175 --> 00:02:11.165
+Of course, there's the radiologist,
+
+00:02:11.165 --> 00:02:14.060
+a doctor who specializes in medical imaging and uses
+
+00:02:14.060 --> 00:02:18.285
+their expertise to assist consulting colleagues throughout the patient care process.
+
+00:02:18.285 --> 00:02:20.240
+Radiologists advise colleagues on
+
+00:02:20.240 --> 00:02:23.440
+the best imaging study to obtain for a given clinical condition,
+
+00:02:23.440 --> 00:02:28.190
+work with imaging technologists to tune and optimize imaging parameters and protocols,
+
+00:02:28.190 --> 00:02:30.155
+interpret the acquired images,
+
+00:02:30.155 --> 00:02:32.570
+rendering a report of their findings and impression,
+
+00:02:32.570 --> 00:02:35.690
+and deliver that critical information to consulting colleagues.
+
+00:02:35.690 --> 00:02:40.145
+Often, radiologists will also perform a multitude of image-guided procedures.
+
+00:02:40.145 --> 00:02:43.775
+So that's a broad overview of some of the most common end users.
+
+00:02:43.775 --> 00:02:47.660
+Let's put this information together in a practical clinical scenario.
+
+00:02:47.660 --> 00:02:49.445
+As the scenario goes on,
+
+00:02:49.445 --> 00:02:52.715
+try to identify some of the most common use cases for medical imaging,
+
+00:02:52.715 --> 00:02:55.790
+such as diagnosis, procedural guidance,
+
+00:02:55.790 --> 00:02:58.055
+and assessing response to treatment.
+
+00:02:58.055 --> 00:03:00.125
+Though this list isn't exhaustive,
+
+00:03:00.125 --> 00:03:04.740
+it's a solid foundation and comprises most of the day-to-day workflows.
+

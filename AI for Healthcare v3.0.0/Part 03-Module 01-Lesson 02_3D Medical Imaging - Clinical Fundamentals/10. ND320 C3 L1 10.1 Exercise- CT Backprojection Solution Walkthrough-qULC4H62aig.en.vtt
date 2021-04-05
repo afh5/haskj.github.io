@@ -1,0 +1,517 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.275
+So now, we will do a little exercise which will help you understand
+
+00:00:04.275 --> 00:00:08.280
+a little bit better how CT scanners construct their images.
+
+00:00:08.280 --> 00:00:11.550
+We'll implement an algorithm that's performing what's called a
+
+00:00:11.550 --> 00:00:15.165
+back projection of a signal,
+
+00:00:15.165 --> 00:00:16.860
+which is measured by a CT scanner.
+
+00:00:16.860 --> 00:00:19.530
+We'll be writing a little bit of code, but before that,
+
+00:00:19.530 --> 00:00:23.340
+I would like to walk you through some of the basics of a Jupyter notebook.
+
+00:00:23.340 --> 00:00:25.245
+So let's take a look at the Jupyter.
+
+00:00:25.245 --> 00:00:30.405
+In this exercise, I will be walking with you through this Jupyter notebook.
+
+00:00:30.405 --> 00:00:34.060
+The Jupyter notebook is also available in the code repository.
+
+00:00:34.060 --> 00:00:37.160
+It contains some of the places where you're invited to fill in
+
+00:00:37.160 --> 00:00:40.655
+the code so you will be able to run through it yourself.
+
+00:00:40.655 --> 00:00:43.205
+But I would like to get some important points across.
+
+00:00:43.205 --> 00:00:45.940
+So let's take a look at it.
+
+00:00:45.940 --> 00:00:50.060
+First let's get into the concept called sinograms.
+
+00:00:50.060 --> 00:00:52.790
+Every time a detector is taking an image shot,
+
+00:00:52.790 --> 00:00:55.190
+our detector in a CT machine is computing
+
+00:00:55.190 --> 00:00:57.960
+the amount of photons that are passing through the body.
+
+00:00:57.960 --> 00:01:01.150
+Because we do not have access to an actual CT machine,
+
+00:01:01.150 --> 00:01:03.980
+let's simulate that and let's pretend like
+
+00:01:03.980 --> 00:01:08.000
+we have an array of data which has been sampled from a CT machine.
+
+00:01:08.000 --> 00:01:10.070
+So that's the first part that we're going to do.
+
+00:01:10.070 --> 00:01:13.010
+We will do that by using a phantom.
+
+00:01:13.010 --> 00:01:15.410
+Phantoms are commonly used in medical imaging.
+
+00:01:15.410 --> 00:01:16.820
+As you can see on the screen here,
+
+00:01:16.820 --> 00:01:21.380
+I pieced out a photograph for you which I took at a radiological show.
+
+00:01:21.380 --> 00:01:23.810
+This is a picture of a phantom of a fetus.
+
+00:01:23.810 --> 00:01:27.830
+So that's like a little model of a human that
+
+00:01:27.830 --> 00:01:31.870
+is made out of materials which have the same density as real physical materials.
+
+00:01:31.870 --> 00:01:37.880
+So phantoms are pretty common in either scenarios where people calibrate CT,
+
+00:01:37.880 --> 00:01:40.655
+MR scanners or other types of radiological devices
+
+00:01:40.655 --> 00:01:45.620
+or develop some digital image processing algorithms
+
+00:01:45.620 --> 00:01:47.770
+like the one that we are going to do now.
+
+00:01:47.770 --> 00:01:52.770
+So don't mind this code for now.
+
+00:01:52.770 --> 00:01:56.895
+We will get into the codes later.
+
+00:01:56.895 --> 00:01:58.500
+What is happening here,
+
+00:01:58.500 --> 00:02:04.775
+we are using the Python PIL library and we use Pillow to open a bitmap file.
+
+00:02:04.775 --> 00:02:07.030
+We convert this to a grayscale.
+
+00:02:07.030 --> 00:02:10.980
+So we visualize it and here we have our phantom.
+
+00:02:10.980 --> 00:02:16.425
+So our phantom is a grayscale image which consists of different geometrical shapes.
+
+00:02:16.425 --> 00:02:18.300
+So we have a rectangle here, an oval,
+
+00:02:18.300 --> 00:02:23.120
+we have a full white circle and little gray circle inside it.
+
+00:02:23.120 --> 00:02:30.410
+So let us do what combination of CT sources and detectors are doing.
+
+00:02:30.410 --> 00:02:37.230
+Let us cast rays through this picture along the X-axis here,
+
+00:02:37.230 --> 00:02:40.400
+and let us add up
+
+00:02:40.400 --> 00:02:44.845
+all the values that the rays is hitting as they're passing through this image.
+
+00:02:44.845 --> 00:02:47.150
+So we have a little bit of code here.
+
+00:02:47.150 --> 00:02:52.565
+We just go through the image lines and add up all the values.
+
+00:02:52.565 --> 00:02:55.560
+So let's visualize and see what we get here.
+
+00:02:55.560 --> 00:02:58.310
+So we can see that we get this shape,
+
+00:02:58.310 --> 00:03:00.170
+where you have some values here in the beginning.
+
+00:03:00.170 --> 00:03:02.270
+This is corresponding to our oval shape.
+
+00:03:02.270 --> 00:03:05.750
+If we scroll up, this is the oval that we're talking about.
+
+00:03:05.750 --> 00:03:10.320
+Then we have this large signal that corresponds to our big circle,
+
+00:03:10.320 --> 00:03:14.230
+and we have a dependent which corresponds to a cut out in the circle.
+
+00:03:14.230 --> 00:03:18.020
+If we scroll up, this is the circle, this is the cut out.
+
+00:03:18.020 --> 00:03:23.775
+We have a rectangular signal which corresponds to a rectangle. This is the rectangle.
+
+00:03:23.775 --> 00:03:28.230
+This is very close to what a CT detector is seeing
+
+00:03:28.230 --> 00:03:33.620
+once it receives a batch of photons from a single shot.
+
+00:03:33.620 --> 00:03:36.555
+So what was happening then,
+
+00:03:36.555 --> 00:03:42.500
+we've talked about how CT has this gantry and how the source rotates within
+
+00:03:42.500 --> 00:03:49.565
+the gantry and the detectors are measuring the radiation coming from different angles.
+
+00:03:49.565 --> 00:03:50.915
+Let's simulate that.
+
+00:03:50.915 --> 00:03:53.750
+Let's use the Pillow library to rotate our image a little bit.
+
+00:03:53.750 --> 00:03:55.970
+Let's rotate by 60 degrees.
+
+00:03:55.970 --> 00:03:57.635
+Our image is rotated.
+
+00:03:57.635 --> 00:03:59.920
+Let's run through the same process.
+
+00:03:59.920 --> 00:04:05.325
+Let's plot it. So you can see the graph here has changed.
+
+00:04:05.325 --> 00:04:06.980
+So we still see our oval,
+
+00:04:06.980 --> 00:04:08.600
+we see our big circle.
+
+00:04:08.600 --> 00:04:11.690
+So our rectangle right now stands at an angle.
+
+00:04:11.690 --> 00:04:19.504
+So you have the sharp peak here where we're hitting the diagonal of this rectangle.
+
+00:04:19.504 --> 00:04:21.170
+An interesting thing here,
+
+00:04:21.170 --> 00:04:23.240
+which I would like you to think about is,
+
+00:04:23.240 --> 00:04:30.925
+see this little kind of saw-tooth pattern on the circle part and on the rectangle part.
+
+00:04:30.925 --> 00:04:32.520
+Why do you think that is?
+
+00:04:32.520 --> 00:04:33.600
+Try to think about it.
+
+00:04:33.600 --> 00:04:36.605
+Look at the image, and think why this could happen.
+
+00:04:36.605 --> 00:04:40.400
+It is interesting because such kind of artifacts are happening in
+
+00:04:40.400 --> 00:04:45.065
+the real CT scanners and there are algorithms employed to combat those.
+
+00:04:45.065 --> 00:04:49.905
+So now let's compute what's called a sinogram.
+
+00:04:49.905 --> 00:04:57.125
+We have made one projection from one angle of the gantry rotation,
+
+00:04:57.125 --> 00:05:00.020
+we've done another projection from a different angle.
+
+00:05:00.020 --> 00:05:02.020
+Now let's compute a set of projections.
+
+00:05:02.020 --> 00:05:03.500
+So let's rotate our image by
+
+00:05:03.500 --> 00:05:06.560
+three degrees and let's take a projection every three degrees.
+
+00:05:06.560 --> 00:05:11.080
+A little bit more code building up on what we have already.
+
+00:05:11.080 --> 00:05:14.305
+You'll be able to look through this code later.
+
+00:05:14.305 --> 00:05:16.940
+Notice that I use NumPy here,
+
+00:05:16.940 --> 00:05:21.740
+and NumPy helps speed things up and make it a little bit more concise.
+
+00:05:21.740 --> 00:05:23.420
+So at this point,
+
+00:05:23.420 --> 00:05:28.460
+we have computed an array of our projections.
+
+00:05:28.460 --> 00:05:33.070
+Let us see what will happen if we stack all of those projections.
+
+00:05:33.070 --> 00:05:36.545
+So remember, each projection you have points corresponding to
+
+00:05:36.545 --> 00:05:40.985
+each x coordinates along the x-axis.
+
+00:05:40.985 --> 00:05:43.850
+So let us stack those on top of each other,
+
+00:05:43.850 --> 00:05:49.380
+and let's display those as an image. This is quite beautiful.
+
+00:05:49.380 --> 00:05:51.540
+So this is what's called the sinogram.
+
+00:05:51.540 --> 00:05:55.220
+So this is a visualization of all projections.
+
+00:05:55.220 --> 00:06:00.890
+So if you remember how we looked at our first projection in the beginning.
+
+00:06:00.890 --> 00:06:02.900
+So we had some early signal from the oval.
+
+00:06:02.900 --> 00:06:04.400
+So this is the signal here.
+
+00:06:04.400 --> 00:06:06.020
+We have some signal from the circle,
+
+00:06:06.020 --> 00:06:08.060
+we have a darker spot from
+
+00:06:08.060 --> 00:06:11.480
+the embedded circle and then we have a signal from the rectangle.
+
+00:06:11.480 --> 00:06:14.240
+Then as we rotate our image,
+
+00:06:14.240 --> 00:06:18.259
+this things start to shift because we rotate gradually,
+
+00:06:18.259 --> 00:06:22.310
+you see this sinusoidal undulating patterns
+
+00:06:22.310 --> 00:06:25.675
+on the image and that's why it's called a sinogram.
+
+00:06:25.675 --> 00:06:29.745
+So this is the image that you would get from a CT scanner.
+
+00:06:29.745 --> 00:06:33.185
+This is the digital sampling of the analog signal.
+
+00:06:33.185 --> 00:06:38.405
+This is where the C part in a CT of the computer tomography kicks in.
+
+00:06:38.405 --> 00:06:40.610
+So you get this sinogram from
+
+00:06:40.610 --> 00:06:43.280
+a scanner and now you need to apply it in algorithm and turn
+
+00:06:43.280 --> 00:06:49.505
+the sinogram into a two-dimensional image which a human can take a look at.
+
+00:06:49.505 --> 00:06:52.940
+Essentially, we need to perform a reverse process.
+
+00:06:52.940 --> 00:07:00.950
+We need to add up all those projections somehow and reconstruct the motion of the gantry.
+
+00:07:00.950 --> 00:07:02.600
+That's why it's called a back projection.
+
+00:07:02.600 --> 00:07:05.080
+So we're computing projections back.
+
+00:07:05.080 --> 00:07:07.605
+So what will happen now,
+
+00:07:07.605 --> 00:07:12.050
+we will take one projection of the sinogram.
+
+00:07:12.050 --> 00:07:14.000
+So we start from the top.
+
+00:07:14.000 --> 00:07:20.285
+What we will do, we will smear it across all the pixels of our 2D image.
+
+00:07:20.285 --> 00:07:24.870
+So we know what should be the size of our 2D image.
+
+00:07:24.870 --> 00:07:28.430
+So we have so many points on one projection,
+
+00:07:28.430 --> 00:07:29.900
+and we have so many projections,
+
+00:07:29.900 --> 00:07:32.525
+so we know the size of the output.
+
+00:07:32.525 --> 00:07:37.850
+We construct this image in memory here and then we just take the first one and
+
+00:07:37.850 --> 00:07:44.290
+we repeat it across all of the values of the image that we are trying to reconstruct.
+
+00:07:44.290 --> 00:07:47.280
+Let's see what we get. Well, not surprising,
+
+00:07:47.280 --> 00:07:53.525
+we get smear representation of one of those projections.
+
+00:07:53.525 --> 00:07:56.405
+Well, as you might have guessed, what we do right now,
+
+00:07:56.405 --> 00:08:00.680
+we rotate this image by three degrees because that was the degree
+
+00:08:00.680 --> 00:08:05.195
+of rotation we were acquiring those projections and we will smear another projection.
+
+00:08:05.195 --> 00:08:08.185
+We will keep doing that until we will have done all of them.
+
+00:08:08.185 --> 00:08:12.105
+Let's see what we get if we do this computation.
+
+00:08:12.105 --> 00:08:16.020
+Again, the computation is quite simple here.
+
+00:08:16.020 --> 00:08:18.815
+So after we've gone through this process,
+
+00:08:18.815 --> 00:08:20.270
+we have the spherical BP,
+
+00:08:20.270 --> 00:08:24.590
+the back projection, which contains our reconstructed image.
+
+00:08:24.590 --> 00:08:28.255
+So let's visualize it using Matplotlib.
+
+00:08:28.255 --> 00:08:32.040
+You see, we made it.
+
+00:08:32.040 --> 00:08:34.835
+So this looks like our original image.
+
+00:08:34.835 --> 00:08:36.635
+You see it's a little bit blurry.
+
+00:08:36.635 --> 00:08:39.605
+There is a bit of artifacting going on.
+
+00:08:39.605 --> 00:08:41.390
+You see these blocking artifacts,
+
+00:08:41.390 --> 00:08:45.290
+but this looks very similar to
+
+00:08:45.290 --> 00:08:49.860
+an unfiltered image that you would get after the back projection process.
+
+00:08:49.860 --> 00:08:52.565
+What happens in real CT scanners from this point,
+
+00:08:52.565 --> 00:08:56.120
+we have a string of filtering algorithms that kick in.
+
+00:08:56.120 --> 00:08:58.880
+They sharpen the image, they reduce the blurring,
+
+00:08:58.880 --> 00:09:05.260
+and they produce this nice and beautiful and sharp CT image that you might see.
+
+00:09:05.260 --> 00:09:10.050
+So we have seen how a process of CT back projection works.
+
+00:09:10.050 --> 00:09:15.410
+How we get our two-dimensional images from a projection data,
+
+00:09:15.410 --> 00:09:17.960
+from a sinogram that's coming off a CT scanner.
+
+00:09:17.960 --> 00:09:23.285
+Hopefully, this has given you some intuition for why CT images look the way they are,
+
+00:09:23.285 --> 00:09:25.300
+and why you can see some of the artifacts.
+
+00:09:25.300 --> 00:09:28.520
+Like for example, you could see how if an image has a strong signal,
+
+00:09:28.520 --> 00:09:32.180
+an intense signal that results in a bright white pixels.
+
+00:09:32.180 --> 00:09:36.235
+How this value gets propagated to all the neighboring pixels.
+
+00:09:36.235 --> 00:09:38.280
+This is actually what happens in real world.
+
+00:09:38.280 --> 00:09:43.265
+So strong signals that coming off things like implants or calcifications,
+
+00:09:43.265 --> 00:09:48.360
+they tend to produce those thriking artifacts that smear the cross pixels
+
+00:09:48.360 --> 00:09:54.349
+around it and sometimes you need to account for that when you're doing your processing.
+
+00:09:54.349 --> 00:09:56.630
+So at the end of this exercise,
+
+00:09:56.630 --> 00:09:59.575
+I invite you to write your own bit of code.
+
+00:09:59.575 --> 00:10:03.020
+There is an image in the directory with the Jupyter notebook.
+
+00:10:03.020 --> 00:10:05.810
+This image contains a slice of a human head
+
+00:10:05.810 --> 00:10:09.290
+CT and you're invited to compute to your own unfiltered
+
+00:10:09.290 --> 00:10:11.870
+back projection from it in the same way we've just done in
+
+00:10:11.870 --> 00:10:16.810
+this Jupyter notebook run through. Good luck.
+

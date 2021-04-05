@@ -1,0 +1,859 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.530
+In this screencast, let's take a look at a Jupyter notebook and let's try
+
+00:00:04.530 --> 00:00:09.705
+to see how one might approach analyzing and making sense of a 3D medical imaging dataset.
+
+00:00:09.705 --> 00:00:11.325
+In this Jupyter notebook,
+
+00:00:11.325 --> 00:00:13.470
+let's discuss some methods which could be applied to
+
+00:00:13.470 --> 00:00:16.980
+analyzing large amounts of 3D volumes.
+
+00:00:16.980 --> 00:00:19.770
+This is where it becomes a little bit creative depending
+
+00:00:19.770 --> 00:00:22.290
+on how many volumes you have and all these datasets,
+
+00:00:22.290 --> 00:00:23.730
+you might employ different methods.
+
+00:00:23.730 --> 00:00:25.950
+You would have to definitely deal with the amount
+
+00:00:25.950 --> 00:00:29.865
+of space that you need in order to load all these volumes.
+
+00:00:29.865 --> 00:00:31.860
+If this is a huge dataset,
+
+00:00:31.860 --> 00:00:33.330
+you might be thinking about
+
+00:00:33.330 --> 00:00:39.305
+some research storage databases or large-scale in-memory databases but for now,
+
+00:00:39.305 --> 00:00:41.600
+I will show you something that you might be willing to take
+
+00:00:41.600 --> 00:00:44.275
+a look at if you are trying to make sense of the dataset.
+
+00:00:44.275 --> 00:00:50.540
+Again, we are using the same collection of libraries, pydicom, matplotlib, numpy.
+
+00:00:50.540 --> 00:00:56.305
+So let's import those and then let us load our series metadata.
+
+00:00:56.305 --> 00:00:59.150
+Our series metadata sitting in this data folder and you
+
+00:00:59.150 --> 00:01:03.560
+will get access to that if you download the files that come with
+
+00:01:03.560 --> 00:01:08.420
+this lesson and we will just use
+
+00:01:08.420 --> 00:01:14.045
+this code to load all of the slices as this Python tuples into memory.
+
+00:01:14.045 --> 00:01:16.910
+This might not be the most efficient way to do
+
+00:01:16.910 --> 00:01:19.490
+this if you don't have a lot of RAM but if you have a lot of RAM,
+
+00:01:19.490 --> 00:01:22.205
+this will allow us to very quickly process these files.
+
+00:01:22.205 --> 00:01:24.175
+Note one thing though,
+
+00:01:24.175 --> 00:01:26.920
+when I'm calling this DCM read function,
+
+00:01:26.920 --> 00:01:28.700
+I have this parameter that I'm passing,
+
+00:01:28.700 --> 00:01:31.145
+which is called stop_before_pixels.
+
+00:01:31.145 --> 00:01:34.810
+A lot of DICOM processing libraries in many languages have something like that.
+
+00:01:34.810 --> 00:01:38.030
+This basically allows you to tell that you do not want to load pixels,
+
+00:01:38.030 --> 00:01:40.460
+you only want to load metadata. This is what we want to do.
+
+00:01:40.460 --> 00:01:42.740
+We want to look at some metadata and see
+
+00:01:42.740 --> 00:01:46.210
+what's common and what's different about all those files.
+
+00:01:46.210 --> 00:01:51.360
+So let us just print one and see what we got in there.
+
+00:01:52.130 --> 00:01:55.685
+The first thing I would look at is the subclass UID,
+
+00:01:55.685 --> 00:01:57.155
+it says MR image storage.
+
+00:01:57.155 --> 00:01:59.090
+I can count on that because I know that this is
+
+00:01:59.090 --> 00:02:01.430
+a mandatory data element that has to be in DICOM.
+
+00:02:01.430 --> 00:02:05.305
+So probably we're dealing with MRI dataset.
+
+00:02:05.305 --> 00:02:07.290
+Let's scroll through that,
+
+00:02:07.290 --> 00:02:09.450
+so we see date here,
+
+00:02:09.450 --> 00:02:12.120
+we see time, which seems to be meaningful.
+
+00:02:12.120 --> 00:02:16.625
+This is good when you know how series relate to each other in time.
+
+00:02:16.625 --> 00:02:20.900
+We see some modality names, manufacturer names.
+
+00:02:20.900 --> 00:02:23.120
+There are descriptions, so study have
+
+00:02:23.120 --> 00:02:26.300
+meaningful descriptions and oftentimes the description
+
+00:02:26.300 --> 00:02:29.600
+are free text and oftentimes in descriptions you will
+
+00:02:29.600 --> 00:02:33.020
+find information that tells you what was the acquisition sequence,
+
+00:02:33.020 --> 00:02:34.190
+like in series description,
+
+00:02:34.190 --> 00:02:36.620
+for example, for this one it says T1post.
+
+00:02:36.620 --> 00:02:39.935
+Remember how we talked about MRI scanners and physical principles of
+
+00:02:39.935 --> 00:02:44.975
+operations and how we talked about pulse sequences and T1 and T2.
+
+00:02:44.975 --> 00:02:48.635
+T1 tells me that probably this is a T1 sequence.
+
+00:02:48.635 --> 00:02:52.220
+Post here tells me that probably this is a T1 sequence
+
+00:02:52.220 --> 00:02:55.915
+that has been acquired after patient has been injected with the contrast agent.
+
+00:02:55.915 --> 00:02:59.850
+It's a post contrast T1 sequence and this thing it says brains,
+
+00:02:59.850 --> 00:03:03.650
+so most likely clinicians use
+
+00:03:03.650 --> 00:03:05.960
+gadolinium as a contrast agent for MR brain
+
+00:03:05.960 --> 00:03:09.170
+scans and that's most likely what we're dealing with here.
+
+00:03:09.170 --> 00:03:14.415
+Let's scroll down a little bit and look for another interesting thing.
+
+00:03:14.415 --> 00:03:17.480
+Since we have a lot of DICOM files,
+
+00:03:17.480 --> 00:03:21.200
+I want to look at the patient ID here and see if the patient ID could be
+
+00:03:21.200 --> 00:03:26.110
+meaningful and if I can use it to tell one slide from another.
+
+00:03:26.110 --> 00:03:27.860
+If I scroll to the section 10,
+
+00:03:27.860 --> 00:03:29.660
+which has the patient demographics,
+
+00:03:29.660 --> 00:03:33.320
+the element 1020 is the patient ID and we see
+
+00:03:33.320 --> 00:03:36.980
+that the patient ID looks like it says PGBM-001.
+
+00:03:36.980 --> 00:03:38.560
+So looks like it's meaningful.
+
+00:03:38.560 --> 00:03:41.300
+Let's try to look at some other file.
+
+00:03:41.300 --> 00:03:43.340
+Let's try to look at series number 4 here.
+
+00:03:43.340 --> 00:03:45.755
+It says PGBM-001 as well.
+
+00:03:45.755 --> 00:03:48.875
+Let's try to look at different study here.
+
+00:03:48.875 --> 00:03:54.180
+Let's load this one up and it says as well, PGBM-001.
+
+00:03:54.180 --> 00:03:57.410
+Looks like this patient ID thing is pretty consistent.
+
+00:03:57.410 --> 00:03:59.315
+Let's keep going.
+
+00:03:59.315 --> 00:04:03.380
+Let's see how many total files do we have in this set of studies.
+
+00:04:03.380 --> 00:04:05.000
+We have 1,700 files.
+
+00:04:05.000 --> 00:04:06.080
+That's quite a lot.
+
+00:04:06.080 --> 00:04:07.940
+How many in different patients do we have?
+
+00:04:07.940 --> 00:04:11.480
+There are four distinct patient IDs.
+
+00:04:11.480 --> 00:04:17.235
+I used this numpy unique method to tell apart the patient IDs.
+
+00:04:17.235 --> 00:04:19.380
+This actually tells me two things.
+
+00:04:19.380 --> 00:04:23.585
+It tells me that we're most likely dealing with four unique patients
+
+00:04:23.585 --> 00:04:29.540
+and this also tells me that patient ID is present in every single instance,
+
+00:04:29.540 --> 00:04:32.030
+which gives me a good intuition that probably I can
+
+00:04:32.030 --> 00:04:34.940
+rely on patient ID to tell my patients apart.
+
+00:04:34.940 --> 00:04:37.755
+Let's look at how many total series are we dealing with.
+
+00:04:37.755 --> 00:04:39.775
+Basically how many 3D volumes do we have.
+
+00:04:39.775 --> 00:04:42.320
+We have 76 series, which is good.
+
+00:04:42.320 --> 00:04:44.930
+So 76, we can work with that,
+
+00:04:44.930 --> 00:04:46.835
+try maybe some algorithms.
+
+00:04:46.835 --> 00:04:51.130
+Let us try to see how patient studies and series lineup.
+
+00:04:51.130 --> 00:04:52.670
+How many studies do we have?
+
+00:04:52.670 --> 00:04:57.185
+We have eight studies in total and let's see how many studies do we have per patient?
+
+00:04:57.185 --> 00:04:59.255
+So after running this code,
+
+00:04:59.255 --> 00:05:01.280
+we group the studies by patient.
+
+00:05:01.280 --> 00:05:06.185
+We can see that each one of our four patients have two studies. This is good.
+
+00:05:06.185 --> 00:05:09.170
+The two studies basically means that
+
+00:05:09.170 --> 00:05:12.615
+most likely we're dealing with some longitudinal studies.
+
+00:05:12.615 --> 00:05:15.455
+Let us take a look at this directory in the file system.
+
+00:05:15.455 --> 00:05:17.090
+If I open my file system,
+
+00:05:17.090 --> 00:05:21.695
+my MR series, my first patient,
+
+00:05:21.695 --> 00:05:24.800
+I can see that there are two studies here
+
+00:05:24.800 --> 00:05:29.420
+and judging by the description and judging by the date,
+
+00:05:29.420 --> 00:05:32.075
+which was conveniently printed into the study directory,
+
+00:05:32.075 --> 00:05:35.180
+I can conclude that most likely we're dealing with a sequence of
+
+00:05:35.180 --> 00:05:38.210
+studies which are in this case seem to be a year apart.
+
+00:05:38.210 --> 00:05:42.610
+So probably every pair
+
+00:05:42.610 --> 00:05:47.045
+of those studies correspond to two different points of time of this patient's care.
+
+00:05:47.045 --> 00:05:50.315
+Let's see how many series do we have per study?
+
+00:05:50.315 --> 00:05:56.080
+We have 10 series in most of those studies and we have six series in one of those.
+
+00:05:56.080 --> 00:05:58.805
+Let's take a quick look at that one on the file system.
+
+00:05:58.805 --> 00:06:00.410
+It's patient number 6.
+
+00:06:00.410 --> 00:06:06.050
+There are six series here in one of the studies.
+
+00:06:06.050 --> 00:06:11.120
+The study seems to have the six series and the other ones looks like they're a
+
+00:06:11.120 --> 00:06:16.040
+bit recent than the one we've just looked at.
+
+00:06:16.040 --> 00:06:18.125
+So this is 96 and 97.
+
+00:06:18.125 --> 00:06:20.210
+The 96 one has 10 series,
+
+00:06:20.210 --> 00:06:22.165
+the 97 has six series.
+
+00:06:22.165 --> 00:06:25.190
+Looks like some sequences are missing,
+
+00:06:25.190 --> 00:06:26.560
+most likely from this one.
+
+00:06:26.560 --> 00:06:29.590
+We need to keep taking mental notes here,
+
+00:06:29.590 --> 00:06:32.150
+maybe it will be relying on those sequences.
+
+00:06:32.150 --> 00:06:36.065
+Some other studies in the dataset might be missing those.
+
+00:06:36.065 --> 00:06:38.845
+Let's see how many images do we have per series.
+
+00:06:38.845 --> 00:06:41.700
+Let's plot all of those. This is pretty consistent.
+
+00:06:41.700 --> 00:06:44.640
+A lot of series have 24-25 images,
+
+00:06:44.640 --> 00:06:48.900
+so probably this is some thick slice CT dataset.
+
+00:06:48.900 --> 00:06:51.080
+One other thing that I would like to look at,
+
+00:06:51.080 --> 00:06:53.389
+I would like to look at in-plane resolution.
+
+00:06:53.389 --> 00:06:56.750
+Are we consistent with the resolution?
+
+00:06:56.750 --> 00:07:00.005
+While I'm at it, because I'll be looping through all the series,
+
+00:07:00.005 --> 00:07:02.595
+I will look at pixel spacing.
+
+00:07:02.595 --> 00:07:06.100
+This is my in-plane resolution, essentially.
+
+00:07:06.100 --> 00:07:09.815
+I will look at the amount of pixels that we have in each slice.
+
+00:07:09.815 --> 00:07:12.560
+These are DICOM parameters that are called rows and
+
+00:07:12.560 --> 00:07:16.310
+columns and I will look at the z-axis resolution,
+
+00:07:16.310 --> 00:07:17.390
+which is the slice thickness.
+
+00:07:17.390 --> 00:07:20.090
+Let me collect those and these three arrays.
+
+00:07:20.090 --> 00:07:23.110
+Let's look at the slice thickness first.
+
+00:07:23.110 --> 00:07:26.580
+How many thicknesses do we have here?
+
+00:07:26.580 --> 00:07:27.820
+You see what I'm doing here,
+
+00:07:27.820 --> 00:07:30.830
+basically adding those into a dictionary so that I
+
+00:07:30.830 --> 00:07:34.745
+can group those by values that we have in the dataset.
+
+00:07:34.745 --> 00:07:37.220
+Looks like some of the images have value of five and some
+
+00:07:37.220 --> 00:07:39.785
+of the values are stored as floating point,
+
+00:07:39.785 --> 00:07:43.895
+but looks like we're pretty consistent as far as slice thickness goes. That's great.
+
+00:07:43.895 --> 00:07:45.410
+Let's look at pixel spacing.
+
+00:07:45.410 --> 00:07:47.750
+Let's see if all the pixel spacing is consistent.
+
+00:07:47.750 --> 00:07:53.410
+Remember, pixel spacing is the dimensions of our pixels in the acquisition plane.
+
+00:07:53.410 --> 00:07:56.630
+This is interesting because this is not very consistent.
+
+00:07:56.630 --> 00:07:58.085
+We have some variety here.
+
+00:07:58.085 --> 00:08:01.430
+We have pixels which are 0.68 by 0.68,
+
+00:08:01.430 --> 00:08:04.930
+and we have pixels which are 0.42 by 0.42.
+
+00:08:04.930 --> 00:08:09.780
+Let's visualize it and let's print all the values and see what is happening here.
+
+00:08:09.780 --> 00:08:15.150
+So these are lower resolution ones where we have more pixels.
+
+00:08:15.150 --> 00:08:19.380
+We have some series here which are from 1991,
+
+00:08:19.380 --> 00:08:23.880
+1992, and we have this T1pre, T2pre, FLAIR.
+
+00:08:23.880 --> 00:08:26.445
+So it looks like these are all kinds of sequences,
+
+00:08:26.445 --> 00:08:30.060
+just from the early '90s in this dataset.
+
+00:08:30.060 --> 00:08:34.320
+So let's look at the ones which are smaller pixels.
+
+00:08:34.320 --> 00:08:36.840
+So we can see that the smallest one,
+
+00:08:36.840 --> 00:08:41.790
+this 0.42 they're from 1997 and 1996,
+
+00:08:41.790 --> 00:08:43.245
+and they correspond to mask.
+
+00:08:43.245 --> 00:08:44.970
+So our dataset contains mask,
+
+00:08:44.970 --> 00:08:47.415
+so this is a different type of sequence which is good.
+
+00:08:47.415 --> 00:08:52.320
+Also, there's one T1pre req sequence which is a T1 sequence,
+
+00:08:52.320 --> 00:08:58.725
+a sequence from 1992 which has different pixel spacing.
+
+00:08:58.725 --> 00:09:02.790
+This is something I should take a mental note of because if I'm going to be
+
+00:09:02.790 --> 00:09:07.125
+combining all those volumes into a dataset and feeding that to a neural network,
+
+00:09:07.125 --> 00:09:09.330
+I need to remember to resemble them.
+
+00:09:09.330 --> 00:09:16.645
+So all the volumes have similar meaning as far as pixel size goes.
+
+00:09:16.645 --> 00:09:19.820
+One other thing that I want to look at as I'm looking at this,
+
+00:09:19.820 --> 00:09:25.800
+I want to know that some of those 0.42 ones also correspond to T2 sequences.
+
+00:09:25.800 --> 00:09:29.820
+So I have some T2 sequences which have the smaller sized pixels,
+
+00:09:29.820 --> 00:09:35.160
+and then I have some of the T2 sequences which have some larger sized pixels.
+
+00:09:35.160 --> 00:09:39.630
+If I look at those, the smaller T2 finer, If I should say,
+
+00:09:39.630 --> 00:09:41.970
+T2 sequences are from the late '90s,
+
+00:09:41.970 --> 00:09:45.390
+and the coarser T2 sequences,
+
+00:09:45.390 --> 00:09:47.370
+they are from the early '90s.
+
+00:09:47.370 --> 00:09:50.025
+So probably, the dataset that I'm dealing with,
+
+00:09:50.025 --> 00:09:53.490
+obviously has been acquired through maybe a decade,
+
+00:09:53.490 --> 00:09:56.070
+and maybe these were just a scanner technology
+
+00:09:56.070 --> 00:09:58.815
+has improved as hospital got access to better scanners,
+
+00:09:58.815 --> 00:10:02.880
+the scans became more detailed.
+
+00:10:02.880 --> 00:10:05.640
+Lastly, let us look at the in-plane resolution.
+
+00:10:05.640 --> 00:10:07.110
+What are we dealing with here?
+
+00:10:07.110 --> 00:10:11.925
+We can see that we have 320 by 260 series,
+
+00:10:11.925 --> 00:10:15.120
+a lot of those, and we have 512 by 512 series.
+
+00:10:15.120 --> 00:10:18.960
+So this is some discrepancy in the image sizes.
+
+00:10:18.960 --> 00:10:21.360
+Again, let's do the same trick as we just did,
+
+00:10:21.360 --> 00:10:24.105
+let's just print all of those and see which ones are which.
+
+00:10:24.105 --> 00:10:27.810
+We can see that for the 512 by 512 ones, again,
+
+00:10:27.810 --> 00:10:30.000
+we have some of those newer T2 sequences,
+
+00:10:30.000 --> 00:10:32.085
+so obviously these are the newer series.
+
+00:10:32.085 --> 00:10:34.500
+The 320 by 260, again,
+
+00:10:34.500 --> 00:10:37.065
+we have T2 here but they are older.
+
+00:10:37.065 --> 00:10:42.660
+Again, this confirms my mental note that I just took that I need to make sure that
+
+00:10:42.660 --> 00:10:48.805
+I do not forget to resemble them and bring them to the same resolution.
+
+00:10:48.805 --> 00:10:52.710
+One other thing that I could do at this point is to visualize some of
+
+00:10:52.710 --> 00:10:56.775
+those images and see how well they align with each other.
+
+00:10:56.775 --> 00:11:00.630
+To do that, I will pick some random series.
+
+00:11:00.630 --> 00:11:04.950
+I will pick a T1 series from one study from this patient 3,
+
+00:11:04.950 --> 00:11:09.255
+and I will pick a FLAIR series from the same patient.
+
+00:11:09.255 --> 00:11:12.270
+Let's just see if this series would line up,
+
+00:11:12.270 --> 00:11:14.355
+if they have the same orientation.
+
+00:11:14.355 --> 00:11:16.679
+Remember how we talked about orientation,
+
+00:11:16.679 --> 00:11:19.200
+this image orientation patient, image position patient?
+
+00:11:19.200 --> 00:11:23.610
+I would just do a spot check and see if it checks out for these two.
+
+00:11:23.610 --> 00:11:26.040
+Let us do the same trick with converting
+
+00:11:26.040 --> 00:11:29.925
+this icon pixel array into a NumPy three dimensional array,
+
+00:11:29.925 --> 00:11:33.000
+and let us just print all of the image position values,
+
+00:11:33.000 --> 00:11:35.955
+so image position patient values for the T1 slices,
+
+00:11:35.955 --> 00:11:38.730
+and let us do the same for the FLAIR slices.
+
+00:11:38.730 --> 00:11:42.030
+So I can see that these values are not at zero.
+
+00:11:42.030 --> 00:11:44.865
+So probably, these values have not been cleaned,
+
+00:11:44.865 --> 00:11:47.700
+this series have not been pre-processed,
+
+00:11:47.700 --> 00:11:50.220
+looks like it's an original acquisition.
+
+00:11:50.220 --> 00:11:52.890
+I can see how the z value changes,
+
+00:11:52.890 --> 00:11:56.190
+so this means that our slices aligned around the z-axis.
+
+00:11:56.190 --> 00:11:59.520
+I can see that the y-axis also changes, actually.
+
+00:11:59.520 --> 00:12:03.945
+This tells me that our slices are not perfectly aligned around the axis.
+
+00:12:03.945 --> 00:12:05.820
+Let us take look at the other one,
+
+00:12:05.820 --> 00:12:07.080
+at the FLAIR slices.
+
+00:12:07.080 --> 00:12:09.885
+I can see that, actually, values look to be the same here.
+
+00:12:09.885 --> 00:12:12.420
+This is good. This tells me that actually,
+
+00:12:12.420 --> 00:12:14.745
+these images are probably aligned with each other well.
+
+00:12:14.745 --> 00:12:19.830
+Let's confirm that, let's subtract one array from another.
+
+00:12:19.830 --> 00:12:22.380
+I have the image orientation patient here.
+
+00:12:22.380 --> 00:12:24.855
+Actually, let's take a look at the image orientation.
+
+00:12:24.855 --> 00:12:28.080
+So let's do the same trick and then just subtract values.
+
+00:12:28.080 --> 00:12:32.775
+We can see that image orientation patient value are the same in these two sequence.
+
+00:12:32.775 --> 00:12:35.940
+Most likely, the image position patient would be the same as well,
+
+00:12:35.940 --> 00:12:38.390
+but let me just quickly confirmed that.
+
+00:12:38.390 --> 00:12:42.230
+So let's change this code and let's change orientation for position.
+
+00:12:42.230 --> 00:12:45.530
+Yes, image position patient is also exactly the same which tells me
+
+00:12:45.530 --> 00:12:49.340
+that these series are most likely registered.
+
+00:12:49.340 --> 00:12:52.670
+Actually, if I look at the filenames here,
+
+00:12:52.670 --> 00:12:54.650
+and this comes from the series description,
+
+00:12:54.650 --> 00:12:57.845
+it has this prereg appendix here.
+
+00:12:57.845 --> 00:13:00.185
+Probably, someone put it there to
+
+00:13:00.185 --> 00:13:03.325
+designate that this series have been registered together.
+
+00:13:03.325 --> 00:13:05.175
+Well, at this point,
+
+00:13:05.175 --> 00:13:10.665
+let me visualize these two overlaid on top of each other just to confirm,
+
+00:13:10.665 --> 00:13:17.760
+and I'm using this trick of just adding those up and multiplying by some constant.
+
+00:13:17.760 --> 00:13:19.650
+Yes, this series seems to be aligned,
+
+00:13:19.650 --> 00:13:21.195
+nothing is taken out.
+
+00:13:21.195 --> 00:13:23.610
+This is the end of this exercise.
+
+00:13:23.610 --> 00:13:27.120
+There are a lot of more things that you can do with a DICOM 3D volume datasets.
+
+00:13:27.120 --> 00:13:28.710
+So depending on what you're trying to do,
+
+00:13:28.710 --> 00:13:33.015
+you can try and confirm probably if all of the series align with each other nicely,
+
+00:13:33.015 --> 00:13:39.135
+you can look at some photometric things and see if all the pixel values are aligning.
+
+00:13:39.135 --> 00:13:41.850
+You could probably load up some of the data into
+
+00:13:41.850 --> 00:13:44.985
+slicer and get a feel of what it looks like and what you're looking at,
+
+00:13:44.985 --> 00:13:47.760
+you would probably want to look at the ground truth.
+
+00:13:47.760 --> 00:13:51.180
+But by just going through this few simple transformation,
+
+00:13:51.180 --> 00:13:54.465
+let's see what we've learned about this dataset. We learned quite a lot.
+
+00:13:54.465 --> 00:13:56.640
+Without knowing anything about this dataset,
+
+00:13:56.640 --> 00:13:58.905
+we learn that we are dealing with MRI images,
+
+00:13:58.905 --> 00:14:00.930
+we learn that we have data from four patients,
+
+00:14:00.930 --> 00:14:04.440
+we learn that each patient has two studies representing two time points,
+
+00:14:04.440 --> 00:14:09.030
+two longitudinal studies, we learn that each study has
+
+00:14:09.030 --> 00:14:13.410
+between 8 and 10 sequences and 76 3D volumes altogether,
+
+00:14:13.410 --> 00:14:15.435
+and we have the 1,700 slices.
+
+00:14:15.435 --> 00:14:18.765
+By the way, if you would be doing something
+
+00:14:18.765 --> 00:14:22.290
+with neural networks and analyzing this images slice by slice,
+
+00:14:22.290 --> 00:14:23.790
+as we will see in the next lesson,
+
+00:14:23.790 --> 00:14:27.585
+maybe this would be good enough to start training something.
+
+00:14:27.585 --> 00:14:30.780
+We have this variation and pixel spacing,
+
+00:14:30.780 --> 00:14:33.795
+so this tells us that we need to do some resampling.
+
+00:14:33.795 --> 00:14:36.300
+We have pretty consistent slice thickness and we have
+
+00:14:36.300 --> 00:14:40.395
+some low-resolution older slices combined with high resolution newer slices.
+
+00:14:40.395 --> 00:14:42.000
+So we need to be aware of that.
+
+00:14:42.000 --> 00:14:46.155
+We need to be aware that our sequences are not that consistent.
+
+00:14:46.155 --> 00:14:47.790
+One other thing that we have learned,
+
+00:14:47.790 --> 00:14:50.550
+that our volumes seemed to be registered together which means that we
+
+00:14:50.550 --> 00:14:53.579
+do not need to do any automatic registration.
+
+00:14:53.579 --> 00:14:56.340
+This is a lot that we have learned from just looking at this,
+
+00:14:56.340 --> 00:14:58.770
+from executing a few dozen lines of code
+
+00:14:58.770 --> 00:15:01.485
+and looking at some of the outputs of the DICOM metadata.
+
+00:15:01.485 --> 00:15:05.610
+So we have just seen a quick screen cast of how you would approach
+
+00:15:05.610 --> 00:15:09.945
+a exploratory data analysis problem for a 3D medical imaging dataset.
+
+00:15:09.945 --> 00:15:11.430
+There are many ways to do that.
+
+00:15:11.430 --> 00:15:16.155
+I encourage you to take this notebook and try things out yourself.
+
+00:15:16.155 --> 00:15:18.879
+Good luck with your explorations.
+

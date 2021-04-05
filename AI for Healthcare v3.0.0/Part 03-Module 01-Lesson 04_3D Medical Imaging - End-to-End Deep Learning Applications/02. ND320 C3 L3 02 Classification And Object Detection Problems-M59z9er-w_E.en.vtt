@@ -1,0 +1,226 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.560
+So now let's talk about classification and object detection problems for medical images.
+
+00:00:04.560 --> 00:00:07.260
+First, I would like you to take a look at this photograph.
+
+00:00:07.260 --> 00:00:10.650
+This photograph is a screenshot from a Google Photo Library,
+
+00:00:10.650 --> 00:00:14.005
+and they made assertion this library by the term animal.
+
+00:00:14.005 --> 00:00:18.050
+So you know that the classification algorithms for computer vision,
+
+00:00:18.050 --> 00:00:19.565
+for traditional 2D images,
+
+00:00:19.565 --> 00:00:22.850
+they're all around us, and the Google Photo Library is no exception.
+
+00:00:22.850 --> 00:00:24.305
+When I typed animal here,
+
+00:00:24.305 --> 00:00:27.530
+the Google Photo Library ran its own they went into
+
+00:00:27.530 --> 00:00:29.690
+a pre-process database of images which has been
+
+00:00:29.690 --> 00:00:32.150
+classified with respect to various categories,
+
+00:00:32.150 --> 00:00:34.760
+and found those which have been classified as animals.
+
+00:00:34.760 --> 00:00:37.400
+So let's look a little bit at what we see here.
+
+00:00:37.400 --> 00:00:40.340
+So we see that some of those images have actual live animals in them.
+
+00:00:40.340 --> 00:00:41.420
+We have some cats here.
+
+00:00:41.420 --> 00:00:42.980
+We have a star fish,
+
+00:00:42.980 --> 00:00:44.540
+we have some seals in here.
+
+00:00:44.540 --> 00:00:46.820
+Some of the images have dead animals,
+
+00:00:46.820 --> 00:00:48.670
+like this image is from the fish market,
+
+00:00:48.670 --> 00:00:51.725
+and some of the images have sculptures that look like animals,
+
+00:00:51.725 --> 00:00:53.490
+like pictures from photo galleries,
+
+00:00:53.490 --> 00:00:56.300
+and one name which even has a stick that looks like an animal.
+
+00:00:56.300 --> 00:00:58.130
+Which brings us to an interesting question.
+
+00:00:58.130 --> 00:01:02.240
+So how should we think about classification and object detection problems,
+
+00:01:02.240 --> 00:01:03.980
+with respect to medical images?
+
+00:01:03.980 --> 00:01:08.195
+So what types of constraints should we put on our algorithms?
+
+00:01:08.195 --> 00:01:09.980
+There is a wide variety of problems,
+
+00:01:09.980 --> 00:01:14.600
+and understanding those problems is essential to understanding how to properly configure,
+
+00:01:14.600 --> 00:01:16.355
+and train your machine learning algorithms.
+
+00:01:16.355 --> 00:01:19.010
+So let's hear from Mason about some of
+
+00:01:19.010 --> 00:01:22.940
+the clinical applications for classification and object detection algorithms.
+
+00:01:22.940 --> 00:01:26.585
+Now that you have a broad overview of classification in machine-learning task,
+
+00:01:26.585 --> 00:01:28.895
+let's discuss some ideal use cases.
+
+00:01:28.895 --> 00:01:31.190
+The first category is the rapid detection of
+
+00:01:31.190 --> 00:01:33.680
+conditions which need to be urgently addressed.
+
+00:01:33.680 --> 00:01:36.230
+That is, in acute or emergency scenarios.
+
+00:01:36.230 --> 00:01:39.425
+For example, we see here on the left a normal head CT,
+
+00:01:39.425 --> 00:01:41.570
+and on the right, an image of
+
+00:01:41.570 --> 00:01:44.660
+a hemorrhage within a portion of the brain stem known as the ponds.
+
+00:01:44.660 --> 00:01:46.985
+Because these observations can be picked up
+
+00:01:46.985 --> 00:01:49.670
+by a trained observer in the vast majority of cases,
+
+00:01:49.670 --> 00:01:53.600
+the real value for such use case would be to have an algorithm running at the point of
+
+00:01:53.600 --> 00:01:57.635
+image acquisition to alert the radiologists that this needs to be prioritized.
+
+00:01:57.635 --> 00:01:59.520
+That is, list prioritization.
+
+00:01:59.520 --> 00:02:02.285
+Or in circumstances where an expert is not available,
+
+00:02:02.285 --> 00:02:04.795
+for example, in resource constrained environments.
+
+00:02:04.795 --> 00:02:08.405
+Object detection also lends itself well to screening use cases.
+
+00:02:08.405 --> 00:02:11.210
+A situation in which an otherwise healthy person is being
+
+00:02:11.210 --> 00:02:14.975
+evaluated for a common condition given their underlying risk factors.
+
+00:02:14.975 --> 00:02:17.959
+One such task is the detection of pulmonary nodules,
+
+00:02:17.959 --> 00:02:20.345
+which while most commonly are benign,
+
+00:02:20.345 --> 00:02:22.070
+can represent an early cancer.
+
+00:02:22.070 --> 00:02:24.260
+The value of automated detection is in
+
+00:02:24.260 --> 00:02:26.840
+aiding the viewer and finding the observations more quickly.
+
+00:02:26.840 --> 00:02:29.180
+As these tests can be very labor-intensive,
+
+00:02:29.180 --> 00:02:31.340
+a normal human fatigue can lead to error.
+
+00:02:31.340 --> 00:02:34.820
+Detecting incidental findings is another important use case.
+
+00:02:34.820 --> 00:02:37.250
+Incidental findings are observations which may
+
+00:02:37.250 --> 00:02:39.845
+not be related to the immediate clinical issue at hand,
+
+00:02:39.845 --> 00:02:42.970
+but nevertheless, need to be further addressed in the near future.
+
+00:02:42.970 --> 00:02:44.925
+Such incidental low mass,
+
+00:02:44.925 --> 00:02:46.730
+as they're sometimes colloquially referred to,
+
+00:02:46.730 --> 00:02:48.934
+encompass such things as adrenal nodules,
+
+00:02:48.934 --> 00:02:52.975
+complex kidney cysts, and pancreatic cysts, just to name a few.
+
+00:02:52.975 --> 00:02:55.529
+Because they're not the focus of attention,
+
+00:02:55.529 --> 00:02:57.650
+they're at risk of being overlooked even to
+
+00:02:57.650 --> 00:03:00.635
+the vigilance specialist if they're in an emergent circumstance.
+
+00:03:00.635 --> 00:03:03.940
+In this example, we see on the left and normal CT of the abdomen,
+
+00:03:03.940 --> 00:03:07.870
+and on the right, a low density nodule arising from the left adrenal.
+
+00:03:07.870 --> 00:03:10.505
+While this finding is most commonly benign,
+
+00:03:10.505 --> 00:03:13.265
+unless it matches certain characteristics,
+
+00:03:13.265 --> 00:03:15.470
+we really can't say for sure.
+
+00:03:15.470 --> 00:03:19.430
+This may need to be followed up with either an interval image,
+
+00:03:19.430 --> 00:03:23.340
+or a new type of imaging modality for further characterization
+
