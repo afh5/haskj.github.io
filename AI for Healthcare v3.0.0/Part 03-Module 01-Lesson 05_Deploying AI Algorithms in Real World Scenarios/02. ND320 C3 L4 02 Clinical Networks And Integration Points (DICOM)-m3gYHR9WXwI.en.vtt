@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.460
+So here in this concept,
+
+00:00:02.460 --> 00:00:05.160
+let's look at the principles of clinical networking and
+
+00:00:05.160 --> 00:00:08.055
+what would be a good integration points for an AI algorithm.
+
+00:00:08.055 --> 00:00:09.825
+First, a quick recap on DICOM.
+
+00:00:09.825 --> 00:00:12.500
+You should be very familiar with DICOM by now.
+
+00:00:12.500 --> 00:00:17.100
+So DICOM stands for Digital Imaging and Communications in Medicine.
+
+00:00:17.100 --> 00:00:20.900
+We have looked at the imaging and storage aspect of the DICOM.
+
+00:00:20.900 --> 00:00:25.785
+So we have learned how to store images and how to represent voxels in a digital format.
+
+00:00:25.785 --> 00:00:28.770
+DICOM defines that, but also DICOM
+
+00:00:28.770 --> 00:00:31.725
+defines something that we mentioned in the beginning of the course,
+
+00:00:31.725 --> 00:00:33.974
+which is called DIMSE and DICOMWeb,
+
+00:00:33.974 --> 00:00:35.970
+these are the networking services.
+
+00:00:35.970 --> 00:00:38.475
+These are the networking services that define
+
+00:00:38.475 --> 00:00:41.795
+how medical imaging data flows in a clinical network.
+
+00:00:41.795 --> 00:00:44.720
+Also important thing to remember about DICOM is that it's
+
+00:00:44.720 --> 00:00:48.185
+free and open source standard is published on the web, you can look it up.
+
+00:00:48.185 --> 00:00:51.290
+DICOM is used by all radiological modalities.
+
+00:00:51.290 --> 00:00:54.860
+So in this lesson, we will focus on this networking aspect of DICOM,
+
+00:00:54.860 --> 00:00:57.845
+and we will take a brief intro into
+
+00:00:57.845 --> 00:01:01.460
+what that means and how is DICOM networking portion setup.
+
+00:01:01.460 --> 00:01:06.540
+So this is an image which represents the DICOM general communication model.
+
+00:01:06.540 --> 00:01:09.980
+These are all the concepts that represents a single,
+
+00:01:09.980 --> 00:01:13.225
+what's called application entity in a DICOM's peak.
+
+00:01:13.225 --> 00:01:16.550
+Application entity is this thing that
+
+00:01:16.550 --> 00:01:20.300
+provides various services that operate on DICOM objects.
+
+00:01:20.300 --> 00:01:24.770
+We have seen this storage service that DICOM application entities might provide,
+
+00:01:24.770 --> 00:01:27.800
+and a DICOM application entity might be a thing like a modality,
+
+00:01:27.800 --> 00:01:29.150
+CT or MRI scanner.
+
+00:01:29.150 --> 00:01:31.925
+DICOM application entity could be a storage system,
+
+00:01:31.925 --> 00:01:34.159
+it could be a diagnostic workstation,
+
+00:01:34.159 --> 00:01:37.550
+and of course, AI server that
+
+00:01:37.550 --> 00:01:42.485
+serves some AI model result could also be a DICOM application entity.
+
+00:01:42.485 --> 00:01:46.625
+So remember how we discuss the SOP classes in the DICOM lesson.
+
+00:01:46.625 --> 00:01:50.860
+SOP stands for service objects pair, as you might remember.
+
+00:01:50.860 --> 00:01:54.890
+We so far has been focusing on the storage service.
+
+00:01:54.890 --> 00:01:58.205
+DICOM application entities can provide networking services,
+
+00:01:58.205 --> 00:02:01.180
+and this is what we're going to focus on in this lesson.
+
+00:02:01.180 --> 00:02:05.270
+First, let's focus on one type of DICOM networking service,
+
+00:02:05.270 --> 00:02:06.575
+which is called DIMSE.
+
+00:02:06.575 --> 00:02:09.770
+DIMSE stands for DICOM message service elements.
+
+00:02:09.770 --> 00:02:12.875
+DIMSE basically defines a way for
+
+00:02:12.875 --> 00:02:17.090
+application entities to communicate over a local area network.
+
+00:02:17.090 --> 00:02:22.760
+DIMSE defines several services that this application entities may provide and
+
+00:02:22.760 --> 00:02:25.520
+several services that might allow
+
+00:02:25.520 --> 00:02:30.690
+one application entity to ask something from another application entities.
+

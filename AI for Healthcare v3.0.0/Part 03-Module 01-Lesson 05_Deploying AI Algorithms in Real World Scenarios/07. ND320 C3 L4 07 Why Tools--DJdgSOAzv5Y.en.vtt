@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.600
+So in this section, let's look at some of the tools of the trade.
+
+00:00:03.600 --> 00:00:08.550
+So we'll have Mazen show us how he would interact with a clinical diagnostic workstation.
+
+00:00:08.550 --> 00:00:11.400
+We will look at the DCMTK, the debugging toolkit,
+
+00:00:11.400 --> 00:00:15.345
+and we will try playing with the C-ECHO and C-STORE operations.
+
+00:00:15.345 --> 00:00:17.850
+We will look at this open-source medical image viewer,
+
+00:00:17.850 --> 00:00:20.895
+the web-based medical image viewer called OHIF,
+
+00:00:20.895 --> 00:00:23.280
+and we will play with 3D Slicer.
+
+00:00:23.280 --> 00:00:26.955
+I will show you how you would do a segmentation operation using 3D Slicer,
+
+00:00:26.955 --> 00:00:31.360
+and I will show you how you would visualize your medical imaging volumes.
+

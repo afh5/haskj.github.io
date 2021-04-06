@@ -1,0 +1,259 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Regulatory Landscape: FDA Process</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Deploying AI Algorithms in Real World Scenarios</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. DICOM Networking Introduction.html">02. DICOM Networking: Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. DICOM Networking Services.html">03. DICOM Networking: Services</a>
+    </li>
+    <li class="">
+      <a href="04. Clinical Networks.html">04. Clinical Networks</a>
+    </li>
+    <li class="">
+      <a href="05. Requirements for Integration.html">05. Requirements for Integration</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Network Architecture Summary.html">06. Clinical Network Architecture Summary</a>
+    </li>
+    <li class="">
+      <a href="07. Tools of the Trade - Intro.html">07. Tools of the Trade - Intro</a>
+    </li>
+    <li class="">
+      <a href="08. Tools of the Trade - Scripting.html">08. Tools of the Trade - Scripting</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 1 Scripting for DICOM Networks.html">09. Exercise 1: Scripting for DICOM Networks</a>
+    </li>
+    <li class="">
+      <a href="10. Tools of the Trade - A Radiologists in Action.html">10. Tools of the Trade - A Radiologists in Action</a>
+    </li>
+    <li class="">
+      <a href="11. Tools of the Trade - Viewers - OHIF.html">11. Tools of the Trade - Viewers - OHIF</a>
+    </li>
+    <li class="">
+      <a href="12. Tools of the Trade - Viewers - 3D Slicer.html">12. Tools of the Trade - Viewers - 3D Slicer</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 2 Creating Ground Truth with Slicer.html">13. Exercise 2: Creating Ground Truth with Slicer</a>
+    </li>
+    <li class="">
+      <a href="14. Tools of the Trade Summary.html">14. Tools of the Trade Summary</a>
+    </li>
+    <li class="">
+      <a href="15. Regulatory Landscape Medical Devices.html">15. Regulatory Landscape: Medical Devices</a>
+    </li>
+    <li class="">
+      <a href="16. Regulatory Landscape FDA Process.html">16. Regulatory Landscape: FDA Process</a>
+    </li>
+    <li class="">
+      <a href="17. Regulatory landscape HIPAA, Anonymization.html">17. Regulatory landscape: HIPAA, Anonymization</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 3 Anonymization.html">18. Exercise 3: Anonymization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Summary.html">19. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="20. The End and Final Project.html">20. The End and Final Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">16. Regulatory Landscape: FDA Process</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h1 id="regulatory-landscape-fda-process">Regulatory Landscape: FDA Process</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L4 14 FDA &amp; Medical Device Regulation (Process)</p></h3>
+  <video controls>
+  <source src="16. ND320 C3 L4 14 FDA &amp; Medical Device Regulation (Process)-ECHmaWx4seo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="16. ND320 C3 L4 14 FDA &amp; Medical Device Regulation (Process)-ECHmaWx4seo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <p>Regulatory process typically involves two big steps:</p>
+<ol>
+<li>Submitting a document package - called “510(k)” for Class II medical devices or “PMA” for Class III devices. This document package needs to include engineering artifacts providing evidence that you have followed the process and your process resulted in certain deliverables. For example, a PMA package has to include things like “Design Review notes” or “Software Verification plans”. </li>
+<li>Establishing a Quality Management System. This system is a set of processes that are designed to ensure that you maintain a level of quality in your engineering and operations that is commensurate with the risk that your device presents to patients and operators. For example, the QMS might define the need for a “post-launch surveillance” process that would ensure that you keep track of usage of the device in the field and have a feedback mechanism that has you reviewing potential risks that have been realized in the field and responding to them. </li>
+</ol>
+<p>The former communicates your intent to launch a product to the regulatory body, and the FDA would review your documentation package to ensure that you have followed the prescribed procedures while developing it. The latter establishes certain engineering processes.</p>
+<p>Note that the FDA or other agencies do not actually tell you <em>what</em> exactly do you have to produce. The rules are designed to ensure that you have the right process. It is up to you to decide how to apply this process to what you are doing. </p>
+<p>An aspect of a QMS that is probably the most relevant to an AI engineer is the <em>validation process</em>. A QMS might define the need to perform product validation before you release a new version of a product, which means that you need to provide evidence that your software indeed performs. If the product has an AI component at its heart, you may need to provide input along the following lines:</p>
+<ul>
+<li>What is the intended use of the product?</li>
+<li>How was the training data collected?</li>
+<li>How did you label your training data?</li>
+<li>How was the performance of the algorithm measured and how was the real-world performance estimated?</li>
+<li>What data will the algorithm perform well in the real world and what data it might not perform well on?</li>
+</ul>
+<p>As the owner of an AI algorithm, you would be best positioned to answer these questions and your input would be instrumental.</p>
+<h1 id="further-resources">Further Resources</h1>
+<ul>
+<li>FDA actually <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm" rel="noopener noreferrer" target="_blank">publishes all clearances</a> that it issues, so you can take a look at how people described their medical devices and what the intended use was. For example, here is Arterys’ submission for their Medical Imaging Cloud AI Platform: <a href="https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192437.pdf" rel="noopener noreferrer" target="_blank">https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192437.pdf</a></li>
+<li>FDA’s Quality Management System requirements are available online as <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/CFRSearch.cfm?CFRPart=820" rel="noopener noreferrer" target="_blank">21 CFR Part 820</a>. European and Canadian regulators require compliance with <a href="https://www.iso.org/standard/59752.html" rel="noopener noreferrer" target="_blank">ISO 13485 standard</a> (which is not publicly available)</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="17. Regulatory landscape HIPAA, Anonymization.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('16. Regulatory Landscape: FDA Process')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

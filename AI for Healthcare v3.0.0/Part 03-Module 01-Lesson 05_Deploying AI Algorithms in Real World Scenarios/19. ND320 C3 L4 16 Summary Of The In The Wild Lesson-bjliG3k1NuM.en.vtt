@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.715
+This brings us to the conclusion of this lesson.
+
+00:00:02.715 --> 00:00:05.175
+In this lesson, we have covered DICOM networking,
+
+00:00:05.175 --> 00:00:09.960
+things like DIMSE services and the Internet-based DICOM web services.
+
+00:00:09.960 --> 00:00:11.790
+We talked about the clinical network,
+
+00:00:11.790 --> 00:00:15.765
+and what kinds of system exists on a clinical network and how do they talk to each other,
+
+00:00:15.765 --> 00:00:19.020
+and where would your AI algorithm fit in to this picture,
+
+00:00:19.020 --> 00:00:20.970
+we looked at some of the tools of the trade,
+
+00:00:20.970 --> 00:00:23.040
+we looked at some of the tools that you would use to
+
+00:00:23.040 --> 00:00:26.850
+debug a clinical network or simulated clinical network.
+
+00:00:26.850 --> 00:00:29.430
+We have seen in the demonstration from [inaudible] of how
+
+00:00:29.430 --> 00:00:32.130
+he interacts with the diagnostic medical image viewer.
+
+00:00:32.130 --> 00:00:35.430
+Then we've talked about the regulatory landscape,
+
+00:00:35.430 --> 00:00:40.960
+we've touched upon the subjects of medical device regulation and data privacy.
+

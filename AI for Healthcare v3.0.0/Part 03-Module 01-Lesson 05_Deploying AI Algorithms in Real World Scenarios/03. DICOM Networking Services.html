@@ -1,0 +1,254 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DICOM Networking: Services</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Deploying AI Algorithms in Real World Scenarios</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. DICOM Networking Introduction.html">02. DICOM Networking: Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. DICOM Networking Services.html">03. DICOM Networking: Services</a>
+    </li>
+    <li class="">
+      <a href="04. Clinical Networks.html">04. Clinical Networks</a>
+    </li>
+    <li class="">
+      <a href="05. Requirements for Integration.html">05. Requirements for Integration</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Network Architecture Summary.html">06. Clinical Network Architecture Summary</a>
+    </li>
+    <li class="">
+      <a href="07. Tools of the Trade - Intro.html">07. Tools of the Trade - Intro</a>
+    </li>
+    <li class="">
+      <a href="08. Tools of the Trade - Scripting.html">08. Tools of the Trade - Scripting</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 1 Scripting for DICOM Networks.html">09. Exercise 1: Scripting for DICOM Networks</a>
+    </li>
+    <li class="">
+      <a href="10. Tools of the Trade - A Radiologists in Action.html">10. Tools of the Trade - A Radiologists in Action</a>
+    </li>
+    <li class="">
+      <a href="11. Tools of the Trade - Viewers - OHIF.html">11. Tools of the Trade - Viewers - OHIF</a>
+    </li>
+    <li class="">
+      <a href="12. Tools of the Trade - Viewers - 3D Slicer.html">12. Tools of the Trade - Viewers - 3D Slicer</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 2 Creating Ground Truth with Slicer.html">13. Exercise 2: Creating Ground Truth with Slicer</a>
+    </li>
+    <li class="">
+      <a href="14. Tools of the Trade Summary.html">14. Tools of the Trade Summary</a>
+    </li>
+    <li class="">
+      <a href="15. Regulatory Landscape Medical Devices.html">15. Regulatory Landscape: Medical Devices</a>
+    </li>
+    <li class="">
+      <a href="16. Regulatory Landscape FDA Process.html">16. Regulatory Landscape: FDA Process</a>
+    </li>
+    <li class="">
+      <a href="17. Regulatory landscape HIPAA, Anonymization.html">17. Regulatory landscape: HIPAA, Anonymization</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 3 Anonymization.html">18. Exercise 3: Anonymization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Summary.html">19. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="20. The End and Final Project.html">20. The End and Final Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. DICOM Networking: Services</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Heading</p></h3>
+  <div>
+  <h1 id="dicom-networking-dimse-services">DICOM Networking: DIMSE Services</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L4 03 Clinical Networks And Integration Points (DISME)</p></h3>
+  <video controls>
+  <source src="03. ND320 C3 L4 03 Clinical Networks And Integration Points (DISME)-45hRHj8n6KU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND320 C3 L4 03 Clinical Networks And Integration Points (DISME)-45hRHj8n6KU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <p>To summarize, here are the key things and terms to remember about DICOM networking:</p>
+<ol>
+<li>There are two types of DICOM networking: <strong>DIMSE</strong> (DICOM Message Service Element) and <strong>DICOMWeb</strong>. The former is designed to support data exchange in protected clinical networks that are largely isolated from the Internet. The latter is a set of RESTful APIs (<a href="https://www.dicomstandard.org/dicomweb/" rel="noopener noreferrer" target="_blank">link to the Standard</a>) that are designed to communicate over the Internet. DIMSE networking does not have a notion of authentication and is prevalent inside hospitals.</li>
+<li>DIMSE networking defines how DICOM Application Entities talk to each other on protected networks.</li>
+<li>DICOM Application Entities that talk to each other take on roles of <ul>
+<li><strong>S</strong>ervice <strong>C</strong>lass <strong>P</strong>roviders which are an an AE that provides services over DIMSE network and</li>
+<li><strong>S</strong>ervice <strong>C</strong>lass <strong>U</strong>sers which is an AI that requests service from an SCP</li></ul></li>
+<li>SCPs typical respond to requests and SCUs issue them</li>
+<li>Full list of DIMSE services could be found in the <a href="http://dicom.nema.org/medical/dicom/current/output/chtml/part07/sect_7.5.html#sect_7.5.1" rel="noopener noreferrer" target="_blank">Part 7 of the DICOM Standard</a>, ones that you are most likely run into are:<ul>
+<li>C-Echo - “DICOM ping” - checks if the other party can speak DICOM</li>
+<li>C-Store - request to store an instance</li></ul></li>
+<li>An <strong>Application Entity (AE)</strong> is an actor on a network (e.g. a medical imaging modality or a PACS) that can talk DIMSE messages defined by three parameters:<ul>
+<li>Port</li>
+<li>IP Address</li>
+<li>Application Entity Title (AET) - an alphanumeric string</li></ul></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Clinical Networks.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. DICOM Networking: Services')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

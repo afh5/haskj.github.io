@@ -1,0 +1,379 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.820
+Now, let's take a look at a popular toolkit for parsing
+
+00:00:02.820 --> 00:00:06.675
+DICOM files and simulating medical imaging networks called DCMTK.
+
+00:00:06.675 --> 00:00:08.970
+DCMTK is an open source project.
+
+00:00:08.970 --> 00:00:10.410
+You can check out their website.
+
+00:00:10.410 --> 00:00:12.195
+They have a link to the GitHub repository,
+
+00:00:12.195 --> 00:00:14.310
+where you can go and take a look at all the code
+
+00:00:14.310 --> 00:00:16.965
+actually for all the tools that are included in the framework.
+
+00:00:16.965 --> 00:00:21.120
+You can use the DCMTK library which has bindings to
+
+00:00:21.120 --> 00:00:25.695
+many popular languages to parse and analyze DICOM files.
+
+00:00:25.695 --> 00:00:28.200
+DCMTK has a decent documentation,
+
+00:00:28.200 --> 00:00:31.020
+and the documentation actually covers a lot
+
+00:00:31.020 --> 00:00:34.575
+of tooling that's included as a part of a DCMTK library.
+
+00:00:34.575 --> 00:00:42.080
+This tooling is actually exists as Windows binaries and exists as packages for Linux.
+
+00:00:42.080 --> 00:00:47.285
+So you can download DCMTK tool as your APT or whatever your favorite Linux distribution,
+
+00:00:47.285 --> 00:00:51.440
+and you can have it in your command line by typing a simple command.
+
+00:00:51.440 --> 00:00:56.570
+The module that we'll be focusing on in this little demo is the DCM net,
+
+00:00:56.570 --> 00:01:00.815
+which has some of the tools for playing with DICOM networks.
+
+00:01:00.815 --> 00:01:03.895
+Let us see how all these tools work.
+
+00:01:03.895 --> 00:01:08.920
+So I'm logged into my Linux machine and MRI directory that's circled MRI study.
+
+00:01:08.920 --> 00:01:13.000
+In this directory, I have a collection in MRI datasets.
+
+00:01:13.000 --> 00:01:15.230
+This is the dataset that you have seen in the past.
+
+00:01:15.230 --> 00:01:17.330
+So these are the MRI scans of the brain.
+
+00:01:17.330 --> 00:01:22.435
+Let's use this tree app to see what's happening inside.
+
+00:01:22.435 --> 00:01:28.825
+We see the same picture as we have seen in the DICOM dataset EDA screencast.
+
+00:01:28.825 --> 00:01:32.875
+We see that we have our series and we have our DICOM files inside the series.
+
+00:01:32.875 --> 00:01:36.455
+Let's try and move this images around to over the DICOM network.
+
+00:01:36.455 --> 00:01:39.415
+So one thing that you can do at this point,
+
+00:01:39.415 --> 00:01:46.120
+is call a DCMTK tool called dcmdump to take a look at one of those files. Let's do that.
+
+00:01:46.120 --> 00:01:51.160
+So let's take a random one and let's see what is going on.
+
+00:01:51.160 --> 00:01:54.085
+So you just need to pass a file to this tool as a parameter,
+
+00:01:54.085 --> 00:01:58.730
+and you can see how it actually prints out all the DICOM elements right into the console.
+
+00:01:58.730 --> 00:02:00.400
+This can be quite convenient for
+
+00:02:00.400 --> 00:02:03.740
+some scripting operations where you want to do maybe bulk analysis
+
+00:02:03.740 --> 00:02:06.350
+on large DICOM files and you don't have access
+
+00:02:06.350 --> 00:02:09.785
+to things like Python interpreter or other programming languages.
+
+00:02:09.785 --> 00:02:14.000
+This could be useful for just quick look into a DICOM file that you might get
+
+00:02:14.000 --> 00:02:19.130
+on your server or some other type of machine that you are debugging.
+
+00:02:19.130 --> 00:02:21.785
+We have all our standard DICOM values here.
+
+00:02:21.785 --> 00:02:25.325
+So let us take a look at the networking aspect here.
+
+00:02:25.325 --> 00:02:28.025
+So let us open a second terminal window,
+
+00:02:28.025 --> 00:02:30.920
+and this window is opening in the directory called DICOM out.
+
+00:02:30.920 --> 00:02:32.630
+This directory is empty.
+
+00:02:32.630 --> 00:02:38.000
+So let us start a storescp.
+
+00:02:38.000 --> 00:02:40.910
+In this lesson earlier we have talked about DICOM network and
+
+00:02:40.910 --> 00:02:43.865
+we have talked about DICOM DMCA services.
+
+00:02:43.865 --> 00:02:47.645
+We talked how there are service class users and service class providers.
+
+00:02:47.645 --> 00:02:50.810
+So we will start a DICOM application instance which will
+
+00:02:50.810 --> 00:02:54.320
+serve as a service class provider for a C-store operation,
+
+00:02:54.320 --> 00:02:57.725
+which is a common operations for moving data over DICOM networks.
+
+00:02:57.725 --> 00:02:59.510
+So let's type out the command here.
+
+00:02:59.510 --> 00:03:03.305
+The DCMTK tool is called storescp,
+
+00:03:03.305 --> 00:03:08.780
+and I pass sudo and I need to pass the ports to it.
+
+00:03:08.780 --> 00:03:11.195
+So let's run it on port 109.
+
+00:03:11.195 --> 00:03:14.360
+I pass the minus v commands for a verbosity,
+
+00:03:14.360 --> 00:03:17.765
+I pass the aet parameter which tells me
+
+00:03:17.765 --> 00:03:23.255
+what application entity title do I want for my storescp here.
+
+00:03:23.255 --> 00:03:26.210
+Then I tell it what output directory do I want.
+
+00:03:26.210 --> 00:03:29.525
+Table file puts everything that it will receive into the current directory.
+
+00:03:29.525 --> 00:03:31.505
+Let me plug in one more parameter,
+
+00:03:31.505 --> 00:03:37.200
+you can obviously read up on all of those parameters by looking at the documentation,
+
+00:03:37.200 --> 00:03:43.470
+but the parameter will tell me to sort all the incoming data by study UIDs,
+
+00:03:45.590 --> 00:03:49.560
+and I'll use the prefix st.
+
+00:03:49.560 --> 00:03:51.330
+I'll launch the commands.
+
+00:03:51.330 --> 00:03:55.080
+Nothing happened, which is good means that the thing is running.
+
+00:03:55.080 --> 00:03:57.495
+So let me switch into my other terminal,
+
+00:03:57.495 --> 00:04:00.645
+and lets me run the echoscu commands,
+
+00:04:00.645 --> 00:04:03.420
+which is issuing a C-ECHO request.
+
+00:04:03.420 --> 00:04:06.680
+Remember how we talked about the DICOM DMCA services and then there is
+
+00:04:06.680 --> 00:04:10.820
+this DICOM ping thing which is a C-ECHO DICOM request.
+
+00:04:10.820 --> 00:04:11.840
+So let me do that,
+
+00:04:11.840 --> 00:04:16.980
+and let me call actually my storescp which I just brought up.
+
+00:04:16.980 --> 00:04:21.125
+So I will call it on the local host,
+
+00:04:21.125 --> 00:04:26.360
+I will see ping port 109 and I'll will use minus v for verbosity.
+
+00:04:26.360 --> 00:04:29.175
+You can see that my echo-C was successful.
+
+00:04:29.175 --> 00:04:33.080
+So DCMTK tools prints some useful information here.
+
+00:04:33.080 --> 00:04:34.460
+So we made association,
+
+00:04:34.460 --> 00:04:35.900
+we receive some response,
+
+00:04:35.900 --> 00:04:38.195
+we have some success here, which is great.
+
+00:04:38.195 --> 00:04:40.880
+We see that on the other end where storescp is running,
+
+00:04:40.880 --> 00:04:43.955
+it is also printing some debug information into console.
+
+00:04:43.955 --> 00:04:48.700
+It is talking to my requestor which is awesome means our network is set up.
+
+00:04:48.700 --> 00:04:51.710
+To prove to you that I'm not fooling around here,
+
+00:04:51.710 --> 00:04:55.600
+let's try and call something on a port where I don't have anything running.
+
+00:04:55.600 --> 00:04:57.820
+If I call it on port 110,
+
+00:04:57.820 --> 00:05:02.480
+it's tells me that's not successful and the connection was refused.
+
+00:05:02.480 --> 00:05:07.060
+So right now let me try to call these storescu commands.
+
+00:05:07.060 --> 00:05:09.630
+Try to call the storescu tool.
+
+00:05:09.630 --> 00:05:13.115
+So the storescu tool as you might have guessed,
+
+00:05:13.115 --> 00:05:18.020
+it instantiates the service class user which is a application entity,
+
+00:05:18.020 --> 00:05:22.100
+which will take a bunch of DICOM files and which will issue
+
+00:05:22.100 --> 00:05:24.200
+a C-store requests to a service class provider
+
+00:05:24.200 --> 00:05:26.800
+that supports a C-store requests and sends them over.
+
+00:05:26.800 --> 00:05:29.635
+So let's send over our MRI study.
+
+00:05:29.635 --> 00:05:38.960
+So we type storescu localhost again minus v. We will use the aec parameter,
+
+00:05:38.960 --> 00:05:43.470
+which will set up our own application entity title.
+
+00:05:43.470 --> 00:05:46.890
+Some DICOM application entities might check this parameter,
+
+00:05:46.890 --> 00:05:50.660
+some DICOM application entities might not check this parameters.
+
+00:05:50.660 --> 00:05:53.900
+I use this plus r switch to tell it to go
+
+00:05:53.900 --> 00:05:58.120
+recursively and I use the sd switch to tell it which directory to send.
+
+00:05:58.120 --> 00:06:02.030
+Well, let's cross our fingers and press enter and see what's happening.
+
+00:06:02.030 --> 00:06:04.880
+Okay, that did not work because I forgot to specify port.
+
+00:06:04.880 --> 00:06:06.730
+So let's try to do it again.
+
+00:06:06.730 --> 00:06:08.475
+We can see something is happening.
+
+00:06:08.475 --> 00:06:10.450
+On the left here we see a lot of sending,
+
+00:06:10.450 --> 00:06:12.575
+on the right here we see a lot of storing.
+
+00:06:12.575 --> 00:06:14.390
+This is exactly what was supposed to be happening.
+
+00:06:14.390 --> 00:06:18.655
+We're running a storescu here on the right and we are running a sendscu here on the left.
+
+00:06:18.655 --> 00:06:21.660
+So if we shut down this program,
+
+00:06:21.660 --> 00:06:27.380
+if we look up at the directory we can see that something has appeared here.
+
+00:06:27.380 --> 00:06:29.720
+There is a directory was a st prefix,
+
+00:06:29.720 --> 00:06:31.330
+which is what I asked it to do.
+
+00:06:31.330 --> 00:06:34.385
+If we go into this directory and see what is happening inside,
+
+00:06:34.385 --> 00:06:39.720
+we see a lot of files without extension.
+
+00:06:39.720 --> 00:06:44.900
+This is actually something that you will get a lot in a DICOM networking world,
+
+00:06:44.900 --> 00:06:48.950
+because as you're sending files across the receiving entity,
+
+00:06:48.950 --> 00:06:52.040
+the storescp is not supposed to name it in any particular way,
+
+00:06:52.040 --> 00:06:53.930
+and it's up to the storecpu to figure out
+
+00:06:53.930 --> 00:06:56.095
+how to name it and what directories to place it.
+
+00:06:56.095 --> 00:06:59.090
+So do not count that your studies in series
+
+00:06:59.090 --> 00:07:01.970
+will always be organized in a mickey name to directories.
+
+00:07:01.970 --> 00:07:04.830
+You might be dealing with something like you're seeing on the right hand side here,
+
+00:07:04.830 --> 00:07:10.480
+and you might be applying some EDA methods to figure out what is going on there.
+
+00:07:10.480 --> 00:07:14.180
+So this was a brief introduction into scripting with DCMTK and to
+
+00:07:14.180 --> 00:07:18.140
+some of the tools that you might use to debug and simulate clinical networks.
+
+00:07:18.140 --> 00:07:22.890
+Now, let's move on and take a look at the zero footprint viewer called OHIF.
+

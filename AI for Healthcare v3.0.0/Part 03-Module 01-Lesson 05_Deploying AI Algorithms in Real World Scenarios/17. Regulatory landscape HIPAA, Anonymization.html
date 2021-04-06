@@ -1,0 +1,292 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Regulatory landscape: HIPAA, Anonymization</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Deploying AI Algorithms in Real World Scenarios</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. DICOM Networking Introduction.html">02. DICOM Networking: Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. DICOM Networking Services.html">03. DICOM Networking: Services</a>
+    </li>
+    <li class="">
+      <a href="04. Clinical Networks.html">04. Clinical Networks</a>
+    </li>
+    <li class="">
+      <a href="05. Requirements for Integration.html">05. Requirements for Integration</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Network Architecture Summary.html">06. Clinical Network Architecture Summary</a>
+    </li>
+    <li class="">
+      <a href="07. Tools of the Trade - Intro.html">07. Tools of the Trade - Intro</a>
+    </li>
+    <li class="">
+      <a href="08. Tools of the Trade - Scripting.html">08. Tools of the Trade - Scripting</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 1 Scripting for DICOM Networks.html">09. Exercise 1: Scripting for DICOM Networks</a>
+    </li>
+    <li class="">
+      <a href="10. Tools of the Trade - A Radiologists in Action.html">10. Tools of the Trade - A Radiologists in Action</a>
+    </li>
+    <li class="">
+      <a href="11. Tools of the Trade - Viewers - OHIF.html">11. Tools of the Trade - Viewers - OHIF</a>
+    </li>
+    <li class="">
+      <a href="12. Tools of the Trade - Viewers - 3D Slicer.html">12. Tools of the Trade - Viewers - 3D Slicer</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 2 Creating Ground Truth with Slicer.html">13. Exercise 2: Creating Ground Truth with Slicer</a>
+    </li>
+    <li class="">
+      <a href="14. Tools of the Trade Summary.html">14. Tools of the Trade Summary</a>
+    </li>
+    <li class="">
+      <a href="15. Regulatory Landscape Medical Devices.html">15. Regulatory Landscape: Medical Devices</a>
+    </li>
+    <li class="">
+      <a href="16. Regulatory Landscape FDA Process.html">16. Regulatory Landscape: FDA Process</a>
+    </li>
+    <li class="">
+      <a href="17. Regulatory landscape HIPAA, Anonymization.html">17. Regulatory landscape: HIPAA, Anonymization</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 3 Anonymization.html">18. Exercise 3: Anonymization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Summary.html">19. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="20. The End and Final Project.html">20. The End and Final Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">17. Regulatory landscape: HIPAA, Anonymization</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Intro</p></h3>
+  <div>
+  <h1 id="regulatory-landscape-hipaa-anonymization">Regulatory Landscape: HIPAA, Anonymization</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L4 15 HIPAA, Privacy, And Anonymization</p></h3>
+  <video controls>
+  <source src="17. ND320 C3 L4 15 HIPAA, Privacy, And Anonymization-GPf-yATW5is.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="17. ND320 C3 L4 15 HIPAA, Privacy, And Anonymization-GPf-yATW5is.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Video Summary</p></h3>
+  <div>
+  <p>Privacy laws vary from one country to another, but most of them are similar to Health Insurance Portability and Accountability Act  (<strong>HIPAA</strong>) in the USA and General Data Protection Regulation (<strong>GDPR</strong>) in Europe.   </p>
+<p>If you want to learn more about it, there is more detail in the "EHR Data" course in this nanodegree. Consider this a bit of a recap with a focus on applying de-identification methods to DICOM data.</p>
+<p>There are a lot to privacy laws, but something that has the greatest impact on an AI engineer are the requirements towards de-identifying the data that is coming in. De-identification is important because HIPAA Privacy rule (and GDPR) institute quite strict controls over “Protected Health Information” while at the same time <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html?language=es" rel="noopener noreferrer" target="_blank">HIPAA has this to say about De-identified Health Information</a>:  </p>
+<blockquote>
+  <p>De-Identified Health Information. There are no restrictions on the use or disclosure of de-identified health information. De-identified health information neither identifies nor provides a reasonable basis to identify an individual. There are two ways to de-identify information; either: (1) a formal determination by a qualified statistician; or (2) the removal of specified identifiers of the individual and of the individual’s relatives, household members, and employers is required, and is adequate only if the covered entity has no actual knowledge that the remaining information could be used to identify the individual.</p>
+</blockquote>
+<p>Essentially, a lot of restrictions and controls are removed for data that is considered de-identified. If you read this definition carefully, you will see that HIPAA suggests two methods for de-identification. Method #2 is actually somewhat straightforward as HIPAA lists things that are considered private in <a href="https://www.law.cornell.edu/cfr/text/45/164.514" rel="noopener noreferrer" target="_blank">45 CFR 165.514</a>, and we will practice with some of these in our final exercise.  </p>
+<p>Method #1 is worth a note here, though. You may wonder what statisticians have to do with privacy, but it might make sense if you remember that statisticians are what machine learning engineers used to be called before ML became widespread :) On a serious note, there is more to de-identifying data than removing unique identifiers and other things that can identify a person. Thus, age alone is hardly good enough to identify a person. But what if the age of an individual is high, you know the country where they live, and you have access to additional information such as a newspaper article that interviews the longest-living person from that country who happens to have the same age as that in your “de-identified” dataset? Surely, that would be sufficient to identify that individual. This is where statistics becomes important and a prudent approach would be to prove, with statistical guarantees, the chances of re-identifying an individual based on patterns in the dataset. This is getting very close to the concept of <a href="https://en.wikipedia.org/wiki/Differential_privacy" rel="noopener noreferrer" target="_blank">differential privacy</a> and is outside the scope of this course. However, I will post some links in the final section.  </p>
+<p>When it comes to DICOM medical images, anonymization typically boils down to cleaning out the DICOM metadata tags. However, depending on the dataset, you might also want to take a closer look at the pixels. Thus, you may see text that has been burnt directly into the images (not common in CT and MR, but quite common in XRays) or facial features (as we’ve seen in some of the Slicer visualizations throughout the course). As always, a good AI engineer will inspect the data and provide input if the data has potentially identifying characteristics.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Check for Understanding</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of these does the FDA <strong>not</strong> define for a manufacturer of a medical AI software?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1015256" id="rbk1">
+        <label for="rbk1"><p>What your device should be doing</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1015256" id="rbk2">
+        <label for="rbk2"><p>Principles for handling customer complaints from the operation of the device in the field</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1015256" id="rbk3">
+        <label for="rbk3"><p>Items that need to be submitted to the FDA before a high-risk device is marketed to customers</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1015256" id="rbk4">
+        <label for="rbk4"><p>Outline of an engineering process</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    What your device should be doing
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary &amp; Exercise Instructions</p></h3>
+  <div>
+  <h3 id="new-vocabulary">New Vocabulary</h3>
+<ul>
+<li><strong>HIPAA</strong> - Health Insurance Portability and Accountability Act - key legislation in the USA that among other things defines the concept of Protected Health Information and rules around handling it.</li>
+<li><strong>GDPR</strong> - General Data Protection Regulation - European legislation that defines the principles of handling personal data, including health data.</li>
+</ul>
+<p>With that, let’s move on and do a small exercise on anonymization - which would be the last exercise of our course!</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="18. Exercise 3 Anonymization.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('17. Regulatory landscape: HIPAA, Anonymization')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

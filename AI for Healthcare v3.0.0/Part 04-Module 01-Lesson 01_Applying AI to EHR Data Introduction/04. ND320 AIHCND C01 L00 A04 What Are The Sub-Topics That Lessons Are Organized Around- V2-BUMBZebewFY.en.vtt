@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.275
+Now that you have a little background into AI and EHR data,
+
+00:00:04.275 --> 00:00:08.535
+let's go on to a little preview of what you will cover in this course.
+
+00:00:08.535 --> 00:00:11.280
+In the initial parts of this course,
+
+00:00:11.280 --> 00:00:15.465
+we will be reviewing EHR data security and analysis.
+
+00:00:15.465 --> 00:00:18.480
+This data security section of the course may
+
+00:00:18.480 --> 00:00:21.660
+be a review for anyone who currently works in healthcare,
+
+00:00:21.660 --> 00:00:24.900
+but it's of vital importance in today's world to understand
+
+00:00:24.900 --> 00:00:28.305
+how to keep our patients' data safe and secure.
+
+00:00:28.305 --> 00:00:31.140
+We are the gatekeepers of that data and if we
+
+00:00:31.140 --> 00:00:33.780
+want to be able to do amazing things with this data,
+
+00:00:33.780 --> 00:00:35.695
+we need to ensure it's safe.
+
+00:00:35.695 --> 00:00:40.160
+You will learn about the different regulations around the world which you should
+
+00:00:40.160 --> 00:00:44.890
+be aware of to ensure your data practices meet these regulations.
+
+00:00:44.890 --> 00:00:47.045
+Also in this section,
+
+00:00:47.045 --> 00:00:51.620
+we will be reviewing and completing some exploratory data analysis following
+
+00:00:51.620 --> 00:00:55.370
+the CRISP-DM framework to address some common issues with
+
+00:00:55.370 --> 00:00:59.545
+data before we begin using it to build and test our models.
+
+00:00:59.545 --> 00:01:05.015
+You will perform some data schema in demographic analysis as part of this section.
+
+00:01:05.015 --> 00:01:07.640
+This will enable you to explore your data and
+
+00:01:07.640 --> 00:01:10.555
+make sure it is representative of the population,
+
+00:01:10.555 --> 00:01:14.365
+and this will allow the model you build later to be accurate.
+
+00:01:14.365 --> 00:01:17.990
+In the EHR code sets section of this course,
+
+00:01:17.990 --> 00:01:22.870
+you will learn about all kinds of different code sets used in the medical industry,
+
+00:01:22.870 --> 00:01:25.470
+become familiar with medical encounters,
+
+00:01:25.470 --> 00:01:27.540
+and learn to interpret diagnosis,
+
+00:01:27.540 --> 00:01:29.915
+procedure, and medication codes.
+
+00:01:29.915 --> 00:01:35.284
+Diagnosis codes are part of the ICD-10-CM classification of diseases.
+
+00:01:35.284 --> 00:01:37.760
+This is riveting stuff, I know,
+
+00:01:37.760 --> 00:01:43.190
+but you'll be surprised how much better you'll be able to understand your next diagnosis.
+
+00:01:43.190 --> 00:01:46.055
+Then you'll learn to break down procedure codes using
+
+00:01:46.055 --> 00:01:50.315
+ICD-10-PCS codes, and CPT categories.
+
+00:01:50.315 --> 00:01:52.060
+If that were not enough codes,
+
+00:01:52.060 --> 00:01:57.965
+you'll also work directly with medication codes using NDC and RxNorm codes.
+
+00:01:57.965 --> 00:02:03.800
+Finally, you'll look into using the Clinical Classification Software or CCS system to
+
+00:02:03.800 --> 00:02:10.715
+more easily group and categorize the 77,000 plus codes when using them for our ML models.
+
+00:02:10.715 --> 00:02:16.950
+After code sets, you'll get to dive into more actual coding with Python and TensorFlow.
+
+00:02:16.950 --> 00:02:21.320
+First, you'll learn to differentiate between and choose
+
+00:02:21.320 --> 00:02:25.445
+the correct dataset level for your modeling like choosing between line,
+
+00:02:25.445 --> 00:02:28.070
+encounter, and longitudinal levels.
+
+00:02:28.070 --> 00:02:33.680
+Then you'll learn to apply testing and validation techniques to prevent data leakage and
+
+00:02:33.680 --> 00:02:39.080
+population misrepresentation during dataset splitting which if left unchecked,
+
+00:02:39.080 --> 00:02:42.265
+can lead to highly inaccurate models in production.
+
+00:02:42.265 --> 00:02:47.680
+Finally, you perform feature engineering using the TensorFlow Dataset API.
+
+00:02:47.680 --> 00:02:50.285
+Then it's time to get to the really fun part,
+
+00:02:50.285 --> 00:02:53.780
+building, evaluating, and interpreting models.
+
+00:02:53.780 --> 00:02:57.950
+You'll start off by getting a quick review on TensorFlow dense features
+
+00:02:57.950 --> 00:03:02.420
+and implementing best practices with TensorFlow feature columns.
+
+00:03:02.420 --> 00:03:06.800
+Next, you'll evaluate your models for uncertainty and bias,
+
+00:03:06.800 --> 00:03:10.205
+or being introduced to Brier scores for evaluation.
+
+00:03:10.205 --> 00:03:12.950
+Then we'll head into a deep dive on
+
+00:03:12.950 --> 00:03:17.690
+demographic bias analysis of our models to remove bias.
+
+00:03:17.690 --> 00:03:23.540
+Not only will you understand why unintended demographic bias is important to address,
+
+00:03:23.540 --> 00:03:29.150
+but also how to address unintended biases using a project called Aequitas.
+
+00:03:29.150 --> 00:03:33.890
+Then you'll get a review of uncertainty estimation and Bayesian probability
+
+00:03:33.890 --> 00:03:38.825
+before training in uncertainty estimation model with TensorFlow probability.
+
+00:03:38.825 --> 00:03:42.205
+Then use Shapley values to help interpret your model.
+
+00:03:42.205 --> 00:03:44.595
+Wow, looking at this course,
+
+00:03:44.595 --> 00:03:47.415
+that might seem like a lot but by the end,
+
+00:03:47.415 --> 00:03:50.150
+you have learned some amazing skills that you can
+
+00:03:50.150 --> 00:03:54.180
+apply to this ever-growing field of health care.
+

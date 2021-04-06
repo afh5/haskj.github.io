@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.190
+Hello and welcome to the final lesson of the AI for 3D medical imaging nanodegree.
+
+00:00:05.190 --> 00:00:06.975
+In the previous lessons,
+
+00:00:06.975 --> 00:00:09.420
+we have seen the clinical perspective on some of
+
+00:00:09.420 --> 00:00:12.400
+the problems that could be solved with machine learning.
+
+00:00:12.400 --> 00:00:14.750
+We have seen how clinicians think about
+
+00:00:14.750 --> 00:00:17.915
+machine learning algorithms and how they make diagnostic decisions.
+
+00:00:17.915 --> 00:00:22.250
+We looked at some of the physical principles of operation of MR and CT scanners.
+
+00:00:22.250 --> 00:00:24.910
+We took a glimpse into the DICOM standard.
+
+00:00:24.910 --> 00:00:28.100
+We played with some of the DICOM files and learn how to parse them,
+
+00:00:28.100 --> 00:00:30.055
+and how to extract images,
+
+00:00:30.055 --> 00:00:33.615
+and how to process these images with convolutional neural networks.
+
+00:00:33.615 --> 00:00:37.640
+We played a little bit with training our own convolutional neural network, the uni,
+
+00:00:37.640 --> 00:00:40.400
+t and we produced some results and learned
+
+00:00:40.400 --> 00:00:43.535
+how to save them as binary masks for segmentation tasks.
+
+00:00:43.535 --> 00:00:47.420
+In this lesson, you will learn how all these skills and all these concepts
+
+00:00:47.420 --> 00:00:51.365
+come together when it comes to integrating an AI algorithm,
+
+00:00:51.365 --> 00:00:54.440
+AI model, into a real-world clinical network.
+
+00:00:54.440 --> 00:00:55.880
+So in this lesson,
+
+00:00:55.880 --> 00:00:57.635
+we will look at the following concepts.
+
+00:00:57.635 --> 00:01:00.860
+First, we will talk about the networking in
+
+00:01:00.860 --> 00:01:03.350
+the clinical medical imaging networks and we will look at
+
+00:01:03.350 --> 00:01:06.595
+the networking portion specifically of the DICOM standards.
+
+00:01:06.595 --> 00:01:09.800
+Then we will see what would be the good integration points for
+
+00:01:09.800 --> 00:01:12.170
+your AI algorithms and we will understand what
+
+00:01:12.170 --> 00:01:14.945
+would be the requirements for integration of the algorithms.
+
+00:01:14.945 --> 00:01:20.390
+We will take a look at some of the tools that are used in clinical environments and we
+
+00:01:20.390 --> 00:01:22.685
+will take a look at some of the tools that
+
+00:01:22.685 --> 00:01:25.715
+you might use to simulate these clinical environments.
+
+00:01:25.715 --> 00:01:28.550
+We will have Mason demonstrate to us how he would work with
+
+00:01:28.550 --> 00:01:32.570
+the enterprise medical imaging viewer in his day-to-day job.
+
+00:01:32.570 --> 00:01:37.395
+Then we will take a look at what's called a zero-footprint web medical imaging viewer.
+
+00:01:37.395 --> 00:01:42.140
+It's an open source project that you can compile yourself and play with it.
+
+00:01:42.140 --> 00:01:45.200
+We will take a deeper dive into 3D slicer tool,
+
+00:01:45.200 --> 00:01:47.690
+which we have mentioned a few times in this course,
+
+00:01:47.690 --> 00:01:52.250
+and I will show you some tricks and some of the main things that you could do with
+
+00:01:52.250 --> 00:01:58.240
+3D slicer when either labeling your datasets or viewing your 3D images.
+
+00:01:58.240 --> 00:02:00.775
+Then we will look at DCMTK,
+
+00:02:00.775 --> 00:02:04.400
+which is an open source package for manipulating, and reading,
+
+00:02:04.400 --> 00:02:05.705
+and writing DICOM files,
+
+00:02:05.705 --> 00:02:08.270
+and also a collection of useful tools which
+
+00:02:08.270 --> 00:02:11.215
+will help you debug and understand clinical networks.
+
+00:02:11.215 --> 00:02:12.650
+Lastly, in this section,
+
+00:02:12.650 --> 00:02:15.695
+we will touch on some of the regulatory requirements
+
+00:02:15.695 --> 00:02:18.720
+that you need to be aware of when you are developing AI models.
+
+00:02:18.720 --> 00:02:20.120
+You might have seen that this is
+
+00:02:20.120 --> 00:02:23.305
+a recurring theme through all of the courses in this nanodegree.
+
+00:02:23.305 --> 00:02:26.780
+This is a very important topic to internalize and understand,
+
+00:02:26.780 --> 00:02:31.850
+what you can do as an AI engineer with machine learning methods
+
+00:02:31.850 --> 00:02:34.430
+and what things you should be aware of as you
+
+00:02:34.430 --> 00:02:37.250
+get to deploying these mechanisms in the production.
+
+00:02:37.250 --> 00:02:41.520
+So let's go and jump into the next section.
+

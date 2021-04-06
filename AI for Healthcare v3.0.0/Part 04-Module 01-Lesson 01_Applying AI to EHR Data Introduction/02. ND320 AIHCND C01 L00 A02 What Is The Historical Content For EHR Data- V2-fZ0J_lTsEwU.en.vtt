@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+Let's begin with what a health record is
+
+00:00:02.730 --> 00:00:06.435
+since this is the basis for what is stored electronically.
+
+00:00:06.435 --> 00:00:10.200
+Essentially, it is a patient's documentation of
+
+00:00:10.200 --> 00:00:14.895
+their healthcare encounters and the data created by the encounters across time.
+
+00:00:14.895 --> 00:00:18.720
+To gain a bit more perspective on health care records,
+
+00:00:18.720 --> 00:00:21.270
+lets talk a bit about its history.
+
+00:00:21.270 --> 00:00:24.405
+Health records have been around for a very long time,
+
+00:00:24.405 --> 00:00:28.395
+essentially since the first doctor who took any notes about a patient.
+
+00:00:28.395 --> 00:00:29.850
+Up until very recently,
+
+00:00:29.850 --> 00:00:33.210
+records have all been written and stored on paper.
+
+00:00:33.210 --> 00:00:36.100
+Written records had lots of information on them,
+
+00:00:36.100 --> 00:00:40.430
+but as the world population grew and medical records involved,
+
+00:00:40.430 --> 00:00:46.250
+the number of records soared while the ability to use them to help a patient diminished.
+
+00:00:46.250 --> 00:00:50.750
+As the need and capability arose to transition from
+
+00:00:50.750 --> 00:00:55.550
+paper to electronic medical records, EHR was born.
+
+00:00:55.550 --> 00:00:58.645
+There was even a law created to help this alone,
+
+00:00:58.645 --> 00:01:01.185
+you might have heard of it, HIPAA,
+
+00:01:01.185 --> 00:01:04.415
+The Health Insurance Portability and Accountability Act,
+
+00:01:04.415 --> 00:01:07.625
+was passed in 1996 to address this.
+
+00:01:07.625 --> 00:01:12.470
+You'll learn more about this in the EHR data security section of the course.
+
+00:01:12.470 --> 00:01:17.675
+This not only led to brand new systems for storing and collecting EHR data,
+
+00:01:17.675 --> 00:01:20.390
+but also for the need to translate all of
+
+00:01:20.390 --> 00:01:25.195
+the old paper data into something usable by these new systems.
+
+00:01:25.195 --> 00:01:27.930
+That's a particular great job for AI,
+
+00:01:27.930 --> 00:01:32.075
+but there are many other potential uses for AI with EHR.
+
+00:01:32.075 --> 00:01:39.200
+A few other fantastic uses of AI and EHR include: mapping of our genes in genomics,
+
+00:01:39.200 --> 00:01:42.110
+analyzing data from clinical trials,
+
+00:01:42.110 --> 00:01:44.290
+and predicting a diagnosis.
+
+00:01:44.290 --> 00:01:47.525
+That's it for your history lesson on EHR.
+
+00:01:47.525 --> 00:01:49.520
+Now that you have a little background,
+
+00:01:49.520 --> 00:01:54.060
+we will discuss the current landscape for EHR data in AI.
+

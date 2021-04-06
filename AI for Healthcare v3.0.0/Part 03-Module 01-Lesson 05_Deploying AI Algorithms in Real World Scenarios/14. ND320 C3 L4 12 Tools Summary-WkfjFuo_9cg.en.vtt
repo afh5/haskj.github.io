@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.105
+In this section, we have seen several demos.
+
+00:00:03.105 --> 00:00:08.085
+We have seen Mazen show us how he would read an image in a diagnostic setting.
+
+00:00:08.085 --> 00:00:10.710
+We saw a demo of an OHIF Viewer.
+
+00:00:10.710 --> 00:00:12.465
+This is a zero-footprint viewer,
+
+00:00:12.465 --> 00:00:16.080
+which you can deploy on your own machine and you can play with it and you can connect
+
+00:00:16.080 --> 00:00:19.830
+it to any DICOMweb endpoint to load and visualize images.
+
+00:00:19.830 --> 00:00:23.430
+We have seen how to use a 3D Slicer to perform a segmentation and create
+
+00:00:23.430 --> 00:00:27.960
+a mask for a medical imaging volumes and I invite you to try out
+
+00:00:27.960 --> 00:00:31.920
+and use this mask in one of the exercises that we did in the past to compare it with what
+
+00:00:31.920 --> 00:00:37.500
+your neural network would produce by using your Dice score computation tools.
+
+00:00:37.500 --> 00:00:41.150
+We have seen how DCMTK works and we have played with some of
+
+00:00:41.150 --> 00:00:43.550
+the command-line tools to simulate
+
+00:00:43.550 --> 00:00:47.210
+application entity titles operating on a clinical network.
+
+00:00:47.210 --> 00:00:50.330
+In the next section, let's touch upon some of
+
+00:00:50.330 --> 00:00:53.210
+the aspects of clearing the regulatory clearance bars.
+
+00:00:53.210 --> 00:00:55.430
+This is something that you need to keep in mind
+
+00:00:55.430 --> 00:00:59.370
+when bringing your AI models to clinicians.
+

@@ -1,0 +1,250 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+Let us talk about some of those requirements that you might
+
+00:00:02.730 --> 00:00:06.075
+have for integration of your AI algorithms.
+
+00:00:06.075 --> 00:00:09.390
+One thing that we have discussed when we talked about DICOM networking,
+
+00:00:09.390 --> 00:00:13.485
+then DICOM networks operate by sending instances around.
+
+00:00:13.485 --> 00:00:17.535
+So there isn't really a way to tell apart a series from studies.
+
+00:00:17.535 --> 00:00:19.110
+Also, in other aspect,
+
+00:00:19.110 --> 00:00:22.410
+is that when modality send data to clinical archive,
+
+00:00:22.410 --> 00:00:25.530
+typically modalities would send entire studies.
+
+00:00:25.530 --> 00:00:30.150
+A relevant problem that you might be dealing with is selecting the correct series.
+
+00:00:30.150 --> 00:00:36.180
+Remember how we looked at the organization of data in NMR series in the previous lessons,
+
+00:00:36.180 --> 00:00:38.850
+one of you analyzed a medical imaging data set.
+
+00:00:38.850 --> 00:00:40.220
+You have multiple folders,
+
+00:00:40.220 --> 00:00:41.450
+in these folders you have series,
+
+00:00:41.450 --> 00:00:44.595
+in the series you have files and that's what a study might look like.
+
+00:00:44.595 --> 00:00:49.445
+It is very likely that this is what your AI algorithm will receive and you need to think,
+
+00:00:49.445 --> 00:00:52.310
+what criteria will you use to select the correct series,
+
+00:00:52.310 --> 00:00:57.430
+the series that correspond to the data that your AI algorithm was trained upon.
+
+00:00:57.430 --> 00:01:01.580
+Another thing to think about is the imaging protocol requirement.
+
+00:01:01.580 --> 00:01:04.985
+So what type of data was your algorithm trained on?
+
+00:01:04.985 --> 00:01:07.115
+Once you've selected the series,
+
+00:01:07.115 --> 00:01:09.410
+is the series coming in the correct format?
+
+00:01:09.410 --> 00:01:11.959
+When we're talking about the imaging protocols,
+
+00:01:11.959 --> 00:01:15.170
+remember how we talked about the contrast media,
+
+00:01:15.170 --> 00:01:17.150
+how [inaudible] talked about the contrast media that could
+
+00:01:17.150 --> 00:01:20.900
+be present in the imaging to highlight certain things.
+
+00:01:20.900 --> 00:01:23.800
+So you can have things like contrast phasing.
+
+00:01:23.800 --> 00:01:27.320
+These two images here are slices from an abdominal CT
+
+00:01:27.320 --> 00:01:30.920
+from a patient who has contrast media present in their bloodstream.
+
+00:01:30.920 --> 00:01:33.860
+You can see the slice on the left is the arterial phase
+
+00:01:33.860 --> 00:01:37.245
+CT when the contrast media is present in the aorta,
+
+00:01:37.245 --> 00:01:38.540
+and on the right here,
+
+00:01:38.540 --> 00:01:41.165
+this is what's called the portal-venous phase CT.
+
+00:01:41.165 --> 00:01:47.030
+This is where the contrast has propagated into the kidneys and some of the liver.
+
+00:01:47.030 --> 00:01:50.240
+As you can see, the contrast profile of your image,
+
+00:01:50.240 --> 00:01:53.585
+the contrast resolution of your image can be quite different,
+
+00:01:53.585 --> 00:01:56.090
+so you need to be aware whether your algorithm
+
+00:01:56.090 --> 00:01:58.825
+is prepared to deal with differences like that.
+
+00:01:58.825 --> 00:02:02.870
+Another type of image and aspect that you need to be aware of is called field of view.
+
+00:02:02.870 --> 00:02:06.245
+A field of view has to do with the area that has been imaged.
+
+00:02:06.245 --> 00:02:08.105
+Like on the image on the left here,
+
+00:02:08.105 --> 00:02:09.800
+this might be a liver field of view,
+
+00:02:09.800 --> 00:02:12.230
+where you have a liver fully fitting into the image
+
+00:02:12.230 --> 00:02:14.970
+but you might not have lungs fully fitting into the image.
+
+00:02:14.970 --> 00:02:17.900
+On the right, you have what could be a lung field of view for
+
+00:02:17.900 --> 00:02:22.775
+a CT chest scan where you do not have the liver but you have a full image of the lungs.
+
+00:02:22.775 --> 00:02:27.635
+Depending on what your Alpha algorithm is doing and what type of output it produces,
+
+00:02:27.635 --> 00:02:30.680
+you might be willing to check for the correct field of
+
+00:02:30.680 --> 00:02:34.135
+view before you ingest images for processing.
+
+00:02:34.135 --> 00:02:36.860
+One other thing that you need to be aware of when integrating
+
+00:02:36.860 --> 00:02:39.480
+your algorithm into a clinical network is
+
+00:02:39.480 --> 00:02:41.609
+whether your algorithm is introducing
+
+00:02:41.609 --> 00:02:45.034
+any workload disruptions into the life of a radiologist.
+
+00:02:45.034 --> 00:02:48.350
+As we have seen, workflow of a radiologist is
+
+00:02:48.350 --> 00:02:52.775
+a very important subject and something that radiologists are closely tracking.
+
+00:02:52.775 --> 00:02:55.070
+Radiologists are pressed for time and they're pressed to be
+
+00:02:55.070 --> 00:02:57.740
+consistent in the time that it takes them to read an image.
+
+00:02:57.740 --> 00:02:59.940
+Your algorithm might be very useful
+
+00:02:59.940 --> 00:03:02.660
+like automatic generation of lung nodule segmentation,
+
+00:03:02.660 --> 00:03:06.360
+which radiologists need to review and tag whether they are correct or not,
+
+00:03:06.360 --> 00:03:09.500
+but an algorithm like that would introduce a workflow disruption,
+
+00:03:09.500 --> 00:03:12.335
+they would have to do something that they have not been doing before,
+
+00:03:12.335 --> 00:03:15.860
+and you need to think of how to present it to them so that it's
+
+00:03:15.860 --> 00:03:20.585
+convenient and does not actually require them to spend more time reading an image,
+
+00:03:20.585 --> 00:03:23.539
+or your algorithm might not be doing workflow disruptions.
+
+00:03:23.539 --> 00:03:28.160
+A thing like intracranial hemorrhage detector or a fracture detector that labels
+
+00:03:28.160 --> 00:03:30.020
+image and bubbles this image up in
+
+00:03:30.020 --> 00:03:33.185
+the worklist of images that radiologists would be reading,
+
+00:03:33.185 --> 00:03:36.065
+would not be disrupting the workflow that much.
+
+00:03:36.065 --> 00:03:37.955
+One other thing to keep in mind, of course,
+
+00:03:37.955 --> 00:03:42.295
+is what systems would be affected by the result of your algorithm?
+
+00:03:42.295 --> 00:03:44.640
+Are you sending something to the EHR system?
+
+00:03:44.640 --> 00:03:48.470
+For example, your algorithm might be generating an early read of the image,
+
+00:03:48.470 --> 00:03:50.750
+it might be generating some text from the image,
+
+00:03:50.750 --> 00:03:54.330
+and this text needs to go back to some storage system,
+
+00:03:54.330 --> 00:03:56.540
+or maybe your algorithm would be calling upon
+
+00:03:56.540 --> 00:04:00.450
+a web-based API or sending maybe text messages.
+
+00:04:00.450 --> 00:04:05.040
+Then things like that need to be tightly integrated with your AI model output.
+
+00:04:05.040 --> 00:04:06.185
+So in the next section,
+
+00:04:06.185 --> 00:04:09.910
+let us look at some of the tools that you could use to simulate clinical environments.
+
+00:04:09.910 --> 00:04:12.370
+Let us take a closer look at the 3D slicer tool,
+
+00:04:12.370 --> 00:04:17.000
+and let's have [inaudible] show us how he would interact with a clinical image viewer,
+
+00:04:17.000 --> 00:04:20.670
+similar to how he interacts them in his day-to-day job.
+

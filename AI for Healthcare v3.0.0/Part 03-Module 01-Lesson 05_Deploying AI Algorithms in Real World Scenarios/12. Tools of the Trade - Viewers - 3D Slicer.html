@@ -1,0 +1,285 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tools of the Trade - Viewers - 3D Slicer</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Deploying AI Algorithms in Real World Scenarios</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. DICOM Networking Introduction.html">02. DICOM Networking: Introduction</a>
+    </li>
+    <li class="">
+      <a href="03. DICOM Networking Services.html">03. DICOM Networking: Services</a>
+    </li>
+    <li class="">
+      <a href="04. Clinical Networks.html">04. Clinical Networks</a>
+    </li>
+    <li class="">
+      <a href="05. Requirements for Integration.html">05. Requirements for Integration</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Network Architecture Summary.html">06. Clinical Network Architecture Summary</a>
+    </li>
+    <li class="">
+      <a href="07. Tools of the Trade - Intro.html">07. Tools of the Trade - Intro</a>
+    </li>
+    <li class="">
+      <a href="08. Tools of the Trade - Scripting.html">08. Tools of the Trade - Scripting</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 1 Scripting for DICOM Networks.html">09. Exercise 1: Scripting for DICOM Networks</a>
+    </li>
+    <li class="">
+      <a href="10. Tools of the Trade - A Radiologists in Action.html">10. Tools of the Trade - A Radiologists in Action</a>
+    </li>
+    <li class="">
+      <a href="11. Tools of the Trade - Viewers - OHIF.html">11. Tools of the Trade - Viewers - OHIF</a>
+    </li>
+    <li class="">
+      <a href="12. Tools of the Trade - Viewers - 3D Slicer.html">12. Tools of the Trade - Viewers - 3D Slicer</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 2 Creating Ground Truth with Slicer.html">13. Exercise 2: Creating Ground Truth with Slicer</a>
+    </li>
+    <li class="">
+      <a href="14. Tools of the Trade Summary.html">14. Tools of the Trade Summary</a>
+    </li>
+    <li class="">
+      <a href="15. Regulatory Landscape Medical Devices.html">15. Regulatory Landscape: Medical Devices</a>
+    </li>
+    <li class="">
+      <a href="16. Regulatory Landscape FDA Process.html">16. Regulatory Landscape: FDA Process</a>
+    </li>
+    <li class="">
+      <a href="17. Regulatory landscape HIPAA, Anonymization.html">17. Regulatory landscape: HIPAA, Anonymization</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 3 Anonymization.html">18. Exercise 3: Anonymization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Summary.html">19. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="20. The End and Final Project.html">20. The End and Final Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. Tools of the Trade - Viewers - 3D Slicer</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Tools of the Trade - Viewers - 3D Slicer</p></h3>
+  <div>
+  <h1 id="tools-of-the-trade---viewers---3d-slicer">Tools of the Trade - Viewers - 3D Slicer</h1>
+<p>So far, you should be familiar with 3D Slicer - we have talked about this tool early on and maybe you even used it to view some of the images. Here, we will take a deeper dive, look at some features in more detail and particularly focus on segmentation.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C3 L4 11 Viewing - Slicer</p></h3>
+  <video controls>
+  <source src="12. ND320 C3 L4 11 Viewing - Slicer-5tPt6OMnL10.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND320 C3 L4 11 Viewing - Slicer-5tPt6OMnL10.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Video Summary</p></h3>
+  <div>
+  <p>Here, we took a closer look at how to work with segmentation masks in Slicer, walking you through loading a NIFTI volume and corresponding mask, displaying one on top of the other, and creating your own segmentation mask. </p>
+<h2 id="segmentation-formats">Segmentation formats</h2>
+<p>Let me take a bit of a sidetrack here and say a few words on formats for storing segmentation masks since this is how your segmentation ground truth data may come in and this is what you would be using a Slicer-like tool with. There are a few that are commonly used:</p>
+<ul>
+<li><p><strong>NIFTI</strong>, which you are already familiar with, allows you to define what essentially is a scalar field - every point in some rectangular subset of a 3D space has a value (intensity) associated with it. Thus, a segmentation mask could be stored in NIFTI by using “one-hot” encoding, as we’ve seen in the machine learning lesson. Such a mask would assign one class label to all voxels inside the structure and another one outside. Due to convenience, NIFTI masks are very widespread in the ML community.  </p></li>
+<li><p><strong>DICOM RT</strong> is a DICOM IOD for “<a href="http://dicom.nema.org/medical/Dicom/2020a/output/chtml/part03/sect_A.19.3.html#table_A.19.3-1" rel="noopener noreferrer" target="_blank">Radiation Therapy Structure Set</a>”. We had mentioned radiation therapy in this course before - it is the treatment of cancers with radiation, and it relies on accurate mapping of the human anatomy which serves as an input into the radiation machine (typically called linac). The DICOM standard has several separate IODs that are specific just to radiation therapy space and one such IOD is the RT Structure Set, which is designed to store contours of the human anatomy, which will be used to target radiation. DICOM RT, unlike NIFTI, stores information about contours, i.e., curves within given slices, to define where structure boundaries are. </p></li>
+<li><p><strong>DICOM Segmentation</strong> is <a href="http://dicom.nema.org/medical/Dicom/2020a/output/chtml/part03/sect_A.51.3.html" rel="noopener noreferrer" target="_blank">another DICOM IOD</a> for segmentations. It is specifically used for storing structure delineations for general purpose use, and this one is more similar to NIFTI in that segmentation masks are stored allocating a class to every voxel.</p></li>
+</ul>
+<p>A couple of other notable formats which are not specific to medical imaging, but are still sometimes used are:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Nrrd" rel="noopener noreferrer" target="_blank">NRRD</a> - generic format for storing multidimensional raster data, and</li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format" rel="noopener noreferrer" target="_blank">HDF5</a> - format for storing hierarchical multimodal data (including multidimensional raster data, like segmentations)</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Distinct classes in seg mask</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>How many distinct values would be in a NIFTI segmentation mask that contains a single segmentation mask for a spleen, similar to one that was created in the demo?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1015249" id="rbk1">
+        <label for="rbk1"><p>1</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1015249" id="rbk2">
+        <label for="rbk2"><p>255</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1015249" id="rbk3">
+        <label for="rbk3"><p>2</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1015249" id="rbk4">
+        <label for="rbk4"><p>65535</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    2
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="13. Exercise 2 Creating Ground Truth with Slicer.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Tools of the Trade - Viewers - 3D Slicer')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

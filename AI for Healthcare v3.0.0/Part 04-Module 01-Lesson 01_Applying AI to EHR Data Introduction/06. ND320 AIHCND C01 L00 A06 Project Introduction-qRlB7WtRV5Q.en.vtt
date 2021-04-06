@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.565
+In the project for this course,
+
+00:00:02.565 --> 00:00:05.610
+you get to play the part of a data scientist for
+
+00:00:05.610 --> 00:00:09.330
+an exciting unicorn healthcare startup that has created
+
+00:00:09.330 --> 00:00:14.520
+a groundbreaking diabetes drug that is ready for clinical trial testing.
+
+00:00:14.520 --> 00:00:19.345
+Your job is to build a predictive model that can identify
+
+00:00:19.345 --> 00:00:24.695
+which type of patients the company should focus their efforts testing this drug on.
+
+00:00:24.695 --> 00:00:27.860
+You will build a regression model that can predict
+
+00:00:27.860 --> 00:00:31.790
+the estimated hospitalization time for a patient and also
+
+00:00:31.790 --> 00:00:35.315
+provide an uncertainty estimate range for that prediction
+
+00:00:35.315 --> 00:00:39.640
+so that you can rank the predictions based off of the uncertainty range.
+
+00:00:39.640 --> 00:00:45.095
+This is a dataset that is built off of the UCI diabetes readmission dataset.
+
+00:00:45.095 --> 00:00:48.310
+So you will be using real healthcare data.
+
+00:00:48.310 --> 00:00:52.610
+At the end, you'll be creating a demographic bias analysis
+
+00:00:52.610 --> 00:00:57.365
+similar to what we have here to detect if your model has any bias,
+
+00:00:57.365 --> 00:01:01.670
+which is something we need to avoid when working with healthcare data.
+
+00:01:01.670 --> 00:01:04.280
+When finished with this project and course,
+
+00:01:04.280 --> 00:01:06.350
+you will be able to use
+
+00:01:06.350 --> 00:01:11.230
+various healthcare-related codes to group and categorize your datasets.
+
+00:01:11.230 --> 00:01:13.820
+You'll also be able to split datasets without
+
+00:01:13.820 --> 00:01:18.760
+leakage and build features using the TensorFlow feature column API.
+
+00:01:18.760 --> 00:01:21.935
+Finally, you'll be able to build, evaluate,
+
+00:01:21.935 --> 00:01:28.135
+and interpret models while accounting for demographic bias and uncertainty.
+
+00:01:28.135 --> 00:01:30.545
+There's even more in the course,
+
+00:01:30.545 --> 00:01:33.230
+but these are some of the high level objectives.
+
+00:01:33.230 --> 00:01:35.915
+I had so much fun building this project,
+
+00:01:35.915 --> 00:01:38.280
+and I think you will too.
+

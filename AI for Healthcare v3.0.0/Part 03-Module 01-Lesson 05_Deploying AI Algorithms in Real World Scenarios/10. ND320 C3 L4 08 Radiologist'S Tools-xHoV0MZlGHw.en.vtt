@@ -1,0 +1,328 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.540
+Now, I'm going to take you through how I use an image viewer to
+
+00:00:03.540 --> 00:00:06.450
+view clinical cases day-to-day,
+
+00:00:06.450 --> 00:00:09.495
+and take you through a tour of some of the features of these things.
+
+00:00:09.495 --> 00:00:12.480
+To do so, we're going to revisit the brain MRI data
+
+00:00:12.480 --> 00:00:15.360
+set that you used in exploratory data analysis,
+
+00:00:15.360 --> 00:00:19.215
+but now, you'll see how it's used in a clinical context. Let's dive in.
+
+00:00:19.215 --> 00:00:23.085
+So to begin, let me take you through in tour of the interface.
+
+00:00:23.085 --> 00:00:25.770
+Here in the center, we see the display protocol,
+
+00:00:25.770 --> 00:00:27.390
+also known as the hanging protocol.
+
+00:00:27.390 --> 00:00:28.830
+In this right column,
+
+00:00:28.830 --> 00:00:32.100
+this is a patient study from a particular date.
+
+00:00:32.100 --> 00:00:34.185
+In the left column,
+
+00:00:34.185 --> 00:00:36.600
+for the same patient, a prior study.
+
+00:00:36.600 --> 00:00:38.115
+So this is the more recent one,
+
+00:00:38.115 --> 00:00:39.850
+this is the one done before.
+
+00:00:39.850 --> 00:00:43.505
+Here, we can see, for a given study,
+
+00:00:43.505 --> 00:00:46.220
+the multiple series that are contained within that study.
+
+00:00:46.220 --> 00:00:49.339
+So just as you heard about before, things like T1,
+
+00:00:49.339 --> 00:00:53.600
+T2, here, we see those types of sequences but in addition,
+
+00:00:53.600 --> 00:00:56.445
+more sequences such as FLAIR,
+
+00:00:56.445 --> 00:00:59.465
+we have some perfusion imaging sequences,
+
+00:00:59.465 --> 00:01:01.475
+some diffusion-weighted imaging sequences,
+
+00:01:01.475 --> 00:01:06.085
+and the point of that is all of these add to the diagnostic accuracy.
+
+00:01:06.085 --> 00:01:10.610
+We see the same thing here for the more recent study.
+
+00:01:10.610 --> 00:01:14.150
+On the top, we have the tools that we work
+
+00:01:14.150 --> 00:01:18.410
+with to get some information such as measurements or optimizing what we're seeing.
+
+00:01:18.410 --> 00:01:24.925
+So here, we have the brain MRI data that you explored before in the EDA lesson,
+
+00:01:24.925 --> 00:01:28.595
+and we're looking at this patient's brain tumor here.
+
+00:01:28.595 --> 00:01:30.545
+This being the enhancing portion,
+
+00:01:30.545 --> 00:01:36.050
+meaning it's taken up contrast after we injected the patient with contrast media,
+
+00:01:36.050 --> 00:01:40.430
+and here, on the flair image which is sensitive for fluids,
+
+00:01:40.430 --> 00:01:42.770
+we can see some of that peritoneal edema.
+
+00:01:42.770 --> 00:01:44.570
+Now, when reviewing the images,
+
+00:01:44.570 --> 00:01:50.320
+one of the main questions we're going to want to know is how has this changed in size?
+
+00:01:50.320 --> 00:01:53.910
+So here, we look at this enhancing component and compare it to here,
+
+00:01:53.910 --> 00:02:01.310
+and we can use measurement tools to take some measurements in the greatest axial plane,
+
+00:02:01.310 --> 00:02:03.775
+for example, I'm just doing rough measurements here,
+
+00:02:03.775 --> 00:02:06.550
+and compare it to the prior.
+
+00:02:07.760 --> 00:02:11.935
+We can see that it's gotten a little bigger in the axial plane.
+
+00:02:11.935 --> 00:02:16.505
+Now, as you may recall in the segmentation lesson,
+
+00:02:16.505 --> 00:02:19.085
+one interesting area would be to get
+
+00:02:19.085 --> 00:02:22.145
+the volume of the tumor and compare volumes over time.
+
+00:02:22.145 --> 00:02:24.380
+You can see here in the current practice,
+
+00:02:24.380 --> 00:02:27.010
+we would do this normally in three planes.
+
+00:02:27.010 --> 00:02:28.940
+So two measurements in axial,
+
+00:02:28.940 --> 00:02:33.025
+maybe one in the coronal or sagittal plane to get the cranial caudal dimension,
+
+00:02:33.025 --> 00:02:38.150
+but volumes maybe a promising avenue to follow.
+
+00:02:38.150 --> 00:02:42.245
+So besides measuring tools, what else can we do?
+
+00:02:42.245 --> 00:02:47.345
+We can zoom in and out of the image if we need to take particular attention to a region,
+
+00:02:47.345 --> 00:02:50.735
+we may need to window and level to make things stand out.
+
+00:02:50.735 --> 00:02:56.285
+Let's say, I wanted to get a better look at the fat here on the orbit,
+
+00:02:56.285 --> 00:03:00.530
+I can zoom in and change my settings so that I can
+
+00:03:00.530 --> 00:03:05.920
+optimize how clearly the fat stands out with respect to the additional structures.
+
+00:03:05.920 --> 00:03:08.705
+In addition, it's important that
+
+00:03:08.705 --> 00:03:15.125
+the images are linked such that when I'm scrolling through one particular series,
+
+00:03:15.125 --> 00:03:16.490
+the other one follows.
+
+00:03:16.490 --> 00:03:23.280
+Currently, we don't really have a good way of actually linking across time,
+
+00:03:23.280 --> 00:03:25.990
+and that's another potential avenue that could be explored,
+
+00:03:25.990 --> 00:03:30.860
+is having intelligent applications that can register these images to compare across time.
+
+00:03:30.860 --> 00:03:34.540
+That's a foundational view of how these are used day-to-day.
+
+00:03:34.540 --> 00:03:40.700
+Present images, priors, review of multiple series to obtain different information,
+
+00:03:40.700 --> 00:03:43.340
+and performing rudimentary measurements to have
+
+00:03:43.340 --> 00:03:46.250
+a quantitative approach about change over time.
+
+00:03:46.250 --> 00:03:48.275
+So a few additional things.
+
+00:03:48.275 --> 00:03:51.545
+Well, this isn't going to be a course teaching you how to read MRIs,
+
+00:03:51.545 --> 00:03:53.480
+I do want to show you a few key sequences
+
+00:03:53.480 --> 00:03:55.625
+that you're going to see as you explore your data.
+
+00:03:55.625 --> 00:03:59.540
+First, I want to compare the T2 to the FLAIR.
+
+00:03:59.540 --> 00:04:05.730
+Now, you'll see that both the T2 and the FLAIR make things that are fluid or edema,
+
+00:04:05.730 --> 00:04:08.910
+in this case, light up quite nicely.
+
+00:04:08.910 --> 00:04:10.695
+However, there's a difference.
+
+00:04:10.695 --> 00:04:13.785
+Note here in between the sulci,
+
+00:04:13.785 --> 00:04:15.645
+these crevices within the brain,
+
+00:04:15.645 --> 00:04:21.705
+as well as in the ventricles how the fluid is bright on T2 but is dark on FLAIR.
+
+00:04:21.705 --> 00:04:25.190
+You can think of FLAIR as a sequence that's suppresses
+
+00:04:25.190 --> 00:04:29.645
+normal fluids and keeps fluids that are from a disease state,
+
+00:04:29.645 --> 00:04:34.975
+bright This is a bit of an oversimplification but works most of the time.
+
+00:04:34.975 --> 00:04:37.725
+Few other key sequences.
+
+00:04:37.725 --> 00:04:40.625
+We'll look at the T1pre here,
+
+00:04:40.625 --> 00:04:43.295
+and I'm going to pull over the T1post.
+
+00:04:43.295 --> 00:04:45.380
+What do I mean by T1post?
+
+00:04:45.380 --> 00:04:48.625
+This was taken before contrast agent administration,
+
+00:04:48.625 --> 00:04:50.325
+this one was taken after.
+
+00:04:50.325 --> 00:04:52.700
+It's always important to see,
+
+00:04:52.700 --> 00:04:55.130
+whenever you think something is enhancing on post,
+
+00:04:55.130 --> 00:04:58.460
+you need to confirm that it's not intrinsically bright on T1,
+
+00:04:58.460 --> 00:05:00.520
+and we can see here that it is not.
+
+00:05:00.520 --> 00:05:03.615
+What do I mean by that? It's dark on the T1pre,
+
+00:05:03.615 --> 00:05:09.155
+bright on T1post, indicating that this portion of the tumor has indeed taken up contrast.
+
+00:05:09.155 --> 00:05:11.330
+Now, putting it all together,
+
+00:05:11.330 --> 00:05:13.520
+this is how I would report something.
+
+00:05:13.520 --> 00:05:18.800
+Now, of course, this isn't a formal report but I'm just doing it for example purposes.
+
+00:05:18.800 --> 00:05:24.220
+But once I've taken a look at all the images and understood what's going on,
+
+00:05:24.220 --> 00:05:28.715
+I'll then deliver the information in a succinct fashion in a dictated report.
+
+00:05:28.715 --> 00:05:34.450
+So I would say something like, "Compared to 11/19/1991,
+
+00:05:34.450 --> 00:05:40.550
+we see interval growth of the mass within the left frontal parietal region,
+
+00:05:40.550 --> 00:05:49.055
+measuring 3.47 by 3.32 centimeters as compared to 2.63 by 2.53 centimeters.
+
+00:05:49.055 --> 00:05:55.550
+In addition, there has been mild increase in the surrounding peritumoral edema period."
+
+00:05:55.550 --> 00:05:59.950
+In that case, my overall impression would be: compared to the prior,
+
+00:05:59.950 --> 00:06:02.030
+the disease has progressed.
+
+00:06:02.030 --> 00:06:03.650
+Now again, I don't have
+
+00:06:03.650 --> 00:06:07.190
+the patient's full information here and that may be an oversimplification,
+
+00:06:07.190 --> 00:06:10.010
+but that is the essence of imaging review and
+
+00:06:10.010 --> 00:06:13.630
+then summarizing the findings in an actionable form.
+
+00:06:13.630 --> 00:06:17.270
+So hopefully, that's given you a little bit of an insight peak on how
+
+00:06:17.270 --> 00:06:20.390
+these tools are used day-to-day and perhaps,
+
+00:06:20.390 --> 00:06:23.315
+informing you of when you're developing your algorithms,
+
+00:06:23.315 --> 00:06:27.090
+where you may inject them into the daily workflow.
+

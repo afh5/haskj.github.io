@@ -1,0 +1,342 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Section 1 Curating a Dataset of Brain MRIs.html">02. Section 1: Curating a Dataset of Brain MRIs</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace for Section 1.html">03. Workspace for Section 1</a>
+    </li>
+    <li class="">
+      <a href="04. Section 2 Training a Segmentation CNN.html">04. Section 2: Training a Segmentation CNN</a>
+    </li>
+    <li class="">
+      <a href="05. Workspace for Section 2.html">05. Workspace for Section 2</a>
+    </li>
+    <li class="">
+      <a href="06. Section 3 Integrating into a Clinical Network.html">06. Section 3: Integrating into a Clinical Network</a>
+    </li>
+    <li class="">
+      <a href="07. Workspace  for Section 3.html">07. Workspace  for Section 3</a>
+    </li>
+    <li class="">
+      <a href="08. Closing Remarks.html">08. Closing Remarks</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Hippocampal Volume Quantification in Alzheimer's Progression</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Curating a Dataset of Brain MRIs</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Dataset has been cleaned and outliers have been removed</p>
+        </td>
+        <td>
+          <p>Correctly identified and removed the irrelevant files from the given dataset through inspection of the dataset </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project shows an understanding of how to apply medical metadata inspection methods to discover the physical dimensions of anatomical structures.</p>
+        </td>
+        <td>
+          <p>The Jupyter Notebook shows evidence of inspecting header file to find relation between voxel dimensions and physical size, and contains a plot of volume histograms of the dataset.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project shows an understanding of how to extract pixel data for visualization</p>
+        </td>
+        <td>
+          <p>Jupyter Notebook contains renderings of medical volume slices that help inspect dataset slices and validate assumptions that one might have about how pixel data is stored in the arrays read from disk.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Training a Segmentation CNN</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Machine learning scripts run without errors and perform training and validation of the machine learning model.</p>
+        </td>
+        <td>
+          <p>There should be no <code>&lt;YOUR CODE HERE&gt;</code> blocks in the <code>.py</code> files of the project. All the TASK comments should be followed by blocks of code that perform the required actions or answers to questions.</p>
+<p>Out folder contains <code>model.pth</code> file, about ~100Mb in size</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Project shows evidence that a system was established allowing the monitoring of progress via Tensorboard</p>
+        </td>
+        <td>
+          <p>Script establishes proper logging of scalar and image data into Tensorboard folders, and monitoring is performed using Tensorboard server. </p>
+<p>Output folder includes screenshots of train/validation loss plots.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Create a test code that runs without errors and computes volumetric performance measurements.</p>
+        </td>
+        <td>
+          <p>Code in <code>utils/volume_stats.py/Jaccard3D</code> should contain no <code>&lt;YOUR CODE HERE BLOCK&gt;</code>, should contain implementation of the metric and return the computed score.</p>
+<p>Out folder contains results.json file that is a correct JSON and has at least Dice and Jaccard metrics.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Integrating into a Clinical Network</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The inferencing code for DICOM volumes is complete </p>
+        </td>
+        <td>
+          <p>All TASK items in inference_dcm.py should be addressed. A sample report file should be included along with a screenshot/png/jpg version of the said report.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Complete inferencing code for creating reports and pushing them back.</p>
+        </td>
+        <td>
+          <p>Student’s report can be viewed in the OHIF image viewer solution. The report at least has numerical values of volume of the hippocampus structure. </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Create a validation plan.</p>
+        </td>
+        <td>
+          <p>Out folder contains a validation plan. The plan should be in the freeform format, about 1-2 pages and should hit on topics:</p>
+<ul>
+<li>What is the intended use of the product?</li>
+<li>How was the training data collected?</li>
+<li>How did you label your training data?</li>
+<li>How was the training performance of the algorithm measured and how is the real-world performance going to be estimated?</li>
+<li>What data will the algorithm perform well in the real world and what data it might not perform well on?</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ol>
+<li>Write an explanation of how the algorithm works for clinicians.</li>
+<li>Explain requirements for the training process (compute, memory), suggestions for making it more efficient (model architecture, data pipeline, loss functions, data augmentation). What kind of data augmentations would NOT add value?</li>
+<li>Implement additional metrics in testing reports - sensitivity, specificity, accuracy, etc. Include an explanation of those in the #1 writeup.</li>
+<li>Propose a better way of filtering study for the correct series.</li>
+<li>Can you think of what would make the report you generate from your inference better? What would be the relevant information that you could present which would help a clinician better reason about whether your model performed well or not? Can you make it look nicer by making it an RGB image (hint - lookup in <a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3.1.1" rel="noopener noreferrer" target="_blank">DICOM spec</a>)?</li>
+<li>Try to construct a fully valid DICOM as your model output (per <a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.8" rel="noopener noreferrer" target="_blank">DICOM PS3.3#A8</a>) with all relevant fields. Construction of valid DICOM has a very calming effect on the mind and body. </li>
+<li>Try constructing a DICOM image with your segmentation mask so that you can overlay it on the original image using the clinical image viewer.</li>
+</ol></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Hippocampal Volume Quantification in Alzheimer&#x27;s Progression')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

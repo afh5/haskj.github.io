@@ -1,0 +1,451 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.885
+Let's take a closer look at how DIMSE services are set up.
+
+00:00:03.885 --> 00:00:05.850
+So first, a quick reminder,
+
+00:00:05.850 --> 00:00:08.460
+the stack that you see here might seem familiar.
+
+00:00:08.460 --> 00:00:10.305
+This is called the OSI model,
+
+00:00:10.305 --> 00:00:12.510
+the open systems interconnection model.
+
+00:00:12.510 --> 00:00:14.130
+It's a model that characterizes
+
+00:00:14.130 --> 00:00:17.640
+communication functions and define several levels of a networking stack.
+
+00:00:17.640 --> 00:00:19.770
+So at the bottom of the OSI model,
+
+00:00:19.770 --> 00:00:21.020
+you have a physical layer,
+
+00:00:21.020 --> 00:00:22.485
+and then as we go up,
+
+00:00:22.485 --> 00:00:25.770
+you have a higher and higher abstraction layers
+
+00:00:25.770 --> 00:00:29.015
+from the underlying physical networking protocol.
+
+00:00:29.015 --> 00:00:30.965
+At the top of the OSI layer,
+
+00:00:30.965 --> 00:00:34.625
+we have the presentation layer and we have the application layer.
+
+00:00:34.625 --> 00:00:39.590
+DICOM DIMSE services, they operate at the bottom two portions of the OSI stack.
+
+00:00:39.590 --> 00:00:43.000
+For example, an HTTP protocol that basically runs the web,
+
+00:00:43.000 --> 00:00:45.460
+this is how the websites and web services communicate,
+
+00:00:45.460 --> 00:00:46.970
+it occupies the very top level,
+
+00:00:46.970 --> 00:00:49.085
+the application layer of the OSI model.
+
+00:00:49.085 --> 00:00:50.960
+So DICOM DIMSE services,
+
+00:00:50.960 --> 00:00:56.500
+they are a bit more involved and they define a bit more things than HTTP protocol.
+
+00:00:56.500 --> 00:00:58.410
+In DICOM DIMSE networking,
+
+00:00:58.410 --> 00:01:00.420
+we have application entities.
+
+00:01:00.420 --> 00:01:05.300
+Application entities talk to each other and application entities may perform two roles.
+
+00:01:05.300 --> 00:01:08.585
+An application entity, it may be a service class user.
+
+00:01:08.585 --> 00:01:12.529
+It means that it will be asking for something or it will be performing requests,
+
+00:01:12.529 --> 00:01:15.560
+or an application entity could be a service class provider.
+
+00:01:15.560 --> 00:01:18.590
+Service class provider would be serving requests or it would
+
+00:01:18.590 --> 00:01:21.855
+be send an indication to service class user.
+
+00:01:21.855 --> 00:01:25.580
+Such requests could be like these things that we see in the table on the right here.
+
+00:01:25.580 --> 00:01:29.270
+So a service class user might issue a C-STORE request,
+
+00:01:29.270 --> 00:01:33.095
+which basically would be asking a service class provider to store some images.
+
+00:01:33.095 --> 00:01:34.910
+A service class provider for example,
+
+00:01:34.910 --> 00:01:37.640
+might issue a C-MOVE request which would be asking
+
+00:01:37.640 --> 00:01:41.110
+a service class user to move images from one place to another.
+
+00:01:41.110 --> 00:01:45.445
+Let's take a look at how application entities are defined on the networks.
+
+00:01:45.445 --> 00:01:47.930
+An application entity basically has
+
+00:01:47.930 --> 00:01:50.675
+several attributes that uniquely identify it on the network.
+
+00:01:50.675 --> 00:01:53.645
+Application entity has an application entity title,
+
+00:01:53.645 --> 00:01:55.295
+which is an alphanumeric string,
+
+00:01:55.295 --> 00:01:58.130
+it has a port, and it has an IP endpoint.
+
+00:01:58.130 --> 00:02:01.520
+So basically, it's a web service which is listening on a specific port,
+
+00:02:01.520 --> 00:02:03.440
+but on top of that, in DICOM speak,
+
+00:02:03.440 --> 00:02:06.830
+you need to have this application entity title to identify you,
+
+00:02:06.830 --> 00:02:10.850
+which means you can have several application entities listening on the same port,
+
+00:02:10.850 --> 00:02:12.350
+on the same IP address.
+
+00:02:12.350 --> 00:02:15.965
+This image is a screenshot from Slicer, for example,
+
+00:02:15.965 --> 00:02:18.680
+which shows how in Slicer you can configure
+
+00:02:18.680 --> 00:02:22.365
+different networking endpoints that the Slicer can communicate with.
+
+00:02:22.365 --> 00:02:24.470
+It looks very similar to
+
+00:02:24.470 --> 00:02:27.740
+DICOM networking communication configuration windows
+
+00:02:27.740 --> 00:02:30.425
+and many other clinical imaging software.
+
+00:02:30.425 --> 00:02:35.390
+You can see that in order to send images from Slicer in this case,
+
+00:02:35.390 --> 00:02:38.600
+to other DICOM application entities on the network,
+
+00:02:38.600 --> 00:02:41.360
+you need to specify the application entity title, the port,
+
+00:02:41.360 --> 00:02:43.490
+and the IP address, and then you will be able to
+
+00:02:43.490 --> 00:02:46.085
+issue requests to those application entities.
+
+00:02:46.085 --> 00:02:50.550
+So what request could be sent over the network?
+
+00:02:50.550 --> 00:02:52.425
+Let's take a closer look at them.
+
+00:02:52.425 --> 00:02:54.934
+One type of popular request,
+
+00:02:54.934 --> 00:02:57.140
+and this would be the first thing that you would do if
+
+00:02:57.140 --> 00:02:59.720
+you are debugging a DICOM networking,
+
+00:02:59.720 --> 00:03:01.390
+would be a C-ECHO request.
+
+00:03:01.390 --> 00:03:04.355
+C-ECHO request is basically a DICOM ping.
+
+00:03:04.355 --> 00:03:07.400
+So this is a way for a service class user to issue
+
+00:03:07.400 --> 00:03:12.035
+a very simple message to a service class provider and basically ask it, "Are you there?"
+
+00:03:12.035 --> 00:03:13.700
+Because you can send
+
+00:03:13.700 --> 00:03:19.610
+the standard TCP ICMP ping to a networking endpoint and you might get a response,
+
+00:03:19.610 --> 00:03:23.690
+but there might not be a DICOM aware entity listening on the other end.
+
+00:03:23.690 --> 00:03:26.825
+So if you have a network connection but the images are not going through,
+
+00:03:26.825 --> 00:03:30.710
+the next thing to try would be send a C-ECHO request with one of
+
+00:03:30.710 --> 00:03:33.110
+the tools or this could be a functionality which
+
+00:03:33.110 --> 00:03:35.980
+is embedded into your clinical imaging tool,
+
+00:03:35.980 --> 00:03:40.585
+and see if there's anyone listening to DICOM requests on the other end.
+
+00:03:40.585 --> 00:03:44.140
+Another important DIMSE service is called C-STORE,
+
+00:03:44.140 --> 00:03:46.730
+which we had mentioned briefly in this lesson.
+
+00:03:46.730 --> 00:03:50.210
+C-STORE is basically a request from a service class user
+
+00:03:50.210 --> 00:03:53.825
+to a service class provider to store a DICOM instance.
+
+00:03:53.825 --> 00:03:55.430
+Remember in DICOM speak,
+
+00:03:55.430 --> 00:03:57.935
+DICOM instance is a single image basically.
+
+00:03:57.935 --> 00:04:01.700
+So C-STORE sends over DICOM instance and service class provider
+
+00:04:01.700 --> 00:04:05.885
+responds to that by saying that request is acknowledged.
+
+00:04:05.885 --> 00:04:09.170
+There are more services out there in DIMSE networking,
+
+00:04:09.170 --> 00:04:12.360
+there is a C-FIND service which basically returns
+
+00:04:12.360 --> 00:04:15.680
+a list of UIDs that conform to a certain query.
+
+00:04:15.680 --> 00:04:18.350
+There is a C-GET service which sets up a set of
+
+00:04:18.350 --> 00:04:22.120
+C-STORE services from service class provider to a service class user.
+
+00:04:22.120 --> 00:04:26.600
+There is a C-MOVE service which is used to move images from one location to another.
+
+00:04:26.600 --> 00:04:29.660
+As you integrate your AI algorithm into the system,
+
+00:04:29.660 --> 00:04:31.685
+you need to be aware that these things exist.
+
+00:04:31.685 --> 00:04:34.040
+It's unlikely you need to know the details of how they
+
+00:04:34.040 --> 00:04:37.160
+operate and in order to debug the systems,
+
+00:04:37.160 --> 00:04:41.360
+most likely C-STORE will be enough to make sure that you can send images over DICOM,
+
+00:04:41.360 --> 00:04:44.855
+but it is helpful to understand that these things exist.
+
+00:04:44.855 --> 00:04:47.030
+Also, a few important things to keep in mind.
+
+00:04:47.030 --> 00:04:51.665
+So first, application entity can change its role depending on what it is doing.
+
+00:04:51.665 --> 00:04:54.520
+It can be a service class user and send the C-STORE request,
+
+00:04:54.520 --> 00:04:58.295
+and then it can become a service class provider when a C-STORE request comes in.
+
+00:04:58.295 --> 00:05:01.580
+Another thing to note about the DIMSE services,
+
+00:05:01.580 --> 00:05:02.900
+as you might have noticed,
+
+00:05:02.900 --> 00:05:06.895
+there is no notion of series level or studies level transfers.
+
+00:05:06.895 --> 00:05:09.950
+Basically, you send instances over DICOM networks.
+
+00:05:09.950 --> 00:05:12.470
+So C-STORE request defines a store requests for
+
+00:05:12.470 --> 00:05:15.545
+a collection of instances and if you are listening,
+
+00:05:15.545 --> 00:05:18.965
+you don't really have a way to know how many of those are coming in
+
+00:05:18.965 --> 00:05:23.225
+and you don't have a way to know if there are more coming.
+
+00:05:23.225 --> 00:05:28.310
+So there are some workarounds that people have come up with and you need to be
+
+00:05:28.310 --> 00:05:34.835
+aware that if you are relying on receiving the DICOM objects over C-STORE,
+
+00:05:34.835 --> 00:05:37.100
+you need to be aware that you need to
+
+00:05:37.100 --> 00:05:39.920
+track how many of these instances you have received,
+
+00:05:39.920 --> 00:05:45.080
+and you need to probably have some way to understand that this series is complete.
+
+00:05:45.080 --> 00:05:47.630
+Sometimes people read DICOM text for that,
+
+00:05:47.630 --> 00:05:52.315
+sometimes people just have some timeouts and there are different techniques for that.
+
+00:05:52.315 --> 00:05:56.900
+Another interesting thing that you need to be aware of when you're
+
+00:05:56.900 --> 00:06:01.355
+working with DIMSE services is that there is no authentication basically,
+
+00:06:01.355 --> 00:06:04.790
+nowhere in this little bit of introduction into
+
+00:06:04.790 --> 00:06:08.435
+DIMSE services have I spoken about authentication and there is none.
+
+00:06:08.435 --> 00:06:11.420
+The reason for that is the DIMSE services have
+
+00:06:11.420 --> 00:06:14.990
+been first invented before HTTP was even invented and
+
+00:06:14.990 --> 00:06:17.600
+they were invented for the sole purpose of
+
+00:06:17.600 --> 00:06:22.055
+communicating over local area network where everybody trusts everybody.
+
+00:06:22.055 --> 00:06:26.960
+DIMSE services are still used in the clinic in a trusted environment for modalities,
+
+00:06:26.960 --> 00:06:29.675
+for example, to communicate to clinical imaging archives.
+
+00:06:29.675 --> 00:06:30.890
+So you need to keep in mind,
+
+00:06:30.890 --> 00:06:35.345
+then on clinical networks when people use DIMSE services to communicate,
+
+00:06:35.345 --> 00:06:37.655
+anyone can send anything to anyone;
+
+00:06:37.655 --> 00:06:42.080
+and basically looking up application entity titles is the only way to check
+
+00:06:42.080 --> 00:06:47.420
+whether what you're receiving is intended to be sent to you or to someone else.
+
+00:06:47.420 --> 00:06:50.745
+So that's it for DICOM DIMSE services,
+
+00:06:50.745 --> 00:06:53.280
+let's talk a little bit about DICOM web.
+
+00:06:53.280 --> 00:06:56.960
+As we have seen, DICOM DIMSE services have been designed to operate in
+
+00:06:56.960 --> 00:06:58.940
+trusted local area networks without
+
+00:06:58.940 --> 00:07:02.690
+authentication and with many other shortcuts and optimizations.
+
+00:07:02.690 --> 00:07:06.140
+DICOM web is a more recent development in the DICOM standard,
+
+00:07:06.140 --> 00:07:09.035
+it has been designed in web 2.0 era,
+
+00:07:09.035 --> 00:07:11.795
+and it has been designed at a set of APIs,
+
+00:07:11.795 --> 00:07:18.200
+set of services that a DICOM application entity can provide over internet to its clients.
+
+00:07:18.200 --> 00:07:21.080
+DICOM web basically designs same services;
+
+00:07:21.080 --> 00:07:22.760
+it designs a find service,
+
+00:07:22.760 --> 00:07:25.010
+it designs a retrieve service,
+
+00:07:25.010 --> 00:07:29.035
+it designs certain services that have to do with clinical workflows.
+
+00:07:29.035 --> 00:07:33.955
+DICOM web is a RESTful service which has been designed to communicate over Internet.
+
+00:07:33.955 --> 00:07:38.195
+DICOM web seems to be more advanced thing than DICOM DIMSE services,
+
+00:07:38.195 --> 00:07:40.580
+but a lot of DICOM modalities,
+
+00:07:40.580 --> 00:07:42.350
+DICOM application entities in the clinic,
+
+00:07:42.350 --> 00:07:46.535
+still DIMSE services which have been designed to communicate over land.
+
+00:07:46.535 --> 00:07:49.490
+It is important to be aware of both as you think
+
+00:07:49.490 --> 00:07:52.355
+about integrating your AI models in a clinical environment.
+
+00:07:52.355 --> 00:07:59.070
+So next up, let's look about reasonable integration points for your AI algorithms.
+

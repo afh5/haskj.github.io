@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+In this course, you'll be using Jupyter Notebooks
+
+00:00:02.970 --> 00:00:05.985
+throughout the course and be working with Python as well.
+
+00:00:05.985 --> 00:00:09.345
+We'll be working with some fantastic libraries like
+
+00:00:09.345 --> 00:00:13.920
+the industry standards, NumPy, Pandas, Seaborn,
+
+00:00:13.920 --> 00:00:18.585
+MatPlotLib for data loading exploration, visualization,
+
+00:00:18.585 --> 00:00:22.500
+Tensorflow 2.0, Tensorflow Probability,
+
+00:00:22.500 --> 00:00:27.180
+Aequitas, and Shapley for the machine learning parts of the course as well.
+
+00:00:27.180 --> 00:00:29.355
+To be able to complete this course,
+
+00:00:29.355 --> 00:00:32.610
+you need to have intermediate Python skills,
+
+00:00:32.610 --> 00:00:35.535
+as well as data analysis skills,
+
+00:00:35.535 --> 00:00:40.085
+and understanding of ETL and machine learning modeling, and evaluation.
+
+00:00:40.085 --> 00:00:42.515
+This is not an introductory course,
+
+00:00:42.515 --> 00:00:46.715
+and you should have a solid foundation in these skills before taking this course.
+
+00:00:46.715 --> 00:00:49.820
+Luckily, Udacity has many fantastic courses in
+
+00:00:49.820 --> 00:00:53.215
+these areas to get you up to speed for this course.
+
+00:00:53.215 --> 00:00:57.095
+While this course focuses on Python and Tensorflow,
+
+00:00:57.095 --> 00:01:02.140
+there are many other tools you might be exposed to while working with AI and EHR.
+
+00:01:02.140 --> 00:01:06.155
+First, for really big datasets and more computing power,
+
+00:01:06.155 --> 00:01:12.215
+you might use one of the big cloud providers like GCP, Amazon, or Azure.
+
+00:01:12.215 --> 00:01:17.455
+Some other popular languages for working with AI in healthcare might include, R,
+
+00:01:17.455 --> 00:01:25.210
+Julia, and SQL using big data platforms like BigQuery in AWS Athena, or Redshift.
+
+00:01:25.210 --> 00:01:32.010
+Finally, other popular machine learning packages include Scikit Learn, PySpark, Spark.
+
+00:01:32.010 --> 00:01:36.455
+What is important, while some of the features that are specific to TensorFlow,
+
+00:01:36.455 --> 00:01:39.140
+many of the important techniques you'll learn will apply
+
+00:01:39.140 --> 00:01:42.050
+no matter where or how you create your models.
+
+00:01:42.050 --> 00:01:46.039
+Finally, I've worked with a few different EHR data systems.
+
+00:01:46.039 --> 00:01:50.285
+There are actually only a few such as Cerner and Epic.
+
+00:01:50.285 --> 00:01:55.250
+However, it is unlikely you would be working directly with these systems,
+
+00:01:55.250 --> 00:01:57.960
+but it's good to know about them.
+

@@ -1,0 +1,601 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.280
+So previously, I have mentioned that we will have
+
+00:00:02.280 --> 00:00:05.585
+a more in-depth review of a 3D Slicer tool,
+
+00:00:05.585 --> 00:00:08.400
+and this is exactly what we're going to do in this walkthrough.
+
+00:00:08.400 --> 00:00:09.720
+So let's take a look at it.
+
+00:00:09.720 --> 00:00:12.450
+So here, you see a familiar 3D Slicer window.
+
+00:00:12.450 --> 00:00:15.720
+You might have played with it yourself if you tried installing that.
+
+00:00:15.720 --> 00:00:18.000
+Let us see how slicer works with images.
+
+00:00:18.000 --> 00:00:19.700
+So let's click on this "Data" button,
+
+00:00:19.700 --> 00:00:21.975
+and by the way, you see that there are two buttons here.
+
+00:00:21.975 --> 00:00:24.720
+There is a data button which allows you to load files and
+
+00:00:24.720 --> 00:00:27.830
+slicer can load DICOM volumes and NIfTI volumes,
+
+00:00:27.830 --> 00:00:29.795
+and there is this DCM button,
+
+00:00:29.795 --> 00:00:33.950
+which allows you to access your own DICOM archive,
+
+00:00:33.950 --> 00:00:35.510
+or remote DICOM archives,
+
+00:00:35.510 --> 00:00:38.760
+which are set up as a Clinical Networking endpoints.
+
+00:00:38.760 --> 00:00:40.970
+For now, let's just load a volume.
+
+00:00:40.970 --> 00:00:44.315
+We will use a volume which we have seen in the past
+
+00:00:44.315 --> 00:00:47.855
+when we were going through the convolutions exercise.
+
+00:00:47.855 --> 00:00:52.300
+This is a volume of a spleen.
+
+00:00:52.300 --> 00:00:53.685
+So let us load it up.
+
+00:00:53.685 --> 00:00:56.550
+We see these are our images.
+
+00:00:56.550 --> 00:01:00.420
+So this is our original axial plane slice.
+
+00:01:00.420 --> 00:01:02.845
+These are the reconstructed sagittal and coronal.
+
+00:01:02.845 --> 00:01:06.710
+So let us try and do the volume rendering.
+
+00:01:06.710 --> 00:01:09.710
+As I have mentioned in the past when we have seen the 3D Slicers,
+
+00:01:09.710 --> 00:01:11.660
+3D Slicer has all this modules.
+
+00:01:11.660 --> 00:01:13.475
+So 3D Slicer is modular.
+
+00:01:13.475 --> 00:01:15.020
+There are things that come with the tool,
+
+00:01:15.020 --> 00:01:17.060
+there are things that you can develop yourself,
+
+00:01:17.060 --> 00:01:20.465
+or configure, or download from different places.
+
+00:01:20.465 --> 00:01:23.675
+One useful module is the volume rendering module.
+
+00:01:23.675 --> 00:01:25.730
+So let's open that and let's visualize
+
+00:01:25.730 --> 00:01:29.335
+our 3D volume in this 3D rendering view to the right here.
+
+00:01:29.335 --> 00:01:31.290
+Let's select volume from the volumes.
+
+00:01:31.290 --> 00:01:34.040
+Click this little eye icon once it gets loaded.
+
+00:01:34.040 --> 00:01:37.115
+So you can see that the volume is off to the side here.
+
+00:01:37.115 --> 00:01:39.590
+So this is where you would use this little cross
+
+00:01:39.590 --> 00:01:43.185
+here button to center of the volume into the scene.
+
+00:01:43.185 --> 00:01:46.220
+But before we do that, you can see that there are these buttons here,
+
+00:01:46.220 --> 00:01:49.355
+like the cubid tells you actually what are you looking at.
+
+00:01:49.355 --> 00:01:52.865
+The R and the L correspond to right and left side of the patients,
+
+00:01:52.865 --> 00:01:55.700
+S and I correspond to superior and inferior,
+
+00:01:55.700 --> 00:01:58.070
+and A and P is anterior and posterior.
+
+00:01:58.070 --> 00:02:03.410
+So these are the anatomical dimensions that helps you figure out how is the volume
+
+00:02:03.410 --> 00:02:06.140
+oriented and Slicer knows it
+
+00:02:06.140 --> 00:02:09.380
+because slicer has analyzed one of those values that we've talked about,
+
+00:02:09.380 --> 00:02:11.525
+the image orientation patient and others.
+
+00:02:11.525 --> 00:02:18.960
+So let's look at this volume and let's try to do some window level mapping here.
+
+00:02:18.960 --> 00:02:20.660
+So we can see it says CT scan.
+
+00:02:20.660 --> 00:02:22.430
+We can easily focus on the bones.
+
+00:02:22.430 --> 00:02:25.895
+We can focus on some internal autonomy if we wanted to.
+
+00:02:25.895 --> 00:02:32.660
+So this is how you would visualize a 3D volume in the slicer tool and play with it.
+
+00:02:32.660 --> 00:02:35.210
+You can use mouse button to zoom in and zoom out.
+
+00:02:35.210 --> 00:02:37.770
+So that's it for the 3D bit.
+
+00:02:37.770 --> 00:02:41.780
+Let's turn this off and let's load a segmentation into slicer.
+
+00:02:41.780 --> 00:02:43.355
+So let's go here.
+
+00:02:43.355 --> 00:02:46.250
+Here, let's choose a file to add.
+
+00:02:46.250 --> 00:02:47.720
+Let's load this other file.
+
+00:02:47.720 --> 00:02:50.390
+So in this file I have a mask, a segmentation mask,
+
+00:02:50.390 --> 00:02:53.705
+similar to the ones that you will be dealing with in the final exercise.
+
+00:02:53.705 --> 00:02:55.110
+Let me load this.
+
+00:02:55.110 --> 00:02:56.400
+A mask is there,
+
+00:02:56.400 --> 00:02:58.005
+so it's all gray.
+
+00:02:58.005 --> 00:03:00.790
+It's hard to figure out what's happening here.
+
+00:03:00.790 --> 00:03:03.930
+I will go to a data module to see what I'm looking at.
+
+00:03:03.930 --> 00:03:07.700
+So I can see that I have this spleen label volume.
+
+00:03:07.700 --> 00:03:09.715
+If I scroll through this mask,
+
+00:03:09.715 --> 00:03:12.210
+I will see, hopefully, yes.
+
+00:03:12.210 --> 00:03:13.700
+So on some of the axial slices,
+
+00:03:13.700 --> 00:03:15.560
+I can see some white space.
+
+00:03:15.560 --> 00:03:18.365
+Actually, if you look at the left corner here,
+
+00:03:18.365 --> 00:03:21.230
+this is where the slicer will tell you the value of
+
+00:03:21.230 --> 00:03:24.335
+the image that's currently under your cursor.
+
+00:03:24.335 --> 00:03:27.140
+So these are all zeros and this is one.
+
+00:03:27.140 --> 00:03:28.625
+So we have a binary mask.
+
+00:03:28.625 --> 00:03:32.660
+So the values that correspond to a ground truth are labeled with ones.
+
+00:03:32.660 --> 00:03:36.770
+So a convenient thing to do with 3D Slicer when you're dealing with
+
+00:03:36.770 --> 00:03:42.280
+labels like this with binary mask is converting this volume into a label map.
+
+00:03:42.280 --> 00:03:48.560
+Let us do that. Let's right-click and let's click the button edit properties and let's go
+
+00:03:48.560 --> 00:03:54.905
+to volume information and select this Convert to Label Map operation.
+
+00:03:54.905 --> 00:04:00.695
+So you see that all the black stuff is gone and we have the nice green shape here.
+
+00:04:00.695 --> 00:04:04.260
+So let us try to select the active volume.
+
+00:04:04.260 --> 00:04:08.465
+This is how we tell what this labeled map refers to,
+
+00:04:08.465 --> 00:04:14.230
+and let us visualize some of those slicers on our label in 3D.
+
+00:04:14.230 --> 00:04:20.430
+Let's switch back to the volume rendering module and let's switch to our label map.
+
+00:04:21.080 --> 00:04:23.340
+But before we do that,
+
+00:04:23.340 --> 00:04:25.070
+let's click on this little pin here.
+
+00:04:25.070 --> 00:04:29.450
+So this pin allows us to do certain interesting things with our slices.
+
+00:04:29.450 --> 00:04:32.555
+This eye icon actually show slice in 3D.
+
+00:04:32.555 --> 00:04:33.860
+So let's do that,
+
+00:04:33.860 --> 00:04:38.030
+and we see this is the 3D volume that we have and this is our slice.
+
+00:04:38.030 --> 00:04:41.615
+As we scroll, we navigate through different slices.
+
+00:04:41.615 --> 00:04:44.225
+At this point, let's visualize the volume here.
+
+00:04:44.225 --> 00:04:48.310
+So this is the volume that we're dealing with and this is what the volume looks like.
+
+00:04:48.310 --> 00:04:53.180
+So let us go and take a look at the image here,
+
+00:04:53.180 --> 00:04:56.200
+and try to overlay the label on top of the image.
+
+00:04:56.200 --> 00:04:58.360
+I'm using this pin icon,
+
+00:04:58.360 --> 00:04:59.860
+I'm selecting the image here,
+
+00:04:59.860 --> 00:05:02.170
+and I will click this link thing so
+
+00:05:02.170 --> 00:05:06.050
+that this is linked with all the other views that I have here.
+
+00:05:06.050 --> 00:05:10.055
+So now that I have my volume up on the screen,
+
+00:05:10.055 --> 00:05:15.190
+I will go back to the data module and I will click this little eye icon next to
+
+00:05:15.190 --> 00:05:20.570
+the label map and this will cause label map to be rendered on top of the image.
+
+00:05:20.570 --> 00:05:24.995
+So you can see how the label map appears here in the label map selector.
+
+00:05:24.995 --> 00:05:31.230
+We can see how slicer now visualizes this label map very neatly in the 3D view.
+
+00:05:31.570 --> 00:05:34.340
+Because we have this eye icon operational,
+
+00:05:34.340 --> 00:05:39.500
+we can see that we have a visualization of our slice with overlaid label map in 3D.
+
+00:05:39.500 --> 00:05:43.970
+If we go into the volume rendering module and visualize our label,
+
+00:05:43.970 --> 00:05:47.270
+we can see how slice is located in relation to this label.
+
+00:05:47.270 --> 00:05:49.250
+So this label, as you might have guessed,
+
+00:05:49.250 --> 00:05:51.630
+it tells us where the spleen is located in this volume,
+
+00:05:51.630 --> 00:05:55.420
+and this is how I would process and make sense of this dataset.
+
+00:05:55.420 --> 00:05:59.655
+If I can visualize coronal and sagittal slices just in this in the same way,
+
+00:05:59.655 --> 00:06:02.070
+and actually, let me turn off the link.
+
+00:06:02.070 --> 00:06:04.035
+I don't want the coronal slice.
+
+00:06:04.035 --> 00:06:13.260
+I can see how the spleen is located relative to the sagittal slice here.
+
+00:06:13.260 --> 00:06:16.265
+So let us look at the segmentation procedure.
+
+00:06:16.265 --> 00:06:18.980
+We'll go into segmentation module and we have
+
+00:06:18.980 --> 00:06:22.970
+this thing here where we are the drop-down where we don't have any segmentation.
+
+00:06:22.970 --> 00:06:24.635
+Let's create a new segmentation.
+
+00:06:24.635 --> 00:06:25.880
+Let's add a segment.
+
+00:06:25.880 --> 00:06:28.320
+Let's call the segment spleen.
+
+00:06:28.610 --> 00:06:36.450
+Now, let's go and select this segment,
+
+00:06:36.450 --> 00:06:37.890
+click "Edit," select it.
+
+00:06:37.890 --> 00:06:41.555
+Let's set the master volume that the segmentation would be
+
+00:06:41.555 --> 00:06:45.840
+associated with and let us go and try to segment the volume.
+
+00:06:45.840 --> 00:06:48.170
+So I remember by looking at the labeled map,
+
+00:06:48.170 --> 00:06:50.810
+which we just had loaded, where the spleen is located.
+
+00:06:50.810 --> 00:06:58.365
+So let me try and use the Paint Tool to paint over the spleen segmentation,
+
+00:06:58.365 --> 00:07:00.980
+and this is one method of doing slicer segmentations.
+
+00:07:00.980 --> 00:07:04.550
+By the way, there are lots of YouTube videos on slicer.
+
+00:07:04.550 --> 00:07:07.055
+So if you're wondering how to do certain things in Slicer,
+
+00:07:07.055 --> 00:07:09.620
+you're just going to go on YouTube and look it up and you will find
+
+00:07:09.620 --> 00:07:12.445
+people performing all sorts of tests in Slicer.
+
+00:07:12.445 --> 00:07:16.820
+So we have discussed in the segmentation lesson how segmentation is a tedious process.
+
+00:07:16.820 --> 00:07:20.960
+So you can witness why it is so because I need to go through every slice and
+
+00:07:20.960 --> 00:07:26.225
+this volume has rather thin slices and I need to do those segmentations.
+
+00:07:26.225 --> 00:07:29.930
+Slicer has some productivity improvement features here.
+
+00:07:29.930 --> 00:07:35.015
+So for example, I can go and do the fill between slices tool.
+
+00:07:35.015 --> 00:07:36.960
+I started this slice,
+
+00:07:36.960 --> 00:07:38.320
+and I skip a few slices,
+
+00:07:38.320 --> 00:07:40.490
+and I will create a segmentation on this slice.
+
+00:07:40.490 --> 00:07:41.780
+So let me select the Paint tool.
+
+00:07:41.780 --> 00:07:43.885
+Let me draw the segmentation here,
+
+00:07:43.885 --> 00:07:45.580
+so I have another segmentation,
+
+00:07:45.580 --> 00:07:47.840
+and let me fill between slices.
+
+00:07:47.840 --> 00:07:50.240
+I start at this slice, I scroll.
+
+00:07:50.240 --> 00:07:52.055
+Don't forget to click Initialize.
+
+00:07:52.055 --> 00:07:55.400
+I scroll down, and you can see the preview.
+
+00:07:55.400 --> 00:07:58.435
+So these are the interpolated volumes that have been created for me.
+
+00:07:58.435 --> 00:08:00.825
+They look okay.
+
+00:08:00.825 --> 00:08:04.810
+I click "Apply" and the volumes have been created for me.
+
+00:08:04.810 --> 00:08:07.280
+If I look at this sagittal slice,
+
+00:08:07.280 --> 00:08:09.620
+I can see how my segmentation starts to shape up.
+
+00:08:09.620 --> 00:08:12.230
+So I have almost all of my spleen segmented.
+
+00:08:12.230 --> 00:08:14.720
+So let me go and do another field between slices.
+
+00:08:14.720 --> 00:08:19.700
+So let me segment the bottom-most slice and let me do the interpolation from here.
+
+00:08:19.700 --> 00:08:22.930
+I click "Fill between slices," I click "Initialize," I scroll up,
+
+00:08:22.930 --> 00:08:24.645
+and I click Update."
+
+00:08:24.645 --> 00:08:29.155
+So I have a spleen segmentation which might not be perfect.
+
+00:08:29.155 --> 00:08:32.945
+So remember how we talked about inter-observer variability.
+
+00:08:32.945 --> 00:08:35.660
+So now let's take the spleen segmentation and convert
+
+00:08:35.660 --> 00:08:40.340
+the spleen segmentation into a binary label map that would be visualized.
+
+00:08:40.340 --> 00:08:43.630
+So we do the export visible segments into binary label there.
+
+00:08:43.630 --> 00:08:44.820
+Let's title that.
+
+00:08:44.820 --> 00:08:49.190
+Let's visualize our binary label map in 3D.
+
+00:08:49.190 --> 00:08:51.625
+So let's see what it looks like.
+
+00:08:51.625 --> 00:08:53.670
+Well, it looks okay.
+
+00:08:53.670 --> 00:08:55.880
+So it looks like I forgot to interpolate those slices.
+
+00:08:55.880 --> 00:08:59.830
+So this is the point where I would go back and do the painful interpolation here,
+
+00:08:59.830 --> 00:09:00.980
+but at this point,
+
+00:09:00.980 --> 00:09:04.195
+I can take this binary label map and I can save it to NIfTI.
+
+00:09:04.195 --> 00:09:07.590
+So I just quick here, I see Save.
+
+00:09:07.590 --> 00:09:10.190
+3D slicer can save data in multiple formats.
+
+00:09:10.190 --> 00:09:12.710
+So I have all the things that I have in my scene.
+
+00:09:12.710 --> 00:09:15.710
+So these are different label maps on segmentation that I have created.
+
+00:09:15.710 --> 00:09:17.525
+This is the one that I'm interested in.
+
+00:09:17.525 --> 00:09:21.350
+I click the drop-down and I look for NIfTI.
+
+00:09:21.350 --> 00:09:24.860
+This is my NIfTI file down here, and once I select it,
+
+00:09:24.860 --> 00:09:29.960
+I can click "Save" and it will save NIfTI in a directory of my choice.
+
+00:09:29.960 --> 00:09:31.610
+So in this demonstration,
+
+00:09:31.610 --> 00:09:34.610
+we have just seen how you would use 3D slicer to load
+
+00:09:34.610 --> 00:09:37.880
+the volume and take a look at segmentation associated with this volume,
+
+00:09:37.880 --> 00:09:40.640
+and analyze the segmentation in three-dimensions.
+
+00:09:40.640 --> 00:09:44.180
+We have also seen how you would use 3D slicer to segment the volume,
+
+00:09:44.180 --> 00:09:45.800
+to create segmentation for a volume,
+
+00:09:45.800 --> 00:09:48.020
+and convert that into a binary mask,
+
+00:09:48.020 --> 00:09:50.710
+and save that binary mask as a NIfTI file.
+
+00:09:50.710 --> 00:09:54.470
+So after this demonstration,
+
+00:09:54.470 --> 00:09:58.690
+we'll have a little exercise where I'm inviting you to try and do this yourself.
+
+00:09:58.690 --> 00:10:00.170
+Try to load up 3D slicer,
+
+00:10:00.170 --> 00:10:02.480
+try to load up the spleen volume
+
+00:10:02.480 --> 00:10:04.895
+which we have used in the previous lesson and in this one,
+
+00:10:04.895 --> 00:10:09.175
+and try to create a segmentation of the spleen similar to how I just did it.
+
+00:10:09.175 --> 00:10:11.510
+Then as an extra credit exercise,
+
+00:10:11.510 --> 00:10:14.870
+try to use the Dice similarity score computation algorithm
+
+00:10:14.870 --> 00:10:16.970
+which you have implemented in the last lesson
+
+00:10:16.970 --> 00:10:19.670
+to calculate the Dice score between
+
+00:10:19.670 --> 00:10:24.330
+your volume and the ground truth that we had in the previous lesson. Good luck.
+

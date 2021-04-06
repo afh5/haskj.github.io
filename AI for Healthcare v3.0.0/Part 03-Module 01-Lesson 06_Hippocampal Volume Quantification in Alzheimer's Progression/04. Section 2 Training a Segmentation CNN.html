@@ -1,0 +1,272 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Section 2: Training a Segmentation CNN</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Section 1 Curating a Dataset of Brain MRIs.html">02. Section 1: Curating a Dataset of Brain MRIs</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace for Section 1.html">03. Workspace for Section 1</a>
+    </li>
+    <li class="">
+      <a href="04. Section 2 Training a Segmentation CNN.html">04. Section 2: Training a Segmentation CNN</a>
+    </li>
+    <li class="">
+      <a href="05. Workspace for Section 2.html">05. Workspace for Section 2</a>
+    </li>
+    <li class="">
+      <a href="06. Section 3 Integrating into a Clinical Network.html">06. Section 3: Integrating into a Clinical Network</a>
+    </li>
+    <li class="">
+      <a href="07. Workspace  for Section 3.html">07. Workspace  for Section 3</a>
+    </li>
+    <li class="">
+      <a href="08. Closing Remarks.html">08. Closing Remarks</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Section 2: Training a Segmentation CNN</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="section-2-training-a-segmentation-cnn">Section 2: Training a segmentation CNN</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/loss.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You will perform this in the following section <strong>Workspace for Section 2</strong>. This workspace will have the same environment as <strong>Workspace for Section 1</strong> and will have everything that you need to train the machine learning model for segmentation.</p>
+<p>In the directory called <code>section2/src</code> you will find the source code that forms the framework for your machine learning pipeline.</p>
+<p>You will be using <a href="https://pytorch.org/" rel="noopener noreferrer" target="_blank">PyTorch</a> to train the model, similar to exercises in the Segmentation &amp; Classification Lesson, and we will be using <a href="https://www.tensorflow.org/tensorboard/" rel="noopener noreferrer" target="_blank">Tensorboard</a> to visualize the results.</p>
+<p>You will use the script <code>run_ml_pipeline.py</code> to kick off your training pipeline. You can do so right now! The script will not get far, though. It only contains the skeleton of the final solution and a lot of comments. You will need to follow the instructions inside the code files to complete the section and train your model. Same convention is used as in Section 1:</p>
+<ul>
+<li>Comments that start with <code># TASK</code> are tasks, instructions, or questions you <strong>have</strong> to complete</li>
+<li>All other types of comments provide additional background, questions or contain suggestions to make your project stand out.</li>
+</ul>
+<p>You will need to complete all the instructional comments in the code in order to complete this section. You can do this in any order, but it makes most sense to start with the code in <code>run_ml_pipeline.py</code>.</p>
+<p>The code has hooks to log progress to Tensorboard. In order to see the Tensorboard output you need to launch Tensorboard executable from the same directory where <code>run_ml_pipeline.py</code> is located using the following command:</p>
+<blockquote>
+  <p><code>tensorboard --logdir runs --bind_all</code></p>
+</blockquote>
+<p>After that, Tensorboard will write logs into directory called <code>runs</code> and you will be able to view progress by opening the browser and navigating to default port 6006 of the machine where you are running it.</p>
+<h2 id="instructions">Instructions</h2>
+<p>Once you complete this section, copy the following to the directory <code>section2/out</code>:</p>
+<ol>
+<li>Functional code that trains the segmentation model</li>
+<li>Test report with Dice scores on test set (can be json file). Your final average Dice with the default model should be around .90</li>
+<li>Screenshots from your Tensorboard (or other visualization engine) output, showing Train and Validation loss plots, along with images of the predictions that your model is making at different stages of training</li>
+<li>Your trained model PyTorch parameter file (model.pth)</li>
+</ol>
+<h3 id="stand-out-suggestions">Stand-out Suggestions</h3>
+<p>Optionally, you can look into the following to make your project stand out. Put the deliverables in the output directory.</p>
+<ul>
+<li>Can you write a 1-page email explaining what your algorithm is doing to a clinician who will be trying it out, but whom you never met? Make sure you include performance characteristics with some images. Try using their language and think of what would be the important information that they are looking for?</li>
+<li>Implement additional metrics in the test report such as Jaccard score, sensitivity or specificity. Think of what additional metrics would be relevant.</li>
+<li>In our dataset we have labels of 2 classes - anterior and posterior segments of the hippocampus. Can you train a version of model that segments the structure as a whole, only using one class? Is the performance better, the same or worse?</li>
+<li>Write up a short report explaining requirements for your training process (compute, memory) and suggestions for making it more efficient (model architecture, data pipeline, loss functions, data augmentation). What kind of data augmentations would NOT add value?</li>
+<li>What are best and worst performing volumes? Why do you think that's the case?</li>
+</ul>
+<h2 id="udacity-workspace-notes">Udacity Workspace Notes</h2>
+<p>Always run the workspace with GPU on to be in the correct environment. This will also let you access the <strong>Desktop</strong> when you hit the button at the bottom right-hand corner. <br><br />
+<strong>NOTE</strong> The workspace can time out while you are running your training job if you do not work with the workspace for 2 - 5 minutes. If you find that your training process taking longer than that, either reduce the number of epochs or run any command in the terminal, like <code>ls</code> to keep the workspace active.</p>
+<h4 id="upload-the-dataset">Upload the dataset</h4>
+<ol>
+<li>Click on the <strong>+</strong> at the upper right hand corner of the folder panel in the workspace. </li>
+<li>Select <strong>Upload File</strong> to upload the zipped dataset.</li>
+<li>Run the command <code>tar xf &lt;filename&gt;</code> to unzip the dataset.  </li>
+</ol>
+<h4 id="download-the-trained-modelcode">Download the Trained Model/Code</h4>
+<ol>
+<li>Navigate to the location of the model parameter file <code>model.pth</code> you want to download in the folder panel.</li>
+<li>Right click the file in the folder panel on the left side of the workspace.</li>
+<li>Select <strong>Download</strong>.`</li>
+</ol>
+<h4 id="view-slicer">View Slicer</h4>
+<p>When you enter the Desktop you should find a Slicer icon on the left-hand column. If you double click on that it should start-up Slicer. </p>
+<h4 id="tensorboard">Tensorboard</h4>
+<ol>
+<li>Make sure you enable GPU.</li>
+<li>In a terminal move to the src directory through <code>cd src</code> </li>
+<li>Then run the following command to start tensorboard<code>tensorboard --logdir runs --bind_all</code></li>
+<li>The output should have a URL</li>
+<li>Copy that URL </li>
+<li>Open the Desktop with the <strong>Desktop</strong> button at the bottom right hand corner and copy the URL. (It will look something like <code>http://f8196ac7f2cc:6006/</code>) </li>
+<li>If not already open, open a browser.</li>
+<li>On the left hand side there will be an arrow, if you click the arrow, a sidebar that will popup.</li>
+<li>Click on the 2nd icon on the sidebar which is a clipboard and paste the URL here. </li>
+<li>In the address bar you can right click and select <strong>Paste & Go</strong>.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Workspace for Section 2.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Section 2: Training a Segmentation CNN')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

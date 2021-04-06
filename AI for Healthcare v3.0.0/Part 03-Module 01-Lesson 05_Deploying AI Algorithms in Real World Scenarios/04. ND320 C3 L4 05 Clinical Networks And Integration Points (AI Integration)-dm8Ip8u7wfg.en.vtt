@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.030
+So we have just covered a few topics that relate to standards
+
+00:00:03.030 --> 00:00:05.940
+for communicating medical images or clinical networks,
+
+00:00:05.940 --> 00:00:08.745
+and the types of actors that you may see in a clinical network.
+
+00:00:08.745 --> 00:00:11.985
+So let's see where AI algorithm would fit into clinical network.
+
+00:00:11.985 --> 00:00:13.950
+Let's look at this diagram here.
+
+00:00:13.950 --> 00:00:15.450
+So on this diagram,
+
+00:00:15.450 --> 00:00:17.940
+this diagram is a little bit more involved than
+
+00:00:17.940 --> 00:00:22.180
+the diagram that we have seen in the previous section.
+
+00:00:22.340 --> 00:00:24.710
+In this diagram, you see something that
+
+00:00:24.710 --> 00:00:27.410
+resembles more of what you might see in the real world.
+
+00:00:27.410 --> 00:00:30.590
+So sometimes people have this routing service,
+
+00:00:30.590 --> 00:00:33.310
+which listens to all the messages from clinical modalities,
+
+00:00:33.310 --> 00:00:36.440
+and then they make decisions where the images would count to.
+
+00:00:36.440 --> 00:00:37.850
+We have the radiology PACS,
+
+00:00:37.850 --> 00:00:40.630
+and then we might have some other agents here.
+
+00:00:40.630 --> 00:00:43.895
+Sometimes images get routed to other PACS instances.
+
+00:00:43.895 --> 00:00:46.085
+For example, you may have a research PACS,
+
+00:00:46.085 --> 00:00:47.480
+this would be a PACS system in
+
+00:00:47.480 --> 00:00:50.075
+medical image storage system where the research data would go.
+
+00:00:50.075 --> 00:00:52.609
+You would have a separate PACS for clinical specialties.
+
+00:00:52.609 --> 00:00:56.825
+For example, radiation oncology department might have its own image storage.
+
+00:00:56.825 --> 00:00:59.510
+Then you still have our enterprise viewing stations,
+
+00:00:59.510 --> 00:01:01.880
+we have our EHR like agency,
+
+00:01:01.880 --> 00:01:03.345
+we have a cloud-based agent.
+
+00:01:03.345 --> 00:01:09.650
+So when thinking about where to deploy the AI algorithms,
+
+00:01:09.650 --> 00:01:14.210
+you need to really understand what is it doing and what's the value proposition.
+
+00:01:14.210 --> 00:01:18.995
+For example, an AI algorithm could be sitting here right next to a modality.
+
+00:01:18.995 --> 00:01:23.060
+An algorithms sitting on the workstation that has deployed next to a modality,
+
+00:01:23.060 --> 00:01:27.530
+would be doing things that needs to be done immediately after the image is acquired.
+
+00:01:27.530 --> 00:01:30.215
+Sometimes this thing has to do with quality assurance.
+
+00:01:30.215 --> 00:01:32.300
+For example, you might have an AI algorithm which
+
+00:01:32.300 --> 00:01:34.400
+is deciding if an image is a good image,
+
+00:01:34.400 --> 00:01:35.705
+if it's a proper quality,
+
+00:01:35.705 --> 00:01:40.250
+if a proper anatomy was captured and flagged if things didn't happen.
+
+00:01:40.250 --> 00:01:42.950
+Typically, in all scanner rooms there are computers
+
+00:01:42.950 --> 00:01:46.340
+and there are technicians that look at such things.
+
+00:01:46.340 --> 00:01:50.825
+AI algorithms might be designed to improve the quality of imaging and
+
+00:01:50.825 --> 00:01:55.310
+assist the technicians whose job it is to make sure that the images are quite correctly.
+
+00:01:55.310 --> 00:01:58.835
+Another place of integration could be this routing server here.
+
+00:01:58.835 --> 00:02:02.610
+So routing server has to make decisions of where to send images,
+
+00:02:02.610 --> 00:02:05.525
+and AI algorithm might be helping the routing server to send
+
+00:02:05.525 --> 00:02:08.870
+images to one place or another, and so either send them to,
+
+00:02:08.870 --> 00:02:10.060
+for example, research PACS,
+
+00:02:10.060 --> 00:02:11.665
+onto some clinical specialty,
+
+00:02:11.665 --> 00:02:15.350
+or maybe to bubble them up and highlight
+
+00:02:15.350 --> 00:02:19.765
+them as images that need to be taken care of sooner than others.
+
+00:02:19.765 --> 00:02:23.075
+An algorithm that's deployed on the routing server,
+
+00:02:23.075 --> 00:02:28.100
+it might have more relaxed requirements as to the time of processing,
+
+00:02:28.100 --> 00:02:30.890
+and this algorithm might be looking at
+
+00:02:30.890 --> 00:02:35.015
+DICOM DMC messages and might be communicating with DICOM DMC messages.
+
+00:02:35.015 --> 00:02:37.610
+Then you can have algorithms deployed directly on
+
+00:02:37.610 --> 00:02:40.775
+the clinical PACS and these could be algorithms that run in the background.
+
+00:02:40.775 --> 00:02:44.119
+For example, an algorithm that is doing automatic measurements
+
+00:02:44.119 --> 00:02:47.720
+of lesions or different types of anatomy.
+
+00:02:47.720 --> 00:02:50.090
+We've talked about segmentation tasks could be
+
+00:02:50.090 --> 00:02:53.120
+an algorithm that would be deployed directly on clinical PACS.
+
+00:02:53.120 --> 00:02:55.865
+You can have algorithms that sit on a clinical workstation,
+
+00:02:55.865 --> 00:02:58.265
+and it can improve the productivity of radiologists.
+
+00:02:58.265 --> 00:03:04.205
+Other types of algorithms might sit anywhere in those other actors on the network,
+
+00:03:04.205 --> 00:03:08.255
+and sometimes networks, and that's a more recent development.
+
+00:03:08.255 --> 00:03:11.330
+Clinical networks might have separate AI servers where all of
+
+00:03:11.330 --> 00:03:15.230
+those AI algorithms would be accumulated,
+
+00:03:15.230 --> 00:03:19.970
+and your algorithm might be running on some accelerated inferencing platform,
+
+00:03:19.970 --> 00:03:23.890
+which will be designed to get results back faster.
+
+00:03:23.890 --> 00:03:27.170
+So when deploying your AI algorithms in the clinic,
+
+00:03:27.170 --> 00:03:31.205
+it is important to understand the map of the actors in the clinic,
+
+00:03:31.205 --> 00:03:34.430
+understand what is the place of your algorithms integration,
+
+00:03:34.430 --> 00:03:36.845
+because this will define the performance and
+
+00:03:36.845 --> 00:03:40.350
+other operational requirements for your AI algorithm.
+

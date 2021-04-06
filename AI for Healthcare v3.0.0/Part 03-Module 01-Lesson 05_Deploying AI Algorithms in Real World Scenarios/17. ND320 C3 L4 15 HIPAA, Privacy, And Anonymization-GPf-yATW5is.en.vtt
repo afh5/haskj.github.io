@@ -1,0 +1,256 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.695
+So in this section,
+
+00:00:01.695 --> 00:00:05.625
+let's take a quick look at the data privacy laws and the concept of data privacy.
+
+00:00:05.625 --> 00:00:09.720
+Data privacy in the United States is defined by the local HIPAA,
+
+00:00:09.720 --> 00:00:13.000
+which stands for Health Insurance Portability and Accountability Act.
+
+00:00:13.000 --> 00:00:18.315
+A similar law was adopted in the European Union two years ago,
+
+00:00:18.315 --> 00:00:19.830
+and it is called GDPR,
+
+00:00:19.830 --> 00:00:21.900
+General Data Protection Regulation.
+
+00:00:21.900 --> 00:00:24.225
+These laws, among other things,
+
+00:00:24.225 --> 00:00:29.190
+define the concepts of personal health information and define the things;
+
+00:00:29.190 --> 00:00:33.860
+the requirements that entities that deal with personal health information need to
+
+00:00:33.860 --> 00:00:38.960
+comply with in order to transfer and store this information in a safe and secure way.
+
+00:00:38.960 --> 00:00:42.380
+So let's take a bit of a closer look into what HIPAA means.
+
+00:00:42.380 --> 00:00:45.380
+First, if you have taken the first course in this nanodegree,
+
+00:00:45.380 --> 00:00:48.425
+which is AI for electronic medical records software,
+
+00:00:48.425 --> 00:00:52.700
+it is covered there in quite a bit of a more detail than we cover it here,
+
+00:00:52.700 --> 00:00:54.110
+but a quick recap.
+
+00:00:54.110 --> 00:00:57.215
+HIPAA defines two things: privacy rule and security rule.
+
+00:00:57.215 --> 00:01:00.080
+Security rule defines how the entities that
+
+00:01:00.080 --> 00:01:04.810
+store protected patient information should store this information and transfer it,
+
+00:01:04.810 --> 00:01:09.650
+and the privacy rule defines what is the personal health protected health information;
+
+00:01:09.650 --> 00:01:11.495
+how exactly it should be protected.
+
+00:01:11.495 --> 00:01:15.550
+HIPAA defines this concept of BAA or Business Associate Agreement,
+
+00:01:15.550 --> 00:01:17.980
+which is an agreement that should be among
+
+00:01:17.980 --> 00:01:20.935
+any two entities that transfer the data among themselves.
+
+00:01:20.935 --> 00:01:25.690
+So for example, if your AI algorithm is deployed as a part of some system
+
+00:01:25.690 --> 00:01:27.880
+and it taps into a clinical system and it
+
+00:01:27.880 --> 00:01:30.820
+extracts protected health information and sends it back,
+
+00:01:30.820 --> 00:01:33.115
+you will most likely as an entity,
+
+00:01:33.115 --> 00:01:35.740
+need to have a BAA with that entity in order
+
+00:01:35.740 --> 00:01:39.380
+to transfer this data into your system and transfer it back.
+
+00:01:39.380 --> 00:01:41.470
+HIPAA defines the concept of
+
+00:01:41.470 --> 00:01:45.205
+protected health information and we will look a little bit into what that means.
+
+00:01:45.205 --> 00:01:49.225
+Also, as far as demystifying goes,
+
+00:01:49.225 --> 00:01:53.620
+there is no such thing as HIPAA compliant algorithm or HIPAA compliance software.
+
+00:01:53.620 --> 00:01:55.690
+HIPAA defines what PHI is,
+
+00:01:55.690 --> 00:01:59.615
+but HIPAA does not define what exactly a software should be doing
+
+00:01:59.615 --> 00:02:04.840
+to satisfy the requirements that HIPAA sets up in privacy or security rules.
+
+00:02:04.840 --> 00:02:08.570
+So let us look at this excerpt from the HIPAA law.
+
+00:02:08.570 --> 00:02:12.800
+This is where HIPAA law talks very explicitly about what is
+
+00:02:12.800 --> 00:02:17.210
+protected health information and what can you do with de-identified health information,
+
+00:02:17.210 --> 00:02:21.020
+because HIPAA defines the concept of de-identified health information.
+
+00:02:21.020 --> 00:02:24.680
+You can see that protected health information is information,
+
+00:02:24.680 --> 00:02:27.740
+including demographic data that relates to individuals past,
+
+00:02:27.740 --> 00:02:30.650
+present, or future physical or mental health or condition.
+
+00:02:30.650 --> 00:02:33.410
+It's information that relates to the provision of
+
+00:02:33.410 --> 00:02:37.190
+health care to the individual or the past,
+
+00:02:37.190 --> 00:02:40.490
+present, or future payment for the provision of health care to the individual.
+
+00:02:40.490 --> 00:02:42.770
+At the same time, HIPAA says that there are
+
+00:02:42.770 --> 00:02:47.435
+no restrictions on the use or disclosure of de-identified health information,
+
+00:02:47.435 --> 00:02:50.630
+which has some implications to you as a data scientist.
+
+00:02:50.630 --> 00:02:54.755
+HIPAA actually implies, if you are able to de-identify the information,
+
+00:02:54.755 --> 00:02:58.820
+then you are free to use this information anyway you like, basically.
+
+00:02:58.820 --> 00:03:00.920
+This is what allows us to have
+
+00:03:00.920 --> 00:03:04.190
+all this data science competition and all the de-identified medical data,
+
+00:03:04.190 --> 00:03:07.430
+which is available to us to train in the machine learning algorithms.
+
+00:03:07.430 --> 00:03:12.845
+So let us look at the definition of protected health information as HIPAA defines it.
+
+00:03:12.845 --> 00:03:16.145
+In this screenshot from the HIPAA law,
+
+00:03:16.145 --> 00:03:18.500
+you can see that HIPAA is being pretty explicit
+
+00:03:18.500 --> 00:03:21.155
+about what constitutes a protected health information.
+
+00:03:21.155 --> 00:03:24.890
+It defines the 17 categories of information that should be protected.
+
+00:03:24.890 --> 00:03:26.615
+These are things like names,
+
+00:03:26.615 --> 00:03:29.060
+geographic subdivisions, telephone numbers,
+
+00:03:29.060 --> 00:03:32.150
+social security numbers, biometric identifiers,
+
+00:03:32.150 --> 00:03:35.825
+including fingerprints, and full face photographic images.
+
+00:03:35.825 --> 00:03:39.335
+But there's also one interesting bit here at the end that says,
+
+00:03:39.335 --> 00:03:43.190
+any other unique identifying number, characteristic, or code.
+
+00:03:43.190 --> 00:03:45.830
+Which basically means that if you think
+
+00:03:45.830 --> 00:03:48.140
+that there is something that you are dealing with when you are
+
+00:03:48.140 --> 00:03:53.120
+trying to de-identify a data set which is not covered by any of the 16 categories,
+
+00:03:53.120 --> 00:03:56.315
+but which still could be identifying feature of a data,
+
+00:03:56.315 --> 00:04:00.425
+then it is actually probably not okay to share this data.
+
+00:04:00.425 --> 00:04:02.915
+This could be things like unique feature,
+
+00:04:02.915 --> 00:04:05.750
+like unique anatomical variation,
+
+00:04:05.750 --> 00:04:07.470
+or maybe some unique implant.
+
+00:04:07.470 --> 00:04:10.130
+Or maybe you are dealing with a patient who
+
+00:04:10.130 --> 00:04:13.055
+falls way outside the range on the high scale,
+
+00:04:13.055 --> 00:04:17.070
+Maybe your data includes someone's full body CT scan,
+
+00:04:17.070 --> 00:04:19.320
+and you can see that this person is seven feet tall,
+
+00:04:19.320 --> 00:04:22.400
+and you know that there's only one person like that in the whole state,
+
+00:04:22.400 --> 00:04:23.740
+that means that this data,
+
+00:04:23.740 --> 00:04:26.445
+even though it will be compliant with all the 17 categories,
+
+00:04:26.445 --> 00:04:29.075
+would still be considered as a protected health data.
+
+00:04:29.075 --> 00:04:32.840
+After that, we will do a little exercise which will
+
+00:04:32.840 --> 00:04:37.650
+help you try and de-identify a medical imaging data set yourself.
+

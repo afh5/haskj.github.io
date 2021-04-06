@@ -1,0 +1,310 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project Overview</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Section 1 Curating a Dataset of Brain MRIs.html">02. Section 1: Curating a Dataset of Brain MRIs</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace for Section 1.html">03. Workspace for Section 1</a>
+    </li>
+    <li class="">
+      <a href="04. Section 2 Training a Segmentation CNN.html">04. Section 2: Training a Segmentation CNN</a>
+    </li>
+    <li class="">
+      <a href="05. Workspace for Section 2.html">05. Workspace for Section 2</a>
+    </li>
+    <li class="">
+      <a href="06. Section 3 Integrating into a Clinical Network.html">06. Section 3: Integrating into a Clinical Network</a>
+    </li>
+    <li class="">
+      <a href="07. Workspace  for Section 3.html">07. Workspace  for Section 3</a>
+    </li>
+    <li class="">
+      <a href="08. Closing Remarks.html">08. Closing Remarks</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Project Overview</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="quantifying-hippocampus-volume-for-alzheimers-progression">Quantifying Hippocampus Volume for Alzheimer's Progression</h1>
+<h2 id="background">Background</h2>
+<p>Alzheimer's disease (AD) is a progressive neurodegenerative disorder that results in impaired neuronal (brain cell) function and eventually, cell death. AD is the most common cause of dementia. Clinically, it is characterized by memory loss, inability to learn new material, loss of language function, and other manifestations.</p>
+<p>For patients exhibiting early symptoms, quantifying disease progression over time can help direct therapy and disease management.</p>
+<p>A radiological study via MRI exam is currently one of the most advanced methods to quantify the disease. In particular, the measurement of hippocampal volume has proven useful to diagnose and track progression in several brain disorders, most notably in AD. Studies have shown a reduced volume of the hippocampus in patients with AD.</p>
+<p>The hippocampus is a critical structure of the human brain (and the brain of other vertebrates) that plays important roles in the consolidation of information from short-term memory to long-term memory. In other words, the hippocampus is thought to be responsible for memory and learning (that's why we are all here, after all!)</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/hippocampus-small.gif" alt="&lt;b&gt;Hippocampus&lt;/b&gt; &lt;br&gt; &lt;small&gt;Source: Life Science Databases (LSDB). Hippocampus. Images are from Anatomography maintained by Life Science Databases (LSDB). (2010). CC-BY-SA 2.1jp. [Link](https://commons.wikimedia.org/wiki/File:Hippocampus_small.gif) &lt;/small&gt;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><b>Hippocampus</b> <br> <small>Source: Life Science Databases (LSDB). Hippocampus. Images are from Anatomography maintained by Life Science Databases (LSDB). (2010). CC-BY-SA 2.1jp. <a href="https://commons.wikimedia.org/wiki/File:Hippocampus_small.gif" rel="noopener noreferrer" target="_blank">Link</a> </small></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Humans have two hippocampi, one in each hemisphere of the brain. They are located in the medial temporal lobe of the brain. Fun fact - the word "hippocampus" is roughly translated from Greek as "horselike" because of the similarity to a seahorse observed by one of the first anatomists to illustrate the structure, but you can also see the comparison in the following image.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/hippocampus-and-seahorse-cropped.jpg" alt="&lt;b&gt;Seahorse &amp; Hippocampus&lt;/b&gt; &lt;br&gt; &lt;small&gt;Source: Seress, Laszlo. Laszlo Seress&#x27; preparation of a human hippocampus alongside a sea horse. (1980). CC-BY-SA 1.0. [Link](https://commons.wikimedia.org/wiki/File:Hippocampus_and_seahorse.JPG) &lt;/small&gt;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><b>Seahorse & Hippocampus</b> <br> <small>Source: Seress, Laszlo. Laszlo Seress' preparation of a human hippocampus alongside a sea horse. (1980). CC-BY-SA 1.0. <a href="https://commons.wikimedia.org/wiki/File:Hippocampus_and_seahorse.JPG" rel="noopener noreferrer" target="_blank">Link</a> </small></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>According to <a href="https://www.sciencedirect.com/science/article/pii/S2213158219302542" rel="noopener noreferrer" target="_blank">Nobis et al., 2019</a>, the volume of hippocampus varies in a population, depending on various parameters, within certain boundaries, and it is possible to identify a "normal" range taking into account age, sex and brain hemisphere.</p>
+<p>You can see this in the image below where the right hippocampal volume of women across ages 52 - 71 is shown. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nomogram-fem-right.jpg" alt="&lt;b&gt;Nomogram - Female, Right Hippocampus Volume, Corrected for Head Size&lt;/b&gt; &lt;br&gt; &lt;small&gt;Source: Nobis, L., Manohar, S.G., Smith, S.M., Alfaro-Almagro, F., Jenkinson, M., Mackay, C.E., Husain, M. Hippocampal volume across age: Nomograms derived from over 19,700 people in UK Biobank. Neuroimage: Clinical, 23(2019), pp. 2213-1582.&lt;/small&gt;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><b>Nomogram - Female, Right Hippocampus Volume, Corrected for Head Size</b> <br> <small>Source: Nobis, L., Manohar, S.G., Smith, S.M., Alfaro-Almagro, F., Jenkinson, M., Mackay, C.E., Husain, M. Hippocampal volume across age: Nomograms derived from over 19,700 people in UK Biobank. Neuroimage: Clinical, 23(2019), pp. 2213-1582.</small></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>There is one problem with measuring the volume of the hippocampus using MRI scans, though - namely, the process tends to be quite tedious since every slice of the 3D volume needs to be analyzed, and the shape of the structure needs to be traced. The fact that the hippocampus has a non-uniform shape only makes it more challenging. Do you think you could spot the hippocampi in this axial slice below?</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/mri.jpg" alt="Axial slice of an MRI image of the brain" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Axial slice of an MRI image of the brain</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>As you might have guessed by now, we are going to build a piece of AI software that could help clinicians perform this task faster and more consistently.</p>
+<p>You have seen throughout the course that a large part of AI development effort is taken up by curating the dataset and proving clinical efficacy. In this project, we will focus on the technical aspects of building a segmentation model and integrating it into the clinician's workflow, leaving the dataset curation and model validation questions largely outside the scope of this project.</p>
+<h2 id="what-you-will-build">What You Will Build</h2>
+<p>In this project you will build an end-to-end AI system which features a machine learning algorithm that integrates into a clinical-grade viewer and automatically measures hippocampal volumes of new patients, as their studies are committed to the clinical imaging archive.</p>
+<p>Fortunately you won't have to deal with full heads of patients. Our (fictional) radiology department runs a HippoCrop tool which cuts out a rectangular portion of a brain scan from every image series, making your job a bit easier, and our committed radiologists have collected and annotated a dataset of relevant volumes, and even converted them to NIFTI format!</p>
+<p>You will use the dataset that contains the segmentations of the right hippocampus and you will use the U-Net architecture to build the segmentation model.</p>
+<p>After that, you will proceed to integrate the model into a working clinical PACS such that it runs on every incoming study and produces a report with volume measurements.</p>
+<h2 id="the-dataset">The Dataset</h2>
+<p>We are using the "Hippocampus" dataset from the <a href="http://medicaldecathlon.com/" rel="noopener noreferrer" target="_blank">Medical Decathlon competition</a>. This dataset is stored as a collection of NIFTI files, with one file per volume, and one file per corresponding segmentation mask. The original images here are T2 MRI scans of the full brain. As noted, in this dataset we are using cropped volumes where only the region around the hippocampus has been cut out. This makes the size of our dataset quite a bit smaller, our machine learning problem a bit simpler and allows us to have reasonable training times. You should not think of it as "toy" problem, though. Algorithms that crop rectangular regions of interest are quite common in medical imaging. Segmentation is still hard.</p>
+<h2 id="the-programming-environment">The Programming Environment</h2>
+<p>You will have two options for the environment to use throughout this project:</p>
+<h3 id="udacity-workspaces">Udacity Workspaces</h3>
+<p>These are setup environments that contains all you need from the <strong>Local Environment</strong> section below that you can run directly on your web browser.</p>
+<h3 id="local-environment">Local Environment</h3>
+<p>If you would like to run the project locally, you would need a Python 3.7+ environment with the following libraries for the first two sections of the project:</p>
+<ul>
+<li><a href="https://pytorch.org/" rel="noopener noreferrer" target="_blank">PyTorch</a> (preferably with CUDA)</li>
+<li><a href="https://nipy.org/nibabel/" rel="noopener noreferrer" target="_blank">nibabel</a></li>
+<li><a href="https://matplotlib.org/users/installing.html" rel="noopener noreferrer" target="_blank">matplotlib</a></li>
+<li><a href="https://numpy.org/" rel="noopener noreferrer" target="_blank">numpy</a></li>
+<li><a href="https://pydicom.github.io/pydicom/stable/tutorials/installation.html" rel="noopener noreferrer" target="_blank">pydicom</a></li>
+<li><a href="https://pillow.readthedocs.io/en/stable/installation.html" rel="noopener noreferrer" target="_blank">Pillow</a> (should be installed with pytorch)</li>
+<li><a href="https://pypi.org/project/tensorboard/" rel="noopener noreferrer" target="_blank">tensorboard</a></li>
+</ul>
+<p>In the 3rd section of the project we will be working with three software products for emulating the clinical network. You would need to install and configure:</p>
+<ul>
+<li><a href="https://www.orthanc-server.com/download.php" rel="noopener noreferrer" target="_blank">Orthanc server</a> for PACS emulation</li>
+<li><a href="https://docs.ohif.org/development/getting-started.html" rel="noopener noreferrer" target="_blank">OHIF zero-footprint web viewer</a> for viewing images. Note that if you deploy OHIF from its github repository, at the moment of writing the repo includes a yarn script (<code>orthanc:up</code>) where it downloads and runs the Orthanc server from a Docker container. If that works for you, you won't need to install Orthanc separately.</li>
+<li>If you are using Orthanc (or other DICOMWeb server), you will need to configure OHIF to read data from your server. OHIF has instructions for this: <a href="https://docs.ohif.org/configuring/data-source.html" rel="noopener noreferrer" target="_blank">https://docs.ohif.org/configuring/data-source.html</a></li>
+<li>In order to fully emulate the Udacity workspace, you will also need to configure Orthanc for auto-routing of studies to automatically direct them to your AI algorithm. For this you will need to take the script that you can find at <code>section3/src/deploy_scripts/route_dicoms.lua</code> and install it to Orthanc as explained on this page: <a href="https://book.orthanc-server.com/users/lua.html" rel="noopener noreferrer" target="_blank">https://book.orthanc-server.com/users/lua.html</a></li>
+<li><a href="https://dcmtk.org/" rel="noopener noreferrer" target="_blank">DCMTK tools</a> for testing and emulating a modality. Note that if you are running a Linux distribution, you might be able to install dcmtk directly from the package manager (e.g. <code>apt-get install dcmtk</code> in Ubuntu)</li>
+</ul>
+<p>You can look at the rubric for this project <a href="https://review.udacity.com/#!/rubrics/2788/view" rel="noopener noreferrer" target="_blank">here</a>. Let's get started!</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Section 1 Curating a Dataset of Brain MRIs.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Project Overview')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.835
+So to understand medical device regulation,
+
+00:00:02.835 --> 00:00:06.090
+you need to understand the process of medical device regulation.
+
+00:00:06.090 --> 00:00:08.505
+Process usually consists of two parts.
+
+00:00:08.505 --> 00:00:10.350
+First, there is the part that's called the
+
+00:00:10.350 --> 00:00:13.290
+Clearance for certain types of medical devices,
+
+00:00:13.290 --> 00:00:15.510
+like class two and class three medical devices,
+
+00:00:15.510 --> 00:00:18.660
+you need to submit a documentation package to the FDA,
+
+00:00:18.660 --> 00:00:21.470
+showing what kind of device have you built,
+
+00:00:21.470 --> 00:00:23.555
+and proving that you have built this device
+
+00:00:23.555 --> 00:00:27.245
+complying with certain quality bars that FDA would like you to meet.
+
+00:00:27.245 --> 00:00:29.315
+Second thing that you need to put in place,
+
+00:00:29.315 --> 00:00:32.120
+you need to put in place a Quality Management System.
+
+00:00:32.120 --> 00:00:34.715
+Whereas clearance is something that you do once,
+
+00:00:34.715 --> 00:00:38.300
+quality management system is something that you as a company
+
+00:00:38.300 --> 00:00:42.590
+that's deployed this AI algorithm into the clinic,
+
+00:00:42.590 --> 00:00:44.435
+needs to comply with the need to sustain.
+
+00:00:44.435 --> 00:00:48.560
+You need to show that you have a quality management system which allows you to maintain
+
+00:00:48.560 --> 00:00:50.390
+the quality level that you've demonstrated in
+
+00:00:50.390 --> 00:00:53.540
+your clearance when you've submitted initial documentation package.
+
+00:00:53.540 --> 00:00:56.440
+A few words under the FDA quality management system.
+
+00:00:56.440 --> 00:01:01.970
+FDA Quality Management System is regulated by federal law, 21 CFR 820,
+
+00:01:01.970 --> 00:01:06.005
+part 30, or in case of a European regulatory bodies,
+
+00:01:06.005 --> 00:01:08.260
+is the ISO standards, 13485.
+
+00:01:08.260 --> 00:01:12.150
+You can look up actually either one of those things and get a pretty good idea.
+
+00:01:12.150 --> 00:01:15.305
+It's fairly clearly written what exactly is required.
+
+00:01:15.305 --> 00:01:19.325
+This regulation defines procedures that have to be put in place
+
+00:01:19.325 --> 00:01:23.030
+and defines things like design review process for your software,
+
+00:01:23.030 --> 00:01:26.315
+or things like software verification and validation protocols,
+
+00:01:26.315 --> 00:01:28.390
+or maybe storage of software artifacts,
+
+00:01:28.390 --> 00:01:32.540
+and who and at what point needs to have access to what sort of software artifacts,
+
+00:01:32.540 --> 00:01:34.045
+and some other things.
+
+00:01:34.045 --> 00:01:36.390
+The FDA Clearance Process,
+
+00:01:36.390 --> 00:01:37.550
+which is as you remember,
+
+00:01:37.550 --> 00:01:41.090
+this is onetime documentation package that you sent to FDA upfront,
+
+00:01:41.090 --> 00:01:44.030
+involves putting together information about things
+
+00:01:44.030 --> 00:01:47.285
+like your software requirement specification of your software,
+
+00:01:47.285 --> 00:01:49.790
+or things like software design specifications,
+
+00:01:49.790 --> 00:01:51.665
+maybe some traceability analysis,
+
+00:01:51.665 --> 00:01:54.560
+showing that all of your software requirements have been implemented
+
+00:01:54.560 --> 00:01:57.770
+and have tests that confirmed that they had been implemented.
+
+00:01:57.770 --> 00:01:59.510
+It may have hazard analysis,
+
+00:01:59.510 --> 00:02:02.560
+which is a register of all the risks that you foresee that
+
+00:02:02.560 --> 00:02:05.970
+your software might encounter and how you plan to mitigate those risks.
+
+00:02:05.970 --> 00:02:08.960
+It might have some architecture diagrams.
+
+00:02:08.960 --> 00:02:12.620
+One other thing that FDA clearance package would need to have,
+
+00:02:12.620 --> 00:02:15.365
+is verification and validation documentation.
+
+00:02:15.365 --> 00:02:18.350
+A little bit of a reminder from the world of software engineering.
+
+00:02:18.350 --> 00:02:21.420
+Verification is a process of proving that should build the thing right.
+
+00:02:21.420 --> 00:02:25.175
+Is a process of proving that you have satisfied all your software requirements.
+
+00:02:25.175 --> 00:02:29.060
+Validation is the process of proving that you have built the right thing,
+
+00:02:29.060 --> 00:02:30.970
+that you have built what you intended to be built,
+
+00:02:30.970 --> 00:02:33.680
+and that if you say that your thing for example,
+
+00:02:33.680 --> 00:02:36.095
+can classify, let's say, tumors,
+
+00:02:36.095 --> 00:02:41.600
+or it can compute the volumes of certain lesions in the lungs with a certain accuracy.
+
+00:02:41.600 --> 00:02:43.460
+Validation process would be all about
+
+00:02:43.460 --> 00:02:47.170
+proving that this is actually what your algorithm can do.
+
+00:02:47.170 --> 00:02:50.810
+This is where it gets interesting for the data scientist,
+
+00:02:50.810 --> 00:02:53.390
+because if you are developing an AI algorithm,
+
+00:02:53.390 --> 00:02:55.595
+it is likely that this algorithm will be
+
+00:02:55.595 --> 00:02:58.400
+brought to the real world through some sort of software,
+
+00:02:58.400 --> 00:03:02.195
+where this algorithm would be a key differentiating feature.
+
+00:03:02.195 --> 00:03:04.745
+This is why as a data scientist,
+
+00:03:04.745 --> 00:03:07.250
+it is likely that you will be
+
+00:03:07.250 --> 00:03:12.079
+asked more likely to provide input into this validation process,
+
+00:03:12.079 --> 00:03:14.780
+and to design this process of proving that
+
+00:03:14.780 --> 00:03:19.090
+your algorithm actually meets this requirements that you have set in front of yourself.
+
+00:03:19.090 --> 00:03:21.105
+Actually one thing to remember,
+
+00:03:21.105 --> 00:03:25.920
+there is a public database of all the clearances that have been submitted to the FDA,
+
+00:03:25.920 --> 00:03:28.640
+and you can look up what other people wrote in
+
+00:03:28.640 --> 00:03:32.605
+this clearance and how they approach the process of validating their software.
+
+00:03:32.605 --> 00:03:35.850
+So again, what role does FDA
+
+00:03:35.850 --> 00:03:39.635
+play or other regulatory bodies play in the life of an AI engineer?
+
+00:03:39.635 --> 00:03:43.460
+The biggest impact would be contributing to the validation process.
+
+00:03:43.460 --> 00:03:47.060
+You will need to prove that you are solving actually
+
+00:03:47.060 --> 00:03:51.235
+the problem that you are claimed to be solving and you need to be methodical about that.
+
+00:03:51.235 --> 00:03:54.060
+FDA has quite a good guidance in validation
+
+00:03:54.060 --> 00:03:57.470
+of medical software and I invite you to take a look at that.
+
+00:03:57.470 --> 00:04:00.830
+We'll post some links at the bottom of this concept.
+
+00:04:00.830 --> 00:04:03.710
+Your Validation plan, the input into
+
+00:04:03.710 --> 00:04:08.010
+the validation process might be looking at things like,
+
+00:04:08.010 --> 00:04:09.705
+what is the intended use?
+
+00:04:09.705 --> 00:04:11.180
+So remember the intended use,
+
+00:04:11.180 --> 00:04:14.130
+which defines whether your thing is the medical device or not,
+
+00:04:14.130 --> 00:04:17.345
+you need to be clear about what the thing is intended to be used for.
+
+00:04:17.345 --> 00:04:20.240
+Also, if it's a machine learning algorithm
+
+00:04:20.240 --> 00:04:23.170
+and it's been trained using some sort of training data,
+
+00:04:23.170 --> 00:04:26.840
+you need to provide evidence that you acquired your training data in
+
+00:04:26.840 --> 00:04:30.875
+a consistent process and that represents which you expect to see in the real world.
+
+00:04:30.875 --> 00:04:34.910
+So we need to prove where did you get your ground truth from and why do you
+
+00:04:34.910 --> 00:04:39.020
+think it's a reasonable ground truth to be used for solving this problem?
+
+00:04:39.020 --> 00:04:44.090
+You might also be required to tell how did you measure the performance of your algorithm?
+
+00:04:44.090 --> 00:04:46.070
+What performance metrics did you use and
+
+00:04:46.070 --> 00:04:48.335
+what do clinicians think about those performance metrics?
+
+00:04:48.335 --> 00:04:51.380
+Are this performance metrics actually confirming that
+
+00:04:51.380 --> 00:04:55.660
+your algorithm is performing well in the clinic and is solving the clinical problem?
+
+00:04:55.660 --> 00:04:58.730
+Also, some other considerations
+
+00:04:58.730 --> 00:05:01.940
+that you need to take in mind as you're building this validation plan,
+
+00:05:01.940 --> 00:05:05.600
+is thinking about the data that your algorithm will meet in the real world,
+
+00:05:05.600 --> 00:05:08.990
+and what type of data your algorithm will perform well on,
+
+00:05:08.990 --> 00:05:11.355
+and what type of data it will not perform well on,
+
+00:05:11.355 --> 00:05:13.060
+and why do you think that?
+
+00:05:13.060 --> 00:05:17.525
+In the final project that we will do after this exercise,
+
+00:05:17.525 --> 00:05:21.620
+you will be asked to write up a little validation plan proposal.
+
+00:05:21.620 --> 00:05:23.150
+As you are writing that,
+
+00:05:23.150 --> 00:05:25.790
+think about all this questions as they pertain
+
+00:05:25.790 --> 00:05:29.310
+to the problem that you are solving within the final project.
+

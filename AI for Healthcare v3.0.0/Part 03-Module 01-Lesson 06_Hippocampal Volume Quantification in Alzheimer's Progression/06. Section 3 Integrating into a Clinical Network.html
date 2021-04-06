@@ -1,0 +1,306 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Section 3: Integrating into a Clinical Network</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Section 1 Curating a Dataset of Brain MRIs.html">02. Section 1: Curating a Dataset of Brain MRIs</a>
+    </li>
+    <li class="">
+      <a href="03. Workspace for Section 1.html">03. Workspace for Section 1</a>
+    </li>
+    <li class="">
+      <a href="04. Section 2 Training a Segmentation CNN.html">04. Section 2: Training a Segmentation CNN</a>
+    </li>
+    <li class="">
+      <a href="05. Workspace for Section 2.html">05. Workspace for Section 2</a>
+    </li>
+    <li class="">
+      <a href="06. Section 3 Integrating into a Clinical Network.html">06. Section 3: Integrating into a Clinical Network</a>
+    </li>
+    <li class="">
+      <a href="07. Workspace  for Section 3.html">07. Workspace  for Section 3</a>
+    </li>
+    <li class="">
+      <a href="08. Closing Remarks.html">08. Closing Remarks</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Description - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression.html">Project Rubric - Hippocampal Volume Quantification in Alzheimer&#x27;s Progression</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. Section 3: Integrating into a Clinical Network</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="section-3-integrating-into-a-clinical-network">Section 3: Integrating into a Clinical Network</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ohif.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In this final section you will use some of the work you did for Section 2 to create an AI product that can be integrated into a clinical network and provide the auto-computed information on the hippocampal volume to the clinicians. While hospital integrations are typically handled by hospital IT staff, it will help tremendously if you can talk the same language with the people who will operate your model, and will have a feel for how clinical radiological software works. These skills will also help you debug your model in the field.</p>
+<p>You will perform this section in a different workspace than the previous two sections: <strong>Workspace for Section 3</strong>. This workspace is a simpler hardware, with no GPU, which is more representative of a clinical environment. This workspace also has a few tools installed in it, which is replicates the following clinical network setup:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/network-setup.png" alt="Network setup emulated by Workspace 2" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Network setup emulated by Workspace 2</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Specifically, we have the following software in this setup:</p>
+<ul>
+<li>MRI scanner is represented by a script <code>section3/src/deploy_scripts/send_volume.sh</code>. When you run this script it will simulate what happens after a radiological exam is complete, and send a volume to the clinical PACS. Note that scanners typically send entire studies to archives.<br />
+*PACS server is represented by <a href="http://orthanc-server.com/" rel="noopener noreferrer" target="_blank">Orthanc</a> deployment that is listening to DICOM DIMSE requests on port 4242. Orthanc also has a DicomWeb interface that is exposed at port 8042, prefix /dicom-web. There is no authentication and you are welcome to explore either one of the mechanisms of access using a tool like curl or Postman. Our PACS server is also running an auto-routing module that sends a copy of everything it receives to an AI server. See instructions ad the end of this page on how to launch if you are using the Udacity Workspace.  </li>
+<li>Viewer system is represented by <a href="http://ohif.org/" rel="noopener noreferrer" target="_blank">OHIF</a>. It is connecting to the Orthanc server using DicomWeb and is serving a web application on port 3000. Again, see instructions at the end of this page if you are using the Udacity Workspace.</li>
+<li>AI server is represented by a couple of scripts. <code>section3/src/deploy_scripts/start_listener.sh</code> brings up a DCMTK's <code>storescp</code> and configures it to just copy everything it receives into a directory that you will need to specify by editing this script, organizing studies as one folder per study. HippoVolume.AI is the AI module that you will create in this section.</li>
+</ul>
+<p>If you want to replicate this environment on your local machine, you will find instructions in the Project Overview concept.</p>
+<p>As with Section 2, in the directory called <code>section3/src</code> you will find the source code that forms the skeleton of the HippoVolume.AI module.</p>
+<p><code>inference_dcm.py</code> is the file that you will be working on. It contains code that will analyze the directory of the AI server that contains the routed studies, find the right series to run your algorithm on, will generate report, and push it back to our PACS.</p>
+<p>Note that in real system you would architect things a bit differently. Probably, AI server would be a separate piece of software that would monitor the output of the listener, and would manage multiple AI modules, deciding which one to run, automatically. In our case, for the sake of simplicity, all code sits in one Python script that you would have to run manually after you simulate an exam via the <code>send_volume.sh</code> script - <code>inference_dcm.py</code>. It combines the functions of processing of the listener output and executing the model, and it does not do any proper error handling :)</p>
+<p>As before, you will need to follow the instructions inside the code files to complete the section and create your AI module. Same convention is used as in Sections 1 and 2: comments that start with <code># TASK</code> instruct you to create certain code snippets, and all other types of comments provide background or stand-out suggestions.</p>
+<p>You will need to complete all the instructional comments in the code in order to complete this section. You can do this in any order, but it makes most sense to start with the code in <code>inference_dcm.py</code>.</p>
+<p>Once you complete the code, you can test it by running</p>
+<blockquote>
+  <p><code>deploy_scripts/send_volume.sh</code></p>
+</blockquote>
+<p>which will simulate a completion of MRI study and sending of patient data to our PACS, and then following that by running <code>inference_dcm.py</code></p>
+<p>The <code>send_volume.sh</code> script needs to be run from directory <code>section3/src</code> (because it relies on relative paths). If you did everything correctly, an MRI scan will be sent to the PACS and to your module which will compute the volume, prepare the report and push it back to the PACS so that it could be inspected in our clinical viewer.</p>
+<p>At this point, go to <em>[YOUR IP ADDRESS]</em>:3000 (can be another port if you are using Udacity Workspace) which brings up our OHIF viewer. You should be able to inspect your report in all its glory, in the context of a radiological study presented to a radiologist in a clinical viewer!</p>
+<p>The study that <code>send_result.sh</code> sends, and a few other sample studies are located in <code>/data/TestVolumes</code>. Feel free to modify the script to try out your algorithm with other volumes.</p>
+<blockquote>
+  <p>Note, that the DICOM studies used for inferencing this section have been created artificially, and while full-brain series belong to the same original study, this is not the study from which the hippocampus crop is taken.</p>
+</blockquote>
+<p>Now that you have built a radiological AI system and given it to clinicians, you can start collecting data on how your model performs in the real world. If you (or the company you work for) intends to commercialize your technology, you will have to clear the regulatory bar. As we have discussed in our final lesson, an important contribution of an AI engineer to this endeavor is helping execute the clinical validation by contributing to a validation plan. Your final task in this course is to write a draft of such plan (shoot for 1-2 pages for this exercise). Remember - clinical validation is all about proving that your technology performs the way you claim it does. If you are saying that it can measure hippocampal volume, your validation needs prove that it actually does, and establish the extents to which your claim is true. Your validation plan needs to define how you would prove this, and establish these extents.</p>
+<p>For the purpose of this exercise, assume that you have access to any clinical facility and patient cohorts you need, and that you have all the budget in the world. In your plan, touch on at least the following:</p>
+<ul>
+<li>Your algorithm relies upon certain "ground truth" - how did you define your ground truth? How will you prove that your method of collecting the ground truth is robust and represents the population that you claim this algorithm is good for?</li>
+<li>How do you define accuracy of your algorithm and how do you measure it with respect to real world population? Check out the <a href="http://www.smanohar.com/biobank/calculator.html" rel="noopener noreferrer" target="_blank">calculator and report from HippoFit</a> for some inspiration.</li>
+<li>How do you define what data your algorithm can operate on?</li>
+</ul>
+<p>There is no right answer here - think of these and other questions that would come up during validation of such algorithm. Thinking of such things early on will help you build better algorithms in the first place.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="instructions">Instructions</h2>
+<p>Once you complete this section, copy the following into directory <code>section3/out</code>:</p>
+<ol>
+<li>Code that runs inference on a DICOM volume and produces a DICOM report</li>
+<li>A report.dcm file with a sample report</li>
+<li>Screenshots of your report shown in the OHIF viewer</li>
+<li>1-2 page Validation Plan</li>
+</ol>
+<h3 id="stand-out-suggestions">Stand-out Suggestions</h3>
+<p>Optionally, look into the following to explore the subject deeper and make your project stand out. Put the deliverables in the output directory.</p>
+<ul>
+<li>Can you propose a better way of filtering a study for correct series?</li>
+<li>Can you think of what would make the report you generate from your inference better? What would be the relevant information that you could present which would help a clinician better reason about whether your model performed well or not?</li>
+<li>Try to construct a fully valid DICOM as your model output (per <a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.8" rel="noopener noreferrer" target="_blank">DICOM PS3.3#A8</a>) with all relevant fields. Construction of valid DICOM has a very calming effect on the mind and body.</li>
+<li>Try constructing a DICOM image with your segmentation mask as a separate image series so that you can overlay it on the original image using the clinical image viewer and inspect the predicted volume better. Note that OHIF does not support overlaying - try using Slicer 3D or Radiant (Fusion feature). Include screenshots.</li>
+</ul>
+<h2 id="udacity-workspace-notes">Udacity Workspace Notes</h2>
+<p>You can access the <strong>Desktop</strong> when you hit the button at the bottom right-hand corner.  </p>
+<h4 id="upload-the-trained-model">Upload the Trained Model</h4>
+<ol>
+<li>Click on the + at the upper right hand corner of the folder panel.</li>
+<li>One of the options is to upload a file which you can use to upload your model (.pth file) from the previous section and any other content you would like to bring over.</li>
+</ol>
+<h4 id="running-shell-scripts-inside-the-workspace">Running Shell Scripts inside the Workspace</h4>
+<p>In this exercise, you will need to run shell scripts from the <code>deploy_scripts</code> folder. These scripts won't work inside Udacity Workspace if you try to run the .sh files directly. In order to run these scripts from the Udacity Workspace you will need to copy the lines from within the .sh files, paste them into your terminal and run from there.</p>
+<h4 id="access-orthanc-and-ohif">Access Orthanc and OHIF</h4>
+<p>Before starting to work on the tasks in this workspace you should launch Orthanc and OHIF and here are the steps: </p>
+<ol>
+<li>Open a terminal and enter the following: <br> <code>bash launch_orthanc.sh</code> or <code>./launch_orthanc.sh</code>. <strong>Don't close this terminal</strong></li>
+<li>Wait for it to complete, with the last line being something like <br><code>W0509 05:38:21.152402 main.cpp:719] Orthanc has started</code> and/or you can verify that Orthanc is working by running <code>echoscu 127.0.0.1 4242 -v</code> in a new terminal.</li>
+<li>Open a <strong>new</strong> terminal and enter the following <br><code>bash launch_OHIF.sh</code> or <code>./launch_OHIF.sh</code>. <strong>Don't close this terminal</strong></li>
+<li>Wait for it to complete, with the last line being something like <br> <code>@ohif/viewer: ℹ ｢wdm｣: Compiled with warnings.</code></li>
+<li>You will then want to enter the Desktop with the bottom right hand corner.<ul>
+<li>OHIF should automatically open in a Chromium Web Browser but if not you can paste <code>localhost:3005</code> into the address bar of a Chromium Window.</li>
+<li>orthanc isn't necessary to open but if you need it you can access it can paste <code>localhost:8042</code> into the address bar of a Chromium Window. </li></ul></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Workspace  for Section 3.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Section 3: Integrating into a Clinical Network')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
