@@ -1,0 +1,291 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Exploration</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Activity Classification</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Activity Classifiers.html">01. Intro to Activity Classifiers</a>
+    </li>
+    <li class="">
+      <a href="02. Data Exploration.html">02. Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 1 Data Exploration.html">03. Exercise 1: Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Solution.html">04. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="05. Feature Extraction I.html">05. Feature Extraction I</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 2 Feature Extraction.html">06. Exercise 2: Feature Extraction</a>
+    </li>
+    <li class="">
+      <a href="07. Feature Extraction Continued....html">07. Feature Extraction Continued...</a>
+    </li>
+    <li class="">
+      <a href="08. Activity Classification.html">08. Activity Classification</a>
+    </li>
+    <li class="">
+      <a href="09. Hyperparameter Tuning &amp; Regularization.html">09. Hyperparameter Tuning &amp; Regularization</a>
+    </li>
+    <li class="">
+      <a href="10. Cross-Validation and Feature Importance.html">10. Cross-Validation and Feature Importance</a>
+    </li>
+    <li class="">
+      <a href="11. Hyperparameter Tuning in Review.html">11. Hyperparameter Tuning in Review</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 3 A Quirk in the Dataset.html">12. Exercise 3: A Quirk in the Dataset</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 3 Solution.html">13. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Activity Classification.html">14. Recap: Activity Classification</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Data Exploration</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Data Exploration Heading</p></h3>
+  <div>
+  <h1 id="data-exploration">Data Exploration</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L3 02 Data Exploration</p></h3>
+  <video controls>
+  <source src="02. ND320 C4 L3 02 Data Exploration-mk5A4cLeyy8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 C4 L3 02 Data Exploration-mk5A4cLeyy8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Data Exploration Summary</p></h3>
+  <div>
+  <p>We just went over the dataset we will be using throughout this lesson from PhysioNet. We learned from reading the <strong>Experimental Protocol</strong> that there is PPG, ECG, 3-channel accelerometer data. And the 8 participants are doing the 4 following activities: </p>
+<ol>
+<li>Walking</li>
+<li>Jogging</li>
+<li>Biking Lower Resistance</li>
+<li>Biking Higher Resistance</li>
+</ol>
+<p>For this lesson we will be focused on accelerometer data for building our activity classifier.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L3 03 Plotting</p></h3>
+  <video controls>
+  <source src="02. ND320 C4 L3 03 Plotting-fRN3iNPxJI8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 C4 L3 03 Plotting-fRN3iNPxJI8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Data Exploration Recap</p></h3>
+  <div>
+  <h1 id="summary">Summary</h1>
+<p>The dataset we will be using comes from the <a href="https://physionet.org/content/wrist/1.0.0/" rel="noopener noreferrer" target="_blank">Wrist PPG During Exercise</a> dataset on Physionet. Physionet is a great resource for biomedical time-series signals. It has many datasets with various signals in various disease conditions and all the data is available under an open license. The Wrist PPG dataset contains data from 8 subjects. The protocol contained four activities -- walking on a treadmill, running on a treadmill, low-intensity cycling on an exercise bike, and high-intensity cycling. While the dataset contains ECG and PPG signals as well, we will only be using the accelerometer signal for this project. </p>
+<p>We explore the summary statistics of this dataset and look at the raw data. Like most real datasets, this one is not perfect. It is unbalanced in terms of numbers of subjects as well as the total number of data points. </p>
+<h2 id="notebook-review">Notebook Review</h2>
+<p>If you wanted to interact with the notebook in the video, you can access it <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/activity-classifier/walkthroughs/data-exploration/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/activity-classifier/walkthroughs/data-exploration/</code> or in the workspace below. </p>
+<p>The dataset that will be used throughout this lesson can be found at the top of the lesson directory at <code>/activity-classifier/data/</code>. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Heading</p></h3>
+  <div>
+  <h1 id="exercise-1-data-exploration">Exercise 1: Data Exploration</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Complete the <strong>Offline</strong> or <strong>Online</strong> instructions below.</li>
+<li>Read through the whole <code>.ipynb</code>.</li>
+<li>Complete all the code cells that contain <code>## Your Code Goes Here</code>.</li>
+</ol>
+<h4 id="offline">Offline</h4>
+<ol>
+<li>In the repo which you can access <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/activity-classifier/exercises/1-data-exploration/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/activity-classifier/exercises/1-data-exploration/)</code> you should find the following files:</li>
+</ol>
+<ul>
+<li><code>1_data_exploration.ipynb</code></li>
+</ul>
+<ol>
+<li>The dataset that will be used throughout this lesson can be found at the top of the lesson directory at <code>/activity-classifier/data/</code>.</li>
+<li>Open up the python notebook and associated files in your desired editor. </li>
+</ol>
+<p><strong>Note</strong>: Instructions can be found in <strong>Introduction to Wearable Data</strong>'s Concept <strong>Developer Workflow</strong> for how to set up your local environment.</p>
+<h4 id="online">Online</h4>
+<ol>
+<li>Go to the next concept and the <code>1_data_exploration.ipynb</code> should be open and the workspace should already contain the appropriate <code>data</code> folder. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Exercise 1 Data Exploration.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Data Exploration')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

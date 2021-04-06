@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.720
+Let's now move on from the IMU signal to the EKG.
+
+00:00:02.720 --> 00:00:04.770
+In this lesson, you will build an algorithm that
+
+00:00:04.770 --> 00:00:07.485
+processes the EKG signal to find the heartbeats.
+
+00:00:07.485 --> 00:00:09.960
+Then you'll build another algorithm that uses the output
+
+00:00:09.960 --> 00:00:12.495
+of the first one to detect atrial fibrillation.
+
+00:00:12.495 --> 00:00:14.730
+We'll talk about the normal physiology of the heart to
+
+00:00:14.730 --> 00:00:16.780
+get a better understanding of the EKG signal.
+
+00:00:16.780 --> 00:00:19.890
+We'll also talk about the functioning of the heart during atrial fibrillation.
+
+00:00:19.890 --> 00:00:24.105
+This will allow us to build better futures for our atrial fibrillation classifier.
+
+00:00:24.105 --> 00:00:26.679
+Let's start with the physiology.
+

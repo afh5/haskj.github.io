@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.185
+Let's take a look at the model that I built to do aphid classification.
+
+00:00:04.185 --> 00:00:06.810
+So first, we're going to load our data set.
+
+00:00:06.810 --> 00:00:10.170
+Because we're only really using the QRS complexes,
+
+00:00:10.170 --> 00:00:12.630
+we don't need to load the right EKG data.
+
+00:00:12.630 --> 00:00:18.825
+Then we can compute our features on our EKG records to build the feature matrix.
+
+00:00:18.825 --> 00:00:21.840
+Then I used a random forest classifier that we've seen
+
+00:00:21.840 --> 00:00:25.485
+before with a 100 trees and a maximum depth of four.
+
+00:00:25.485 --> 00:00:30.975
+To evaluate, I chose seven-fold cross-validation just because we have 7,000 data points.
+
+00:00:30.975 --> 00:00:36.960
+We can keep track of our performance by aggregating our results in confusion matrix,
+
+00:00:36.960 --> 00:00:41.700
+or we can just keep track of all the classifications we make and the true labels.
+
+00:00:41.700 --> 00:00:45.770
+We'll evaluate the performance of the classifier by computing the precision and
+
+00:00:45.770 --> 00:00:49.850
+recall on detecting the non sinus or other rhythm class.
+
+00:00:49.850 --> 00:00:54.985
+One way to do this is by looking at our classifications directly.
+
+00:00:54.985 --> 00:00:58.520
+We can compute the number of true positives by counting up the number of
+
+00:00:58.520 --> 00:01:02.495
+times we classify a record as other and it actually is other.
+
+00:01:02.495 --> 00:01:07.565
+Our false positives are when we call it other and it's actually a normal sinus rhythm.
+
+00:01:07.565 --> 00:01:10.340
+Then our false negatives are when we call it normal,
+
+00:01:10.340 --> 00:01:11.490
+but it's actually other.
+
+00:01:11.490 --> 00:01:14.765
+Then once we have the true false positives and the false negatives,
+
+00:01:14.765 --> 00:01:16.955
+we can compute our precision and recall.
+
+00:01:16.955 --> 00:01:21.610
+We see that our precision is 73 percent and the recall is 81 percent.
+
+00:01:21.610 --> 00:01:24.770
+We can also do this using the confusion matrix.
+
+00:01:24.770 --> 00:01:27.350
+We can get the true positives, false positives,
+
+00:01:27.350 --> 00:01:29.630
+and false negatives directly from this matrix.
+
+00:01:29.630 --> 00:01:33.020
+If you remember that the rows of the confusion matrix are
+
+00:01:33.020 --> 00:01:36.280
+the actual labels and the columns are our predictions.
+
+00:01:36.280 --> 00:01:38.600
+So we've built a fairly simple aphid classifier using
+
+00:01:38.600 --> 00:01:41.225
+some basic features of the R interval time series.
+
+00:01:41.225 --> 00:01:45.085
+You can do much better than this over by using more advanced techniques.
+
+00:01:45.085 --> 00:01:47.300
+For one thing, the method that we use to
+
+00:01:47.300 --> 00:01:50.170
+resample our RR interval time series was fairly naive,
+
+00:01:50.170 --> 00:01:52.295
+and there are better ways to do this.
+
+00:01:52.295 --> 00:01:57.480
+You can also build more complex features that are more informative about the arrhythmia.
+

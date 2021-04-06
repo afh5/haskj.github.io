@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.405
+Congratulations on finishing the data science for wearables course.
+
+00:00:03.405 --> 00:00:05.775
+We covered a lot in a very short amount of time.
+
+00:00:05.775 --> 00:00:10.290
+The material in the intro to signal processing lesson alone typically fills textbooks.
+
+00:00:10.290 --> 00:00:12.960
+Now you have enough practical knowledge with that material that you
+
+00:00:12.960 --> 00:00:15.735
+can use those techniques to build algorithms from scratch.
+
+00:00:15.735 --> 00:00:19.050
+We then covered the physics underpinning the sensors that we worked with and
+
+00:00:19.050 --> 00:00:22.435
+learned about the typical signal characteristics in each of these domains.
+
+00:00:22.435 --> 00:00:26.475
+This is valuable information that is typically only gained with domain experience.
+
+00:00:26.475 --> 00:00:29.340
+With this head start, we then went through three case studies
+
+00:00:29.340 --> 00:00:32.275
+of building real-world algorithms on real data sets.
+
+00:00:32.275 --> 00:00:34.980
+From activity classification with the IMU sensor to
+
+00:00:34.980 --> 00:00:38.290
+QRS complex detection and atrial fibrillation on the EKG,
+
+00:00:38.290 --> 00:00:40.490
+you've gained valuable hands-on experience with
+
+00:00:40.490 --> 00:00:43.105
+the algorithm design and implementation process.
+
+00:00:43.105 --> 00:00:46.400
+Now you have enough practical knowledge to apply these skills on your own.
+
+00:00:46.400 --> 00:00:47.855
+In the final project,
+
+00:00:47.855 --> 00:00:50.840
+you'll take your knowledge of the PPG and IMU signals and design
+
+00:00:50.840 --> 00:00:52.220
+an algorithm from scratch using
+
+00:00:52.220 --> 00:00:54.730
+the signal processing techniques we've learned in this course.
+
+00:00:54.730 --> 00:00:56.330
+After completing the final project,
+
+00:00:56.330 --> 00:00:58.350
+you'll have the confidence to study this field on your own.
+
+00:00:58.350 --> 00:00:59.855
+The journey doesn't stop here.
+
+00:00:59.855 --> 00:01:01.490
+Download more data sets from PhysioNet,
+
+00:01:01.490 --> 00:01:03.350
+look for papers that cite these data sets,
+
+00:01:03.350 --> 00:01:06.230
+and then try to reproduce their results or try exploring
+
+00:01:06.230 --> 00:01:10.350
+new ideas and new problems and you'll gain depth in this field in no time.
+

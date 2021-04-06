@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.905
+All right. Let's build some features.
+
+00:00:01.905 --> 00:00:05.310
+So we'll start with our increasing list of imports,
+
+00:00:05.310 --> 00:00:06.510
+and we'll load the data.
+
+00:00:06.510 --> 00:00:10.320
+So I moved the code that loads the data into this module called activity
+
+00:00:10.320 --> 00:00:12.480
+classifier utils just so that we don't
+
+00:00:12.480 --> 00:00:15.030
+clutter up our notebook with code we've already seen before.
+
+00:00:15.030 --> 00:00:16.770
+So these are the features we're going to build,
+
+00:00:16.770 --> 00:00:18.750
+or at least a partial set of the features.
+
+00:00:18.750 --> 00:00:20.850
+We have a handful of time domain features,
+
+00:00:20.850 --> 00:00:23.070
+and a couple of frequency domain features.
+
+00:00:23.070 --> 00:00:26.880
+The first few are just descriptive statistics on our data,
+
+00:00:26.880 --> 00:00:29.035
+the mean, the standard deviation,
+
+00:00:29.035 --> 00:00:31.355
+and various percentile values.
+
+00:00:31.355 --> 00:00:34.505
+Then we're going to take the correlation of all pairs of channels,
+
+00:00:34.505 --> 00:00:37.870
+the xy, yz and xc.
+
+00:00:37.870 --> 00:00:40.610
+Then we're going to look at the total energy in each channel.
+
+00:00:40.610 --> 00:00:41.990
+In the frequency domain,
+
+00:00:41.990 --> 00:00:44.630
+we'll look at the dominant frequency for each channel,
+
+00:00:44.630 --> 00:00:49.180
+as well as the fraction of energy in each one hertz band from 0-6 hertz.
+
+00:00:49.180 --> 00:00:54.095
+But to begin, we're always going to low-pass filter our signal before processing it.
+
+00:00:54.095 --> 00:00:57.770
+Here we set the low-pass cutoff frequency at 12 hertz,
+
+00:00:57.770 --> 00:01:02.155
+which means we will remove all frequencies greater than 12 hertz.
+
+00:01:02.155 --> 00:01:05.780
+Sometimes it's hard to know where you should set your cutoff frequency.
+
+00:01:05.780 --> 00:01:07.925
+This goes back to our discussion of
+
+00:01:07.925 --> 00:01:11.710
+the Nyquist frequency and the bandwidth of the signal re-sampling.
+
+00:01:11.710 --> 00:01:13.520
+Typically what you do is,
+
+00:01:13.520 --> 00:01:15.710
+you look at the literature and see what other people do.
+
+00:01:15.710 --> 00:01:18.995
+If they're building the same features from the same signal as you,
+
+00:01:18.995 --> 00:01:21.775
+you can just use the same cutoff frequency that they did.
+
+00:01:21.775 --> 00:01:24.700
+So this is the function that we'll use to compute our features.
+
+00:01:24.700 --> 00:01:27.170
+It takes in the x,
+
+00:01:27.170 --> 00:01:28.970
+y, and z accelerometer channels,
+
+00:01:28.970 --> 00:01:30.710
+as well as the sampling rates.
+
+00:01:30.710 --> 00:01:34.480
+Again, we begin by low-pass filtering our signal.
+
+00:01:34.480 --> 00:01:38.645
+I'll leave the implementation for some of these features to you in the next exercise.
+
+00:01:38.645 --> 00:01:40.400
+Then when we come back in the next lesson,
+
+00:01:40.400 --> 00:01:42.930
+we'll walk through that implementation.
+

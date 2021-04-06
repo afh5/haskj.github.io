@@ -1,0 +1,190 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+Let's begin by visualizing our data.
+
+00:00:02.580 --> 00:00:07.770
+I've exploited the data from PhysioNet into CSV files and put them in this folder.
+
+00:00:07.770 --> 00:00:09.600
+We have 17 files,
+
+00:00:09.600 --> 00:00:12.870
+but we don't really know what's in them or how much data is in each file.
+
+00:00:12.870 --> 00:00:14.355
+When we look at the file names,
+
+00:00:14.355 --> 00:00:18.330
+we can see that they're organized with a prefix for the subject ID,
+
+00:00:18.330 --> 00:00:20.670
+and then there's the activity class.
+
+00:00:20.670 --> 00:00:23.740
+Because some subjects did multiple bike activities,
+
+00:00:23.740 --> 00:00:27.125
+the bike activities or suffix with the zero or one.
+
+00:00:27.125 --> 00:00:32.105
+The first thing we notice is that not all subjects did all activities.
+
+00:00:32.105 --> 00:00:35.690
+For example, the first two subjects didn't do any running.
+
+00:00:35.690 --> 00:00:37.220
+I think the third subjects,
+
+00:00:37.220 --> 00:00:39.340
+only one who did all three activities.
+
+00:00:39.340 --> 00:00:41.760
+Four and five only run,
+
+00:00:41.760 --> 00:00:46.860
+nine only walks, and six and eight don't do any biking.
+
+00:00:46.860 --> 00:00:51.860
+So right away we learn there is some imbalance in terms of the number of classes per
+
+00:00:51.860 --> 00:00:54.830
+subject and this is going to cause some trouble when we
+
+00:00:54.830 --> 00:00:58.220
+do leave-one out cross validation later on.
+
+00:00:58.220 --> 00:01:04.040
+Next, we can look at the number of subjects per class.
+
+00:01:04.040 --> 00:01:08.480
+So we have three participants who did the biking class,
+
+00:01:08.480 --> 00:01:12.475
+six participants who walked and five participants who ran.
+
+00:01:12.475 --> 00:01:14.735
+For the practicalities of machine learning,
+
+00:01:14.735 --> 00:01:19.115
+what matters more is really the imbalance in terms of the numbers of samples per class.
+
+00:01:19.115 --> 00:01:22.670
+If that's unbalanced, then our models could be biased towards
+
+00:01:22.670 --> 00:01:26.480
+the class that has more samples in the training set.
+
+00:01:26.480 --> 00:01:29.030
+Fewer subjects however means that we'll see
+
+00:01:29.030 --> 00:01:31.870
+less subject induced variability in our training data.
+
+00:01:31.870 --> 00:01:33.795
+All right. Let's load the actual data.
+
+00:01:33.795 --> 00:01:37.790
+We're going to load it into this data structure which is a list of
+
+00:01:37.790 --> 00:01:42.230
+tuples and the tuple is first the subject ID,
+
+00:01:42.230 --> 00:01:43.895
+then the activity label,
+
+00:01:43.895 --> 00:01:48.075
+and then the DataFrame of law accelerometer data.
+
+00:01:48.075 --> 00:01:50.320
+So that DataFrame looks like this,
+
+00:01:50.320 --> 00:01:56.185
+where there is one column per accelerometer channel and then each row is its own sample.
+
+00:01:56.185 --> 00:02:00.550
+So we can figure out how much data we have in this DataFrame by
+
+00:02:00.550 --> 00:02:04.840
+dividing by the sampling rate to get the seconds of data and then divide it by 60.
+
+00:02:04.840 --> 00:02:08.255
+We see that we have more than three-and-half minutes of data.
+
+00:02:08.255 --> 00:02:12.955
+Now let's plot the amount of data points we have per class.
+
+00:02:12.955 --> 00:02:16.150
+So in this bar chart, we can see that we have
+
+00:02:16.150 --> 00:02:19.840
+a lot of biking data and almost as much walking data,
+
+00:02:19.840 --> 00:02:23.350
+but we have quite a bit less running data than the other two classes.
+
+00:02:23.350 --> 00:02:26.335
+So now we see that in terms of actual samples,
+
+00:02:26.335 --> 00:02:28.460
+we are imbalanced as well.
+
+00:02:28.460 --> 00:02:31.050
+All right. Now let's plot our raw data.
+
+00:02:31.050 --> 00:02:35.215
+Whenever I'm trying to visualize a lot of data,
+
+00:02:35.215 --> 00:02:38.530
+I use this technique that allows me to interact with the plots and then
+
+00:02:38.530 --> 00:02:42.370
+advance to the next dataset without having to go back to my code.
+
+00:02:42.370 --> 00:02:50.715
+So first, I iterate over the entire data set and I plot each individual session,
+
+00:02:50.715 --> 00:02:53.995
+and then I have this command wait for button press,
+
+00:02:53.995 --> 00:02:57.505
+which blocks execution until I press a key on the keyboard.
+
+00:02:57.505 --> 00:03:01.110
+So this will allow me to interact with the plot using the mouse,
+
+00:03:01.110 --> 00:03:04.810
+and then when I'm ready to see the next plot, I can press the spacebar.
+
+00:03:04.810 --> 00:03:08.995
+So when we do this, we can see our raw signals here,
+
+00:03:08.995 --> 00:03:11.710
+x, y, and z accelerometer channels.
+
+00:03:11.710 --> 00:03:14.750
+We can zoom in and we can interact with
+
+00:03:14.750 --> 00:03:21.430
+our plot and then we can press the spacebar to advance to the next dataset.
+
+00:03:21.430 --> 00:03:24.755
+This technique only works if you're in an offline environment.
+
+00:03:24.755 --> 00:03:28.970
+If you're working within the Udacity workspace,
+
+00:03:28.970 --> 00:03:32.735
+this won't work for you, but you can still easily explore all your data.
+
+00:03:32.735 --> 00:03:34.325
+In the upcoming exercise,
+
+00:03:34.325 --> 00:03:38.540
+I want you to visualize your data like this and come up with a few observations that
+
+00:03:38.540 --> 00:03:43.950
+might help us build informative features to do activity classification.
+

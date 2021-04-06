@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.400
+As with activity classification,
+
+00:00:02.400 --> 00:00:04.800
+we'll build features and throw those features into
+
+00:00:04.800 --> 00:00:07.560
+a classifier to detect an abnormal heart rhythm.
+
+00:00:07.560 --> 00:00:10.650
+Except this time it will be a two class classifier and we'll use
+
+00:00:10.650 --> 00:00:13.560
+QRS locations as the input or more specifically,
+
+00:00:13.560 --> 00:00:16.380
+we'll use the time between two QRS complexes known
+
+00:00:16.380 --> 00:00:19.800
+as the RR interval or sometimes the innervate interval.
+
+00:00:19.800 --> 00:00:22.130
+So the input to our algorithm will be derived from
+
+00:00:22.130 --> 00:00:24.110
+the output of the Pan-Tompkins algorithm.
+
+00:00:24.110 --> 00:00:27.080
+Our algorithm will include some of the features in these papers
+
+00:00:27.080 --> 00:00:30.340
+that were entries into the computing and cardiology challenge.
+
+00:00:30.340 --> 00:00:34.595
+Recall that the RR interval time series is in irregularly sampled signal
+
+00:00:34.595 --> 00:00:39.485
+because we get a new measurement at each heartbeat known at some fixed interval in time.
+
+00:00:39.485 --> 00:00:41.870
+As you'll soon see, many of the features we want
+
+00:00:41.870 --> 00:00:44.225
+can be computed on an irregular time series,
+
+00:00:44.225 --> 00:00:47.015
+but some especially frequency domain features cannot.
+
+00:00:47.015 --> 00:00:49.700
+In that case, we'll first have to make this uniform using
+
+00:00:49.700 --> 00:00:52.960
+interpolation before we can compute our frequency domain features.
+
+00:00:52.960 --> 00:00:56.195
+Let's take a look at the features that we actually want to build.
+
+00:00:56.195 --> 00:00:59.855
+We can separate them into time domain and frequency domain.
+
+00:00:59.855 --> 00:01:02.240
+The first few time domain features are mostly
+
+00:01:02.240 --> 00:01:05.140
+just summary statistics on our RR interval time series.
+
+00:01:05.140 --> 00:01:07.610
+We want the minimum, the maximum,
+
+00:01:07.610 --> 00:01:10.895
+the median, average, and standard deviation.
+
+00:01:10.895 --> 00:01:13.925
+We also want the number of our interval outliers.
+
+00:01:13.925 --> 00:01:17.180
+We'll say an interval is an outlier if it's greater than 1.2
+
+00:01:17.180 --> 00:01:21.055
+times the average RR interval in the EKG record.
+
+00:01:21.055 --> 00:01:25.960
+We also want the root mean square of the difference between adjacent intervals.
+
+00:01:25.960 --> 00:01:28.280
+Finally, we want the percent of
+
+00:01:28.280 --> 00:01:32.120
+RR interval differences that are greater than 50 milliseconds.
+
+00:01:32.120 --> 00:01:34.640
+Before we can compute our frequency domain features,
+
+00:01:34.640 --> 00:01:39.905
+we'll first need to regularize RR interval time series so that we can take the FFT of it.
+
+00:01:39.905 --> 00:01:42.680
+We want to interpolate the interval time series onto
+
+00:01:42.680 --> 00:01:46.700
+a regular four hertz grid and then the features we want will
+
+00:01:46.700 --> 00:01:53.945
+be the magnitude of the largest frequency component between 0.04 hertz and 0.15 hertz,
+
+00:01:53.945 --> 00:01:57.565
+as well as the frequency at which that component occurs.
+
+00:01:57.565 --> 00:02:02.930
+Then we want these values for the band between 0.15 and 0.4 hertz.
+
+00:02:02.930 --> 00:02:06.890
+So I'll leave the feature computation code for you to do in the next exercise.
+
+00:02:06.890 --> 00:02:10.860
+Then in the next video, we'll pick this back up with the implementation.
+

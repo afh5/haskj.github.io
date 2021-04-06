@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+So the data we're using to build this activity classifier comes
+
+00:00:03.390 --> 00:00:07.725
+from a dataset called the Wrist PPG During Exercise dataset.
+
+00:00:07.725 --> 00:00:10.230
+This dataset is hosted on PhysioNet,
+
+00:00:10.230 --> 00:00:14.730
+which is a great resource for physiologic signals.
+
+00:00:14.730 --> 00:00:18.885
+The best part is that, most of the datasets are open access,
+
+00:00:18.885 --> 00:00:23.010
+which means you can use it for your own projects or for publishing
+
+00:00:23.010 --> 00:00:27.525
+a paper or you can even use it to make money by teaching a course on Udacity.
+
+00:00:27.525 --> 00:00:31.500
+So the Wrist PPG dataset contains data
+
+00:00:31.500 --> 00:00:36.374
+from eight subjects that are doing the following four activities,
+
+00:00:36.374 --> 00:00:42.075
+they're walking, jogging and then on an exercise bike at two different intensities.
+
+00:00:42.075 --> 00:00:44.010
+We have PPG data,
+
+00:00:44.010 --> 00:00:48.635
+ECG data as well as three channel accelerometer data.
+
+00:00:48.635 --> 00:00:51.784
+Because we're just building activity classifier,
+
+00:00:51.784 --> 00:00:54.385
+I threw out the PPG and ECG data.
+
+00:00:54.385 --> 00:00:58.010
+I've also combined these two bike activity classes into
+
+00:00:58.010 --> 00:01:02.780
+the same activity class to make the problem a little bit easier.
+
+00:01:02.780 --> 00:01:08.435
+Finally, we should note that the data is all sampled at 256 hertz.
+
+00:01:08.435 --> 00:01:12.120
+All right. Let's check this out in python and in the next video.
+

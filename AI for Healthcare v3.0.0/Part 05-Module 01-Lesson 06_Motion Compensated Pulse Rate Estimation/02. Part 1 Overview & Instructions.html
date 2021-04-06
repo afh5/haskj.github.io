@@ -1,0 +1,243 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Part 1: Overview &amp; Instructions</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Motion Compensated Pulse Rate Estimation</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Part 1 Overview &amp; Instructions.html">02. Part 1: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="03. Pulse Rate Algorithm.html">03. Pulse Rate Algorithm</a>
+    </li>
+    <li class="">
+      <a href="04. Test Your Algorithm.html">04. Test Your Algorithm</a>
+    </li>
+    <li class="">
+      <a href="05. Part 2 Overview &amp; Instructions.html">05. Part 2: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Application.html">06. Clinical Application</a>
+    </li>
+    <li class="">
+      <a href="07. Conclusion.html">07. Conclusion</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Motion Compensated Pulse Rate Estimation.html">Project Description - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Motion Compensated Pulse Rate Estimation.html">Project Rubric - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Part 1: Overview & Instructions</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="part-1-pulse-rate-algorithm-project-overview">Part 1: Pulse Rate Algorithm Project Overview</h2>
+<h3 id="algorithm-specifications">Algorithm Specifications</h3>
+<p>You must build an algorithm that:</p>
+<ul>
+<li>estimates pulse rate from the PPG signal and a 3-axis accelerometer.</li>
+<li>assumes pulse rate will be restricted between 40BPM (beats per minute) and 240BPM</li>
+<li>produces an estimation confidence. A higher confidence value means that this estimate should be more accurate than an estimate with a lower confidence value.</li>
+<li>produces an output at least every 2 seconds.  </li>
+</ul>
+<h3 id="success-criteria">Success Criteria</h3>
+<p>Your algorithm performance success criteria are as follows: the mean absolute error at 90% availability must be less than 15 BPM on the test set.  Put another way, the best 90% of your estimates--according to your own confidence output-- must have a mean absolute error of less than 15 BPM. The evaluation function is included in the starter code.</p>
+<p>Note that you will not have access to the dataset that the unit test will call <code>AggregateErrorMetric</code> on the output of your <code>RunPulseRateAlgorithm</code> on a test dataset that you do not have access to. The result of this call must be less than 15 BPM for your algorithm's performance to pass. The test set should be easier than the training set, so as long as your algorithm is doing reasonably well on the training data set, it should pass this test.</p>
+<h3 id="some-helpful-tips">Some Helpful Tips</h3>
+<ol>
+<li>Remember to bandpass filter all your signals. Use the 40-240BPM range to create your pass band.</li>
+<li>Use <code>plt.specgram</code> to visualize your signals in the frequency domain. You can plot your estimates on top of the spectrogram to see where things are going wrong.</li>
+<li>When the dominant accelerometer frequency is the same as the PPG, try picking the next strongest PPG frequency if there is another good candidate.</li>
+<li>Sometimes the cadence of the arm swing is the same as the heartbeat. So if you can't find another good candidate pulse rate outside of the accelerometer peak, it may be the same as the accelerometer.</li>
+<li>One option for a confidence algorithm is to answer the question, "How much energy in the frequency spectrum is concentrated near the pulse rate estimate?" You can answer this by summing the frequency spectrum near the pulse rate estimate and dividing it by the sum of the entire spectrum.</li>
+</ol>
+<h3 id="dataset">Dataset</h3>
+<p>You will be using the Troika[1] dataset to build your algorithm. Find the dataset under <code>datasets/troika/training_data</code>. The <code>README</code> in that folder will tell you how to interpret the data. The starter code contains a function to help load these files.</p>
+<ol>
+<li>Zhilin Zhang, Zhouyue Pi, Benyuan Liu, ‘‘TROIKA: A General Framework for Heart Rate Monitoring Using Wrist-Type Photoplethysmographic Signals During Intensive Physical Exercise,’’IEEE Trans. on Biomedical Engineering, vol. 62, no. 2, pp. 522-531, February 2015. <a href="https://ieeexplore.ieee.org/document/6905737" rel="noopener noreferrer" target="_blank">Link</a></li>
+</ol>
+<h3 id="getting-started">Getting Started</h3>
+<p>The starter code includes a few helpful functions. <code>TroikaDataset</code>, <code>AggregateErrorMetric</code>, and <code>Evaluate</code> do not need to be modified.  </p>
+<ol>
+<li>Use <code>TroikaDataset</code> to retrieve a list of .mat files containing reference and signal data. </li>
+<li>Use <code>scipy.io.loadmat</code> to the .mat file into a python object. </li>
+<li>The bulk of the code will be in the <code>RunPulseRateAlgorithm</code> function. You can and should break the code out into multiple functions. </li>
+<li><code>RunPulseRateAlgorithm</code> will take in two filenames and return a tuple of two NumPy arrays--per-estimate pulse rate error and confidence values. <br />
+<strong>Note</strong>: Remember to write docstrings for all functions that you write (including <code>RunPulseRateAlgorithm</code>)</li>
+<li>Finally, run the <code>Evaluate</code> function to call your algorithm on the Troika dataset and compute an aggregate error metric. <br />
+<strong>Hint</strong>: While building the algorithm, you may want to inspect the algorithm errors in more detail.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="instructions">Instructions</h2>
+<h3 id="offline-instructions">Offline Instructions</h3>
+<ol>
+<li>Clone the project starter repo <a href="https://github.com/udacity/nd320-c4-wearable-data-project-starter" rel="noopener noreferrer" target="_blank">here</a>.</li>
+<li>Open up the <code>pulse_rate_starter.ipynb</code> in a local program (e.g., spyder IDE, Jupyter Notebooks, etc. which you can find more detailed instructions in the <strong>Introduction to Wearables</strong> Lesson's <strong>Developer's Workflow</strong> Concept.) </li>
+<li>You are ready to begin Part 1 of the Final Project.</li>
+</ol>
+<p><strong>Notes</strong>: It is good to confirm that the packages <code>scipy</code> is version <strong>1.2.0</strong>+. You can do this by opening a new terminal and typing <code>conda list</code> and confirm the versioning is appropriate.</p>
+<h3 id="online-instructions">Online Instructions</h3>
+<ol>
+<li>You should head to the next Concept <strong>Pulse Rate Algorithm</strong>.  </li>
+<li>Confirm that the <code>pulse_rate_starter.ipynb</code>is open and you are ready to complete Part 1 of the Final Project.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Pulse Rate Algorithm.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Part 1: Overview &amp; Instructions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

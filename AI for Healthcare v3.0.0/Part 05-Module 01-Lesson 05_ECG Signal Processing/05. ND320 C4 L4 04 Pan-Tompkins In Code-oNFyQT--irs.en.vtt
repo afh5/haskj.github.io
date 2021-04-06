@@ -1,0 +1,259 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.950
+All right, let's take a look at some of the code for
+
+00:00:01.950 --> 00:00:05.850
+the Pan-Tompkins algorithm and see how this affects the signal that we're working with.
+
+00:00:05.850 --> 00:00:08.280
+This is the code for the algorithm,
+
+00:00:08.280 --> 00:00:10.890
+but I'll start with this function,
+
+00:00:10.890 --> 00:00:12.480
+which is the entry point.
+
+00:00:12.480 --> 00:00:15.660
+You can see that we begin with our BandpassFilter,
+
+00:00:15.660 --> 00:00:17.880
+then we do our one-sample difference,
+
+00:00:17.880 --> 00:00:21.900
+the element-wise square, and finally the moving sum.
+
+00:00:21.900 --> 00:00:26.685
+We take this pre-process signal and we find the peaks,
+
+00:00:26.685 --> 00:00:32.770
+and then we threshold those peaks to return the QRS complex locations.
+
+00:00:32.770 --> 00:00:37.310
+You should download this notebook and go through these functions,
+
+00:00:37.310 --> 00:00:38.855
+to become familiar with the code.
+
+00:00:38.855 --> 00:00:40.310
+But in this video,
+
+00:00:40.310 --> 00:00:44.725
+I'll just show you what this algorithm does to our EKG signal.
+
+00:00:44.725 --> 00:00:49.940
+So this is an example of a clean EKG signal from a mobile device,
+
+00:00:49.940 --> 00:00:54.950
+and if we zoom in, we can see that we have nice large,
+
+00:00:54.950 --> 00:00:59.300
+QRS complexes, not much baseline noise,
+
+00:00:59.300 --> 00:01:02.135
+and we see the P wave,
+
+00:01:02.135 --> 00:01:04.100
+the QRS complex, the T wave,
+
+00:01:04.100 --> 00:01:07.000
+and the cycle repeats over and over again.
+
+00:01:07.000 --> 00:01:14.495
+Then we can take a look at how our pre-processing steps change the signal.
+
+00:01:14.495 --> 00:01:16.954
+So down here we have our original EKG,
+
+00:01:16.954 --> 00:01:19.600
+and then up here is the pre-process signal.
+
+00:01:19.600 --> 00:01:22.205
+The first thing you notice is that we have
+
+00:01:22.205 --> 00:01:26.255
+these really large spikes around the QRS complexes.
+
+00:01:26.255 --> 00:01:27.755
+In the pre-process signal,
+
+00:01:27.755 --> 00:01:30.455
+there are around 35,000-40,000,
+
+00:01:30.455 --> 00:01:35.890
+whereas in the original EKG our QRS complexes are between 600 and 700.
+
+00:01:35.890 --> 00:01:39.300
+We also have T waves around one and 200.
+
+00:01:39.300 --> 00:01:40.530
+But in the pre-process signal,
+
+00:01:40.530 --> 00:01:42.450
+these T waves are all but gone.
+
+00:01:42.450 --> 00:01:44.310
+In this very clean signal,
+
+00:01:44.310 --> 00:01:47.059
+we can see that the Pan-Tompkins algorithm
+
+00:01:47.059 --> 00:01:51.410
+is able to pick out every single QRS complex location.
+
+00:01:51.410 --> 00:01:56.490
+Now let's take a look at a more interesting EKG signal.
+
+00:01:56.660 --> 00:02:00.120
+We can see that this one is definitely a lot noisier.
+
+00:02:00.120 --> 00:02:02.885
+We have a lot more baseline noise.
+
+00:02:02.885 --> 00:02:09.745
+The QRS complexes aren't as large and sometimes they're even smaller than the T wave.
+
+00:02:09.745 --> 00:02:12.740
+So this is a good opportunity to take a look at what
+
+00:02:12.740 --> 00:02:15.680
+each of the pre-processing steps do individually.
+
+00:02:15.680 --> 00:02:18.920
+Down here we have the original EKG signal,
+
+00:02:18.920 --> 00:02:23.945
+and then up here is just a BandpassFiltered version of that signal,
+
+00:02:23.945 --> 00:02:28.100
+and you can really see how when you remove a lot of frequency components,
+
+00:02:28.100 --> 00:02:30.535
+the signal gets fairly distorted.
+
+00:02:30.535 --> 00:02:35.060
+Let's take a look at what it looks like after we do our one-sample difference.
+
+00:02:35.060 --> 00:02:41.485
+If you squint, you can see that we have larger waves around the QRS complexes.
+
+00:02:41.485 --> 00:02:44.625
+But it's still really hard to interpret this waveform.
+
+00:02:44.625 --> 00:02:46.545
+When we square it,
+
+00:02:46.545 --> 00:02:49.940
+now we start to see some more dramatic changes in our signal.
+
+00:02:49.940 --> 00:02:53.630
+The first thing you'll notice is that there's no more negative values.
+
+00:02:53.630 --> 00:02:56.670
+That's because the square, will flip it around,
+
+00:02:56.670 --> 00:03:01.220
+and we also start to put more distance in-between the QRS complexes,
+
+00:03:01.220 --> 00:03:03.080
+and the T waves.
+
+00:03:03.080 --> 00:03:08.035
+What the squaring is doing is non-linearly amplifying our signal.
+
+00:03:08.035 --> 00:03:11.010
+Let's take a look at the moving sum.
+
+00:03:11.010 --> 00:03:14.415
+So the moving sum ties things up very nicely.
+
+00:03:14.415 --> 00:03:17.570
+We're able to see that we can put quite a bit of
+
+00:03:17.570 --> 00:03:21.350
+distance between the QRS complex and the T wave.
+
+00:03:21.350 --> 00:03:22.850
+In the second heartbeats,
+
+00:03:22.850 --> 00:03:24.755
+this effect is much more dramatic.
+
+00:03:24.755 --> 00:03:27.500
+There's almost no T wave here but when we started out,
+
+00:03:27.500 --> 00:03:30.715
+the T-wave was around the same size as the QRS complex.
+
+00:03:30.715 --> 00:03:33.790
+In this third heartbeat we see we're not doing so great.
+
+00:03:33.790 --> 00:03:38.780
+While we did manage to make the QRS complex larger than the T wave when it originally,
+
+00:03:38.780 --> 00:03:40.355
+it started out much smaller,
+
+00:03:40.355 --> 00:03:42.665
+we didn't put a whole lot of distance between the two,
+
+00:03:42.665 --> 00:03:47.600
+and it's unlikely that our simple detection rules will be able to tease this one apart.
+
+00:03:47.600 --> 00:03:51.110
+So let's take a look at how Pan-Tompkins does.
+
+00:03:51.110 --> 00:03:55.980
+As expected, we get the first couple heartbeats in the last couple heartbeats,
+
+00:03:55.980 --> 00:03:59.495
+and were unable to detect the middle one.
+
+00:03:59.495 --> 00:04:01.880
+So the overall goal here isn't necessarily to
+
+00:04:01.880 --> 00:04:04.220
+understand the Pan-Tompkins algorithm per say.
+
+00:04:04.220 --> 00:04:07.580
+It's really to get to a place where we can solve this kind of a problem in
+
+00:04:07.580 --> 00:04:10.775
+any domain where you have some knowledge of the underlying physiology,
+
+00:04:10.775 --> 00:04:11.930
+and the signal characteristics,
+
+00:04:11.930 --> 00:04:13.480
+and the noise characteristics.
+
+00:04:13.480 --> 00:04:18.560
+You can do for your task what Pan-Tompkins does for the QRS complex detection.
+
+00:04:18.560 --> 00:04:22.220
+As you learn more about these tools and the operations that you have that
+
+00:04:22.220 --> 00:04:25.765
+can boost signal and suppress noise in your specific domain,
+
+00:04:25.765 --> 00:04:27.980
+you'll be able to build a better intuition for
+
+00:04:27.980 --> 00:04:30.995
+designing your own algorithm on your own problem.
+
+00:04:30.995 --> 00:04:32.705
+In the following exercise,
+
+00:04:32.705 --> 00:04:35.420
+we'll run the Pan-Tompkins algorithm on a large data set,
+
+00:04:35.420 --> 00:04:38.240
+and then use a more sophisticated detection algorithm
+
+00:04:38.240 --> 00:04:41.130
+to improve the performance of our detector.
+

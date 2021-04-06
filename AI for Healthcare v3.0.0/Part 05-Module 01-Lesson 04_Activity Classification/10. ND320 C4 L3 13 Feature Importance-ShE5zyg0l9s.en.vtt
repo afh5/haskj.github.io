@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.160
+Another way to regularize our model and increase
+
+00:00:02.160 --> 00:00:05.850
+the performance is to reduce the number of features that we use.
+
+00:00:05.850 --> 00:00:09.045
+The RandomForest Classifier in scikit-learn can tell us
+
+00:00:09.045 --> 00:00:12.630
+how important the features are in classifying the data.
+
+00:00:12.630 --> 00:00:15.750
+It has this feature importance as property,
+
+00:00:15.750 --> 00:00:19.725
+which basically gives us a number of how important each feature is.
+
+00:00:19.725 --> 00:00:22.320
+The higher the number, the more important the feature is.
+
+00:00:22.320 --> 00:00:25.575
+So we can see what the 10 most important features are,
+
+00:00:25.575 --> 00:00:30.335
+and it looks like these features in the z and y channel are the most important.
+
+00:00:30.335 --> 00:00:34.735
+So let's train our model just using the 10 best features.
+
+00:00:34.735 --> 00:00:38.185
+So now our feature matrix is 611 by 10,
+
+00:00:38.185 --> 00:00:40.850
+and I've moved the leave one subject out
+
+00:00:40.850 --> 00:00:43.240
+cross validation code into activity classifier utils.
+
+00:00:43.240 --> 00:00:44.740
+So we don't have to keep on seeing it.
+
+00:00:44.740 --> 00:00:46.955
+Now when we look at the confusion matrix,
+
+00:00:46.955 --> 00:00:49.580
+we can see that we've removed our largest source of error.
+
+00:00:49.580 --> 00:00:52.700
+We no longer misclassify cycling as walking.
+
+00:00:52.700 --> 00:00:56.710
+As a result, our classification accuracy has increased to 92 percent.
+
+00:00:56.710 --> 00:01:00.200
+So we've managed to improve our classifier performance by 15 percent,
+
+00:01:00.200 --> 00:01:02.495
+just by picking out the most important features.
+
+00:01:02.495 --> 00:01:04.535
+In the exercise after this video,
+
+00:01:04.535 --> 00:01:08.220
+we'll take a look at building a classifier with just one feature.
+

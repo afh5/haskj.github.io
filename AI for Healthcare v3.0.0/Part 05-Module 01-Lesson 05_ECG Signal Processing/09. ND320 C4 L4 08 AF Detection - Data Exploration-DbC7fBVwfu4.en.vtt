@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.130
+As always, it's a good idea to explore
+
+00:00:02.130 --> 00:00:05.505
+our dataset before we begin the algorithm development process.
+
+00:00:05.505 --> 00:00:09.630
+So lets take a deeper look at the computing in cardiology challenged dataset.
+
+00:00:09.630 --> 00:00:11.775
+We can load our reference data,
+
+00:00:11.775 --> 00:00:16.920
+which is basically just a flat table that tells us which rhythm each record is in.
+
+00:00:16.920 --> 00:00:19.290
+So we have one column for the name of the record
+
+00:00:19.290 --> 00:00:21.900
+and then the other column for the rhythm.
+
+00:00:21.900 --> 00:00:26.280
+N stands for normal sinus rhythm and O for other rhythm.
+
+00:00:26.280 --> 00:00:28.790
+We can take a look at the number of records we have.
+
+00:00:28.790 --> 00:00:31.740
+We have a little bit more than 7,000
+
+00:00:31.740 --> 00:00:37.675
+EKGs and we have one-and-a-half times more sinus rhythm data than other rhythm.
+
+00:00:37.675 --> 00:00:41.385
+The sampling rate for our EKG is 300 hertz.
+
+00:00:41.385 --> 00:00:47.725
+Now we can load our raw EKG data as well as the locations of the QRS complexes.
+
+00:00:47.725 --> 00:00:52.985
+Instead of having us run our Pan-Tompkins algorithm that we built in the previous videos,
+
+00:00:52.985 --> 00:00:55.325
+I've given you the locations of
+
+00:00:55.325 --> 00:00:59.920
+the QRS complexes so that we can all start from the same starting point.
+
+00:00:59.920 --> 00:01:03.455
+Next we can plot how long each EKG record is,
+
+00:01:03.455 --> 00:01:06.320
+and we see that most of them are 30 seconds long,
+
+00:01:06.320 --> 00:01:11.365
+some of them are 60 seconds long and then we have a few that are anywhere in between.
+
+00:01:11.365 --> 00:01:15.395
+Lets take a look at some normal sinus rhythm data,
+
+00:01:15.395 --> 00:01:20.150
+which is useful for getting a baseline idea of what the noise level of
+
+00:01:20.150 --> 00:01:25.894
+our sensor is without having to worry about physiologically induced artifacts.
+
+00:01:25.894 --> 00:01:29.440
+So here we see that the QRS complex is fairly large,
+
+00:01:29.440 --> 00:01:32.510
+there's not a whole lot of baseline noise,
+
+00:01:32.510 --> 00:01:37.825
+and our QRS complex detector is able to find all of these waveforms fairly easily.
+
+00:01:37.825 --> 00:01:42.485
+Next we'll look at a noisier snippets of the EKG signal.
+
+00:01:42.485 --> 00:01:49.145
+So this is a portion of the waveform that was corrupted by looks like motion artifact.
+
+00:01:49.145 --> 00:01:51.785
+We can see that even in the presence of this artifact,
+
+00:01:51.785 --> 00:01:56.165
+the QRS complex detector will still claim that it's finding QRS complexes.
+
+00:01:56.165 --> 00:01:58.100
+Of course, during these noisier sections,
+
+00:01:58.100 --> 00:02:01.130
+the error in our detector will probably be higher.
+
+00:02:01.130 --> 00:02:05.080
+Finally, we can take a look at some AFib data.
+
+00:02:05.080 --> 00:02:08.720
+We can tell this is AFib because there's no P waves
+
+00:02:08.720 --> 00:02:12.380
+and the QRS complexes are occurring at irregular intervals,
+
+00:02:12.380 --> 00:02:14.870
+and this irregularity will be the main feature that
+
+00:02:14.870 --> 00:02:17.270
+we try to take advantage of in our algorithm.
+
+00:02:17.270 --> 00:02:19.730
+You should download this notebook and play with the data for yourself.
+
+00:02:19.730 --> 00:02:23.150
+Try to find some segments where the QRS detector messes up,
+
+00:02:23.150 --> 00:02:28.310
+or look for examples of other rhythms that have regularly occurring QRS complexes.
+
+00:02:28.310 --> 00:02:32.190
+These will be a few of the challenges that might confuse our algorithm.
+

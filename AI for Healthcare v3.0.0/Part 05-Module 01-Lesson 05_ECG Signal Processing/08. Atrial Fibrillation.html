@@ -1,0 +1,310 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Atrial Fibrillation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>ECG Signal Processing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to ECG Signal Processing.html">01. Intro to ECG Signal Processing</a>
+    </li>
+    <li class="">
+      <a href="02. Heart Physiology.html">02. Heart Physiology</a>
+    </li>
+    <li class="">
+      <a href="03. Heart Physiology in Review.html">03. Heart Physiology in Review</a>
+    </li>
+    <li class="">
+      <a href="04. Pan-Tompkins QRS Detection.html">04. Pan-Tompkins QRS Detection</a>
+    </li>
+    <li class="">
+      <a href="05. Pan-Tompkins In Code.html">05. Pan-Tompkins In Code</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Extend the Pan-Tompkins Algorithm.html">06. Exercise 1: Extend the Pan-Tompkins Algorithm</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 1 Solution.html">07. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Atrial Fibrillation.html">08. Atrial Fibrillation</a>
+    </li>
+    <li class="">
+      <a href="09. Arrhythmia Detection Dataset.html">09. Arrhythmia Detection: Dataset</a>
+    </li>
+    <li class="">
+      <a href="10. Arrhythmia Detection Features.html">10. Arrhythmia Detection: Features</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 2 Arrhythmia Features.html">11. Exercise 2: Arrhythmia Features</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 2 Solution.html">12. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 3 Atrial Fibrillation.html">13. Exercise 3: Atrial Fibrillation</a>
+    </li>
+    <li class="">
+      <a href="14. Exercise 3 Solution.html">14. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="15. Recap ECG Signal Processing.html">15. Recap: ECG Signal Processing</a>
+    </li>
+    <li class="">
+      <a href="16. Course Recap.html">16. Course Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Atrial Fibrillation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Atrial Fibrillation Heading</p></h3>
+  <div>
+  <h1 id="atrial-fibrillation">Atrial Fibrillation</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L4 06 Atrial Fibrillation Physiology</p></h3>
+  <video controls>
+  <source src="08. ND320 C4 L4 06 Atrial Fibrillation Physiology-VGi988eAI0I.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. ND320 C4 L4 06 Atrial Fibrillation Physiology-VGi988eAI0I.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Atrial Fibrillation Physiology Recap</p></h3>
+  <div>
+  <p>We’ve discussed atrial fibrillation previously in the context of the Apple Heart Study and the Framingham Study. Now we’ll learn what atrial fibrillation actually is. Atrial Fibrillation is a type of <strong>arrhythmia</strong>, which is an irregular heart rhythm. </p>
+<p>Recall, in a normal heart rhythm, the sinus node generates the impulse that causes the atria to contract. This impulse is propagated to the AV node and then throughout ventricles, causing the ventricles to contract. This process results in a very regular rhythm called <strong>sinus rhythm</strong>.  </p>
+<p>In <strong>Atrial Fibrillation</strong>, instead of the SA node being the sole location that begins the depolarization of the atria, there are multiple locations around the atria that will spontaneously and haphazardly generate an impulse. Each of these impulses causes a partial contraction of the atria, but no single impulse depolarizes the entire atria, so there is no coherent contraction of the atria. Occasionally, one of these impulses will reach the AV node, which will then cause a ventricular contraction. But this occurs at random times, so ventricular contractions occur irregularly.</p>
+<p>When can we examine features of the ECG signal to detect atrial fibrillation? First, there is no P-wave because there is no coherent depolarization of the atria to cause an electrical disturbance large enough to create the P-wave. Instead, we see a fibrillating wave in the T-Q segment. Second, the QRS complexes are very irregular.   </p>
+<p>We mentioned earlier that atrial fibrillation is associated with an increased risk of stroke. Because the atria are not contracting completely, stagnant pools of blood will form in the atria. These pools can form blood clots that are then circulated through the bloodstream. As these clots pass through progressively smaller and smaller arteries, they may eventually obstruct blood flow to the brain and cause a stroke.  </p>
+<p>Now we have seen how atrial fibrillation occurs physiologically and why it’s a potentially dangerous condition. Next, we will build an algorithm that automatically detects atrial fibrillation and other arrhythmias from the ECG signal.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Q: some quiz questions</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the normal heart rhythm called?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1008209" id="rbk1">
+        <label for="rbk1"><p>Atrial defibrillation</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1008209" id="rbk2">
+        <label for="rbk2"><p>Regular rhythm</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1008209" id="rbk3">
+        <label for="rbk3"><p>Sinus rhythm</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1008209" id="rbk4">
+        <label for="rbk4"><p>Ventricular rhythm</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Sinus rhythm
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What phenomenon is responsible for atrial fibrillation?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1008206" id="rbk1">
+        <label for="rbk1"><p>The sinus node generates spontaneous and haphazard impulses.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1008206" id="rbk2">
+        <label for="rbk2"><p>The AV node generates spontaneous and haphazard impulses.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1008206" id="rbk3">
+        <label for="rbk3"><p>Failure of the SA node to fire.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1008206" id="rbk4">
+        <label for="rbk4"><p>Spontaneous and haphazard impulses arising from multiple locations around the atria.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Spontaneous and haphazard impulses arising from multiple locations around the atria.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>new terms</p></h3>
+  <div>
+  <h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Arrhythmia:</strong> An irregular heart rhythm.</li>
+<li><strong>Sinus Rhythm:</strong> The normal, regular heart rhythm, paced by the sinus node.</li>
+<li><strong>Atrial fibrillation:</strong> An irregular rhythm caused by multiple, haphazard depolarizations across the atria.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Arrhythmia Detection Dataset.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Atrial Fibrillation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

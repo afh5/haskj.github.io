@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.590
+Let's compute our features.
+
+00:00:01.590 --> 00:00:05.550
+So the first couple are made fairly simple because we can take
+
+00:00:05.550 --> 00:00:09.870
+advantage of these numpy functions like mean and standard deviation.
+
+00:00:09.870 --> 00:00:12.945
+There's also a numpy function for a percentile,
+
+00:00:12.945 --> 00:00:15.135
+and we can do that like this.
+
+00:00:15.135 --> 00:00:19.770
+How do we compute the Pearson correlation coefficient between the x and y channels?
+
+00:00:19.770 --> 00:00:24.300
+You may have noticed that there's this import up here for the scipy.stats package,
+
+00:00:24.300 --> 00:00:26.430
+and you might be wondering if we could use that to compute
+
+00:00:26.430 --> 00:00:29.820
+the Pearson correlation coefficient, and you'd be right.
+
+00:00:29.820 --> 00:00:33.480
+You could use the scipy.stats.pearsonr
+
+00:00:33.480 --> 00:00:37.860
+function to compute the correlation coefficient between the x and y channels.
+
+00:00:37.860 --> 00:00:42.285
+The next feature is the total AC energy in the x-axis,
+
+00:00:42.285 --> 00:00:43.845
+and this one I computed for you.
+
+00:00:43.845 --> 00:00:47.000
+The way we do that is by taking the sum of the squared values of
+
+00:00:47.000 --> 00:00:51.950
+the signal after we center it by removing the mean of that channel.
+
+00:00:51.950 --> 00:00:53.960
+This is the same thing as just taking
+
+00:00:53.960 --> 00:00:57.355
+the variance of the channel multiplied by its length.
+
+00:00:57.355 --> 00:00:59.570
+Now here energy doesn't really mean a whole lot
+
+00:00:59.570 --> 00:01:01.590
+in terms of the physical concept of energy,
+
+00:01:01.590 --> 00:01:04.745
+it's more of a signal processing concept.
+
+00:01:04.745 --> 00:01:08.000
+Let's move on to frequency domain features.
+
+00:01:08.000 --> 00:01:12.140
+We started out by taking a zero padded F FT so that we
+
+00:01:12.140 --> 00:01:16.745
+can get more resolution in the frequency domain.
+
+00:01:16.745 --> 00:01:20.750
+To compute the dominant frequency in the x channel, first,
+
+00:01:20.750 --> 00:01:28.880
+we need to select the frequency values in our window between 0.25 and 12 hertz.
+
+00:01:28.880 --> 00:01:36.790
+Then we take the magnitude of our Fourier transform for values inside this window.
+
+00:01:36.790 --> 00:01:44.240
+Now we look at which index has the most power in this window and what frequency it's at,
+
+00:01:44.240 --> 00:01:47.650
+and this is our dominant frequency in the x channel.
+
+00:01:47.650 --> 00:01:50.545
+The last feature I also implemented for you,
+
+00:01:50.545 --> 00:01:53.320
+which is the fraction of energy between
+
+00:01:53.320 --> 00:01:56.705
+the two and three hertz spins in the accelerometer x channel.
+
+00:01:56.705 --> 00:01:59.200
+So spectral energy can be computed like this,
+
+00:01:59.200 --> 00:02:03.310
+which is just the square of the magnitude of the Fourier transform.
+
+00:02:03.310 --> 00:02:09.645
+The energy inside bin between two and three hertz can be computed like this,
+
+00:02:09.645 --> 00:02:11.340
+and we take the sum of that.
+
+00:02:11.340 --> 00:02:15.760
+Then the fraction of energy in this bin is just the sum of
+
+00:02:15.760 --> 00:02:21.515
+the energy between two and three hertz divided by the sum of the total energy.
+
+00:02:21.515 --> 00:02:24.595
+So now we've implemented a partial list of our features,
+
+00:02:24.595 --> 00:02:27.100
+but there's actually a whole lot more than this because we have to do
+
+00:02:27.100 --> 00:02:29.880
+all of this for each of our accelerometer channels.
+
+00:02:29.880 --> 00:02:32.345
+I've spared you that effort and put all the features
+
+00:02:32.345 --> 00:02:35.320
+in the activity_classifier_utils.py module.
+
+00:02:35.320 --> 00:02:39.605
+So here we have the code that implements the future iteration of our accelerometer.
+
+00:02:39.605 --> 00:02:44.110
+We start with the mean of each of the channels and the standard deviation,
+
+00:02:44.110 --> 00:02:48.545
+and then we do the percentile values for each channel,
+
+00:02:48.545 --> 00:02:51.950
+followed by the Pearson correlation coefficient of
+
+00:02:51.950 --> 00:02:56.680
+each pair and the total energy in each channel.
+
+00:02:56.680 --> 00:02:59.840
+Next for you are frequency domain features and we'll
+
+00:02:59.840 --> 00:03:02.740
+include the accelerometer magnitude here as well.
+
+00:03:02.740 --> 00:03:05.690
+So we compute the accelerometer magnitude by
+
+00:03:05.690 --> 00:03:09.340
+taking the square root of the sum of the squares of each of the channels.
+
+00:03:09.340 --> 00:03:14.690
+We do our Fourier transform and then compute the dominant frequency for each channel,
+
+00:03:14.690 --> 00:03:16.115
+as well as the magnitude,
+
+00:03:16.115 --> 00:03:21.820
+and the fraction of energy in each of the frequency bins for all these channels.
+
+00:03:21.820 --> 00:03:25.720
+So this ends up being quite a few features.
+
+00:03:28.940 --> 00:03:33.000
+Now let's extract these features on our data set.
+

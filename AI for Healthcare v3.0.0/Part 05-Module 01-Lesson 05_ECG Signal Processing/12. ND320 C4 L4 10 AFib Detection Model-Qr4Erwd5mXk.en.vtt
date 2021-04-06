@@ -1,0 +1,163 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.630
+Let's pick our modeling effort backup with the feature computation.
+
+00:00:03.630 --> 00:00:07.155
+First, we want to compute our RR interval time series,
+
+00:00:07.155 --> 00:00:10.709
+which is just the difference between successive QRS complex locations.
+
+00:00:10.709 --> 00:00:14.715
+Then the summary statistic features are fairly simple with NumPy.
+
+00:00:14.715 --> 00:00:17.594
+To get the number of outliers,
+
+00:00:17.594 --> 00:00:20.370
+we first want to find which
+
+00:00:20.370 --> 00:00:25.450
+our intervals are greater than 1.2 times the average interval.
+
+00:00:25.550 --> 00:00:28.140
+This will give us a Boolean array,
+
+00:00:28.140 --> 00:00:32.985
+and if we count the number of true elements we'll get the number of interval outliers.
+
+00:00:32.985 --> 00:00:34.935
+Then to do the root mean square,
+
+00:00:34.935 --> 00:00:36.645
+we take the square root,
+
+00:00:36.645 --> 00:00:42.150
+the mean, and the square of the difference between our intervals.
+
+00:00:42.150 --> 00:00:46.310
+Then the last feature is the percent of
+
+00:00:46.310 --> 00:00:50.755
+interval differences that's greater than 50 milliseconds.
+
+00:00:50.755 --> 00:00:53.570
+So because these are the intervals in samples,
+
+00:00:53.570 --> 00:00:56.840
+we have to divide by the sampling rate to convert into seconds and
+
+00:00:56.840 --> 00:01:00.665
+then we see which ones are greater than 0.05 seconds.
+
+00:01:00.665 --> 00:01:02.585
+This is also a Boolean array,
+
+00:01:02.585 --> 00:01:06.420
+if we take the mean, we will get the percent of true values.
+
+00:01:06.420 --> 00:01:08.390
+Next, we need to re-sample
+
+00:01:08.390 --> 00:01:12.710
+our integral time series that occurs on a regular as time grid.
+
+00:01:12.710 --> 00:01:17.990
+We can do that by starting at the timestamp of the first heartbeats and going
+
+00:01:17.990 --> 00:01:22.565
+to the timestamp of the second last heartbeats in increments of a quarter second,
+
+00:01:22.565 --> 00:01:25.385
+so that we now have a four hertz time grid.
+
+00:01:25.385 --> 00:01:28.310
+The reason we started the first heartbeat and go to the second,
+
+00:01:28.310 --> 00:01:30.860
+the last one is because we are assuming that the timestamp of
+
+00:01:30.860 --> 00:01:35.120
+each RR interval is the timestamp of the first heartbeat in that interval.
+
+00:01:35.120 --> 00:01:38.270
+But you could easily take the second heartbeat to be
+
+00:01:38.270 --> 00:01:42.190
+the timestamp by changing your indices like that.
+
+00:01:42.190 --> 00:01:46.010
+Then we want to interpolate time-series onto this grid.
+
+00:01:46.010 --> 00:01:48.065
+The first argument is the grid we want,
+
+00:01:48.065 --> 00:01:50.525
+the second one is the one we have,
+
+00:01:50.525 --> 00:01:53.240
+and again, we can use
+
+00:01:53.240 --> 00:01:57.590
+the second heartbeat in the interval to be the timestamp by changing the index like that.
+
+00:01:57.590 --> 00:02:02.875
+Then we pass in the RR interval time series itself.
+
+00:02:02.875 --> 00:02:06.380
+It's important to remember that these are all sample locations,
+
+00:02:06.380 --> 00:02:08.240
+and because we want to convert them to seconds,
+
+00:02:08.240 --> 00:02:11.080
+we have to divide by the sampling rate.
+
+00:02:11.080 --> 00:02:14.480
+Next, we compute the Fourier transform of
+
+00:02:14.480 --> 00:02:17.315
+our now regularized RR interval time series
+
+00:02:17.315 --> 00:02:20.765
+and then we can compute our frequency domain features.
+
+00:02:20.765 --> 00:02:24.230
+So like always, we select the band that we're interested
+
+00:02:24.230 --> 00:02:29.195
+in and then we find the largest magnitude component in that band.
+
+00:02:29.195 --> 00:02:33.650
+The next feature is the frequency at which this component actually
+
+00:02:33.650 --> 00:02:40.910
+occurs and then we do this again for the band between 0.15 and 0.4 hertz.
+
+00:02:40.910 --> 00:02:42.860
+Once we have our features implemented,
+
+00:02:42.860 --> 00:02:45.170
+we can feature as each EKG record and then
+
+00:02:45.170 --> 00:02:48.265
+create our feature matrix as well as the labels vector.
+
+00:02:48.265 --> 00:02:51.005
+I'll leave the actual modeling to you in the next exercise.
+
+00:02:51.005 --> 00:02:53.300
+Feel free to use whatever kind of classifier you want.
+
+00:02:53.300 --> 00:02:55.460
+You can even do the same random forest model that
+
+00:02:55.460 --> 00:02:57.740
+we did in the activity classifier lesson,
+
+00:02:57.740 --> 00:03:02.190
+and then evaluate the performance of your classifier using cross-validation.
+

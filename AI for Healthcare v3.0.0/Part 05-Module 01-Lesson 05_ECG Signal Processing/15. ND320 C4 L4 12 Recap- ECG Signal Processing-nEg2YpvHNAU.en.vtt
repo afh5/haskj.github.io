@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.230
+In this lesson, we saw a good example of how algorithms are often cascaded together.
+
+00:00:04.230 --> 00:00:07.560
+We typically have some algorithms that operate on the raw data and produce
+
+00:00:07.560 --> 00:00:11.145
+a set of more meaningful and versus how metrics.
+
+00:00:11.145 --> 00:00:15.180
+These metrics can be inputs into various higher level algorithms that might tell us
+
+00:00:15.180 --> 00:00:19.815
+something about the underlying physiology of where their health or their disease states.
+
+00:00:19.815 --> 00:00:23.010
+This allows us to independently iterate on different parts of the stack.
+
+00:00:23.010 --> 00:00:25.530
+Presumably, making the underlying algorithms more
+
+00:00:25.530 --> 00:00:28.125
+accurate will improve the higher level algorithms.
+
+00:00:28.125 --> 00:00:29.360
+But this is not always the case,
+
+00:00:29.360 --> 00:00:31.650
+it's important to remember that any change made in
+
+00:00:31.650 --> 00:00:35.675
+the lower-level algorithm will have downstream effects that we need to keep track of.
+
+00:00:35.675 --> 00:00:38.060
+We also saw how it's extremely important to have
+
+00:00:38.060 --> 00:00:41.930
+a solid understanding of the physiological processes that generate our signal,
+
+00:00:41.930 --> 00:00:45.810
+as this can have a profound impact on how we design our algorithm.
+

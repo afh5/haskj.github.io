@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.990
+We ended the last video with the classification accuracy of 77 percent.
+
+00:00:03.990 --> 00:00:07.605
+However, there are a few more knobs we can turn to improve this performance.
+
+00:00:07.605 --> 00:00:11.610
+We have our ever increasing set of imports.
+
+00:00:11.610 --> 00:00:14.580
+I've moved the future generation code into
+
+00:00:14.580 --> 00:00:17.580
+activity classifier utils because you've seen that enough times.
+
+00:00:17.580 --> 00:00:19.125
+So in the previous video,
+
+00:00:19.125 --> 00:00:21.600
+we built a classifier that had 100 trees in
+
+00:00:21.600 --> 00:00:25.245
+the forest and each tree had a maximum depth of four.
+
+00:00:25.245 --> 00:00:29.520
+But how do we know that this is really the optimal configuration of our classifier?
+
+00:00:29.520 --> 00:00:32.960
+At that time we didn't, we just picked our best guess.
+
+00:00:32.960 --> 00:00:36.485
+But now we're going to optimize these parameters and see if we can do better.
+
+00:00:36.485 --> 00:00:39.920
+So we'll search this range of values for the number of trees in
+
+00:00:39.920 --> 00:00:45.695
+the forest and then we'll sweep the maximum tree depth from two to six.
+
+00:00:45.695 --> 00:00:50.150
+Then for each pair of hyperparameters,
+
+00:00:50.150 --> 00:00:55.705
+we will compute a new confusion matrix and build a new classifier.
+
+00:00:55.705 --> 00:00:59.030
+You should note that we set this class weight parameter to
+
+00:00:59.030 --> 00:01:02.030
+balanced because as we saw previously,
+
+00:01:02.030 --> 00:01:04.260
+our data set is imbalanced.
+
+00:01:04.260 --> 00:01:07.925
+We have fewer running data points than walking and biking.
+
+00:01:07.925 --> 00:01:11.270
+We don't know or we have no reason to believe that in the test
+
+00:01:11.270 --> 00:01:15.020
+set this imbalance will continue to exist.
+
+00:01:15.020 --> 00:01:17.420
+So we tell sklearn to build
+
+00:01:17.420 --> 00:01:23.125
+a random forest classifier that is unbiased with respect to activity class.
+
+00:01:23.125 --> 00:01:28.485
+Next, we use our leave-one-subject-out cross-validation
+
+00:01:28.485 --> 00:01:32.565
+to split the data set into training and test sets.
+
+00:01:32.565 --> 00:01:38.225
+We try and test and compute the confusion matrix on our model as we did previously.
+
+00:01:38.225 --> 00:01:43.160
+We then compute the classification accuracy and keep track of
+
+00:01:43.160 --> 00:01:48.955
+the classification accuracy and the hyperparameters that resulted in a table.
+
+00:01:48.955 --> 00:01:50.795
+When we look at this table,
+
+00:01:50.795 --> 00:01:55.190
+we can see that it has one row per hyperparameter configuration,
+
+00:01:55.190 --> 00:01:57.440
+as well as the classification accuracy.
+
+00:01:57.440 --> 00:02:00.830
+So we can figure out what our best hyperparameters are
+
+00:02:00.830 --> 00:02:04.890
+by looking at the row with the highest classification accuracy.
+
+00:02:04.890 --> 00:02:09.200
+It turns out that if we reduce our tree depth to two,
+
+00:02:09.200 --> 00:02:14.795
+we have now significantly increased our accuracy from 77 percent to 89 percent.
+
+00:02:14.795 --> 00:02:17.585
+Just by reducing the maximum tree depth to two,
+
+00:02:17.585 --> 00:02:20.390
+we have significantly increased our classification accuracy.
+
+00:02:20.390 --> 00:02:24.010
+If we went from 77 percent to 89 percent.
+
+00:02:24.010 --> 00:02:25.595
+By reducing the depth to two,
+
+00:02:25.595 --> 00:02:27.350
+we are regularizing our model.
+
+00:02:27.350 --> 00:02:29.060
+Regularization is an important topic in
+
+00:02:29.060 --> 00:02:32.090
+machine learning and it's our best way to avoid overfitting.
+
+00:02:32.090 --> 00:02:35.345
+That's why we see an increase in the cross-validated performance.
+
+00:02:35.345 --> 00:02:40.130
+But we just use the entire data set many times to figure out the optimal hyperparameters.
+
+00:02:40.130 --> 00:02:42.515
+In some sense, this is also overfitting.
+
+00:02:42.515 --> 00:02:45.470
+Our 89 percent classification accuracy is
+
+00:02:45.470 --> 00:02:48.760
+likely too high and not the actual generalized performance.
+
+00:02:48.760 --> 00:02:52.130
+In the next video, we can see what our actual performance might
+
+00:02:52.130 --> 00:02:56.310
+be if we used our data set to optimize our hyperparameters.
+

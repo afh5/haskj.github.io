@@ -1,0 +1,296 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recap: Activity Classification</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Activity Classification</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Activity Classifiers.html">01. Intro to Activity Classifiers</a>
+    </li>
+    <li class="">
+      <a href="02. Data Exploration.html">02. Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 1 Data Exploration.html">03. Exercise 1: Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Solution.html">04. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="05. Feature Extraction I.html">05. Feature Extraction I</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 2 Feature Extraction.html">06. Exercise 2: Feature Extraction</a>
+    </li>
+    <li class="">
+      <a href="07. Feature Extraction Continued....html">07. Feature Extraction Continued...</a>
+    </li>
+    <li class="">
+      <a href="08. Activity Classification.html">08. Activity Classification</a>
+    </li>
+    <li class="">
+      <a href="09. Hyperparameter Tuning &amp; Regularization.html">09. Hyperparameter Tuning &amp; Regularization</a>
+    </li>
+    <li class="">
+      <a href="10. Cross-Validation and Feature Importance.html">10. Cross-Validation and Feature Importance</a>
+    </li>
+    <li class="">
+      <a href="11. Hyperparameter Tuning in Review.html">11. Hyperparameter Tuning in Review</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 3 A Quirk in the Dataset.html">12. Exercise 3: A Quirk in the Dataset</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 3 Solution.html">13. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Activity Classification.html">14. Recap: Activity Classification</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">14. Recap: Activity Classification</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="activity-classification-recap">Activity Classification Recap</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L3 15 Recap- Decision Tree Vs. Random Forest</p></h3>
+  <video controls>
+  <source src="14. ND320 C4 L3 15 Recap- Decision Tree Vs. Random Forest-1i5obfDHdio.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="14. ND320 C4 L3 15 Recap- Decision Tree Vs. Random Forest-1i5obfDHdio.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h1 id="summary">Summary</h1>
+<p>We’ve just done our first modeling task with wearable data. It took a while to get here. We had to learn what an accelerometer was and how it collected information about movement, and we had to learn about signal processing to build the features that we used in our model. We were able to build a pretty successful three-class classifier using a random forest and by doing proper hyperparameter optimization. But this problem is about as easy as it gets.</p>
+<p>If you’re looking for a challenge, go to the original dataset and see that it actually has four classes -- running, walking, high-intensity biking, and low-intensity biking. You could try building a classifier that can distinguish between high-intensity and low-intensity biking. You’ll also find a PPG signal in the dataset. That might help you discriminate between these two classes. You might also find that it’s impossible. Maybe there’s not enough information in these sensors to solve this problem, or maybe the dataset wasn’t collected as rigorously as we need. Ultimately, low-resistance and high-resistance is subjective, and the dataset description even notes: </p>
+<blockquote>
+  <p>…each participant was free to set the pace of the treadmill and pedal rate on the bike so they were comfortable and also to change these settings or stop the exercise at any time.</p>
+</blockquote>
+<p>More often than not, this is the reality of real-world data science problems.</p>
+<h3 id="outline">Outline</h3>
+<p>Understanding Your Data</p>
+<ul>
+<li>Wrist PPG Dataset</li>
+<li>Data Exploration and Visualization
+Understanding The Literature<ul>
+<li>Feature Engineering and Extraction<br />
+Modeling<br />
+Performance Evaluation<br />
+Hyperparameter Optimization</li></ul></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Resources</p></h3>
+  <div>
+  <h2 id="further-resources">Further Resources</h2>
+<h3 id="data-exploration">Data Exploration</h3>
+<ul>
+<li><a href="https://physionet.org/content/wrist/1.0.0/" rel="noopener noreferrer" target="_blank">Wrist PPG Dataset</a></li>
+<li>This is a great blog post by <a href="https://towardsdatascience.com/@kozyrkov" rel="noopener noreferrer" target="_blank">Casie Kozrykov</a> who taught me statistics at Google! In it, she describes the dangers of overfitting your brain when you explore your data.<br />
+<a href="https://towardsdatascience.com/your-dataset-is-a-giant-inkblot-test-b9bf4c53eec5" rel="noopener noreferrer" target="_blank">Your dataset is a giant inkblot test</a>.</li>
+<li>Check out <a href="https://stats.stackexchange.com/questions/352688/is-exploratory-data-analysis-important-when-doing-purely-predictive-modeling" rel="noopener noreferrer" target="_blank">this StackOverflow discussion</a> on the value of data exploration. From one of the responses:</li>
+</ul>
+<blockquote>
+  <p>Two weeks spent training a neuralnet can save you 2 hours looking at the input data</p>
+</blockquote>
+<ul>
+<li>And finally, a <a href="https://machinelearningmastery.com/understand-problem-get-better-results-using-exploratory-data-analysis/" rel="noopener noreferrer" target="_blank">blog post</a> from a machine learning practitioner on the data exploration.</li>
+</ul>
+<h3 id="feature-creation">Feature Creation</h3>
+<p>This blog post, <a href="http://ataspinar.com/2018/04/04/machine-learning-with-signal-processing-techniques/" rel="noopener noreferrer" target="_blank">Machine Learning with Signal Processing Techniques</a>, goes through a very similar process as this lesson. It starts by explaining some signal processing techniques (like we did earlier in the course). The author uses those techniques to build features in much the same way we just did. And then, he uses those features to build an activity classification model, just as we are about to!</p>
+<p>The algorithm we built was inspired by these two papers.</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5856093/" rel="noopener noreferrer" target="_blank">Mehrang S., Pietilä J., Korhonen I. An Activity Recognition Framework Deploying the Random Forest Classifier and A Single Optical Heart Rate Monitoring and Triaxial Accelerometer Wrist-Band. Sensors. 2018;18:613. doi: 10.3390/s18020613.</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3475744/" rel="noopener noreferrer" target="_blank">Liu S, Gao RX, Freedson PS. Computational methods for estimating energy expenditure in human physical activities. Med Sci Sports Exerc. 2012;44:2138–2146. doi: 10.1249/MSS.0b013e31825e825a.</a></p>
+<h3 id="model-building">Model Building</h3>
+<p>Random forests are boosted decision tree models. You need to understand a decision tree before learning what a random forest model is. Start with the <a href="https://scikit-learn.org/stable/modules/tree.html" rel="noopener noreferrer" target="_blank"><code>sklearn</code> tutorial</a> on decision trees.  Then check out these videos on youtube for a visual explanation:</p>
+<p><a href="https://www.youtube.com/watch?v=7VeUPuFGJHk" rel="noopener noreferrer" target="_blank">Decision Trees Part 1</a><br />
+<a href="https://www.youtube.com/watch?v=wpNl-JwwplA" rel="noopener noreferrer" target="_blank">Decision Trees Part 2</a><br />
+<a href="https://www.youtube.com/watch?v=J4Wdy0Wc_xQ" rel="noopener noreferrer" target="_blank">Random Forest Part 1</a><br />
+<a href="https://www.youtube.com/watch?v=nyxTdL_4Q-Q" rel="noopener noreferrer" target="_blank">Random Forest Part 2</a></p>
+<p>See this <a href="https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics" rel="noopener noreferrer" target="_blank">list of classification accuracy metrics</a> that can be computed in <code>sklearn</code>.</p>
+<p>Follow <a href="https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2" rel="noopener noreferrer" target="_blank">this series of blog posts</a> for an understanding of how these accuracy metrics work on multiclass problems like ours.</p>
+<h3 id="hyperparameter-optimization">Hyperparameter Optimization</h3>
+<p>Nested cross-validation can be a tricky concept to wrap your head around. Here are three different explanations from three different authors. Maybe one of the following resources will explain it in a way that clicks for you:</p>
+<ul>
+<li><a href="https://weina.me/nested-cross-validation/" rel="noopener noreferrer" target="_blank">Nested CV - Weina Jin</a></li>
+<li><a href="https://www.elderresearch.com/blog/nested-cross-validation" rel="noopener noreferrer" target="_blank">Nested CV - Elder Research</a></li>
+<li><a href="https://stats.stackexchange.com/questions/65128/nested-cross-validation-for-model-selection" rel="noopener noreferrer" target="_blank">Nested CV - Stack Exchange: Cross Validated</a></li>
+</ul>
+<p>Our code implementing nested CV was pretty verbose so that you could see all the steps. As with almost everything in ML, <code>sklearn</code> can do it for us as well and you can learn more about<br />
+Nested CV in <code>sklearn</code> through the <a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html" rel="noopener noreferrer" target="_blank">documentation</a>.</p>
+<p>Is overfitting our hyperparameters really a problem in practice? <a href="http://www.jmlr.org/papers/volume11/cawley10a/cawley10a.pdf" rel="noopener noreferrer" target="_blank">Yes (or so says this 2010 paper)</a></p>
+<p>An explanation on the difference between hyperparameters and regular parameters with this <a href="https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/" rel="noopener noreferrer" target="_blank">article</a> from Machine Learning Mastery.</p>
+<p>If you want to learn more about Regularization through this <a href="https://towardsdatascience.com/regularization-an-important-concept-in-machine-learning-5891628907ea" rel="noopener noreferrer" target="_blank">article</a> from Towards Data Science.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Hyperparameter</strong>: A parameter of the model that dictates how the model learns. This is not trained during the training process of the model itself.</li>
+<li><strong>Regularization</strong>: Regularization is a technique to reduce overfitting of a model by discouraging complexity in the model.</li>
+<li><strong>Nested cross-validation</strong>: A technique to determine model performance when hyperparameters are also optimized.</li>
+<li><strong>Cross-validation</strong>: A technique for estimating model performance where multiple models are trained and tested each on a separate partition of the entire dataset.</li>
+<li><strong>Classification accuracy</strong>: The percent of correct classifications made by a model.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Recap: Activity Classification')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

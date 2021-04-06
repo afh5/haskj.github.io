@@ -1,0 +1,409 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Motion Compensated Pulse Rate Estimation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Motion Compensated Pulse Rate Estimation</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Part 1 Overview &amp; Instructions.html">02. Part 1: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="03. Pulse Rate Algorithm.html">03. Pulse Rate Algorithm</a>
+    </li>
+    <li class="">
+      <a href="04. Test Your Algorithm.html">04. Test Your Algorithm</a>
+    </li>
+    <li class="">
+      <a href="05. Part 2 Overview &amp; Instructions.html">05. Part 2: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Application.html">06. Clinical Application</a>
+    </li>
+    <li class="">
+      <a href="07. Conclusion.html">07. Conclusion</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Motion Compensated Pulse Rate Estimation.html">Project Description - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Motion Compensated Pulse Rate Estimation.html">Project Rubric - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Motion Compensated Pulse Rate Estimation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Code Quality</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project code is clean and modular.</p>
+        </td>
+        <td>
+          <ul>
+<li>Scripts have an intuitive, easy-to-follow structure with code separated into logical functions.</li>
+<li>Naming for variables and functions follows the <a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" rel="noopener noreferrer" target="_blank">PEP8</a> style guidelines.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Code is well documented.</p>
+        </td>
+        <td>
+          <ul>
+<li>Comments are used to clearly describe tricky or opaque pieces of code. </li>
+<li>Each function has a docstring.</li>
+<li>The module containing the algorithm has a docstring describing the algorithm.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Numerical algorithms best practices.</p>
+        </td>
+        <td>
+          <ul>
+<li>Algorithm parameters are passed as function arguments.  </li>
+<li>Default values for algorithm parameters should be set.</li>
+<li>Use module constants or function parameters instead of <a href="https://en.wikipedia.org/wiki/Magic_number_(programming" rel="noopener noreferrer" target="_blank">magic numbers</a>.  </li>
+<li>Makes use of vectorized operations (e.g., with <code>numpy</code>) when doing so would make the code easier to read or noticeably faster.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Algorithm Specifics</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Use the correct input signals</p>
+        </td>
+        <td>
+          <ul>
+<li>Use the 2nd ppg signal in the third column of the troika data matrix. If you are using the provided starter code to parse the data files, then this happens automatically. </li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Follow signal processing and algorithm best practices.</p>
+        </td>
+        <td>
+          <ul>
+<li>The PPG and accelerometer signals should be bandpass filtered using a reasonable passband and filter design.</li>
+<li>The accelerometer channels should be aggregated in a meaningful way (e.g., into a magnitude signal).</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Algorithm error is computed correctly.</p>
+        </td>
+        <td>
+          <ul>
+<li>Reference values and estimates are appropriately paired (eg. using nearest neighbor or interpolation technique).</li>
+<li>Mean absolute error is computed correctly.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Acceptable algorithm performance on the test set.</p>
+        </td>
+        <td>
+          <ul>
+<li>The mean absolute error at 90% availability is less than 10 BPM.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Algorithm runs without errors.</p>
+        </td>
+        <td>
+          <ul>
+<li>The algorithm should run on the test subject without errors.</li>
+<li>The algorithm should produce a pulse rate estimate and a confidence value at least every 2 seconds.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Project Write-up</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Code Description.</p>
+        </td>
+        <td>
+          <ul>
+<li>The <strong>Project Write-up</strong> describes how to run the code.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Data Description.</p>
+        </td>
+        <td>
+          <p>The <strong>Project Write-up</strong> describes: </p>
+<ul>
+<li>what activities were performed in the dataset.</li>
+<li>features of the sensor that was used.</li>
+<li>the quantity of data in the dataset.</li>
+<li>short-comings of the dataset.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Algorithm Description</p>
+        </td>
+        <td>
+          <p>The <strong>Project Write-up</strong> describes:</p>
+<ul>
+<li>how the algorithm works, including a description of the physiology.</li>
+<li>an intuitive explanation of why the confidence algorithm produces a higher number for better estimates.</li>
+<li>insightful caveats and failure-modes of the algorithm.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Algorithm Performance</p>
+        </td>
+        <td>
+          <p>The <strong>Project Write-Up</strong> describes</p>
+<ul>
+<li>the algorithm performance and how it was computed.<br />
+*It discusses the performance generalizability to other datasets. </li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Clinical Significance Description</p>
+        </td>
+        <td>
+          <p>The <strong>Clinical Conclusion</strong> describes: </p>
+<ul>
+<li>the trends are observed in the data (women, men, compared)</li>
+<li>the a possible reasoning for what is seen in the data</li>
+<li>at least 1 technique or type of data source to clarify the current data</li>
+<li>the validation/or not of the trend seen in resting heart rates.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ol>
+<li>Achieve a 90th-percentile mean absolute error less than 2 BPM on the test set.</li>
+<li>Include visualizations of the signal and your algorithm outputs in the write-up to better communicate how the algorithm works.</li>
+<li>Break down algorithm performance by activity and discuss this in the write-up.</li>
+</ol></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Motion Compensated Pulse Rate Estimation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

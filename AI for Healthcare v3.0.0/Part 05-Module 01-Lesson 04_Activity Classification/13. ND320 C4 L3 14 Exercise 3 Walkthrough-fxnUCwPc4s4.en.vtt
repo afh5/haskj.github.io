@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.595
+As I was building out the activity classifier lesson,
+
+00:00:02.595 --> 00:00:04.155
+I noticed that there was one feature,
+
+00:00:04.155 --> 00:00:06.405
+the mean absolute difference in the y channel,
+
+00:00:06.405 --> 00:00:09.360
+that could basically classify our data all by itself.
+
+00:00:09.360 --> 00:00:13.440
+For this reason, I purposely left it out of our featurization code but
+
+00:00:13.440 --> 00:00:17.700
+let's now build a model using only this feature and then take a look at its performance.
+
+00:00:17.700 --> 00:00:20.340
+So we're going to do featurization just as before
+
+00:00:20.340 --> 00:00:22.845
+using 10 second non-overlapping windows.
+
+00:00:22.845 --> 00:00:28.005
+We iterate through our entire dataset and for each session divide it
+
+00:00:28.005 --> 00:00:33.620
+into windows of size 10 and instead of computing all our features,
+
+00:00:33.620 --> 00:00:37.295
+we'll just compute the mean absolute difference in the y channel.
+
+00:00:37.295 --> 00:00:43.465
+So now our feature matrix is basically just a vector, 611 by 1.
+
+00:00:43.465 --> 00:00:46.850
+So let's take a look at its performance just as before,
+
+00:00:46.850 --> 00:00:48.020
+using leave one subject out
+
+00:00:48.020 --> 00:00:52.805
+cross-validation and we see that our classification is 92 percent,
+
+00:00:52.805 --> 00:00:56.845
+basically the same accuracy but with only one feature.
+
+00:00:56.845 --> 00:00:59.565
+In fact, we don't even need a random forest.
+
+00:00:59.565 --> 00:01:04.435
+We can use a decision tree that just has a depth of two nodes.
+
+00:01:04.435 --> 00:01:07.250
+A decision tree with two nodes is basically saying that
+
+00:01:07.250 --> 00:01:10.105
+the mean absolute difference falls within a range,
+
+00:01:10.105 --> 00:01:12.380
+it belongs to one class,
+
+00:01:12.380 --> 00:01:15.080
+if the data point is below that range,
+
+00:01:15.080 --> 00:01:18.715
+it's another class, and if it's above that range, it's the third class.
+
+00:01:18.715 --> 00:01:21.890
+So it's a very simple model and
+
+00:01:21.890 --> 00:01:25.615
+we can see that we get exactly the same performance, 92 percent.
+
+00:01:25.615 --> 00:01:29.150
+So this one feature is extremely powerful.
+
+00:01:29.150 --> 00:01:32.020
+So what does this mean for our activity classification problem?
+
+00:01:32.020 --> 00:01:36.065
+Can we now start building activity classifiers that just use this one feature?
+
+00:01:36.065 --> 00:01:38.420
+Well, we don't know if this feature is actually all
+
+00:01:38.420 --> 00:01:40.400
+that powerful without seeing it highlighted in
+
+00:01:40.400 --> 00:01:44.740
+the literature or observing the same behavior in a different dataset.
+
+00:01:44.740 --> 00:01:47.990
+Again, we only had eight subjects and maybe they all perform
+
+00:01:47.990 --> 00:01:51.875
+these activities very similarly or because they were all in the same clinic,
+
+00:01:51.875 --> 00:01:55.189
+maybe the study coordinator or lab setup somehow
+
+00:01:55.189 --> 00:01:57.155
+influenced them to perform these activities
+
+00:01:57.155 --> 00:01:59.530
+in a way that made this feature so informative.
+
+00:01:59.530 --> 00:02:02.180
+So this is just another example of how it's still very
+
+00:02:02.180 --> 00:02:05.435
+possible to over-fit when you're working with real-world datasets,
+
+00:02:05.435 --> 00:02:07.880
+even when you follow proper machine-learning hygiene,
+
+00:02:07.880 --> 00:02:10.255
+like cross-validation and train test split.
+
+00:02:10.255 --> 00:02:13.100
+Decision tree with just two nodes is basically saying
+
+00:02:13.100 --> 00:02:16.535
+that if our feature falls within a certain range,
+
+00:02:16.535 --> 00:02:18.110
+it belongs to one class,
+
+00:02:18.110 --> 00:02:19.955
+if it's below the range,
+
+00:02:19.955 --> 00:02:21.020
+it's a different class,
+
+00:02:21.020 --> 00:02:23.570
+and if it's above the range, it's a third class.
+
+00:02:23.570 --> 00:02:26.160
+So it's a very simple model.
+

@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.385
+We've discussed atrial fibrillation a lot in this course,
+
+00:00:02.385 --> 00:00:06.555
+especially when we were talking earlier about Apple Heart Study and the Framingham study.
+
+00:00:06.555 --> 00:00:10.275
+In this lesson, we're finally going to learn what AFib actually is.
+
+00:00:10.275 --> 00:00:12.615
+As we've discussed in a normal heart rhythm,
+
+00:00:12.615 --> 00:00:16.200
+the sinus node generates the impulse that causes the atria to contract.
+
+00:00:16.200 --> 00:00:18.735
+Then this impulse is propagated to the AV node,
+
+00:00:18.735 --> 00:00:22.500
+which then spreads to the ventricles causing the ventricles to contract.
+
+00:00:22.500 --> 00:00:25.530
+This results in a very regular looking waveform,
+
+00:00:25.530 --> 00:00:27.735
+and this is called sinus rhythm.
+
+00:00:27.735 --> 00:00:30.860
+In atrial fibrillation, instead of the sinus node being
+
+00:00:30.860 --> 00:00:35.015
+the sole location that begins the depolarization of the atria,
+
+00:00:35.015 --> 00:00:37.745
+there are multiple locations around the atria
+
+00:00:37.745 --> 00:00:40.835
+that will generate an impulse spontaneously.
+
+00:00:40.835 --> 00:00:44.690
+Each of these impulses causes partial contraction of the atria,
+
+00:00:44.690 --> 00:00:47.780
+but no single impulse depolarizes the entire atria.
+
+00:00:47.780 --> 00:00:51.365
+So we don't really see a coherent contraction of the atria.
+
+00:00:51.365 --> 00:00:54.115
+Instead, it kind of just passes.
+
+00:00:54.115 --> 00:00:57.260
+Occasionally one of these impulses will reach the AV node,
+
+00:00:57.260 --> 00:00:59.810
+which will then cause the ventricular contraction,
+
+00:00:59.810 --> 00:01:05.390
+but because all these atrial impulses are occurring haphazardly,
+
+00:01:05.390 --> 00:01:10.025
+the ventricular contractions will also occur randomly and irregularly.
+
+00:01:10.025 --> 00:01:14.105
+This is what an EKG looks like when it's in atrial fibrillation.
+
+00:01:14.105 --> 00:01:18.320
+The first thing you notice is that there's no P waves and that's because there's
+
+00:01:18.320 --> 00:01:21.200
+no coherent atrial contraction causing
+
+00:01:21.200 --> 00:01:26.140
+a big enough electrical disturbance to show up as the P wave in our EKG signal.
+
+00:01:26.140 --> 00:01:30.670
+Instead, we see this fibrillating wave in the baseline.
+
+00:01:30.670 --> 00:01:32.840
+The other thing we notice is that
+
+00:01:32.840 --> 00:01:36.880
+the QRS complexes are occurring at very irregular intervals.
+
+00:01:36.880 --> 00:01:39.680
+So in the beginning they're close together and
+
+00:01:39.680 --> 00:01:42.755
+then they get far apart and they come close together again,
+
+00:01:42.755 --> 00:01:46.340
+and the heart rate can be fast or slow during atrial fibrillation,
+
+00:01:46.340 --> 00:01:48.590
+but it'll always be irregular.
+
+00:01:48.590 --> 00:01:50.900
+We mentioned earlier that atrial fibrillation is
+
+00:01:50.900 --> 00:01:53.420
+associated with an increased risk of stroke,
+
+00:01:53.420 --> 00:01:57.650
+and the reason this occurs is because the atria are not contracting completely,
+
+00:01:57.650 --> 00:02:00.695
+and so stagnant pools of blood will form in the atria.
+
+00:02:00.695 --> 00:02:02.825
+These pools can then form blood clots,
+
+00:02:02.825 --> 00:02:05.585
+which may get circulated into the bloodstream.
+
+00:02:05.585 --> 00:02:09.250
+As these clots pass through progressively smaller and smaller arteries,
+
+00:02:09.250 --> 00:02:14.010
+they may eventually obstruct blood flow to the brain and cause a stroke.
+
+00:02:14.010 --> 00:02:16.610
+So now we've seen how the atrial fibrillation occurs
+
+00:02:16.610 --> 00:02:19.780
+physiologically and why it's a potentially dangerous condition.
+
+00:02:19.780 --> 00:02:22.040
+Let's build an algorithm that automatically detects
+
+00:02:22.040 --> 00:02:25.230
+atrial fibrillation from the EKG signal.
+

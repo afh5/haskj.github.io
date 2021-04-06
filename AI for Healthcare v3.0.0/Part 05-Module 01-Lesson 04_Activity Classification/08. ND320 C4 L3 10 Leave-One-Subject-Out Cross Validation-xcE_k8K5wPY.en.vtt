@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.255
+You may have seen leave-one-out cross-validation before.
+
+00:00:03.255 --> 00:00:06.195
+Leave-one-subject-out cross-validation is similar.
+
+00:00:06.195 --> 00:00:08.880
+You might remember that in our dataset,
+
+00:00:08.880 --> 00:00:10.755
+we have 611 data points,
+
+00:00:10.755 --> 00:00:12.645
+but from only eight subjects.
+
+00:00:12.645 --> 00:00:15.450
+This is somewhat common in biomedical signal processing
+
+00:00:15.450 --> 00:00:18.645
+because enrolling subjects and collecting data from them is expensive.
+
+00:00:18.645 --> 00:00:20.290
+So when we do have a subject,
+
+00:00:20.290 --> 00:00:22.820
+we typically collect a lot of data from them and
+
+00:00:22.820 --> 00:00:25.360
+end up with multiple data points per subject.
+
+00:00:25.360 --> 00:00:27.800
+Because there might be a lot of similarity in how
+
+00:00:27.800 --> 00:00:30.259
+an individual performs a specific activity,
+
+00:00:30.259 --> 00:00:32.800
+leaving some of that person's data in the training set,
+
+00:00:32.800 --> 00:00:34.850
+and then testing on it might lead us to believe
+
+00:00:34.850 --> 00:00:37.040
+that our model generalizes better than it actually
+
+00:00:37.040 --> 00:00:38.720
+would have if it had encountered
+
+00:00:38.720 --> 00:00:41.585
+a brand new person who had never seen in the training set.
+
+00:00:41.585 --> 00:00:44.915
+For this reason, when we do leave-one-out-subject-out cross-validation,
+
+00:00:44.915 --> 00:00:47.899
+our test set contains only data from one subject,
+
+00:00:47.899 --> 00:00:51.220
+and that person's data does not exist in the training set.
+
+00:00:51.220 --> 00:00:53.900
+This is also why we keep track of which
+
+00:00:53.900 --> 00:00:57.080
+subject each data point belong to in the subjects array.
+
+00:00:57.080 --> 00:00:59.900
+As with everything else, scikit-learn has
+
+00:00:59.900 --> 00:01:03.445
+a function for leave-one-subject-out cross-validation.
+
+00:01:03.445 --> 00:01:09.670
+We're going to keep track of our confusion matrix in this three-by-three NumPy matrix.
+
+00:01:09.670 --> 00:01:17.190
+To do cross-validation, we first split up our dataset into a training set and a test set,
+
+00:01:17.190 --> 00:01:20.050
+and we do this for each cross validation fold.
+
+00:01:20.050 --> 00:01:24.070
+Then we will train our classifier on the training set,
+
+00:01:24.070 --> 00:01:26.240
+and run the classifier on our test set.
+
+00:01:26.240 --> 00:01:30.400
+Then we'll compute the confusion matrix for this specific fold,
+
+00:01:30.400 --> 00:01:34.765
+and then aggregate all the confusion matrices from all the folds together.
+
+00:01:34.765 --> 00:01:37.400
+Now, let's plot our confusion matrix.
+
+00:01:37.400 --> 00:01:40.225
+This is the confusion matrix for our classifier.
+
+00:01:40.225 --> 00:01:45.625
+Another way to plot the confusion matrix is to normalize it across rows, like this.
+
+00:01:45.625 --> 00:01:48.190
+So that the sum of each row equals one.
+
+00:01:48.190 --> 00:01:50.860
+This might be somewhat more interpretable.
+
+00:01:50.860 --> 00:01:56.070
+We can see that our classifier misclassifies this biking class a lot.
+
+00:01:56.070 --> 00:01:57.705
+Almost 42 percent of the time,
+
+00:01:57.705 --> 00:02:00.405
+we misclassify cycling as walk.
+
+00:02:00.405 --> 00:02:02.115
+We do pretty well with run.
+
+00:02:02.115 --> 00:02:06.770
+We don't misclassify runs as other things and we don't predict cycling as running at all,
+
+00:02:06.770 --> 00:02:09.955
+and we rarely predict walking as cycling.
+
+00:02:09.955 --> 00:02:11.990
+So typically in machine learning problems,
+
+00:02:11.990 --> 00:02:14.254
+it's nice to have a single matrix to optimize
+
+00:02:14.254 --> 00:02:16.910
+instead of this three-by-three matrix that we have.
+
+00:02:16.910 --> 00:02:19.950
+So we'll choose a metric called classification accuracy.
+
+00:02:19.950 --> 00:02:24.005
+This is just the percent of the time that we make a correct classification.
+
+00:02:24.005 --> 00:02:26.900
+There are other matrix that we can use to evaluate
+
+00:02:26.900 --> 00:02:29.645
+the classifier performance and depending on our dataset,
+
+00:02:29.645 --> 00:02:32.375
+using just one metric might be misleading.
+
+00:02:32.375 --> 00:02:34.790
+Check out the further resources section to learn
+
+00:02:34.790 --> 00:02:37.430
+more about matrix for evaluating classification.
+
+00:02:37.430 --> 00:02:41.860
+We can compute the classification accuracy from the confusion matrix as follows.
+
+00:02:41.860 --> 00:02:44.095
+It's just the sum of the diagonal elements,
+
+00:02:44.095 --> 00:02:48.440
+the correct classifications, divided by all the classifications made.
+
+00:02:48.440 --> 00:02:52.855
+So our classifier's classification accuracy is 77 percent.
+
+00:02:52.855 --> 00:02:55.275
+Great. We've built an activity classifier.
+
+00:02:55.275 --> 00:02:57.845
+It's performance, it's not terrible,
+
+00:02:57.845 --> 00:02:59.375
+but we can definitely do better.
+
+00:02:59.375 --> 00:03:01.800
+Let's see how in the next lesson.
+

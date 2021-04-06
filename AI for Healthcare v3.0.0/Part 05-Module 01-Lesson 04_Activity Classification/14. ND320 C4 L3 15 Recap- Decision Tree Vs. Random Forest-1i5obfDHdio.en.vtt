@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.700
+We've just done our first modeling task with wearable data.
+
+00:00:02.700 --> 00:00:03.840
+It took us a while to get here,
+
+00:00:03.840 --> 00:00:05.820
+we had to first learn what an accelerometer
+
+00:00:05.820 --> 00:00:08.715
+was and how it collected information about movement,
+
+00:00:08.715 --> 00:00:10.740
+and we had to learn about signal processing to
+
+00:00:10.740 --> 00:00:12.975
+build the features that we used in our model.
+
+00:00:12.975 --> 00:00:16.739
+At the end of the day, we were able to build a pretty successful three class classifier
+
+00:00:16.739 --> 00:00:20.820
+using a random forest and by doing proper hyperparameter optimization,
+
+00:00:20.820 --> 00:00:23.575
+but this problem is about as easy as it gets.
+
+00:00:23.575 --> 00:00:25.085
+If you're looking for a challenge,
+
+00:00:25.085 --> 00:00:29.120
+go to the original data set and remember that it actually has four classes: running,
+
+00:00:29.120 --> 00:00:32.645
+walking, high-intensity biking, and low-intensity biking.
+
+00:00:32.645 --> 00:00:35.300
+You could try to build a classifier that can distinguish
+
+00:00:35.300 --> 00:00:38.350
+between the high-intensity and low-intensity cycling classes.
+
+00:00:38.350 --> 00:00:40.885
+You'll also find a PPG signal in the data set,
+
+00:00:40.885 --> 00:00:43.855
+which might help you discriminate between these two classes.
+
+00:00:43.855 --> 00:00:46.185
+You might also find that it's impossible,
+
+00:00:46.185 --> 00:00:49.355
+maybe there's not enough information in these sensors to solve this problem,
+
+00:00:49.355 --> 00:00:52.985
+or maybe the data set wasn't collected as rigorously as we need.
+
+00:00:52.985 --> 00:00:56.105
+Ultimately, low resistance and high resistance is subjective,
+
+00:00:56.105 --> 00:00:58.045
+and the data set description even notes,
+
+00:00:58.045 --> 00:00:59.690
+"Each participant was free to set
+
+00:00:59.690 --> 00:01:02.150
+the pace of the treadmill and pedal rate on the bike so that they
+
+00:01:02.150 --> 00:01:06.595
+were comfortable and also to change these settings or stop the exercise at any time."
+
+00:01:06.595 --> 00:01:10.190
+More often than not, this is the reality of real-world data science problems,
+
+00:01:10.190 --> 00:01:12.150
+where you're doomed to fail before you even begin,
+
+00:01:12.150 --> 00:01:14.500
+you just don't know that until after you try.
+
+00:01:14.500 --> 00:01:17.990
+The key here is to not get frustrated when this happens and to maybe
+
+00:01:17.990 --> 00:01:21.560
+do some leg work before you begin a problem to make sure that it's more feasible.
+
+00:01:21.560 --> 00:01:25.950
+We'll continue our modeling efforts in the next lesson with the EKG signal.
+

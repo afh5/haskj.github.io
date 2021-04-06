@@ -1,0 +1,259 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.880
+In this exercise, we want to extend the Pan-Tompkins algorithm,
+
+00:00:02.880 --> 00:00:04.920
+by improving the detection steps so
+
+00:00:04.920 --> 00:00:07.380
+that we can be more robust to some of the failure modes.
+
+00:00:07.380 --> 00:00:09.914
+But before we can really iterate on the algorithm,
+
+00:00:09.914 --> 00:00:12.930
+we need a way to evaluate its performance to know if any changes
+
+00:00:12.930 --> 00:00:16.350
+we make actually improve the algorithm or make it worse.
+
+00:00:16.350 --> 00:00:18.420
+We'll compute precision and recall and use
+
+00:00:18.420 --> 00:00:21.090
+those numbers to judge our algorithm's performance.
+
+00:00:21.090 --> 00:00:25.185
+This was the function I gave you to help us evaluate our algorithm performance.
+
+00:00:25.185 --> 00:00:28.695
+It takes in the reference towards locations,
+
+00:00:28.695 --> 00:00:32.145
+as well as the output of our QRS complex detector,
+
+00:00:32.145 --> 00:00:33.870
+which we'll call, estimate peaks.
+
+00:00:33.870 --> 00:00:36.920
+Then the tolerance of how far
+
+00:00:36.920 --> 00:00:40.895
+our estimates can be off from the reference in number of samples.
+
+00:00:40.895 --> 00:00:44.660
+This accounts for the fact that the reference won't actually be
+
+00:00:44.660 --> 00:00:48.545
+exactly at the sample location as our algorithms,
+
+00:00:48.545 --> 00:00:51.370
+even when they mark the same QRS complex.
+
+00:00:51.370 --> 00:00:53.005
+Until this function returns,
+
+00:00:53.005 --> 00:00:56.930
+the number of QRS complexes that we detect correctly,
+
+00:00:56.930 --> 00:00:58.520
+the number that we missed,
+
+00:00:58.520 --> 00:01:01.235
+and the number of spurious detections.
+
+00:01:01.235 --> 00:01:02.960
+Once we have all that,
+
+00:01:02.960 --> 00:01:06.215
+we can then, use these numbers to compute precision and recall,
+
+00:01:06.215 --> 00:01:10.805
+because the number of correct detections is basically our true positives,
+
+00:01:10.805 --> 00:01:14.275
+and the number of spurious detections are our false positives.
+
+00:01:14.275 --> 00:01:17.785
+So we can compute precision using this formula.
+
+00:01:17.785 --> 00:01:20.525
+Then the number of QRS complexes that we missed
+
+00:01:20.525 --> 00:01:24.285
+are our false negatives and so this would be the recall.
+
+00:01:24.285 --> 00:01:26.320
+So there were three strategies that we wanted to
+
+00:01:26.320 --> 00:01:28.805
+implement to improve our Pan-Tompkins algorithm.
+
+00:01:28.805 --> 00:01:32.185
+The first one is called refractory period blanking,
+
+00:01:32.185 --> 00:01:36.490
+which takes advantage of the fact that depolarization has to occur to some extent,
+
+00:01:36.490 --> 00:01:39.205
+before a cell can contract again, and this takes time.
+
+00:01:39.205 --> 00:01:42.010
+So we'll say that it's physiologically impossible for
+
+00:01:42.010 --> 00:01:45.940
+two QRS complexes to occur within 200 milliseconds of each other.
+
+00:01:45.940 --> 00:01:49.500
+If our detector does fine to QRS complexes within this window,
+
+00:01:49.500 --> 00:01:51.430
+we'll say that the larger one is
+
+00:01:51.430 --> 00:01:55.450
+a true QRS complex and the smaller one is a spurious detection,
+
+00:01:55.450 --> 00:01:57.040
+so we want to throw that one out.
+
+00:01:57.040 --> 00:02:00.280
+So the way we implement this is,
+
+00:02:00.280 --> 00:02:06.200
+first by sorting our peaks by height and then we want to convert the refractory period,
+
+00:02:06.200 --> 00:02:10.315
+which was given to us in milliseconds to number of samples.
+
+00:02:10.315 --> 00:02:14.270
+We then iterate through this sorted list of peaks one-by-one,
+
+00:02:14.270 --> 00:02:17.230
+and add a peak to a new list.
+
+00:02:17.230 --> 00:02:23.150
+If, there doesn't already exist a peak in that list within 200 milliseconds of this one.
+
+00:02:23.150 --> 00:02:24.830
+So then at the end of this process,
+
+00:02:24.830 --> 00:02:28.970
+we are left with only peaks that do not violate the refractory period.
+
+00:02:28.970 --> 00:02:31.789
+Next, we want it to implement
+
+00:02:31.789 --> 00:02:36.245
+adaptive thresholding because QRS complex heights can change over time.
+
+00:02:36.245 --> 00:02:40.640
+This is especially true on long signals where electrodes can shift around
+
+00:02:40.640 --> 00:02:45.410
+or moisture can build up and this changes the height of the QRS complexes.
+
+00:02:45.410 --> 00:02:47.250
+This is really easy to implement.
+
+00:02:47.250 --> 00:02:53.600
+With pandas, we take a running mean of our peak heights,
+
+00:02:53.600 --> 00:02:57.935
+and then we want it to use 70 percent of that mean as our threshold.
+
+00:02:57.935 --> 00:02:59.570
+So what we're left with,
+
+00:02:59.570 --> 00:03:01.280
+is an array of thresholds,
+
+00:03:01.280 --> 00:03:02.635
+one for each peak.
+
+00:03:02.635 --> 00:03:07.530
+We then only return the peaks that exceed this threshold.
+
+00:03:07.530 --> 00:03:12.565
+The final strategy we want it to implement was called T-wave discrimination.
+
+00:03:12.565 --> 00:03:14.045
+This is important because
+
+00:03:14.045 --> 00:03:19.100
+sometimes especially large T waves may get confused for spurious QRS complexes.
+
+00:03:19.100 --> 00:03:22.385
+We can discriminate between a large T-wave and a QRS complex,
+
+00:03:22.385 --> 00:03:23.995
+by looking at the slope.
+
+00:03:23.995 --> 00:03:27.530
+Specifically, if the maximum slope around
+
+00:03:27.530 --> 00:03:31.340
+our suspected T-wave is less than half of the wave previous,
+
+00:03:31.340 --> 00:03:32.900
+then it's a T-wave, if not,
+
+00:03:32.900 --> 00:03:35.225
+it's an early QRS complex.
+
+00:03:35.225 --> 00:03:38.290
+So this is the code for a T-wave discrimination.
+
+00:03:38.290 --> 00:03:44.470
+First, we convert our windows that were given to us in milliseconds in to samples,
+
+00:03:44.470 --> 00:03:49.240
+and then we find all possible peaks that might be T-waves.
+
+00:03:49.240 --> 00:03:55.010
+We do this by looking for peaks that occur within this period of the proceeding wave.
+
+00:03:55.010 --> 00:03:56.930
+For each possible T-wave,
+
+00:03:56.930 --> 00:04:00.760
+we find the slope around this peak,
+
+00:04:00.760 --> 00:04:04.760
+as well as the maximum slope around the preceding peak.
+
+00:04:04.760 --> 00:04:08.870
+If this slope is less than half of the preceding slope,
+
+00:04:08.870 --> 00:04:13.040
+we mark this peak as belonging to a T-wave,
+
+00:04:13.040 --> 00:04:17.115
+and then remove all the T-waves from our list of peaks.
+
+00:04:17.115 --> 00:04:19.500
+Now we can run the code that loads
+
+00:04:19.500 --> 00:04:22.640
+our dataset and evaluates the performance of our algorithm.
+
+00:04:22.640 --> 00:04:26.930
+We see that we end up with a precision of 95 percent,
+
+00:04:26.930 --> 00:04:29.435
+and a recall of 87 percent.
+
+00:04:29.435 --> 00:04:31.505
+As mentioned earlier in this lesson,
+
+00:04:31.505 --> 00:04:35.900
+finding the QRS peak is an important step for many downstream algorithms.
+
+00:04:35.900 --> 00:04:37.520
+Next, we'll take a look at building
+
+00:04:37.520 --> 00:04:42.060
+an atrial fibrillation detection algorithm from these QRS peak locations.
+

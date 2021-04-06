@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.805
+In this lesson, we're going to build an activity classifier
+
+00:00:02.805 --> 00:00:05.640
+using data from an accelerometer on a wrist wearable.
+
+00:00:05.640 --> 00:00:08.265
+Activity classifiers can be useful directly in that
+
+00:00:08.265 --> 00:00:11.325
+people like to keep track of the activities they're doing over the day.
+
+00:00:11.325 --> 00:00:13.950
+But they can also be used in more clinical contexts.
+
+00:00:13.950 --> 00:00:16.950
+For example, if a company is doing a drug trial and
+
+00:00:16.950 --> 00:00:20.460
+wants to know if their drug makes study subjects more or less active,
+
+00:00:20.460 --> 00:00:22.740
+they can look at the activity classifier output
+
+00:00:22.740 --> 00:00:24.900
+and see if subjects are spending more time walking around,
+
+00:00:24.900 --> 00:00:26.250
+or if they're mostly idle.
+
+00:00:26.250 --> 00:00:28.035
+To build his activity classifier,
+
+00:00:28.035 --> 00:00:30.915
+you'll learn how to featurize a high rate time series.
+
+00:00:30.915 --> 00:00:33.690
+How do you take a few seconds of 200 Hertz signal,
+
+00:00:33.690 --> 00:00:35.750
+so that's thousands of data points,
+
+00:00:35.750 --> 00:00:37.460
+and reduce it to a handful of features that
+
+00:00:37.460 --> 00:00:40.080
+traditional machine learning models know how to deal with?
+
+00:00:40.080 --> 00:00:44.870
+We'll then use a random forest model to train our activity classifier and use,
+
+00:00:44.870 --> 00:00:48.475
+leave-one-subject-out cross validation to evaluate its performance.
+
+00:00:48.475 --> 00:00:50.060
+We'll then talk about our models,
+
+00:00:50.060 --> 00:00:53.135
+hyperparameters, and do hyperparameter optimization.
+
+00:00:53.135 --> 00:00:56.075
+To be successful in any modeling task, however,
+
+00:00:56.075 --> 00:00:59.240
+we need to dive into our data and become familiar with its intricacies.
+
+00:00:59.240 --> 00:01:02.310
+So we're going to begin with some data exploration.
+

@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.625
+We've built our function that extracts features.
+
+00:00:02.625 --> 00:00:04.605
+Now, let's run it on all of our data.
+
+00:00:04.605 --> 00:00:08.190
+We're going to train on 10 second non-overlapping windows.
+
+00:00:08.190 --> 00:00:13.060
+So we will iterate through each session in our dataset,
+
+00:00:13.060 --> 00:00:16.020
+and then divide it into our 10-second windows.
+
+00:00:16.020 --> 00:00:19.605
+For each window, we will run, our featurization code.
+
+00:00:19.605 --> 00:00:22.275
+We'll keep track of our features, the labels,
+
+00:00:22.275 --> 00:00:23.700
+which is the activity classes,
+
+00:00:23.700 --> 00:00:27.600
+and then the subject that each data point comes from.
+
+00:00:27.600 --> 00:00:31.050
+So we end up with an array of labels which is
+
+00:00:31.050 --> 00:00:35.020
+just the activity classes like walk and run,
+
+00:00:35.030 --> 00:00:41.015
+and an array of subjects which is the subject ID, s1 through s9.
+
+00:00:41.015 --> 00:00:43.565
+Features is just a feature matrix.
+
+00:00:43.565 --> 00:00:48.845
+We have 611 rows and 55 columns.
+
+00:00:48.845 --> 00:00:52.840
+So we have 611 data points and 55 features.
+
+00:00:52.840 --> 00:00:57.360
+We started out with 10 seconds of 256 hertz accelerometer data,
+
+00:00:57.360 --> 00:00:59.480
+that's 2,500 samples for channel,
+
+00:00:59.480 --> 00:01:01.505
+and with three accelerometer channels,
+
+00:01:01.505 --> 00:01:03.920
+that's more than 7,500 data points.
+
+00:01:03.920 --> 00:01:06.860
+We've successfully reduced these 7,500 points to
+
+00:01:06.860 --> 00:01:12.110
+just 55 while hopefully retaining all the information we need to build a good classifier.
+
+00:01:12.110 --> 00:01:14.525
+Although we only have eight subjects of data,
+
+00:01:14.525 --> 00:01:17.065
+we've managed to make 611 data points,
+
+00:01:17.065 --> 00:01:20.450
+and that's because each 10 second window is its own datapoint.
+
+00:01:20.450 --> 00:01:23.315
+However, these data points are not independent.
+
+00:01:23.315 --> 00:01:27.365
+Because there's homogeneity in how individuals do a specific activity,
+
+00:01:27.365 --> 00:01:31.430
+datapoints from the same person might be more similar to each other.
+
+00:01:31.430 --> 00:01:34.805
+We have to keep this in mind when we train and evaluate our model.
+
+00:01:34.805 --> 00:01:37.040
+In the next video, we'll use these features
+
+00:01:37.040 --> 00:01:40.350
+to build a random forest model and classify our data.
+

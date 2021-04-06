@@ -1,0 +1,250 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Part 2: Overview &amp; Instructions</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Motion Compensated Pulse Rate Estimation</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Overview.html">01. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Part 1 Overview &amp; Instructions.html">02. Part 1: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="03. Pulse Rate Algorithm.html">03. Pulse Rate Algorithm</a>
+    </li>
+    <li class="">
+      <a href="04. Test Your Algorithm.html">04. Test Your Algorithm</a>
+    </li>
+    <li class="">
+      <a href="05. Part 2 Overview &amp; Instructions.html">05. Part 2: Overview &amp; Instructions</a>
+    </li>
+    <li class="">
+      <a href="06. Clinical Application.html">06. Clinical Application</a>
+    </li>
+    <li class="">
+      <a href="07. Conclusion.html">07. Conclusion</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Motion Compensated Pulse Rate Estimation.html">Project Description - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Motion Compensated Pulse Rate Estimation.html">Project Rubric - Motion Compensated Pulse Rate Estimation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Part 2: Overview & Instructions</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="part-2-clinical-application">Part 2: Clinical Application</h1>
+<p>Now that you have built your pulse rate algorithm and tested your algorithm to know it works, we can use it to compute more clinically meaningful features and discover healthcare trends.</p>
+<p>Specifically, you will use 24 hours of heart rate data from 1500 samples to try to validate the well-known trend that average resting heart rate increases up until middle age and then decreases into old age. We'll also see if resting heart rates are higher for women than men. See the trend illustrated in this image:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/heart-rate-age-reference-chart.jpg" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Follow the steps in the notebook to reproduce this result!</p>
+<h2 id="dataset-cast">Dataset (CAST)</h2>
+<p>The data from this project comes from the <a href="https://physionet.org/content/crisdb/1.0.0/" rel="noopener noreferrer" target="_blank">Cardiac Arrhythmia Suppression Trial (CAST)</a>,   which was sponsored by the National Heart, Lung, and Blood Institute (NHLBI). CAST collected 24 hours of heart rate data from ECGs from people who have had a myocardial infarction (MI) within the past two years.[1] This data has been smoothed and resampled to more closely resemble PPG-derived pulse rate data from a wrist wearable.[2]</p>
+<ol>
+<li><strong>CAST RR Interval Sub-Study Database Citation</strong> - Stein PK, Domitrovich PP, Kleiger RE, Schechtman KB, Rottman JN. Clinical and demographic determinants of heart rate variability in patients post-myocardial infarction: insights from the Cardiac Arrhythmia Suppression Trial (CAST). Clin Cardiol 23(3):187-94; 2000 (Mar)</li>
+<li><strong>Physionet Citation</strong> - Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG, Mietus JE, Moody GB, Peng C-K, Stanley HE. PhysioBank, PhysioToolkit, and PhysioNet: Components of a New Research Resource for Complex Physiologic Signals (2003). Circulation. 101(23):e215-e220.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="instructions">Instructions</h2>
+<h3 id="offline-instructions">Offline Instructions</h3>
+<ol>
+<li>Clone the project starter repo <a href="https://github.com/udacity/nd320-c4-wearable-data-project-starter" rel="noopener noreferrer" target="_blank">here</a>. (<strong>Note</strong>: This is the same repo as Part 1 of the Final Project, you can skip this step if you already cloned this repo)</li>
+<li>Open up the <code>clinical_app_starter.ipynb</code> in a local program (e.g., spyder IDE, Jupyter Notebooks, etc. which you can find more detailed instructions in the <strong>Introduction to Wearables</strong> Lesson's <strong>Developer's Workflow</strong> Concept.) </li>
+<li>You are ready to complete Part 2 of the Final Project.</li>
+</ol>
+<p><strong>Note</strong>: Confirm that the packages <code>scipy</code> is version <strong>1.2.0</strong>+ and <code>seaborn</code> is version <strong>0.10.0</strong>+. You can do this by opening a new terminal and typing <code>conda list</code> and confirm the versioning is appropriate. </p>
+<h3 id="online-instructions">Online Instructions</h3>
+<ol>
+<li>You should head to the next Concept <strong>Clinical Application</strong>.  </li>
+<li>Confirm that the <code>clinical_app_starter.ipynb</code>is open and you are ready to complete Part 2 of the Final Project.</li>
+</ol>
+<h4 id="additional-project-reviewer-specific-instructions-remove-when-workspace-is-updated">Additional Project Reviewer Specific Instructions [REMOVE WHEN WORKSPACE IS UPDATED]</h4>
+<p><strong>This following section of info is only if you, the project reviewer, are planning on completing the project in the provided workspaces.</strong></p>
+<ol>
+<li>You will have to click on the Jupyter Notebook Logo at the top left.</li>
+<li>Open a new terminal.</li>
+<li>Update the <code>seaborn</code> package.</li>
+</ol>
+<pre><code>conda install seaborn=0.10.0
+conda list seaborn</code></pre>
+<p>You confirm that <code>seaborn</code> is <strong>0.10.0</strong>.</p>
+<ol start="4">
+<li>Shutdown the <code>clinical_app_starter.ipynb</code> by clicking the checkbox next to the file. A tool bar will appear near the top with the option to <strong>Shutdown</strong> the notebook. Click the <strong>Shutdown</strong> button to proceed.</li>
+<li>Open up the <code>clinical_app_starter.ipynb</code>. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Clinical Application.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Part 2: Overview &amp; Instructions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+Before we can understand all the parts of
+
+00:00:01.860 --> 00:00:05.460
+the EKG waveform we need to first learn more about how the heart works.
+
+00:00:05.460 --> 00:00:07.680
+The heart is made up of four chambers,
+
+00:00:07.680 --> 00:00:10.860
+the left and right atria and the left and right ventricles.
+
+00:00:10.860 --> 00:00:13.410
+The atria pump first and they pump blood into
+
+00:00:13.410 --> 00:00:16.615
+the ventricles which then pump blood throughout the rest of the body.
+
+00:00:16.615 --> 00:00:19.625
+It might seem that this diagram is labeled incorrectly with
+
+00:00:19.625 --> 00:00:22.840
+the left chambers showing up on the right side,
+
+00:00:22.840 --> 00:00:25.790
+but whenever we look at organs like
+
+00:00:25.790 --> 00:00:28.445
+this they are labeled from the perspective of the wearer.
+
+00:00:28.445 --> 00:00:33.110
+So this is the left side of the person whose heart this belongs to.
+
+00:00:33.110 --> 00:00:35.539
+Each heart cell is polarized,
+
+00:00:35.539 --> 00:00:37.295
+which means that there is
+
+00:00:37.295 --> 00:00:41.030
+a different charge on the inside of the cell membrane relative to the outside.
+
+00:00:41.030 --> 00:00:44.770
+At rest the inside of the cell is negatively charged,
+
+00:00:44.770 --> 00:00:46.520
+and then when the cell depolarizes,
+
+00:00:46.520 --> 00:00:48.920
+positive ions on the outside move in.
+
+00:00:48.920 --> 00:00:53.990
+Depolarization causes the heart cell to contract and the movement of these charges
+
+00:00:53.990 --> 00:00:56.390
+across the heart cell membrane is the source of
+
+00:00:56.390 --> 00:00:59.110
+the electrical activity that we measure with an EKG.
+
+00:00:59.110 --> 00:01:01.910
+The conduction of electrical impulses throughout the heart follows
+
+00:01:01.910 --> 00:01:05.675
+a very regular pattern orchestrated by the cardiac conduction system.
+
+00:01:05.675 --> 00:01:07.940
+Each heartbeat starts with an impulse in
+
+00:01:07.940 --> 00:01:12.250
+the sinus node which is sometimes called the natural pacemaker of the heart.
+
+00:01:12.250 --> 00:01:16.775
+This impulse spreads throughout the atria causing the atria to contract,
+
+00:01:16.775 --> 00:01:21.020
+and then it's propagated to the atrioventricular or AV node.
+
+00:01:21.020 --> 00:01:23.510
+The AV node will briefly delay
+
+00:01:23.510 --> 00:01:26.240
+the propagation of the signal to allow time for the atria to
+
+00:01:26.240 --> 00:01:28.305
+contract and then will spread
+
+00:01:28.305 --> 00:01:32.285
+the signal throughout the ventricles causing the ventricular contraction,
+
+00:01:32.285 --> 00:01:36.505
+which is the largest electrical disturbance that we see in the EKG wave.
+
+00:01:36.505 --> 00:01:38.945
+After some time the ventricles will repolarize,
+
+00:01:38.945 --> 00:01:41.120
+meaning that the ions in these cells will move
+
+00:01:41.120 --> 00:01:44.275
+back across the cell wall to their initial resting state.
+
+00:01:44.275 --> 00:01:46.940
+Each part of the sequence is responsible for creating
+
+00:01:46.940 --> 00:01:49.910
+a distinct marker or wave in the EKG signal.
+
+00:01:49.910 --> 00:01:54.785
+So first we see the P wave which is a result of the atrial contraction,
+
+00:01:54.785 --> 00:01:59.095
+and then we have this pause caused by the AV node,
+
+00:01:59.095 --> 00:02:05.180
+after which we see the large QRS complex which is a result of the ventricles contracting.
+
+00:02:05.180 --> 00:02:11.060
+Then after another pause we see the T wave caused by repolarization of the ventricles.
+
+00:02:11.060 --> 00:02:14.345
+The atria will also repolarize after their contraction,
+
+00:02:14.345 --> 00:02:17.450
+but that occurs sometime during the end of
+
+00:02:17.450 --> 00:02:22.780
+the ventricular contraction so that electrical activity is obscured by the S wave.
+
+00:02:22.780 --> 00:02:26.630
+Here we can see an animation of the electrical activity
+
+00:02:26.630 --> 00:02:31.080
+in the heart and then the corresponding signal we see in the EKG.
+
+00:02:31.700 --> 00:02:36.800
+This results in a very regular cycle that repeats
+
+00:02:36.800 --> 00:02:39.860
+every heartbeat with corresponding waves
+
+00:02:39.860 --> 00:02:43.760
+being roughly equidistant in successive heartbeats.
+
+00:02:43.760 --> 00:02:48.065
+Now that we've seen how the various parts of the EKG wave are created,
+
+00:02:48.065 --> 00:02:53.400
+we can look at building an algorithm to detect the most prominent waves, the QRS complex.
+

@@ -1,0 +1,276 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Feature Extraction I</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Activity Classification</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Activity Classifiers.html">01. Intro to Activity Classifiers</a>
+    </li>
+    <li class="">
+      <a href="02. Data Exploration.html">02. Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 1 Data Exploration.html">03. Exercise 1: Data Exploration</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Solution.html">04. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="05. Feature Extraction I.html">05. Feature Extraction I</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 2 Feature Extraction.html">06. Exercise 2: Feature Extraction</a>
+    </li>
+    <li class="">
+      <a href="07. Feature Extraction Continued....html">07. Feature Extraction Continued...</a>
+    </li>
+    <li class="">
+      <a href="08. Activity Classification.html">08. Activity Classification</a>
+    </li>
+    <li class="">
+      <a href="09. Hyperparameter Tuning &amp; Regularization.html">09. Hyperparameter Tuning &amp; Regularization</a>
+    </li>
+    <li class="">
+      <a href="10. Cross-Validation and Feature Importance.html">10. Cross-Validation and Feature Importance</a>
+    </li>
+    <li class="">
+      <a href="11. Hyperparameter Tuning in Review.html">11. Hyperparameter Tuning in Review</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 3 A Quirk in the Dataset.html">12. Exercise 3: A Quirk in the Dataset</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise 3 Solution.html">13. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Activity Classification.html">14. Recap: Activity Classification</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Feature Extraction I</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="feature-extraction">Feature Extraction</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L3 05 Feature Creation</p></h3>
+  <video controls>
+  <source src="05. ND320 C4 L3 05 Feature Creation-S02ESJAPztg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND320 C4 L3 05 Feature Creation-S02ESJAPztg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Feature Creation Summary</p></h3>
+  <div>
+  <p>In the previous exercise we thought about how to distinguish between the types of activities based on the data but because of the limited set of data it’s important to recognize that we’ve also just overfit ourselves to the dataset. When we did the data exploration, we looked at the entire dataset and now our brains might pick up on patterns that are only specific for that dataset. And it almost happened to me and we looked at how we might have distinguished biking from walking but there was 1 subject's walking data that looked much more like biking data rather than walking. It is safer to use literature based features, particularly when on a limited dataset. Other researchers use different datasets so it is very unlikely to be overfit to your dataset.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L3 06 Feature Extraction Walkthrough</p></h3>
+  <video controls>
+  <source src="05. ND320 C4 L3 06 Feature Extraction Walkthrough-fveNx3NVGqM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND320 C4 L3 06 Feature Extraction Walkthrough-fveNx3NVGqM.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Feature Creation Summary</p></h3>
+  <div>
+  <h1 id="summary">Summary</h1>
+<p>With the previous exercise, we’ve started to think about the data and how we might build features to separate the signals into activity classes. And while that’s a great exercise, it’s important to recognize that we’ve also just overfit ourselves to the dataset. When we did the data exploration we looked at the entire dataset and now our brains might pick up on patterns that are only specific for that dataset. This almost happened to me, in fact. One of my observations was that the x and z channel overlap for walking and not for biking. However, this isn’t true for S6. There could easily have been a dataset where S6 did not participate, and I would have fully believed that x and z acc channels overlap when people are walking. If I had put this feature in my model, it would have not generalized to S6 and the performance of my model would have significantly degraded.</p>
+<p>For small datasets like this, looking at the literature of existing features is a great way to avoid overfitting because the researchers who have come up with these features have looked at different datasets from ours. We are going to use features described in:  </p>
+<ul>
+<li>Mehrang S., Pietilä J., Korhonen I. An Activity Recognition Framework Deploying the Random Forest Classifier and A Single Optical Heart Rate Monitoring and Triaxial Accelerometer Wrist-Band. Sensors. 2018;18:613. doi: 10.3390/s18020613. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5856093/" rel="noopener noreferrer" target="_blank">Link</a></li>
+<li>Liu S, Gao RX, Freedson PS. Computational methods for estimating energy expenditure in human physical activities. Med Sci Sports Exerc. 2012;44:2138–2146. doi: 10.1249/MSS.0b013e31825e825a. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3475744/" rel="noopener noreferrer" target="_blank">Link</a></li>
+</ul>
+<p>We describe some of these features in an IPython notebook and leave some of the implementation to you in the following exercise!</p>
+<h2 id="notebook-review">Notebook Review</h2>
+<p>If you wanted to interact with the notebook in the video, you can access it <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/activity-classifier/walkthroughs/feature-extraction/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/activity-classifier/walkthroughs/feature-extraction/</code>. The dataset that will be used throughout this lesson can be found at the top of the lesson directory at <code>/activity-classifier/data/</code>. No workspace is available as the following exercise's starter code is what you saw in this concept.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise</p></h3>
+  <div>
+  <h1 id="exercise-2-feature-extraction">Exercise 2: Feature Extraction</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Complete the <strong>Offline</strong> or <strong>Online</strong> instructions below.</li>
+<li>Read through the whole <code>.ipynb</code>.</li>
+<li>Complete all the code cells that contain <code>## Your Code Goes Here</code>.</li>
+</ol>
+<h4 id="offline">Offline</h4>
+<ol>
+<li>In the repo which you can access <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/activity-classifier/exercises/2-feature-extraction/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/activity-classifier/exercises/2-feature-extraction)</code> you should find the following files:</li>
+</ol>
+<ul>
+<li><code>2-feature-extraction.ipynb</code></li>
+</ul>
+<ol>
+<li>The dataset that will be used throughout this lesson can be found at the top of the lesson directory at <code>/activity-classifier/data/</code>.</li>
+<li>Open up the python notebook and associated files in your desired editor. </li>
+</ol>
+<p><strong>Note</strong>: Instructions can be found in <strong>Introduction to Wearable Data</strong>'s Concept <strong>Developer Workflow</strong> for how to set up your local environment.</p>
+<h4 id="online">Online</h4>
+<ol>
+<li>Go to the next concept and the <code>2_feature_extraction.ipynb</code> should be open and the workspace should already contain the appropriate <code>data</code> folder. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Exercise 2 Feature Extraction.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Feature Extraction I')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

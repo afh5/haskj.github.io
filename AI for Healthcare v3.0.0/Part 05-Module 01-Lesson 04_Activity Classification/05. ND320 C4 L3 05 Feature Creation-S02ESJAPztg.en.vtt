@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.575
+With the previous exercise,
+
+00:00:01.575 --> 00:00:04.320
+we've started to think about the data and how we might build
+
+00:00:04.320 --> 00:00:08.235
+features to separate our signals into the various activity classes.
+
+00:00:08.235 --> 00:00:10.004
+While that's a great exercise,
+
+00:00:10.004 --> 00:00:13.920
+it's important to recognize that we've also just over-fit ourselves to the data.
+
+00:00:13.920 --> 00:00:15.765
+When we did the data exploration,
+
+00:00:15.765 --> 00:00:18.630
+we looked at the entire data set and now our brains might pick
+
+00:00:18.630 --> 00:00:21.870
+up on patterns that are specific only to that data set.
+
+00:00:21.870 --> 00:00:23.610
+In fact, this happened to me.
+
+00:00:23.610 --> 00:00:26.730
+I thought when I was looking at the biking data that
+
+00:00:26.730 --> 00:00:31.080
+the distance between the X and Z channels would be a good feature,
+
+00:00:31.080 --> 00:00:33.075
+because when I saw the walking Data,
+
+00:00:33.075 --> 00:00:35.040
+the X and Z channels were overlapped,
+
+00:00:35.040 --> 00:00:37.310
+and some of the running data looked like this as well.
+
+00:00:37.310 --> 00:00:39.425
+But there was this subject, S6,
+
+00:00:39.425 --> 00:00:43.745
+who actually did have good separation between the X and Z channels.
+
+00:00:43.745 --> 00:00:45.890
+So you could easily imagine a data set
+
+00:00:45.890 --> 00:00:49.010
+where S6 wasn't part of it and then I would have been left
+
+00:00:49.010 --> 00:00:50.870
+thinking that this separation between
+
+00:00:50.870 --> 00:00:54.760
+the X and Z channels actually is a good feature for classification.
+
+00:00:54.760 --> 00:00:57.600
+That's why sometimes when you're dealing with, especially,
+
+00:00:57.600 --> 00:01:00.965
+small data sets, it's safer to use literature-based features.
+
+00:01:00.965 --> 00:01:03.350
+Other researchers use different datasets,
+
+00:01:03.350 --> 00:01:05.840
+so it's very unlikely that features that worked for
+
+00:01:05.840 --> 00:01:09.130
+them would be over-fit to your specific data set.
+
+00:01:09.130 --> 00:01:13.440
+Now let's actually see what features we're going use and implement them in Python.
+

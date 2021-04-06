@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.019
+In the next few videos, we're going to be building an atrial fibrillation classifier.
+
+00:00:04.019 --> 00:00:07.320
+The data we're going to be using comes again from PhysioNet from
+
+00:00:07.320 --> 00:00:10.845
+the computing in cardiology 2017 challenge datasets.
+
+00:00:10.845 --> 00:00:14.505
+The device used in this datasets is the AliveCor device which is
+
+00:00:14.505 --> 00:00:22.530
+a mobile EKG monitor that collects between 30 and 60 seconds of EKG data.
+
+00:00:22.530 --> 00:00:27.070
+The dataset has four heart rhythms: normal sinus rhythm,
+
+00:00:27.070 --> 00:00:30.605
+atrial fibrillation, other abnormal rhythms,
+
+00:00:30.605 --> 00:00:34.535
+as well as EKG data that's too noisy to be classified.
+
+00:00:34.535 --> 00:00:37.385
+So the original task for this challenge was to build
+
+00:00:37.385 --> 00:00:40.070
+a four class classifier being able to distinguish
+
+00:00:40.070 --> 00:00:42.770
+between these four different types of EKG data.
+
+00:00:42.770 --> 00:00:47.870
+For our purposes, we've made this simpler by throwing out the noisy EKG data,
+
+00:00:47.870 --> 00:00:52.475
+and combining the atrial fibrillation and alternative rhythm data into one class.
+
+00:00:52.475 --> 00:00:55.940
+So we're going to build a two class classifier that distinguishes
+
+00:00:55.940 --> 00:01:00.960
+normal sinus rhythm from all other abnormal rhythms, afib or otherwise.
+
+00:01:00.960 --> 00:01:03.845
+We talked previously about the physiology of
+
+00:01:03.845 --> 00:01:09.200
+atrial fibrillation and how we could use some of this physiology to build an algorithm.
+
+00:01:09.200 --> 00:01:11.300
+The rest of this website has a lot of
+
+00:01:11.300 --> 00:01:14.390
+really good information about more aspects of the physiology
+
+00:01:14.390 --> 00:01:16.790
+that can be taken advantage of as well
+
+00:01:16.790 --> 00:01:19.870
+as other approaches that have been tried throughout the literature.
+
+00:01:19.870 --> 00:01:24.105
+At the end, we can see submissions to this challenge
+
+00:01:24.105 --> 00:01:26.480
+including white paper write ups as well as
+
+00:01:26.480 --> 00:01:29.590
+all the code that was used to build our classifier.
+
+00:01:29.590 --> 00:01:31.850
+So exploring these submissions is a great resource
+
+00:01:31.850 --> 00:01:33.800
+to learn about all kinds of algorithms for
+
+00:01:33.800 --> 00:01:36.230
+mobile EKG data and various techniques
+
+00:01:36.230 --> 00:01:39.050
+used in processing biomedical time series in general.
+
+00:01:39.050 --> 00:01:41.240
+Now that we know where our data is coming from,
+
+00:01:41.240 --> 00:01:44.430
+let's dive into it and do our data exploration.
+

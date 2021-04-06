@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.295
+Now we'll share with you some of my observations,
+
+00:00:02.295 --> 00:00:05.130
+but there's really no right or wrong answer in this exercise.
+
+00:00:05.130 --> 00:00:09.900
+The first thing I notice is that there's a good deal of separation in
+
+00:00:09.900 --> 00:00:15.015
+the average values in each of the channels for the biking activity.
+
+00:00:15.015 --> 00:00:16.770
+Meaning that the average value from
+
+00:00:16.770 --> 00:00:21.145
+the x channel is very different from the y channel and the z channel,
+
+00:00:21.145 --> 00:00:23.620
+and they don't really overlap.
+
+00:00:23.870 --> 00:00:28.385
+Until you get to the running activity where we see that
+
+00:00:28.385 --> 00:00:32.765
+x and z are overlapped pretty heavily for the entire duration of the signal.
+
+00:00:32.765 --> 00:00:39.780
+The other thing I notice is the peak to peak values in the y-axis is pretty high.
+
+00:00:39.780 --> 00:00:45.515
+For this subject, we even see what appears to be clipping in the x channel.
+
+00:00:45.515 --> 00:00:48.590
+If we zoom in, we can see that this might
+
+00:00:48.590 --> 00:00:53.510
+be the oversaturation or clipping we learned about in lesson one.
+
+00:00:53.510 --> 00:01:00.109
+When we go to walking, we see that still the x and z channels are overlapped,
+
+00:01:00.109 --> 00:01:03.230
+but the energy in the y channel,
+
+00:01:03.230 --> 00:01:05.930
+the peak-to-peak here is smaller than it wasn't running.
+
+00:01:05.930 --> 00:01:09.350
+So one observation is that we could
+
+00:01:09.350 --> 00:01:13.360
+use the peak-to-peak value in the y channel to separate walking from running.
+
+00:01:13.360 --> 00:01:17.870
+Another one is that maybe the average distance between the x, y,
+
+00:01:17.870 --> 00:01:20.480
+and z channels will be another good feature because
+
+00:01:20.480 --> 00:01:24.365
+it seems to separate biking from walking and running.
+
+00:01:24.365 --> 00:01:29.030
+So these are just a few observations from visually looking at our data.
+
+00:01:29.030 --> 00:01:30.575
+In the next lesson,
+
+00:01:30.575 --> 00:01:34.860
+we'll actually build features that we'll use to do activity classification.
+

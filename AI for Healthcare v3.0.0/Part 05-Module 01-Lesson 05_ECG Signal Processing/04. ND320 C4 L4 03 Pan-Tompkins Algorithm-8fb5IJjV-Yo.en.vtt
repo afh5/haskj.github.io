@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.185
+We've seen that ventricular contraction results in the QRS complex.
+
+00:00:04.185 --> 00:00:06.795
+Whenever you're trying to do with the EKG signal,
+
+00:00:06.795 --> 00:00:08.355
+whether you're looking at heart rates,
+
+00:00:08.355 --> 00:00:09.900
+or looking for an abnormal rhythm,
+
+00:00:09.900 --> 00:00:12.315
+or evidence of some other cardiovascular condition,
+
+00:00:12.315 --> 00:00:15.135
+the first step is generally to find these heartbeats.
+
+00:00:15.135 --> 00:00:18.630
+Right off the bat this gives you information about the heart rate, and the rhythm,
+
+00:00:18.630 --> 00:00:20.910
+and provides important context for when you're doing
+
+00:00:20.910 --> 00:00:25.755
+more complex processing to know where in the EKG signal the heartbeat actually are.
+
+00:00:25.755 --> 00:00:28.320
+Where we find the individual heartbeats is by
+
+00:00:28.320 --> 00:00:30.975
+using an algorithm called the Pan-Tompkins algorithm.
+
+00:00:30.975 --> 00:00:33.870
+Pan and Tompkins were researchers who in the '80s,
+
+00:00:33.870 --> 00:00:36.920
+came up with this method for detecting QRS complexes,
+
+00:00:36.920 --> 00:00:39.080
+that's still in widespread use today.
+
+00:00:39.080 --> 00:00:43.610
+So we'll go into the details of a pared down version of the Pan-Tompkins algorithm.
+
+00:00:43.610 --> 00:00:48.095
+Whenever you're doing any kind of event detection in time-series data like this,
+
+00:00:48.095 --> 00:00:50.780
+you want to start with pre-processing steps that will
+
+00:00:50.780 --> 00:00:53.525
+boost the signal and attenuate the noise.
+
+00:00:53.525 --> 00:00:57.530
+For Pan-Tompkins, we start with a bandpass filter that selects for
+
+00:00:57.530 --> 00:00:59.330
+frequencies that are found within
+
+00:00:59.330 --> 00:01:02.525
+the QRS complex and suppresses frequencies outside of that band.
+
+00:01:02.525 --> 00:01:07.535
+Then we do a one-sample difference and you can think of this as a derivative operation.
+
+00:01:07.535 --> 00:01:11.000
+So we're looking at slopes here and we see that the QRS complex
+
+00:01:11.000 --> 00:01:15.485
+has these really sharp slopes and the other waves are shallower.
+
+00:01:15.485 --> 00:01:18.890
+So we're hoping that this difference operation will preserve
+
+00:01:18.890 --> 00:01:22.730
+these sharp slopes and suppress some of these other waves.
+
+00:01:22.730 --> 00:01:25.460
+The next thing we do is an element-wise square,
+
+00:01:25.460 --> 00:01:28.160
+which we'll see what that does to the signal in just a moment.
+
+00:01:28.160 --> 00:01:31.430
+Finally, we do a moving sum over a fixed window length.
+
+00:01:31.430 --> 00:01:34.790
+This takes advantage of the fact that the QRS complex generally has
+
+00:01:34.790 --> 00:01:39.170
+a fixed width in time of a 150 milliseconds.
+
+00:01:39.170 --> 00:01:42.425
+So if we tune this moving sum window to a 150 milliseconds,
+
+00:01:42.425 --> 00:01:45.845
+we can fully take advantage of all the energy in the QRS complex.
+
+00:01:45.845 --> 00:01:49.340
+For other spikes that might occur elsewhere in the wave,
+
+00:01:49.340 --> 00:01:52.055
+that would either be longer or shorter than this,
+
+00:01:52.055 --> 00:01:54.485
+the moving sum will attenuate them.
+
+00:01:54.485 --> 00:01:57.530
+Then our detection steps will be fairly simple.
+
+00:01:57.530 --> 00:02:01.700
+We'll just do a peak detection and then some thresholding on
+
+00:02:01.700 --> 00:02:03.740
+the peaks to make sure that we find the largest ones
+
+00:02:03.740 --> 00:02:06.290
+which correspond to the QRS complexes.
+
+00:02:06.290 --> 00:02:08.120
+Next, we'll look at some actual code for
+
+00:02:08.120 --> 00:02:11.910
+this algorithm and run it on data from a wearable device.
+

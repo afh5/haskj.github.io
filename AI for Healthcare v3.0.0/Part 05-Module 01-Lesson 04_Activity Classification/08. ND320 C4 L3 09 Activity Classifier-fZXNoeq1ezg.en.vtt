@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+We've explored the data, examined the literature,
+
+00:00:02.790 --> 00:00:05.320
+picked our features, and pre-processed all our data.
+
+00:00:05.320 --> 00:00:07.425
+Now, it's time to finally build a classifier.
+
+00:00:07.425 --> 00:00:12.945
+We will get started by loading our data and extracting features.
+
+00:00:12.945 --> 00:00:17.700
+You've seen this before, we're going to use 10 second non-overlapping windows.
+
+00:00:17.700 --> 00:00:19.725
+If you've done machine learning in Python before,
+
+00:00:19.725 --> 00:00:22.365
+you've seen this package called scikit-learn.
+
+00:00:22.365 --> 00:00:24.315
+Machine learning for wearables is no different,
+
+00:00:24.315 --> 00:00:27.704
+we're going to use sklearn to train a random forest classifier.
+
+00:00:27.704 --> 00:00:29.835
+Our forest will have 100 trees,
+
+00:00:29.835 --> 00:00:32.760
+each with a maximum depth of four.
+
+00:00:32.760 --> 00:00:35.810
+There we go, we've trained our classifier.
+
+00:00:35.810 --> 00:00:40.670
+Of course, we just trained it on our entire dataset so we can't really evaluate it.
+
+00:00:40.670 --> 00:00:43.250
+So one way to evaluate the performance of
+
+00:00:43.250 --> 00:00:46.090
+a multi-class classifier is to use a confusion matrix.
+
+00:00:46.090 --> 00:00:49.625
+The confusion matrix shows us how many data points were misclassified,
+
+00:00:49.625 --> 00:00:51.895
+and what they were misclassified as.
+
+00:00:51.895 --> 00:00:57.650
+We can take this example where our true class labels are bike,
+
+00:00:57.650 --> 00:01:02.980
+run, run, walk, and then our predictions are run, run, bike, walk.
+
+00:01:02.980 --> 00:01:05.240
+We'll use scikit-learn's confusion matrix
+
+00:01:05.240 --> 00:01:08.185
+function to help us compute the confusion matrix,
+
+00:01:08.185 --> 00:01:10.940
+and then I've put a helper function inside
+
+00:01:10.940 --> 00:01:13.850
+activity classifier utils for us to visualize it.
+
+00:01:13.850 --> 00:01:18.005
+So the rows of this matrix are the true activity labels,
+
+00:01:18.005 --> 00:01:21.580
+and then the columns are what we've predicted each class as.
+
+00:01:21.580 --> 00:01:26.135
+We can see that there was one true bike and we called it a run,
+
+00:01:26.135 --> 00:01:27.950
+that's this first data point.
+
+00:01:27.950 --> 00:01:31.350
+There were two running activities in the dataset,
+
+00:01:31.350 --> 00:01:32.810
+we called one of them a bike,
+
+00:01:32.810 --> 00:01:37.290
+and we correctly classified the other as a run, that's these two.
+
+00:01:37.290 --> 00:01:39.740
+Then we had one walk which we also
+
+00:01:39.740 --> 00:01:42.530
+correctly classified as a walk, and that's this guy here.
+
+00:01:42.530 --> 00:01:44.855
+Now that we know what a confusion matrix is,
+
+00:01:44.855 --> 00:01:48.510
+let's use it to evaluate the performance of our classifier.
+
