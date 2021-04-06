@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.670
+Welcome to the next lesson in this course.
+
+00:00:02.670 --> 00:00:05.880
+You're about a quarter of the way there and you've learned
+
+00:00:05.880 --> 00:00:10.245
+some valuable skills in dealing with EHR data.
+
+00:00:10.245 --> 00:00:14.610
+In this lesson, you will go over EHR code sets which will
+
+00:00:14.610 --> 00:00:18.585
+give you valuable skills of navigating EHR data.
+
+00:00:18.585 --> 00:00:22.920
+Before we get started, let's review what will be covered in this lesson.
+
+00:00:22.920 --> 00:00:28.390
+This lesson will delve into one of the key components of EHR data, code sets.
+
+00:00:28.390 --> 00:00:29.810
+What is the code set?
+
+00:00:29.810 --> 00:00:34.690
+It is a standard that provides codes that represents things like diagnoses.
+
+00:00:34.690 --> 00:00:41.285
+EHR code sets allow further comparison of data across various EHR systems.
+
+00:00:41.285 --> 00:00:45.350
+In part one, we'll go over diagnosis codes, in particular,
+
+00:00:45.350 --> 00:00:51.905
+we'll cover ICD10-CM and also little bit about the shift from ICD9 to ICD10.
+
+00:00:51.905 --> 00:00:53.240
+At the end of this section,
+
+00:00:53.240 --> 00:00:55.595
+you'll have an understanding what this code set is,
+
+00:00:55.595 --> 00:01:01.220
+why it's important, how to read them and how to group using these codes as well.
+
+00:01:01.220 --> 00:01:05.660
+Then we'll go over procedure codes and in this part,
+
+00:01:05.660 --> 00:01:11.100
+we'll cover ICD10-PCS, CPT and HCPCS.
+
+00:01:11.100 --> 00:01:13.500
+I know acronyms. It's health care.
+
+00:01:13.500 --> 00:01:15.515
+There is an acronym for everything.
+
+00:01:15.515 --> 00:01:17.525
+At the end of procedure codes,
+
+00:01:17.525 --> 00:01:20.015
+you'll have a solid understanding of what these are,
+
+00:01:20.015 --> 00:01:25.475
+how to read them and how to use grouping to reduce cardinality of your dataset.
+
+00:01:25.475 --> 00:01:29.225
+Of course, there are more codes for medications as well.
+
+00:01:29.225 --> 00:01:30.755
+We'll cover these as well.
+
+00:01:30.755 --> 00:01:34.750
+Learning more about the NDC Directory and RxNorm code set,
+
+00:01:34.750 --> 00:01:36.650
+when you are finished with this section,
+
+00:01:36.650 --> 00:01:39.365
+you'll be able to read medication codes like a pro,
+
+00:01:39.365 --> 00:01:41.090
+as well as understand how to deal with
+
+00:01:41.090 --> 00:01:44.345
+the challenges of working with medication code sets.
+
+00:01:44.345 --> 00:01:47.360
+Lastly, you will learn about grouping and
+
+00:01:47.360 --> 00:01:51.260
+categorizing these code sets with an intro to CCS,
+
+00:01:51.260 --> 00:01:53.855
+a system for grouping procedure codes.
+
+00:01:53.855 --> 00:01:55.430
+By the end of this section,
+
+00:01:55.430 --> 00:01:58.370
+you'll be able to begin understanding some of the challenges of
+
+00:01:58.370 --> 00:02:02.300
+grouping codes which can prepare you for more advanced approaches.
+
+00:02:02.300 --> 00:02:04.610
+There are a lot of acronyms and codes ahead.
+
+00:02:04.610 --> 00:02:06.425
+Welcome to Healthcare data.
+
+00:02:06.425 --> 00:02:07.670
+But before we begin,
+
+00:02:07.670 --> 00:02:13.050
+let's get a little context behind code sets along with a few key terms.
+

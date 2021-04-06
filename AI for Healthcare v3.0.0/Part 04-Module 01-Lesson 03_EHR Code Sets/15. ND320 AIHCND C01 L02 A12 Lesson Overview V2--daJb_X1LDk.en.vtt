@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.150
+Awesome, you made it to the end of this lesson.
+
+00:00:03.150 --> 00:00:06.135
+Let's go over a few more acronyms.
+
+00:00:06.135 --> 00:00:09.870
+Just kidding, let's recap this lesson instead.
+
+00:00:09.870 --> 00:00:14.310
+In this lesson you learned about a key component of EHR data, code sets.
+
+00:00:14.310 --> 00:00:15.660
+As a quick reminder,
+
+00:00:15.660 --> 00:00:21.600
+EHR code sets allow for the comparison of data across various EHR systems.
+
+00:00:21.600 --> 00:00:25.260
+You first learned about diagnosis codes, in particular,
+
+00:00:25.260 --> 00:00:30.900
+ICD10-CM, you gain knowledge of what that code set is, why it's important?
+
+00:00:30.900 --> 00:00:33.720
+How to read them? You also applied that knowledge
+
+00:00:33.720 --> 00:00:36.765
+by grouping data using EHR codes as well.
+
+00:00:36.765 --> 00:00:41.845
+Hopefully ICD10-CM codes will be easy to work with from now on.
+
+00:00:41.845 --> 00:00:46.700
+Then you reduce cardinality of a data set using procedure codes after learning
+
+00:00:46.700 --> 00:00:51.380
+more about ICD10-PCS, CPT, and HCPCS.
+
+00:00:51.380 --> 00:00:53.300
+I wonder if the next time you see [inaudible] ,
+
+00:00:53.300 --> 00:00:55.435
+you'll request procedures by code.
+
+00:00:55.435 --> 00:00:58.820
+That would either impress or confuse the medical staff.
+
+00:00:58.820 --> 00:01:00.985
+It might be worth a try though.
+
+00:01:00.985 --> 00:01:04.730
+Along similar lines, the next time you pick up a pill bottle,
+
+00:01:04.730 --> 00:01:07.685
+you should be able to break down it's medication code too.
+
+00:01:07.685 --> 00:01:10.100
+You should also be able to apply your knowledge to deal with
+
+00:01:10.100 --> 00:01:13.295
+the challenges of working with medication code sets.
+
+00:01:13.295 --> 00:01:16.790
+Finally, you put all of this code knowledge to work by
+
+00:01:16.790 --> 00:01:21.445
+grouping in categorizing these code sets with CCS.
+
+00:01:21.445 --> 00:01:24.455
+I know that was a lot of information to cover,
+
+00:01:24.455 --> 00:01:31.290
+but now it's time to use that information to transform EHR data in the next lesson.
+

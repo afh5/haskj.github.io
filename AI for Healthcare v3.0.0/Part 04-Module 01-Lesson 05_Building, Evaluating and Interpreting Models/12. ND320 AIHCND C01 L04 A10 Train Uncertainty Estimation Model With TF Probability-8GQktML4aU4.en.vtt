@@ -1,0 +1,223 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.225
+Now that we have reviewed Bayesian probability,
+
+00:00:03.225 --> 00:00:08.685
+let's review two main types of uncertainty that we want to consider with our model.
+
+00:00:08.685 --> 00:00:12.420
+Aleatoric uncertainty is otherwise known as
+
+00:00:12.420 --> 00:00:17.220
+statistical uncertainty in our known unknowns.
+
+00:00:17.220 --> 00:00:20.190
+This type of uncertainty is inherent in
+
+00:00:20.190 --> 00:00:24.045
+just a part of the stochasticity that naturally exists.
+
+00:00:24.045 --> 00:00:27.015
+Example is flipping a dice,
+
+00:00:27.015 --> 00:00:30.360
+which will always have an element of randomness to it.
+
+00:00:30.360 --> 00:00:39.435
+Epistemic uncertainty is also known as systemic uncertainty in our unknown unknowns.
+
+00:00:39.435 --> 00:00:45.050
+This type of uncertainty can be improved by adding parameters or features that
+
+00:00:45.050 --> 00:00:47.570
+might measure something in more detail or
+
+00:00:47.570 --> 00:00:51.055
+provide more knowledge or also adding more data.
+
+00:00:51.055 --> 00:00:53.870
+We will go over in more detail how to
+
+00:00:53.870 --> 00:00:57.020
+use aleatoric uncertainty when we do the walk through.
+
+00:00:57.020 --> 00:00:59.315
+Now onto the exciting part,
+
+00:00:59.315 --> 00:01:05.165
+where we get to train a model to estimate uncertainty with TensorFlow Probability.
+
+00:01:05.165 --> 00:01:07.670
+For this walkthrough, we'll use
+
+00:01:07.670 --> 00:01:11.585
+the same MPG dataset that we have been using for this lesson.
+
+00:01:11.585 --> 00:01:18.385
+Largely just add TensorFlow Probability layers to our model to convert it to a BNN.
+
+00:01:18.385 --> 00:01:20.690
+Before we go into the walkthrough,
+
+00:01:20.690 --> 00:01:25.715
+I want to note that TensorFlow Probability is not a V1 version yet,
+
+00:01:25.715 --> 00:01:29.390
+and documentation in standard patterns are evolving.
+
+00:01:29.390 --> 00:01:34.765
+That being said, I want to expose you to a tool that might be good to have on your radar.
+
+00:01:34.765 --> 00:01:38.345
+For those of you that have worked with frameworks such as Stan,
+
+00:01:38.345 --> 00:01:40.910
+this hopefully abstracts away some of
+
+00:01:40.910 --> 00:01:45.470
+the challenging math behind the scenes to get things to work properly.
+
+00:01:45.470 --> 00:01:48.215
+So for this walkthrough, as he mentioned,
+
+00:01:48.215 --> 00:01:52.765
+we will use the MPG data and create uncertainty estimation model,
+
+00:01:52.765 --> 00:01:55.340
+and we will focus on aleatoric uncertainty,
+
+00:01:55.340 --> 00:01:57.380
+which we just went over previously,
+
+00:01:57.380 --> 00:01:59.645
+which is known unknowns.
+
+00:01:59.645 --> 00:02:02.885
+So I just want to highlight the two main changes to our network.
+
+00:02:02.885 --> 00:02:06.680
+First, we will add a second unit to the last dense layer
+
+00:02:06.680 --> 00:02:11.500
+before passing it to the TensorFlow probability layer in the model.
+
+00:02:11.500 --> 00:02:13.685
+This will help us account for
+
+00:02:13.685 --> 00:02:18.490
+the predictor y-value and also the unequal scattering of the data.
+
+00:02:18.490 --> 00:02:20.360
+The second thing we'll do is we'll use
+
+00:02:20.360 --> 00:02:25.360
+the DistributionLambda layer and we'll add the mean and standard deviation to this layer.
+
+00:02:25.360 --> 00:02:28.305
+DistributionLambda is a special Keras layer
+
+00:02:28.305 --> 00:02:31.460
+that takes a Python lambda function and creates
+
+00:02:31.460 --> 00:02:38.015
+a distribution based on that layer and outputs that final layer into the loss function.
+
+00:02:38.015 --> 00:02:41.270
+We will use this output from the model to
+
+00:02:41.270 --> 00:02:45.040
+return a distribution for both the mean and standard deviation.
+
+00:02:45.040 --> 00:02:50.000
+So let's go through actually the layers of a model and show you where this works.
+
+00:02:50.000 --> 00:02:53.735
+So as I mentioned, we added an additional node
+
+00:02:53.735 --> 00:02:58.450
+to a dense layer before we add it to our TensorFlow Probability layer.
+
+00:02:58.450 --> 00:03:01.890
+Here, we can take this DistributionLambda layer
+
+00:03:01.890 --> 00:03:06.555
+and add our normal distribution to this DistributionLambda layer.
+
+00:03:06.555 --> 00:03:11.150
+Just to note, the loc and scale are just the mean and standard deviation.
+
+00:03:11.150 --> 00:03:15.845
+We're largely just adapting from the TensorFlow probability tutorial.
+
+00:03:15.845 --> 00:03:17.360
+However, you can definitely change
+
+00:03:17.360 --> 00:03:20.525
+these values to see what might work best for your model.
+
+00:03:20.525 --> 00:03:23.030
+One other thing to know is that we're using
+
+00:03:23.030 --> 00:03:27.770
+a negative log likelihood function that we create here as our loss function.
+
+00:03:27.770 --> 00:03:33.170
+You can see more details in the links I provide in the course for why we do this.
+
+00:03:33.170 --> 00:03:35.045
+Wow, that was so convenient.
+
+00:03:35.045 --> 00:03:37.360
+Just add those two layers and now we have
+
+00:03:37.360 --> 00:03:41.620
+distributions for the mean and standard deviations for our predictions.
+
+00:03:41.620 --> 00:03:45.020
+I'll go through the rest to show you exactly how this works.
+
+00:03:45.020 --> 00:03:50.090
+So we trained a probability model very similar to how you would train a Keras model.
+
+00:03:50.090 --> 00:03:54.010
+Then we will extract the mean and standard deviation output.
+
+00:03:54.010 --> 00:03:55.810
+It's slightly different to note,
+
+00:03:55.810 --> 00:03:59.230
+the difference is how we take the test values here and use
+
+00:03:59.230 --> 00:04:03.610
+a dictionary and then pass that to the probabilistic model here.
+
+00:04:03.610 --> 00:04:06.610
+So then we take y-hat and we
+
+00:04:06.610 --> 00:04:10.515
+basically can pull out the mean and standard deviation distributions.
+
+00:04:10.515 --> 00:04:13.280
+You can see here I took a sample of the first
+
+00:04:13.280 --> 00:04:16.280
+10 for both the mean and standard deviation,
+
+00:04:16.280 --> 00:04:19.310
+and then I put them into a DataFrame so you can see how
+
+00:04:19.310 --> 00:04:22.685
+they relate to the predictions and actual value.
+
+00:04:22.685 --> 00:04:27.890
+So you can see that the actual value and the predicted mean and standard deviations here.
+
+00:04:27.890 --> 00:04:30.725
+Note that the mean prediction is much better,
+
+00:04:30.725 --> 00:04:35.730
+and you can see in this graph that the performance better fits the label values.
+

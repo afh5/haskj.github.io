@@ -1,0 +1,271 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.615
+Well done. You've removed bias from your model.
+
+00:00:03.615 --> 00:00:05.325
+That is a huge step.
+
+00:00:05.325 --> 00:00:09.690
+But now, how certain are you that your model is performing well?
+
+00:00:09.690 --> 00:00:13.155
+If I ask you to say you're certain or uncertain,
+
+00:00:13.155 --> 00:00:14.580
+is that good enough?
+
+00:00:14.580 --> 00:00:16.950
+Are you certain of your uncertainty?
+
+00:00:16.950 --> 00:00:19.830
+After tackling this section like a linebacker,
+
+00:00:19.830 --> 00:00:23.205
+you'll know how uncertain your model is performing.
+
+00:00:23.205 --> 00:00:28.110
+Its time to clear up your uncertainty about uncertainty estimation.
+
+00:00:28.110 --> 00:00:32.040
+So you might wonder why we are covering uncertainty estimation.
+
+00:00:32.040 --> 00:00:38.150
+Do models cover uncertainty with just the raw probabilities of the prediction outputs?
+
+00:00:38.150 --> 00:00:40.480
+No, this is unfortunately not the case.
+
+00:00:40.480 --> 00:00:43.250
+In a typical classification problem,
+
+00:00:43.250 --> 00:00:46.580
+it provides predictions with relative weightings across
+
+00:00:46.580 --> 00:00:51.040
+the prediction classes and are different than the confidence in a given prediction.
+
+00:00:51.040 --> 00:00:52.875
+Let's think about it this way.
+
+00:00:52.875 --> 00:00:56.330
+Using a local weather forecasts on your local news,
+
+00:00:56.330 --> 00:01:00.740
+which of these would be most useful information to the population?
+
+00:01:00.740 --> 00:01:02.270
+What if I were only told,
+
+00:01:02.270 --> 00:01:03.920
+yes, it will rain tomorrow?
+
+00:01:03.920 --> 00:01:05.480
+Would that be useful?
+
+00:01:05.480 --> 00:01:10.805
+Maybe, or instead, we get a percent of chance like this.
+
+00:01:10.805 --> 00:01:14.030
+There is a 55 percent chance of raining tomorrow.
+
+00:01:14.030 --> 00:01:15.800
+For the weather forecast,
+
+00:01:15.800 --> 00:01:19.955
+this is useful because we can interpret that to mean it might rain tomorrow,
+
+00:01:19.955 --> 00:01:22.255
+but the uncertainty of that is high.
+
+00:01:22.255 --> 00:01:23.710
+Here's another example.
+
+00:01:23.710 --> 00:01:26.070
+Again, yes, it will rain tomorrow.
+
+00:01:26.070 --> 00:01:29.425
+But this time, there's an 80 percent chance of rain.
+
+00:01:29.425 --> 00:01:32.300
+The model is much more certain it will rain tomorrow.
+
+00:01:32.300 --> 00:01:35.515
+I don't know about you, but I'd bring an umbrella tomorrow.
+
+00:01:35.515 --> 00:01:37.695
+Lastly, here's another example.
+
+00:01:37.695 --> 00:01:39.955
+No, it will not rain tomorrow.
+
+00:01:39.955 --> 00:01:42.830
+This event gets paired with an icon of clouds
+
+00:01:42.830 --> 00:01:45.680
+and sun without the rain in the first example,
+
+00:01:45.680 --> 00:01:48.635
+yet there's a 49 percent chance of rain.
+
+00:01:48.635 --> 00:01:50.930
+Not only is the model uncertain,
+
+00:01:50.930 --> 00:01:53.855
+but it ended up giving us a potentially false result.
+
+00:01:53.855 --> 00:01:58.130
+Has it is likely to rain as no rain tomorrow.
+
+00:01:58.130 --> 00:02:02.390
+In these examples, you can see that having the uncertainty estimation is
+
+00:02:02.390 --> 00:02:07.535
+extremely useful if not required to really evaluate the results of the model.
+
+00:02:07.535 --> 00:02:10.580
+Therefore, we should include them to be as clear
+
+00:02:10.580 --> 00:02:13.545
+as possible about how our model was performing.
+
+00:02:13.545 --> 00:02:16.960
+We'll look at more common example from health care in just a bit,
+
+00:02:16.960 --> 00:02:22.265
+but first, let's do a very quick review of probabilistic programming.
+
+00:02:22.265 --> 00:02:24.920
+So to address uncertainty estimation,
+
+00:02:24.920 --> 00:02:27.830
+we use probabilistic programming.
+
+00:02:27.830 --> 00:02:30.245
+In particular, we will create
+
+00:02:30.245 --> 00:02:34.535
+Bayesian Neural Networks or the TensorFlow probability library.
+
+00:02:34.535 --> 00:02:37.730
+The TensorFlow probability library combines
+
+00:02:37.730 --> 00:02:41.320
+Bayesian probabilistic approaches with deep learning.
+
+00:02:41.320 --> 00:02:43.264
+Since it's built on TensorFlow,
+
+00:02:43.264 --> 00:02:46.190
+you can train on GPUs and even offers
+
+00:02:46.190 --> 00:02:50.285
+options such as Markov Chain, Monte Carlo simulations.
+
+00:02:50.285 --> 00:02:55.265
+So you might wonder why you use Bayesian Neural Networks in Bayesian probability.
+
+00:02:55.265 --> 00:02:59.810
+By using statistical approaches can be very helpful for situations where you
+
+00:02:59.810 --> 00:03:04.400
+can leverage deep domain knowledge and have small datasets.
+
+00:03:04.400 --> 00:03:09.080
+Health care is in the industry where you might have small datasets on patient data
+
+00:03:09.080 --> 00:03:14.290
+for a new drug or rare conditions that little data exists directly for.
+
+00:03:14.290 --> 00:03:16.850
+Also health care is a field where you can leverage
+
+00:03:16.850 --> 00:03:21.125
+deep domain knowledge for medical professionals in medical literature,
+
+00:03:21.125 --> 00:03:25.220
+which can helps bias your model with pertinent domain knowledge.
+
+00:03:25.220 --> 00:03:29.090
+In situations like this where you have a small number of examples,
+
+00:03:29.090 --> 00:03:32.780
+deep domain knowledge and Bayesian approaches can help because
+
+00:03:32.780 --> 00:03:37.655
+Frequentist approaches have greater variance and larger confidence intervals.
+
+00:03:37.655 --> 00:03:41.059
+To better understand probabilistic programming,
+
+00:03:41.059 --> 00:03:43.490
+I want to review the basic concept of
+
+00:03:43.490 --> 00:03:47.900
+Bayesian probability in prior and posterior distributions.
+
+00:03:47.900 --> 00:03:50.630
+A prior distribution you can think of as
+
+00:03:50.630 --> 00:03:55.535
+a prior bias or information that you know beforehand about something.
+
+00:03:55.535 --> 00:03:59.600
+This prior is especially important for fields like health care that are
+
+00:03:59.600 --> 00:04:04.054
+heavily biased by prior demographic or patient history information.
+
+00:04:04.054 --> 00:04:08.740
+Using this domain or demographic information can be extremely helpful,
+
+00:04:08.740 --> 00:04:11.705
+it'll allow you to create unique models and features.
+
+00:04:11.705 --> 00:04:14.299
+Then, as we know about Bayesian probability,
+
+00:04:14.299 --> 00:04:17.720
+you must update the prior with new information and get
+
+00:04:17.720 --> 00:04:23.030
+a posterior distribution that is based off of the new information in updating.
+
+00:04:23.030 --> 00:04:24.880
+This is what we will do later,
+
+00:04:24.880 --> 00:04:27.380
+we're building a prior and posterior layer for
+
+00:04:27.380 --> 00:04:30.125
+deep learning model with TensorFlow probability,
+
+00:04:30.125 --> 00:04:34.550
+which helps to abstract away some of the advanced mathematics involved.
+
+00:04:34.550 --> 00:04:37.580
+So to better illustrate how Bayesian and
+
+00:04:37.580 --> 00:04:41.000
+Frequentist statistics differ for the prediction output,
+
+00:04:41.000 --> 00:04:46.945
+let's say we want to assess whether a drug will pass a Phase 3 clinical trial.
+
+00:04:46.945 --> 00:04:51.619
+The Frequentist statistical response would be a yes or no response.
+
+00:04:51.619 --> 00:04:53.990
+However, the Bayesian response would give a
+
+00:04:53.990 --> 00:04:58.040
+yes and the certainty/confidence in that prediction.
+
+00:04:58.040 --> 00:05:01.730
+This can be helpful when connecting to use with metrics like
+
+00:05:01.730 --> 00:05:06.870
+the Brier score that can combine predictions from various models.
+

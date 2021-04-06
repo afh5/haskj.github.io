@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.085
+Now that you're an expert with diagnosis codes,
+
+00:00:03.085 --> 00:00:05.560
+let's go over the exercise solution.
+
+00:00:05.560 --> 00:00:10.690
+For this exercise, we used a public dataset provided by the State of California,
+
+00:00:10.690 --> 00:00:16.180
+that uses ICD-10-CM codes for hospital inpatient encounters.
+
+00:00:16.180 --> 00:00:18.910
+There is largely a review of the knowledge of
+
+00:00:18.910 --> 00:00:22.120
+the structure of code sets that we went over in the lesson,
+
+00:00:22.120 --> 00:00:25.600
+and please don't be intimidated by the diagnosis descriptions.
+
+00:00:25.600 --> 00:00:28.030
+They should largely be similar to data
+
+00:00:28.030 --> 00:00:30.995
+analysis tasks with pandas that we've done earlier.
+
+00:00:30.995 --> 00:00:34.195
+So let's load up the dataset and get started.
+
+00:00:34.195 --> 00:00:36.040
+Before I go into the solution,
+
+00:00:36.040 --> 00:00:38.250
+let's analyze the dataset schema,
+
+00:00:38.250 --> 00:00:40.529
+and look at the DataFrame example,
+
+00:00:40.529 --> 00:00:42.765
+and you can see an example here.
+
+00:00:42.765 --> 00:00:45.760
+You can see that the ICD-10 code is
+
+00:00:45.760 --> 00:00:50.110
+there along with a more detailed description in another column.
+
+00:00:50.110 --> 00:00:53.605
+This is a dataset that aggregates information annually,
+
+00:00:53.605 --> 00:00:56.725
+and this particular dataset is for 2018.
+
+00:00:56.725 --> 00:01:00.505
+So in the next three columns, total diagnosis,
+
+00:01:00.505 --> 00:01:03.510
+primary diagnosis, and secondary diagnosis,
+
+00:01:03.510 --> 00:01:06.025
+are the annual counts for these areas.
+
+00:01:06.025 --> 00:01:10.000
+Primary and secondary diagnosis codes should now be familiar to you,
+
+00:01:10.000 --> 00:01:13.085
+but please review the lesson if you need a refresher.
+
+00:01:13.085 --> 00:01:15.645
+Now we're ready to look at the solution.
+
+00:01:15.645 --> 00:01:19.110
+Let's start with looking for sepsis in the description.
+
+00:01:19.110 --> 00:01:21.485
+We can use the string.contains
+
+00:01:21.485 --> 00:01:25.715
+function to help us filter for codes that have this pattern.
+
+00:01:25.715 --> 00:01:28.455
+Now, let's take a look at this table.
+
+00:01:28.455 --> 00:01:33.125
+We can see that the table has a variety of codes that start with different letters.
+
+00:01:33.125 --> 00:01:37.240
+So this result we found here has a lot of different types
+
+00:01:37.240 --> 00:01:41.244
+of codes just for a simple term that you might think of sepsis,
+
+00:01:41.244 --> 00:01:46.435
+and this illustrates the challenges of grouping and categorizing different codes.
+
+00:01:46.435 --> 00:01:49.495
+Now we are ready to move on to the next question.
+
+00:01:49.495 --> 00:01:54.805
+To find the percentage of primary diagnosis codes that begin with A41,
+
+00:01:54.805 --> 00:01:57.995
+you must first find the codes that start with this pattern,
+
+00:01:57.995 --> 00:02:02.890
+and you can see I use this function here instead of contains as I did earlier.
+
+00:02:02.890 --> 00:02:05.860
+Then we take the sum of these values and then divided by
+
+00:02:05.860 --> 00:02:09.305
+the total numbers for these values, and there you go.
+
+00:02:09.305 --> 00:02:14.150
+Almost 96 percent of the cases can be mapped with just matching the three letters.
+
+00:02:14.150 --> 00:02:18.790
+Easy. Shouldn't be any problem grouping these codes together.
+
+00:02:18.790 --> 00:02:23.240
+Well, that brings us to the last part where we need to find the percentage of
+
+00:02:23.240 --> 00:02:28.110
+secondary diagnosis codes that can be grouped with just the first character A.
+
+00:02:28.110 --> 00:02:30.815
+Unfortunately, this does not map as well,
+
+00:02:30.815 --> 00:02:34.550
+and only about 30 percent of codes can be grouped this way.
+
+00:02:34.550 --> 00:02:38.720
+Please note that this is based off the volume of encounters for a year,
+
+00:02:38.720 --> 00:02:41.600
+and not the number of unique codes, which is different.
+
+00:02:41.600 --> 00:02:44.885
+This has the effect of weighting more frequent codes higher,
+
+00:02:44.885 --> 00:02:50.210
+which is a simple method you can use to weigh codes based off of frequent statistics.
+
+00:02:50.210 --> 00:02:53.630
+So this was a great exercise to learn some of
+
+00:02:53.630 --> 00:02:59.430
+the challenges and work with the diagnosis codes further on real dataset.
+

@@ -1,0 +1,463 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Common EHR Model Evaluation Metrics</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Building, Evaluating and Interpreting Models</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Building, Evaluating &amp; Interpreting Models Overview.html">01. Building, Evaluating &amp; Interpreting Models Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Tensorflow Regression Model with DenseFeatures.html">02. Tensorflow Regression Model with DenseFeatures</a>
+    </li>
+    <li class="">
+      <a href="03. TF DenseFeatures Walkthrough.html">03. TF DenseFeatures Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="04. Common EHR Model Evaluation Metrics.html">04. Common EHR Model Evaluation Metrics</a>
+    </li>
+    <li class="">
+      <a href="05. Common EHR Model Evaluation Metrics Exercise.html">05. Common EHR Model Evaluation Metrics Exercise</a>
+    </li>
+    <li class="">
+      <a href="06. Common EHR Model Evaluation Metrics Solution.html">06. Common EHR Model Evaluation Metrics Solution</a>
+    </li>
+    <li class="">
+      <a href="07. Demographic Bias Analysis.html">07. Demographic Bias Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Demographic Bias Analysis Walkthrough.html">08. Demographic Bias Analysis Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="09. Demographic Bias Analysis Exercise.html">09. Demographic Bias Analysis Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Demographic Bias Analysis Solution.html">10. Demographic Bias Analysis Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Uncertainty Estimation.html">11. Uncertainty Estimation</a>
+    </li>
+    <li class="">
+      <a href="12. Train Uncertainty Estimation Model Walkthrough.html">12. Train Uncertainty Estimation Model Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="13. Uncertainty Estimation Exercise.html">13. Uncertainty Estimation Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Uncertainty Estimation Solution.html">14. Uncertainty Estimation Solution</a>
+    </li>
+    <li class="">
+      <a href="15. Model Interpretability with Shapley Values.html">15. Model Interpretability with Shapley Values</a>
+    </li>
+    <li class="">
+      <a href="16. Building Models Recap.html">16. Building Models Recap</a>
+    </li>
+    <li class="">
+      <a href="17. AI and EHR Recap.html">17. AI and EHR Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Common EHR Model Evaluation Metrics</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="common-ehr-model-evaluation-metrics">Common EHR Model Evaluation Metrics</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L04 A04 Common EHR Model Evaluation Metrics</p></h3>
+  <video controls>
+  <source src="04. ND320 AIHCND C01 L04 A04 Common EHR Model Evaluation Metrics-UkXmlSQHUvU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND320 AIHCND C01 L04 A04 Common EHR Model Evaluation Metrics-UkXmlSQHUvU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="common-ehr-metrics-key-points">Common EHR Metrics Key Points</h2>
+<p>For this course, we will assume some exposure to common evaluation metrics used for classification and regression. These terms should hopefully be familiar and we will not cover them fully, but here is a quick review.</p>
+<h3 id="common-classification-metrics">Common Classification Metrics</h3>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc" rel="noopener noreferrer" target="_blank">** AUC - ROC Curve**</a>: Receiver Operating Characteristic (ROC) curve shows a graph of the performance of a classification model. It is the True Positive Rate Vs. False Positive Rate across different thresholds. "Area under the ROC" (AUC - ROC) curve measures the entire two-dimensional area underneath the entire ROC curve.</li>
+<li><a href="https://en.wikipedia.org/wiki/F1_score" rel="noopener noreferrer" target="_blank"><strong>F1</strong></a>: Harmonic mean between precision and recall</li>
+<li><a href="https://en.wikipedia.org/wiki/Precision_and_recall" rel="noopener noreferrer" target="_blank"><strong>Precision</strong></a>: the fraction of relevant instances among the retrieved instances</li>
+<li><a href="https://en.wikipedia.org/wiki/Precision_and_recall" rel="noopener noreferrer" target="_blank"><strong>Recall</strong></a>: the fraction of the total amount of relevant instances that were actually retrieved.</li>
+</ul>
+<h3 id="common-regression-metrics">Common Regression Metrics</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation" rel="noopener noreferrer" target="_blank"><strong>RMSE</strong></a>: Root Mean Square Error- a measure of the differences between values predicted by a model.</li>
+<li><a href="https://en.wikipedia.org/wiki/Mean_absolute_percentage_error" rel="noopener noreferrer" target="_blank"><strong>MAPE</strong></a>: Mean Absolute Percentage  Error is a measure of quality for regression models loss.</li>
+<li><a href="https://en.wikipedia.org/wiki/Mean_absolute_error" rel="noopener noreferrer" target="_blank"><strong>MAE</strong></a>: Mean Absolute Error is a measure of errors between paired observations. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-3.jpg" alt="Precision Recall Tradeoff" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Precision Recall Tradeoff</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="precision-recall-tradeoff">Precision-Recall Tradeoff</h2>
+<p>As a quick reminder, there is often some level of precision that you must align with and some capture rate or recall that you are trying to improve. This balance between the two is a necessary tradeoff and a key component that you must communicate with non-technical stakeholders who might have unrealistic views of the impact or capabilities of AI.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="brier-scores">Brier Scores</h2>
+<p>One metric that you might not be familiar with is a Brier score and it is often used in weather forecasting for estimating the probability certainty of a forecast.  It can be a useful metric for comparing the performance of algorithms based on the degree of confidence in a given prediction. This can be helpful because the confidence and measurement of uncertainty can yield vastly different interpretations. </p>
+<p>For the actual definition, it is essentially the mean squared error of a given probability forecast and I walk through the formula step by step below. However, please note that you are not expected to know this formula or use it in this course because we are focusing on the predictions for a regression model. It is introduced as a relevant evaluation metric for if we had a binary classification problem with the associated prediction probabilities. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="brier-score-breakdown-part-1">Brier Score Breakdown Part 1</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Basically you take the probability forecast on a 0 to 1 scale which is <em>f of t</em> and subtract that from <em>O of t</em> which is the actual value which is a binary 0 and 1 value. You then square the difference of this value.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-4.jpg" alt="Brier Score Breakdown Part 2" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Brier Score Breakdown Part 2</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Take the summation of these squared differences from t=1 to N, the total number of predictions.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-5.jpg" alt="Brier Score Breakdown Part 3" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Brier Score Breakdown Part 3</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li>Then divide by N the total number of predictions</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-6.jpg" alt="Brier Score Breakdown Part 4" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Brier Score Breakdown Part 4</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The result is the Brier Score which ranges from 0 and 1.</p>
+<ul>
+<li>Lower is better</li>
+<li>0 is the best score</li>
+<li>1 is the worst score.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/23553436/" rel="noopener noreferrer" target="_blank">A Note on the Evaluation of Novel Biomarkers: Do Not Rely on Integrated Discrimination Improvement and Net Reclassification Index</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Brier_score" rel="noopener noreferrer" target="_blank">Brier Scores</a></li>
+<li><a href="https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-017-0020-3" rel="noopener noreferrer" target="_blank">Brier Score Limitations </a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common Model Evaluation Metrics</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are common Evaluation Metrics used in machine learning?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587238794479" name="1014759" id="a1587238794479">
+      <label for="a1587238794479"><p>Area under the Receiver Operating Characteristic Curve</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587238909290" name="1014759" id="a1587238909290">
+      <label for="a1587238909290"><p>Precision</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239025682" name="1014759" id="a1587239025682">
+      <label for="a1587239025682"><p>Recall</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239030711" name="1014759" id="a1587239030711">
+      <label for="a1587239030711"><p>Brier Scores</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239040793" name="1014759" id="a1587239040793">
+      <label for="a1587239040793"><p>RMSE</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Area under the Receiver Operating Characteristic Curve</li>
+      <li>Precision</li>
+      <li>Recall</li>
+      <li>RMSE</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Brier Scores</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following is important to know when working with Brier Scores?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587239361526" name="1014761" id="a1587239361526">
+      <label for="a1587239361526"><p>Brier Scores are the only metric you need to use to evaluate your model.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239390386" name="1014761" id="a1587239390386">
+      <label for="a1587239390386"><p>Brier scores are basically the mean squared error of probability forecast.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239439354" name="1014761" id="a1587239439354">
+      <label for="a1587239439354"><p>You need to fully understand the math behind how the Brier Score works to use it.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239444516" name="1014761" id="a1587239444516">
+      <label for="a1587239444516"><p>The Brier Score provides an estimate of the probability certainty of a prediction </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587239636643" name="1014761" id="a1587239636643">
+      <label for="a1587239636643"><p>Brier Scores are only for use in weather forecast models.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Brier scores are basically the mean squared error of probability forecast.</li>
+      <li>The Brier Score provides an estimate of the probability certainty of a prediction </li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Common EHR Model Evaluation Metrics Exercise.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Common EHR Model Evaluation Metrics')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

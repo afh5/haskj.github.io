@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.870
+Let's move on to storing and accessing PHI data.
+
+00:00:03.870 --> 00:00:08.985
+Technically, is not required under the Security Rule to encrypt,
+
+00:00:08.985 --> 00:00:12.675
+but it is considered a best practice to do so,
+
+00:00:12.675 --> 00:00:16.110
+and you have to show a good reason why not to use encryption.
+
+00:00:16.110 --> 00:00:19.875
+Therefore, you should encrypt data at rest,
+
+00:00:19.875 --> 00:00:24.210
+create a secure transmission of data with a VPN and
+
+00:00:24.210 --> 00:00:29.175
+ensure that data is unusable in the case the device is lost or stolen.
+
+00:00:29.175 --> 00:00:33.570
+First, make sure that your cloud provider is HIPAA compliant.
+
+00:00:33.570 --> 00:00:36.360
+HIPAA does not certify a cloud provider.
+
+00:00:36.360 --> 00:00:38.144
+There are certain cloud providers,
+
+00:00:38.144 --> 00:00:40.740
+they have followed HIPAA standards to be compliant.
+
+00:00:40.740 --> 00:00:45.665
+It's important that you use only HIPAA BAA approved cloud services.
+
+00:00:45.665 --> 00:00:48.620
+This means that you might not be able to use the latest and
+
+00:00:48.620 --> 00:00:53.420
+greatest cloud services in some cases because approval can take some time,
+
+00:00:53.420 --> 00:00:57.790
+due to a need to encrypt data across different parts of the process.
+
+00:00:57.790 --> 00:00:59.720
+An important role that is part of
+
+00:00:59.720 --> 00:01:03.560
+the HIPAA Privacy Rule is the minimum necessary standard,
+
+00:01:03.560 --> 00:01:07.070
+which states that covered entities must limit
+
+00:01:07.070 --> 00:01:12.035
+PHI access to the minimum level necessary to achieve an objective.
+
+00:01:12.035 --> 00:01:14.570
+What this practically means is that there is
+
+00:01:14.570 --> 00:01:18.755
+greater legal oversight for different uses of PHI data.
+
+00:01:18.755 --> 00:01:21.995
+In a very limited latitude on how to use
+
+00:01:21.995 --> 00:01:26.385
+the data in terms of practical day-to-day impact,
+
+00:01:26.385 --> 00:01:29.990
+this can mean that you might have anticipated delays if you
+
+00:01:29.990 --> 00:01:34.135
+seek to add fields or have a need to re-identify fields.
+
+00:01:34.135 --> 00:01:39.410
+For example, you may want to do a patient-level aggregation and need to filter out
+
+00:01:39.410 --> 00:01:44.540
+and encounter level certain record but need identifiable information.
+
+00:01:44.540 --> 00:01:47.000
+This can cause delays or might not even
+
+00:01:47.000 --> 00:01:50.155
+make the modeling possible depending on the situation.
+
+00:01:50.155 --> 00:01:54.050
+Well, I do not recommend you certify the dataset as
+
+00:01:54.050 --> 00:01:58.295
+de-identified without consulting your legal and compliance teams.
+
+00:01:58.295 --> 00:02:02.525
+I do want to share a little bit about what it is and why do it.
+
+00:02:02.525 --> 00:02:08.060
+De-identifying a dataset refers to the removal of identifying fields like name,
+
+00:02:08.060 --> 00:02:10.160
+address from a dataset.
+
+00:02:10.160 --> 00:02:11.930
+While this might sound simple,
+
+00:02:11.930 --> 00:02:15.445
+it can be more complex and have some legal risk.
+
+00:02:15.445 --> 00:02:17.670
+So why would you do this?
+
+00:02:17.670 --> 00:02:21.379
+You would hopefully reduce privacy risk to the individual
+
+00:02:21.379 --> 00:02:25.295
+in the dataset and support secondary usage.
+
+00:02:25.295 --> 00:02:30.130
+HIPAA has two ways that you can use to de-identify a dataset.
+
+00:02:30.130 --> 00:02:33.680
+The first method is the expert determination method.
+
+00:02:33.680 --> 00:02:36.860
+This is done by a statistician that determines there
+
+00:02:36.860 --> 00:02:40.315
+is a small risk that an individual could be identified.
+
+00:02:40.315 --> 00:02:42.980
+The second method is called safe harbor,
+
+00:02:42.980 --> 00:02:46.550
+and it refers to the removal of 18 identifiers like name,
+
+00:02:46.550 --> 00:02:48.130
+zip code , etc.
+
+00:02:48.130 --> 00:02:52.460
+This information is provided to expose you to these methods.
+
+00:02:52.460 --> 00:02:54.770
+I would still recommend that you work with
+
+00:02:54.770 --> 00:03:00.755
+your organization's compliance experts to determine when and which method is appropriate.
+
+00:03:00.755 --> 00:03:04.520
+Re-identification is a legal risk that you would not want to
+
+00:03:04.520 --> 00:03:09.960
+subject your organization to and it is best to work with your team on this.
+

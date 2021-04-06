@@ -1,0 +1,361 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Patient Selection for Diabetes Drug Testing</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Patient Selection for Diabetes Drug Testing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Patient Selection for Diabetes Drug Testing Project.html">01. Patient Selection for Diabetes Drug Testing Project</a>
+    </li>
+    <li class="">
+      <a href="02. Project Instructions.html">02. Project Instructions</a>
+    </li>
+    <li class="">
+      <a href="03. Patient Selection for Diabetes Drug Testing Workspace.html">03. Patient Selection for Diabetes Drug Testing Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Patient Selection for Diabetes Drug Testing.html">Project Description - Patient Selection for Diabetes Drug Testing</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Patient Selection for Diabetes Drug Testing.html">Project Rubric - Patient Selection for Diabetes Drug Testing</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Patient Selection for Diabetes Drug Testing</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Exploratory Data Analysis</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project uses visualizations to analyze which fields have a high amount of missing/null values or high cardinality.</p>
+        </td>
+        <td>
+          <p>The project correctly identified which field(s) has/have a high amount of missing/zero values.</p>
+<p>The project correctly identified which field(s) has/have a Gaussian distribution shape based on the histogram analysis.</p>
+<p>The project correctly identified fields with high cardinality. </p>
+<p>The project justified why these fields had high cardinality.</p>
+<p>The project correctly describes the distributions for age and gender.</p>
+<p><strong>Optional</strong>: The project uses Tensorflow Data Validation Visualizations to analyze which fields have a high amount of missing/null values or high cardinality.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project selects features based on exploratory data analysis.</p>
+        </td>
+        <td>
+          <p>The project correctly identifies whether to include/exclude payer_code and weight fields.</p>
+<p>The project justified why these fields should be included/excluded by using supporting data analysis.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Data Preparation</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project uses the correct level(s) for the given EHR dataset (line, encounter, patient)  and transforms, aggregates and filters appropriately.</p>
+        </td>
+        <td>
+          <p>The project uses the correct level(s) for the given EHR dataset (line, encounter, patient)  and transforms, aggregates and filters appropriately.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project correctly reduces dimensionality for a dataset containing a high cardinality code set field.</p>
+        </td>
+        <td>
+          <p>The project correctly maps NDC codes to generic drug names and prints out the correct mappings in the notebook.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project dataset has been split correctly for EHR machine learning models.</p>
+        </td>
+        <td>
+          <p>The project has correctly split the original dataset into train, validation, and test datasets. </p>
+<p>The projects dataset splits do not contain patient or encounter data leakage.</p>
+<p>The Projects code passes the Encounter Test.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Feature Engineering</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project correctly creates categorical features using Tensorflow’s feature column API for transforming the data.</p>
+        </td>
+        <td>
+          <p>The project correctly completes the categorical feature transformer boilerplate function.</p>
+<p>The project successfully uses this function to transform the demo dataset with at least one new categorical feature.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project correctly creates numerical features using Tensorflow’s feature column API for transforming the data.</p>
+        </td>
+        <td>
+          <p>The project correctly completes the numerical feature transformer boilerplate function.</p>
+<p>The project successfully uses this function to transform the demo dataset with at least one new numerical feature.</p>
+<p>The project's transformer function correctly incorporates the provided z-score normalizer function for normalization or another custom normalizer.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Model Building and Analysis</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project correctly utilizes the regression model predictions for uncertainty estimation and classification output analysis.</p>
+        </td>
+        <td>
+          <p>The project has prepared the regression model predictions for TF Probability and binary classification outputs by doing the following:<br />
+Correctly utilized TF Probability to provide mean and standard deviation prediction outputs<br />
+Created an output prediction dataset that has the labels correctly mapped to a binary prediction and actual value. </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project correctly evaluates the model predictions across key classification metrics.</p>
+        </td>
+        <td>
+          <p>The model has been evaluated across the following classification metrics: AUC, F1, precision, and recall.</p>
+<p>Students have completed both questions for the model summary and address bias-variance tradeoff in regard to this problem.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project utilizes the Aequitas toolkit to correctly create a bias report for race and gender on a provided dataset with some justification for their analysis. </p>
+        </td>
+        <td>
+          <p>The project contains a bias report with the following:</p>
+<ul>
+<li>A visualization of at least two key metric(s) for patient selection</li>
+<li>A visualization showing at least one reference group fairness example and its comparison on at least one metric (e.g. TPR).</li>
+<li>Justification for analysis made about at least one visualization</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ol>
+<li>Students can tune the TF Probability library to show and rank uncertainty estimates.</li>
+<li>Students can use cross-feature columns.</li>
+<li>Students can use ICD groupings to reduce dimensionality. </li>
+<li>Students can build a more complex representation of the data - e.g. conditional probability matrix, pre-trained embeddings, etc.</li>
+<li>Students uses Tensorflow Data Validation Visualizations to analyze which fields have a high amount of missing/null values or high cardinality.</li>
+</ol></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Patient Selection for Diabetes Drug Testing')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

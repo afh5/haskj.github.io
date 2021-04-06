@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.760
+Welcome to our first lesson in this course on EHR Data Security and Analysis.
+
+00:00:05.760 --> 00:00:09.570
+In this lesson, you'll cover Data Security and Privacy,
+
+00:00:09.570 --> 00:00:12.600
+including some of the key standards in regulations.
+
+00:00:12.600 --> 00:00:14.625
+When you're finished with this section,
+
+00:00:14.625 --> 00:00:19.770
+you will gain key information that you need to know about working with EHR data.
+
+00:00:19.770 --> 00:00:23.834
+Next, you'll venture into Exploratory Data Analysis,
+
+00:00:23.834 --> 00:00:26.190
+allowing you to gain a deeper understanding
+
+00:00:26.190 --> 00:00:29.430
+of your datasets before you begin working with them.
+
+00:00:29.430 --> 00:00:32.535
+This will cover analyzing a dataset schema,
+
+00:00:32.535 --> 00:00:34.650
+looking at value distributions,
+
+00:00:34.650 --> 00:00:39.205
+missing values, and the cardinality of categorical features.
+
+00:00:39.205 --> 00:00:43.490
+Lastly, you'll complete a demographic data set analysis.
+
+00:00:43.490 --> 00:00:47.905
+This analysis shows how representative your dataset might be.
+
+00:00:47.905 --> 00:00:52.400
+This is a key step that occurs before training and predictions are made.
+
+00:00:52.400 --> 00:00:54.275
+Once you complete this lesson,
+
+00:00:54.275 --> 00:00:57.260
+you'll be ready to start working with health care data sets.
+
+00:00:57.260 --> 00:00:59.840
+You'll also be able to ensure that the training and
+
+00:00:59.840 --> 00:01:03.405
+predictions of the model you build are truly representative.
+
+00:01:03.405 --> 00:01:05.150
+With that, let's dig into
+
+00:01:05.150 --> 00:01:10.140
+the critical and important topic of EHR Data Security and Privacy.
+

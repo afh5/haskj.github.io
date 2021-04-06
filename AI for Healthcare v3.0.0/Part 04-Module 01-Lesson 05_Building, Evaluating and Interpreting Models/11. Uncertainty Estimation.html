@@ -1,0 +1,342 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Uncertainty Estimation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Building, Evaluating and Interpreting Models</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Building, Evaluating &amp; Interpreting Models Overview.html">01. Building, Evaluating &amp; Interpreting Models Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Tensorflow Regression Model with DenseFeatures.html">02. Tensorflow Regression Model with DenseFeatures</a>
+    </li>
+    <li class="">
+      <a href="03. TF DenseFeatures Walkthrough.html">03. TF DenseFeatures Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="04. Common EHR Model Evaluation Metrics.html">04. Common EHR Model Evaluation Metrics</a>
+    </li>
+    <li class="">
+      <a href="05. Common EHR Model Evaluation Metrics Exercise.html">05. Common EHR Model Evaluation Metrics Exercise</a>
+    </li>
+    <li class="">
+      <a href="06. Common EHR Model Evaluation Metrics Solution.html">06. Common EHR Model Evaluation Metrics Solution</a>
+    </li>
+    <li class="">
+      <a href="07. Demographic Bias Analysis.html">07. Demographic Bias Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Demographic Bias Analysis Walkthrough.html">08. Demographic Bias Analysis Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="09. Demographic Bias Analysis Exercise.html">09. Demographic Bias Analysis Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Demographic Bias Analysis Solution.html">10. Demographic Bias Analysis Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Uncertainty Estimation.html">11. Uncertainty Estimation</a>
+    </li>
+    <li class="">
+      <a href="12. Train Uncertainty Estimation Model Walkthrough.html">12. Train Uncertainty Estimation Model Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="13. Uncertainty Estimation Exercise.html">13. Uncertainty Estimation Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Uncertainty Estimation Solution.html">14. Uncertainty Estimation Solution</a>
+    </li>
+    <li class="">
+      <a href="15. Model Interpretability with Shapley Values.html">15. Model Interpretability with Shapley Values</a>
+    </li>
+    <li class="">
+      <a href="16. Building Models Recap.html">16. Building Models Recap</a>
+    </li>
+    <li class="">
+      <a href="17. AI and EHR Recap.html">17. AI and EHR Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. Uncertainty Estimation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="uncertainty-estimation">Uncertainty Estimation</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L04 A09 Uncertainty Estimation</p></h3>
+  <video controls>
+  <source src="11. ND320 AIHCND C01 L04 A09 Uncertainty Estimation-rSpzX6xijQg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND320 AIHCND C01 L04 A09 Uncertainty Estimation-rSpzX6xijQg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="uncertainty-estimation-key-points">Uncertainty Estimation Key Points</h1>
+<h3 id="why-use-uncertainty-estimation">Why use Uncertainty Estimation?</h3>
+<p>A typical classification problem provides predictions with relative weightings across the prediction classes and is different than the confidence in a given prediction. Uncertainty estimation helps us with this.</p>
+<h1 id="class-probabilities--confidence-in-a-prediction">Class Probabilities != confidence in a prediction.</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-10.jpg" alt="Uncertainty Weather Example" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Uncertainty Weather Example</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example">Example:</h3>
+<p>Which is better?</p>
+<ol>
+<li>A weather forecast with a simple Yes or No prediction it will rain with some icons?</li>
+<li>A forecast that also provides the percent chance of rain or how certain the model is of its prediction?</li>
+</ol>
+<p>Most people would prefer the second one and in healthcare this even more important.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-12.jpg" alt="Review of Bayesian Probability" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Review of Bayesian Probability</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="bayesian-probability-review">Bayesian Probability Review</h2>
+<h3 id="probabilistic-programming">Probabilistic Programming</h3>
+<p>To address uncertainty estimation we can use probabilistic programming, in particular, we can create Bayesian Neural Networks (BNN) using TensorFlow Probability. TF probability combines Bayesian probabilistic approaches with deep learning and since it is built on Tensorflow you can train with GPUs too. </p>
+<p>Bayesian statistical approaches can be very helpful for situations where you can leverage deep domain knowledge and have small datasets. Healthcare is an industry where you might have small datasets on patient data for a new drug or rare conditions. Also, healthcare is a field where you can leverage deep domain knowledge from medical professionals and medical literature which can help provide positive “bias” in your model with pertinent domain knowledge. </p>
+<h3 id="review-of-bayesian-probability">Review of Bayesian Probability</h3>
+<ul>
+<li>Prior distribution - P(A)</li>
+<li>P(A | Evidence) - Updating the prior with new evidence</li>
+<li>P(B) - posterior probability</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-11.jpg" alt="Response Differences for Bayesian Probability" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Response Differences for Bayesian Probability</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example">Example:</h3>
+<p>Let’s say we want to assess whether a drug will pass a phase III clinical trial. The frequentist statistical response would be a yes or no response. However, the bayesian response would give a yes/no and the certainty/confidence in that prediction. This can be helpful when connecting it with metrics like Brier scores that can combine predictions from various models.</p>
+<p>If you are only 51% certain that you will pass the clinical trial, how certain would you be?</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are true?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587284315656" name="1014998" id="a1587284315656">
+      <label for="a1587284315656"><p>The posterior probability is updated with new evidence.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587284359837" name="1014998" id="a1587284359837">
+      <label for="a1587284359837"><p>Tensorflow Probability combines Bayesian probabilistic approaches with deep learning.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587284361058" name="1014998" id="a1587284361058">
+      <label for="a1587284361058"><p>Bayesian approaches can be useful when you have small datasets with deep domain knowledge.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Tensorflow Probability combines Bayesian probabilistic approaches with deep learning.</li>
+      <li>Bayesian approaches can be useful when you have small datasets with deep domain knowledge.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Train Uncertainty Estimation Model Walkthrough.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Uncertainty Estimation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.115
+Let's look up a term that is relevant in the news these days, the Coronavirus.
+
+00:00:05.115 --> 00:00:06.660
+As you can see here,
+
+00:00:06.660 --> 00:00:11.490
+the CDC has a website for looking up, ICD-10-CM codes.
+
+00:00:11.490 --> 00:00:14.295
+Let's search for this term here,
+
+00:00:14.295 --> 00:00:16.500
+and see what comes up.
+
+00:00:16.500 --> 00:00:19.430
+So let's look at this result.
+
+00:00:19.430 --> 00:00:24.230
+While there is a specific new code that will be added in October 2020,
+
+00:00:24.230 --> 00:00:27.245
+we can see where some related codes are here.
+
+00:00:27.245 --> 00:00:29.090
+In the search results, first,
+
+00:00:29.090 --> 00:00:31.880
+we look at one of the main effects we see
+
+00:00:31.880 --> 00:00:35.395
+from SARS-related coronavirus; which is pneumonia.
+
+00:00:35.395 --> 00:00:39.630
+If we click on it, we can see how it is derived.
+
+00:00:40.550 --> 00:00:43.880
+Looking at the tabular list view for pneumonia,
+
+00:00:43.880 --> 00:00:48.649
+we can see the hierarchy starting with Chapter 10 for the J codes,
+
+00:00:48.649 --> 00:00:52.000
+and then J12 for viral pneumonia.
+
+00:00:52.000 --> 00:00:55.790
+This can hopefully help you see how the code set is structured.
+
+00:00:55.790 --> 00:01:02.885
+Okay. Let's go back to the actual diagnosis of a SARS-related coronavirus.
+
+00:01:02.885 --> 00:01:05.345
+We can see that in the first category,
+
+00:01:05.345 --> 00:01:08.215
+that includes many infectious diseases.
+
+00:01:08.215 --> 00:01:14.995
+Then we find B97 viral agents as the causes of diseases classified elsewhere.
+
+00:01:14.995 --> 00:01:22.365
+Finally, we find B97.21 which is for the SARS-associated coronavirus.
+
+00:01:22.365 --> 00:01:24.780
+This is for the first coronavirus.
+
+00:01:24.780 --> 00:01:30.695
+You can see that it has been classified and listed under the ICD-10-CM codes.
+
+00:01:30.695 --> 00:01:34.285
+So when Covid-19 comes out later this year,
+
+00:01:34.285 --> 00:01:39.815
+you will probably see a code that's very similar to this using a similar structure.
+
+00:01:39.815 --> 00:01:43.670
+So hopefully, this shows you how the codes are related,
+
+00:01:43.670 --> 00:01:49.085
+and how we may possibly use this grouping to be able to categorize things better.
+
+00:01:49.085 --> 00:01:52.580
+Some other important information to consider about
+
+00:01:52.580 --> 00:01:59.090
+diagnosis codes encounters are that it may take multiple visits to confirm a diagnosis.
+
+00:01:59.090 --> 00:02:01.045
+This occurs quite often.
+
+00:02:01.045 --> 00:02:06.095
+Further, each distinct code can only be used once per encounter.
+
+00:02:06.095 --> 00:02:11.960
+Lastly, chronic diseases can have the diagnosis code be repeated across encounters,
+
+00:02:11.960 --> 00:02:15.710
+as the patient is continually treated for a condition.
+
+00:02:15.710 --> 00:02:21.335
+Let's also go over a few important details about the prioritization of diagnosis codes.
+
+00:02:21.335 --> 00:02:24.200
+At a high level, it is important to distinguish
+
+00:02:24.200 --> 00:02:28.745
+what code is taking up the most resources or is the most critical.
+
+00:02:28.745 --> 00:02:32.120
+There are a few terms that you should become familiar with.
+
+00:02:32.120 --> 00:02:35.240
+The first one is the primary diagnosis code.
+
+00:02:35.240 --> 00:02:38.800
+This is the code that takes up the most resources to treat.
+
+00:02:38.800 --> 00:02:44.015
+A related and sometimes the same code is the principal diagnosis code.
+
+00:02:44.015 --> 00:02:47.780
+This has a definition that focus on the diagnosis that is found
+
+00:02:47.780 --> 00:02:52.205
+after hospitalization to be the one that is chiefly responsible.
+
+00:02:52.205 --> 00:02:54.830
+This can be an important distinction since
+
+00:02:54.830 --> 00:02:58.160
+the admitting diagnosis code can widely differ.
+
+00:02:58.160 --> 00:03:01.820
+For the most part, we will treat these terms interchangeably,
+
+00:03:01.820 --> 00:03:03.940
+but it's good to be aware of the differences,
+
+00:03:03.940 --> 00:03:06.965
+and the need to dig into the details when necessary.
+
+00:03:06.965 --> 00:03:10.700
+Lastly, we'll look at secondary diagnosis codes,
+
+00:03:10.700 --> 00:03:15.040
+which are pretty simply the other diagnosis codes listed on an encounter.
+
+00:03:15.040 --> 00:03:18.740
+For example, if a patient were to have a knee replacement surgery,
+
+00:03:18.740 --> 00:03:22.010
+but had type 2 diabetes as a prior condition,
+
+00:03:22.010 --> 00:03:24.020
+this other diagnosis or
+
+00:03:24.020 --> 00:03:29.960
+secondary diagnosis code of type 2 diabetes would be included in their medical record.
+
+00:03:29.960 --> 00:03:36.180
+Please note that secondary diagnosis codes can include many additional codes.
+

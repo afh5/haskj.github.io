@@ -1,0 +1,280 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demographic Analysis</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Data Security and Analysis</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Data Security and Analysis Overview.html">01. EHR Data Security and Analysis Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Importance of Data Privacy and Security.html">02. Importance of Data Privacy and Security</a>
+    </li>
+    <li class="">
+      <a href="03. Key Healthcare Data Security and Privacy Standards.html">03. Key Healthcare Data Security and Privacy Standards</a>
+    </li>
+    <li class="">
+      <a href="04. Storing and Accessing PHI Data.html">04. Storing and Accessing PHI Data</a>
+    </li>
+    <li class="">
+      <a href="05. PII Data Solution.html">05. PII Data Solution</a>
+    </li>
+    <li class="">
+      <a href="06. Importance of EDA.html">06. Importance of EDA</a>
+    </li>
+    <li class="">
+      <a href="07. Dataset Schema Analysis.html">07. Dataset Schema Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Value Distributions.html">08. Value Distributions</a>
+    </li>
+    <li class="">
+      <a href="09. Missing Values and Outliers.html">09. Missing Values and Outliers</a>
+    </li>
+    <li class="">
+      <a href="10. Analyzing Dataset for High Cardinality.html">10. Analyzing Dataset for High Cardinality</a>
+    </li>
+    <li class="">
+      <a href="11. Analyze Dataset - Exercise.html">11. Analyze Dataset - Exercise</a>
+    </li>
+    <li class="">
+      <a href="12. Analyze Dataset - Solution.html">12. Analyze Dataset - Solution</a>
+    </li>
+    <li class="">
+      <a href="13. Demographic Analysis.html">13. Demographic Analysis</a>
+    </li>
+    <li class="">
+      <a href="14. Compare Demographics - Exercise.html">14. Compare Demographics - Exercise</a>
+    </li>
+    <li class="">
+      <a href="15. Compare Demographics - Solution.html">15. Compare Demographics - Solution</a>
+    </li>
+    <li class="">
+      <a href="16. Lesson Recap.html">16. Lesson Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Demographic Analysis</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="demographic-analysis">Demographic Analysis</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L01 A12 Demographic Analysis</p></h3>
+  <video controls>
+  <source src="13. ND320 AIHCND C01 L01 A12 Demographic Analysis-FySSiOWg2UA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND320 AIHCND C01 L01 A12 Demographic Analysis-FySSiOWg2UA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="key-points">Key Points</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l1-ehr-data-security-analysis-7.jpg" alt="Important of Representative Data" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Important of Representative Data</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="demographic-analysis">Demographic Analysis</h2>
+<p>The reason that demographic analysis is so important, especially in healthcare, is that we need our clinical trials and machine learning models to be able to representative to general population. While this is not always completely possible given limited trials and very rare conditions it is something we need to strive for and identify as early as possible if there may be an issue. </p>
+<p>If we don't have a properly representative demographic dataset, we wouldn't know how a drug or prediction might impact a certain age, race or gender which could lead to significant issues for those not represented.</p>
+<p>When completing a demographic analysis, it can be helpful to group data into buckets or bins. </p>
+<p>In this walkthrough,  we used <code>np.arange()</code> to create the bucket ranges, then used them to create the applies with a <code>.join()</code> method, and finally used <code>pd.cut()</code> to create our new "age_bins" buckets. You can use whatever methods you would like to complete this task. We also took the opportunity to change the sex or gender column from 0,1 to "male" and "female" to further breakdown our categories and demographics using <code>replace()</code>. Again this should all be a review, but we are just including here to be clear.</p>
+<p>You may also use different age buckets/bins and see how the value distribution looks for those bins. </p>
+<h4 id="additional-resources">Additional Resources</h4>
+<p><a href="https://www.sciencedirect.com/topics/computer-science/demographic-data" rel="noopener noreferrer" target="_blank">Demographic Analysis</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Reflect</p></h3>
+  <div>
+  <p><strong>QUESTION: </strong></p>
+  <p>Why is it important to do a demographic analysis on your datasets?</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>While there are many reasons for this you need to make sure that you datasets will be representative of the population you will be attempting serve. If it is not, the models created later will not generalize well in production. </p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Compare Demographics - Exercise.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Demographic Analysis')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.365
+Great. You made it through learning about EHR code sets.
+
+00:00:04.365 --> 00:00:07.110
+Stand up, take a bow, stretch a bit,
+
+00:00:07.110 --> 00:00:10.485
+because now that you know how to handle these different code sets,
+
+00:00:10.485 --> 00:00:14.670
+you'll be able to group and categorize for use in ML models.
+
+00:00:14.670 --> 00:00:18.120
+So let's get going. As we mentioned earlier,
+
+00:00:18.120 --> 00:00:22.560
+there is a tremendous challenge of taking the 77,000 plus
+
+00:00:22.560 --> 00:00:29.650
+ICD10 PCS codes and categorizing them into meaningful categories and doing this at scale.
+
+00:00:29.650 --> 00:00:32.509
+This is where government industry partnership
+
+00:00:32.509 --> 00:00:35.995
+called the Healthcare Cost and Utilization Project,
+
+00:00:35.995 --> 00:00:44.780
+or HCUP, created a categorization system called Clinical Classifications Software or CCS.
+
+00:00:44.780 --> 00:00:48.785
+This can be used to map diagnosis or procedure codes from
+
+00:00:48.785 --> 00:00:53.980
+ICD code sets and has mapping for ICD9 as well as ICD10.
+
+00:00:53.980 --> 00:00:56.765
+It has single or multi-level options,
+
+00:00:56.765 --> 00:00:59.660
+which we will go over in more detail in a moment.
+
+00:00:59.660 --> 00:01:01.820
+For single level categories,
+
+00:01:01.820 --> 00:01:04.460
+these categories are mutually exclusive,
+
+00:01:04.460 --> 00:01:11.955
+and there are 285 categories for diagnoses and 231 categories for procedures.
+
+00:01:11.955 --> 00:01:14.840
+Single level categories can be used for ranking of
+
+00:01:14.840 --> 00:01:19.525
+codes and help with risk adjustment scoring as well.
+
+00:01:19.525 --> 00:01:23.180
+CCS multi-level categories are helpful for
+
+00:01:23.180 --> 00:01:27.085
+more detailed analysis and grouping at a more granular level.
+
+00:01:27.085 --> 00:01:32.045
+There are four levels for diagnosis codes and three levels for procedure codes.
+
+00:01:32.045 --> 00:01:35.920
+Here's how they might look for diagnosis multi-level category.
+
+00:01:35.920 --> 00:01:39.259
+As you can see, seven is a broad category,
+
+00:01:39.259 --> 00:01:45.215
+but then you can see how it branches off for 7.1 and 7.2 in more detail.
+
+00:01:45.215 --> 00:01:50.285
+7.1 in hypertension can go into more specificity as you need.
+
+00:01:50.285 --> 00:01:54.470
+In a moment, we will take a look at how the CSV file that you can download
+
+00:01:54.470 --> 00:01:59.210
+the site maps the procedure codes to different categories.
+
+00:01:59.210 --> 00:02:01.640
+If we go to the CCS website,
+
+00:02:01.640 --> 00:02:04.610
+we can find and download the mapping file for taking
+
+00:02:04.610 --> 00:02:11.420
+ICD10 PCS procedure codes and map them to categorization with CCS.
+
+00:02:11.420 --> 00:02:13.760
+Let's take a look at the mapping file,
+
+00:02:13.760 --> 00:02:17.165
+and we can see how an ICD10 mapping look.
+
+00:02:17.165 --> 00:02:21.620
+For a list of ICD10 codes and their descriptions on the left,
+
+00:02:21.620 --> 00:02:24.635
+how would you categorize these different codes?
+
+00:02:24.635 --> 00:02:27.450
+They all start with similar characters,
+
+00:02:27.450 --> 00:02:29.510
+but if you were to look at the descriptions,
+
+00:02:29.510 --> 00:02:31.369
+things might become more challenging.
+
+00:02:31.369 --> 00:02:36.680
+We've seen terms ranging from basal ganglia and ocular motor nerve.
+
+00:02:36.680 --> 00:02:40.060
+It would be hard to have a medical expert categorize too,
+
+00:02:40.060 --> 00:02:41.990
+and these things change.
+
+00:02:41.990 --> 00:02:49.385
+Well, thankfully, CCS maps these all to the incision and excision of CNS category.
+
+00:02:49.385 --> 00:02:52.535
+This can be helpful with reducing dimensionality,
+
+00:02:52.535 --> 00:02:57.020
+and in an upcoming exercise we will work more with this in more detail.
+
+00:02:57.020 --> 00:03:01.580
+Another common categorization system that you may come across is
+
+00:03:01.580 --> 00:03:06.785
+a medicare severity-diagnosis related group or MS-DRG,
+
+00:03:06.785 --> 00:03:12.860
+which is used by MACs to assign charges and as a way to group payment based on
+
+00:03:12.860 --> 00:03:15.095
+the principle diagnosis and
+
+00:03:15.095 --> 00:03:22.630
+up to 25 secondary diagnosis codes and up to 25 procedures during a visit/encounter.
+
+00:03:22.630 --> 00:03:27.275
+Another important categorization system is SNOMED CT,
+
+00:03:27.275 --> 00:03:32.030
+and it is maintained by a non-profit in London called SNOMED International.
+
+00:03:32.030 --> 00:03:33.935
+There is a license to use this,
+
+00:03:33.935 --> 00:03:38.075
+but this can be very helpful for making EHR records interoperable.
+
+00:03:38.075 --> 00:03:39.980
+It's beyond the scope of this course,
+
+00:03:39.980 --> 00:03:43.955
+but wanted to expose you to a few other key categorization systems.
+
+00:03:43.955 --> 00:03:46.500
+There are many others as well.
+

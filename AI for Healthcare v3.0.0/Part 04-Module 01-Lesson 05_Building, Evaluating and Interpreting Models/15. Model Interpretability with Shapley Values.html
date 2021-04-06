@@ -1,0 +1,427 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Model Interpretability with Shapley Values</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Building, Evaluating and Interpreting Models</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Building, Evaluating &amp; Interpreting Models Overview.html">01. Building, Evaluating &amp; Interpreting Models Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Tensorflow Regression Model with DenseFeatures.html">02. Tensorflow Regression Model with DenseFeatures</a>
+    </li>
+    <li class="">
+      <a href="03. TF DenseFeatures Walkthrough.html">03. TF DenseFeatures Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="04. Common EHR Model Evaluation Metrics.html">04. Common EHR Model Evaluation Metrics</a>
+    </li>
+    <li class="">
+      <a href="05. Common EHR Model Evaluation Metrics Exercise.html">05. Common EHR Model Evaluation Metrics Exercise</a>
+    </li>
+    <li class="">
+      <a href="06. Common EHR Model Evaluation Metrics Solution.html">06. Common EHR Model Evaluation Metrics Solution</a>
+    </li>
+    <li class="">
+      <a href="07. Demographic Bias Analysis.html">07. Demographic Bias Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Demographic Bias Analysis Walkthrough.html">08. Demographic Bias Analysis Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="09. Demographic Bias Analysis Exercise.html">09. Demographic Bias Analysis Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Demographic Bias Analysis Solution.html">10. Demographic Bias Analysis Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Uncertainty Estimation.html">11. Uncertainty Estimation</a>
+    </li>
+    <li class="">
+      <a href="12. Train Uncertainty Estimation Model Walkthrough.html">12. Train Uncertainty Estimation Model Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="13. Uncertainty Estimation Exercise.html">13. Uncertainty Estimation Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Uncertainty Estimation Solution.html">14. Uncertainty Estimation Solution</a>
+    </li>
+    <li class="">
+      <a href="15. Model Interpretability with Shapley Values.html">15. Model Interpretability with Shapley Values</a>
+    </li>
+    <li class="">
+      <a href="16. Building Models Recap.html">16. Building Models Recap</a>
+    </li>
+    <li class="">
+      <a href="17. AI and EHR Recap.html">17. AI and EHR Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">15. Model Interpretability with Shapley Values</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="model-interpretability-with-shapley-values">Model Interpretability with Shapley Values</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L04 A12 Model Interpretability With Shapley Values</p></h3>
+  <video controls>
+  <source src="15. ND320 AIHCND C01 L04 A12 Model Interpretability With Shapley Values-_FdcZkAGWRk.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="15. ND320 AIHCND C01 L04 A12 Model Interpretability With Shapley Values-_FdcZkAGWRk.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="model-interpretability-key-points">Model Interpretability Key Points</h1>
+<p><strong>Note</strong>: This section is included largely as a bonus and not required in the project, but it is very good to know about.</p>
+<h2 id="why-is-interpretability-important-for-ehr-datasets">Why is Interpretability Important for EHR Datasets?</h2>
+<p>In general, as you would find for other industries you also want to be aware of biases in your model from key features and be able to identify bugs or issues that might occur. </p>
+<p>For example, you might diagnose issues with your model where a feature like inpatient vs outpatient might have a greater weight than expected. This could be due to the nature of the type of problem you are dealing with as there are major distinctions with how inpatient and outpatient claims are handled.</p>
+<p>Model interpretability is an issue that is often brought up as being important in fields like healthcare because of the level of scrutiny on many decisions by regulators, the public, and the healthcare community. </p>
+<p>People want to understand how key decisions that can seriously impact lives are made and this is where practitioners often tend to use simpler models like linear models as they are easy to interpret. They want to avoid the proverbial <strong>Black Box</strong> model as it's important to have a clear idea of how a model is getting its predictions. </p>
+<p><strong>Black Box</strong>: Term often used in software when inputs go in and outputs come out of an algorithm and it is not clear how the outputs were arrived at.</p>
+<p>However, these simpler linear models lack the complexity to handle more sophisticated cases that can have a bigger impact on society that deep learning models can potentially handle. That is why we need to use model interpretability to help remove the <strong>Black Box</strong> from our better, more complicated models.</p>
+<h2 id="model-interpretability-methods">Model Interpretability Methods</h2>
+<p><strong>Model Agnostic</strong>: methods that can be used on deep learning models or traditional ml models<br />
+A few methods we can use for interpreting deep learning models that are also model agnostic include:</p>
+<ul>
+<li>LIME or <a href="https://arxiv.org/pdf/1602.04938.pdf" rel="noopener noreferrer" target="_blank">Local Interpretable Model-Agnostic Explanations</a> <ul>
+<li>Can scale to large datasets </li>
+<li>Can be difficult to find the right kernel </li>
+<li>Can have unstable interpretations</li></ul></li>
+<li>Shapley Values <ul>
+<li>A method that measures the marginal contributions of features </li>
+<li>Can be computationally expensive</li></ul></li>
+</ul>
+<h3 id="shapley-values">Shapley Values</h3>
+<p>Shapley values are based on game theory and provide the marginal contributions of features by taking the permutations of different features and then the differences between the prediction output. You can learn more about these in the links below. </p>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://www.analyticsvidhya.com/blog/2019/11/shapley-value-machine-learning-interpretability-game-theory/" rel="noopener noreferrer" target="_blank">Shapley Value Explanation</a></li>
+<li><a href="http://proceedings.mlr.press/v70/sundararajan17a/sundararajan17a.pdf" rel="noopener noreferrer" target="_blank">Integrated Gradients</a> - method that is specialized for deep learning models</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="shapley-value-walkthrough">Shapley Value Walkthrough</h2>
+<ul>
+<li>Using Open Source Library Shap - <a href="https://github.com/slundberg/shap" rel="noopener noreferrer" target="_blank">https://github.com/slundberg/shap</a></li>
+<li>The algorithms and visualizations used in this package came primarily out of research in Su-In Lee's lab at the University of Washington, and Microsoft Research. </li>
+</ul>
+<p>Steps</p>
+<ul>
+<li>Train model without Tensorflow Probability layers, for this walkthrough we will call it 'shap_model'.</li>
+<li>Use Kmeans clustering to summarize data. As we mentioned earlier the issue with Shapley can be the computation time and a way to reduce this is to cluster the features with Kmeans. In this example, we arbitrarily use 25 clusters but you could use a different number.  </li>
+</ul>
+<pre><code>df_train_normed_summary = shap.kmeans(normed_train_data.values, 25)</code></pre>
+<ul>
+<li>Use Shapley package's model agnostic KernelExplainer class and pass in the Shapley model and the summarized training data that has already been normalized in the previous walkthrough.</li>
+</ul>
+<pre><code>explainer = shap.KernelExplainer(shap_model.predict, df_train_normed_summary)</code></pre>
+<ul>
+<li>Extract Shapley values from the explainer.</li>
+</ul>
+<pre><code>shap_values = explainer.shap_values(normed_train_data.values)</code></pre>
+<ul>
+<li>Summarize the Shapley values in a plot.</li>
+</ul>
+<pre><code>shap.summary_plot(shap_values[0], normed_train_data)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="explanation-of-feature-importance-visual">Explanation of Feature Importance Visual</h3>
+<ul>
+<li>The y-axis shows the feature importance scale from top to bottom. The sorted order of features gives the relative importance ranking of features. So in our case, model year is the most important feature, and this shouldn't be surprising considering MPG standards increase each year. </li>
+<li>Then, on the x-axis, you can see the Shapley values impact on model output. Feature values are either red, which stands for high values or blue which is for low values. Model year has red values that show a positive impact on model output, which in this case higher model year values yield higher MPG value output predictions.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/shapley-summary-plot.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li>Single point visualization - Next, we will look at a single point in this visualization. This shows 5 features change the base value towards zero. The base value is the average model output over the training dataset. The features in red displacement, horsepower and weight are pushing the label to a higher value. Whereas model year and cylinder, in this case, are pushing lower.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2020-04-18-at-8.04.22-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li>Larger Sample- Lastly let's take that last visual and expand it to a sample of 10 points. Hopefully, this better illustrates how certain features are pushing the value up or down relative to a base value.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screen-shot-2020-04-18-at-8.04.33-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is one reason you might choose Shapley values over LIME?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1587286706182" name="1015013" id="a1587286706182">
+        <label for="a1587286706182"><p>It is easy to find the right kernel for LIME.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587286743983" name="1015013" id="a1587286743983">
+        <label for="a1587286743983"><p>Shapley scales well to large datasets.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587286745059" name="1015013" id="a1587286745059">
+        <label for="a1587286745059"><p>LIME can be subject to multiple interpretations</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    LIME can be subject to multiple interpretations
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are true about the Shapley summary plot?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587286940963" name="1015018" id="a1587286940963">
+      <label for="a1587286940963"><p>Feature values are either blue, which stands for high values or red which is for low values. </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587286950631" name="1015018" id="a1587286950631">
+      <label for="a1587286950631"><p>The x axis gives the impact of Shapley values on model output.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587286951487" name="1015018" id="a1587286951487">
+      <label for="a1587286951487"><p>The y axis is the ranked list of features.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>The x axis gives the impact of Shapley values on model output.</li>
+      <li>The y axis is the ranked list of features.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="16. Building Models Recap.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('15. Model Interpretability with Shapley Values')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

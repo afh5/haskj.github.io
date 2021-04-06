@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.615
+So far, you have learned to keep EHR data secure,
+
+00:00:03.615 --> 00:00:07.650
+analyze EHR data, apply and handle code sets,
+
+00:00:07.650 --> 00:00:10.575
+and transform and engineer features.
+
+00:00:10.575 --> 00:00:14.775
+That's a lot, but you're not done just yet.
+
+00:00:14.775 --> 00:00:19.920
+It's now time to bring everything together and build, evaluate,
+
+00:00:19.920 --> 00:00:21.630
+and interpret your models,
+
+00:00:21.630 --> 00:00:26.100
+all with a keen watch over bias and uncertainty.
+
+00:00:26.100 --> 00:00:32.790
+In the first part, you will get hands-on with using TensorFlow DenseFeatures for a model.
+
+00:00:32.790 --> 00:00:35.550
+In this part, you'll use DenseFeatures to
+
+00:00:35.550 --> 00:00:38.580
+build a simple regression model and review how to
+
+00:00:38.580 --> 00:00:44.885
+combine the output from the TensorFlow feature column features you created earlier.
+
+00:00:44.885 --> 00:00:47.760
+Next up is model evaluation.
+
+00:00:47.760 --> 00:00:51.890
+You will first review some common evaluation metrics for EHR models,
+
+00:00:51.890 --> 00:00:54.575
+and then learn to implement Brier scores,
+
+00:00:54.575 --> 00:00:58.075
+which is relevant for uncertainty estimation later.
+
+00:00:58.075 --> 00:01:03.380
+After model evaluation, you'll conduct a demographic bias analysis and
+
+00:01:03.380 --> 00:01:08.200
+become familiar with a framework out of the University of Chicago called Aequitas.
+
+00:01:08.200 --> 00:01:14.265
+We will use this framework for group bias and fairness disparity analysis.
+
+00:01:14.265 --> 00:01:18.440
+Once you have a solid grasp on demographic bias analysis,
+
+00:01:18.440 --> 00:01:24.350
+you will become introduced to uncertainty estimation and TensorFlow probability.
+
+00:01:24.350 --> 00:01:27.740
+You'll also review some of the underlying concepts for
+
+00:01:27.740 --> 00:01:30.050
+Bayesian probability and types of
+
+00:01:30.050 --> 00:01:34.240
+uncertainty that are very important in evaluating model performance.
+
+00:01:34.240 --> 00:01:38.795
+Finally, you will interpret models with Shapley values.
+
+00:01:38.795 --> 00:01:43.630
+You will first review model interpretability and some model-agnostic methods,
+
+00:01:43.630 --> 00:01:47.225
+then you will use one of those methods, Shapley values.
+
+00:01:47.225 --> 00:01:49.655
+We have a ton to cover in this lesson,
+
+00:01:49.655 --> 00:01:52.110
+so let's get building.
+

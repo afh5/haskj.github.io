@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.670
+Now that you have learned more details about
+
+00:00:02.670 --> 00:00:05.865
+the longitudinal level and why it is so important,
+
+00:00:05.865 --> 00:00:09.660
+let's go over how to actually build a dataset at this level.
+
+00:00:09.660 --> 00:00:14.265
+We're going to take the output that we created in the last part that we did together,
+
+00:00:14.265 --> 00:00:18.900
+where we converted a synthetic line dataset to an encounter level dataset.
+
+00:00:18.900 --> 00:00:21.810
+Now we're going to just inspect that dataset we
+
+00:00:21.810 --> 00:00:25.860
+converted earlier at the line level to encounter level.
+
+00:00:25.860 --> 00:00:27.480
+Next, we're going to use
+
+00:00:27.480 --> 00:00:31.680
+a similar grouping and aggregate Pandas method like we did earlier.
+
+00:00:31.680 --> 00:00:35.880
+The only difference is that the grouping field is the Patient ID field.
+
+00:00:35.880 --> 00:00:37.965
+Here's the transform method,
+
+00:00:37.965 --> 00:00:41.755
+similar to what we used before, and here is the output.
+
+00:00:41.755 --> 00:00:45.920
+So now let's make sure that what's coming out is correct here,
+
+00:00:45.920 --> 00:00:48.560
+by taking an example from the patient history.
+
+00:00:48.560 --> 00:00:49.910
+This looks good here,
+
+00:00:49.910 --> 00:00:52.925
+but let's take an example to see how this might look.
+
+00:00:52.925 --> 00:00:56.600
+So we take a subset and select one Patient ID,
+
+00:00:56.600 --> 00:01:01.135
+310, from the transform dataset that we just created.
+
+00:01:01.135 --> 00:01:06.635
+Then I compare the encounter principal diagnosis and procedure codes values.
+
+00:01:06.635 --> 00:01:08.765
+So for this imaginary patient,
+
+00:01:08.765 --> 00:01:15.715
+you can see that there are five encounters ranging from 4647 to 7331.
+
+00:01:15.715 --> 00:01:20.840
+The principle diagnosis code has one for each encounter, which makes sense.
+
+00:01:20.840 --> 00:01:23.070
+So you don't see any difference here,
+
+00:01:23.070 --> 00:01:25.855
+you just have one value for each encounter.
+
+00:01:25.855 --> 00:01:28.875
+However, when we move to a procedure code,
+
+00:01:28.875 --> 00:01:30.960
+this output looks different.
+
+00:01:30.960 --> 00:01:34.969
+This makes sense since you'll see different procedures across encounters.
+
+00:01:34.969 --> 00:01:36.395
+So this makes sense.
+
+00:01:36.395 --> 00:01:39.500
+This is just an array for each encounter.
+
+00:01:39.500 --> 00:01:42.139
+So this is the first encounter,
+
+00:01:42.139 --> 00:01:45.345
+next encounter, next encounter,
+
+00:01:45.345 --> 00:01:47.295
+the fourth encounter is null,
+
+00:01:47.295 --> 00:01:49.630
+and the last encounter.
+
+00:01:49.630 --> 00:01:55.460
+So this allowed you to see all this information that was aggregated up here.
+
+00:01:55.460 --> 00:01:58.770
+You can see each individual column here.
+

@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.865
+For this exercise, you need to use the Swiss heart disease dataset again,
+
+00:00:05.865 --> 00:00:08.100
+but you had to load it directly from
+
+00:00:08.100 --> 00:00:12.450
+the csv instead of the intermediary step of using Pandas.
+
+00:00:12.450 --> 00:00:17.280
+This can be especially useful where you have larger datasets where Pandas
+
+00:00:17.280 --> 00:00:22.320
+might not work and or you are not exploring the dataset.
+
+00:00:22.320 --> 00:00:25.650
+The second part of this exercise require you to
+
+00:00:25.650 --> 00:00:29.145
+use two Tensorflow feature column functions.
+
+00:00:29.145 --> 00:00:33.255
+First, we use the numeric function as we did in the lesson,
+
+00:00:33.255 --> 00:00:38.695
+and then we take that output and use it for the bucketized column function.
+
+00:00:38.695 --> 00:00:43.545
+Let's go through this in more detail with first the ETL step.
+
+00:00:43.545 --> 00:00:46.790
+I provide the path to the dataset,
+
+00:00:46.790 --> 00:00:50.210
+the batch size, and the predictor field name.
+
+00:00:50.210 --> 00:00:52.595
+As mentioned in the instructions,
+
+00:00:52.595 --> 00:00:56.525
+you should use the make csv dataset function,
+
+00:00:56.525 --> 00:01:01.820
+which takes arguments that for the most part should be pretty self-explanatory.
+
+00:01:01.820 --> 00:01:08.555
+However, there is one key argument that you might have missed, which is epochs.
+
+00:01:08.555 --> 00:01:11.570
+You need to set epochs to 1 or else you will
+
+00:01:11.570 --> 00:01:15.230
+create an infinite dataset that loops over itself.
+
+00:01:15.230 --> 00:01:17.930
+I had some issues debugging this earlier when I
+
+00:01:17.930 --> 00:01:20.765
+realized that this was not the default behavior.
+
+00:01:20.765 --> 00:01:25.309
+So then we just take a sample of the loaded dataset to confirm,
+
+00:01:25.309 --> 00:01:29.315
+and then use the Tensorflow numeric column to make that feature.
+
+00:01:29.315 --> 00:01:31.190
+So in this case, we don't use
+
+00:01:31.190 --> 00:01:35.530
+a normalizer function for creating the numeric column feature.
+
+00:01:35.530 --> 00:01:38.745
+So then you create the bucketized column.
+
+00:01:38.745 --> 00:01:41.855
+You should read the bucketized column documentation
+
+00:01:41.855 --> 00:01:44.495
+and check that you're parsing the right arguments.
+
+00:01:44.495 --> 00:01:48.770
+The key is adding the age bins to the boundaries argument.
+
+00:01:48.770 --> 00:01:55.520
+So you can see I've created these arbitrary age boundaries for creating the buckets,
+
+00:01:55.520 --> 00:01:59.320
+and then I've added that list to the boundaries argument here.
+
+00:01:59.320 --> 00:02:01.705
+I chose some random boundaries,
+
+00:02:01.705 --> 00:02:05.180
+but you might have some specific ones that you need.
+
+00:02:05.180 --> 00:02:08.270
+Finally, to illustrate this solution,
+
+00:02:08.270 --> 00:02:11.390
+I used the demo function like we did in the lesson.
+
+00:02:11.390 --> 00:02:13.130
+So you can see here,
+
+00:02:13.130 --> 00:02:14.885
+here are the boundaries.
+
+00:02:14.885 --> 00:02:18.440
+I took one example of one transform row here.
+
+00:02:18.440 --> 00:02:24.410
+You can see the 1 here is indicating actually that this is a value between 65 and 80.
+
+00:02:24.410 --> 00:02:26.330
+You might wonder why there are
+
+00:02:26.330 --> 00:02:29.685
+nine different values here when there are a lot less buckets?
+
+00:02:29.685 --> 00:02:35.450
+Well, there's actually a bucket for values less than zero and greater than 100.
+
+00:02:35.450 --> 00:02:39.665
+So that's where it becomes more than what you might expect.
+
+00:02:39.665 --> 00:02:43.410
+Nice job building a bucketed numeric feature.
+

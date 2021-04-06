@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.080
+Now we'll move on to demographic data set analysis.
+
+00:00:04.080 --> 00:00:07.770
+Now that you're an expert explorer of EHR data sets,
+
+00:00:07.770 --> 00:00:12.535
+it's time to ensure we also analyze our data demographically.
+
+00:00:12.535 --> 00:00:14.355
+With all data and machine learning,
+
+00:00:14.355 --> 00:00:15.690
+it's important to do this,
+
+00:00:15.690 --> 00:00:18.045
+but it's especially important in health care.
+
+00:00:18.045 --> 00:00:23.520
+We need to ensure we have a representative base in many areas in health care.
+
+00:00:23.520 --> 00:00:28.260
+But imagine if a drug was only tested on people under the age of 35,
+
+00:00:28.260 --> 00:00:30.540
+and then after it was rolled out,
+
+00:00:30.540 --> 00:00:33.540
+a side effect was discovered in those over the age of
+
+00:00:33.540 --> 00:00:37.260
+50 that cause a high rate of fatalities in that group.
+
+00:00:37.260 --> 00:00:39.860
+With that important piece of information in mind,
+
+00:00:39.860 --> 00:00:43.250
+it's time to learn how to make sure your data is representative.
+
+00:00:43.250 --> 00:00:48.360
+So we'll go over later a tool for analyzing demographic bias for a model.
+
+00:00:48.360 --> 00:00:51.710
+But even before you model the data and produce predictions,
+
+00:00:51.710 --> 00:00:53.860
+you should look at the input data set,
+
+00:00:53.860 --> 00:00:58.985
+and see if it is representative of a populations that you will be serving.
+
+00:00:58.985 --> 00:01:04.475
+This is important to make sure our test data will translate to the general population.
+
+00:01:04.475 --> 00:01:07.810
+Well, it is not always possible to get a representative data set,
+
+00:01:07.810 --> 00:01:13.090
+we can check the distributions and see where it might be biased or need balancing.
+
+00:01:13.090 --> 00:01:15.075
+So let's go back to the Notebook.
+
+00:01:15.075 --> 00:01:18.260
+We'll be again be using the same heart disease data set,
+
+00:01:18.260 --> 00:01:22.540
+but this time we will create age buckets for each decade.
+
+00:01:22.540 --> 00:01:25.800
+For example, 0-10 is an age bucket,
+
+00:01:25.800 --> 00:01:28.250
+10-20 is the next age bucket.
+
+00:01:28.250 --> 00:01:31.490
+So here is an example of this age bucket.
+
+00:01:31.490 --> 00:01:33.455
+Next we will look at the age bins,
+
+00:01:33.455 --> 00:01:35.765
+and as you can see there is a skew towards
+
+00:01:35.765 --> 00:01:40.370
+older patients with a center between the 50-60 age group bucket.
+
+00:01:40.370 --> 00:01:45.965
+Next, let's take a look at the combination of both the age groups and also the gender.
+
+00:01:45.965 --> 00:01:48.965
+What would you guess the distribution would look like?
+
+00:01:48.965 --> 00:01:52.685
+Well, if you recall there are a greater number of male patients.
+
+00:01:52.685 --> 00:01:55.465
+Therefore, female numbers should be lower,
+
+00:01:55.465 --> 00:01:57.540
+and here's what that output.
+
+00:01:57.540 --> 00:02:01.595
+Would you expect a similar distribution across ages for female patient?
+
+00:02:01.595 --> 00:02:06.455
+Yes, we see a similar normal distribution across the age buckets.
+
+00:02:06.455 --> 00:02:10.340
+For one, we group by gender and age buckets for females,
+
+00:02:10.340 --> 00:02:12.695
+as well as some slight differences.
+
+00:02:12.695 --> 00:02:16.645
+However, the key thing is we don't see dramatically different patterns.
+
+00:02:16.645 --> 00:02:19.810
+Anyhow, this is just a simple analysis in grouping by
+
+00:02:19.810 --> 00:02:22.010
+different demographic fields can help you
+
+00:02:22.010 --> 00:02:26.040
+understand the nature of the data set you are looking at.
+

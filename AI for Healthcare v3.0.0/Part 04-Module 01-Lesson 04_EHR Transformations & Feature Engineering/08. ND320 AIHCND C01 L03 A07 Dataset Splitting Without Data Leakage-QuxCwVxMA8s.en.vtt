@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.555
+Now that you know all about EHR dataset levels,
+
+00:00:03.555 --> 00:00:05.715
+we can address dataset splitting.
+
+00:00:05.715 --> 00:00:09.300
+Being able to split datasets without data leakage will
+
+00:00:09.300 --> 00:00:13.575
+resolve major issues that can occur with EHR datasets.
+
+00:00:13.575 --> 00:00:16.320
+Let's learn how to prevent data leakage.
+
+00:00:16.320 --> 00:00:19.095
+While this may seem like a trivial topic,
+
+00:00:19.095 --> 00:00:22.440
+is actually something from my experience that is done incorrectly
+
+00:00:22.440 --> 00:00:26.670
+often and can lead to significant downstream issues later.
+
+00:00:26.670 --> 00:00:31.670
+Imagine that you spent significant time working on a model and then to
+
+00:00:31.670 --> 00:00:36.835
+find out that your results are invalid because the data was not prepared correctly.
+
+00:00:36.835 --> 00:00:40.010
+While this course is not focused on the fundamentals of machine
+
+00:00:40.010 --> 00:00:43.130
+learning such as how to partition and test your data,
+
+00:00:43.130 --> 00:00:48.130
+we bring up some ways to help reduce and test when splitting your dataset.
+
+00:00:48.130 --> 00:00:51.770
+As mentioned earlier, data leakage could be a big problem.
+
+00:00:51.770 --> 00:00:54.260
+An example where this can occur is when you have
+
+00:00:54.260 --> 00:00:59.995
+longitudinal dataset and you put different patient encounters across different splits.
+
+00:00:59.995 --> 00:01:02.600
+You may inadvertently leak an information about
+
+00:01:02.600 --> 00:01:06.020
+the patient in your training data that you'll be testing on.
+
+00:01:06.020 --> 00:01:09.290
+A major challenge for most machine learn problems is
+
+00:01:09.290 --> 00:01:13.295
+generalization and building a dataset that is representative.
+
+00:01:13.295 --> 00:01:17.210
+Common errors that can occur are not only related to having
+
+00:01:17.210 --> 00:01:21.260
+a representative distribution of your label across the splits,
+
+00:01:21.260 --> 00:01:23.600
+but also even for demographics.
+
+00:01:23.600 --> 00:01:27.830
+Imagine that you split your data into train and test partitions and now you only have
+
+00:01:27.830 --> 00:01:32.254
+male patients in your train and female patients in your test partition.
+
+00:01:32.254 --> 00:01:35.870
+This could introduce some unintended biases and issues in
+
+00:01:35.870 --> 00:01:39.755
+your model for procedures that are gender specific.
+
+00:01:39.755 --> 00:01:44.530
+It's important to have some ways to assess whether you have split your data right.
+
+00:01:44.530 --> 00:01:46.620
+Here are a few ways to do this.
+
+00:01:46.620 --> 00:01:49.160
+We already went over ways in lesson one on how to check
+
+00:01:49.160 --> 00:01:52.085
+for demographic and label value distributions.
+
+00:01:52.085 --> 00:01:55.330
+But now we'll focus on splitting at a patient level.
+
+00:01:55.330 --> 00:01:59.570
+First important point is to make sure that a patient's data is not in
+
+00:01:59.570 --> 00:02:04.279
+more than one partition so that we can avoid possible data leakage.
+
+00:02:04.279 --> 00:02:08.750
+Second, we should make sure that the total number of unique patients across
+
+00:02:08.750 --> 00:02:14.525
+the splits is equal to the total number of unique patients in the original dataset.
+
+00:02:14.525 --> 00:02:16.460
+This is to ensure that there's not
+
+00:02:16.460 --> 00:02:21.085
+any patient information loss in the splitting and also that they cancel right.
+
+00:02:21.085 --> 00:02:25.730
+Third, the total number of rows in the original dataset should be equal to
+
+00:02:25.730 --> 00:02:30.540
+the sum of rows across all three dataset partitions.
+
+00:02:30.540 --> 00:02:34.730
+Now that we are finished covering how to avoid data leakage,
+
+00:02:34.730 --> 00:02:39.960
+you should be able to ensure that your datasets don't leak when you split them.
+

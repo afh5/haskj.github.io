@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.165
+What is a longitudinal data representation?
+
+00:00:03.165 --> 00:00:07.080
+Another way to view it is the patient history representation.
+
+00:00:07.080 --> 00:00:10.755
+Is basically a way to aggregate all of the visits,
+
+00:00:10.755 --> 00:00:14.040
+encounters the patient may have in the healthcare system.
+
+00:00:14.040 --> 00:00:17.040
+Of course, having all this information is
+
+00:00:17.040 --> 00:00:20.850
+an ideal state to best analyze and diagnose correctly.
+
+00:00:20.850 --> 00:00:23.910
+But the reality is that patient records don't
+
+00:00:23.910 --> 00:00:27.450
+always come so cleanly organized and aggregate correctly,
+
+00:00:27.450 --> 00:00:30.420
+which is what happens with real-world data sets.
+
+00:00:30.420 --> 00:00:34.525
+Anyhow, let's take a view at what this looks like to better understand.
+
+00:00:34.525 --> 00:00:37.175
+Let's take an example with patient A.
+
+00:00:37.175 --> 00:00:41.090
+You can see what an individual encounter might encompass with
+
+00:00:41.090 --> 00:00:45.365
+a single visit being usually a diagnosis and some procedure,
+
+00:00:45.365 --> 00:00:47.645
+medication, and their lab test.
+
+00:00:47.645 --> 00:00:51.830
+Combining patients together into a data set and finding a way to
+
+00:00:51.830 --> 00:00:56.180
+aggregate and represent the visits across the patient are the key here.
+
+00:00:56.180 --> 00:00:59.735
+We'll go over some of the benefits and challenges of this soon.
+
+00:00:59.735 --> 00:01:06.295
+So let's take a scenario where you train this great model A and it has fantastic results.
+
+00:01:06.295 --> 00:01:08.400
+They're super excited about this.
+
+00:01:08.400 --> 00:01:14.150
+But the data used for this model had an implicit assumption that you are unaware of,
+
+00:01:14.150 --> 00:01:19.030
+that only the label for the last encounter for patient history would be included.
+
+00:01:19.030 --> 00:01:20.865
+Even after finding this out,
+
+00:01:20.865 --> 00:01:22.775
+you thought that this won't make a difference
+
+00:01:22.775 --> 00:01:25.445
+because you can always transform the data and production.
+
+00:01:25.445 --> 00:01:28.310
+Now the reality is that what we have put into
+
+00:01:28.310 --> 00:01:32.425
+production is not working well and things start going haywire.
+
+00:01:32.425 --> 00:01:34.700
+You're not getting the same results that you
+
+00:01:34.700 --> 00:01:37.925
+anticipated from what you had seen when you trained your model.
+
+00:01:37.925 --> 00:01:41.855
+Even with some cross-validation in other augmentation methods,
+
+00:01:41.855 --> 00:01:44.390
+you still see significant model drift.
+
+00:01:44.390 --> 00:01:47.585
+After some analysis of the production data pipeline,
+
+00:01:47.585 --> 00:01:52.430
+you find out that the production use case has an encounter selected at random from
+
+00:01:52.430 --> 00:01:55.430
+the patient history and information has been duplicated
+
+00:01:55.430 --> 00:01:59.070
+by accident because of information not being leveled right.
+
+00:01:59.070 --> 00:02:02.110
+As mentioned earlier, there are some challenges with building
+
+00:02:02.110 --> 00:02:07.450
+a data representation and more preparation and validation is required.
+
+00:02:07.450 --> 00:02:11.080
+While there is movement towards using longitudinal representation,
+
+00:02:11.080 --> 00:02:12.980
+it's still not common.
+
+00:02:12.980 --> 00:02:18.340
+However, there are significant benefits to using a longitudinal representation as
+
+00:02:18.340 --> 00:02:24.000
+it allows us to use a full patient history and this can show changes in state over time.
+
+00:02:24.000 --> 00:02:25.360
+In the next slide,
+
+00:02:25.360 --> 00:02:27.010
+we will see how Google is using
+
+00:02:27.010 --> 00:02:31.690
+this representation to extract significant signal from EHR records.
+
+00:02:31.690 --> 00:02:34.120
+To further illustrate the importance of having
+
+00:02:34.120 --> 00:02:37.555
+a strong EHR longitudinal data representation,
+
+00:02:37.555 --> 00:02:41.545
+you can look at the paper Google published in Nature in 2018,
+
+00:02:41.545 --> 00:02:44.930
+that came up with their own representation built off of
+
+00:02:44.930 --> 00:02:50.720
+a Fast Healthcare Interoperability Resources or FHIR standards.
+
+00:02:50.720 --> 00:02:54.365
+This paper highlighted the aforementioned challenges
+
+00:02:54.365 --> 00:02:57.005
+with building a longitudinal representation.
+
+00:02:57.005 --> 00:03:01.625
+For the 216,000 plus patients in the data set they use,
+
+00:03:01.625 --> 00:03:05.300
+this was extrapolated out to 46 billion data points.
+
+00:03:05.300 --> 00:03:08.855
+You can see how this can become a challenge with scaling this further
+
+00:03:08.855 --> 00:03:12.635
+with either more patients or other types of data like genomic data,
+
+00:03:12.635 --> 00:03:14.905
+clinical trial data, etc.
+
+00:03:14.905 --> 00:03:16.970
+As most practitioners know,
+
+00:03:16.970 --> 00:03:20.585
+the data preparation stage is one of the most time-consuming,
+
+00:03:20.585 --> 00:03:24.340
+but also impactful parts of a data science project.
+
+00:03:24.340 --> 00:03:29.255
+The paper stated that this representation allow them to use deep learning models,
+
+00:03:29.255 --> 00:03:34.855
+which outperform clinically used traditional predictive models in all cases.
+
+00:03:34.855 --> 00:03:39.560
+This is important to note since the healthcare industry has just started to consider
+
+00:03:39.560 --> 00:03:41.990
+deep learning and still barriers exist for
+
+00:03:41.990 --> 00:03:45.335
+using them due to concerns about interpretability.
+
+00:03:45.335 --> 00:03:49.190
+Lastly, to illustrate the value that this representation has,
+
+00:03:49.190 --> 00:03:52.174
+you can also find that Google has pathed this approach,
+
+00:03:52.174 --> 00:03:54.200
+and we have put this link in the classroom notes.
+
+00:03:54.200 --> 00:03:58.320
+Feel free to take a look at this before the next part.
+

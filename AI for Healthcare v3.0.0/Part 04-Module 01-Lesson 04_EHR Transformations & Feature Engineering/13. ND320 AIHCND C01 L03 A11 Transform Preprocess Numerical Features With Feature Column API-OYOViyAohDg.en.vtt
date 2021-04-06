@@ -1,0 +1,199 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.070
+For this course, we will use TensorFlow's feature column API,
+
+00:00:05.070 --> 00:00:09.645
+which makes a lot of data preprocessing steps standardized and easier.
+
+00:00:09.645 --> 00:00:12.270
+For numerical features in particular,
+
+00:00:12.270 --> 00:00:18.075
+we will leverage TensorFlow's feature column API to make normalization much easier.
+
+00:00:18.075 --> 00:00:21.360
+If you did this work with Scikit-learn or PySpark,
+
+00:00:21.360 --> 00:00:25.290
+you can hopefully appreciate how TensorFlow obstructs
+
+00:00:25.290 --> 00:00:29.835
+away some of the work to prepare your features for modeling,
+
+00:00:29.835 --> 00:00:31.590
+and also in some cases,
+
+00:00:31.590 --> 00:00:36.090
+add some less common types of features such as cross features,
+
+00:00:36.090 --> 00:00:38.080
+shared embeddings as well.
+
+00:00:38.080 --> 00:00:42.990
+Now that we've gone over why we want to use a TensorFlow feature column API,
+
+00:00:42.990 --> 00:00:46.025
+we'll focus first on numerical features.
+
+00:00:46.025 --> 00:00:47.750
+If you need a refresher,
+
+00:00:47.750 --> 00:00:50.695
+please refer back to the EDA section.
+
+00:00:50.695 --> 00:00:53.735
+In order to transform numerical features,
+
+00:00:53.735 --> 00:00:57.320
+you must first identify the fields that are numerical features,
+
+00:00:57.320 --> 00:01:03.205
+and then we need to normalize them appropriately based off of the distribution of values.
+
+00:01:03.205 --> 00:01:05.030
+The first step is to use
+
+00:01:05.030 --> 00:01:10.240
+the TensorFlow dataset API that we went over before to load the dataset.
+
+00:01:10.240 --> 00:01:13.115
+Then assuming that this is done,
+
+00:01:13.115 --> 00:01:14.705
+we move to the next step,
+
+00:01:14.705 --> 00:01:19.760
+using the TensorFlow feature column API function for numeric features.
+
+00:01:19.760 --> 00:01:24.470
+What's great about this is that we can pass our own custom z-score
+
+00:01:24.470 --> 00:01:29.785
+normalizer function as an argument to the TensorFlow feature column API,
+
+00:01:29.785 --> 00:01:33.515
+but you can pass any normalizer function method you would like.
+
+00:01:33.515 --> 00:01:37.475
+You can learn more about this via the link in the classroom.
+
+00:01:37.475 --> 00:01:43.235
+This will then allow us to process data with the desired normalization.
+
+00:01:43.235 --> 00:01:48.725
+Now that we know how to load a dataset using the TensorFlow dataset API,
+
+00:01:48.725 --> 00:01:54.320
+we're ready to use it for building features with the TensorFlow feature column API.
+
+00:01:54.320 --> 00:01:58.355
+As mentioned earlier, this API has some powerful,
+
+00:01:58.355 --> 00:02:05.030
+useful functionality that can make your preprocessing much easier and more scalable.
+
+00:02:05.030 --> 00:02:09.185
+Again, we will use the same swiss dataset,
+
+00:02:09.185 --> 00:02:11.659
+but this time we want to calculate
+
+00:02:11.659 --> 00:02:17.410
+some summary statistics that we will use for normalizing a numerical feature.
+
+00:02:17.410 --> 00:02:19.820
+In particular, we want to calculate
+
+00:02:19.820 --> 00:02:22.880
+the mean and standard deviation for
+
+00:02:22.880 --> 00:02:27.045
+the numerical field that we're using here, which is age.
+
+00:02:27.045 --> 00:02:31.315
+Here you can see the mean and standard deviation for the age field.
+
+00:02:31.315 --> 00:02:39.035
+Next, we will use these two functions here to create a TensorFlow numeric column feature.
+
+00:02:39.035 --> 00:02:44.225
+The first function here is used to normalize with a z-score,
+
+00:02:44.225 --> 00:02:46.895
+and we use the stats we just calculated,
+
+00:02:46.895 --> 00:02:49.150
+the mean, and standard deviation.
+
+00:02:49.150 --> 00:02:53.765
+We use this function as a partial function and the next function,
+
+00:02:53.765 --> 00:02:56.500
+which is create tf numeric feature.
+
+00:02:56.500 --> 00:02:59.970
+In this function, we use the feature column APIs,
+
+00:02:59.970 --> 00:03:06.010
+numeric column feature, add the normalizer to the normalizer argument.
+
+00:03:06.010 --> 00:03:10.340
+The other arguments should hopefully be pretty straightforward and make sense.
+
+00:03:10.340 --> 00:03:15.205
+But feel free to look at the TensorFlow documentation for more details.
+
+00:03:15.205 --> 00:03:18.320
+So then we run this function and create
+
+00:03:18.320 --> 00:03:24.590
+the TensorFlow numeric feature for age using the mean and standard deviation for age.
+
+00:03:24.590 --> 00:03:28.625
+However, we want to make sure that it's converting things correctly.
+
+00:03:28.625 --> 00:03:31.730
+So we take a sample here and use
+
+00:03:31.730 --> 00:03:36.220
+a demo function here to check if it is converting the features correctly.
+
+00:03:36.220 --> 00:03:41.715
+Note that we are using a TensorFlow function called dense features here.
+
+00:03:41.715 --> 00:03:45.560
+We'll go over this function in more detail later, but essentially,
+
+00:03:45.560 --> 00:03:51.355
+it is a way to combine multiple feature columns into a dense vector for models.
+
+00:03:51.355 --> 00:03:53.450
+Looking at the output here,
+
+00:03:53.450 --> 00:03:56.780
+you can see that is taking in the stats for the feature,
+
+00:03:56.780 --> 00:03:58.730
+the partial normalizer function,
+
+00:03:58.730 --> 00:04:01.370
+and you can see the output looks correct
+
+00:04:01.370 --> 00:04:05.395
+with the scaled values coming in here in the TensorFlow.
+
+00:04:05.395 --> 00:04:08.510
+Great. So we've now gone over how to build
+
+00:04:08.510 --> 00:04:12.320
+a numerical feature using a customized z-score function.
+
+00:04:12.320 --> 00:04:14.660
+This can make things much simpler for you,
+
+00:04:14.660 --> 00:04:19.950
+and this gives you the ability to customize with other normalization functions as well.
+

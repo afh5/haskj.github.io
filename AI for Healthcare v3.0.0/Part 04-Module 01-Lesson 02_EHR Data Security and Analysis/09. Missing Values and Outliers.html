@@ -1,0 +1,368 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Missing Values and Outliers</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Data Security and Analysis</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Data Security and Analysis Overview.html">01. EHR Data Security and Analysis Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Importance of Data Privacy and Security.html">02. Importance of Data Privacy and Security</a>
+    </li>
+    <li class="">
+      <a href="03. Key Healthcare Data Security and Privacy Standards.html">03. Key Healthcare Data Security and Privacy Standards</a>
+    </li>
+    <li class="">
+      <a href="04. Storing and Accessing PHI Data.html">04. Storing and Accessing PHI Data</a>
+    </li>
+    <li class="">
+      <a href="05. PII Data Solution.html">05. PII Data Solution</a>
+    </li>
+    <li class="">
+      <a href="06. Importance of EDA.html">06. Importance of EDA</a>
+    </li>
+    <li class="">
+      <a href="07. Dataset Schema Analysis.html">07. Dataset Schema Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Value Distributions.html">08. Value Distributions</a>
+    </li>
+    <li class="">
+      <a href="09. Missing Values and Outliers.html">09. Missing Values and Outliers</a>
+    </li>
+    <li class="">
+      <a href="10. Analyzing Dataset for High Cardinality.html">10. Analyzing Dataset for High Cardinality</a>
+    </li>
+    <li class="">
+      <a href="11. Analyze Dataset - Exercise.html">11. Analyze Dataset - Exercise</a>
+    </li>
+    <li class="">
+      <a href="12. Analyze Dataset - Solution.html">12. Analyze Dataset - Solution</a>
+    </li>
+    <li class="">
+      <a href="13. Demographic Analysis.html">13. Demographic Analysis</a>
+    </li>
+    <li class="">
+      <a href="14. Compare Demographics - Exercise.html">14. Compare Demographics - Exercise</a>
+    </li>
+    <li class="">
+      <a href="15. Compare Demographics - Solution.html">15. Compare Demographics - Solution</a>
+    </li>
+    <li class="">
+      <a href="16. Lesson Recap.html">16. Lesson Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. Missing Values and Outliers</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="missing-values-and-outliers">Missing Values and Outliers</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L01 A09 Analyzing Dataset For Missing Values And Imputing Methods</p></h3>
+  <video controls>
+  <source src="09. ND320 AIHCND C01 L01 A09 Analyzing Dataset For Missing Values And Imputing Methods-buYLp8uczcI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. ND320 AIHCND C01 L01 A09 Analyzing Dataset For Missing Values And Imputing Methods-buYLp8uczcI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="missing-values-and-outliers">Missing Values and Outliers</h2>
+<p>Missing values are especially common in healthcare where you may have incomplete records or some fields are sparsely populated</p>
+<h3 id="missing-data-classification">Missing Data Classification</h3>
+<p><strong>MCAR</strong> which stands for Missing Completely at Random. This means that the data is missing due to something unrelated to the data and there is <strong>no systematic reason</strong> for the missing data. In other words, there is an equal probability that data is missing for all cases. This is often due to some instrumentation like a broken instrument or process issue where some of the data is randomly missing.</p>
+<p><strong>MAR</strong> refers to Missing at Random and this is the opposite case where there <strong>is some systematic relationship</strong> between data and the probability of missing data. For example, there might be some missing demographics choices in surveys.</p>
+<p><strong>MNAR</strong> is a Missing Not at Random and this usually means there is a relationship between a value in the dataset and the missing values. </p>
+<p>Understanding why data is missing help with choosing the best imputing method to fill or drop the values in your dataset.</p>
+<h3 id="code-concepts">Code Concepts</h3>
+<p>Create a function to check the percent of missing and zero values you have.</p>
+<pre><code>def check_for_missing_and_null(df):
+    null_df = pd.DataFrame({'columns': df.columns, 
+                            'percent_null': df.isnull().sum() * 100 / len(df), 
+                           'percent_zero': df.isin([0]).sum() * 100 / len(df)
+                           } )
+    return null_df </code></pre>
+<p>Apply that function to the original dataframe<br />
+<code>check_for_missing_and_null(dataframe)</code></p>
+<p>View the results and see if there are any values that stand out. Again you may need to deal with different columns in different ways depending on their type and reason for missing or zero values.</p>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://towardsdatascience.com/6-different-ways-to-compensate-for-missing-values-data-imputation-with-examples-6022d9ca0779" rel="noopener noreferrer" target="_blank"> Imputation Methods</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2352914819302783" rel="noopener noreferrer" target="_blank">Advanced Imputation Methods</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Missing and Zero Values</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following is true about missing and zero values in your data?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1586803964160" name="1013302" id="a1586803964160">
+        <label for="a1586803964160"><p>Use z-scores to detect which values are missing.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586804278337" name="1013302" id="a1586804278337">
+        <label for="a1586804278337"><p>Finding the percentage of missing and zero values can help inform whether to impute or drop values or fields.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586804465449" name="1013302" id="a1586804465449">
+        <label for="a1586804465449"><p>There is one best method for imputation.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Finding the percentage of missing and zero values can help inform whether to impute or drop values or fields.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Missing Data Classification</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the correct term to a description. </p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>MAR</p></button>
+  <button class="btn btn-primary"><p>MNAR</p></button>
+  <button class="btn btn-primary"><p>MCAR</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Term</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>Women could be less likely to give their weight on a survey.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>White cell value Data is missing because a testing machine was improperly calibrated. </p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Those with low education are not accounted for in a study.</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Description</p>
+        </th>
+        <th>
+          <p>Term</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Women could be less likely to give their weight on a survey.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>MAR</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Those with low education are not accounted for in a study.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>MNAR</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>White cell value Data is missing because a testing machine was improperly calibrated. </p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>MCAR</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Analyzing Dataset for High Cardinality.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Missing Values and Outliers')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

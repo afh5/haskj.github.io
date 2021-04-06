@@ -1,0 +1,250 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.150
+So now that we have some understanding of why
+
+00:00:03.150 --> 00:00:07.140
+data privacy and security are important from different perspectives,
+
+00:00:07.140 --> 00:00:11.070
+we will look at some of the key regulations and standards to get familiar
+
+00:00:11.070 --> 00:00:15.645
+with key terms when you interact with industry professionals.
+
+00:00:15.645 --> 00:00:21.450
+Healthcare data security and privacy regulations are ubiquitous around the world.
+
+00:00:21.450 --> 00:00:25.260
+Most countries have regulations regarding data security and
+
+00:00:25.260 --> 00:00:30.765
+privacy around electronic health records with varying levels of complexity.
+
+00:00:30.765 --> 00:00:32.490
+However, for this course,
+
+00:00:32.490 --> 00:00:36.195
+we will focus on US healthcare regulations but hopefully,
+
+00:00:36.195 --> 00:00:38.790
+you'll find some common questions or issues
+
+00:00:38.790 --> 00:00:42.040
+that will apply across all contexts around the world.
+
+00:00:42.040 --> 00:00:46.190
+Just to set the landscape of some key regulations around the world,
+
+00:00:46.190 --> 00:00:49.070
+we will focus on the US HIPAA regulation,
+
+00:00:49.070 --> 00:00:52.645
+which is the key industry regulation you should be familiar with.
+
+00:00:52.645 --> 00:00:55.550
+HITECH is also important to know and this is really
+
+00:00:55.550 --> 00:00:59.080
+just an update to HIPAA that accounts for technology.
+
+00:00:59.080 --> 00:01:03.290
+For the EU, many of you have heard of the GDPR,
+
+00:01:03.290 --> 00:01:05.780
+and this is generally considered more stringent than
+
+00:01:05.780 --> 00:01:09.040
+even HIPAA when it comes to protections for patients.
+
+00:01:09.040 --> 00:01:12.620
+Lastly, the UK's DPA really builds off of
+
+00:01:12.620 --> 00:01:17.134
+GDPR and requires knowledge of both GDPR and DPA.
+
+00:01:17.134 --> 00:01:20.645
+While you do not need to be an expert in all of these standards,
+
+00:01:20.645 --> 00:01:24.740
+you should have some basic familiarity with some of the core tenets that
+
+00:01:24.740 --> 00:01:29.285
+impacts your work regarding privacy and security of patient data,
+
+00:01:29.285 --> 00:01:32.525
+and how it affects using data to build these models.
+
+00:01:32.525 --> 00:01:36.080
+Now, let's go into more details on how HIPAA and HITECH
+
+00:01:36.080 --> 00:01:39.985
+created the foundation for electronic health records in the US.
+
+00:01:39.985 --> 00:01:43.430
+HIPAA was passed in 1996 and then updated in
+
+00:01:43.430 --> 00:01:48.125
+2009 under the HITECH Act to evolve for digital technologies.
+
+00:01:48.125 --> 00:01:51.260
+While it might seem like EHR has been around for awhile,
+
+00:01:51.260 --> 00:01:53.570
+it was only a little over a decade ago when
+
+00:01:53.570 --> 00:01:56.900
+the foundational legislature law was put in place that
+
+00:01:56.900 --> 00:01:59.420
+made the healthcare community start moving towards
+
+00:01:59.420 --> 00:02:03.200
+digitizing and putting their records in electronic format.
+
+00:02:03.200 --> 00:02:06.410
+Even now, many systems are legacy systems that are
+
+00:02:06.410 --> 00:02:09.349
+built off of transcribe, handwritten notes,
+
+00:02:09.349 --> 00:02:12.680
+and other unstructured formats that organizations are spending
+
+00:02:12.680 --> 00:02:16.915
+large amounts of time to normalize and aggregate this info.
+
+00:02:16.915 --> 00:02:22.085
+So next we will go over some of the key terminology that is relevant for HIPAA.
+
+00:02:22.085 --> 00:02:27.140
+Probably one of the most important terms that you should be familiar with is PHI,
+
+00:02:27.140 --> 00:02:30.095
+which stands for protected health information.
+
+00:02:30.095 --> 00:02:33.110
+As we will learn, PHI is part of HIPAA,
+
+00:02:33.110 --> 00:02:35.600
+which protects transmission of certain types of
+
+00:02:35.600 --> 00:02:38.990
+personally identifiable information such as name,
+
+00:02:38.990 --> 00:02:41.465
+address, and other information.
+
+00:02:41.465 --> 00:02:43.470
+Why is PHI important?
+
+00:02:43.470 --> 00:02:48.280
+First, certain information in electronic medical record is considered PHI,
+
+00:02:48.280 --> 00:02:52.940
+it must comply with HIPAA standards around data security and privacy.
+
+00:02:52.940 --> 00:02:56.495
+This informs not only how you transmit and store data,
+
+00:02:56.495 --> 00:02:59.780
+but also data usage rights and restrictions
+
+00:02:59.780 --> 00:03:04.145
+around building models for other purposes than the original use.
+
+00:03:04.145 --> 00:03:06.965
+Second, as mentioned before,
+
+00:03:06.965 --> 00:03:13.850
+PHI by nature is identifiable information and can be used to easily identify a person.
+
+00:03:13.850 --> 00:03:17.150
+However, please note that omitting this information does
+
+00:03:17.150 --> 00:03:20.740
+not ensure that a person cannot be identified.
+
+00:03:20.740 --> 00:03:26.885
+If you recall from our definition of the HIPAA privacy rule when we introduce PHI,
+
+00:03:26.885 --> 00:03:30.350
+there is a term covered entities that is introduced.
+
+00:03:30.350 --> 00:03:35.870
+Covered entities are a group of industry organizations defined by HIPAA to be
+
+00:03:35.870 --> 00:03:41.585
+of one of the three groups: health insurance plans, providers, or clearinghouses.
+
+00:03:41.585 --> 00:03:45.635
+You can see from the table the types of entities in each category.
+
+00:03:45.635 --> 00:03:49.310
+These groups transmit protected health information and are
+
+00:03:49.310 --> 00:03:53.335
+subject to HIPAA regulations regarding these transmissions.
+
+00:03:53.335 --> 00:03:58.250
+The next term that is related to covered entity is a business associate.
+
+00:03:58.250 --> 00:04:03.410
+A business associate works with covered entities to provide some service to them
+
+00:04:03.410 --> 00:04:08.915
+and can be a wide variety of companies from professional services to claims processors.
+
+00:04:08.915 --> 00:04:14.240
+The key part of this term is that involves the usage of protected health information.
+
+00:04:14.240 --> 00:04:17.390
+A few things to note about disclosure of data to
+
+00:04:17.390 --> 00:04:21.275
+BAs under the HIPAA privacy rule is that;
+
+00:04:21.275 --> 00:04:25.805
+first, it must be only for the purpose allowed by the covered entity.
+
+00:04:25.805 --> 00:04:29.810
+This is to ideally guard against misuse and prevent BAs
+
+00:04:29.810 --> 00:04:34.025
+from using the data for things that the covered entity deems appropriate.
+
+00:04:34.025 --> 00:04:36.620
+This issue will come up when you get a dataset from
+
+00:04:36.620 --> 00:04:39.895
+a covered entity and build a model for one purpose,
+
+00:04:39.895 --> 00:04:42.380
+and then you need to go back and want to use the data for
+
+00:04:42.380 --> 00:04:45.350
+a second purpose and another possible model.
+
+00:04:45.350 --> 00:04:51.110
+As a BA, you cannot use for the second purpose without the consent of the covered entity,
+
+00:04:51.110 --> 00:04:52.865
+you must ask for approval again,
+
+00:04:52.865 --> 00:04:56.685
+which can take some time for legal review and you need to make sure you
+
+00:04:56.685 --> 00:05:01.615
+comply with the requirements of the covered entity under the HIPAA privacy rule.
+
+00:05:01.615 --> 00:05:06.545
+A second term that you should be aware of is a BAA or business associates agreement.
+
+00:05:06.545 --> 00:05:10.160
+This is really just a term that you might come across with the BAA approved
+
+00:05:10.160 --> 00:05:15.120
+services when you're working with Cloud providers or other vendors.
+

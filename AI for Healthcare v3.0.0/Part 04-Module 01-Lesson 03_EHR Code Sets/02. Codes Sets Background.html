@@ -1,0 +1,304 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Codes Sets Background</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Code Sets</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Code Sets Overview.html">01. EHR Code Sets Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Codes Sets Background.html">02. Codes Sets Background</a>
+    </li>
+    <li class="">
+      <a href="03. Diagnosis Codes Part 1.html">03. Diagnosis Codes Part 1</a>
+    </li>
+    <li class="">
+      <a href="04. Diagnosis Codes Part 2.html">04. Diagnosis Codes Part 2</a>
+    </li>
+    <li class="">
+      <a href="05. Grouping codes Walkthrough.html">05. Grouping codes Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Diagnosis Code Grouping Exercise.html">06. Diagnosis Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Diagnosis Code Grouping Solution.html">07. Diagnosis Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Procedure Codes.html">08. Procedure Codes</a>
+    </li>
+    <li class="">
+      <a href="09. Procedure Code Grouping Exercise.html">09. Procedure Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Procedure Code Grouping Solution.html">10. Procedure Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Medication Codes.html">11. Medication Codes</a>
+    </li>
+    <li class="">
+      <a href="12. GroupingCategorizing Systems.html">12. Grouping/Categorizing Systems</a>
+    </li>
+    <li class="">
+      <a href="13. Group or Categorize Procedures Exercise.html">13. Group or Categorize Procedures Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Group or Categorize Procedures Solution.html">14. Group or Categorize Procedures Solution</a>
+    </li>
+    <li class="">
+      <a href="15. EHR Code Sets Recap.html">15. EHR Code Sets Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Codes Sets Background</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="codes-sets-background">Codes Sets Background</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L02 A02 Codes Sets Background</p></h3>
+  <video controls>
+  <source src="02. ND320 AIHCND C01 L02 A02 Codes Sets Background-AK40FT6k0tU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 AIHCND C01 L02 A02 Codes Sets Background-AK40FT6k0tU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="key-points">Key Points</h2>
+<p>For the purposes of this course, when we refer to a code set we are referencing an EHR data field that is linked to an accepted code standard such as ICD10 or CPT codes, which you will learn more about shortly.<br />
+Examples of important code sets are diagnosis codes and procedure codes. We will go over these in more detail later. </p>
+<h3 id="why-do-we-need-code-sets">Why do we need code sets?</h3>
+<p>There are many different providers and EHR systems around the world. There needs to be a standard way to encode common diagnoses, medications, procedures, and lab test results across all these providers and systems. We will focus on some of the most common code sets that allow for some of the most high-value analysis.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets.jpg" alt="Context of a Medical Encounter" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Context of a Medical Encounter</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="context-of-a-medical-encounter">Context of a Medical Encounter</h2>
+<p><strong>Medical Encounter</strong>: An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.  </p>
+<p>This could also be online in today's world. During each encounter, one or more codes are generated about your encounter.</p>
+<ol>
+<li><p>It is important to note that medical records often go through a process from a written note or some other unstructured input to a structured medical code that is standardized but can be very specific. There is a whole industry of medical coders that take this unstructured information and “code” it to medical code standards and into EHR records.</p></li>
+<li><p>Another piece of information that is relevant to industry codes is whether the encounter occurred in an inpatient or outpatient setting. </p>
+<ul>
+<li>Inpatient usually refers to hospitalization.</li>
+<li>Outpatient refers to visits and encounters like visits with your primary care physician or specialists like a cardiologist but do not require hospitalization. </li>
+<li>Outpatient can also refer to ambulatory care. </li></ul></li>
+</ol>
+<p>It is important to work with subject-matter experts who know the domain and processes at a much deeper level. There are a lot of intricacies and details in healthcare that require you to work deeply with SMEs to understand the context better. </p>
+<p>However, you should feel empowered to bring the technology and AI perspective to the table and re-think legacy processes!</p>
+<h2 id="importance-of-using-codes-to-groupcategorize-your-data">Importance of Using Codes to Group/Categorize Your Data</h2>
+<p>As you will see in a bit there are literally thousands of medical codes in use and each time have a <strong>Medical Encounter</strong>, you have several of these codes added to that encounter. If you do not properly group/categorize your data, you may end up with missing or incorrect data to feed into your model. As an example let's say you knew one of the diagnosis codes for Sepsis and wanted to build a model around predicting which patients are at the greatest risk for Sepsis. <br />
+Sepsis- sepsis during labor (O75.3)<br />
+If you used only that code to build your dataset for training you are likely missing out on thousands of other records that also deal with Sepsis, but have a different code. </p>
+<p>Here is a link to the Sepsis codes to see some others: <a href="https://www.icd10data.com/ICD10CM/Codes/A00-B99/A30-A49/A41-/A41" rel="noopener noreferrer" target="_blank">IDC10-CM Sepsis Codes</a></p>
+<p>This would lead your model to be inaccurate. This concept will become clearer as dig deeper.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Medical Encounters</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are medical encounters?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1586810928818" name="1013317" id="a1586810928818">
+      <label for="a1586810928818"><p>A yearly checkup</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586810960817" name="1013317" id="a1586810960817">
+      <label for="a1586810960817"><p>Getting blood work</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586810980608" name="1013317" id="a1586810980608">
+      <label for="a1586810980608"><p>Having a CAT scan</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586811002389" name="1013317" id="a1586811002389">
+      <label for="a1586811002389"><p>An emergency visit</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>A yearly checkup</li>
+      <li>Getting blood work</li>
+      <li>Having a CAT scan</li>
+      <li>An emergency visit</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Diagnosis Codes Part 1.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Codes Sets Background')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

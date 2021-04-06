@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+Now that we have analyzed the scheme a bit,
+
+00:00:02.730 --> 00:00:06.765
+we're ready to do a little more deeper statistical analysis.
+
+00:00:06.765 --> 00:00:08.985
+This may be a review for many of you,
+
+00:00:08.985 --> 00:00:11.100
+but we will not go into as much depth.
+
+00:00:11.100 --> 00:00:14.160
+However, we want to cover the basics so
+
+00:00:14.160 --> 00:00:17.520
+that you can use this information to inform later steps.
+
+00:00:17.520 --> 00:00:20.775
+First, let's review distributions,
+
+00:00:20.775 --> 00:00:22.635
+I know that you know these cold,
+
+00:00:22.635 --> 00:00:24.150
+but I'm just making sure.
+
+00:00:24.150 --> 00:00:29.670
+For this course, we will really just try to identify two shapes, normal and uniform.
+
+00:00:29.670 --> 00:00:33.240
+Normal, it's the well-known bell curve that most people are familiar
+
+00:00:33.240 --> 00:00:36.955
+with and it's also referred to as a Gaussian distribution.
+
+00:00:36.955 --> 00:00:40.220
+A uniform distribution is where the unique values have
+
+00:00:40.220 --> 00:00:42.560
+almost the same frequency and this is
+
+00:00:42.560 --> 00:00:45.985
+important because this might indicate some issue with the data.
+
+00:00:45.985 --> 00:00:48.755
+Skewed unbalanced data distributions,
+
+00:00:48.755 --> 00:00:50.210
+as the name indicates,
+
+00:00:50.210 --> 00:00:54.460
+are where a smaller subset of values or single value dominates.
+
+00:00:54.460 --> 00:00:58.430
+There are other types of distributions like bimodal and poisson,
+
+00:00:58.430 --> 00:01:00.125
+but for the scope of this course,
+
+00:01:00.125 --> 00:01:01.955
+we will not cover those.
+
+00:01:01.955 --> 00:01:03.710
+For this next activity,
+
+00:01:03.710 --> 00:01:06.455
+we'll go to the notebook and before that,
+
+00:01:06.455 --> 00:01:08.720
+we first need to load the dataset.
+
+00:01:08.720 --> 00:01:12.535
+This is the Cleveland Clinic dataset that we referred to earlier,
+
+00:01:12.535 --> 00:01:14.755
+when we were doing a data scheme analysis.
+
+00:01:14.755 --> 00:01:19.540
+So you can see we're loading the dataset and you can see the data frame output.
+
+00:01:19.540 --> 00:01:21.950
+Now we'll move into actually looking at
+
+00:01:21.950 --> 00:01:27.080
+different value distributions for both categorical and numeric values.
+
+00:01:27.080 --> 00:01:30.260
+The first column we'll analyze is the sex column.
+
+00:01:30.260 --> 00:01:33.795
+You can see based on this distribution,
+
+00:01:33.795 --> 00:01:38.200
+that there are greater amounts of male than females in our dataset.
+
+00:01:38.200 --> 00:01:41.180
+Next, we will look at the field for chest pain and
+
+00:01:41.180 --> 00:01:44.345
+see that the largest distribution is for asymptomatic.
+
+00:01:44.345 --> 00:01:46.550
+Even without knowing much about this data,
+
+00:01:46.550 --> 00:01:49.340
+you could guess that the higher frequency value is
+
+00:01:49.340 --> 00:01:53.135
+likely the less severe condition and more prevalent.
+
+00:01:53.135 --> 00:01:55.610
+Now that we've explored some of the data,
+
+00:01:55.610 --> 00:01:58.535
+we'll look at numeric value distributions.
+
+00:01:58.535 --> 00:02:02.810
+I create some synthetic data to show normal and uniform distributions,
+
+00:02:02.810 --> 00:02:04.340
+which you can see here.
+
+00:02:04.340 --> 00:02:10.700
+So here is the normal distribution example and here's a uniform distribution example.
+
+00:02:10.700 --> 00:02:15.575
+Now, let's use some actual data from the Cleveland dataset on resting blood pressure.
+
+00:02:15.575 --> 00:02:18.700
+What type of distribution are we dealing with here?
+
+00:02:18.700 --> 00:02:20.250
+That's right, it's normal,
+
+00:02:20.250 --> 00:02:21.785
+with a little left skew,
+
+00:02:21.785 --> 00:02:24.575
+but we're not worried about that right now.
+
+00:02:24.575 --> 00:02:28.310
+Now that you've looked at some examples of data skew,
+
+00:02:28.310 --> 00:02:31.320
+we're ready to move on to the next section.
+

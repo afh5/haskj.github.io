@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.280
+Great. So you have gone through a big procedure of all those procedures.
+
+00:00:05.280 --> 00:00:08.565
+Let's go over a solution to the exercise.
+
+00:00:08.565 --> 00:00:13.050
+For this exercise, we again use the public data set provided by
+
+00:00:13.050 --> 00:00:19.875
+the State of California that uses ICD10 codes for hospital inpatient encounters.
+
+00:00:19.875 --> 00:00:23.160
+However, this time we use the data set for
+
+00:00:23.160 --> 00:00:27.660
+ICD10-PCS codes since they apply to procedures.
+
+00:00:27.660 --> 00:00:30.870
+So let's load up the data set and gets started.
+
+00:00:30.870 --> 00:00:33.030
+Before I go into the solution,
+
+00:00:33.030 --> 00:00:38.130
+let's analyze the data set schema again and look at the data frame example,
+
+00:00:38.130 --> 00:00:39.550
+and look at a sample,
+
+00:00:39.550 --> 00:00:42.470
+you can see that the ICD10 codes is there,
+
+00:00:42.470 --> 00:00:45.235
+as well as the description of that code.
+
+00:00:45.235 --> 00:00:48.200
+The next three columns, you can see the total number of
+
+00:00:48.200 --> 00:00:51.830
+procedures as well as the primary and secondary procedures.
+
+00:00:51.830 --> 00:00:57.565
+Again, these are aggregate counts for the annual information in the State of California.
+
+00:00:57.565 --> 00:01:00.390
+Now we're ready to look at the solution.
+
+00:01:00.390 --> 00:01:02.000
+So in this case,
+
+00:01:02.000 --> 00:01:07.880
+we will search for coronary artery in the description and see what codes come up.
+
+00:01:07.880 --> 00:01:10.730
+We'll use a string contains method again,
+
+00:01:10.730 --> 00:01:14.750
+and this gives a variety of results with different categories.
+
+00:01:14.750 --> 00:01:16.415
+For the next part,
+
+00:01:16.415 --> 00:01:19.880
+we will look at the percentage of codes grouped with B.
+
+00:01:19.880 --> 00:01:22.160
+We use the startsWith method,
+
+00:01:22.160 --> 00:01:27.365
+and unfortunately the weighted number is only 4.5 percent.
+
+00:01:27.365 --> 00:01:32.990
+This illustrates the challenges of grouping procedure codes with a character.
+
+00:01:32.990 --> 00:01:34.985
+Now to the last part,
+
+00:01:34.985 --> 00:01:38.990
+we want to find a grouping that can select codes that better represent
+
+00:01:38.990 --> 00:01:43.430
+the encounters that are coming in each year for this type of condition.
+
+00:01:43.430 --> 00:01:47.150
+This exercise is intended to illustrate the challenges of
+
+00:01:47.150 --> 00:01:51.320
+grouping since it might seem simple because of the structure.
+
+00:01:51.320 --> 00:01:55.520
+However, this last part illustrates there's a little complexity to it.
+
+00:01:55.520 --> 00:01:57.110
+To solve this last part,
+
+00:01:57.110 --> 00:02:01.925
+let's come up with the possible three-letter combinations that we can use.
+
+00:02:01.925 --> 00:02:04.985
+So here are the three-letter combinations that exist
+
+00:02:04.985 --> 00:02:09.350
+for the coronary subset that we created.
+
+00:02:09.350 --> 00:02:12.230
+Next, we will calculate using
+
+00:02:12.230 --> 00:02:14.390
+the same startsWith method to
+
+00:02:14.390 --> 00:02:18.035
+determine the three-letter code with the highest percentage.
+
+00:02:18.035 --> 00:02:20.630
+Now you can see the correct answer.
+
+00:02:20.630 --> 00:02:25.175
+Be careful that you're using the secondary procedure code for this question.
+
+00:02:25.175 --> 00:02:27.275
+You might pick the wrong field.
+
+00:02:27.275 --> 00:02:30.620
+So if you look at the different three-letter code combinations,
+
+00:02:30.620 --> 00:02:36.380
+you can see that 0-7 had the highest number of percentage codes grouped.
+
+00:02:36.380 --> 00:02:37.880
+Now that you've done this exercise,
+
+00:02:37.880 --> 00:02:42.720
+you can better appreciate the challenges of grouping procedure codes.
+

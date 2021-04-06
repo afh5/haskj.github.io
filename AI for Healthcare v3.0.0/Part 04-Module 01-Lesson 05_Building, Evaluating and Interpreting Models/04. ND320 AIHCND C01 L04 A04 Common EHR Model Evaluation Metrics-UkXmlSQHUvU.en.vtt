@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.235
+Now that you've built your model,
+
+00:00:02.235 --> 00:00:04.005
+we need to evaluate it.
+
+00:00:04.005 --> 00:00:05.730
+After completing this section,
+
+00:00:05.730 --> 00:00:08.220
+you'll be able to use a Brier score and
+
+00:00:08.220 --> 00:00:12.165
+also common metrics to evaluate the models you build.
+
+00:00:12.165 --> 00:00:14.130
+It's time for more terms.
+
+00:00:14.130 --> 00:00:16.620
+I bet you thought we were done with those.
+
+00:00:16.620 --> 00:00:18.180
+So for this course,
+
+00:00:18.180 --> 00:00:20.130
+we will assume some exposure to
+
+00:00:20.130 --> 00:00:25.125
+common evaluation metrics used for classification and regression.
+
+00:00:25.125 --> 00:00:29.400
+These terms should hopefully be familiar and we will not cover them.
+
+00:00:29.400 --> 00:00:32.160
+This might be a familiar term to many of you,
+
+00:00:32.160 --> 00:00:33.810
+but I want to reiterate that
+
+00:00:33.810 --> 00:00:39.325
+this precision recall tradeoff occurs often in health care EHR models.
+
+00:00:39.325 --> 00:00:43.460
+There's often some level of precision that you must align with and
+
+00:00:43.460 --> 00:00:47.605
+then some capture rate or recall that you're trying to improve.
+
+00:00:47.605 --> 00:00:51.560
+This balance between the two is a necessary tradeoff and
+
+00:00:51.560 --> 00:00:55.895
+a key component that you must communicate with non-technical stakeholders,
+
+00:00:55.895 --> 00:01:00.845
+who might have unrealistic views of the impact or capabilities of AI.
+
+00:01:00.845 --> 00:01:05.015
+A metric that you might not be familiar with though is a Brier score.
+
+00:01:05.015 --> 00:01:08.360
+It is primarily used in weather forecasting for
+
+00:01:08.360 --> 00:01:12.595
+estimating the probability of certainty of a forecast.
+
+00:01:12.595 --> 00:01:16.970
+For this course, we will use it to convert a probability prediction with
+
+00:01:16.970 --> 00:01:22.240
+a binary outcome to a format that we can use for ranking risk or uncertainty.
+
+00:01:22.240 --> 00:01:25.400
+So let's go over the equation for the Brier score.
+
+00:01:25.400 --> 00:01:30.230
+Brier scores are used for binary predictions and is simpler than it looks.
+
+00:01:30.230 --> 00:01:34.530
+Basically, you take the probability forecast on a 0-1 scale,
+
+00:01:34.530 --> 00:01:38.410
+which is F_t and subtract that from O_t,
+
+00:01:38.410 --> 00:01:40.280
+which is the actual value,
+
+00:01:40.280 --> 00:01:43.135
+which is a binary zero and one value.
+
+00:01:43.135 --> 00:01:46.760
+You then square the difference of this value and take
+
+00:01:46.760 --> 00:01:51.755
+the summation of these squared differences from t equals one to n,
+
+00:01:51.755 --> 00:01:53.855
+the total number of predictions.
+
+00:01:53.855 --> 00:01:58.170
+Then finally, divide by n the total number of predictions.
+
+00:01:58.170 --> 00:02:03.170
+Then you get the Brier score which ranges from zero and one or lower is better.
+
+00:02:03.170 --> 00:02:07.320
+Zero is the best score and one is the worst score.
+

@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.400
+That's it. You have completed the content for this course, well done.
+
+00:00:05.400 --> 00:00:07.740
+Before I let you go into project,
+
+00:00:07.740 --> 00:00:12.750
+I want to quickly review everything we covered in this lesson in the course.
+
+00:00:12.750 --> 00:00:15.600
+You started this lesson by going hands-on with
+
+00:00:15.600 --> 00:00:18.645
+using TensorFlow DenseFeatures for a model.
+
+00:00:18.645 --> 00:00:23.490
+You use DenseFeatures to build a simple regression model and combine
+
+00:00:23.490 --> 00:00:28.860
+the output from the TensorFlow feature column API features that you created earlier.
+
+00:00:28.860 --> 00:00:33.060
+Next, you reviewed some common evaluation metrics
+
+00:00:33.060 --> 00:00:37.330
+for EHR models and then implemented Brier scores.
+
+00:00:37.330 --> 00:00:40.310
+After model evaluation, you conducted
+
+00:00:40.310 --> 00:00:45.200
+a demographic bias analysis and use Aequitas for group bias and
+
+00:00:45.200 --> 00:00:48.260
+fairness disparity analysis to make sure that
+
+00:00:48.260 --> 00:00:53.690
+your models have the best application to real-world data as possible.
+
+00:00:53.690 --> 00:00:58.100
+Then, you used uncertainty estimation and TensorFlow
+
+00:00:58.100 --> 00:01:02.330
+probability to build a BNN and reviewed some of
+
+00:01:02.330 --> 00:01:06.170
+the underlying concepts for Bayesian probability and types of
+
+00:01:06.170 --> 00:01:11.720
+uncertainty that can be another tool to have for a variety of different problems.
+
+00:01:11.720 --> 00:01:15.140
+Lastly, you wrapped up this lesson by interpreting
+
+00:01:15.140 --> 00:01:19.590
+models with model agnostic methods like Shapley values.
+
+00:01:19.590 --> 00:01:23.000
+You have learned so much in this one lesson,
+
+00:01:23.000 --> 00:01:27.540
+but now let's cover what you've learned in this entire course.
+

@@ -1,0 +1,674 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EHR Dataset Levels</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Transformations &amp; Feature Engineering </h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Transformations &amp; Feature Engineering Overview.html">01. EHR Transformations &amp; Feature Engineering Overview</a>
+    </li>
+    <li class="">
+      <a href="02. EHR Dataset Levels.html">02. EHR Dataset Levels</a>
+    </li>
+    <li class="">
+      <a href="03. Encounter Representation.html">03. Encounter Representation</a>
+    </li>
+    <li class="">
+      <a href="04. Longitudinal Representation.html">04. Longitudinal Representation</a>
+    </li>
+    <li class="">
+      <a href="05. How to Convert to Longitudinal Level.html">05. How to Convert to Longitudinal Level</a>
+    </li>
+    <li class="">
+      <a href="06. Select Last Encounter Exercise.html">06. Select Last Encounter Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Select Last Encounter Solution.html">07. Select Last Encounter Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Dataset Splitting Without Data Leakage.html">08. Dataset Splitting Without Data Leakage</a>
+    </li>
+    <li class="">
+      <a href="09. How to Split Dataset at Patient Level.html">09. How to Split Dataset at Patient Level</a>
+    </li>
+    <li class="">
+      <a href="10. Data Splitting Exercise.html">10. Data Splitting Exercise</a>
+    </li>
+    <li class="">
+      <a href="11. Data Splitting Solution.html">11. Data Splitting Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ETL with TensorFlow Dataset API.html">12. ETL with TensorFlow Dataset API</a>
+    </li>
+    <li class="">
+      <a href="13. Numerical Features &amp; Feature Column API.html">13. Numerical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="14. Numerical Feature Column API Exercise.html">14. Numerical Feature Column API Exercise</a>
+    </li>
+    <li class="">
+      <a href="15. Numerical Features Solution.html">15. Numerical Features Solution</a>
+    </li>
+    <li class="">
+      <a href="16. Categorical Features &amp; Feature Column API.html">16. Categorical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="17. Categorical Features Exercise.html">17. Categorical Features Exercise</a>
+    </li>
+    <li class="">
+      <a href="18. Categorical Features with Feature Column API Solution.html">18. Categorical Features with Feature Column API Solution</a>
+    </li>
+    <li class="">
+      <a href="19. Transformations and Feature Engineering Recap.html">19. Transformations and Feature Engineering Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. EHR Dataset Levels</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="ehr-dataset-levels">EHR Dataset Levels</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L03 A02 EHR Dataset Levels</p></h3>
+  <video controls>
+  <source src="02. ND320 AIHCND C01 L03 A02 EHR Dataset Levels-7LMBCNn_3l0.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 AIHCND C01 L03 A02 EHR Dataset Levels-7LMBCNn_3l0.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="ehr-dataset-levels-key-points">EHR Dataset Levels Key Points</h2>
+<p>With EHR datasets, there are three levels.</p>
+<ul>
+<li>Line</li>
+<li>Encounter</li>
+<li>Longitudinal.  </li>
+</ul>
+<p>These levels are extremely important in healthcare data, and being able to identify and work with data at the correct level will ensure that you start with the correct data type and dataset to feed to your models. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-1.jpg" alt="Overview of the Three Levels" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Overview of the Three Levels</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="line-level">Line Level</h3>
+<p><strong>Line Level</strong>: A denormalized or disaggregated representation of all the things that might happen in a medical visit or encounter. </p>
+<p>Think of a visit to the doctor for bronchitis.</p>
+<p>Your line-level data entries could be:</p>
+<ul>
+<li>A diagnosis code of bronchitis</li>
+<li>A medication code for a cough suppressant </li>
+<li>A procedure code for a test for bronchitis<br />
+and a line could be a diagnosis or medication that was prescribed. Another line could include information on a lab test that the doctor ordered for informing the diagnosis.</li>
+</ul>
+<h3 id="encounter-level">Encounter Level</h3>
+<p><strong>Encounter Level</strong>: Also known as the visit level, which is the aggregated information from the previously mentioned line level for one encounter. This information can be collapsed into a single row or arrays. </p>
+<p>Using the example above, the encounter level for that visit would include the diagnosis code of bronchitis, medication code for a cough suppressant, and the procedure code for a test for bronchitis in one array or list.</p>
+<h3 id="longitudinal-level">Longitudinal Level</h3>
+<p><strong>Longitudinal Level</strong>: Also known as the patient level view. This level aggregates the patient history and can show how the culmination of visits/encounter lead to some clinical impact. </p>
+<p>Continuing with our example above if the patient contracts bronchitis often, over a series of years, we might gain some insights into a possible autoimmune disease or know exactly what to prescribe the patient when they start seeing symptoms.  </p>
+<p>Now that you have a basic understanding of the different levels we'll explore them a bit more with examples. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-2.jpg" alt="Example Overview of Dataset Levels" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Example Overview of Dataset Levels</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="ehr-dataset-levels-continued">EHR Dataset Levels Continued</h2>
+<p>As stated above, EHR records are commonly represented at one of the following three levels: line, encounter, and longitudinal levels. Let's review this one more time with the visual above. </p>
+<p>Patient A had an Encounter on January 20th of 2019, where they had 3 different codes produced. Patient A also had another encounter on March 20th of 2019 with its own set of codes. All together these encounters and line-level codes add up to the Longitudinal Level of knowledge we have on that particular patient. </p>
+<p>The Longitudinal view is an important level for aggregating the patient history and is where you connect information across visits/encounters and rolls up information to determine trends across time.</p>
+<h3 id="why-are-ehr-levels-important">Why are EHR levels important?</h3>
+<p>Using the wrong EHR dataset level can lead to major errors with building models because data preparation is done with faulty assumptions and lead to serious error. <br />
+For example, a common cause is the duplication of encounter information when you take a line-level dataset and treat it as an encounter level dataset. </p>
+<h4 id="example">Example:</h4>
+<p>A particular encounter might have 50 lines and that might be treated inadvertently as 50 distinct encounters when it is actually one encounter. This has the effect of upsampling certain common values for that encounter in your dataset, but also creates a great deal of noise since those 50 lines might have only slight differences. </p>
+<p>Further, selecting the wrong encounter from the patient record can often occur and there might be a case where you only want the earliest or latest visit or state for a patient or time step for your model.  This can cause many issues that might not become apparent until the modeling or deployment phases of your project</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-3.jpg" alt="How do you know which level you are at?" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>How do you know which level you are at?</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="how-do-you-know-the-dataset-level-for-your-data">How do you know the dataset level for your data?</h2>
+<p>This is actually fairly easy if you collect some key metrics from your dataset and there are different ways to do this but I provided a few simple ways to do below.</p>
+<ol>
+<li>The total number of rows in the dataset. This is a simple calculation with  <code>len()</code></li>
+<li>The number of unique encounters or visits. You can calculate this by finding the field(s) that give the identity of a unique encounter using <code>nunique()</code>.</li>
+</ol>
+<h3 id="example">Example</h3>
+<pre><code class="python language-python">total_rows = len(fake_df)
+total_encounters = fake_df['encounter'].nunique()</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-4.jpg" alt="Line Level" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Line Level</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>From here we do some simple calculations to figure out our dataset level.</p>
+<p>If the total number of rows is greater than the number of unique encounters, it is at the line level.</p>
+<p>Again using our example from above:</p>
+<pre><code class="python language-python">total_rows = len(fake_df)
+total_unique_encounters = len(fake_df['encounter'].nunique())</code></pre>
+<p>if the output was</p>
+<ul>
+<li><code>total_rows = 43464</code></li>
+<li><code>total_unique_encounters = 3259</code></li>
+</ul>
+<p>We could find out using</p>
+<ul>
+<li><code>print(total_rows &gt; total_unique_encounters)</code> would evaluate to <code>True</code></li>
+</ul>
+<p>Therefore this dataset would be at the line level.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-5.jpg" alt="Encounter Level" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Encounter Level</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>If the total number of rows is equal to the number of unique encounters, it is at the encounter level.</p>
+<p>Again using our example from above:</p>
+<pre><code class="python language-python">total_rows = len(fake_df)
+total_unique_encounters = len(fake_df['encounter'].nunique())</code></pre>
+<p>if the output was</p>
+<ul>
+<li><code>total_rows = 3464</code></li>
+<li><code>total_unique_encounters = 3464</code></li>
+</ul>
+<p>We could find out using</p>
+<ul>
+<li><code>print(total_rows == total_unique_encounters)</code> would evaluate to <code>True</code></li>
+</ul>
+<p>Therefore this dataset would be at the encounter level.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-6.jpg" alt="Longitudinal Level" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Longitudinal Level</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="longitudinal-level">Longitudinal Level</h2>
+<p>For the longitudinal or patient level, you will see multiple encounters grouped under a patient and you might not even see the encounter id field since this information is collapsed/aggregated under a unique patient id. In this case, the total number of rows should equal the total number of unique patients. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>EHR Dataset Levels</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the correct Dataset Level to example or definition.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Encounter</p></button>
+  <button class="btn btn-primary"><p>Longitudinal</p></button>
+  <button class="btn btn-primary"><p>Line</p></button>
+  <button class="btn btn-primary"><p>Line</p></button>
+  <button class="btn btn-primary"><p>Longitudinal</p></button>
+  <button class="btn btn-primary"><p>Encounter</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Example/Definition</p>
+      </th>
+      <th>
+        <p>Dataset Level</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>Gives the whole view of the patient.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>027004Z (AKA Heart Surgery)</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Has all of the codes for a given visit to a healthcare provider</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Is the code for a procedure, medication, or diagnosis</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p><code>Example Output</code>: [procedure_1,2 ],[diagnosis_1,2,3][medication_12,3,4,5]</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Would be grouped by <code>"patient_id"</code></p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Example/Definition</p>
+        </th>
+        <th>
+          <p>Dataset Level</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Has all of the codes for a given visit to a healthcare provider</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Encounter</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><code>Example Output</code>: [procedure_1,2 ],[diagnosis_1,2,3][medication_12,3,4,5]</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Encounter</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Gives the whole view of the patient.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Longitudinal</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Would be grouped by <code>"patient_id"</code></p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Longitudinal</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>027004Z (AKA Heart Surgery)</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Line</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Is the code for a procedure, medication, or diagnosis</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Line</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>027004Z (AKA Heart Surgery)</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Line</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Is the code for a procedure, medication, or diagnosis</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Line</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Gives the whole view of the patient.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Longitudinal</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Would be grouped by <code>"patient_id"</code></p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Longitudinal</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has all of the codes for a given visit to a healthcare provider</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Encounter</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><code>Example Output</code>: [procedure_1,2 ],[diagnosis_1,2,3][medication_12,3,4,5]</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Encounter</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Line Level</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following would tell you that your data is at the line level?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1587145278039" name="1014626" id="a1587145278039">
+        <label for="a1587145278039"><p><code>total_rows &gt; total_unique_encounters</code> = <code>True</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587145377160" name="1014626" id="a1587145377160">
+        <label for="a1587145377160"><p><code>total_rows &gt; total_unique_encounters</code> = <code>False</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587145428564" name="1014626" id="a1587145428564">
+        <label for="a1587145428564"><p><code>total_rows == total_unique_encounters</code> = <code>True</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587145454968" name="1014626" id="a1587145454968">
+        <label for="a1587145454968"><p><code>total_rows == total_unique_encounters</code> = <code>False</code></p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    `total_rows > total_unique_encounters` = `True`
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Encounter Level Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following would let you know that your data is likely at the encounter level?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587146621256" name="1014627" id="a1587146621256">
+      <label for="a1587146621256"><p>total rows = 4783, unique rows = 1254</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587146734125" name="1014627" id="a1587146734125">
+      <label for="a1587146734125"><p><code>total_rows == total_unique_encounters</code> = <code>True</code></p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587146752476" name="1014627" id="a1587146752476">
+      <label for="a1587146752476"><p><code>total_rows &gt; total_unique_encounters</code> = <code>True</code></p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587146770565" name="1014627" id="a1587146770565">
+      <label for="a1587146770565"><p>total rows = 745,838, unique encounters = 745,838</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>`total_rows == total_unique_encounters` = `True`</li>
+      <li>total rows = 745,838, unique encounters = 745,838</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Reflect</p></h3>
+  <div>
+  <p><strong>QUESTION: </strong></p>
+  <p>Why is it so important to make sure your dataset is a the correct level <strong>before</strong> using it to build a model?</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>The incorrect dataset level can lead to major errors with building models because data preparation was done with faulty assumptions. This could lead duplication of encounter information. </p>
+<p>Also the selecting the wrong or random encounter from the patient record can have a large negative effect on your model that you won't see until deployment.</p>
+<p>These are only a few  potential problems, you may come up with some others as well! Thanks for completing this.</p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Encounter Representation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. EHR Dataset Levels')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

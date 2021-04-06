@@ -1,0 +1,332 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerical Features &amp; Feature Column API</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Transformations &amp; Feature Engineering </h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Transformations &amp; Feature Engineering Overview.html">01. EHR Transformations &amp; Feature Engineering Overview</a>
+    </li>
+    <li class="">
+      <a href="02. EHR Dataset Levels.html">02. EHR Dataset Levels</a>
+    </li>
+    <li class="">
+      <a href="03. Encounter Representation.html">03. Encounter Representation</a>
+    </li>
+    <li class="">
+      <a href="04. Longitudinal Representation.html">04. Longitudinal Representation</a>
+    </li>
+    <li class="">
+      <a href="05. How to Convert to Longitudinal Level.html">05. How to Convert to Longitudinal Level</a>
+    </li>
+    <li class="">
+      <a href="06. Select Last Encounter Exercise.html">06. Select Last Encounter Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Select Last Encounter Solution.html">07. Select Last Encounter Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Dataset Splitting Without Data Leakage.html">08. Dataset Splitting Without Data Leakage</a>
+    </li>
+    <li class="">
+      <a href="09. How to Split Dataset at Patient Level.html">09. How to Split Dataset at Patient Level</a>
+    </li>
+    <li class="">
+      <a href="10. Data Splitting Exercise.html">10. Data Splitting Exercise</a>
+    </li>
+    <li class="">
+      <a href="11. Data Splitting Solution.html">11. Data Splitting Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ETL with TensorFlow Dataset API.html">12. ETL with TensorFlow Dataset API</a>
+    </li>
+    <li class="">
+      <a href="13. Numerical Features &amp; Feature Column API.html">13. Numerical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="14. Numerical Feature Column API Exercise.html">14. Numerical Feature Column API Exercise</a>
+    </li>
+    <li class="">
+      <a href="15. Numerical Features Solution.html">15. Numerical Features Solution</a>
+    </li>
+    <li class="">
+      <a href="16. Categorical Features &amp; Feature Column API.html">16. Categorical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="17. Categorical Features Exercise.html">17. Categorical Features Exercise</a>
+    </li>
+    <li class="">
+      <a href="18. Categorical Features with Feature Column API Solution.html">18. Categorical Features with Feature Column API Solution</a>
+    </li>
+    <li class="">
+      <a href="19. Transformations and Feature Engineering Recap.html">19. Transformations and Feature Engineering Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Numerical Features & Feature Column API</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="transformpreprocess-numerical-features-with-feature-column-api">Transform/Preprocess Numerical Features with Feature Column API</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L03 A11 Transform Preprocess Numerical Features With Feature Column API</p></h3>
+  <video controls>
+  <source src="13. ND320 AIHCND C01 L03 A11 Transform Preprocess Numerical Features With Feature Column API-OYOViyAohDg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND320 AIHCND C01 L03 A11 Transform Preprocess Numerical Features With Feature Column API-OYOViyAohDg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="tensorflow-dataset-api">TensorFlow Dataset API</h2>
+<p>The <a href="https://www.tensorflow.org/guide/data_performance" rel="noopener noreferrer" target="_blank">TensorFlow Dataset (<code>tf.data</code>) API</a> helps to build a flexible and efficient input pipeline that can deliver data to execute training steps. The <a href="https://www.tensorflow.org/guide/data" rel="noopener noreferrer" target="_blank">pipeline</a> helps aggregate and batches the data from various sources. In simple words, it makes an easy loading of the dataset. </p>
+<p><em>We have introduced TensorFlow Dataset API because it is particularly helpful when the amount of data is enormous, available in different data-formats in a distributed file system, and requires some transformations while loading.</em></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="tensorflow-feature-column-api-key-points">TensorFlow Feature Column API Key Points</h2>
+<p>The TensorFlow Feature Column API  helps make data preprocessing easier by abstracting away some of the work for things like normalization in numerical features. If you have done this type of work in Scikit Learn or Pyspark, you might appreciate the work this API does for you when it comes to preparing features for modeling. It also has the ability to add less common features like cross features and shared embeddings. </p>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/feature_column" rel="noopener noreferrer" target="_blank">TensorFlow Feature Column API</a></li>
+<li><a href="https://developers.google.com/machine-learning/crash-course/feature-crosses/video-lecture" rel="noopener noreferrer" target="_blank">Learn more about Cross Features</a></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/feature_column/crossed_column" rel="noopener noreferrer" target="_blank">TensorFlow Cross Features</a></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/feature_column/shared_embeddings" rel="noopener noreferrer" target="_blank">TensorFlow Shared Emeddings</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-11.jpg" alt="Transform/Preprocess Numerical Features" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Transform/Preprocess Numerical Features</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="numerical-features-and-tensorflow-feature-columns-api">Numerical Features and TensorFlow Feature Columns API</h2>
+<p>To use the TensorFlow Feature Columns with numerical features we need to do the following:</p>
+<ol>
+<li>Identify the fields with numerical features.</li>
+<li>Use the TensorFlow Dataset API to load the dataset.</li>
+<li>Create your own custom normalizer function like a z-score</li>
+</ol>
+<pre><code class="python language-python">def z_score_normalizer(args):
+    return z_score_normalization</code></pre>
+<ol start="4">
+<li>Use the TensorFlow numeric_column feature and pass in the z_score_normalizer function to the normalizer_fn argument.<ul>
+<li><code>tf.feature_column.numerical_column(column_name,  normalizer_fn=z_score_normalizer)</code></li></ul></li>
+<li>Let the TensorFlow Feature Column API do it's magic!</li>
+</ol>
+<h4 id="additional-resources">Additional Resources</h4>
+<p>-<a href="https://towardsdatascience.com/how-to-normalize-features-in-tensorflow-5b7b0e3a4177" rel="noopener noreferrer" target="_blank">Normalize Features in TensorFlow</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Numerical Features</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following is true about the numerical features in the TF Feature Column API?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587152519740" name="1014661" id="a1587152519740">
+      <label for="a1587152519740"><p>You must use a z-score for a normalizer function.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587152761610" name="1014661" id="a1587152761610">
+      <label for="a1587152761610"><p>You must identify the fields with numerical features.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587152865082" name="1014661" id="a1587152865082">
+      <label for="a1587152865082"><p>You should use the TensorFlow Dataset API to convert the dataset to Tensorflow tensors for the TF Feature Column API.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>You must identify the fields with numerical features.</li>
+      <li>You should use the TensorFlow Dataset API to convert the dataset to Tensorflow tensors for the TF Feature Column API.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Numerical Feature Column API Exercise.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Numerical Features &amp; Feature Column API')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

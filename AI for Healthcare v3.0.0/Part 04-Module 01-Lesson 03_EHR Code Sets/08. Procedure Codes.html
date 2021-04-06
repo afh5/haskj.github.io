@@ -1,0 +1,888 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Procedure Codes</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Code Sets</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Code Sets Overview.html">01. EHR Code Sets Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Codes Sets Background.html">02. Codes Sets Background</a>
+    </li>
+    <li class="">
+      <a href="03. Diagnosis Codes Part 1.html">03. Diagnosis Codes Part 1</a>
+    </li>
+    <li class="">
+      <a href="04. Diagnosis Codes Part 2.html">04. Diagnosis Codes Part 2</a>
+    </li>
+    <li class="">
+      <a href="05. Grouping codes Walkthrough.html">05. Grouping codes Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Diagnosis Code Grouping Exercise.html">06. Diagnosis Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Diagnosis Code Grouping Solution.html">07. Diagnosis Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Procedure Codes.html">08. Procedure Codes</a>
+    </li>
+    <li class="">
+      <a href="09. Procedure Code Grouping Exercise.html">09. Procedure Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Procedure Code Grouping Solution.html">10. Procedure Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Medication Codes.html">11. Medication Codes</a>
+    </li>
+    <li class="">
+      <a href="12. GroupingCategorizing Systems.html">12. Grouping/Categorizing Systems</a>
+    </li>
+    <li class="">
+      <a href="13. Group or Categorize Procedures Exercise.html">13. Group or Categorize Procedures Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Group or Categorize Procedures Solution.html">14. Group or Categorize Procedures Solution</a>
+    </li>
+    <li class="">
+      <a href="15. EHR Code Sets Recap.html">15. EHR Code Sets Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Procedure Codes</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="procedure-codes">Procedure Codes</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L02 A07 Prodedure Codes</p></h3>
+  <video controls>
+  <source src="08. ND320 AIHCND C01 L02 A07 Prodedure Codes-g5pWanBrvSc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. ND320 AIHCND C01 L02 A07 Prodedure Codes-g5pWanBrvSc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="key-points">Key Points</h1>
+<p><strong>Procedure Codes</strong>: the categorization of the medical codes during an encounter.<br />
+It's important to note if a procedure is inpatient or outpatient. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets-3.jpg" alt="Key Procedure Code Sets" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Key Procedure Code Sets</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="key-procedure-code-sets">Key Procedure Code Sets</h3>
+<p>The graphic above shows some additional information about 3 of the important code sets. Here are the key points about each of them.</p>
+<ul>
+<li><strong>ICD10 PCS</strong>: Procedure Coding Systems<ul>
+<li>Only for <strong>Inpatient</strong></li>
+<li>72,000+ codes as of 2019</li>
+<li>Focus on medical and surgical</li></ul></li>
+<li><strong>CPT</strong>: Current Procedural Terminology<ul>
+<li><strong>Outpatient</strong> focused but can apply to physician visits in ambulatory settings</li>
+<li>10,000+ codes as of 2019</li>
+<li>Focus on professional services by physician</li></ul></li>
+<li><strong>HCPCS</strong>:  Healthcare Common Procedure Coding System<ul>
+<li>Inpatient and outpatient</li>
+<li>Has 3 levels</li>
+<li>L1: CPT Codes</li>
+<li>L2: Non-physician services  <ul>
+<li>DME: Durable Medical Equipment</li>
+<li>Ambulatory Services</li>
+<li>Dental</li></ul></li>
+<li>L3:  Medicare/Medicaid  related</li></ul></li>
+</ul>
+<p>We will focus on ICD-10 PCS and CPT codes, but it's good to be aware of HCPCS codes, too!</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets-6.jpg" alt="ICD10 PCS Selections" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>ICD10 PCS Selections</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="icd10-pcs-code-structure">ICD10-PCS Code Structure</h3>
+<ul>
+<li>7 alphanumeric characters [A-Z, 0-9]</li>
+<li>1st character is the Section <ul>
+<li>Reference Section codes categories in the table above</li></ul></li>
+<li>Subsequent characters relate to the <em>Section</em> and give:<ul>
+<li>Body System</li>
+<li>Body Part</li>
+<li>Approach</li>
+<li>Device used for a procedure</li></ul></li>
+</ul>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2014-pcs-procedure-coding-system.pdf" rel="noopener noreferrer" target="_blank">PCS Procedure Code System</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets-4.jpg" alt="Coronary Heart Code Example: 027004Z" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Coronary Heart Code Example: 027004Z</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="pcs-code-example">PCS Code Example</h2>
+<p>For this example we used 027004Z. <br />
+This is a Heart Surgery code that relates to:</p>
+<ul>
+<li>Dilation of Coronary Artery</li>
+<li>One Site with Drug-eluting Intraluminal Device</li>
+<li>Open Approach </li>
+</ul>
+<p>You can see the breakdown in the image above.<br />
+In the table, you can see that this code starts with <strong>0</strong>, which is the <strong>Medical</strong> category.<br />
+If you look over the link from the last section, <a href="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2014-pcs-procedure-coding-system.pdf" rel="noopener noreferrer" target="_blank">PCS Procedure Code System</a>, you can further see where the rest of the code breaks down.</p>
+<ul>
+<li>0 = Medical</li>
+<li>2 = Heart and Great Vessels</li>
+<li>7 = Dilation</li>
+<li>0 = Coronary Artery, One Site</li>
+<li>0 = Open Approach</li>
+<li>4 = Drug-eluting Intraluminal Device</li>
+<li>Z = No Qualifier</li>
+</ul>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.tacomacc.edu/userfiles/servers/server_6/file/him/him240/pcsoverview/pcsoverview4" rel="noopener noreferrer" target="_blank">PCS Overview</a></li>
+<li><a href="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2016-PCS-Slides.pdf" rel="noopener noreferrer" target="_blank">Medicare Coding</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Code Sets</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which code set focuses only on inpatient services?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1586894516577" name="1013776" id="a1586894516577">
+        <label for="a1586894516577"><p>CPT</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586894580774" name="1013776" id="a1586894580774">
+        <label for="a1586894580774"><p>ICD10 - PCS</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586894591120" name="1013776" id="a1586894591120">
+        <label for="a1586894591120"><p>HCPCS</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    ICD10 - PCS
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>PCS Code Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Using Page 4 of the <a href="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2014-pcs-procedure-coding-system.pdf" rel="noopener noreferrer" target="_blank">PCS Procedure Code System</a> PDF, determine which of the following would be the correct code for Dilation of Three Coronary Arteries using a Radioactive Intraluminal Device via Percutaneous Endoscopic approach.</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1586557847268" name="1012325" id="a1586557847268">
+        <label for="a1586557847268"><p>02724TZ</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586558160058" name="1012325" id="a1586558160058">
+        <label for="a1586558160058"><p>02714TZ</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586558184493" name="1012325" id="a1586558184493">
+        <label for="a1586558184493"><p>12733DZ</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1586558208658" name="1012325" id="a1586558208658">
+        <label for="a1586558208658"><p>02723DZ</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    02724TZ
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets-5.jpg" alt="CPT Category 1 Billable Codes" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>CPT Category 1 Billable Codes</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="cpt-codes">CPT Codes</h2>
+<p>CPT codes have the following structure:</p>
+<ul>
+<li>Up to 5 numbers</li>
+<li>3 Categories<ul>
+<li>Category 1: Billable codes</li>
+<li>10 sections largely split along biological systems which are broken out in the image above</li>
+<li>Category 2: </li>
+<li>Five digits that end in F</li>
+<li>Non-billable</li>
+<li>Performance measure focused on physicals and patient history</li>
+<li>Category 3:</li>
+<li>Services and procedures using emerging technology</li></ul></li>
+</ul>
+<p>Generally, you'll focus on the first two categories.</p>
+<p>As a reminder, we will not be covering HCPCS Codes. However, we have added some additional links regarding HCPCS codes below.</p>
+<h4 id="additional-links">Additional Links</h4>
+<ul>
+<li><a href="https://www.aapc.com/resources/medical-coding/cpt.aspx" rel="noopener noreferrer" target="_blank">Understanding CPT Codes</a></li>
+<li><a href="https://www.cms.gov/medicare-coverage-database/license/cpt-license.aspx?from=~/overview-and-quick-search.aspx&npage=/medicare-coverage-database/downloads/downloadable-databases.aspx" rel="noopener noreferrer" target="_blank">CMS.gov Database Download for CPT Codes </a></li>
+<li><a href="https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo" rel="noopener noreferrer" target="_blank">CMS.gov HCPCS Codes Information</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Healthcare_Common_Procedure_Coding_System" rel="noopener noreferrer" target="_blank">HCPCS Wikipedia</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>CPT Code Quiz</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the CPT Code with the correct high level Category (1,2,3) or Billable Code Category, if it has one.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Evaluation &amp; Management Systems</p></button>
+  <button class="btn btn-primary"><p>Digestive System</p></button>
+  <button class="btn btn-primary"><p>Radiology Services</p></button>
+  <button class="btn btn-primary"><p>Category 2</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>CPT Code</p>
+      </th>
+      <th>
+        <p>Category</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>49878</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>97563</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>3875F</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>79832</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>CPT Code</p>
+        </th>
+        <th>
+          <p>Category</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>97563</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Evaluation &amp; Management Systems</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>49878</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Digestive System</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>79832</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Radiology Services</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>3875F</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Category 2</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Code Sets Quiz</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the correct code set to its attributes.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>CPT</p></button>
+  <button class="btn btn-primary"><p>HCPCS</p></button>
+  <button class="btn btn-primary"><p>CPT</p></button>
+  <button class="btn btn-primary"><p>CPT</p></button>
+  <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+  <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+  <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+  <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+  <button class="btn btn-primary"><p>CPT</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Attibutes</p>
+      </th>
+      <th>
+        <p>Code Set</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>10,000+ Codes</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Focus on medical and surgical</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>72,000+ codes</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Has 3 Categories</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Has 3 levels</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Up to 5 numbers</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Up to 7 alphanumeric digits</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Focused on Outpatient</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Only Deals with Inpatient</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Attibutes</p>
+        </th>
+        <th>
+          <p>Code Set</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>10,000+ Codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has 3 Categories</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 5 numbers</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focused on Outpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has 3 levels</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>HCPCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>10,000+ Codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has 3 Categories</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 5 numbers</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focused on Outpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>10,000+ Codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has 3 Categories</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 5 numbers</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focused on Outpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focus on medical and surgical</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>72,000+ codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 7 alphanumeric digits</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Only Deals with Inpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focus on medical and surgical</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>72,000+ codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 7 alphanumeric digits</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Only Deals with Inpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focus on medical and surgical</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>72,000+ codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 7 alphanumeric digits</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Only Deals with Inpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focus on medical and surgical</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>72,000+ codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 7 alphanumeric digits</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Only Deals with Inpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>ICD10-PCS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>10,000+ Codes</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Has 3 Categories</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Up to 5 numbers</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Focused on Outpatient</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>CPT</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Procedure Code Grouping Exercise.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Procedure Codes')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

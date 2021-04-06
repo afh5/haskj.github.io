@@ -1,0 +1,319 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tensorflow Regression Model with DenseFeatures</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Building, Evaluating and Interpreting Models</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Building, Evaluating &amp; Interpreting Models Overview.html">01. Building, Evaluating &amp; Interpreting Models Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Tensorflow Regression Model with DenseFeatures.html">02. Tensorflow Regression Model with DenseFeatures</a>
+    </li>
+    <li class="">
+      <a href="03. TF DenseFeatures Walkthrough.html">03. TF DenseFeatures Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="04. Common EHR Model Evaluation Metrics.html">04. Common EHR Model Evaluation Metrics</a>
+    </li>
+    <li class="">
+      <a href="05. Common EHR Model Evaluation Metrics Exercise.html">05. Common EHR Model Evaluation Metrics Exercise</a>
+    </li>
+    <li class="">
+      <a href="06. Common EHR Model Evaluation Metrics Solution.html">06. Common EHR Model Evaluation Metrics Solution</a>
+    </li>
+    <li class="">
+      <a href="07. Demographic Bias Analysis.html">07. Demographic Bias Analysis</a>
+    </li>
+    <li class="">
+      <a href="08. Demographic Bias Analysis Walkthrough.html">08. Demographic Bias Analysis Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="09. Demographic Bias Analysis Exercise.html">09. Demographic Bias Analysis Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Demographic Bias Analysis Solution.html">10. Demographic Bias Analysis Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Uncertainty Estimation.html">11. Uncertainty Estimation</a>
+    </li>
+    <li class="">
+      <a href="12. Train Uncertainty Estimation Model Walkthrough.html">12. Train Uncertainty Estimation Model Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="13. Uncertainty Estimation Exercise.html">13. Uncertainty Estimation Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Uncertainty Estimation Solution.html">14. Uncertainty Estimation Solution</a>
+    </li>
+    <li class="">
+      <a href="15. Model Interpretability with Shapley Values.html">15. Model Interpretability with Shapley Values</a>
+    </li>
+    <li class="">
+      <a href="16. Building Models Recap.html">16. Building Models Recap</a>
+    </li>
+    <li class="">
+      <a href="17. AI and EHR Recap.html">17. AI and EHR Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Tensorflow Regression Model with DenseFeatures</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="tensorflow-regression-model-with-densefeatures">Tensorflow Regression Model with DenseFeatures</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L04 A02 Build A Tensorflow Regression Model With DenseFeatures</p></h3>
+  <video controls>
+  <source src="02. ND320 AIHCND C01 L04 A02 Build A Tensorflow Regression Model With DenseFeatures-zIttH5pj5hs.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 AIHCND C01 L04 A02 Build A Tensorflow Regression Model With DenseFeatures-zIttH5pj5hs.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="key-points">Key Points</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l4-building-evaluating-and-interpreting-models-for-bias-and-uncertainty-2.jpg" alt="Build Model with TF &#x60;DenseFeatures&#x60;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Build Model with TF <code>DenseFeatures</code></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="tf-densefeatures-key-points">TF DenseFeatures Key Points</h2>
+<p>In this section, we will focus on just building a simple Tensorflow regression model with TF <code>DenseFeatures</code>, but we realize that there are more advanced deep learning architectures. Please feel free to try different approaches to augment your features and architecture with the walkthroughs and exercises in this lesson. There are some additional links below to explore around with some AutoML offerings. These are not the focus of this course but are included in case this is interesting to you.</p>
+<h3 id="build-model-with-tf-densefeatures">Build Model with TF DenseFeatures</h3>
+<p>Tensorflow DenseFeatures, combining features, like those from the TensorFlow Feature Columns API, into a dense representation for the model.</p>
+<p>You can only use certain TF Feature Columns with <code>DenseFeatures</code>:</p>
+<ul>
+<li><code>numeric_column</code></li>
+<li><code>embedding_column</code></li>
+<li><code>bucketized_column</code></li>
+<li><code>indicator_column</code></li>
+</ul>
+<p><strong>Note</strong>: </p>
+<ul>
+<li>For the sake of simplicity, we will use the Sequential API for this course, but if you want to customize further, feel free to try to the Functional API. However, you might encounter some issues later with configuring some other parts with the TF Probability outputs.</li>
+<li>As of writing, Tensorflow is experimenting with Sequence Features columns as well that can be combined with the <code>SequenceFeatures</code> function. This will not be covered in the course but wanted to share this for your info since it can be very useful.</li>
+</ul>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/DenseFeatures" rel="noopener noreferrer" target="_blank">TF DenseFeatures</a></li>
+<li><a href="https://www.tensorflow.org/guide/keras/functional" rel="noopener noreferrer" target="_blank">Functional API</a></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/keras/experimental/SequenceFeatures" rel="noopener noreferrer" target="_blank">SequenceFeatures</a></li>
+<li><a href="https://cloud.google.com/automl/" rel="noopener noreferrer" target="_blank">GCP AutoML</a></li>
+<li><a href="https://aws.amazon.com/sagemaker/autopilot/" rel="noopener noreferrer" target="_blank">AWS Autopilot</a></li>
+<li><a href="https://ai.googleblog.com/2018/10/introducing-adanet-fast-and-flexible.html" rel="noopener noreferrer" target="_blank">AdaNet</a></li>
+<li><a href="https://autokeras.com/" rel="noopener noreferrer" target="_blank">AutoKeras</a></li>
+<li><a href="https://www.h2o.ai/products/h2o-driverless-ai/" rel="noopener noreferrer" target="_blank">H20 Driverless AI</a></li>
+<li><a href="https://arxiv.org/abs/1607.01097" rel="noopener noreferrer" target="_blank">AdaNet Additional</a></li>
+<li><a href="https://autokeras.com/examples/titanic/" rel="noopener noreferrer" target="_blank">AutoKeras Titanic</a></li>
+<li><a href="https://arxiv.org/abs/1901.11117" rel="noopener noreferrer" target="_blank">Evolved Transformer</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>DenseFeatures</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What do you have to keep in mind when working with TensorFlow <code>DenseFeatures</code>?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587237411416" name="1014756" id="a1587237411416">
+      <label for="a1587237411416"><p>You can only use the Sequential API.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587237486899" name="1014756" id="a1587237486899">
+      <label for="a1587237486899"><p>You are only able to work with Regression Models.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587237613989" name="1014756" id="a1587237613989">
+      <label for="a1587237613989"><p>You can use any TF Feature columns.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587237666763" name="1014756" id="a1587237666763">
+      <label for="a1587237666763"><p>You can also use the Functional API.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587237742260" name="1014756" id="a1587237742260">
+      <label for="a1587237742260"><p>You may only use numeric, embedding, bucketize or indicator columns from  the TF Feature Columns API.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>You can also use the Functional API.</li>
+      <li>You may only use numeric, embedding, bucketize or indicator columns from  the TF Feature Columns API.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. TF DenseFeatures Walkthrough.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Tensorflow Regression Model with DenseFeatures')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

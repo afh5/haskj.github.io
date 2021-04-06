@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.450
+Now that you went over why it's important to split a dataset array,
+
+00:00:03.450 --> 00:00:07.425
+we will go over in more detail how to actually do this.
+
+00:00:07.425 --> 00:00:11.160
+Let's look at the Notebook and walk through how to do a split of
+
+00:00:11.160 --> 00:00:15.720
+a dataset at the patient level into a train and test dataset.
+
+00:00:15.720 --> 00:00:18.615
+Then test those partitions.
+
+00:00:18.615 --> 00:00:22.775
+We will use three tests that we went over in the lesson earlier.
+
+00:00:22.775 --> 00:00:28.025
+First, we will check that any given patient ID is only in one partition.
+
+00:00:28.025 --> 00:00:31.880
+Second, that the total unique number of patients across
+
+00:00:31.880 --> 00:00:37.495
+all partitions equals the total number of unique patients in the original dataset.
+
+00:00:37.495 --> 00:00:40.910
+Third, that the total number of rows in
+
+00:00:40.910 --> 00:00:45.200
+the original dataset equals the sum of rows across each split.
+
+00:00:45.200 --> 00:00:48.295
+Now we're ready to actually split the dataset.
+
+00:00:48.295 --> 00:00:51.020
+For this example, we provide
+
+00:00:51.020 --> 00:00:53.900
+the patient ID field and say that we want to
+
+00:00:53.900 --> 00:00:57.785
+split off 20 percent of the data into a test partition.
+
+00:00:57.785 --> 00:01:01.540
+Next, we will use the following splitter function.
+
+00:01:01.540 --> 00:01:06.395
+Note that we get all the unique patient IDs in this dataset
+
+00:01:06.395 --> 00:01:11.845
+and use that to split the dataset and create two DataFrames with the split.
+
+00:01:11.845 --> 00:01:17.015
+Here is the transformed dataset with two partitions; train, and test.
+
+00:01:17.015 --> 00:01:21.065
+Now we'll need to test using the three tests we mentioned earlier.
+
+00:01:21.065 --> 00:01:27.260
+The first test checks if each block has patient IDs intersecting across each block,
+
+00:01:27.260 --> 00:01:28.625
+which should be zero.
+
+00:01:28.625 --> 00:01:31.330
+In this case, it passes.
+
+00:01:31.330 --> 00:01:33.290
+In the second block,
+
+00:01:33.290 --> 00:01:35.540
+the second test checks if you have a same number of
+
+00:01:35.540 --> 00:01:38.645
+unique patients as you had in the original dataset,
+
+00:01:38.645 --> 00:01:40.780
+and this passes as well.
+
+00:01:40.780 --> 00:01:45.270
+Lastly, the final block tests to check if the rows for
+
+00:01:45.270 --> 00:01:49.895
+the two splits are the same as the total number of rows as the original dataset.
+
+00:01:49.895 --> 00:01:51.635
+This also passes.
+
+00:01:51.635 --> 00:01:54.845
+Now that our split has passed all three tests,
+
+00:01:54.845 --> 00:01:58.100
+we can feel more confident that our dataset was split
+
+00:01:58.100 --> 00:02:02.135
+without patient ID leakage and with the correct number of rows.
+
+00:02:02.135 --> 00:02:05.960
+However, this is not guaranteed that there might be other issues and you
+
+00:02:05.960 --> 00:02:09.880
+should still create other tests as needed based on the situation.
+
+00:02:09.880 --> 00:02:14.970
+Great. Now we've gone over how to split a dataset at the patient level.
+

@@ -1,0 +1,277 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.940
+For this exercise, you are asked to build
+
+00:00:02.940 --> 00:00:06.360
+a regression model to predict resting blood pressure,
+
+00:00:06.360 --> 00:00:10.650
+which is the trestbps field in this data set.
+
+00:00:10.650 --> 00:00:14.880
+This exercise combine what you learned and allowed you to use
+
+00:00:14.880 --> 00:00:17.910
+the TensorFlow DenseFeatures as well as use
+
+00:00:17.910 --> 00:00:22.770
+the age and sex features to create a TensorFlow cross feature.
+
+00:00:22.770 --> 00:00:24.810
+So across feature is,
+
+00:00:24.810 --> 00:00:26.775
+just as it sounds,
+
+00:00:26.775 --> 00:00:29.130
+combining two features together.
+
+00:00:29.130 --> 00:00:36.090
+You're also asked to evaluate with common regression and classification metrics.
+
+00:00:36.090 --> 00:00:41.390
+Also to know, you're not required to create a ROC or PR curve because
+
+00:00:41.390 --> 00:00:46.620
+this is a regression model and we just ended up converting to have a binary output,
+
+00:00:46.620 --> 00:00:51.065
+and we do not provide the confidence in a given binary prediction because of that.
+
+00:00:51.065 --> 00:00:55.430
+Now let's move to the first part where we loaded the dataset and combine
+
+00:00:55.430 --> 00:01:00.395
+two UCI heart disease sites into one dataset.
+
+00:01:00.395 --> 00:01:02.990
+So this should look familiar to you.
+
+00:01:02.990 --> 00:01:10.250
+We're combining the Cleveland dataset with the Swiss dataset into one combined dataset.
+
+00:01:10.250 --> 00:01:12.560
+So now we'll move to the solution.
+
+00:01:12.560 --> 00:01:15.950
+Note that the dataset has only three features.
+
+00:01:15.950 --> 00:01:17.915
+For the solution we provide,
+
+00:01:17.915 --> 00:01:22.730
+there are other important features you can use to improve your model's performance.
+
+00:01:22.730 --> 00:01:26.540
+This is largely just to walk through the step-by-step on how to
+
+00:01:26.540 --> 00:01:30.695
+use TensorFlow's functionality to create a model.
+
+00:01:30.695 --> 00:01:34.975
+So first, we select these four features.
+
+00:01:34.975 --> 00:01:39.330
+Just remember, trestbps is the predictor label.
+
+00:01:39.330 --> 00:01:42.500
+We'll also pick these other two features because later
+
+00:01:42.500 --> 00:01:45.995
+we can use these if we want for demographic analysis.
+
+00:01:45.995 --> 00:01:49.085
+Then next we'll do the conversion from the numbers
+
+00:01:49.085 --> 00:01:53.030
+to actual strings for male and female, for gender.
+
+00:01:53.030 --> 00:01:54.770
+Then the next step,
+
+00:01:54.770 --> 00:01:59.755
+we have to analyze how many rows have at least a single null value.
+
+00:01:59.755 --> 00:02:01.400
+In this case, luckily,
+
+00:02:01.400 --> 00:02:03.080
+there's only two rows.
+
+00:02:03.080 --> 00:02:07.100
+So instead of going through anything complicated with imputation,
+
+00:02:07.100 --> 00:02:10.700
+we'll just remove those two rows here.
+
+00:02:10.700 --> 00:02:14.735
+So now that we have a clean dataset ready for modeling,
+
+00:02:14.735 --> 00:02:17.510
+we do have to do a couple of things where we cast
+
+00:02:17.510 --> 00:02:21.640
+a couple fields that have numeric values into integers.
+
+00:02:21.640 --> 00:02:24.980
+Then we use methods that we should be familiar with before,
+
+00:02:24.980 --> 00:02:30.950
+where we load up the dataset in pandas and convert it to a TensorFlow dataset then
+
+00:02:30.950 --> 00:02:37.835
+split it between train and test and build those train test TensorFlow datasets.
+
+00:02:37.835 --> 00:02:39.320
+Then the next step,
+
+00:02:39.320 --> 00:02:43.625
+we need to actually build a bucketed feature from the age field.
+
+00:02:43.625 --> 00:02:48.785
+Notice that we don't normalize this feature because we will
+
+00:02:48.785 --> 00:02:54.400
+use that unnormalized numeric feature as an input to bucket it.
+
+00:02:54.400 --> 00:02:57.575
+If you recall from what we learned earlier,
+
+00:02:57.575 --> 00:03:02.410
+we can set the boundaries for where we want these buckets to have a range from.
+
+00:03:02.410 --> 00:03:08.605
+Next, we move on to creating a categorical feature from the sex field or gender field.
+
+00:03:08.605 --> 00:03:13.310
+In this case, since there aren't many unique values for sex,
+
+00:03:13.310 --> 00:03:17.425
+we just use this categorical column with vocab list function.
+
+00:03:17.425 --> 00:03:21.605
+We also provide a one-hot encoded version of this feature.
+
+00:03:21.605 --> 00:03:25.340
+So one of the exciting functionalities that you have in
+
+00:03:25.340 --> 00:03:30.710
+TensorFlow feature column API is the ability to make cross features rather easily.
+
+00:03:30.710 --> 00:03:32.210
+As we just went over,
+
+00:03:32.210 --> 00:03:37.520
+we created a bucketed age feature as well as a vocab feature for gender.
+
+00:03:37.520 --> 00:03:40.310
+Notice that we use the vocab feature.
+
+00:03:40.310 --> 00:03:42.665
+We don't use the one-hot encoded feature,
+
+00:03:42.665 --> 00:03:45.275
+and we can use those to make a cross-feature.
+
+00:03:45.275 --> 00:03:47.720
+So here's the first part of that.
+
+00:03:47.720 --> 00:03:50.705
+Notice though we also have a hash bucket size,
+
+00:03:50.705 --> 00:03:54.230
+because there could be a very large number of combinations.
+
+00:03:54.230 --> 00:03:56.135
+We use a hash bucket to limit that,
+
+00:03:56.135 --> 00:03:59.255
+so it doesn't increase the computation to an excessive level.
+
+00:03:59.255 --> 00:04:03.725
+Next, we take this cross feature and then we make it one-hot encoded.
+
+00:04:03.725 --> 00:04:06.575
+Then you should be familiar with this step.
+
+00:04:06.575 --> 00:04:10.580
+We use the TensorFlow DenseFeatures to take the input
+
+00:04:10.580 --> 00:04:14.915
+features we just created and create a dense vector for our model.
+
+00:04:14.915 --> 00:04:19.100
+This should be familiar to what we went over earlier, nothing unique.
+
+00:04:19.100 --> 00:04:23.390
+This is the same architecture as the TensorFlow regression example.
+
+00:04:23.390 --> 00:04:30.185
+Then we train this model and evaluate the model as well and get some output.
+
+00:04:30.185 --> 00:04:32.360
+So here are some predictions.
+
+00:04:32.360 --> 00:04:35.630
+You can see some example predictions and the actual label,
+
+00:04:35.630 --> 00:04:39.140
+we're going to convert that to a binary output.
+
+00:04:39.140 --> 00:04:42.620
+So we take these predictions and have some thresholds.
+
+00:04:42.620 --> 00:04:43.730
+So in this case,
+
+00:04:43.730 --> 00:04:49.720
+we want to put this threshold as to whether our prediction is above 130 or not,
+
+00:04:49.720 --> 00:04:51.910
+and whether the actual value is 130.
+
+00:04:51.910 --> 00:04:56.495
+So we'll create a score and label value field for this conversion,
+
+00:04:56.495 --> 00:05:00.490
+and then we can take this table and actually convert this and
+
+00:05:00.490 --> 00:05:04.670
+evaluate on classification metrics as we went over earlier.
+
+00:05:04.670 --> 00:05:06.865
+As you can see, there's a lot of work to be done.
+
+00:05:06.865 --> 00:05:09.085
+This is just a very naive model,
+
+00:05:09.085 --> 00:05:11.380
+not much feature engineering,
+
+00:05:11.380 --> 00:05:16.360
+very few features, but this hopefully shows you the end-to-end process.
+
+00:05:16.360 --> 00:05:20.230
+I hope you have more fun with exploring different features using
+
+00:05:20.230 --> 00:05:26.335
+some tools and TensorFlow feature columns to build other features as well.
+
+00:05:26.335 --> 00:05:28.830
+Great job on this exercise.
+
+00:05:28.830 --> 00:05:34.190
+You were able to build a TensorFlow model using a lot of the functionality we
+
+00:05:34.190 --> 00:05:39.560
+went over and even converted the regression output to a binary classification output,
+
+00:05:39.560 --> 00:05:43.325
+which we use for evaluating with some classification metrics.
+
+00:05:43.325 --> 00:05:46.050
+So now on to the next part.
+

@@ -1,0 +1,364 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.810
+We're starting this lesson talking about the importance
+
+00:00:03.810 --> 00:00:08.084
+of EHR data security and privacy for EHR.
+
+00:00:08.084 --> 00:00:11.160
+This is extremely important in today's society.
+
+00:00:11.160 --> 00:00:15.135
+No one wants their personal health care data to be stolen or lost.
+
+00:00:15.135 --> 00:00:18.570
+While it's highly unlikely that you would be involved with directly
+
+00:00:18.570 --> 00:00:22.575
+securing the data or ensuring compliance with the many privacy laws,
+
+00:00:22.575 --> 00:00:25.440
+anyone who works with this type of data needs to be
+
+00:00:25.440 --> 00:00:29.100
+aware of the key regulations in common practices.
+
+00:00:29.100 --> 00:00:32.220
+You might have heard of examples of companies
+
+00:00:32.220 --> 00:00:35.310
+that have had their data breached in the news.
+
+00:00:35.310 --> 00:00:36.930
+While that might not seem flashy,
+
+00:00:36.930 --> 00:00:38.520
+this is very important.
+
+00:00:38.520 --> 00:00:41.250
+So with that said, let's get started.
+
+00:00:41.250 --> 00:00:43.080
+To kick off this topic,
+
+00:00:43.080 --> 00:00:49.430
+let's go over why data security and privacy are important from different perspectives.
+
+00:00:49.430 --> 00:00:52.460
+Let's start off with taking a basic view of
+
+00:00:52.460 --> 00:00:55.370
+how medical records are situated between patients,
+
+00:00:55.370 --> 00:00:58.790
+providers, and a variety of different data users.
+
+00:00:58.790 --> 00:01:01.880
+I'm sure you can relate to the different experience of
+
+00:01:01.880 --> 00:01:04.910
+being a patient in a variety of healthcare settings.
+
+00:01:04.910 --> 00:01:07.145
+But, what is a provider?
+
+00:01:07.145 --> 00:01:11.315
+Some examples are: healthcare professionals treating you at a hospital,
+
+00:01:11.315 --> 00:01:12.855
+in a doctor's clinic,
+
+00:01:12.855 --> 00:01:14.630
+or a dentist's office.
+
+00:01:14.630 --> 00:01:17.210
+This interaction between a patient and
+
+00:01:17.210 --> 00:01:20.955
+a provider results in electronic health record being produced.
+
+00:01:20.955 --> 00:01:24.890
+Electronic health records can be used by data users too.
+
+00:01:24.890 --> 00:01:26.975
+Who are some data users?
+
+00:01:26.975 --> 00:01:29.320
+This group can include not only payers,
+
+00:01:29.320 --> 00:01:31.330
+but also include other groups.
+
+00:01:31.330 --> 00:01:33.595
+A payer, as we will go over later,
+
+00:01:33.595 --> 00:01:37.060
+is a group that consists of usually healthcare insurance companies,
+
+00:01:37.060 --> 00:01:40.570
+but it can also include government payers as well.
+
+00:01:40.570 --> 00:01:45.670
+To illustrate the importance of data privacy and security from a patient perspective,
+
+00:01:45.670 --> 00:01:50.185
+here are some examples that can illustrate some unfortunately common issues.
+
+00:01:50.185 --> 00:01:54.565
+The first example is a case where data privacy was not adhered to,
+
+00:01:54.565 --> 00:01:58.840
+and made for some embarrassing headlines for a major US health care payer.
+
+00:01:58.840 --> 00:02:01.960
+In this case, the payer accidentally disclosed that
+
+00:02:01.960 --> 00:02:05.630
+some patients had HIV via a visible piece of mail.
+
+00:02:05.630 --> 00:02:10.945
+This illustrates the risk and fear that people have with sharing their medical data,
+
+00:02:10.945 --> 00:02:15.470
+and especially for people with medical conditions such as cancer, HIV,
+
+00:02:15.470 --> 00:02:18.560
+and other health conditions who could have this information
+
+00:02:18.560 --> 00:02:23.005
+disclosed without their consent and have discriminatory treatment.
+
+00:02:23.005 --> 00:02:25.970
+Unfortunately, this is not an isolated case,
+
+00:02:25.970 --> 00:02:29.270
+and other companies have suffered from data breaches as well.
+
+00:02:29.270 --> 00:02:30.995
+As we'll find out later,
+
+00:02:30.995 --> 00:02:35.450
+this type of breach can put patients at significant risk of identity theft,
+
+00:02:35.450 --> 00:02:39.950
+since medical data can be used more easily to impersonate someone.
+
+00:02:39.950 --> 00:02:46.520
+So you might wonder why it is easier to perpetuate identity theft with medical data,
+
+00:02:46.520 --> 00:02:48.500
+and hence its value to hackers.
+
+00:02:48.500 --> 00:02:51.590
+Well, the first reason is that unlike financial data,
+
+00:02:51.590 --> 00:02:54.290
+which tends to have much faster notification,
+
+00:02:54.290 --> 00:02:56.015
+victims know much later,
+
+00:02:56.015 --> 00:03:00.260
+and reporting of a breach comes much later than for financial hacking.
+
+00:03:00.260 --> 00:03:05.150
+Second, there is a lot of detailed information that goes into a medical record,
+
+00:03:05.150 --> 00:03:10.265
+and this info can be combined to get even more detailed identity information.
+
+00:03:10.265 --> 00:03:13.670
+Lastly, hackers can use this information to file
+
+00:03:13.670 --> 00:03:17.080
+false medical claims worth large sums of money.
+
+00:03:17.080 --> 00:03:19.070
+So to put that in perspective,
+
+00:03:19.070 --> 00:03:23.465
+the value of medical record data relative to your credit card is much higher,
+
+00:03:23.465 --> 00:03:27.115
+and even higher than the value of your social security number.
+
+00:03:27.115 --> 00:03:28.759
+This might be surprising,
+
+00:03:28.759 --> 00:03:30.530
+but as we previously mentioned,
+
+00:03:30.530 --> 00:03:33.090
+this data is a lot more valuable to hackers,
+
+00:03:33.090 --> 00:03:36.395
+and can make it a lot easier to commit identity theft.
+
+00:03:36.395 --> 00:03:38.270
+Just to review again,
+
+00:03:38.270 --> 00:03:40.865
+the definition of providers and who they are.
+
+00:03:40.865 --> 00:03:46.400
+Essentially, they are the medical professionals/organizations
+
+00:03:46.400 --> 00:03:49.310
+that are providing care to patients.
+
+00:03:49.310 --> 00:03:53.400
+They're under strict regulatory compliance laws,
+
+00:03:53.400 --> 00:03:54.680
+and for the most part,
+
+00:03:54.680 --> 00:03:59.990
+your organization will handle the intricacies of how to interface with providers.
+
+00:03:59.990 --> 00:04:02.165
+Or if your organization is one,
+
+00:04:02.165 --> 00:04:04.160
+they have extensive training that you'll go
+
+00:04:04.160 --> 00:04:07.495
+through as part of the required HIPAA compliance.
+
+00:04:07.495 --> 00:04:10.100
+To make sure organizations comply,
+
+00:04:10.100 --> 00:04:11.300
+there are some penalties,
+
+00:04:11.300 --> 00:04:13.655
+and they can change periodically over time.
+
+00:04:13.655 --> 00:04:16.610
+Please check the HIPAA website to be up to date.
+
+00:04:16.610 --> 00:04:21.440
+Here are a few common things that you should be aware of when dealing with PHI,
+
+00:04:21.440 --> 00:04:24.290
+so that you can avoid HIPAA violations.
+
+00:04:24.290 --> 00:04:27.590
+First, one thing that is commonly forgotten is to
+
+00:04:27.590 --> 00:04:31.100
+not email PHI to external accounts by accident.
+
+00:04:31.100 --> 00:04:32.780
+This was something that I recall.
+
+00:04:32.780 --> 00:04:34.280
+A lot of care was provided at
+
+00:04:34.280 --> 00:04:38.770
+my previous company where reminders about not e-mailing PHI were made,
+
+00:04:38.770 --> 00:04:42.425
+so that was not inadvertently sent to an outside party.
+
+00:04:42.425 --> 00:04:44.690
+Another common issue that needs to be
+
+00:04:44.690 --> 00:04:48.454
+mentioned is to not leave portable devices unattended.
+
+00:04:48.454 --> 00:04:50.405
+This means even in the office,
+
+00:04:50.405 --> 00:04:53.720
+you're locking your computer when you're not at your desk.
+
+00:04:53.720 --> 00:04:58.580
+Lastly, make sure you have encryption on portable devices with PHI.
+
+00:04:58.580 --> 00:05:01.670
+Encryption makes it harder for this data to be used by
+
+00:05:01.670 --> 00:05:05.405
+others in the case that a device is lost or stolen.
+
+00:05:05.405 --> 00:05:08.510
+So now we will go into the perspective of why
+
+00:05:08.510 --> 00:05:12.950
+data security and privacy is important from a data user perspective.
+
+00:05:12.950 --> 00:05:15.855
+Here are some examples of data users:
+
+00:05:15.855 --> 00:05:21.650
+payers which include health insurance companies, national insurance organizations,
+
+00:05:21.650 --> 00:05:24.650
+pharmaceutical companies, and there are
+
+00:05:24.650 --> 00:05:28.235
+a growing number of other entities using electronic medical records,
+
+00:05:28.235 --> 00:05:31.445
+such as technology and marketing companies as well.
+
+00:05:31.445 --> 00:05:35.705
+Data privacy issues come up with not only disclosure from hackers,
+
+00:05:35.705 --> 00:05:40.519
+but also from legitimate entities with business or medical research purposes.
+
+00:05:40.519 --> 00:05:45.140
+Let's look at the UK and see how 1.6 million patients did not
+
+00:05:45.140 --> 00:05:50.150
+have informed consent to have their data used by a Google DeepMind project.
+
+00:05:50.150 --> 00:05:53.720
+In this example, Google's leading AI group, DeepMind,
+
+00:05:53.720 --> 00:05:58.730
+was cited for not getting appropriate informed consent for the use of its algorithms.
+
+00:05:58.730 --> 00:06:01.550
+It's important to get informed consent because it's
+
+00:06:01.550 --> 00:06:04.730
+an essential part of any scientific experiment.
+
+00:06:04.730 --> 00:06:07.775
+In a similar vein, in 2019,
+
+00:06:07.775 --> 00:06:12.020
+a whistle blower raised concerns about Google's effort in the US to
+
+00:06:12.020 --> 00:06:17.015
+utilize the records of 50 million patients in the Ascension Health Care System.
+
+00:06:17.015 --> 00:06:21.890
+In this instance, the concern was around obtaining proper patient consent.
+
+00:06:21.890 --> 00:06:23.410
+These are issues that,
+
+00:06:23.410 --> 00:06:24.515
+as a data user,
+
+00:06:24.515 --> 00:06:25.840
+you must be aware of,
+
+00:06:25.840 --> 00:06:29.900
+and work with the appropriate regulatory authorities to comply with.
+
+00:06:29.900 --> 00:06:34.810
+Most companies have an experienced legal and compliance team to assist you with this,
+
+00:06:34.810 --> 00:06:38.540
+and you should work with them to see how to best navigate these issues,
+
+00:06:38.540 --> 00:06:42.150
+and also flag concerns you might have as well.
+

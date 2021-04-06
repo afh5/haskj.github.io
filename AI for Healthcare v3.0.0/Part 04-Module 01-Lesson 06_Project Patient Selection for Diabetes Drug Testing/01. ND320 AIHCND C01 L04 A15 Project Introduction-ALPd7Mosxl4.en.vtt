@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.275
+All right. You are ready to start the project for this course.
+
+00:00:04.275 --> 00:00:06.180
+As a quick review,
+
+00:00:06.180 --> 00:00:12.390
+you get to play the part of a data scientist for an exciting unicorn healthcare startup.
+
+00:00:12.390 --> 00:00:18.640
+That has created a groundbreaking diabetes drug that is ready for clinical trial testing.
+
+00:00:18.640 --> 00:00:23.525
+Your job is to build a predictive model that can identify
+
+00:00:23.525 --> 00:00:29.110
+which type of patients the company should focus their efforts testing this drug on.
+
+00:00:29.110 --> 00:00:33.110
+Here is a preview of some of the things you do in the project.
+
+00:00:33.110 --> 00:00:36.740
+You get to build a regression model that can predict
+
+00:00:36.740 --> 00:00:40.550
+the estimated hospitalization time for a patient and also
+
+00:00:40.550 --> 00:00:44.390
+provide an uncertainty estimate range for that prediction.
+
+00:00:44.390 --> 00:00:48.415
+So you can rank the predictions based off the uncertainty range.
+
+00:00:48.415 --> 00:00:52.370
+You'll use your new skills to work with a data set built off of
+
+00:00:52.370 --> 00:00:56.680
+University of California Irvine diabetes readmissions dataset.
+
+00:00:56.680 --> 00:00:59.690
+So you'll be using real health care data.
+
+00:00:59.690 --> 00:01:01.700
+At the end, you'll create
+
+00:01:01.700 --> 00:01:07.415
+a demographic bias analysis similar to here to detect if your model has any bias,
+
+00:01:07.415 --> 00:01:11.305
+which is something we need to avoid when working with health care data.
+
+00:01:11.305 --> 00:01:14.180
+When finished with this project and course,
+
+00:01:14.180 --> 00:01:18.610
+you'll be able to use health care codes to group and categorize data.
+
+00:01:18.610 --> 00:01:21.560
+You will also be able to split datasets without
+
+00:01:21.560 --> 00:01:26.755
+leakage and build features using the TensorFlow Feature Column API,
+
+00:01:26.755 --> 00:01:28.785
+and finally you'll be able to build,
+
+00:01:28.785 --> 00:01:35.335
+evaluate and interpret models while accounting for demographic bias and uncertainty.
+
+00:01:35.335 --> 00:01:38.510
+I wish you the very best of luck on this project and
+
+00:01:38.510 --> 00:01:42.840
+hope you are able to put all of your new skills to use.
+

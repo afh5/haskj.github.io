@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.760
+Let's go to the notebook for the solution.
+
+00:00:02.760 --> 00:00:06.060
+This is the last exercise for this lesson.
+
+00:00:06.060 --> 00:00:08.445
+Nice job getting through this lesson.
+
+00:00:08.445 --> 00:00:12.480
+This exercise is a little more practice with what we went over already.
+
+00:00:12.480 --> 00:00:14.835
+You're again creating age bins,
+
+00:00:14.835 --> 00:00:19.500
+but we want to add one more part to this by including the predictor label as well.
+
+00:00:19.500 --> 00:00:23.490
+So first, here's the pre-processing code that is provided for you.
+
+00:00:23.490 --> 00:00:27.630
+I did a little clean up of labels more for aesthetics,
+
+00:00:27.630 --> 00:00:30.615
+so I wouldn't worry too much about each line here.
+
+00:00:30.615 --> 00:00:33.640
+This is more for reference in case you're curious.
+
+00:00:33.640 --> 00:00:36.395
+Now let's go to the actual solution.
+
+00:00:36.395 --> 00:00:40.235
+So using a similar method to what we went over in the lesson,
+
+00:00:40.235 --> 00:00:44.140
+I will create the age bins and then show you what the output looks like.
+
+00:00:44.140 --> 00:00:47.105
+Then before I visualize all of the grouping,
+
+00:00:47.105 --> 00:00:52.265
+I just provided a visual of just the histogram for the age bins.
+
+00:00:52.265 --> 00:00:55.325
+Then let's add one more field to the grouping,
+
+00:00:55.325 --> 00:00:59.435
+gender as well, see how this changes the visual.
+
+00:00:59.435 --> 00:01:02.540
+This is consistent with what we saw earlier
+
+00:01:02.540 --> 00:01:05.885
+with the male numbers being much larger than female.
+
+00:01:05.885 --> 00:01:09.095
+Also, we can see that we are seeing similar shape
+
+00:01:09.095 --> 00:01:12.980
+of the count plot across the groups for both genders,
+
+00:01:12.980 --> 00:01:16.610
+albeit with lower numbers for females.
+
+00:01:16.610 --> 00:01:22.220
+Finally, let's combine all three variables together in a visual,
+
+00:01:22.220 --> 00:01:25.210
+age, gender, and the predictor field.
+
+00:01:25.210 --> 00:01:27.710
+Ta-da, in this example,
+
+00:01:27.710 --> 00:01:32.465
+you can see that females are not represented for the negative label.
+
+00:01:32.465 --> 00:01:35.900
+You can see the negative label or the absence of
+
+00:01:35.900 --> 00:01:39.840
+heart disease has a big issue when you have no female patients,
+
+00:01:39.840 --> 00:01:44.755
+and then if you were to try to build a model and you would only have positive examples.
+
+00:01:44.755 --> 00:01:47.615
+This could be an issue of the size of a data set,
+
+00:01:47.615 --> 00:01:51.125
+but this is definitely something important to note.
+
+00:01:51.125 --> 00:01:54.840
+Great job getting through this exercise.
+

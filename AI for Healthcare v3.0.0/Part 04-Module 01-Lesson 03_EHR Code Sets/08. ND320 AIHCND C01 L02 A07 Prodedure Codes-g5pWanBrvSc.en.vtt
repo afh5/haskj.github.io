@@ -1,0 +1,238 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.425
+Great job on that last section.
+
+00:00:02.425 --> 00:00:05.395
+Now that you're familiar with diagnosis codes,
+
+00:00:05.395 --> 00:00:07.955
+procedure codes will be a piece of cake.
+
+00:00:07.955 --> 00:00:09.645
+So what is a procedure?
+
+00:00:09.645 --> 00:00:15.025
+For EHR records, this can encompass everything from surgeries to an X-ray.
+
+00:00:15.025 --> 00:00:19.030
+It will be important again to note the context of the procedure,
+
+00:00:19.030 --> 00:00:22.825
+whether it occurs in an inpatient or outpatient setting.
+
+00:00:22.825 --> 00:00:27.865
+So for procedures, we really want to focus on three major code sets.
+
+00:00:27.865 --> 00:00:33.520
+The first is another ICD-10 code set that is maintained by the US CMS,
+
+00:00:33.520 --> 00:00:36.350
+and applies to only in-patient procedures.
+
+00:00:36.350 --> 00:00:40.800
+This is called ICD-10 procedure coding system and has over
+
+00:00:40.800 --> 00:00:46.310
+73,000 codes of which most are in the medical and surgical category.
+
+00:00:46.310 --> 00:00:50.960
+The second major code set that you should be familiar with for
+
+00:00:50.960 --> 00:00:55.900
+procedures is current procedural terminology or CPT codes,
+
+00:00:55.900 --> 00:01:01.535
+which are maintained by the AMA and focus on professional services by physicians.
+
+00:01:01.535 --> 00:01:03.769
+They mostly apply to outpatient,
+
+00:01:03.769 --> 00:01:09.485
+but can also be used for ambulatory settings or impatient if you have a physician visit.
+
+00:01:09.485 --> 00:01:12.560
+The last procedure code set we will cover is
+
+00:01:12.560 --> 00:01:15.485
+the Healthcare Common Procedure Coding System,
+
+00:01:15.485 --> 00:01:17.900
+otherwise known as HCPCS,
+
+00:01:17.900 --> 00:01:21.140
+and is used for both inpatient and outpatient.
+
+00:01:21.140 --> 00:01:24.725
+It is a bit more complicated in that HCPCS
+
+00:01:24.725 --> 00:01:29.245
+has three levels and the first level is just the CPT codes,
+
+00:01:29.245 --> 00:01:31.825
+but for the second level they are for
+
+00:01:31.825 --> 00:01:37.910
+non-physician services and include additional codes non-CPT like DME,
+
+00:01:37.910 --> 00:01:41.060
+ambulatory services and dental services.
+
+00:01:41.060 --> 00:01:45.110
+By the way, DME stands for durable medical equipment.
+
+00:01:45.110 --> 00:01:50.770
+You will come across this for some sections of the HCPCS codes, especially.
+
+00:01:50.770 --> 00:01:57.190
+The final and third level is for local codes that are Medicare, Medicaid specific.
+
+00:01:57.190 --> 00:02:01.865
+The maintenance of the last two levels are by CMS and the ADA.
+
+00:02:01.865 --> 00:02:04.430
+We will now focus on HCPCS codes,
+
+00:02:04.430 --> 00:02:06.320
+but we want to expose you to them.
+
+00:02:06.320 --> 00:02:11.395
+HCPCS level 1 and 2 are the ones that you would most likely see in practice.
+
+00:02:11.395 --> 00:02:16.325
+So let's go into more detail about the ICD10-PCS structure.
+
+00:02:16.325 --> 00:02:19.515
+The codes are seven alphanumeric characters,
+
+00:02:19.515 --> 00:02:22.135
+and the first character is for this section.
+
+00:02:22.135 --> 00:02:25.100
+The subsequent characters depend on the section,
+
+00:02:25.100 --> 00:02:27.680
+but generally give the body system, body part,
+
+00:02:27.680 --> 00:02:30.605
+approach and device used for a procedure.
+
+00:02:30.605 --> 00:02:34.655
+Here is a view of the different sections for IC10-PCS.
+
+00:02:34.655 --> 00:02:39.815
+This image is also available in the class firm for you to use as a reference if needed.
+
+00:02:39.815 --> 00:02:44.210
+As mentioned earlier, it really depends on the section for the structure,
+
+00:02:44.210 --> 00:02:48.940
+but there are some similar parts and we'll go through one section as an example.
+
+00:02:48.940 --> 00:02:56.720
+To illustrate, we'll go through a heart surgery example, 027004Z ,
+
+00:02:56.720 --> 00:02:59.980
+which is dilation of coronary artery,
+
+00:02:59.980 --> 00:03:05.070
+one site with drug-eluting intraluminal device, open approach.
+
+00:03:05.070 --> 00:03:07.215
+A mouthful for sure.
+
+00:03:07.215 --> 00:03:09.525
+Let's see how each part is mapped.
+
+00:03:09.525 --> 00:03:14.345
+So let's go character by character with how to map this example.
+
+00:03:14.345 --> 00:03:17.390
+The first character for this procedure is zero,
+
+00:03:17.390 --> 00:03:21.100
+and this maps to the medical and surgical section.
+
+00:03:21.100 --> 00:03:26.660
+The next character is two and maps to the heart and great vessels system.
+
+00:03:26.660 --> 00:03:29.540
+Then the next character is seven and refers to
+
+00:03:29.540 --> 00:03:33.775
+dilation because we are expanding a coronary artery in this case.
+
+00:03:33.775 --> 00:03:37.595
+Then as you can see in the next three columns of the table,
+
+00:03:37.595 --> 00:03:39.530
+you can pick the body part,
+
+00:03:39.530 --> 00:03:41.465
+or in this case, how many arteries,
+
+00:03:41.465 --> 00:03:46.135
+then the approach for their procedure and finally the device if any used.
+
+00:03:46.135 --> 00:03:49.050
+The last part is the qualifier.
+
+00:03:49.050 --> 00:03:52.880
+So next we will go through the structure for CPT codes.
+
+00:03:52.880 --> 00:03:56.735
+First, the CPT codes have up to five numbers.
+
+00:03:56.735 --> 00:03:58.945
+They are only numeric characters.
+
+00:03:58.945 --> 00:04:02.030
+There are also three categories of CPT codes,
+
+00:04:02.030 --> 00:04:05.530
+and for most part you should focus on the first two.
+
+00:04:05.530 --> 00:04:07.925
+Category 1 is the first one,
+
+00:04:07.925 --> 00:04:10.205
+and these are the billable codes.
+
+00:04:10.205 --> 00:04:13.385
+There are 10 sections for CPT category 1
+
+00:04:13.385 --> 00:04:16.705
+and here are the code ranges in the section names.
+
+00:04:16.705 --> 00:04:22.610
+As you can see, they're largely split along biological systems and service areas.
+
+00:04:22.610 --> 00:04:25.550
+Category 2 is the section that has
+
+00:04:25.550 --> 00:04:31.280
+the performance measures that focus on things like physicals, patient history, etc.
+
+00:04:31.280 --> 00:04:35.990
+These are codes that are non-billable and have the five digits that end in
+
+00:04:35.990 --> 00:04:43.090
+F. Category 3 is one for emerging temporary codes that may be added later.
+
+00:04:43.090 --> 00:04:47.240
+This may be important to look at for very new procedures and there's
+
+00:04:47.240 --> 00:04:52.150
+some time and process by the AMA to add these codes later.
+
+00:04:52.150 --> 00:04:54.515
+Now that we're at the end of this section,
+
+00:04:54.515 --> 00:04:56.915
+you are ready to work with procedure codes.
+
+00:04:56.915 --> 00:04:59.910
+Let's get started with the exercise.
+

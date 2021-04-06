@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.500
+Where at the end of this lesson.
+
+00:00:01.500 --> 00:00:05.145
+I hope you gained some useful skills in feature engineering
+
+00:00:05.145 --> 00:00:09.420
+and data transformations that you can put to use right away.
+
+00:00:09.420 --> 00:00:11.580
+As a recap for this lesson,
+
+00:00:11.580 --> 00:00:13.515
+you covered three parts.
+
+00:00:13.515 --> 00:00:16.650
+First, you learnt to identify and conduct
+
+00:00:16.650 --> 00:00:20.165
+tests to determine the correct EHR data set level.
+
+00:00:20.165 --> 00:00:22.960
+You learnt to differentiate between the line,
+
+00:00:22.960 --> 00:00:25.665
+encounter and longitudinal levels.
+
+00:00:25.665 --> 00:00:29.100
+This skill will ensure that as we build our models,
+
+00:00:29.100 --> 00:00:31.410
+you're using the right data level.
+
+00:00:31.410 --> 00:00:36.795
+Next, you conducted some basic tests while splitting data like a lumberjack,
+
+00:00:36.795 --> 00:00:42.040
+preventing data leakage, which can be a major issue in EHR datasets.
+
+00:00:42.040 --> 00:00:45.470
+You also implemented some basic tests to help
+
+00:00:45.470 --> 00:00:49.595
+prevent issues when splitting data to prevent data leakage.
+
+00:00:49.595 --> 00:00:54.679
+Finally, you had some serious fun engineering features with TensorFlow.
+
+00:00:54.679 --> 00:01:00.215
+In this part, you performed ETL with the dataset API to transform datasets
+
+00:01:00.215 --> 00:01:06.380
+using the TensorFlow feature column API for both numerical and categorical features.
+
+00:01:06.380 --> 00:01:09.889
+You can now use a feature column API for transforming
+
+00:01:09.889 --> 00:01:13.595
+datasets at scale and building some unique feature types.
+
+00:01:13.595 --> 00:01:16.880
+Amazing job. The next lesson we'll be even more
+
+00:01:16.880 --> 00:01:22.050
+fun as you start building machine learning models. See you there.
+

@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.155
+You made it through data security and privacy. Great job.
+
+00:00:04.155 --> 00:00:06.870
+You now have a good understanding of what laws and
+
+00:00:06.870 --> 00:00:10.665
+regulations you may encounter when working with EHR data.
+
+00:00:10.665 --> 00:00:13.425
+Speaking of data, it's time to explore some data,
+
+00:00:13.425 --> 00:00:16.860
+having a great understanding of your data before you start working
+
+00:00:16.860 --> 00:00:20.325
+with it and building the models is extremely important.
+
+00:00:20.325 --> 00:00:24.330
+The best way to do that is with exploratory data analysis.
+
+00:00:24.330 --> 00:00:27.600
+This section might be a review for you overall,
+
+00:00:27.600 --> 00:00:30.915
+but you'll learn how to apply exploratory data analysis
+
+00:00:30.915 --> 00:00:34.575
+in the context of working with healthcare data. Let's face it.
+
+00:00:34.575 --> 00:00:36.795
+We all need practice to exploring data.
+
+00:00:36.795 --> 00:00:39.075
+So put on your safari hat,
+
+00:00:39.075 --> 00:00:40.600
+it's time to explore.
+
+00:00:40.600 --> 00:00:42.410
+Before we get started though,
+
+00:00:42.410 --> 00:00:45.440
+I just want to explain a few key abbreviations.
+
+00:00:45.440 --> 00:00:47.585
+First, as mentioned earlier,
+
+00:00:47.585 --> 00:00:51.445
+EDA is short for exploratory data analysis.
+
+00:00:51.445 --> 00:00:55.775
+Second, CRISP-DM, in case you are not familiar with,
+
+00:00:55.775 --> 00:00:59.060
+is a common framework you use for data science projects.
+
+00:00:59.060 --> 00:01:03.890
+The diagram is the visualization of the key steps in a data science project.
+
+00:01:03.890 --> 00:01:07.460
+For this section, we will be doing EDA within
+
+00:01:07.460 --> 00:01:11.135
+the context of a data understanding phase of CRISP-DM.
+
+00:01:11.135 --> 00:01:15.260
+EDA is a step in the data science process that is often overlooked for
+
+00:01:15.260 --> 00:01:20.165
+the modeling in evaluation phase that can be easier to quantify and benchmark.
+
+00:01:20.165 --> 00:01:26.150
+However, EDA is important step that can be critical for building the model correctly,
+
+00:01:26.150 --> 00:01:31.490
+and avoiding common pitfalls such as representing the data incorrectly,
+
+00:01:31.490 --> 00:01:33.735
+not filtering out null,
+
+00:01:33.735 --> 00:01:37.400
+malformed values, data leakage.
+
+00:01:37.400 --> 00:01:40.160
+This is especially the case for healthcare where you
+
+00:01:40.160 --> 00:01:42.755
+have multiple code sets that you're dealing with,
+
+00:01:42.755 --> 00:01:47.315
+as well as unique aggregation levels that are specific to healthcare.
+
+00:01:47.315 --> 00:01:50.240
+Just to reiterate why it is important to understand
+
+00:01:50.240 --> 00:01:53.060
+your data before you do a lot of work transforming data,
+
+00:01:53.060 --> 00:01:55.640
+building and evaluating features in modeling,
+
+00:01:55.640 --> 00:01:58.220
+here are just a few reasons why EDA is
+
+00:01:58.220 --> 00:02:01.525
+an important step in the life cycle of a data science project.
+
+00:02:01.525 --> 00:02:04.450
+EDA can enable you to discover features,
+
+00:02:04.450 --> 00:02:07.685
+or data transformations that might have data leakage.
+
+00:02:07.685 --> 00:02:12.710
+This can save tremendous amount of time and prevent you from building a flawed model.
+
+00:02:12.710 --> 00:02:14.950
+I can tell you that this is a more common,
+
+00:02:14.950 --> 00:02:17.230
+a real-life issue than you might expect.
+
+00:02:17.230 --> 00:02:21.980
+EDA can also help you better translate and define modeling objectives,
+
+00:02:21.980 --> 00:02:27.270
+and corresponding evaluation metrics from a machine learning and business perspective.
+
+00:02:27.270 --> 00:02:32.855
+EDA can also help inform strategies for handling missing null value data.
+
+00:02:32.855 --> 00:02:35.195
+This is a common issue that you'll encounter with
+
+00:02:35.195 --> 00:02:38.150
+EHR data that you will have missing values,
+
+00:02:38.150 --> 00:02:41.045
+and have to determine impeding strategies accordingly.
+
+00:02:41.045 --> 00:02:43.670
+We won't cover this in detail in this course,
+
+00:02:43.670 --> 00:02:46.490
+but you being aware of the assumptions for how data
+
+00:02:46.490 --> 00:02:49.745
+is prepared is especially important with EHR data,
+
+00:02:49.745 --> 00:02:51.364
+where you might have a DBA,
+
+00:02:51.364 --> 00:02:53.720
+or data engineer that might not be familiar
+
+00:02:53.720 --> 00:02:56.380
+with how you plan to use the data for machine learning.
+
+00:02:56.380 --> 00:03:00.050
+Lastly, EDA can help to identify subsets of
+
+00:03:00.050 --> 00:03:03.559
+features to utilize for feature engineering and modeling,
+
+00:03:03.559 --> 00:03:08.610
+along with appropriate feature transformations based off of type.
+

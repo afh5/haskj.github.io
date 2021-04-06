@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.295
+So what are codes sets,
+
+00:00:02.295 --> 00:00:03.915
+and why are they important?
+
+00:00:03.915 --> 00:00:06.225
+For the purposes of this course,
+
+00:00:06.225 --> 00:00:07.845
+when we refer to a code set,
+
+00:00:07.845 --> 00:00:11.490
+we are referencing an EHR data field that is linked to
+
+00:00:11.490 --> 00:00:16.095
+an accepted codes standards such as ICD-10 or CPT codes.
+
+00:00:16.095 --> 00:00:20.700
+Examples of important code sets are diagnosis codes and procedure codes.
+
+00:00:20.700 --> 00:00:23.100
+We'll go over these in more detail later.
+
+00:00:23.100 --> 00:00:25.110
+So why do we need code sets?
+
+00:00:25.110 --> 00:00:28.730
+There are many different providers in EHR systems around the world,
+
+00:00:28.730 --> 00:00:32.720
+and there needs to be a standard way to encode common diagnoses,
+
+00:00:32.720 --> 00:00:36.950
+medications, procedures, and lab tests around the world.
+
+00:00:36.950 --> 00:00:39.080
+In this lesson, we'll focus on some of
+
+00:00:39.080 --> 00:00:44.285
+the most common code sets to allow for some of the most high value analysis.
+
+00:00:44.285 --> 00:00:50.090
+Before we delve into more details about some of the key healthcare industry code sets,
+
+00:00:50.090 --> 00:00:53.675
+I want to provide some context on the medical encounter.
+
+00:00:53.675 --> 00:00:59.210
+First, it is important to note that medical records often go through a process from
+
+00:00:59.210 --> 00:01:00.590
+a written note or
+
+00:01:00.590 --> 00:01:05.570
+some other unstructured input to a structured medical code that is standardized,
+
+00:01:05.570 --> 00:01:07.195
+but can be very specific.
+
+00:01:07.195 --> 00:01:11.770
+There's a whole industry of medical coders that take this unstructured information,
+
+00:01:11.770 --> 00:01:16.555
+encode it to medical standards and into EHR records.
+
+00:01:16.555 --> 00:01:21.025
+Second, another piece of information that is relevant to industry codes
+
+00:01:21.025 --> 00:01:25.795
+is whether the encounter incurred in an inpatient or outpatient setting.
+
+00:01:25.795 --> 00:01:29.210
+Inpatient usually refers to hospitalization,
+
+00:01:29.210 --> 00:01:32.800
+and outpatient refers to visits and encounters like with
+
+00:01:32.800 --> 00:01:36.490
+your primary care physician or specialists like a cardiologist,
+
+00:01:36.490 --> 00:01:39.625
+but do not require hospitalization.
+
+00:01:39.625 --> 00:01:43.285
+Outpatient can also refer to ambulatory care.
+
+00:01:43.285 --> 00:01:46.479
+There are some more specific details about this,
+
+00:01:46.479 --> 00:01:48.160
+but for the scope of this course,
+
+00:01:48.160 --> 00:01:51.530
+we will focus on the higher level general definition.
+
+00:01:51.530 --> 00:01:56.420
+With that being said, it's important to work with subject matter experts who know
+
+00:01:56.420 --> 00:01:58.130
+the domain and processes at
+
+00:01:58.130 --> 00:02:02.560
+a much deeper level because of operational or domain experience.
+
+00:02:02.560 --> 00:02:06.620
+There are a lot of intricacies and details in healthcare that require you
+
+00:02:06.620 --> 00:02:10.865
+to work deeply with SMEs to understand the context better.
+
+00:02:10.865 --> 00:02:14.630
+That being said, you should feel empowered to bring the technology in
+
+00:02:14.630 --> 00:02:19.980
+AI perspective to the table and rethink legacy processes as well.
+

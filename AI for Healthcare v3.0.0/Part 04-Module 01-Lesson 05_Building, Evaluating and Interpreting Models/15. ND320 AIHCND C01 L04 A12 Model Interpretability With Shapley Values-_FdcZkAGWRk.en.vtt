@@ -1,0 +1,331 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.045
+Finally, it's the last part of this lesson
+
+00:00:03.045 --> 00:00:06.600
+before we send you on your way to create your final project.
+
+00:00:06.600 --> 00:00:08.505
+After completing this section,
+
+00:00:08.505 --> 00:00:11.220
+you will interpret models with Shapley values,
+
+00:00:11.220 --> 00:00:13.890
+like it's your job, hopefully it will be.
+
+00:00:13.890 --> 00:00:16.995
+So why is model interpretability important?
+
+00:00:16.995 --> 00:00:20.340
+In general, as you would find for other industries.
+
+00:00:20.340 --> 00:00:24.000
+You would also want to be aware of biases in your model from
+
+00:00:24.000 --> 00:00:29.610
+key features and also be able to identify bugs or issues that might occur.
+
+00:00:29.610 --> 00:00:34.065
+For example, you might diagnose issues with your model where a feature like
+
+00:00:34.065 --> 00:00:39.000
+inpatient versus outpatient might have a greater weight than expected.
+
+00:00:39.000 --> 00:00:42.475
+This could be due to the nature of a type of problem you're dealing with.
+
+00:00:42.475 --> 00:00:43.780
+Because as we learned,
+
+00:00:43.780 --> 00:00:48.700
+there are major distinctions with how inpatient and outpatient claims are handled.
+
+00:00:48.700 --> 00:00:51.365
+So model interpretability is an issue that is
+
+00:00:51.365 --> 00:00:54.620
+often brought up as being important in fields like health care,
+
+00:00:54.620 --> 00:00:58.310
+because of the level of scrutiny on main decisions by regulators,
+
+00:00:58.310 --> 00:01:00.635
+the public in the healthcare community.
+
+00:01:00.635 --> 00:01:03.710
+Understandably, people want to understand how
+
+00:01:03.710 --> 00:01:07.080
+key decisions that can impact lives are made.
+
+00:01:07.080 --> 00:01:12.155
+This is where practitioners tend to use simpler models like linear models,
+
+00:01:12.155 --> 00:01:14.300
+because they are easier to interpret.
+
+00:01:14.300 --> 00:01:17.735
+They want to avoid the proverbial black box model.
+
+00:01:17.735 --> 00:01:21.890
+However, these simpler models might lack the complexity to handle
+
+00:01:21.890 --> 00:01:25.010
+more sophisticated cases that can have a bigger impact on
+
+00:01:25.010 --> 00:01:28.415
+society that Deep Learning models can potentially handle.
+
+00:01:28.415 --> 00:01:31.670
+Which brings up a few methods we can use for
+
+00:01:31.670 --> 00:01:35.660
+interpreting Deep Learning models that are also model agnostic.
+
+00:01:35.660 --> 00:01:39.800
+So they can be used on Deep Learning models or traditional ML models,
+
+00:01:39.800 --> 00:01:41.635
+if you want to use to compare.
+
+00:01:41.635 --> 00:01:46.805
+For this course, I will just focus on walking you through Shapley values,
+
+00:01:46.805 --> 00:01:48.740
+but I want to make you aware of
+
+00:01:48.740 --> 00:01:52.930
+another method that you might want to explore more further on your own.
+
+00:01:52.930 --> 00:01:57.860
+Lime or local interpretable model agnostic explanations
+
+00:01:57.860 --> 00:02:00.335
+can be good where you have large datasets,
+
+00:02:00.335 --> 00:02:02.810
+but it can be challenging to find the right kernel
+
+00:02:02.810 --> 00:02:05.960
+and be subject to unstable interpretations.
+
+00:02:05.960 --> 00:02:11.420
+On the other hand, Shapley values can be computationally expensive to compute.
+
+00:02:11.420 --> 00:02:14.045
+So there's really no perfect method.
+
+00:02:14.045 --> 00:02:17.920
+So Shapley values are based of game theory,
+
+00:02:17.920 --> 00:02:22.700
+and is really just providing the marginal contributions of features by taking
+
+00:02:22.700 --> 00:02:24.935
+the permutations of different features
+
+00:02:24.935 --> 00:02:28.220
+and then the differences between the prediction output.
+
+00:02:28.220 --> 00:02:31.535
+Now that we went over a little about Shapley values,
+
+00:02:31.535 --> 00:02:33.740
+let's go over how to actually use them.
+
+00:02:33.740 --> 00:02:37.580
+There is an open source package that we will use for visualizations in
+
+00:02:37.580 --> 00:02:42.560
+analysis that came out of University of Washington and Microsoft Research.
+
+00:02:42.560 --> 00:02:45.450
+For this walk-through, we'll again use the miles per
+
+00:02:45.450 --> 00:02:48.320
+gallon dataset but we need to retrain it without
+
+00:02:48.320 --> 00:02:51.020
+dense features because of some issues getting
+
+00:02:51.020 --> 00:02:54.545
+the features to be interpreted with the Shapley package.
+
+00:02:54.545 --> 00:02:56.420
+So this should look pretty familiar,
+
+00:02:56.420 --> 00:03:00.995
+except we don't have a dense features and we're training a model again.
+
+00:03:00.995 --> 00:03:03.230
+This is not an optimized model,
+
+00:03:03.230 --> 00:03:06.880
+just to illustrate the end-to-end process.
+
+00:03:06.880 --> 00:03:08.765
+As we mentioned earlier,
+
+00:03:08.765 --> 00:03:12.290
+the issue with Shapley can be the computation time and
+
+00:03:12.290 --> 00:03:16.180
+a way to reduce this is to use k-means on the features.
+
+00:03:16.180 --> 00:03:19.940
+So we can use the Shapley package function and arbitrarily
+
+00:03:19.940 --> 00:03:24.265
+use 25 clusters to create a condensed representation of our data.
+
+00:03:24.265 --> 00:03:28.640
+Then use the model agnostic kernel explainer class
+
+00:03:28.640 --> 00:03:31.685
+to build the Shapley values and extract them.
+
+00:03:31.685 --> 00:03:33.795
+So here we're extracting them,
+
+00:03:33.795 --> 00:03:35.180
+and I've already done this,
+
+00:03:35.180 --> 00:03:37.370
+but this takes a little bit of time and depending on
+
+00:03:37.370 --> 00:03:40.105
+the size of your data and complexity of it.
+
+00:03:40.105 --> 00:03:43.925
+Then you can visualize the importance of different features.
+
+00:03:43.925 --> 00:03:49.240
+First, let's look at the overview of important features in this visual.
+
+00:03:49.240 --> 00:03:55.015
+The sorted order of features gives the relative importance ranking of features.
+
+00:03:55.015 --> 00:03:56.380
+So on our case,
+
+00:03:56.380 --> 00:03:59.210
+model year is the most important feature.
+
+00:03:59.210 --> 00:04:04.705
+This shouldn't be surprising considering miles per gallon standards increase each year.
+
+00:04:04.705 --> 00:04:10.400
+The y-axis shows the feature importance scale from top to bottom.
+
+00:04:10.400 --> 00:04:12.725
+Then on the x-axis,
+
+00:04:12.725 --> 00:04:16.360
+you can see the Shapley values impact on model output.
+
+00:04:16.360 --> 00:04:18.865
+Feature values are either red,
+
+00:04:18.865 --> 00:04:21.490
+which stands for high values,
+
+00:04:21.490 --> 00:04:24.849
+or blue, which stands for low values.
+
+00:04:24.849 --> 00:04:28.325
+So for example, again model year,
+
+00:04:28.325 --> 00:04:33.110
+the red values are showing positive impact on the model output,
+
+00:04:33.110 --> 00:04:36.485
+which in this case, higher model year values
+
+00:04:36.485 --> 00:04:40.129
+yield higher miles per gallon value output predictions.
+
+00:04:40.129 --> 00:04:48.760
+Conversely, for horsepower, the blue values are showing negative impact on model output.
+
+00:04:48.760 --> 00:04:50.940
+This makes sense when you think about it.
+
+00:04:50.940 --> 00:04:55.820
+Higher amounts of horsepower reduce the miles per gallon.
+
+00:04:55.820 --> 00:05:00.845
+Next, we will look at a single point in this visualization.
+
+00:05:00.845 --> 00:05:05.930
+This shows five features changing the base value towards zero.
+
+00:05:05.930 --> 00:05:10.595
+The base value is the average model output over the training dataset.
+
+00:05:10.595 --> 00:05:14.510
+The features in red, displacement, horsepower,
+
+00:05:14.510 --> 00:05:18.260
+and weight are pushing the label to a higher value,
+
+00:05:18.260 --> 00:05:20.920
+whereas model year and cylinders,
+
+00:05:20.920 --> 00:05:24.260
+in this case, are pushing to a lower value.
+
+00:05:24.260 --> 00:05:30.095
+Lastly, let's take the last visual and expand it to a sample of 10 data points.
+
+00:05:30.095 --> 00:05:33.410
+Hopefully this better illustrates how certain features are
+
+00:05:33.410 --> 00:05:39.050
+pushing the value up or down relative to a base value.
+
+00:05:39.050 --> 00:05:42.905
+So in this case you can see horsepower, displacement, weight,
+
+00:05:42.905 --> 00:05:47.680
+model year are pushing the value down whereas the cylinders are pushing it up.
+
+00:05:47.680 --> 00:05:50.020
+It can vary across the different data points.
+
+00:05:50.020 --> 00:05:54.590
+But just to illustrate how this can be different depending on which data point.
+
+00:05:54.590 --> 00:06:00.065
+This all rolls up into this aggregation across all the data points.
+
+00:06:00.065 --> 00:06:05.000
+So now that we went over how to use Shapley values to interpret features for a model,
+
+00:06:05.000 --> 00:06:06.910
+I hope you can explore this package further.
+
+00:06:06.910 --> 00:06:11.465
+There's a lot of different cool features that you can use and most importantly,
+
+00:06:11.465 --> 00:06:15.740
+this can really help you understand different areas that you can improve your model,
+
+00:06:15.740 --> 00:06:18.125
+different areas that your model might be dependent on
+
+00:06:18.125 --> 00:06:21.055
+and explain this to key stakeholders.
+
+00:06:21.055 --> 00:06:24.650
+Great, now that you've gone through interpreting some features
+
+00:06:24.650 --> 00:06:28.400
+for your model and viewed how your model is performing,
+
+00:06:28.400 --> 00:06:32.130
+you should build implement this on your own model too.
+

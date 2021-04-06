@@ -1,0 +1,217 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.480
+All right. So you made it through the first code exercise.
+
+00:00:03.480 --> 00:00:06.570
+I hope going through this exercise made you think of some of
+
+00:00:06.570 --> 00:00:11.130
+the key steps that you would take when exploring a healthcare dataset.
+
+00:00:11.130 --> 00:00:16.335
+Making sure that you analyze the dataset well can reduce major errors later.
+
+00:00:16.335 --> 00:00:19.500
+Let's take a look at the solution in the notebook.
+
+00:00:19.500 --> 00:00:23.385
+For this exercise, there are five parts that we covered.
+
+00:00:23.385 --> 00:00:25.215
+We will go over first,
+
+00:00:25.215 --> 00:00:27.315
+the data schema analysis question.
+
+00:00:27.315 --> 00:00:29.280
+But before we do that,
+
+00:00:29.280 --> 00:00:31.395
+let's look at the ETL.
+
+00:00:31.395 --> 00:00:36.300
+For the ETL, I just loaded up the dataset and did a little bit of cleaning for you,
+
+00:00:36.300 --> 00:00:39.220
+and now we have a dataset ready to analyze.
+
+00:00:39.220 --> 00:00:42.995
+So let's now move to the data schema analysis question.
+
+00:00:42.995 --> 00:00:45.050
+So first, we will go over
+
+00:00:45.050 --> 00:00:49.565
+the data schema analysis question on what features may be numerical.
+
+00:00:49.565 --> 00:00:51.950
+For this exercise, as I mentioned,
+
+00:00:51.950 --> 00:00:54.695
+we'll use the UCI heart disease dataset.
+
+00:00:54.695 --> 00:00:59.125
+However, we will use a different dataset with the same schema.
+
+00:00:59.125 --> 00:01:01.160
+Based off the schema provided,
+
+00:01:01.160 --> 00:01:03.875
+what are likely to be numerical features?
+
+00:01:03.875 --> 00:01:06.245
+So I took a look at the schema,
+
+00:01:06.245 --> 00:01:08.945
+and here are the features that I came up with.
+
+00:01:08.945 --> 00:01:13.295
+I chose these features because they are non-discrete values,
+
+00:01:13.295 --> 00:01:15.200
+and they had an ordinal sequence.
+
+00:01:15.200 --> 00:01:19.870
+However, there could be multiple interpretations for certain features as well.
+
+00:01:19.870 --> 00:01:26.585
+Next, I wanted you to provide the number of missing/zero values for each field.
+
+00:01:26.585 --> 00:01:28.100
+As we learned in the lesson,
+
+00:01:28.100 --> 00:01:32.225
+knowing this information can help inform our imputation strategy,
+
+00:01:32.225 --> 00:01:37.385
+where we may decide to remove a row or impute with a statistical value like mean,
+
+00:01:37.385 --> 00:01:41.955
+median, or mode, or even have a zero or dummy value.
+
+00:01:41.955 --> 00:01:47.420
+We're going to start to do some EDA and do some basic profile of a dataset.
+
+00:01:47.420 --> 00:01:48.575
+So for this task,
+
+00:01:48.575 --> 00:01:52.130
+I counted the null values and zero values for each column.
+
+00:01:52.130 --> 00:01:55.120
+You can see the output table below.
+
+00:01:55.120 --> 00:01:56.745
+Notice in this case,
+
+00:01:56.745 --> 00:02:00.295
+that the chol field has all zeros.
+
+00:02:00.295 --> 00:02:02.760
+Why is this the case?
+
+00:02:02.760 --> 00:02:06.430
+A possibility is that the chol field might be
+
+00:02:06.430 --> 00:02:10.690
+all zeros because of how this value was imputed for null values.
+
+00:02:10.690 --> 00:02:15.375
+This is good information to surface and explore further later with your team.
+
+00:02:15.375 --> 00:02:17.875
+Maybe this could be a data pipeline issue,
+
+00:02:17.875 --> 00:02:21.249
+or this field might just have all null values.
+
+00:02:21.249 --> 00:02:25.015
+Next, let's go to the value distribution part.
+
+00:02:25.015 --> 00:02:26.890
+For the cp field,
+
+00:02:26.890 --> 00:02:32.155
+you can see the histogram visualization that I provided using the seaborne library.
+
+00:02:32.155 --> 00:02:34.690
+Feel free though to use Pandas in
+
+00:02:34.690 --> 00:02:38.440
+the plot function like I did in the lesson video if you prefer.
+
+00:02:38.440 --> 00:02:40.015
+For the next part,
+
+00:02:40.015 --> 00:02:42.220
+I visualized the old peak field,
+
+00:02:42.220 --> 00:02:45.500
+and you can see that it has a normal distribution.
+
+00:02:45.500 --> 00:02:49.195
+Now let's move on to the outlier analysis part.
+
+00:02:49.195 --> 00:02:53.410
+One possible feature that you could pick with outliers using
+
+00:02:53.410 --> 00:02:58.415
+the IQR in box plot visualization is the age feature.
+
+00:02:58.415 --> 00:03:02.500
+You can see these outliers tend to be at the bottom of the age range.
+
+00:03:02.500 --> 00:03:05.185
+This makes intuitive sense when you think about
+
+00:03:05.185 --> 00:03:08.380
+the age range of most heart disease patients.
+
+00:03:08.380 --> 00:03:12.850
+However, taking the next step of possibly removing outliers,
+
+00:03:12.850 --> 00:03:18.040
+will require further analysis since there may be some other issues you may discover.
+
+00:03:18.040 --> 00:03:23.245
+Finally, let's move on to the last part where we analyze for high cardinality.
+
+00:03:23.245 --> 00:03:28.275
+I've provided some code where I added diagnosis code field to the dataset.
+
+00:03:28.275 --> 00:03:32.990
+First, I need to identify which fields are categorical features though.
+
+00:03:32.990 --> 00:03:35.645
+You can see this list that I provided.
+
+00:03:35.645 --> 00:03:39.170
+These are mostly discrete values and opposite of
+
+00:03:39.170 --> 00:03:43.160
+the non-discrete values that I mentioned earlier for numerical features.
+
+00:03:43.160 --> 00:03:45.260
+So using the code that I provided,
+
+00:03:45.260 --> 00:03:50.510
+you can see the list below and the output table of cardinality for each feature.
+
+00:03:50.510 --> 00:03:53.790
+Which feature has high cardinality in this dataset?
+
+00:03:53.790 --> 00:03:59.375
+It should be pretty obvious that the principle diagnosis code field has high cardinality.
+
+00:03:59.375 --> 00:04:02.570
+Identifying high cardinality fields will be important
+
+00:04:02.570 --> 00:04:06.755
+later when we look at ways to reduce dimensionality through grouping.
+
+00:04:06.755 --> 00:04:09.750
+Great job with this analysis.
+

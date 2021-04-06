@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.400
+For this exercise, you are asked to convert the dataset to longitudinal level,
+
+00:00:05.400 --> 00:00:08.430
+but only select the last encounter for each patient.
+
+00:00:08.430 --> 00:00:10.320
+We were given a dataset,
+
+00:00:10.320 --> 00:00:13.605
+but we need to determine the level before transforming it.
+
+00:00:13.605 --> 00:00:15.600
+For determining the level,
+
+00:00:15.600 --> 00:00:20.220
+I need to determine if the dataset is at the line or encounter level.
+
+00:00:20.220 --> 00:00:22.274
+From looking at the sample,
+
+00:00:22.274 --> 00:00:24.765
+it seems like it's at the encounter level.
+
+00:00:24.765 --> 00:00:28.140
+However to confirm, I just want to run a few test.
+
+00:00:28.140 --> 00:00:30.030
+I've run two tests.
+
+00:00:30.030 --> 00:00:32.070
+For line, I check if total number of
+
+00:00:32.070 --> 00:00:36.059
+rows is greater than the number of unique encounters.
+
+00:00:36.059 --> 00:00:37.605
+For the encounter level,
+
+00:00:37.605 --> 00:00:42.144
+I check if the total number of rows is equal to the number of unique encounters.
+
+00:00:42.144 --> 00:00:47.465
+These tests confirm my initial assumption that it is at the encounter level.
+
+00:00:47.465 --> 00:00:52.025
+So here is where I implement these tests and as you can see,
+
+00:00:52.025 --> 00:00:53.975
+my assumption was correct,
+
+00:00:53.975 --> 00:00:56.645
+the dataset is at the encounter level.
+
+00:00:56.645 --> 00:01:00.425
+So now let's move on to the actual data transformation part.
+
+00:01:00.425 --> 00:01:03.770
+In many cases, you may only want a snapshot of
+
+00:01:03.770 --> 00:01:08.015
+a patient's history for your model and objective and in this case,
+
+00:01:08.015 --> 00:01:11.180
+we only want the last encounter for each patient.
+
+00:01:11.180 --> 00:01:14.690
+Please note that the encounter ID numbers are in order.
+
+00:01:14.690 --> 00:01:18.650
+So that's a piece of info that helps us to order the encounters.
+
+00:01:18.650 --> 00:01:21.199
+So if we look here at these two functions,
+
+00:01:21.199 --> 00:01:25.640
+the first function converts the encounter ID to a number,
+
+00:01:25.640 --> 00:01:27.470
+as the name implies.
+
+00:01:27.470 --> 00:01:30.740
+It just takes a string ID and pulls the number from
+
+00:01:30.740 --> 00:01:34.445
+it so we can use it to order the encounters for each patient.
+
+00:01:34.445 --> 00:01:37.940
+The second function first sorts the values by
+
+00:01:37.940 --> 00:01:43.795
+this newly created field and then groups and selects the last value.
+
+00:01:43.795 --> 00:01:45.725
+For the final step,
+
+00:01:45.725 --> 00:01:47.990
+I wanted to do some validation with
+
+00:01:47.990 --> 00:01:51.965
+some test cases and we'll move to that step in a moment,
+
+00:01:51.965 --> 00:01:56.150
+but here is the actual transformation and then here is a subset
+
+00:01:56.150 --> 00:02:00.620
+of just a few fields to test my transformation.
+
+00:02:00.620 --> 00:02:06.785
+For testing, I take three test cases and check if the last encounter is selected.
+
+00:02:06.785 --> 00:02:08.990
+So just to go over one example,
+
+00:02:08.990 --> 00:02:14.730
+I took patient 418 here and if you scroll through the possible encounters,
+
+00:02:14.730 --> 00:02:16.785
+there are just three encounters.
+
+00:02:16.785 --> 00:02:23.330
+You can see that 3362 is the highest number encounter and what you
+
+00:02:23.330 --> 00:02:24.860
+would expect to be selected in
+
+00:02:24.860 --> 00:02:29.765
+the transform dataset and then if you take our transformed data set,
+
+00:02:29.765 --> 00:02:31.910
+you can see that this was selected.
+
+00:02:31.910 --> 00:02:35.135
+So if we put patient ID 418,
+
+00:02:35.135 --> 00:02:41.050
+you can see that the only encounter you see in the transform dataset is 3362.
+
+00:02:41.050 --> 00:02:44.000
+Hopefully this illustrates the importance of having
+
+00:02:44.000 --> 00:02:46.790
+some test cases and validating your work.
+
+00:02:46.790 --> 00:02:49.400
+People make mistakes and it's good to have checks and
+
+00:02:49.400 --> 00:02:52.810
+balances to make sure that the data is transformed right.
+
+00:02:52.810 --> 00:02:55.099
+Now that you have done this exercise,
+
+00:02:55.099 --> 00:02:57.050
+you should feel comfortable transforming
+
+00:02:57.050 --> 00:03:00.440
+a dataset from the line level to the encounter level,
+
+00:03:00.440 --> 00:03:05.610
+and also from the encounter level to the longitudinal level.
+

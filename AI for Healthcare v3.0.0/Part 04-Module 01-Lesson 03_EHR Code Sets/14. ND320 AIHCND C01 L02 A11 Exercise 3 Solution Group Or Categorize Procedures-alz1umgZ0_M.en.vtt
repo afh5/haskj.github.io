@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.770
+All right. You are almost done this section and you're probably a pro with code sets now.
+
+00:00:04.770 --> 00:00:07.815
+After working through some of the challenge with grouping,
+
+00:00:07.815 --> 00:00:11.835
+you can see why a categorization system like CCS exists.
+
+00:00:11.835 --> 00:00:15.480
+In this exercise, we took the CCS mapping for
+
+00:00:15.480 --> 00:00:18.840
+ICD-10-PCS codes and grouped them into
+
+00:00:18.840 --> 00:00:22.275
+higher-level CCS categories and looked for the term,
+
+00:00:22.275 --> 00:00:26.820
+coronary, and the description of the CCS category description.
+
+00:00:26.820 --> 00:00:32.370
+For the answer to the first part is category 45 and 47.
+
+00:00:32.370 --> 00:00:38.040
+We use a string dot contains method to find rows that contain coronary.
+
+00:00:38.040 --> 00:00:42.295
+This should be a review of what you did earlier in previous exercises.
+
+00:00:42.295 --> 00:00:43.835
+So for the second part,
+
+00:00:43.835 --> 00:00:46.580
+we compared the groupings for the first three characters in
+
+00:00:46.580 --> 00:00:49.970
+Exercise 2 with what CCS provides.
+
+00:00:49.970 --> 00:00:53.690
+Here's what we were given from Exercise 2.
+
+00:00:53.690 --> 00:00:56.390
+These are the possible three character combinations
+
+00:00:56.390 --> 00:00:58.855
+from the results that we had done earlier.
+
+00:00:58.855 --> 00:01:02.840
+You can see that there are a couple of combinations that we have in
+
+00:01:02.840 --> 00:01:07.235
+common with Exercise 3 results and Exercise 2.
+
+00:01:07.235 --> 00:01:11.845
+This is just taking the intersection between these two sets.
+
+00:01:11.845 --> 00:01:16.745
+Then if we take a look at these two grouping possibilities,
+
+00:01:16.745 --> 00:01:19.575
+what they look like here. Great job.
+
+00:01:19.575 --> 00:01:20.860
+You made it through this Exercise.
+
+00:01:20.860 --> 00:01:24.365
+There is a lot to learn and lots more to learn as well.
+
+00:01:24.365 --> 00:01:26.840
+Hopefully this gives you some good skills to work with
+
+00:01:26.840 --> 00:01:30.480
+code sets and a foundation to learn more.
+

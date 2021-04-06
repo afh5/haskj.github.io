@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.015
+Now that you have built a model and evaluate it,
+
+00:00:03.015 --> 00:00:07.080
+it's time to conduct a demographic bias analysis.
+
+00:00:07.080 --> 00:00:09.960
+This is very important in health care as we need to
+
+00:00:09.960 --> 00:00:13.049
+ensure a model is not only accurate and precise,
+
+00:00:13.049 --> 00:00:14.985
+but unbiased as well.
+
+00:00:14.985 --> 00:00:20.640
+You will be able to use Aequitas to address group bias in fairness disparity.
+
+00:00:20.640 --> 00:00:24.135
+So why is bias in models important to consider?
+
+00:00:24.135 --> 00:00:28.650
+I want to bring up a few reasons to consider assessing bias for models.
+
+00:00:28.650 --> 00:00:33.480
+It's important to know that buys with models can also restrict or limit
+
+00:00:33.480 --> 00:00:38.205
+access to key medical benefits from government aid programs.
+
+00:00:38.205 --> 00:00:42.050
+Examples of programs using AI algorithms to help
+
+00:00:42.050 --> 00:00:47.425
+automate approvals of key government benefits is becoming more and more commonplace.
+
+00:00:47.425 --> 00:00:50.810
+Another reason that you want to consider bias in models
+
+00:00:50.810 --> 00:00:54.125
+is that in order to create better treatments for patients,
+
+00:00:54.125 --> 00:00:57.620
+we need to find better ways to select and recruit
+
+00:00:57.620 --> 00:01:03.135
+patients that represent the wider population that a drug would be targeted for.
+
+00:01:03.135 --> 00:01:08.180
+In many cases, there may be systemic biases for key groups.
+
+00:01:08.180 --> 00:01:10.490
+While this can not always be prevented,
+
+00:01:10.490 --> 00:01:14.180
+bringing awareness of limitations and biases can give
+
+00:01:14.180 --> 00:01:19.505
+a more accurate picture of a treatments effectiveness across different demographics.
+
+00:01:19.505 --> 00:01:22.100
+In this example, we can see that
+
+00:01:22.100 --> 00:01:26.420
+the purple parallelogram is representative of the population,
+
+00:01:26.420 --> 00:01:32.230
+but the blue circles and triangles are not and both are over represented in the trial.
+
+00:01:32.230 --> 00:01:35.705
+We usually associate bias with a negative connotation.
+
+00:01:35.705 --> 00:01:38.495
+But biases, as we have learned with our models,
+
+00:01:38.495 --> 00:01:41.560
+can be a source of valuable prior information.
+
+00:01:41.560 --> 00:01:46.490
+The problem can be when we are not aware of our biases and do not account for
+
+00:01:46.490 --> 00:01:52.115
+key ones that have significant impact on the populations these models serve.
+
+00:01:52.115 --> 00:01:57.200
+The word unintended biases is a term that we will introduce to represent
+
+00:01:57.200 --> 00:01:59.945
+the unconscious or unintentional biases
+
+00:01:59.945 --> 00:02:02.960
+that come with the AI models that we are building.
+
+00:02:02.960 --> 00:02:08.030
+Becoming more aware of these biases and how they impact different groups is key.
+
+00:02:08.030 --> 00:02:12.200
+So a project that I want to introduce you to that is working to
+
+00:02:12.200 --> 00:02:16.295
+address these unintended biases is a project called Aequitas,
+
+00:02:16.295 --> 00:02:22.175
+that's being developed by University of Chicago's Data Science for Social Good group,
+
+00:02:22.175 --> 00:02:28.010
+to address concerns about unintended bias unfairly affecting certain groups.
+
+00:02:28.010 --> 00:02:31.160
+They developed this framework to start the discussion on
+
+00:02:31.160 --> 00:02:35.525
+definitions and metrics to consider when building predictive models.
+
+00:02:35.525 --> 00:02:42.000
+We will go over more details on how to actually use this framework soon.
+

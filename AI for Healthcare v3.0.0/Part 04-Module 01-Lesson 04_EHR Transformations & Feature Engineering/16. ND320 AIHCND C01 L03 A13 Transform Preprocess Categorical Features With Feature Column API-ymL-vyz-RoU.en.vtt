@@ -1,0 +1,193 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.610
+So now that we went over how to use
+
+00:00:02.610 --> 00:00:06.495
+the TensorFlow feature column API for numeric features,
+
+00:00:06.495 --> 00:00:09.660
+let's use it for categorical features as well.
+
+00:00:09.660 --> 00:00:11.175
+In this walk through,
+
+00:00:11.175 --> 00:00:15.540
+I will go over the following steps for creating a categorical feature with
+
+00:00:15.540 --> 00:00:21.495
+a pattern that is hopefully similar to what you have done before with other libraries.
+
+00:00:21.495 --> 00:00:27.615
+First, I will create a vocab file with unique values for each field.
+
+00:00:27.615 --> 00:00:29.400
+Next, I will use
+
+00:00:29.400 --> 00:00:35.025
+the TensorFlow feature column API function that reads from vocabulary files.
+
+00:00:35.025 --> 00:00:37.440
+I believe this pattern might be best for
+
+00:00:37.440 --> 00:00:41.505
+those cases where you have large number of unique values,
+
+00:00:41.505 --> 00:00:44.045
+and you can also decouple it and use
+
+00:00:44.045 --> 00:00:48.935
+other tools for vocab file generation like SQL as well.
+
+00:00:48.935 --> 00:00:51.140
+Lastly, I will use
+
+00:00:51.140 --> 00:00:55.475
+the previous feature column function to create a one-hot encoded feature.
+
+00:00:55.475 --> 00:00:58.610
+There are other options for creating other feature types,
+
+00:00:58.610 --> 00:01:01.040
+but we will go over this for now.
+
+00:01:01.040 --> 00:01:02.685
+For this walk through,
+
+00:01:02.685 --> 00:01:07.720
+we start with encounter level of synthetic dataset that we created earlier.
+
+00:01:07.720 --> 00:01:09.590
+Before we can use the dataset,
+
+00:01:09.590 --> 00:01:13.430
+I select only the categorical feature that we will use,
+
+00:01:13.430 --> 00:01:16.730
+the principle diagnosis code and a label field,
+
+00:01:16.730 --> 00:01:21.770
+which I need to transform from an array format to a scalar value here.
+
+00:01:21.770 --> 00:01:23.300
+So here we can see
+
+00:01:23.300 --> 00:01:29.590
+this new transformed dataset where I transformed a label array to a scalar value.
+
+00:01:29.590 --> 00:01:31.535
+Before we convert this dataset,
+
+00:01:31.535 --> 00:01:35.990
+I want to know that this field has a high degree of cardinality.
+
+00:01:35.990 --> 00:01:40.230
+You can see 6,752 unique values,
+
+00:01:40.230 --> 00:01:43.070
+and this is why we will use this approach to read
+
+00:01:43.070 --> 00:01:47.540
+vocab values from a vocab file instead of from in memory.
+
+00:01:47.540 --> 00:01:49.235
+For the first block,
+
+00:01:49.235 --> 00:01:52.145
+we just create a vocab directory.
+
+00:01:52.145 --> 00:01:54.950
+Then I provided two functions to assist you
+
+00:01:54.950 --> 00:01:58.325
+with creating vocabulary files in that directory.
+
+00:01:58.325 --> 00:02:03.305
+You can see I use those in this block to create the actual vocab file.
+
+00:02:03.305 --> 00:02:05.795
+Here is what the text file looks like.
+
+00:02:05.795 --> 00:02:10.685
+Notice that the first row is for the outer vocabulary value placeholder.
+
+00:02:10.685 --> 00:02:16.385
+The way the vocab is built out is to have a different unique value for each row,
+
+00:02:16.385 --> 00:02:19.330
+and the index of each row is the key.
+
+00:02:19.330 --> 00:02:22.475
+Now that you've seen how we built the vocab files,
+
+00:02:22.475 --> 00:02:27.865
+we are ready to actually build the TensorFlow dataset from the Pandas DataFrame.
+
+00:02:27.865 --> 00:02:31.550
+This should be a review from what we learned earlier on how to
+
+00:02:31.550 --> 00:02:35.270
+convert a Pandas DataFrame to a TensorFlow dataset.
+
+00:02:35.270 --> 00:02:38.120
+So I won't go into more detail about this.
+
+00:02:38.120 --> 00:02:41.570
+Now we're ready to use the TensorFlow feature column,
+
+00:02:41.570 --> 00:02:45.035
+categorical column from the vocab file function.
+
+00:02:45.035 --> 00:02:48.620
+Here's the path for that vocab file we just created.
+
+00:02:48.620 --> 00:02:53.675
+We can use that column with this TensorFlow feature column function here
+
+00:02:53.675 --> 00:02:59.330
+that takes the vocab file and prepares it for being used as a categorical feature.
+
+00:02:59.330 --> 00:03:01.550
+You can see you can put the key,
+
+00:03:01.550 --> 00:03:03.470
+which is just the name of a field,
+
+00:03:03.470 --> 00:03:05.915
+and that vocab file location,
+
+00:03:05.915 --> 00:03:11.045
+as well as adding optional fields such as the number of vocabulary buckets.
+
+00:03:11.045 --> 00:03:14.690
+Now we are ready to move to the last part where you can take
+
+00:03:14.690 --> 00:03:16.670
+the vocabulary feature that we just
+
+00:03:16.670 --> 00:03:20.365
+created and use that for the one-hot encoding feature.
+
+00:03:20.365 --> 00:03:26.225
+The TensorFlow feature column API calls one-hot encoding an indicator column.
+
+00:03:26.225 --> 00:03:30.050
+We can pass the vocab feature we just created to this.
+
+00:03:30.050 --> 00:03:36.245
+Next, we can take a batch and use the demo function again to check the output.
+
+00:03:36.245 --> 00:03:40.565
+As you can see, the output are vectors of 0, 1 arrays,
+
+00:03:40.565 --> 00:03:45.310
+with the one being where the value is across a large number of unique values.
+
+00:03:45.310 --> 00:03:49.535
+Hopefully, this was not too difficult and gives you the skills to handle building
+
+00:03:49.535 --> 00:03:55.170
+other types of categorical features from vocab files that you create.
+

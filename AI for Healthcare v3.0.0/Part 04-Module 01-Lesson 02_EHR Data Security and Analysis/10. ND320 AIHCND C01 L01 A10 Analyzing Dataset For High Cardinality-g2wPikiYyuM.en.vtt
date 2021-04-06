@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.170
+Let's move on to analyzing datasets for high cardinality.
+
+00:00:04.170 --> 00:00:07.185
+How do we define a field with high cardinality?
+
+00:00:07.185 --> 00:00:11.470
+First, we must determine if it is a categorical feature.
+
+00:00:11.470 --> 00:00:16.830
+Next, we need to determine if it has a high number of unique values.
+
+00:00:16.830 --> 00:00:18.494
+This is a bit subjective,
+
+00:00:18.494 --> 00:00:22.380
+but we can probably agree that for a field with two unique values,
+
+00:00:22.380 --> 00:00:24.600
+this would not have high cardinality.
+
+00:00:24.600 --> 00:00:27.210
+Whereas a field like diagnosis codes might have
+
+00:00:27.210 --> 00:00:31.800
+tens of thousands of unique values which would have high cardinality.
+
+00:00:31.800 --> 00:00:37.225
+So let's go back to the note book and look at how to analyze for high cardinality.
+
+00:00:37.225 --> 00:00:41.905
+An important characteristic to look for an EHR datasets is cardinality,
+
+00:00:41.905 --> 00:00:44.555
+and this applies to categorical features.
+
+00:00:44.555 --> 00:00:50.885
+Cardinality, as we mentioned refers to the number of unique values that a feature has,
+
+00:00:50.885 --> 00:00:55.040
+and is relevant to EHR datasets because there are code sets such as
+
+00:00:55.040 --> 00:00:59.255
+diagnosis codes in the order of tens of thousands of unique codes.
+
+00:00:59.255 --> 00:01:04.250
+This is compounded by the possible combinations of procedure codes, lab codes,
+
+00:01:04.250 --> 00:01:09.800
+in medication codes that make up a typical visit encounter with a medical professional.
+
+00:01:09.800 --> 00:01:12.860
+For this exercise, we will use the previous dataset we
+
+00:01:12.860 --> 00:01:17.210
+mentioned and then calculate the number of unique values for each column.
+
+00:01:17.210 --> 00:01:21.845
+Before that though, we had to determine which columns are categorical.
+
+00:01:21.845 --> 00:01:23.900
+Based off of this result,
+
+00:01:23.900 --> 00:01:26.590
+which field has a high degree of carnality?
+
+00:01:26.590 --> 00:01:30.395
+So we're using these categorical features that we've identified,
+
+00:01:30.395 --> 00:01:32.915
+and then we are calculating the cardinality.
+
+00:01:32.915 --> 00:01:37.415
+So which features have a high degree of cardinality?
+
+00:01:37.415 --> 00:01:40.190
+As you can see, this feature that we created,
+
+00:01:40.190 --> 00:01:43.450
+principal diagnosis code, has a high degree of cardinality.
+
+00:01:43.450 --> 00:01:45.375
+Why is this important to know?
+
+00:01:45.375 --> 00:01:46.820
+Well, in the next lesson,
+
+00:01:46.820 --> 00:01:48.530
+we will review ways to reduce
+
+00:01:48.530 --> 00:01:53.970
+this dimensionality and find ways to better represent the data for modeling.
+

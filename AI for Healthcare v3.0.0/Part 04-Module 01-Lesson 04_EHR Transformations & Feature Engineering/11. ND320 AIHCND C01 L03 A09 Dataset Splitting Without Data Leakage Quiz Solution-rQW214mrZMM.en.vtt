@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.020
+For this exercise, we split the dataset into train and
+
+00:00:04.020 --> 00:00:09.195
+test partitions by using the same method and tests that we went over in the lesson.
+
+00:00:09.195 --> 00:00:13.785
+However, the one key thing to note is the level of the dataset.
+
+00:00:13.785 --> 00:00:19.290
+The key here is to realize and identify that the level of the dataset is at
+
+00:00:19.290 --> 00:00:22.050
+the line level and that you need to convert it to
+
+00:00:22.050 --> 00:00:25.500
+the encounter level before splitting the dataset.
+
+00:00:25.500 --> 00:00:28.140
+This is a review of the previous step where we
+
+00:00:28.140 --> 00:00:30.300
+went over how to diagnose which level you're
+
+00:00:30.300 --> 00:00:35.075
+at and also how to convert a line level dataset to encounter level.
+
+00:00:35.075 --> 00:00:38.210
+I included this step because it's
+
+00:00:38.210 --> 00:00:40.970
+an often overlooked step and a good check to
+
+00:00:40.970 --> 00:00:45.170
+confirm you're remembering the EHR level concepts.
+
+00:00:45.170 --> 00:00:48.925
+Now we can look at the splitting transformation and the tests.
+
+00:00:48.925 --> 00:00:54.395
+I won't go into too much detail since this is largely the same code from the lesson.
+
+00:00:54.395 --> 00:00:59.270
+The splitting method is the same and the tests are the same as well.
+
+00:00:59.270 --> 00:01:01.730
+Hopefully you were able to not only do the split,
+
+00:01:01.730 --> 00:01:05.130
+but also validate that you split correctly.
+

@@ -1,0 +1,387 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dataset Splitting Without Data Leakage</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Transformations &amp; Feature Engineering </h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Transformations &amp; Feature Engineering Overview.html">01. EHR Transformations &amp; Feature Engineering Overview</a>
+    </li>
+    <li class="">
+      <a href="02. EHR Dataset Levels.html">02. EHR Dataset Levels</a>
+    </li>
+    <li class="">
+      <a href="03. Encounter Representation.html">03. Encounter Representation</a>
+    </li>
+    <li class="">
+      <a href="04. Longitudinal Representation.html">04. Longitudinal Representation</a>
+    </li>
+    <li class="">
+      <a href="05. How to Convert to Longitudinal Level.html">05. How to Convert to Longitudinal Level</a>
+    </li>
+    <li class="">
+      <a href="06. Select Last Encounter Exercise.html">06. Select Last Encounter Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Select Last Encounter Solution.html">07. Select Last Encounter Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Dataset Splitting Without Data Leakage.html">08. Dataset Splitting Without Data Leakage</a>
+    </li>
+    <li class="">
+      <a href="09. How to Split Dataset at Patient Level.html">09. How to Split Dataset at Patient Level</a>
+    </li>
+    <li class="">
+      <a href="10. Data Splitting Exercise.html">10. Data Splitting Exercise</a>
+    </li>
+    <li class="">
+      <a href="11. Data Splitting Solution.html">11. Data Splitting Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ETL with TensorFlow Dataset API.html">12. ETL with TensorFlow Dataset API</a>
+    </li>
+    <li class="">
+      <a href="13. Numerical Features &amp; Feature Column API.html">13. Numerical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="14. Numerical Feature Column API Exercise.html">14. Numerical Feature Column API Exercise</a>
+    </li>
+    <li class="">
+      <a href="15. Numerical Features Solution.html">15. Numerical Features Solution</a>
+    </li>
+    <li class="">
+      <a href="16. Categorical Features &amp; Feature Column API.html">16. Categorical Features &amp; Feature Column API</a>
+    </li>
+    <li class="">
+      <a href="17. Categorical Features Exercise.html">17. Categorical Features Exercise</a>
+    </li>
+    <li class="">
+      <a href="18. Categorical Features with Feature Column API Solution.html">18. Categorical Features with Feature Column API Solution</a>
+    </li>
+    <li class="">
+      <a href="19. Transformations and Feature Engineering Recap.html">19. Transformations and Feature Engineering Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Dataset Splitting Without Data Leakage</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="dataset-splitting-without-data-leakage">Dataset Splitting Without Data Leakage</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L03 A07 Dataset Splitting Without Data Leakage</p></h3>
+  <video controls>
+  <source src="08. ND320 AIHCND C01 L03 A07 Dataset Splitting Without Data Leakage-QuxCwVxMA8s.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. ND320 AIHCND C01 L03 A07 Dataset Splitting Without Data Leakage-QuxCwVxMA8s.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="data-splitting-key-points">Data Splitting Key Points</h2>
+<p>This may seem like a trivial topic, however, it is actually something that is often done incorrectly and can lead to significant downstream issues later. </p>
+<p>Imagine that you spent significant time working on a model only to find out that your results are invalid because the data was not prepared correctly. This sometimes happens due to a rush to process data without enough testing and validation of the data and steps before modeling. </p>
+<h3 id="challenges">Challenges:</h3>
+<p><strong>Data Leakage</strong>: Inadvertently sharing data between test and training datasets. </p>
+<p>Data leakage is a massive problem as your model will perform fantastically during training and fail miserably in production. </p>
+<p>An example of where this can occur is when you have a longitudinal dataset and you use different patient encounters across different splits. You may inadvertently leak in information about the patient into your training data that you will be testing on. Essentially giving your model some of the answers. So preventing data leakage is very important to ensure your mode can generalize in production.</p>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.kaggle.com/alexisbcook/data-leakage" rel="noopener noreferrer" target="_blank">Kaggle Preventing Data Leakage</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l3-ehr-data-transformations-and-tensorflow-feature-engineering-10.jpg" alt="Representative Splitting" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Representative Splitting</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="challenges-continued">Challenges continued</h3>
+<p><strong>Representative Splitting</strong>: Having accurate labels and demographics in your data splits that reflect the real world.<br />
+A major challenge for most machine learning problems is a generalization and building a dataset that is representative. <br />
+Common errors that can occur include:</p>
+<ul>
+<li>Non-representative distribution of your label across the splits </li>
+<li>Non-representative demographics </li>
+</ul>
+<p><strong>Example</strong>: Only female patients in training and male in testing </p>
+<p>This would introduce some unintended biases and issues in your model for procedures that are gender-specific.</p>
+<h3 id="testing-and-validating-dataset-splitting">Testing and Validating Dataset Splitting</h3>
+<p>It is important to have some ways to assess whether you have split your data right. </p>
+<p>Here are a few ways to do this. </p>
+<ol>
+<li>Assess to make sure that a single patient's data is not in more than one partition to avoid possible data leakage. </li>
+<li>Check that the total number of unique patients <strong>across the splits</strong> is equal to the total number of unique patients in the <strong>original dataset</strong>. This ensures no patient information lost in the splitting and that the counts are correct. </li>
+<li>Check that the total number of rows in <strong>original dataset</strong> should be equal to the sum of rows across <strong>all three dataset partitions</strong>.</li>
+</ol>
+<p><code>len(original_df) == len(train_df) + len(val_df) + len(test_df)</code> should evaluate to <code>True</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Dataset Splitting</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are true about dataset splitting?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587148121758" name="1014638" id="a1587148121758">
+      <label for="a1587148121758"><p>If not done properly you can inadvertently leak data into training.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587148189431" name="1014638" id="a1587148189431">
+      <label for="a1587148189431"><p>It is not important to make sure that your data is split representatively across your partitions.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587148257440" name="1014638" id="a1587148257440">
+      <label for="a1587148257440"><p>Having representative data across your partitions will ensure your model generalizes better in production.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587148372259" name="1014638" id="a1587148372259">
+      <label for="a1587148372259"><p>Having mostly red blocks in one partition and mostly green circles in another is an example of a representative dataset split.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>If not done properly you can inadvertently leak data into training.</li>
+      <li>Having representative data across your partitions will ensure your model generalizes better in production.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Dataset Splitting Part 2</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following will be helpful in knowing that we have split our dataset well?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1587148764905" name="1014639" id="a1587148764905">
+        <label for="a1587148764905"><p>Making the length of split partitions equal to the 90% of the length of the original dataset </p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587148917724" name="1014639" id="a1587148917724">
+        <label for="a1587148917724"><p>Making sure all of our partitions are the same length?</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1587148936888" name="1014639" id="a1587148936888">
+        <label for="a1587148936888"><p>Making sure that the length of the original dataset is equal to the sum of the lengths of the split partitions.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Making sure that the length of the original dataset is equal to the sum of the lengths of the split partitions.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Dataset Splitting Part 3</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following should you do to verify your dataset splits are done correctly?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1587149277085" name="1014643" id="a1587149277085">
+      <label for="a1587149277085"><p>Explore your data before and after the splits.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587149371277" name="1014643" id="a1587149371277">
+      <label for="a1587149371277"><p>Check that a single patient's data is not in more than one partition </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587149412686" name="1014643" id="a1587149412686">
+      <label for="a1587149412686"><p>Check that the total number of unique patients across the splits is equal to the total number of unique patients in the original dataset. </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1587149486483" name="1014643" id="a1587149486483">
+      <label for="a1587149486483"><p>Check that the length of the original dataset is equal to the sum of the lengths of the split partitions.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Explore your data before and after the splits.</li>
+      <li>Check that a single patient's data is not in more than one partition </li>
+      <li>Check that the total number of unique patients across the splits is equal to the total number of unique patients in the original dataset. </li>
+      <li>Check that the length of the original dataset is equal to the sum of the lengths of the split partitions.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. How to Split Dataset at Patient Level.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Dataset Splitting Without Data Leakage')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

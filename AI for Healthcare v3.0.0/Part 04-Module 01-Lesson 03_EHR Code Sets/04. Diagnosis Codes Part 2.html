@@ -1,0 +1,403 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Diagnosis Codes Part 2</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>EHR Code Sets</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. EHR Code Sets Overview.html">01. EHR Code Sets Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Codes Sets Background.html">02. Codes Sets Background</a>
+    </li>
+    <li class="">
+      <a href="03. Diagnosis Codes Part 1.html">03. Diagnosis Codes Part 1</a>
+    </li>
+    <li class="">
+      <a href="04. Diagnosis Codes Part 2.html">04. Diagnosis Codes Part 2</a>
+    </li>
+    <li class="">
+      <a href="05. Grouping codes Walkthrough.html">05. Grouping codes Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Diagnosis Code Grouping Exercise.html">06. Diagnosis Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="07. Diagnosis Code Grouping Solution.html">07. Diagnosis Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Procedure Codes.html">08. Procedure Codes</a>
+    </li>
+    <li class="">
+      <a href="09. Procedure Code Grouping Exercise.html">09. Procedure Code Grouping Exercise</a>
+    </li>
+    <li class="">
+      <a href="10. Procedure Code Grouping Solution.html">10. Procedure Code Grouping Solution</a>
+    </li>
+    <li class="">
+      <a href="11. Medication Codes.html">11. Medication Codes</a>
+    </li>
+    <li class="">
+      <a href="12. GroupingCategorizing Systems.html">12. Grouping/Categorizing Systems</a>
+    </li>
+    <li class="">
+      <a href="13. Group or Categorize Procedures Exercise.html">13. Group or Categorize Procedures Exercise</a>
+    </li>
+    <li class="">
+      <a href="14. Group or Categorize Procedures Solution.html">14. Group or Categorize Procedures Solution</a>
+    </li>
+    <li class="">
+      <a href="15. EHR Code Sets Recap.html">15. EHR Code Sets Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Diagnosis Codes Part 2</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="diagnosis-codes-part-2">Diagnosis Codes Part 2</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 AIHCND C01 L02 A04 Diagnosis Codes Part 2</p></h3>
+  <video controls>
+  <source src="04. ND320 AIHCND C01 L02 A04 Diagnosis Codes Part 2-5msiZGehPQQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND320 AIHCND C01 L02 A04 Diagnosis Codes Part 2-5msiZGehPQQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="diagnosis-codes-key-points">Diagnosis Codes Key Points</h2>
+<p>First, it is important to note that it can take several encounters for a patient to receive a diagnosis, and therefore a diagnosis code. There may be an initial appointment, some follow-up testing, and then another appointment before a diagnosis is determined. This is very common. This means that there may not be diagnosis codes for every encounter. </p>
+<p>Encounter 1: G30.9, M06.9, <strong><del>G30.9</del></strong></p>
+<p>Second, a diagnosis code should never be repeated in the same encounter. </p>
+<ul>
+<li>Encounter 1: <strong>G30.9</strong>, M06.9</li>
+<li>Encounter 2: <strong>G30.9</strong>, M06.9, A34.6</li>
+</ul>
+<p>Third, it is expected that a diagnosis would carry across different encounters as the patient is being treated for that diagnosis.</p>
+<h4 id="additional-resources">Additional Resources</h4>
+<p>In the video, we showed you the CDC lookup tool for ICD10-CM codes. The link is below. Go ahead and look up some codes you might be familiar with!</p>
+<ul>
+<li><a href="https://icd10cmtool.cdc.gov/?fy=FY2019" rel="noopener noreferrer" target="_blank">CDC ICD10-CM Lookup Tool</a></li>
+<li><a href="https://www.cdc.gov/nchs/data/icd/Announcement-New-ICD-code-for-coronavirus-2-20-2020.pdf" rel="noopener noreferrer" target="_blank">Coronavirus ICD Code Announcement</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/l2-ehr-code-sets-4.jpg" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="diagnosis-code-prioritization">Diagnosis Code Prioritization</h3>
+<p>At a high level, it is important to distinguish what code is taking up the most resources or is the most critical and there are few terms that you should become familiar with.</p>
+<ul>
+<li><strong>Primary Diagnosis Code</strong>: The code that takes up the most resources to treat.</li>
+<li><strong>Principal Diagnosis Code</strong>: The diagnosis that is found after hospitalization to be the one that is chiefly responsible.</li>
+</ul>
+<p>This <strong>can be</strong> an important distinction since the admitting diagnosis code can widely differ from the final, Principal Diagnosis.  For the most part, these terms interchangeably but it's good to be aware of the differences and the need to dig into the details when necessary.</p>
+<ul>
+<li><strong>Secondary Diagnosis Codes</strong>: The other diagnosis codes listed on an encounter.</li>
+</ul>
+<p>For example, if a patient were to have a knee replacement surgery but had type 2 diabetes as a prior condition, the secondary diagnosis code of type 2 diabetes would be included in the medical record. </p>
+<p><strong>Note</strong>:  Secondary diagnoses codes can include many additional codes</p>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2019-ICD10-Coding-Guidelines-.pdf" rel="noopener noreferrer" target="_blank">ICD10 -CM Coding Guidelines </a></li>
+<li><a href="https://www.hcpro.com/HIM-324035-5707/QA-Primary-principal-and-secondary-diagnoses.html" rel="noopener noreferrer" target="_blank">Primary, Principal, and Secondary Diagnosis Codes</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Diagnosis Codes</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are true about diagnosis codes as related to encounters?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1586888121765" name="1013734" id="a1586888121765">
+      <label for="a1586888121765"><p>Diagnosis codes should be repeated within an encounter.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586888188122" name="1013734" id="a1586888188122">
+      <label for="a1586888188122"><p>Diagnosis codes can be repeated across encounters. </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586888216560" name="1013734" id="a1586888216560">
+      <label for="a1586888216560"><p>A diagnosis should be given on the first encounter.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1586888272334" name="1013734" id="a1586888272334">
+      <label for="a1586888272334"><p>It can take multiple encounters to reach a diagnosis.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Diagnosis codes can be repeated across encounters. </li>
+      <li>It can take multiple encounters to reach a diagnosis.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Diagnosis Code Prioritization</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the scenario with the correct diagnosis codes priority. </p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Primary Diagnosis code would deal likely with concussions.</p></button>
+  <button class="btn btn-primary"><p>Primary Diagnosis code would likely be about abrasions.</p></button>
+  <button class="btn btn-primary"><p>Principal Diagnosis code would likely be about a abrasions.</p></button>
+  <button class="btn btn-primary"><p>Principal Diagnosis code would likely be about a fractures.</p></button>
+  <button class="btn btn-primary"><p>Primary Diagnosis code would deal likely with fractures.</p></button>
+  <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a fractures.</p></button>
+  <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a concussions.</p></button>
+  <button class="btn btn-primary"><p>Principal Diagnosis code would likely be about concussions.</p></button>
+  <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a fractures.</p></button>
+  <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a abrasions.</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Scenario</p>
+      </th>
+      <th>
+        <p>Diagnosis Code</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>A person comes into the ER after a bicycle accident with visible scrapes/abrasions and bruises. </p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>After having an X-Ray, it is determined that the person has a fractured tibia. </p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>After a thorough examination, it is further determined that the person also has a severe concussion. </p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Scenario</p>
+        </th>
+        <th>
+          <p>Diagnosis Code</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>A person comes into the ER after a bicycle accident with visible scrapes/abrasions and bruises. </p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Primary Diagnosis code would likely be about abrasions.</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>After having an X-Ray, it is determined that the person has a fractured tibia. </p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a fractures.</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>After a thorough examination, it is further determined that the person also has a severe concussion. </p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Principal Diagnosis code would likely be about concussions.</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>After having an X-Ray, it is determined that the person has a fractured tibia. </p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Secondary Diagnosis would likely be about a fractures.</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Grouping codes Walkthrough.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Diagnosis Codes Part 2')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

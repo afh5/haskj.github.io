@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.645
+Wow, you made it through the first two parts of this lesson.
+
+00:00:03.645 --> 00:00:08.925
+You can identify and test data to determine the correct EHR dataset level,
+
+00:00:08.925 --> 00:00:13.375
+and you know how to prevent data leakage when splitting datasets.
+
+00:00:13.375 --> 00:00:15.135
+Now comes the fun part,
+
+00:00:15.135 --> 00:00:18.055
+feature engineering with TensorFlow.
+
+00:00:18.055 --> 00:00:24.300
+In this part we'll cover ETL using the dataset API and transform datasets
+
+00:00:24.300 --> 00:00:30.615
+using the TensorFlow feature column API for both numerical and categorical features.
+
+00:00:30.615 --> 00:00:35.520
+As a reminder, the feature column API can be extremely useful for
+
+00:00:35.520 --> 00:00:40.680
+transforming datasets at scale and building some unique feature types.
+
+00:00:40.680 --> 00:00:43.305
+Are you ready? Let's get started.
+
+00:00:43.305 --> 00:00:48.890
+The TensorFlow dataset API allows you to process your input data in
+
+00:00:48.890 --> 00:00:56.305
+a distributed format that can be batched and processed in parallel on GPUs slash TPUs.
+
+00:00:56.305 --> 00:00:59.225
+This API also does the work of building
+
+00:00:59.225 --> 00:01:03.715
+iterators that batch processed data and prevent memory issues.
+
+00:01:03.715 --> 00:01:07.910
+There are many ways to further optimize the input pipelines for training,
+
+00:01:07.910 --> 00:01:10.520
+but we will use this API to help with loading
+
+00:01:10.520 --> 00:01:15.025
+datasets to hopefully simplify the ETL process for you.
+
+00:01:15.025 --> 00:01:19.130
+In the next part, we will walk through a common example with
+
+00:01:19.130 --> 00:01:23.240
+a smaller dataset where you use Pandas to load and explore
+
+00:01:23.240 --> 00:01:26.990
+the data and then use TensorFlow to actually
+
+00:01:26.990 --> 00:01:31.895
+transform it and build TensorFlow datasets for training a model.
+
+00:01:31.895 --> 00:01:34.340
+In this next lesson walk through,
+
+00:01:34.340 --> 00:01:38.120
+we will learn how to take a Pandas DataFrame that we loaded in from
+
+00:01:38.120 --> 00:01:43.689
+a CSV and then convert it to a TensorFlow dataset using the API.
+
+00:01:43.689 --> 00:01:47.780
+Just a quick note, that a TensorFlow dataset cannot accept
+
+00:01:47.780 --> 00:01:53.225
+mixed datatypes and maybe necessary to remove or convert null values.
+
+00:01:53.225 --> 00:01:58.750
+Let's go to ETL with the TensoFrlow dataset API and Pandas.
+
+00:01:58.750 --> 00:02:04.560
+We will use the swiss heart disease dataset that we have been using earlier,
+
+00:02:04.560 --> 00:02:09.780
+and we will select only a few columns for the sake of this exercise.
+
+00:02:09.780 --> 00:02:12.380
+We will use this function adapted from
+
+00:02:12.380 --> 00:02:18.755
+the TensorFlow documentation to convert the Pandas DataFrame to a TensorFlow dataset.
+
+00:02:18.755 --> 00:02:21.050
+As we mentioned in the lesson,
+
+00:02:21.050 --> 00:02:23.720
+a TensorFlow dataset has the advantage for
+
+00:02:23.720 --> 00:02:27.820
+distributed training and leveraging lots of the power of TensorFlow.
+
+00:02:27.820 --> 00:02:32.210
+Basically this function separates the features from the label,
+
+00:02:32.210 --> 00:02:38.390
+shuffles it, and then puts it into batches that can be iteratively loaded.
+
+00:02:38.390 --> 00:02:41.480
+Let's go to actually using this function now.
+
+00:02:41.480 --> 00:02:45.710
+Here we use the function with the batch size argument that we
+
+00:02:45.710 --> 00:02:50.555
+arbitrarily set to 64 and the predictor label or field here.
+
+00:02:50.555 --> 00:02:57.215
+Here we take a sample of the dataset to confirm that is loading things up correctly.
+
+00:02:57.215 --> 00:03:02.815
+You can see the three features here along with a batch of 64 values,
+
+00:03:02.815 --> 00:03:05.205
+why don't you see the full feature?
+
+00:03:05.205 --> 00:03:09.500
+Well, that's because the label is separated and you can access
+
+00:03:09.500 --> 00:03:15.360
+that separate value in a different TensorFlow tensor, which you can see here.
+
+00:03:15.680 --> 00:03:21.350
+Now you know how to use Pandas to load a dataset from a CSV and
+
+00:03:21.350 --> 00:03:27.270
+then convert that to a TensorFlow dataset so that you can use it for modeling later.
+

@@ -1,0 +1,193 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.920
+So for the next section,
+
+00:00:01.920 --> 00:00:04.830
+we will look at analyzing datasets for missing values,
+
+00:00:04.830 --> 00:00:08.355
+and really just go into the high-level methods to impute.
+
+00:00:08.355 --> 00:00:12.210
+Missing values are especially common in healthcare where you may
+
+00:00:12.210 --> 00:00:16.695
+have incomplete records or some fields are sparsely populated.
+
+00:00:16.695 --> 00:00:20.820
+So this might be a review for some of you from your statistics courses,
+
+00:00:20.820 --> 00:00:25.200
+but just to review, there are three common ways to classify why data is missing.
+
+00:00:25.200 --> 00:00:28.950
+I've to admit that the naming conventions are not the most intuitive.
+
+00:00:28.950 --> 00:00:33.535
+First, MCAR which stands for missing completely at random.
+
+00:00:33.535 --> 00:00:38.270
+This really means that the data is missing due to something unrelated to the data,
+
+00:00:38.270 --> 00:00:41.495
+and there is no systemic reason for the missing data.
+
+00:00:41.495 --> 00:00:45.665
+There is an equal probability that data is missing for all cases.
+
+00:00:45.665 --> 00:00:49.190
+This is often due to some instrumentation like a scale
+
+00:00:49.190 --> 00:00:53.890
+broken or a process issue or some of the data is randomly missing.
+
+00:00:53.890 --> 00:00:58.470
+Second, MAR refers to missing at random.
+
+00:00:58.470 --> 00:01:00.770
+This is the opposite case where there is
+
+00:01:00.770 --> 00:01:05.540
+some systemic relationship between data and the probability of missing data.
+
+00:01:05.540 --> 00:01:09.035
+For example, there might be some demographics and surveys
+
+00:01:09.035 --> 00:01:13.450
+that are more likely to reveal some pieces of data than others.
+
+00:01:13.450 --> 00:01:17.130
+Lastly, MNAR is missing not at random.
+
+00:01:17.130 --> 00:01:19.460
+This usually means there's a relationship between
+
+00:01:19.460 --> 00:01:22.430
+a value in the dataset and the missing values.
+
+00:01:22.430 --> 00:01:25.945
+Knowing which one of these can better inform your choices for
+
+00:01:25.945 --> 00:01:29.825
+imputing as we will review some approaches in the next slide.
+
+00:01:29.825 --> 00:01:34.070
+Many of you might be familiar with common approaches for missing values,
+
+00:01:34.070 --> 00:01:39.570
+like removing the row or imputing a statistical value.
+
+00:01:39.570 --> 00:01:41.705
+These approaches can be tested,
+
+00:01:41.705 --> 00:01:43.620
+but there are certainly trade-offs.
+
+00:01:43.620 --> 00:01:47.300
+Depending on the classification of why a field has missing values,
+
+00:01:47.300 --> 00:01:49.714
+it can inform different approaches.
+
+00:01:49.714 --> 00:01:52.925
+We won't go into detail on the implementation,
+
+00:01:52.925 --> 00:01:55.175
+but I just wanted you to be aware of this.
+
+00:01:55.175 --> 00:01:59.555
+Now we'll go back to the notebook and look at analyzing missing values.
+
+00:01:59.555 --> 00:02:03.530
+Missing values are important consideration to analyze your dataset for.
+
+00:02:03.530 --> 00:02:06.260
+In many cases, there are systems that might provide
+
+00:02:06.260 --> 00:02:09.275
+null values or because of the aggregation level,
+
+00:02:09.275 --> 00:02:13.505
+this might be normal due to the denormalize nature of the dataset.
+
+00:02:13.505 --> 00:02:16.145
+Looking at the dataset we worked with earlier,
+
+00:02:16.145 --> 00:02:21.730
+we can come up with a quick calculation for a percent_null and zero in each column.
+
+00:02:21.730 --> 00:02:25.865
+So here are the results from that dataset we looked at earlier.
+
+00:02:25.865 --> 00:02:28.445
+How does the null look for this dataset?
+
+00:02:28.445 --> 00:02:30.290
+In this case, it looks pretty good,
+
+00:02:30.290 --> 00:02:32.554
+with no columns with null values,
+
+00:02:32.554 --> 00:02:37.725
+but this is an example of a process dataset that has been cleaned up.
+
+00:02:37.725 --> 00:02:41.760
+Why do you think the dataset has a high number of zero values though?
+
+00:02:41.760 --> 00:02:47.045
+In this case, the zero values are actually a value that it's assigned to something else.
+
+00:02:47.045 --> 00:02:49.885
+Like in one case, it's for gender.
+
+00:02:49.885 --> 00:02:53.620
+If a field has missing values that we need to impute,
+
+00:02:53.620 --> 00:02:58.270
+we could use some of the methods we mentioned earlier for simple imputation such as
+
+00:02:58.270 --> 00:03:03.685
+the removal of a row or statistical imputation approaches, and then compare them.
+
+00:03:03.685 --> 00:03:06.595
+So now we'll do some analysis of outliers.
+
+00:03:06.595 --> 00:03:10.315
+For this example, you can see two fields with box plots.
+
+00:03:10.315 --> 00:03:11.890
+For the age field,
+
+00:03:11.890 --> 00:03:13.870
+there are no outliers detected.
+
+00:03:13.870 --> 00:03:18.040
+However, for the second field, serum cholesterol,
+
+00:03:18.040 --> 00:03:21.560
+you can see that there are some outliers with very high levels of
+
+00:03:21.560 --> 00:03:26.080
+cholesterol that are outside of the 1.5 IQR range.
+
+00:03:26.080 --> 00:03:28.400
+To fix outliers in this case,
+
+00:03:28.400 --> 00:03:33.920
+we might just drop anything beyond the 1.5 IQR range from the dataset.
+
+00:03:33.920 --> 00:03:37.940
+Now that we've quickly reviewed missing values and outliers,
+
+00:03:37.940 --> 00:03:40.115
+we can move on to the next section.
+
+00:03:40.115 --> 00:03:42.770
+It's important to know that you will not be required to
+
+00:03:42.770 --> 00:03:47.100
+deal with either of these in the project for this course.
+

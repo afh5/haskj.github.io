@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.455
+Congratulations on finishing the content portion of this course.
+
+00:00:04.455 --> 00:00:06.090
+Amazing job.
+
+00:00:06.090 --> 00:00:08.010
+I hope you enjoyed this course and gained
+
+00:00:08.010 --> 00:00:11.940
+some valuable new skills that you can implement in healthcare.
+
+00:00:11.940 --> 00:00:13.710
+Before moving on to the project,
+
+00:00:13.710 --> 00:00:16.080
+let's put everything into perspective.
+
+00:00:16.080 --> 00:00:20.100
+In the EHR Data Security and Analysis part of this course,
+
+00:00:20.100 --> 00:00:23.535
+you'll learn about data security and privacy,
+
+00:00:23.535 --> 00:00:27.030
+including the key terms and regulations you
+
+00:00:27.030 --> 00:00:31.365
+need to be aware of when dealing with healthcare-related data.
+
+00:00:31.365 --> 00:00:37.190
+You also analyze healthcare data through exploratory data analysis and evaluated how
+
+00:00:37.190 --> 00:00:43.615
+demographically representative your input data is before even starting to build models.
+
+00:00:43.615 --> 00:00:49.820
+You then dove into deep end of the pool with EHR code sets where you work with diagnosis,
+
+00:00:49.820 --> 00:00:52.220
+procedure, and medication codes.
+
+00:00:52.220 --> 00:00:54.950
+You can now interpret and work with these types of
+
+00:00:54.950 --> 00:00:58.054
+codes in your healthcare-related projects.
+
+00:00:58.054 --> 00:01:00.590
+Further, you can categorize and
+
+00:01:00.590 --> 00:01:06.005
+group EHR dataset codes for further analysis and use in machine learning.
+
+00:01:06.005 --> 00:01:08.900
+After code sets, you learn to address
+
+00:01:08.900 --> 00:01:14.330
+the different EHR dataset levels at the line encounter in longitudinal levels.
+
+00:01:14.330 --> 00:01:16.820
+You can also use your dataset splitting
+
+00:01:16.820 --> 00:01:19.985
+lumberjack skills to ensure that you don't leak data
+
+00:01:19.985 --> 00:01:22.670
+into your model training and give it features that
+
+00:01:22.670 --> 00:01:25.970
+might compromise the use of your model in production.
+
+00:01:25.970 --> 00:01:28.670
+That's not all you did in this part of the course.
+
+00:01:28.670 --> 00:01:33.620
+You can use the TensorFlow feature column API for feature engineering as well.
+
+00:01:33.620 --> 00:01:37.309
+We also eventually got to the fun stuff, building,
+
+00:01:37.309 --> 00:01:43.040
+evaluating, and interpreting models with the focus on bias and uncertainty.
+
+00:01:43.040 --> 00:01:49.640
+You can use your feature engineering skills to build simple TensorFlow models using
+
+00:01:49.640 --> 00:01:53.600
+DenseFeatures and using common evaluation metrics and
+
+00:01:53.600 --> 00:01:58.440
+even less common ones such as Bio-SCoRes to evaluate your model.
+
+00:01:58.440 --> 00:02:01.600
+You can now conduct demographic bias analysis
+
+00:02:01.600 --> 00:02:04.865
+using a framework developed out of the University of Chicago,
+
+00:02:04.865 --> 00:02:07.190
+ensuring your models will perform well,
+
+00:02:07.190 --> 00:02:10.340
+will be a breeze from now on as you use uncertainty
+
+00:02:10.340 --> 00:02:14.390
+estimation to find potential issues more accurately.
+
+00:02:14.390 --> 00:02:17.540
+Finally, you can also interpret your models using
+
+00:02:17.540 --> 00:02:20.810
+model agnostic methods like shapley values.
+
+00:02:20.810 --> 00:02:23.860
+Wow, I cannot believe we covered all that.
+
+00:02:23.860 --> 00:02:28.655
+Working with EHR data has never been more important than it is today.
+
+00:02:28.655 --> 00:02:34.170
+I can't wait to see what you will do in healthcare with the new skills you've learned.
+

@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.255
+In this lesson, we will cover three parts.
+
+00:00:03.255 --> 00:00:07.035
+First, we'll go over EHR dataset levels.
+
+00:00:07.035 --> 00:00:12.360
+In this part, there three levels: line, encounter, and longitudinal.
+
+00:00:12.360 --> 00:00:14.115
+By the end of this section,
+
+00:00:14.115 --> 00:00:16.380
+you'll be able to identify the level of
+
+00:00:16.380 --> 00:00:21.090
+your dataset as well as conduct tests and transform your data.
+
+00:00:21.090 --> 00:00:26.235
+Next, we will go over dataset splitting without data leakage,
+
+00:00:26.235 --> 00:00:29.550
+which can be a major issue in EHR datasets.
+
+00:00:29.550 --> 00:00:31.530
+By the end of part 2,
+
+00:00:31.530 --> 00:00:37.115
+you'll be able to implement some basic tests to help prevent issues when splitting data.
+
+00:00:37.115 --> 00:00:41.450
+Finally, we will cover feature engineering with TensorFlow.
+
+00:00:41.450 --> 00:00:45.500
+In this part, we will cover ETL using the Dataset API,
+
+00:00:45.500 --> 00:00:50.990
+this will allow you to scalably process and transform your data for modeling on GPUs.
+
+00:00:50.990 --> 00:00:53.600
+You will also be able to transform datasets using
+
+00:00:53.600 --> 00:00:59.000
+the TensorFlow feature column API for both numerical and categorical features.
+
+00:00:59.000 --> 00:01:02.480
+The feature column API can be extremely useful for transforming
+
+00:01:02.480 --> 00:01:06.170
+datasets at scale and building some unique feature types.
+
+00:01:06.170 --> 00:01:08.520
+So let's get started.
+
