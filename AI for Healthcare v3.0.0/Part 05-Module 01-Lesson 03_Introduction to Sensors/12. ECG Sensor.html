@@ -1,0 +1,309 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ECG Sensor</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Sensors</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to Sensors.html">01. Introduction to Sensors</a>
+    </li>
+    <li class="">
+      <a href="02. Inertial Measurement Unit.html">02. Inertial Measurement Unit</a>
+    </li>
+    <li class="">
+      <a href="03. Accelerometer Deep Dive.html">03. Accelerometer Deep Dive</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Step Cadence.html">04. Exercise 1: Step Cadence</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Solution.html">05. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="06. PPG Sensor.html">06. PPG Sensor</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 2 PPG Peaks.html">07. Exercise 2: PPG Peaks</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Solution.html">08. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="09. PPG SNR.html">09. PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 3 PPG SNR.html">10. Exercise 3: PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 Solution.html">11. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ECG Sensor.html">12. ECG Sensor</a>
+    </li>
+    <li class="">
+      <a href="13. Apple Heart Study - Revisited.html">13. Apple Heart Study - Revisited</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Introduction to Sensors.html">14. Recap: Introduction to Sensors</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. ECG Sensor</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="electrocardiogram-ecg-sensor">Electrocardiogram (ECG) Sensor</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L2 08 ECG Sensors</p></h3>
+  <video controls>
+  <source src="12. ND320 C4 L2 08 ECG Sensors-uSJb9ZBDTnU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND320 C4 L2 08 ECG Sensors-uSJb9ZBDTnU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Recap of ECGs</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p><strong>Electrocardiograms (ECG or EKG)</strong> measure the voltage across the chest, which is primarily due to the heart rhythm. ECGs are different from the other raw signals produced by a wearable in that cardiologists can use them in their raw, unprocessed form to diagnose heart problems like a previous heart attack or an irregular heart rhythm.</p>
+<p>The ECG measures the voltage created by the electrical activity in the heart. A traditional ECG does this with electrodes on the chest. An <strong>electrode</strong> is a conductive pad that comes in contact with skin and a <strong>lead</strong> is the electrical potential difference between two electrodes. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-clinical-ecg.jpg" alt="Clinic ECG" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Clinic ECG</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap</p></h3>
+  <div>
+  <p>Each pair of electrodes measures a slightly different voltage. The standard 12-lead ECG contains 12 different voltages across different axes of the body.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-12-lead-ecg.png" alt="12 Lead ECG" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>12 Lead ECG</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap</p></h3>
+  <div>
+  <p>The ECG has been “somewhat” wearable for a while. <strong>Holter monitors</strong> are ECG machines that are connected to a person’s chest in much the same way a tabletop machine is, but the recording device is portable and attached to the wearer’s hip. Holter monitors are worn during stress tests after a patient has been diagnosed or is suspected of having a heart condition or for short-term monitoring. They’re typically not worn for more than a few days. </p>
+<p>Beyond that, there are chest patches that only measure 1-lead of the 12 lead ECG. These chest patches can last from a few days to a couple of weeks. In 2011, Alivecor started making a handheld device that paired with an iPhone to take an ECG. Apple Watch and Verily’s Study Watch both have ECG sensors embedded into the hardware. On a wristwatch, the two electrodes are moved to the wrist and fingers on opposing hands. Because of this, the ECG cannot be monitored continuously and passively like the chest patch or Holter monitor or other sensors on a wearable. However, a wrist-watch can be worn for years, while a chest patch only lasts for a few weeks.</p>
+<p>In lesson 4, we will go over the physiology of the heart and the characteristics of the ECG wave in greater detail.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz</p></h3>
+  <div>
+  <p><strong>QUESTION: <p>Reflect</p></strong></p>
+  <p>What is the difference between an ECG electrode and an ECG lead?</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>A lead is a voltage channel. An electrode is a conductive contact on the skin. A lead is measured by taking the potential difference across a pair of electrodes.</p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Free Response</p></h3>
+  <div>
+  <p><strong>QUESTION: <p>Reflect</p></strong></p>
+  <p>What trade-off is being made between a 12-lead ECG, a Holter monitor, the Zio patch, and an Apple Watch ECG?</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>The main trade-off being made between these devices is one of the density of ECG data vs. longitudinally of monitoring. A 12-lead ECG contains 12 channels of ECG signals, looking at multiple axes across the chest. However, it is only recorded for a few seconds to a minute while a patient is in a clinic. Holter monitors can measure an ECG for hours to a few days, but they typically only measure 3-5 leads of an ECG. The Zio patch measures 1 ECG leads for a couple of weeks, and a wrist-watch can measure 1 ECG lead intermittently over the years.</p>
+<p>Each of these points on the trade-off curve has different clinical utility. Wearables continue to try to make a case for their clinical utility and make inroads into clinical practice. </p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ECG Sensor Further Resources</p></h3>
+  <div>
+  <h2 id="further-resources">Further Resources</h2>
+<p>You can learn more about the ECG in the <a href="https://en.wikipedia.org/wiki/Electrocardiography" rel="noopener noreferrer" target="_blank">Wikipedia Entry</a></p>
+<h2 id="new-vocabulary">New Vocabulary</h2>
+<ul>
+<li><strong>Electrocardiogram (ECG)</strong>: A sensor that measures the electrical activity of the heart.</li>
+<li><strong>Electrode</strong>: Part of an ECG circuit. Conductive pads that make contact with the skin.</li>
+<li><strong>Lead</strong>: An electrical potential difference measured across two electrodes of an ECG circuit.</li>
+<li><strong>Holder monitor</strong>: A mobile ECG device that can measure continuously for typically 24 - 72 hours.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="13. Apple Heart Study - Revisited.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. ECG Sensor')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

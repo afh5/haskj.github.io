@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.240
+This lesson is a brief introduction to the Fourier Transform.
+
+00:00:03.240 --> 00:00:06.360
+The Fourier Transform is an extremely deep mathematical concept
+
+00:00:06.360 --> 00:00:08.235
+that ties into many different disciplines.
+
+00:00:08.235 --> 00:00:11.010
+But these next couple lessons will teach you how to use it as a tool
+
+00:00:11.010 --> 00:00:14.145
+to accomplish many practical tasks.
+
+00:00:14.145 --> 00:00:16.260
+We'll not be going into any theory at all,
+
+00:00:16.260 --> 00:00:18.520
+in fact, you won't see a single equation in these lessons.
+
+00:00:18.520 --> 00:00:22.320
+The goal here is instead to just convey some intuition about this concept,
+
+00:00:22.320 --> 00:00:24.855
+and while the strong theoretical understanding is important,
+
+00:00:24.855 --> 00:00:26.715
+it's outside the scope of this class.
+
+00:00:26.715 --> 00:00:30.185
+You can definitely learn more by looking at the further resources section.
+
+00:00:30.185 --> 00:00:32.510
+Before we can understand the Fourier Transform,
+
+00:00:32.510 --> 00:00:35.840
+we need to go into this concept of adding sinusoids together.
+
+00:00:35.840 --> 00:00:38.705
+So we'll create two sinusoids, one at two hertz,
+
+00:00:38.705 --> 00:00:43.055
+and one at three hertz, and we'll plot them along with their sum.
+
+00:00:43.055 --> 00:00:48.244
+The sum is just the element-wise addition of each point in the sinusoids.
+
+00:00:48.244 --> 00:00:49.430
+So when they're both high,
+
+00:00:49.430 --> 00:00:50.690
+the sum is high,
+
+00:00:50.690 --> 00:00:53.135
+and when they're both low, the sum is low.
+
+00:00:53.135 --> 00:00:55.535
+When one is high and the other is low,
+
+00:00:55.535 --> 00:00:58.045
+and sum is somewhere around zero.
+
+00:00:58.045 --> 00:01:01.225
+So what the Fourier Transform tells us is that,
+
+00:01:01.225 --> 00:01:04.745
+any signal can be represented as a sum of sinusoids.
+
+00:01:04.745 --> 00:01:06.590
+At first this makes no sense.
+
+00:01:06.590 --> 00:01:08.675
+What's so special about sinusoids,
+
+00:01:08.675 --> 00:01:10.565
+that gives them this property.
+
+00:01:10.565 --> 00:01:14.220
+To understand that, we need to go into the theory of the Fourier Transform.
+
+00:01:14.220 --> 00:01:17.335
+So instead, I'll just try to show it to you with a demo.
+
+00:01:17.335 --> 00:01:19.400
+For this demo, we're going to look at
+
+00:01:19.400 --> 00:01:25.480
+a real accelerometer signal from a wrist wearable, while someone is jogging.
+
+00:01:25.970 --> 00:01:31.745
+So here we have the original accelerometer signal up at the top.
+
+00:01:31.745 --> 00:01:38.380
+Below that, we have our approximate signal that we get by summing together sinusoids.
+
+00:01:38.380 --> 00:01:43.250
+Then below that we have them plotted together so we can visually compare them.
+
+00:01:43.250 --> 00:01:44.914
+As we add more sinusoids,
+
+00:01:44.914 --> 00:01:47.750
+we can see that the approximate signal starts to
+
+00:01:47.750 --> 00:01:51.280
+look closer and closer to our original accelerometer signal.
+
+00:01:51.280 --> 00:01:53.494
+Once we get to more than 100 sinusoids,
+
+00:01:53.494 --> 00:01:55.280
+we can't really notice any difference between
+
+00:01:55.280 --> 00:01:58.010
+our approximate signal and the original one.
+
+00:01:58.010 --> 00:02:01.430
+So this is basically a demonstration that Fourier wasn't lying to us when he
+
+00:02:01.430 --> 00:02:05.185
+told us any signal can be represented as a sum of sinusoids.
+
+00:02:05.185 --> 00:02:08.900
+In fact, the specific frequencies of the sinusoids that make up
+
+00:02:08.900 --> 00:02:11.630
+any signal will give us important information that we
+
+00:02:11.630 --> 00:02:15.390
+can use when we build algorithms to process that signal.
+

@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.735
+Let's learn about how we can plot signals in Python and visually explore our data.
+
+00:00:03.735 --> 00:00:05.970
+We're going to be using the Matplotlib library,
+
+00:00:05.970 --> 00:00:08.730
+which is a close analog to MATLAB's native plotting library.
+
+00:00:08.730 --> 00:00:13.000
+For this demo, we're going to be using the NumPy and Matplotlib libraries.
+
+00:00:13.000 --> 00:00:15.580
+This first line is called an IPython magic,
+
+00:00:15.580 --> 00:00:19.425
+it basically tells Matplotlib what GUI backend we want to use.
+
+00:00:19.425 --> 00:00:21.405
+I'm using an Apple computer,
+
+00:00:21.405 --> 00:00:23.865
+so I'm using the OSX backend,
+
+00:00:23.865 --> 00:00:27.300
+but if you're using something different you can use the Qt library
+
+00:00:27.300 --> 00:00:31.005
+to do your plotting or you can use Tkinter as well.
+
+00:00:31.005 --> 00:00:33.410
+So first, let's make our test signal which is a sum of
+
+00:00:33.410 --> 00:00:36.215
+sinusoids at different amplitudes and frequencies,
+
+00:00:36.215 --> 00:00:39.065
+multiplied by a decayed exponential function.
+
+00:00:39.065 --> 00:00:41.420
+So let's see what it looks like by plotting it.
+
+00:00:41.420 --> 00:00:46.205
+The first argument to this function is the x-axis or the timestamps,
+
+00:00:46.205 --> 00:00:49.180
+and the second argument is our signal values.
+
+00:00:49.180 --> 00:00:51.285
+We can see it show up on this figure,
+
+00:00:51.285 --> 00:00:54.170
+and we have this toolbar down here for interacting with the plot.
+
+00:00:54.170 --> 00:00:58.745
+So we can zoom in the interesting portions,
+
+00:00:58.745 --> 00:01:02.605
+we can pan around and zoom out,
+
+00:01:02.605 --> 00:01:06.260
+there's some basic features of interacting with plots.
+
+00:01:06.260 --> 00:01:10.265
+However, if you're working in a Udacity workspace or in a virtual machine,
+
+00:01:10.265 --> 00:01:12.590
+a new window won't open up for you.
+
+00:01:12.590 --> 00:01:14.990
+In that case you can use the inline backend,
+
+00:01:14.990 --> 00:01:17.555
+which puts the plots directly in the notebook.
+
+00:01:17.555 --> 00:01:21.080
+This is useful if you want to keep
+
+00:01:21.080 --> 00:01:22.610
+all your outputs together so you can share
+
+00:01:22.610 --> 00:01:25.265
+notebooks between collaborators more easily as well.
+
+00:01:25.265 --> 00:01:27.425
+But this plot isn't very interactive,
+
+00:01:27.425 --> 00:01:28.940
+we don't have our toolbar down here,
+
+00:01:28.940 --> 00:01:32.835
+so we can't really zoom in on anything or pan around.
+
+00:01:32.835 --> 00:01:36.240
+We can fix this by using the mpld3 library.
+
+00:01:36.240 --> 00:01:38.850
+After calling the enable notebook function,
+
+00:01:38.850 --> 00:01:41.225
+our plot should now be interactive.
+
+00:01:41.225 --> 00:01:48.765
+So we see the toolbar here and we can zoom around and explore our data hopefully.
+
+00:01:48.765 --> 00:01:51.630
+So now that we know how to plot time series signals,
+
+00:01:51.630 --> 00:01:56.640
+in the next video we'll look at planning specific events on top of our time series.
+

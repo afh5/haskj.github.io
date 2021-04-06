@@ -1,0 +1,281 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recap: Introduction to Sensors</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Sensors</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to Sensors.html">01. Introduction to Sensors</a>
+    </li>
+    <li class="">
+      <a href="02. Inertial Measurement Unit.html">02. Inertial Measurement Unit</a>
+    </li>
+    <li class="">
+      <a href="03. Accelerometer Deep Dive.html">03. Accelerometer Deep Dive</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Step Cadence.html">04. Exercise 1: Step Cadence</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Solution.html">05. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="06. PPG Sensor.html">06. PPG Sensor</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 2 PPG Peaks.html">07. Exercise 2: PPG Peaks</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Solution.html">08. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="09. PPG SNR.html">09. PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 3 PPG SNR.html">10. Exercise 3: PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 Solution.html">11. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ECG Sensor.html">12. ECG Sensor</a>
+    </li>
+    <li class="">
+      <a href="13. Apple Heart Study - Revisited.html">13. Apple Heart Study - Revisited</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Introduction to Sensors.html">14. Recap: Introduction to Sensors</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">14. Recap: Introduction to Sensors</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="recap">Recap</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L2 10 Recap Intro To Sensors</p></h3>
+  <video controls>
+  <source src="14. ND320 C4 L2 10 Recap Intro To Sensors-9V-0O8RfVgw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="14. ND320 C4 L2 10 Recap Intro To Sensors-9V-0O8RfVgw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>Every time you interact with a new sensor type, it’s a good idea to become familiar with the sensor in this way. You should try to understand the physics that make the sensor work, explore real data from the sensor, and research what common noise sources are and the artifacts they produce in the signal. Seeing how your own body reacts with a sensor is a great way to get experience and build intuition when possible. Finally, examining the existing literature on your sensor and the conditions that you are using it in is critical for learning a larger picture of the sensor’s characteristics. </p>
+<p>In this lesson, we learned how the three sensors we’re using in this course -- the IMU, PPG, and ECG sensors -- work. You now know what physical quantities are measured by each sensor, know what each sensor looks like, and learned about common challenges and noise sources that arise when working with these signals.</p>
+<h3 id="outline">Outline</h3>
+<ul>
+<li>Wrist Wearable Demo</li>
+<li>IMU Sensor<ul>
+<li>IMU Overview</li>
+<li>Accelerometer Deep Dive</li></ul></li>
+<li>PPG Sensor</li>
+<li>ECG Sensor</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Resources</p></h3>
+  <div>
+  <h2 id="further-resources">Further Resources</h2>
+<h3 id="imu">IMU</h3>
+<ul>
+<li>This paper describes using the orientation of accelerometers on the body to determine posture.   <a href="https://pdfs.semanticscholar.org/b8ac/6f5f1a3362f83aef7c75b0b75ab09e17a3c1.pdf" rel="noopener noreferrer" target="_blank">Gjoreski, Hristijan & Gams, Matjaz. (2011). Activity/Posture Recognition using Wearable Sensors Placed on Different Body Locations. 10.2316/P.2011.716-067.</a>.</li>
+<li>A review of methods for segmenting the gait cycle.<br />
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4732099/" rel="noopener noreferrer" target="_blank">Taborri J, Palermo E, Rossi S, Cappa P. Gait Partitioning Methods: A Systematic Review. Sensors (Basel). 2016 Jan 6;16(1). doi: 10.3390/s16010066. Review. PubMed PMID: 26751449; PubMed Central PMCID: PMC4732099</a></li>
+<li>Gait cycle segmentation using an ankle based accelerometer.<br />
+<a href="https://eudl.eu/pdf/10.4108/icst.pervasivehealth.2011.246061" rel="noopener noreferrer" target="_blank">Patterson, Matt & Caulfield, Brian. (2011). A novel approach for assessing gait using foot mounted accelerometers. 2011 5th International Conference on Pervasive Computing Technologies for Healthcare and Workshops, PervasiveHealth 2011. 218 - 221. 10.4108/icst.pervasivehealth.2011.246061.</a>.</li>
+<li>An article describing how changes in the gait cycle can be learned behavior. In this case, from prior KGB training.<br />
+<a href="https://www.bmj.com/content/351/bmj.h6141" rel="noopener noreferrer" target="_blank">Araújo R, Ferreirai JJ, Antonini A, and Bloem B. (2015)  “Gunslinger’s gait”: a new cause of unilaterally reduced arm swing. The BMJ.</a>  </li>
+</ul>
+<h3 id="ppg">PPG</h3>
+<ul>
+<li><p>To learn more about the PPGs, you can look at this <a href="https://en.wikipedia.org/wiki/Photoplethysmogram" rel="noopener noreferrer" target="_blank">Wikipedia Entry</a></p></li>
+<li><p>A dissertation on PPG processing techniques that includes an introduction that has great background information on the PPG signal in general.<br />
+<a href="https://pdfs.semanticscholar.org/c1d1/318d4fa8c8c02b1eaae2ca50c16532b53e15.pdf" rel="noopener noreferrer" target="_blank">Schäck, Tim. Photoplethysmography-Based Biomedical Signal Processing Darmstadt, Technische Universität Darmstadt, Jahr der Veröffentlichung der Dissertation auf TU prints: 2019 Tag der mündlichen Prüfung: 21.01.2019.</a>.</p></li>
+</ul>
+<h3 id="ecg">ECG</h3>
+<ul>
+<li>You can learn more about the ECG in the <a href="https://en.wikipedia.org/wiki/Electrocardiography" rel="noopener noreferrer" target="_blank">Wikipedia Entry</a></li>
+<li>Note: We’ll cover the ECG in more detail in lesson 4.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Inertial Measurement Unit (IMU)</strong>: A collection of sensors that measure motion.  </li>
+<li><strong>Accelerometer</strong>: A sensor that measures linear acceleration.  </li>
+<li><strong>Gyroscope</strong>: A sensor that measures angular velocity.  </li>
+<li><strong>Magnetometer</strong>: A sensor that measures magnetic forces.  </li>
+<li><strong>g-force</strong>: The amount of acceleration on a body due to gravity.  </li>
+<li><strong>Photoplethysmogram (PPG)</strong>: the optical sensor used to measure pulse rate on a wearable device.</li>
+<li><strong>Photodetector</strong>: A sensor that measures light.  </li>
+<li><strong>Diastole</strong>: The phase of the cardiac cycle where the heart relaxes and fills with blood.  </li>
+<li><strong>Systole</strong>: The phase of the cardiac cycle where the ventricles contract and pump blood through the arteries.    </li>
+<li><strong>Electrocardiogram (ECG)</strong>: A sensor that measures the electrical activity of the heart.  </li>
+<li><strong>Electrode</strong>: Part of an ECG circuit. Conductive pads that make contact with the skin.  </li>
+<li><strong>Lead</strong>: An electrical potential difference measured across two electrodes of an ECG circuit.  </li>
+<li><strong>Holter monitor</strong>: A mobile ECG device that can measure continuously for typically 24 - 72 hours.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Recap: Introduction to Sensors')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

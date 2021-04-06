@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.890
+The Fourier transform is invertible.
+
+00:00:01.890 --> 00:00:05.715
+This means we can modify a Fourier transform and then
+
+00:00:05.715 --> 00:00:10.395
+take the inverse Fourier transform to get out our signal in the time domain.
+
+00:00:10.395 --> 00:00:14.160
+Let's see this by recreating our original noisy signal,
+
+00:00:14.160 --> 00:00:17.775
+and now let's make a copy of that Fourier transform.
+
+00:00:17.775 --> 00:00:23.985
+This time we'll remove all the frequency components that are not two or three hertz.
+
+00:00:23.985 --> 00:00:26.370
+When we plot this, we can see that
+
+00:00:26.370 --> 00:00:29.845
+our Fourier transform has these nice sharp spikes at two and three hertz,
+
+00:00:29.845 --> 00:00:33.745
+and that all the noise in the other frequencies has been removed.
+
+00:00:33.745 --> 00:00:36.930
+Now let's go backwards and use the inverse Fourier
+
+00:00:36.930 --> 00:00:40.155
+transform to get out our time domain signal.
+
+00:00:40.155 --> 00:00:43.880
+We'll first plot the sum of two sinusoids without any noise.
+
+00:00:43.880 --> 00:00:48.370
+Then we'll plot the input signal that we originally took the Fourier transform of,
+
+00:00:48.370 --> 00:00:51.215
+and then we'll plot our output signal,
+
+00:00:51.215 --> 00:00:54.470
+which is the result of this inverse Fourier transform
+
+00:00:54.470 --> 00:00:58.130
+after removing the noise frequencies from the Fourier transform.
+
+00:00:58.130 --> 00:01:02.630
+Here we see that our output signal looks exactly the
+
+00:01:02.630 --> 00:01:06.860
+same as an ideal sum of two sinusoids without any noise.
+
+00:01:06.860 --> 00:01:08.120
+So that process of removing
+
+00:01:08.120 --> 00:01:12.710
+the noise frequencies basically removed all the noise out in the time domain as well.
+
+00:01:12.710 --> 00:01:14.765
+Now let's change these frequencies again.
+
+00:01:14.765 --> 00:01:20.510
+We'll make the first sinusoid at 2.15 hertz and the next one at 2.95 hertz.
+
+00:01:20.510 --> 00:01:22.385
+We'll go through the same process,
+
+00:01:22.385 --> 00:01:28.725
+where we take the Fourier transform and remove frequencies that are noise frequencies.
+
+00:01:28.725 --> 00:01:32.255
+When we do this, we can see that
+
+00:01:32.255 --> 00:01:38.485
+our output signal isn't too similar to what we would expect to get.
+
+00:01:38.485 --> 00:01:41.990
+This is because this method of removing frequencies in
+
+00:01:41.990 --> 00:01:45.544
+the Fourier transform and then taking the inverse Fourier transform,
+
+00:01:45.544 --> 00:01:49.715
+is not the best way to remove frequencies that we don't want in our signal.
+
+00:01:49.715 --> 00:01:53.000
+Typically, what we'll do in this class is use a band-pass filter.
+
+00:01:53.000 --> 00:01:55.775
+We can use SciPy to implement a band-pass filter.
+
+00:01:55.775 --> 00:02:00.520
+Basically, what it does is it removes all frequencies outside of our pass-band.
+
+00:02:00.520 --> 00:02:05.315
+So in this case, we'll set our pass-band from 1-4 hertz.
+
+00:02:05.315 --> 00:02:07.460
+This way, the frequencies that we want to keep,
+
+00:02:07.460 --> 00:02:12.910
+which are 2.15 and 2.95 hertz are well within the pass-band.
+
+00:02:12.910 --> 00:02:15.350
+Now when we plot our output signal,
+
+00:02:15.350 --> 00:02:17.030
+we can see that our output signal,
+
+00:02:17.030 --> 00:02:18.965
+while still not exactly the same,
+
+00:02:18.965 --> 00:02:21.940
+is closer than the original method.
+
+00:02:21.940 --> 00:02:26.850
+In this course, we'll always band-pass filter our signals before we process them.
+

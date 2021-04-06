@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.980
+The first thing we need to do is make our digital signals,
+
+00:00:02.980 --> 00:00:04.380
+and we do this with sampling.
+
+00:00:04.380 --> 00:00:06.180
+The goal of digital sampling is to take
+
+00:00:06.180 --> 00:00:08.760
+an analog continuous time signal, typically a voltage,
+
+00:00:08.760 --> 00:00:10.890
+and to quantize it and discretize it in
+
+00:00:10.890 --> 00:00:13.770
+time so that we can store it in a finite amount of memory.
+
+00:00:13.770 --> 00:00:16.635
+Then we can use the magic of computers to process it.
+
+00:00:16.635 --> 00:00:20.970
+Component that does this is called an analog to digital converter, or an ADC.
+
+00:00:20.970 --> 00:00:23.250
+The ADC changes the analog signal in
+
+00:00:23.250 --> 00:00:25.470
+a few fundamental ways that are important to learn about.
+
+00:00:25.470 --> 00:00:29.730
+In our heads, it's easy to sometimes pretend we're dealing with an ideal analog signal,
+
+00:00:29.730 --> 00:00:31.320
+but this can get us into trouble.
+
+00:00:31.320 --> 00:00:33.300
+It's important to know more detail about how
+
+00:00:33.300 --> 00:00:36.475
+analog signals are sampled to avoid pitfalls later on.
+
+00:00:36.475 --> 00:00:40.745
+So an ADC encodes a range of physical values to a set of discrete values.
+
+00:00:40.745 --> 00:00:42.290
+So in this example,
+
+00:00:42.290 --> 00:00:45.310
+the range is from minus three volts to plus three volts,
+
+00:00:45.310 --> 00:00:47.240
+and we're using a 4-bit ADC,
+
+00:00:47.240 --> 00:00:52.595
+which means we have 16 discrete values with which to encode this full range.
+
+00:00:52.595 --> 00:00:54.935
+Because this example is dramatic,
+
+00:00:54.935 --> 00:00:57.565
+you can see the effect of the quantization noise.
+
+00:00:57.565 --> 00:01:00.725
+Typically, ADCs have many more bits and you won't see
+
+00:01:00.725 --> 00:01:04.855
+quantization noise because it'll be overpowered by other sources of noise.
+
+00:01:04.855 --> 00:01:07.070
+Like in thermal energy in the system,
+
+00:01:07.070 --> 00:01:09.410
+or electronic noise from within the sensor,
+
+00:01:09.410 --> 00:01:12.080
+or even noise from the surroundings or
+
+00:01:12.080 --> 00:01:15.220
+the building that you're in will contribute to what we call the noise floor.
+
+00:01:15.220 --> 00:01:18.575
+So even when your input signal is perfectly flat like this,
+
+00:01:18.575 --> 00:01:21.740
+you'll always see some amount of noise in the output.
+
+00:01:21.740 --> 00:01:25.535
+If you ever see a perfectly flat line at zero in your output signal,
+
+00:01:25.535 --> 00:01:28.105
+then your sensor's probably broken,
+
+00:01:28.105 --> 00:01:30.150
+and this noise is additive.
+
+00:01:30.150 --> 00:01:32.405
+So whatever incoming signal you have,
+
+00:01:32.405 --> 00:01:34.865
+you'll see the noise floor added on top of that.
+
+00:01:34.865 --> 00:01:38.620
+Our ADC was encoding the range from minus three volts to plus three volts.
+
+00:01:38.620 --> 00:01:42.655
+So what happens when your signal actually varies from minus four to plus four?
+
+00:01:42.655 --> 00:01:47.780
+Well, everything greater than three volts will get clipped to three volts,
+
+00:01:47.780 --> 00:01:51.245
+and everything less than minus three volts will get clipped to minus three.
+
+00:01:51.245 --> 00:01:53.135
+We call this phenomenon clipping,
+
+00:01:53.135 --> 00:01:56.950
+or sometimes over saturation and under saturation.
+
+00:01:56.950 --> 00:01:58.730
+Finally, it's important to remember that
+
+00:01:58.730 --> 00:02:01.640
+digital signals are sampled periodically in time.
+
+00:02:01.640 --> 00:02:05.045
+We often like to plot them as these continuous curves,
+
+00:02:05.045 --> 00:02:07.310
+but maybe this is a more accurate representation
+
+00:02:07.310 --> 00:02:10.100
+where we plot the individual points in time.
+
+00:02:10.100 --> 00:02:14.405
+In this example, there are 30 dots in this 1 second.
+
+00:02:14.405 --> 00:02:19.355
+So we could say that the sampling rate is 30 samples per second or 30 hertz.
+
+00:02:19.355 --> 00:02:23.190
+Next, we'll look into some visualization techniques for our signals.
+

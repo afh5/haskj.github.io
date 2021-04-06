@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.220
+So let's try to do something a little more interesting.
+
+00:00:02.220 --> 00:00:04.580
+Let's look for zero-crossings in our signal.
+
+00:00:04.580 --> 00:00:13.260
+So zero-crossing are the points in time where our signal crosses y equal zero axis.
+
+00:00:13.260 --> 00:00:21.180
+One way we can do that is by first finding the sign of our signal and then looking
+
+00:00:21.180 --> 00:00:22.560
+for points in time where
+
+00:00:22.560 --> 00:00:29.670
+the sign changes and then getting the index locations at those times.
+
+00:00:29.670 --> 00:00:35.510
+So what we end up with is a list of sample locations and we
+
+00:00:35.510 --> 00:00:40.835
+can check that these sample locations are correct by plotting them on top of our signal.
+
+00:00:40.835 --> 00:00:45.710
+So what we do is we first plot our signal as before and then we plot
+
+00:00:45.710 --> 00:00:48.290
+only the specific locations for
+
+00:00:48.290 --> 00:00:53.115
+our zero-crossings using red markers with a marker size of 10.
+
+00:00:53.115 --> 00:00:59.920
+So we get something like this where we do see our red dots and they're all near zero,
+
+00:00:59.920 --> 00:01:01.860
+but they're not exactly at zero.
+
+00:01:01.860 --> 00:01:05.000
+So if we zoom in, we can see that they fall in
+
+00:01:05.000 --> 00:01:08.890
+parts of the signals that is changing rapidly.
+
+00:01:08.890 --> 00:01:11.450
+At this point, it's important to remember that
+
+00:01:11.450 --> 00:01:13.790
+our original signal is in this continuous line,
+
+00:01:13.790 --> 00:01:16.825
+it's actually digitally sampled.
+
+00:01:16.825 --> 00:01:22.265
+So maybe if we plot our signal using dots as well,
+
+00:01:22.265 --> 00:01:25.055
+we can see what's going on.
+
+00:01:25.055 --> 00:01:29.515
+We find that there is no value of the signal at y equal zero,
+
+00:01:29.515 --> 00:01:32.380
+which didn't happen to sample at that point in time.
+
+00:01:32.380 --> 00:01:37.685
+So instead what we found are the points that are closest to the actual zero-crossings.
+
+00:01:37.685 --> 00:01:41.460
+Next, we'll look at techniques for comparing two signals.
+

@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.980
+We covered a lot of material in this lesson.
+
+00:00:01.980 --> 00:00:05.475
+We started with the basics of what a signal is and how to digitally sample one.
+
+00:00:05.475 --> 00:00:07.890
+We covered techniques to process digital signals,
+
+00:00:07.890 --> 00:00:10.815
+including: interpolation, the Fourier transform,
+
+00:00:10.815 --> 00:00:12.435
+and we looked at harmonics.
+
+00:00:12.435 --> 00:00:14.760
+Along the way, we'll learn how to visualize signals using
+
+00:00:14.760 --> 00:00:17.480
+a matplotlib and how the spectrogram or short-time
+
+00:00:17.480 --> 00:00:19.970
+Fourier transform can help us more accurately see
+
+00:00:19.970 --> 00:00:23.000
+the Fourier coefficients of a signal as they change in time.
+
+00:00:23.000 --> 00:00:27.170
+The breadth of concepts that we covered here could comprise full university classes.
+
+00:00:27.170 --> 00:00:30.920
+We did a lot of exercises to help you feel comfortable using these topics practically,
+
+00:00:30.920 --> 00:00:32.915
+but a lot of this material might be unlike
+
+00:00:32.915 --> 00:00:34.835
+other disciplines of math that you've seen before.
+
+00:00:34.835 --> 00:00:37.010
+Don't hesitate to re-watch the videos and explored
+
+00:00:37.010 --> 00:00:39.295
+at the further resources to build your intuition.
+
+00:00:39.295 --> 00:00:42.605
+I'm hopeful that as we use these concepts in the upcoming lessons,
+
+00:00:42.605 --> 00:00:44.730
+things will start to click more.
+

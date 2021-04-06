@@ -1,0 +1,430 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PPG Sensor</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Sensors</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to Sensors.html">01. Introduction to Sensors</a>
+    </li>
+    <li class="">
+      <a href="02. Inertial Measurement Unit.html">02. Inertial Measurement Unit</a>
+    </li>
+    <li class="">
+      <a href="03. Accelerometer Deep Dive.html">03. Accelerometer Deep Dive</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Step Cadence.html">04. Exercise 1: Step Cadence</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Solution.html">05. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="06. PPG Sensor.html">06. PPG Sensor</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 2 PPG Peaks.html">07. Exercise 2: PPG Peaks</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Solution.html">08. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="09. PPG SNR.html">09. PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 3 PPG SNR.html">10. Exercise 3: PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 Solution.html">11. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ECG Sensor.html">12. ECG Sensor</a>
+    </li>
+    <li class="">
+      <a href="13. Apple Heart Study - Revisited.html">13. Apple Heart Study - Revisited</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Introduction to Sensors.html">14. Recap: Introduction to Sensors</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. PPG Sensor</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="photoplethysmogram-ppg-sensor">Photoplethysmogram (PPG) Sensor</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L2 05 PPG Sensor</p></h3>
+  <video controls>
+  <source src="06. ND320 C4 L2 05 PPG Sensor-PBrbk7-oPR4.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>PPG Sensor recap</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>The <strong>photoplethysmogram (PPG)</strong> optically measures blood flow at the wrist. The LEDs in a PPG sensor shine a typically green light into your skin and your red blood cells absorb that green light. The reflected light is then measured by the <strong>photodetector</strong>. When your heart beats and blood perfuses through the wrist, there are more red blood cells that absorb the green light and the photodetector sees a smaller signal. As the heart fills back up with blood and blood leaves your wrist, the more green light is reflected back and the photodetector reading goes up. This oscillating waveform can be used to detect pulse rate. See the illustration below.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>PPG Sensor Diagram</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-ppg-sensor-diagram.png" alt="PPG Sensor Diagram" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>PPG Sensor Diagram</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ppg + melanin</p></h3>
+  <div>
+  <p>The trough corresponds to a peak in perfusion and occurs when the ventricles of the heart contract, called <strong>systole</strong>. The peak in the waveform occurs when there is the least amount of blood in the wrist or when the heart relaxes and fills with blood, called <strong>diastole</strong>.  </p>
+<h2 id="noise-sources">Noise Sources</h2>
+<p>There are many other factors that affect the signal. </p>
+<h3 id="melanin">Melanin</h3>
+<p>Skin absorbs light from the LEDs as well and darker skin absorbs more light. This causes a DC shift and a reduction in SNR in the PPG signal for people with darker skin. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Melanin</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-melanin.png" alt="Effect of Melanin" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Effect of Melanin</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>arm motion</p></h3>
+  <div>
+  <h3 id="arm-motion">Arm Motion</h3>
+<p>Blood is a liquid and when you move your arm around, the blood inside moves as well. This is what the PPG signal looks like while running. You can see the cadence of the arm swing in the FFT of the PPG signal as well as in the accelerometer.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Arm Motion</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-arm-motion.png" alt="Effect of Arm Motion" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Effect of Arm Motion</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>arm position</p></h3>
+  <div>
+  <h1 id="arm-position">Arm Position</h1>
+<p>Even while at rest, if the position of the arm changes, blood flows into or out of the wrist. If you hang your arm down, more blood will flow into it and the DC level of the signal will slowly drop. If you raise your arm up, blood will flow out of your arm and the DC level will increase.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>posture</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-posture.png" alt="Effect of Posture Change" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Effect of Posture Change</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>finger mvt</p></h3>
+  <div>
+  <h3 id="finger-movement">Finger Movement</h3>
+<p>Moving your fingers around will cause a significant disturbance in the PPG signal because, as the tendons in your wrist move, they cause other structures to move around and may even shift the position of the sensor. All this motion will change the path that light takes to travel through the wrist and change the photodetector reading.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>finger mvt</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-finger-movement.png" alt="Effect of Finger Movement" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Effect of Finger Movement</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap</p></h3>
+  <div>
+  <p>All these sources of noise make the PPG signal tricky to deal with, but now that you are aware of them, you can design algorithms that are robust to these events.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>What does each part of the PPG wave correspond to in a cardiac cycle?</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Diastole</p></button>
+  <button class="btn btn-primary"><p>Systole</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Part of a PPG</p>
+      </th>
+      <th>
+        <p>Cardiac Cycle</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>Peak</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Trough</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Part of a PPG</p>
+        </th>
+        <th>
+          <p>Cardiac Cycle</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Peak</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Diastole</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Trough</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Systole</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h2 id="new-vocabulary">New Vocabulary</h2>
+<ul>
+<li><strong>Photoplethysmogram (PPG)</strong>: the optical sensor used to measure pulse rate on a wearable device.</li>
+<li><strong>Photodetector</strong>: A sensor that measures light.</li>
+<li><strong>Diastole</strong>: The phase of the cardiac cycle where the heart relaxes and fills with blood.</li>
+<li><strong>Systole</strong>: The phase of the cardiac cycle where the ventricles contract and pump blood through the arteries.</li>
+</ul>
+<h1 id="exercise-2-ppg-peaks">Exercise 2: PPG Peaks</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Complete the <strong>Offline</strong> or <strong>Online</strong> instructions below.</li>
+<li>Read through the whole <code>.ipynb</code>.</li>
+<li>Complete all the code cells that contain <code>## Your Code Goes Here</code>.</li>
+</ol>
+<h4 id="offline">Offline</h4>
+<ol>
+<li>In the repo which you can access <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/intro-to-sensors/exercises/2-ppg-peaks/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/intro-to-sensors/exercises/2-ppg-peaks/</code> you should find the following files:</li>
+</ol>
+<ul>
+<li><code>2_ppg_peaks.ipynb</code></li>
+<li><code>exercise2.npz</code></li>
+<li><code>ppg_peaks.png</code></li>
+</ul>
+<ol>
+<li>Open up the python notebook and associated files in your desired editor. </li>
+</ol>
+<p><strong>Note</strong>: Instructions can be found in <strong>Introduction to Wearable Data</strong>'s Concept <strong>Developer Workflow</strong> for how to set up your local environment.</p>
+<h4 id="online">Online</h4>
+<ol>
+<li>Go to the next concept and the <code>2_ppg_peaks.ipynb</code> should be open and the workspace should already contain the appropriate <code>exercise2.npz</code> file. This one will also contain the <code>ppg_peaks.png</code> file for the instructions in markdown.    </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Exercise 2 PPG Peaks.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. PPG Sensor')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

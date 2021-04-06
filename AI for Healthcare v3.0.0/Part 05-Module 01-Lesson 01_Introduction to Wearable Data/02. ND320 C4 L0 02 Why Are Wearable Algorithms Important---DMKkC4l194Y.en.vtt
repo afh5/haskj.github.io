@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.720
+Today, the landscape of wearable devices is vast and only increasing.
+
+00:00:03.720 --> 00:00:06.470
+In part because of the miniaturization of electronics and sensors,
+
+00:00:06.470 --> 00:00:08.505
+they are much more capable than before.
+
+00:00:08.505 --> 00:00:12.885
+For example, Apple Watch came out in 2015 and tries to track activity,
+
+00:00:12.885 --> 00:00:14.985
+heart rate, exercise, sleep.
+
+00:00:14.985 --> 00:00:18.780
+The newer model even has an ECG sensor on it for measuring your heart rhythm.
+
+00:00:18.780 --> 00:00:21.810
+Beyond that, there are shoe sensors, underwearables,
+
+00:00:21.810 --> 00:00:24.525
+things like compression shorts and even wearables for your baby,
+
+00:00:24.525 --> 00:00:27.525
+Pampers has a Smart Diaper and more.
+
+00:00:27.525 --> 00:00:30.410
+But the sensors don't produce meaningful metrics automatically.
+
+00:00:30.410 --> 00:00:34.295
+For example, the sensor on a Fitbit doesn't produce a pulse rate or a step count.
+
+00:00:34.295 --> 00:00:38.660
+Instead, they send some underlying raw signal for step counted be motion.
+
+00:00:38.660 --> 00:00:41.510
+Then algorithms will process this raw motion data
+
+00:00:41.510 --> 00:00:44.615
+into various activity classifications or step counts.
+
+00:00:44.615 --> 00:00:46.580
+This course will teach you how to build those signal
+
+00:00:46.580 --> 00:00:48.290
+processing and machine learning algorithms that
+
+00:00:48.290 --> 00:00:52.250
+process raw wearable data and produce more clinically meaningful metrics.
+
+00:00:52.250 --> 00:00:55.760
+We will use real datasets from real wearables throughout this course,
+
+00:00:55.760 --> 00:00:57.620
+which means that you'll run into some of
+
+00:00:57.620 --> 00:01:00.400
+the same pitfalls that practitioners in the industry do.
+
+00:01:00.400 --> 00:01:04.280
+The course focuses on three main sensors for a wrist wearable.
+
+00:01:04.280 --> 00:01:06.680
+The IMU sensor which measures motion.
+
+00:01:06.680 --> 00:01:09.800
+The PVG sensor which measures the blood flow at the wrist,
+
+00:01:09.800 --> 00:01:13.325
+and the ECG sensor which measures electrical activity in the heart.
+
+00:01:13.325 --> 00:01:16.220
+But the skills you'll develop and the algorithms you'll learn about in
+
+00:01:16.220 --> 00:01:19.880
+this class will be transferable to a broad spectrum of devices and sensors.
+
+00:01:19.880 --> 00:01:22.610
+You'll be working intimately with time series signals in this course.
+
+00:01:22.610 --> 00:01:26.540
+So before we jump in, we'll do a quick review of basic time series signal processing,
+
+00:01:26.540 --> 00:01:29.530
+as well as learn some plotting tools to help us explore the data.
+
+00:01:29.530 --> 00:01:32.390
+We'll then cover how the sensors we're dealing with work.
+
+00:01:32.390 --> 00:01:34.250
+Then we'll deep-dive into
+
+00:01:34.250 --> 00:01:37.445
+the IMU sensor and learn how to use it to do activity classification.
+
+00:01:37.445 --> 00:01:40.775
+That's going to help build useful context around how the wearer spends their time,
+
+00:01:40.775 --> 00:01:41.930
+how much exercise they get,
+
+00:01:41.930 --> 00:01:43.700
+how mobile they are and so on.
+
+00:01:43.700 --> 00:01:46.220
+Next, we will look at the ECG sensor and learn how
+
+00:01:46.220 --> 00:01:48.475
+we can use it to detect cardiovascular arrhythmias.
+
+00:01:48.475 --> 00:01:49.910
+Finally, in the final project,
+
+00:01:49.910 --> 00:01:52.265
+you'll use the PPG sensor to derive pulse rate.
+
+00:01:52.265 --> 00:01:56.225
+You'll learn techniques to produce good results even while the wearer's exercising,
+
+00:01:56.225 --> 00:01:57.440
+which as you will soon learn,
+
+00:01:57.440 --> 00:01:59.075
+causes all sorts of problems.
+
+00:01:59.075 --> 00:02:00.980
+But before we get started, I want to talk about
+
+00:02:00.980 --> 00:02:05.010
+a very interesting clinical study involving wearables in the next video.
+

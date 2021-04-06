@@ -1,0 +1,229 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.205
+Now that we know what the Fourier transform is,
+
+00:00:02.205 --> 00:00:03.720
+let's use it in practice.
+
+00:00:03.720 --> 00:00:06.915
+Let's make a signal that's composed of two different sine waves,
+
+00:00:06.915 --> 00:00:09.390
+one at two hertz and one at three hertz,
+
+00:00:09.390 --> 00:00:11.790
+and then add some random noise to it.
+
+00:00:11.790 --> 00:00:15.150
+Next, we're going to take the Fourier transform of the signal.
+
+00:00:15.150 --> 00:00:21.360
+So the module we use to do Fourier transforms is the np.fft module.
+
+00:00:21.360 --> 00:00:24.390
+Fft stands for fast Fourier transform.
+
+00:00:24.390 --> 00:00:30.150
+The two main functions we're going to be using are rfftfreq and rfft.
+
+00:00:30.150 --> 00:00:36.315
+Rfftfreq tells us the frequency values for which we are computing Fourier coefficients.
+
+00:00:36.315 --> 00:00:41.280
+The Fourier coefficients are computed with the rfft function.
+
+00:00:41.280 --> 00:00:43.550
+Fourier coefficients tell us the magnitude and
+
+00:00:43.550 --> 00:00:46.970
+the phase of each frequency value in the signal.
+
+00:00:46.970 --> 00:00:49.820
+The reason these functions start with an r is because we're using
+
+00:00:49.820 --> 00:00:52.910
+specific functions that are meant for real value signals,
+
+00:00:52.910 --> 00:00:54.950
+as opposed to complex numbers.
+
+00:00:54.950 --> 00:00:57.275
+By examining the freqs array,
+
+00:00:57.275 --> 00:01:05.180
+we can see that the fft samples the Fourier transform uniformly from 0 hertz to 25 hertz.
+
+00:01:05.180 --> 00:01:08.615
+Because our signals sampling rate is at 50 hertz,
+
+00:01:08.615 --> 00:01:11.795
+this 25 hertz is the Nyquist frequency.
+
+00:01:11.795 --> 00:01:15.170
+The actual Fourier transform coefficients are complex numbers,
+
+00:01:15.170 --> 00:01:19.145
+because they describe not only the magnitude of each frequency component,
+
+00:01:19.145 --> 00:01:20.825
+but also its phase.
+
+00:01:20.825 --> 00:01:24.365
+Most of the time, we're really only interested in the magnitude,
+
+00:01:24.365 --> 00:01:29.555
+and so we can take the absolute value of these complex numbers and get the magnitude.
+
+00:01:29.555 --> 00:01:31.700
+One thing to notice is that the output of
+
+00:01:31.700 --> 00:01:35.515
+the Fourier transform is half the length of the input signal.
+
+00:01:35.515 --> 00:01:42.260
+So our input signal is 500 samples long and our Fourier transform is 251 samples long.
+
+00:01:42.260 --> 00:01:47.435
+This is why our frequency array increments in units of 0.1 hertz,
+
+00:01:47.435 --> 00:01:52.980
+because we have 250 samples to span the range from 0-25 hertz.
+
+00:01:52.980 --> 00:01:55.095
+Now, when we plot the fft,
+
+00:01:55.095 --> 00:01:59.390
+we can see that our signal in the time domain looks
+
+00:01:59.390 --> 00:02:03.270
+like a sum of sinusoids with a lot of noise added to it.
+
+00:02:03.270 --> 00:02:08.650
+Then our signal in the frequency domain has two sharp spikes at two and three hertz.
+
+00:02:08.650 --> 00:02:10.730
+Then it has a bunch of noise everywhere else,
+
+00:02:10.730 --> 00:02:13.325
+because of the random noise we added to our signal.
+
+00:02:13.325 --> 00:02:15.710
+So when we look at signals in the time domain,
+
+00:02:15.710 --> 00:02:19.105
+what we mean basically is that the x-axis is in time,
+
+00:02:19.105 --> 00:02:21.575
+and when we look at signals in the frequency domain,
+
+00:02:21.575 --> 00:02:24.345
+the x-axis is in frequency or hertz.
+
+00:02:24.345 --> 00:02:28.460
+Now let's change the frequencies of the sinusoids that we're adding together.
+
+00:02:28.460 --> 00:02:33.405
+We'll make this one 2.35 hertz and this one 3.65 hertz.
+
+00:02:33.405 --> 00:02:40.625
+If you remember, our frequencies array up here doesn't have 2.35 or 3.65,
+
+00:02:40.625 --> 00:02:42.665
+it goes from 2.3 to 2.4.
+
+00:02:42.665 --> 00:02:45.290
+So the main frequency component in our signal
+
+00:02:45.290 --> 00:02:48.385
+is in between where we're sampling the Fourier transform.
+
+00:02:48.385 --> 00:02:51.275
+So when we plot this new signal,
+
+00:02:51.275 --> 00:02:58.080
+what we find is that we don't have the same sharp spikes at the frequency components,
+
+00:02:58.080 --> 00:03:00.375
+instead we have these flattish spikes.
+
+00:03:00.375 --> 00:03:02.900
+The reason for that is because there's just
+
+00:03:02.900 --> 00:03:07.320
+no value for the Fourier transform at 2.35 hertz.
+
+00:03:07.370 --> 00:03:09.815
+This is because, if you remember,
+
+00:03:09.815 --> 00:03:14.580
+the output of the fast Fourier transform is half the length of the input signal.
+
+00:03:14.580 --> 00:03:17.660
+So our input signal is just not long enough for us
+
+00:03:17.660 --> 00:03:20.780
+to sample the Fourier transform with high enough resolution,
+
+00:03:20.780 --> 00:03:24.005
+so that we know what the value would be at 2.35 hertz.
+
+00:03:24.005 --> 00:03:28.630
+One way to fix this is to artificially make our signal longer,
+
+00:03:28.630 --> 00:03:31.850
+and the way we do that is we pad it with zeros.
+
+00:03:31.850 --> 00:03:34.115
+When we pad it with zeros,
+
+00:03:34.115 --> 00:03:36.335
+in the time domain, it looks like this,
+
+00:03:36.335 --> 00:03:39.335
+where we have our original signal for the first half,
+
+00:03:39.335 --> 00:03:42.430
+and then the second half is just all flat at zeros.
+
+00:03:42.430 --> 00:03:44.460
+In the frequency domain,
+
+00:03:44.460 --> 00:03:48.170
+now we see sharp spikes at the frequencies of interest.
+
+00:03:48.170 --> 00:03:50.810
+We also see this rippling behavior,
+
+00:03:50.810 --> 00:03:52.805
+which is an artifact of zero-padding.
+
+00:03:52.805 --> 00:03:57.175
+So there's some trade-offs that you have when you do this zero-padding.
+
+00:03:57.175 --> 00:04:00.665
+So up here we manually padded our signal to make it longer,
+
+00:04:00.665 --> 00:04:03.665
+but NumPy has convenience functions that do this for us.
+
+00:04:03.665 --> 00:04:08.155
+The second argument for the fft function is this length parameter.
+
+00:04:08.155 --> 00:04:12.095
+So we can just specify the length of the fft output that we want,
+
+00:04:12.095 --> 00:04:17.400
+and when we do that, we see the exact same fft in the output.
+
+00:04:17.400 --> 00:04:21.175
+So we've seen how we can take our signal from the time domain to the frequency domain.
+
+00:04:21.175 --> 00:04:23.360
+In the next video, we'll look at going backwards,
+
+00:04:23.360 --> 00:04:25.650
+the inverse Fourier transform.
+

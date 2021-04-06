@@ -1,0 +1,457 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accelerometer Deep Dive</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Sensors</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to Sensors.html">01. Introduction to Sensors</a>
+    </li>
+    <li class="">
+      <a href="02. Inertial Measurement Unit.html">02. Inertial Measurement Unit</a>
+    </li>
+    <li class="">
+      <a href="03. Accelerometer Deep Dive.html">03. Accelerometer Deep Dive</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Step Cadence.html">04. Exercise 1: Step Cadence</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Solution.html">05. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="06. PPG Sensor.html">06. PPG Sensor</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 2 PPG Peaks.html">07. Exercise 2: PPG Peaks</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Solution.html">08. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="09. PPG SNR.html">09. PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 3 PPG SNR.html">10. Exercise 3: PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 Solution.html">11. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ECG Sensor.html">12. ECG Sensor</a>
+    </li>
+    <li class="">
+      <a href="13. Apple Heart Study - Revisited.html">13. Apple Heart Study - Revisited</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Introduction to Sensors.html">14. Recap: Introduction to Sensors</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Accelerometer Deep Dive</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="accelerometer-deep-dive">Accelerometer Deep-Dive</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L2 03 Accelerometer Deep Dive</p></h3>
+  <video controls>
+  <source src="03. ND320 C4 L2 03 Accelerometer Deep Dive-GfdLzQl3POk.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>Let’s take a more in-depth look at the accelerometer. As a reminder, when we talk about accelerometer magnitude, this means the vector magnitude of the force on the accelerometer in 3D space, as given by this formula. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>acc magnitude</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-accelerometer-magnitude.png" alt="Accelerometer magnitude is the square root of the sum of the squared value of movement in each of the 3 axes. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Accelerometer magnitude is the square root of the sum of the squared value of movement in each of the 3 axes. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap</p></h3>
+  <div>
+  <p>Take a look at this accelerometer trace when the wearer is at rest.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>at rest</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-acc-rest.png" alt="Accelerometer Magnitude - Wearer at Rest" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Accelerometer Magnitude - Wearer at Rest</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap - jogger</p></h3>
+  <div>
+  <p>The accelerometer magnitude is close to 1 g, which means the total force on the accelerometer is only due to gravity. But if you look at the individual channels, they shift around. In the beginning, they all see the same amount of gravitational force, which means the device is tilted along each axis equally. But then after 15 seconds, the x and y channels drop and the z-channel rises to nearly 1g. This indicates the device has moved and is now lying flat, so only the z-channel feels the force of gravity. By strategically placing accelerometers on the body, you can use this technique to figure out things like posture or sleeping position.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>jogging</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-acc-jogging.png" alt="Accelerometer Magnitude - Wearer is Jogging" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Accelerometer Magnitude - Wearer is Jogging</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap jog</p></h3>
+  <div>
+  <p>This is a trace of someone who is jogging. Notice the very periodic shapes in each channel that indicate the cadence of the arm swing, which can be used to figure out how fast someone is walking. By analyzing the specific characteristics of the waveform, you can decompose each stride into various components.  </p>
+<p>For example, this paper decomposes the accelerometer trace from an ankle into various phases of the gait cycle.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>gait cycle phase</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-gait-cycle-phase.png" alt="Patterson M., Caulfield B. A novel approach for assessing gait using foot mounted accelerometers; Proceedings of 5th International ICST Conference on Pervasive Computing Technologies for Healthcare; Dublin, Ireland. 23–26 May 2011; pp. 218–221." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Patterson M., Caulfield B. A novel approach for assessing gait using foot mounted accelerometers; Proceedings of 5th International ICST Conference on Pervasive Computing Technologies for Healthcare; Dublin, Ireland. 23–26 May 2011; pp. 218–221.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap gait</p></h3>
+  <div>
+  <p>Discriminating the gait phases like this is an important starting point for several applications such as recovery after an injury or treatment, the classification of daily activities, coaching athletes, and distinguishing between normal and pathological gait. Researchers have found that differences in each person’s gait mean that it can be used to identify individuals.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>run with break</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-acc-run-break.png" alt="Accelerometer Magnitude - Wearer is running with a break in between" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Accelerometer Magnitude - Wearer is running with a break in between</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap magnitude</p></h3>
+  <div>
+  <p>Here we see a zoomed-out view of the accelerometer trace over 2 minutes. We can see the wearer distinctly changing activities, going from jogging to still to jogging again. You can even tell that they are probably jogging on a treadmill as the speed slowly ramps up and down. And from the sharp cut-off around 50 seconds, maybe we can tell that they jumped off the treadmill or for some reason their treadmill session was cut short. I didn’t collect this dataset, so we can’t know for sure, but it’s interesting that we can learn this level of detail from just an accelerometer alone.  </p>
+<h3 id="quiz">Quiz</h3>
+<p>Review the set of graphs to answer the following quiz. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz plots</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-sample-acc.png" alt="Sample accelerometer traces" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Sample accelerometer traces</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the accelerometer traces above with the activity being done in each of the above image.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Broken Device</p></button>
+  <button class="btn btn-primary"><p>Running</p></button>
+  <button class="btn btn-primary"><p>Walking</p></button>
+  <button class="btn btn-primary"><p>idle</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Sample Trace</p>
+      </th>
+      <th>
+        <p>Activity</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>A</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>B</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>C</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>D</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Sample Trace</p>
+        </th>
+        <th>
+          <p>Activity</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>D</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Broken Device</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>B</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Running</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>C</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Walking</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>A</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>idle</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise Intro</p></h3>
+  <div>
+  <h1 id="exercise-1-step-cadence">Exercise 1: Step Cadence</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Complete the <strong>Offline</strong> or <strong>Online</strong> instructions below.</li>
+<li>Read through the whole <code>.ipynb</code>.</li>
+<li>Complete all the code cells that contain <code>## Your Code Goes Here</code>.</li>
+</ol>
+<h4 id="offline">Offline</h4>
+<ol>
+<li>In the repo which you can access <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/intro-to-sensors/exercises/1-step-cadence/" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/intro-to-sensors/exercises/1-step-cadence/</code> you should find the following files:</li>
+</ol>
+<ul>
+<li><code>1_step_cadence.ipynb</code></li>
+<li><code>exercise1.npz</code></li>
+</ul>
+<ol>
+<li>Open up the python notebook and associated files in your desired editor. </li>
+</ol>
+<p><strong>Note</strong>: Instructions can be found in <strong>Introduction to Wearable Data</strong>'s Concept <strong>Developer Workflow</strong> for how to set up your local environment.</p>
+<h4 id="online">Online</h4>
+<ol>
+<li>Go to the next concept and the <code>1_plotting.ipynb</code> should be open and the workspace should already contain the appropriate <code>exercise1.npz</code> file.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Exercise 1 Step Cadence.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Accelerometer Deep Dive')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

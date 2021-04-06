@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.550
+In this lesson, we introduce the course by providing
+
+00:00:02.550 --> 00:00:06.120
+two examples of how wearables aim to be more than just fitness devices.
+
+00:00:06.120 --> 00:00:09.090
+We started with an anecdote of when a wearable device alerted someone of
+
+00:00:09.090 --> 00:00:11.640
+a serious medical condition and we followed that up with
+
+00:00:11.640 --> 00:00:15.465
+a discussion about the largest clinical study ever conducted with wearable devices.
+
+00:00:15.465 --> 00:00:19.185
+Wearable data spans a few broad domains: signal processing,
+
+00:00:19.185 --> 00:00:21.690
+machine learning, electronics and sensors,
+
+00:00:21.690 --> 00:00:24.085
+as well as some clinical domain expertise.
+
+00:00:24.085 --> 00:00:27.050
+This course assumes that you have some basic knowledge of machine learning.
+
+00:00:27.050 --> 00:00:29.210
+However, if you don't, you can always catch up by spending
+
+00:00:29.210 --> 00:00:32.680
+more time with the further resources section at the end of each lesson.
+
+00:00:32.680 --> 00:00:35.770
+We begin with introductions to signal processing and sensors to
+
+00:00:35.770 --> 00:00:37.730
+provide you with some of the necessary background knowledge
+
+00:00:37.730 --> 00:00:39.230
+to be successful in this field.
+
+00:00:39.230 --> 00:00:41.480
+From there, we dive into a few case studies in
+
+00:00:41.480 --> 00:00:44.720
+biomedical time series algorithms that process wearable data.
+
+00:00:44.720 --> 00:00:47.180
+Each particular case study will begin with any of
+
+00:00:47.180 --> 00:00:50.850
+the clinical knowledge that you need to be successful in this course.
+

@@ -1,0 +1,163 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.810
+In the previous video, we saw how Stanford researchers use the Apple Watch to detect
+
+00:00:03.810 --> 00:00:07.890
+atrial fibrillation and that the watch was correct 34 percent of the time.
+
+00:00:07.890 --> 00:00:11.325
+This is a landmark study in the use of wearables for clinical research.
+
+00:00:11.325 --> 00:00:14.280
+But I don't think we should focus too much on the 34 percent number
+
+00:00:14.280 --> 00:00:18.120
+or overthink how the Apple Watch could be used as a screening or diagnostic tool.
+
+00:00:18.120 --> 00:00:19.890
+Reason for this is that the study
+
+00:00:19.890 --> 00:00:22.230
+deviated from typical clinical trials that tried to prove
+
+00:00:22.230 --> 00:00:26.655
+the effectiveness of a new device or drug in a few significant ways.
+
+00:00:26.655 --> 00:00:30.300
+First, the study didn't send ECG chest patches to everyone,
+
+00:00:30.300 --> 00:00:32.700
+it only sent it to the people who
+
+00:00:32.700 --> 00:00:35.250
+were notified by the watch of an irregular pulse rhythm.
+
+00:00:35.250 --> 00:00:39.560
+So we don't know how many people in the study had AFib that the watch didn't detect.
+
+00:00:39.560 --> 00:00:42.485
+In other words, we don't really know what the false negative rate was.
+
+00:00:42.485 --> 00:00:45.635
+Second, the inclusion criteria for the study was pretty strict.
+
+00:00:45.635 --> 00:00:47.645
+You had to have an iPhone and an Apple Watch,
+
+00:00:47.645 --> 00:00:50.675
+which meant that the study population skewed to a more tech savvy,
+
+00:00:50.675 --> 00:00:52.820
+younger, and more affluent population.
+
+00:00:52.820 --> 00:00:55.130
+You typically want your study population to match
+
+00:00:55.130 --> 00:00:57.845
+the population for the medical condition that you're researching,
+
+00:00:57.845 --> 00:01:02.945
+which for AFib skews older and is not really limited by social and economic boundaries.
+
+00:01:02.945 --> 00:01:05.060
+But it's easy to see why researchers chose to
+
+00:01:05.060 --> 00:01:07.430
+leverage existing Apple Watch customers for their study.
+
+00:01:07.430 --> 00:01:11.420
+They managed to enroll 400,000 people without having to buy a single device.
+
+00:01:11.420 --> 00:01:15.110
+However, if wearable research continues like this where studies are conducted using
+
+00:01:15.110 --> 00:01:19.940
+devices with large market penetration and on people who already own those devices,
+
+00:01:19.940 --> 00:01:22.180
+the findings are bound to be bias.
+
+00:01:22.180 --> 00:01:26.265
+In much the same way in machine learning algorithms can over fit on their training set,
+
+00:01:26.265 --> 00:01:28.480
+interventions or discoveries made on a bias to
+
+00:01:28.480 --> 00:01:32.945
+clinical study population maybe more specifically tailored to this population,
+
+00:01:32.945 --> 00:01:35.800
+and they may be less effective on a less affluent population.
+
+00:01:35.800 --> 00:01:39.550
+For example, you'll learn that one source of noise for the PPG sensor,
+
+00:01:39.550 --> 00:01:42.625
+which is the sensor used in detecting the irregular pulse rhythm,
+
+00:01:42.625 --> 00:01:44.590
+is skin color and in the United States,
+
+00:01:44.590 --> 00:01:48.220
+we know that skin color is heavily correlated with wealth and access to wearables.
+
+00:01:48.220 --> 00:01:50.440
+This is similar to why researchers try hard to
+
+00:01:50.440 --> 00:01:53.065
+enroll minority populations in their clinical trials.
+
+00:01:53.065 --> 00:01:54.910
+As I mentioned earlier, I do think this study
+
+00:01:54.910 --> 00:01:56.680
+was a landmark study in the use of wearables in
+
+00:01:56.680 --> 00:01:59.100
+clinical research and it incredibly recruited
+
+00:01:59.100 --> 00:02:02.065
+almost half a million people for the study in just eight months.
+
+00:02:02.065 --> 00:02:04.430
+Then we learned that when you recruit over the Internet like this,
+
+00:02:04.430 --> 00:02:06.370
+you lose a lot of participants to follow up.
+
+00:02:06.370 --> 00:02:10.595
+For example, over 2,000 participants were notified of an irregular pulse,
+
+00:02:10.595 --> 00:02:14.455
+but only 450 ECG chest patches were returned to researchers.
+
+00:02:14.455 --> 00:02:16.700
+Somewhere between receiving the chess patch
+
+00:02:16.700 --> 00:02:18.740
+to putting it on to returning to the study staff,
+
+00:02:18.740 --> 00:02:20.870
+1,500 people dropped out.
+
+00:02:20.870 --> 00:02:23.720
+We also learned how users would interact to a smartwatch,
+
+00:02:23.720 --> 00:02:26.770
+notifying them of a heart abnormality as it was happening.
+
+00:02:26.770 --> 00:02:30.290
+I think the study is super exciting in that it's the first major attempt to use
+
+00:02:30.290 --> 00:02:34.100
+the capability of wearables to do a long term monitoring in a medical context.
+
+00:02:34.100 --> 00:02:36.365
+There's obviously a lot of hype around studies like this,
+
+00:02:36.365 --> 00:02:39.180
+and I want us to be excited about the right things.
+

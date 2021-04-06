@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.480
+So we've spent a lot of the previous videos looking at sinusoids,
+
+00:00:03.480 --> 00:00:07.350
+and sinusoids are great signals to look at for learning concepts.
+
+00:00:07.350 --> 00:00:08.625
+But in the real world,
+
+00:00:08.625 --> 00:00:10.575
+we rarely see perfect sinusoids.
+
+00:00:10.575 --> 00:00:12.930
+So in this lesson, we're going to talk about a phenomenon that
+
+00:00:12.930 --> 00:00:16.795
+occurs when dealing with periodic signals that aren't sinusoids.
+
+00:00:16.795 --> 00:00:20.405
+When you take the Fourier transform of such a periodic signal,
+
+00:00:20.405 --> 00:00:23.540
+you'll see periodic spikes in the Fourier transform.
+
+00:00:23.540 --> 00:00:26.344
+We call the first spike the fundamental frequency,
+
+00:00:26.344 --> 00:00:29.395
+and then the spikes following that one, the Harmonics.
+
+00:00:29.395 --> 00:00:31.765
+So let's see this for ourselves.
+
+00:00:31.765 --> 00:00:36.740
+We'll load up our accelerometer signal from the wrist
+
+00:00:36.740 --> 00:00:41.655
+that we've seen before and this is while someone is jogging,
+
+00:00:41.655 --> 00:00:44.855
+so we have this periodic motion to it.
+
+00:00:44.855 --> 00:00:53.545
+Let's plot the Fourier transform and we do see periodic spikes in the Fourier transform.
+
+00:00:53.545 --> 00:00:58.050
+The first one occurs at around 1.35 or
+
+00:00:58.050 --> 00:01:04.190
+1.37 and then we have what we suspect are Harmonics following it.
+
+00:01:04.190 --> 00:01:09.140
+So we can find out what the value of the fundamental frequency
+
+00:01:09.140 --> 00:01:13.640
+is by looking at the largest frequency component in the first part of the signal,
+
+00:01:13.640 --> 00:01:20.060
+and that looks to be 1.375 Hertz and then we can compute where
+
+00:01:20.060 --> 00:01:22.505
+we expect the Harmonics to be by taking
+
+00:01:22.505 --> 00:01:27.005
+integer multiples of the fundamental frequency, that's right here.
+
+00:01:27.005 --> 00:01:30.350
+So if we plot the fundamental frequency and
+
+00:01:30.350 --> 00:01:35.090
+the Harmonics on top of our Fourier transform,
+
+00:01:35.090 --> 00:01:38.910
+we can see that they do roughly fall along the spikes.
+
+00:01:38.910 --> 00:01:41.600
+So now we can be fairly confident that these
+
+00:01:41.600 --> 00:01:44.630
+indeed are the Harmonics of our fundamental frequency.
+
+00:01:44.630 --> 00:01:54.320
+In fact, if we plot the original time domain signal and a marker every 1.375 Hertz,
+
+00:01:54.320 --> 00:01:57.830
+which is slightly more frequently than every second,
+
+00:01:57.830 --> 00:02:02.780
+we can see that it lands up pretty well with the period of this waveform.
+
+00:02:02.780 --> 00:02:05.240
+So maybe the fundamental frequency is
+
+00:02:05.240 --> 00:02:08.990
+the cadence of the arm swing of this person who's jogging.
+
+00:02:08.990 --> 00:02:11.540
+So this phenomenon is important to be aware of as
+
+00:02:11.540 --> 00:02:13.875
+we move into dealing with more real world
+
+00:02:13.875 --> 00:02:20.130
+signals because you'll see Harmonics show up in the Fourier transforms of this signals.
+

@@ -1,0 +1,218 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Developer Workflow</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Wearable Data</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Course Outline.html">02. Course Outline</a>
+    </li>
+    <li class="">
+      <a href="03. Apple Heart Study.html">03. Apple Heart Study</a>
+    </li>
+    <li class="">
+      <a href="04. Apple Heart Study Interpretation.html">04. Apple Heart Study Interpretation</a>
+    </li>
+    <li class="">
+      <a href="05. Developer Workflow.html">05. Developer Workflow</a>
+    </li>
+    <li class="">
+      <a href="06. Summary.html">06. Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Developer Workflow</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="developer-workflow">Developer Workflow</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <p>Exercises and projects can be completed in Jupyter notebooks. You can either work on a virtual machine inside a Udacity Workspace or use your local machine.</p>
+<h3 id="udacity-workspaces">Udacity Workspaces</h3>
+<p>Workspaces will open up in your browser as you navigate through the course. They will already be running with the required dependencies and will have access to the datasets and files you will need to accomplish your tasks. For most users, it will be easiest to operate inside a Udacity Workspace.</p>
+<h3 id="local-workflow">Local Workflow</h3>
+<p>Working locally allows you more flexibility and permanence. You can save your exercises and projects for further reference, and you can install and use libraries to add to them to advance your learning. Additionally, some plotting tools will not work inside a virtual environment as they pop open a new GUI window. As you encounter exercises and projects in this course, you can download the relevant starter notebooks and datasets from a git repository that will be linked for each exercise.</p>
+<p>To simplify python dependencies and avoid confusion caused by mismatched library versions, you can use <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/blob/master/Pipfile" rel="noopener noreferrer" target="_blank">this Pipfile</a>.  </p>
+<p>I use <a href="https://pipenv-fork.readthedocs.io/en/latest/index.html" rel="noopener noreferrer" target="_blank">pipenv</a> to isolate my python dependencies from the rest of the system. Detailed instructions follow:</p>
+<ol>
+<li><a href="https://pipenv-fork.readthedocs.io/en/latest/install.html" rel="noopener noreferrer" target="_blank">Install Python 3, pip, and pipenv</a></li>
+<li><code>mkdir $HOME/ds_for_wearables</code></li>
+<li>Download the above Pipfile to <code>$HOME/ds_for_wearables</code></li>
+<li><code>cd $HOME/ds_for_wearables</code></li>
+<li><code>pipenv install</code>  </li>
+</ol>
+<p>This will install all the required dependencies to complete the exercises and projects. </p>
+<p>To start a Jupyter notebook in this environment:</p>
+<ol>
+<li><code>cd $HOME/ds_for_wearables</code></li>
+<li><code>pipenv run jupyter notebook</code></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>offline, spyder IDE</p></h3>
+  <div>
+  <h2 id="spyder-ide">Spyder IDE</h2>
+<p>My favorite editor is Spyder IDE, which mimics a MATLAB environment where you have both an editor and an IPython console side by side. You can run sections of code in your editor using similar syntax to MATLAB and view plots, code, and the console side by side. It also has features to examine variables and maintain a history of commands.</p>
+<p><a href="https://docs.spyder-ide.org/" rel="noopener noreferrer" target="_blank">Read the docs</a></p>
+<p><strong>Note:</strong> On newer versions of macOS (macosx 10.14.6), I’ve encountered a bug where plotting causes the IPython kernel to significantly slow down. See <a href="https://github.com/matplotlib/matplotlib/issues/15314#issuecomment-533776844" rel="noopener noreferrer" target="_blank">bug thread</a>. If you encounter this, the workaround is to disable <a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/AppNap.html" rel="noopener noreferrer" target="_blank">AppNap</a> using <a href="https://pypi.org/project/appnope/" rel="noopener noreferrer" target="_blank">appnope</a>.</p>
+<pre><code>import appnope
+appnope.nope()</code></pre>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Summary.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Developer Workflow')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

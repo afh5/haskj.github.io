@@ -1,0 +1,286 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fourier Transform In Practice</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to Digital Sampling &amp; Signal Processing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Refresher on Signals.html">02. Refresher on Signals</a>
+    </li>
+    <li class="">
+      <a href="03. Sampling Analog Signals.html">03. Sampling Analog Signals</a>
+    </li>
+    <li class="">
+      <a href="04. Plotting Signals In Time-domain.html">04. Plotting Signals In Time-domain</a>
+    </li>
+    <li class="">
+      <a href="05. Time-domain Plotting Continued.html">05. Time-domain Plotting Continued</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Plotting.html">06. Exercise 1: Plotting</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 1 Solution.html">07. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Interpolation.html">08. Interpolation</a>
+    </li>
+    <li class="">
+      <a href="09. Interpolation in Review.html">09. Interpolation in Review</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 2 Interpolation.html">10. Exercise 2: Interpolation</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 2 Solution.html">11. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. Fourier Transform.html">12. Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="13. Fourier Transform In Practice.html">13. Fourier Transform In Practice</a>
+    </li>
+    <li class="">
+      <a href="14. Fourier Transform in Review.html">14. Fourier Transform in Review</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise 3 The Fourier Transform.html">15. Exercise 3: The Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise 3 Solution.html">16. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="17. Plotting Signals in Frequency Domain.html">17. Plotting Signals in Frequency Domain</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 4 Spectrograms.html">18. Exercise 4: Spectrograms</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 4 Solution.html">19. Exercise 4: Solution</a>
+    </li>
+    <li class="">
+      <a href="20. Harmonics.html">20. Harmonics</a>
+    </li>
+    <li class="">
+      <a href="21. Recap Intro to Digital Sampling &amp; Signal Processing.html">21. Recap: Intro to Digital Sampling &amp; Signal Processing</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Fourier Transform In Practice</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Heading</p></h3>
+  <div>
+  <h1 id="fourier-transform-in-practice">Fourier Transform In Practice</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L1 13 Fourier Transform In Practice</p></h3>
+  <video controls>
+  <source src="13. ND320 C4 L1 13 Fourier Transform In Practice-3IWA8tMxxTA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND320 C4 L1 13 Fourier Transform In Practice-3IWA8tMxxTA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Fourier Transform in Practice Summary</p></h3>
+  <div>
+  <p>We learned how to apply the theory and understanding of what a fourier transform is to actually solve some problems. </p>
+<p>Let's make a signal that is composed of two sine waves at 2 Hz and 3 Hz plus some random noise. We will be using the <code>np.fft</code>module to compute the Fourier transform with the two main functions below:</p>
+<ul>
+<li><code>rfft</code> - computes the actual Fourier transform coefficients</li>
+<li><code>rfftfreq</code> - tells us the frequencies for which we are computing the Fourier transform</li>
+</ul>
+<p>We then examined <code>freqs</code> to see that the FFT samples the Fourier transform uniformly from 0 Hz to the Nyquist frequency, which in this case is 25 Hz because our sampling rate is 50 Hz. <br />
+We also saw the Fourier transform coefficients and only examined the magnitudes. <br />
+Plotting the FFT, we see that the signal is composed primarily of two frequencies (2 and 3Hz) and a little bit of everything else (from the random noise).</p>
+<p>We also saw how zero-padding could be used to visualize sinusoids with frequencies that are not present in <code>freqs</code>. To visualize at frequencies not in <code>freqs</code>, we need to sample twice as often and we can do this by adding 0s to the end of the signal. However, we also see this rippling, which is an artifact of padding the signal with 0s, which is the trade-off when doing zero-padding. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L1 14 Inverse FFT</p></h3>
+  <video controls>
+  <source src="13. ND320 C4 L1 14 Inverse FFT-W-5uoeNYFwM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND320 C4 L1 14 Inverse FFT-W-5uoeNYFwM.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Fourier Transform recap</p></h3>
+  <div>
+  <p>We just learned about inverse Fourier Transform in which we used the <code>np.fft</code> module to compute the inverse Fourier transform with the function <code>irfft</code>. </p>
+<p>We started with a noisy signal and removed all the frequency components not in the range, in this case, 2Hz and 3Hz. And we saw a recovered signal that looked very close to the signal we saw in the previous video.</p>
+<p>But we did the process again from 2.15Hz and 2.95Hz. The recovered signal looked a bit distorted and not what we'd expect. This is because zeroing out Fourier coefficients is not the best way to filter a signal.</p>
+<p>We then used <code>scipy</code> to <strong>bandpass filter</strong> our signal for us. A bandpass filter will remove all frequency components outside of a given passband. Let's bandpass filter our signal with a passband from 1 Hz to 4 Hz. This way, our desired frequencies of 2.15 Hz and 2.95 Hz are well within the passband. And now, our recovered signal looks very similar to what we want.</p>
+<p>In this course, we will always bandpass our signals before processing them.</p>
+<h2 id="notebook-review">Notebook Review</h2>
+<p>If you wanted to interact with the notebook in the video, you can access it <a href="https://github.com/udacity/nd320-c4-wearable-data-starter/tree/master/intro-to-dsp/walkthroughs/fourier-tranform-II" rel="noopener noreferrer" target="_blank">here</a> in the repo <code>/intro-to-dsp/walkthroughs/fourier-transform-II/</code> or in the workspace below.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Fourier Transform in Review.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Fourier Transform In Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

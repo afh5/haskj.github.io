@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.850
+In exercise 3, you were given a signal and told to use
+
+00:00:02.850 --> 00:00:04.650
+the Fourier transform to learn more about
+
+00:00:04.650 --> 00:00:06.945
+the different frequency components in the signal.
+
+00:00:06.945 --> 00:00:11.610
+The data for exercise 3 is just this one of the array.
+
+00:00:11.610 --> 00:00:14.790
+To figure out what frequency components are inside this signal,
+
+00:00:14.790 --> 00:00:16.455
+all we have to do is plot
+
+00:00:16.455 --> 00:00:20.595
+the Fourier transform in the same way that we did in the previous video.
+
+00:00:20.595 --> 00:00:25.875
+We find that the largest frequency component is right here around 28 hertz,
+
+00:00:25.875 --> 00:00:28.050
+followed by the one at 50 hertz,
+
+00:00:28.050 --> 00:00:30.495
+and then maybe one at 12,
+
+00:00:30.495 --> 00:00:33.465
+8 hertz, and 26 hertz.
+
+00:00:33.465 --> 00:00:35.415
+So once you know about the Fourier transform,
+
+00:00:35.415 --> 00:00:40.150
+it's fairly simple to figure out which frequency components comprise your signal.
+

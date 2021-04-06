@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.890
+In this exercise, you're given a wrist worn
+
+00:00:01.890 --> 00:00:03.830
+accelerometer signal of someone who's running,
+
+00:00:03.830 --> 00:00:07.110
+and we want you to figure out how far the where I ran.
+
+00:00:07.110 --> 00:00:08.520
+From the previous lessons,
+
+00:00:08.520 --> 00:00:10.890
+you should have enough knowledge about signal processing and
+
+00:00:10.890 --> 00:00:14.295
+accelerometers to do this with the pieces of information below.
+
+00:00:14.295 --> 00:00:19.080
+One, the step braid is the largest frequency component in the accelerometer signal.
+
+00:00:19.080 --> 00:00:24.105
+Two, that we assume the where's average step length is 55 inches.
+
+00:00:24.105 --> 00:00:26.130
+All right. Let's see how we do this.
+
+00:00:26.130 --> 00:00:31.935
+The first thing we do is plot the spectrogram of our accelerometer signal.
+
+00:00:31.935 --> 00:00:35.970
+We're using a 10-second window and no overlap.
+
+00:00:35.970 --> 00:00:39.565
+The first thing we notice is that there are these bands of power.
+
+00:00:39.565 --> 00:00:41.660
+I've told you that the biggest one is
+
+00:00:41.660 --> 00:00:44.885
+the step rates and the other ones are the harmonics that we learned about.
+
+00:00:44.885 --> 00:00:47.750
+Because you've read the documentation for spec gram,
+
+00:00:47.750 --> 00:00:50.300
+you know that it returns the spectrogram itself,
+
+00:00:50.300 --> 00:00:52.630
+as well as the frequencies.
+
+00:00:52.630 --> 00:00:54.770
+We look at the shape of this,
+
+00:00:54.770 --> 00:00:59.390
+we can see that there is one column per window,
+
+00:00:59.390 --> 00:01:03.260
+and each column is the Fourier transform of that window.
+
+00:01:03.260 --> 00:01:10.145
+Then freqs is just the frequency values that we're computing coefficients for.
+
+00:01:10.145 --> 00:01:16.805
+We can get the step rate by looking at the largest frequency component in each window.
+
+00:01:16.805 --> 00:01:22.675
+If we do that, we see that the step rate hangs out around two hertz,1.9 hertz.
+
+00:01:22.675 --> 00:01:26.375
+Because we're assuming that the step length is 55 inches,
+
+00:01:26.375 --> 00:01:29.090
+we can get the average inches per second for
+
+00:01:29.090 --> 00:01:32.135
+each window by multiplying the step rate and the step length.
+
+00:01:32.135 --> 00:01:34.580
+Next, we can get the total inches per window by
+
+00:01:34.580 --> 00:01:39.740
+multiplying our speed with the window size, which is 10 seconds.
+
+00:01:39.740 --> 00:01:45.125
+Then we get the total inches walked by averaging all the inches walked in each window.
+
+00:01:45.125 --> 00:01:47.750
+We can divide this by the number of inches in a mile,
+
+00:01:47.750 --> 00:01:50.290
+and we can compute the total distance in miles.
+
+00:01:50.290 --> 00:01:53.060
+So it looks like this person walked around half a mile.
+
+00:01:53.060 --> 00:01:56.105
+We can even look at their speed by
+
+00:01:56.105 --> 00:02:00.140
+figuring out how long our accelerometer trace is in minutes,
+
+00:02:00.140 --> 00:02:03.770
+and then dividing that by the total distance.
+
+00:02:03.770 --> 00:02:07.885
+It looks like our average speed is around 10 minutes per mile.
+
+00:02:07.885 --> 00:02:10.940
+So we just learned a lot of context here that can help us perform
+
+00:02:10.940 --> 00:02:14.450
+higher-level tasks later on just by using the accelerometer alone,
+
+00:02:14.450 --> 00:02:17.550
+and with the help of our signal processing toolbox
+

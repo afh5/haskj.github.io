@@ -1,0 +1,291 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recap: Intro to Digital Sampling &amp; Signal Processing</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to Digital Sampling &amp; Signal Processing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Refresher on Signals.html">02. Refresher on Signals</a>
+    </li>
+    <li class="">
+      <a href="03. Sampling Analog Signals.html">03. Sampling Analog Signals</a>
+    </li>
+    <li class="">
+      <a href="04. Plotting Signals In Time-domain.html">04. Plotting Signals In Time-domain</a>
+    </li>
+    <li class="">
+      <a href="05. Time-domain Plotting Continued.html">05. Time-domain Plotting Continued</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Plotting.html">06. Exercise 1: Plotting</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 1 Solution.html">07. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Interpolation.html">08. Interpolation</a>
+    </li>
+    <li class="">
+      <a href="09. Interpolation in Review.html">09. Interpolation in Review</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 2 Interpolation.html">10. Exercise 2: Interpolation</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 2 Solution.html">11. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. Fourier Transform.html">12. Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="13. Fourier Transform In Practice.html">13. Fourier Transform In Practice</a>
+    </li>
+    <li class="">
+      <a href="14. Fourier Transform in Review.html">14. Fourier Transform in Review</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise 3 The Fourier Transform.html">15. Exercise 3: The Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise 3 Solution.html">16. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="17. Plotting Signals in Frequency Domain.html">17. Plotting Signals in Frequency Domain</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 4 Spectrograms.html">18. Exercise 4: Spectrograms</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 4 Solution.html">19. Exercise 4: Solution</a>
+    </li>
+    <li class="">
+      <a href="20. Harmonics.html">20. Harmonics</a>
+    </li>
+    <li class="">
+      <a href="21. Recap Intro to Digital Sampling &amp; Signal Processing.html">21. Recap: Intro to Digital Sampling &amp; Signal Processing</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">21. Recap: Intro to Digital Sampling & Signal Processing</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND320 C4 L1 19 Recap- Intro To Digital Sampling &amp; Signal Processing</p></h3>
+  <video controls>
+  <source src="21. ND320 C4 L1 19 Recap- Intro To Digital Sampling &amp; Signal Processing-8-3_S2weklg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="21. ND320 C4 L1 19 Recap- Intro To Digital Sampling &amp; Signal Processing-8-3_S2weklg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>We covered a lot of material in this lesson. We started with the basics of what a signal is and how to digitally sample one. Then we covered techniques to process digital signals, including interpolation, the Fourier Transform, and harmonics. Along the way, we learned how to visualize signals using matplotlib, and how the spectrogram or STFT can help us more accurately see the Fourier coefficients of a signal as they change in time. The breadth of concepts that we went over could comprise full university classes. We did a lot of exercises to help you feel comfortable using these topics practically, but a lot of this material might be unlike other disciplines of math that you’ve seen before. Don’t hesitate to rewatch the videos and explore the further resources to build your intuition. And I’m hopeful that as we use these concepts in the upcoming lessons, things will start to click more.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Resources</p></h3>
+  <div>
+  <h2 id="further-resources">Further Resources</h2>
+<h3 id="physionet">Physionet</h3>
+<p>Physionet is a great resource of freely available biomedical signals. You can try many of the techniques you learn in this class on datasets in <a href="https://physionet.org/" rel="noopener noreferrer" target="_blank">Physionet</a>.<br />
+This <a href="https://physionet.org/content/edb/1.0.0/" rel="noopener noreferrer" target="_blank">European ST-T Database</a> from Physionet was used in the previous exercise.</p>
+<h3 id="plotting">Plotting</h3>
+<ul>
+<li><a href="https://matplotlib.org/" rel="noopener noreferrer" target="_blank">Matplotlib</a> - the plotting library we use most in this course.</li>
+<li><a href="https://seaborn.pydata.org/" rel="noopener noreferrer" target="_blank">Seaborn</a> - a wrapper around <code>matplotlib</code> that makes it easier to do higher-level statistical visualization. We will use this a few times in the course.</li>
+<li><a href="https://altair-viz.github.io/" rel="noopener noreferrer" target="_blank">Altair</a> - Another powerful visualization library in Python</li>
+<li><a href="https://plot.ly/" rel="noopener noreferrer" target="_blank">Plotly</a> - You can use <code>plotly</code> to create and save visualization in HTML / javascript. This is especially useful when you want to make offline, shareable plots that you can interact with in the browser.</li>
+</ul>
+<h3 id="interpolation">Interpolation</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Interpolation" rel="noopener noreferrer" target="_blank">Interpolation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Linear_interpolation" rel="noopener noreferrer" target="_blank">Linear Interpolation</a></li>
+</ul>
+<h3 id="fourier-transform">Fourier Transform</h3>
+<p><a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw/featured" rel="noopener noreferrer" target="_blank">3Blue1Brown</a> is a great YouTube channel that explains mathematical concepts with beautiful animations that make intuitive understanding so much easier. He has a few videos on the Fourier transform, which are absolutely illuminating. I highly recommend exploring this channel, starting with <a href="https://www.youtube.com/watch?v=spUNpyF58BY" rel="noopener noreferrer" target="_blank">this video</a>.</p>
+<h3 id="spectrograms">Spectrograms</h3>
+<p>Plotting a spectrogram or visualizing the short-time Fourier transform are ways of balancing the trade-off between time resolution and frequency resolution. Surprisingly, this trade-off is related to the quantum uncertainty principle (see <a href="https://www.youtube.com/watch?v=MBnnXbOM5S4" rel="noopener noreferrer" target="_blank">this 3Blue1Brown video</a>). This tutorial is a great explanation of this trade-off as well as a description of the <a href="http://users.rowan.edu/~polikar/WTpart1.html" rel="noopener noreferrer" target="_blank">wavelet transform</a>, which is another solution to this problem.</p>
+<h3 id="harmonics">Harmonics</h3>
+<p>Harmonics explain why different instruments sound different despite playing the same note. Check out <a href="https://www.youtube.com/watch?v=Q8ITu0EASL4" rel="noopener noreferrer" target="_blank">this video</a> from YouTube channel <a href="https://www.youtube.com/channel/UCTUtqcDkzw7bisadh6AOx5w" rel="noopener noreferrer" target="_blank">12tone</a> for an explanation.</p>
+<p><a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" rel="noopener noreferrer" target="_blank">3Blue1Brown</a> also has <a href="https://www.youtube.com/watch?v=cyW5z-M2yzw" rel="noopener noreferrer" target="_blank">a video</a> explaining why certain notes sound good together by looking at multiples of their frequencies.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Transducer</strong>: Part of a sensor that converts a physical phenomenon into an electrical one (e.g., voltage)  </li>
+<li><strong>Analog-to-Digital Convert (ADC)</strong>: A device (usually embedded in the sensor) that converts an analog voltage into an array of bits.  </li>
+<li><strong>Bit depth</strong>: The number of bits an ADC uses to create a sample. A 16-bit ADC produces a 16-bit number for each sample.  </li>
+<li><strong>Noise floor</strong>: The total amount of noise in the sensor, including electrical interference from the environment and other parts of the device, thermal noise, and quantization noise.  </li>
+<li><strong>Dynamic range</strong>: The physical range of the sensor. Values outside of this range will show up as clipping in the digital signal.  </li>
+<li><strong>Sampling rate</strong>: The frequency at which a sensor measures a signal.  </li>
+<li><strong>Hz</strong>: The units of the sampling rate. 1Hz means 1 sample per second.  </li>
+<li><strong>Nyquist frequency</strong>:  Half of the sampling frequency. Signal components above this frequency will get aliased in the sampled signal. </li>
+<li><strong>Frequency component</strong>:  The Fourier transform explains a signal as a sum of sinusoids. Each of these sinusoids is a frequency component of the signal.</li>
+<li><strong>Aliasing</strong>:  The effect that causes frequency components greater than the Nyquist frequency to become indistinguishable from frequencies below the Nyquist frequency.</li>
+<li><strong>Bandwidth</strong>:  A range of frequencies within a band.</li>
+<li><strong>Interpolation</strong>: A method for estimating new data points within a range of discrete known data points.</li>
+<li><strong>Resampling</strong>: The process of changing the sampling rate of a discrete signal to obtain a new discrete representation of the underlying continuous signal.</li>
+<li><strong>Frequency domain</strong>:  A representation of a signal over frequency instead of time. Instead of representing the signal as a series of numbers in time, the signal is represented by the frequency components that make it up.</li>
+<li><strong>Time-domain</strong>:  The typical representation we are used to for signals where the signal is represented by values in time.</li>
+<li><strong>Bandpass filter</strong>:  A function that preserves frequency components of a signal within a band and suppresses the frequency components outside that band.</li>
+<li><strong>Passband</strong>:  The band of a bandpass filter where frequency components will be preserved.</li>
+<li><strong>Stationarity</strong>:  A property of a signal where the statistics of a process generating a signal do not change in time. Generally, if the frequency components in a signal change in time, this signal is not stationary.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('21. Recap: Intro to Digital Sampling &amp; Signal Processing')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

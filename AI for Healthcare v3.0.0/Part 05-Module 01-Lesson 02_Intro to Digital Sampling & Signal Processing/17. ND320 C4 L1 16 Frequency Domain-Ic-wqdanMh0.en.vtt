@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+In this lesson, we're going to learn about
+
+00:00:01.860 --> 00:00:04.725
+a more advanced tool for plotting signals in the frequency domain.
+
+00:00:04.725 --> 00:00:07.320
+Up until now, we've just been plotting the FFT of
+
+00:00:07.320 --> 00:00:10.650
+a signal in much the same way we plot the signal in time domain.
+
+00:00:10.650 --> 00:00:13.230
+But as you'll soon see this can be misleading.
+
+00:00:13.230 --> 00:00:16.450
+Let's make a signal whose frequency components change in time.
+
+00:00:16.450 --> 00:00:19.320
+The signal is a sine wave that starts out at
+
+00:00:19.320 --> 00:00:23.385
+zero hertz and slowly increases in frequency over time.
+
+00:00:23.385 --> 00:00:26.415
+Ultimately, at the end of two minutes,
+
+00:00:26.415 --> 00:00:28.680
+it reaches a frequency of 10 hertz.
+
+00:00:28.680 --> 00:00:32.350
+So let's take the Fourier transform of the signal.
+
+00:00:33.620 --> 00:00:36.945
+We see that it has
+
+00:00:36.945 --> 00:00:41.875
+all the frequency components from zero to 10 hertz and then not much else,
+
+00:00:41.875 --> 00:00:44.900
+but this doesn't really tell us all about the signal.
+
+00:00:44.900 --> 00:00:47.720
+We don't know whether it started at zero and went to
+
+00:00:47.720 --> 00:00:51.410
+10 hertz or if it started from 10 hertz and went to zero hertz,
+
+00:00:51.410 --> 00:00:56.195
+or if it just had all frequency components in the signal at all the times.
+
+00:00:56.195 --> 00:01:01.385
+So if we plot the FFT of just one portion of the signal early on,
+
+00:01:01.385 --> 00:01:05.615
+we can see that the main frequency component is pretty small.
+
+00:01:05.615 --> 00:01:09.970
+In this case, it's less than half a hertz.
+
+00:01:09.970 --> 00:01:12.980
+We can repeat this process for the entire signal
+
+00:01:12.980 --> 00:01:15.950
+continually taking small windows of the signal,
+
+00:01:15.950 --> 00:01:17.734
+computing the Fourier transform,
+
+00:01:17.734 --> 00:01:20.705
+and then aggregating it together into
+
+00:01:20.705 --> 00:01:24.415
+a matrix we call the short-time Fourier transform, or STFT.
+
+00:01:24.415 --> 00:01:28.310
+This matrix has one column per window,
+
+00:01:28.310 --> 00:01:31.715
+and each column is the Fourier transform of that window.
+
+00:01:31.715 --> 00:01:36.695
+We can display this matrix as an image where the color of each pixel is
+
+00:01:36.695 --> 00:01:41.880
+the value of that cell in the matrix using the imshow matplotlib commands.
+
+00:01:41.880 --> 00:01:43.940
+When we do this, we can see that the frequency of
+
+00:01:43.940 --> 00:01:48.175
+our signal increases from zero hertz to 10 hertz over time.
+
+00:01:48.175 --> 00:01:53.045
+Matplotlib has a function that does something similar to this called specgram,
+
+00:01:53.045 --> 00:01:55.160
+which plots the spectrogram of the signal.
+
+00:01:55.160 --> 00:01:58.430
+By now you should be familiar enough with matplotlib
+
+00:01:58.430 --> 00:02:01.735
+where you can figure out how to use this function using the documentation.
+
+00:02:01.735 --> 00:02:05.180
+So I'll leave that to you to force you to read the documentation.
+
+00:02:05.180 --> 00:02:07.385
+When we plot the spectrogram,
+
+00:02:07.385 --> 00:02:11.090
+you can see it's very similar and we can see
+
+00:02:11.090 --> 00:02:14.915
+that the frequency in our signal increases from zero to 10 hertz over time.
+
+00:02:14.915 --> 00:02:19.890
+You'll be using the short time Fourier transform in spectrogram in the next exercise.
+

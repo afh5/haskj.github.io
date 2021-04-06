@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.090
+Now that we know that signals are made up of different frequency components,
+
+00:00:03.090 --> 00:00:06.900
+we can learn about a new property of sampling theory, the Nyquist frequency.
+
+00:00:06.900 --> 00:00:10.335
+The Nyquist frequency tells us that when we sample an analog signal,
+
+00:00:10.335 --> 00:00:12.870
+depending on the frequency components it's made up of,
+
+00:00:12.870 --> 00:00:16.065
+there are restrictions on how fast our sampling rate needs to be.
+
+00:00:16.065 --> 00:00:18.675
+Let's see a graphical explanation of this.
+
+00:00:18.675 --> 00:00:22.860
+Here we have a continuous one hertz sinusoid,
+
+00:00:22.860 --> 00:00:28.320
+this blue line, and then the blue dots are a digital sampled version of that sinusoid.
+
+00:00:28.320 --> 00:00:32.880
+Our sampling rate is 10 hertz because we have 10 of these dots per second.
+
+00:00:32.880 --> 00:00:35.595
+As we increase the frequency of the sinusoid,
+
+00:00:35.595 --> 00:00:41.015
+we can see we get fewer and fewer samples per period of the sinusoid,
+
+00:00:41.015 --> 00:00:44.870
+up until a point where we get exactly two points per period,
+
+00:00:44.870 --> 00:00:47.275
+one at the peak and one at the trough.
+
+00:00:47.275 --> 00:00:50.085
+This point is known as the Nyquist frequency.
+
+00:00:50.085 --> 00:00:53.150
+The Nyquist frequency is always going to be half of our sampling rate.
+
+00:00:53.150 --> 00:00:55.565
+So because our sampling rate is at 10 hertz,
+
+00:00:55.565 --> 00:00:57.815
+our Nyquist frequency is at five hertz.
+
+00:00:57.815 --> 00:01:00.290
+What happens when the frequency of
+
+00:01:00.290 --> 00:01:03.155
+the signal we are sampling exceeds the Nyquist frequency?
+
+00:01:03.155 --> 00:01:06.275
+Well, here we have a sinusoid at six hertz,
+
+00:01:06.275 --> 00:01:08.490
+and below that we have a sinusoid at four hertz.
+
+00:01:08.490 --> 00:01:12.895
+The digital sampled versions of both of these signals look exactly the same.
+
+00:01:12.895 --> 00:01:16.010
+So this is the problem when the analog signal you're
+
+00:01:16.010 --> 00:01:19.085
+sampling exceeds the Nyquist frequency for your sampling rates.
+
+00:01:19.085 --> 00:01:22.310
+We can't know what the true frequency of
+
+00:01:22.310 --> 00:01:25.760
+that signal actually was because once we could lose the analog signal,
+
+00:01:25.760 --> 00:01:28.880
+and we're just left with our digital sampled version of it,
+
+00:01:28.880 --> 00:01:31.250
+we don't know, in this case,
+
+00:01:31.250 --> 00:01:33.655
+if it were six hertz or four hertz.
+
+00:01:33.655 --> 00:01:37.310
+So when you exceed the Nyquist frequency,
+
+00:01:37.310 --> 00:01:41.720
+the pattern that shows up in the digital signal is the same
+
+00:01:41.720 --> 00:01:45.755
+as one that would show up at a mirrored frequency below the Nyquist frequency.
+
+00:01:45.755 --> 00:01:50.870
+For example, here, 5.4 hertz is 0.4 hertz above five hertz,
+
+00:01:50.870 --> 00:01:54.190
+and 4.6 hertz is 0.4 hertz below five hertz.
+
+00:01:54.190 --> 00:01:58.750
+So any analog signal that you're sampling is going to have a maximum bandwidth,
+
+00:01:58.750 --> 00:02:04.615
+and this is the frequency of the highest frequency component in your signal.
+
+00:02:04.615 --> 00:02:08.420
+You want to make sure that your sampling rate is at least twice that,
+
+00:02:08.420 --> 00:02:13.730
+so that no part of the signal you're sampling is faster than the Nyquist frequency.
+
+00:02:13.730 --> 00:02:19.145
+Sometimes it's not obvious what the Nyquist frequency is for your signal,
+
+00:02:19.145 --> 00:02:22.790
+and we basically figure this out by looking at the literature and
+
+00:02:22.790 --> 00:02:27.085
+seeing what other people have done for that same signal.
+
+00:02:27.085 --> 00:02:29.130
+These topics are non-intuitive at first,
+
+00:02:29.130 --> 00:02:31.365
+and so if you're confused, that's okay.
+
+00:02:31.365 --> 00:02:33.590
+Try watching this video again to let some of
+
+00:02:33.590 --> 00:02:37.235
+the information sink in and make sure to check out the further resources.
+
+00:02:37.235 --> 00:02:39.680
+Definitely, feel free to download these notebooks and
+
+00:02:39.680 --> 00:02:42.900
+play around with them to explore these ideas some more.
+

@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.520
+In this exercise, you are in a hypothetical scenario where you had built
+
+00:00:03.520 --> 00:00:07.770
+an R-peak detector and you wanted to check the accuracy of the output of your algorithm.
+
+00:00:07.770 --> 00:00:09.915
+When we study ECG signal processing,
+
+00:00:09.915 --> 00:00:11.490
+we'll actually build this algorithm,
+
+00:00:11.490 --> 00:00:13.560
+and the situation will no longer be hypothetical.
+
+00:00:13.560 --> 00:00:17.085
+But for now, you need to find a dataset within EKG signal,
+
+00:00:17.085 --> 00:00:18.315
+input to your algorithm,
+
+00:00:18.315 --> 00:00:22.260
+paired with ground truth labels for where the R-peaks actually are,
+
+00:00:22.260 --> 00:00:24.405
+so that you can validate your algorithm.
+
+00:00:24.405 --> 00:00:28.635
+I've told you you could use the European ST-T database to do this.
+
+00:00:28.635 --> 00:00:30.465
+As you're exploring the dataset,
+
+00:00:30.465 --> 00:00:33.630
+you might wonder how accurate its R-wave of annotations are.
+
+00:00:33.630 --> 00:00:38.640
+Ideally, they should mark the apex of the R-waves as shown here,
+
+00:00:38.640 --> 00:00:43.360
+but you don't really know if the dataset has super accurate labels.
+
+00:00:43.360 --> 00:00:47.270
+The way to figure this out is by plotting the reference labels on
+
+00:00:47.270 --> 00:00:51.730
+top of the ECG signal to qualitatively figure out how accurate it is.
+
+00:00:51.730 --> 00:00:55.155
+We will load our data from these npz files.
+
+00:00:55.155 --> 00:00:59.520
+Npz is NumPy's serialization format for NumPy arrays.
+
+00:00:59.520 --> 00:01:02.820
+Once you've loaded it, it behaves like a dictionary.
+
+00:01:02.820 --> 00:01:06.980
+So you can get that ECG array from the ECG key and
+
+00:01:06.980 --> 00:01:11.600
+then the reference R-peak annotations from the annotations key.
+
+00:01:11.600 --> 00:01:14.720
+Then we want to plot the reference labels
+
+00:01:14.720 --> 00:01:17.960
+on top of the ECG signal to see how accurate they are.
+
+00:01:17.960 --> 00:01:22.595
+So we we'll do this similar to how we plotted the zero crossings on top of our signal.
+
+00:01:22.595 --> 00:01:25.460
+First, we plot our ECG signal,
+
+00:01:25.460 --> 00:01:32.190
+and then we plot the locations of the R-peak annotations and using a red dot of size 10.
+
+00:01:32.190 --> 00:01:33.275
+When we do this,
+
+00:01:33.275 --> 00:01:38.330
+we can see that our reference labels aren't exactly at the tips of the R-waves,
+
+00:01:38.330 --> 00:01:39.850
+but they're pretty close.
+
+00:01:39.850 --> 00:01:43.055
+So what this is telling you is that when you write your code
+
+00:01:43.055 --> 00:01:47.225
+to validate your own algorithms outputs,
+
+00:01:47.225 --> 00:01:51.770
+you want to look for a window around your outputs for the reference label,
+
+00:01:51.770 --> 00:01:53.750
+because even if your algorithm was perfect and it
+
+00:01:53.750 --> 00:01:56.210
+marked every single R-peak at the very tip.
+
+00:01:56.210 --> 00:02:01.050
+If you only looked for the reference labels at these points, you wouldn't find any.
+
+00:02:01.050 --> 00:02:03.145
+You have to include the window around it.
+
+00:02:03.145 --> 00:02:05.990
+Visualization exercises like this are critically important
+
+00:02:05.990 --> 00:02:08.540
+when you're starting new tasks or working with new datasets.
+
+00:02:08.540 --> 00:02:11.660
+They can help you check your underlying assumptions and save you
+
+00:02:11.660 --> 00:02:15.565
+tons of time when it turns out one of your assumptions about your data is incorrect.
+
+00:02:15.565 --> 00:02:19.230
+You should get in the habit of plotting your data early and often.
+

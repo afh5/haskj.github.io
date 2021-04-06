@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.530
+Now, let's make a new but very similar looking signal.
+
+00:00:02.530 --> 00:00:04.035
+If we plot this signal,
+
+00:00:04.035 --> 00:00:08.790
+we can see it looks almost exactly the same as the signal we've been working with,
+
+00:00:08.790 --> 00:00:10.949
+except if we pay attention to the y-axis,
+
+00:00:10.949 --> 00:00:13.650
+this one goes from minus one to plus one and
+
+00:00:13.650 --> 00:00:17.535
+the original signal we were working with goes from minus 10 to plus 10.
+
+00:00:17.535 --> 00:00:19.590
+So the question is, is this signal
+
+00:00:19.590 --> 00:00:24.585
+just a scaled down version of the original one or are there some other differences here?
+
+00:00:24.585 --> 00:00:31.620
+So the way we can address this is by plotting both signals on the same axis.
+
+00:00:31.620 --> 00:00:34.395
+We do this by first plotting
+
+00:00:34.395 --> 00:00:40.395
+our original signal and then we can use the twinx command to duplicate the x-axis,
+
+00:00:40.395 --> 00:00:42.800
+but allow the y-axis to change and this will help us
+
+00:00:42.800 --> 00:00:45.545
+handle the difference in scale between the two signals.
+
+00:00:45.545 --> 00:00:48.080
+When we do this, we see our original signal in
+
+00:00:48.080 --> 00:00:51.325
+blue and then the new signal is plotted on top of it in orange.
+
+00:00:51.325 --> 00:00:56.660
+One thing to note is that the y-axes of these signals are very different,
+
+00:00:56.660 --> 00:01:00.440
+but if we zoom in to some interesting part of the signal,
+
+00:01:00.440 --> 00:01:02.510
+we can see that they're actually not exactly the
+
+00:01:02.510 --> 00:01:05.245
+same and there are some minor differences in the signals.
+
+00:01:05.245 --> 00:01:07.460
+Another way to compare two signals is to plot them
+
+00:01:07.460 --> 00:01:10.255
+on separate axes but on the same figure.
+
+00:01:10.255 --> 00:01:12.405
+We do that with the subplot command.
+
+00:01:12.405 --> 00:01:14.870
+The first two arguments specify the grid of
+
+00:01:14.870 --> 00:01:17.420
+axis that we want to make and in this argument is
+
+00:01:17.420 --> 00:01:19.790
+saying that we are selecting the first axis
+
+00:01:19.790 --> 00:01:23.065
+and we're plotting our original signal on the first axis.
+
+00:01:23.065 --> 00:01:26.735
+Then we select the second axis and plot the new signal there.
+
+00:01:26.735 --> 00:01:29.555
+What that looks like is we have
+
+00:01:29.555 --> 00:01:33.410
+our original signal up top and we have our new signal down below.
+
+00:01:33.410 --> 00:01:37.480
+So depending on what you want to do with your signals or how you want to explore them,
+
+00:01:37.480 --> 00:01:40.150
+different methods will be more valuable than others.
+
+00:01:40.150 --> 00:01:42.950
+There's a whole lot more that matplotlib can do.
+
+00:01:42.950 --> 00:01:44.930
+You should definitely read the docs and learn
+
+00:01:44.930 --> 00:01:47.820
+about all the different ways you can explore your data.
+

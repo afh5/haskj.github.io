@@ -1,0 +1,364 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inertial Measurement Unit</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Sensors</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to Sensors.html">01. Introduction to Sensors</a>
+    </li>
+    <li class="">
+      <a href="02. Inertial Measurement Unit.html">02. Inertial Measurement Unit</a>
+    </li>
+    <li class="">
+      <a href="03. Accelerometer Deep Dive.html">03. Accelerometer Deep Dive</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 1 Step Cadence.html">04. Exercise 1: Step Cadence</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Solution.html">05. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="06. PPG Sensor.html">06. PPG Sensor</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 2 PPG Peaks.html">07. Exercise 2: PPG Peaks</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise 2 Solution.html">08. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="09. PPG SNR.html">09. PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 3 PPG SNR.html">10. Exercise 3: PPG SNR</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 3 Solution.html">11. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. ECG Sensor.html">12. ECG Sensor</a>
+    </li>
+    <li class="">
+      <a href="13. Apple Heart Study - Revisited.html">13. Apple Heart Study - Revisited</a>
+    </li>
+    <li class="">
+      <a href="14. Recap Introduction to Sensors.html">14. Recap: Introduction to Sensors</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Inertial Measurement Unit</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="inertial-measurement-unit-imu">Inertial Measurement Unit (IMU)</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L2 02 IMU Sensor</p></h3>
+  <video controls>
+  <source src="02. ND320 C4 L2 02 IMU Sensor-MLrzURDQURY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND320 C4 L2 02 IMU Sensor-MLrzURDQURY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>IMU Sensor Recap</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>The <strong>inertial measurement unit (IMU)</strong> is an umbrella term for three specific sensors that describe motion, namely the accelerometer, gyroscope, and magnetometer. </p>
+<ul>
+<li>The <strong>accelerometer</strong> measures linear acceleration. </li>
+<li>The <strong>gyroscope</strong> measures angular velocity</li>
+<li>The <strong>magnetometer</strong> measures absolute orientation. </li>
+</ul>
+<p>While an accelerometer might tell you that the device is moving to the left really fast, it won’t tell you which way left actually is. The magnetometer will tell you that moving to the left means going East. Each of these sensors has 3 channels of measurements, each in a perpendicular direction in 3D space and would be labeled x, y, and z. This would be like measuring the acceleration up and down, left and right, and forward and backward. Device manufacturers can orient their accelerometers however they want, so we can’t assume that the z-direction is the vertical direction.</p>
+<p>We won’t be dealing with gyroscopes and magnetometers in this course, but we will look at accelerometers. The animation below is a model of an accelerometer. There is a mass attached to springs and the mass moves a plate between two capacitors inside a circuit. This changes the capacitance depending on the location of the plate. Because the displacement of the mass on a spring is proportional to the force it sees, the changing voltage in the circuit is proportional to force and acceleration. If you combine three of these circuits together perpendicularly, you can measure acceleration in 3 dimensions. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>accelerometer animation</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l2-accelorometer.gif" alt="Accelerometer Diagram" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Accelerometer Diagram</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>recap continued</p></h3>
+  <div>
+  <p>This also means that accelerometers are affected by gravity. For example, if we rotate our accelerometer 90 degrees, we can see gravity pulls the mass down and the accelerometer will see a voltage associated with 1 <strong>g-force</strong> or the magnitude of the acceleration due to Earth’s gravity. The accelerometer only measures 0 if it’s in free-fall.</p>
+<p>This also means that when the device is stationary, you can measure its orientation. If all the acceleration is in the downward z-direction, then it’s flat on a table. Or if it’s all in the x-direction, then it’s tilted on its side. We’ll take a more in-depth look at this another phenomena in the next lesson where we look at accelerometer traces in detail.</p>
+<p>Not all accelerometers are implemented using this capacitor attached to a mass on a spring model, but they follow similar principles. For example, some accelerometers use a force sensitive resistor or a <a href="https://blog.endaq.com/piezoelectric-accelerometers-how-they-work-and-where-to-buy" rel="noopener noreferrer" target="_blank">piezoelectric crystal</a> to modulate a voltage in response to an acceleration. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Q: What will the accelerometer magnitude be when stationary?</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What does the magnitude of an accelerometer read when it is stationary?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="980501" id="rbk1">
+        <label for="rbk1"><p>0 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="980501" id="rbk2">
+        <label for="rbk2"><p>1 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="980501" id="rbk3">
+        <label for="rbk3"><p>\sqrt(3) g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="980501" id="rbk4">
+        <label for="rbk4"><p>There is not enough information.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    1 g
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Q: What will accelerometer magnitude be when in free fall?</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the accelerometer magnitude in free-fall, with no air resistance?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="980502" id="rbk1">
+        <label for="rbk1"><p>0 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="980502" id="rbk2">
+        <label for="rbk2"><p>1 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="980502" id="rbk3">
+        <label for="rbk3"><p>\sqrt(3) g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="980502" id="rbk4">
+        <label for="rbk4"><p>10 g</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    0 g
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the accelerometer magnitude in free-fall, at terminal velocity?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="980494" id="rbk1">
+        <label for="rbk1"><p>0 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="980494" id="rbk2">
+        <label for="rbk2"><p>1 g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="980494" id="rbk3">
+        <label for="rbk3"><p>\sqrt{3} g</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="980494" id="rbk4">
+        <label for="rbk4"><p>10 g</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    1 g
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h2 id="new-vocabulary">New Vocabulary</h2>
+<ul>
+<li><strong>Inertial Measurement Unit (IMU)</strong>: A collection of sensors that measure motion.</li>
+<li><strong>Accelerometer</strong>: A sensor that measures linear acceleration.</li>
+<li><strong>Gyroscope</strong>: A sensor that measures angular velocity.</li>
+<li><strong>Magnetometer</strong>: A sensor that measures magnetic forces.</li>
+<li><strong>g-force</strong>: The amount of acceleration on a body measured in units of acceleration due to gravity on earth (or roughly 9.8m/s^2).</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Accelerometer Deep Dive.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Inertial Measurement Unit')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

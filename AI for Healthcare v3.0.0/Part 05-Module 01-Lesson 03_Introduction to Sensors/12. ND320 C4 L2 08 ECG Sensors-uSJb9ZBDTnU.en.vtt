@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.965
+Let's look at the electrocardiogram,
+
+00:00:01.965 --> 00:00:05.400
+which can be abbreviated as ECG or EKG.
+
+00:00:05.400 --> 00:00:08.505
+Typically, when we speak it we say EKG,
+
+00:00:08.505 --> 00:00:10.710
+so we don't confuse it with an EEG,
+
+00:00:10.710 --> 00:00:12.915
+which is a different biomedical sensor.
+
+00:00:12.915 --> 00:00:15.765
+The EKG measures the voltage across the chest,
+
+00:00:15.765 --> 00:00:19.725
+which is primarily caused by the electrical activity in the heart.
+
+00:00:19.725 --> 00:00:24.390
+Unlike other sensors, cardiologists and doctors can interpret
+
+00:00:24.390 --> 00:00:31.890
+the EKG waveform to diagnose things like prior heart attacks or irregular heart rhythms.
+
+00:00:31.890 --> 00:00:34.680
+Typically, the EKG is actually composed of
+
+00:00:34.680 --> 00:00:39.860
+12 different signals or leads by placing multiple electrodes all over your chest.
+
+00:00:39.860 --> 00:00:42.740
+Each lead measures the electrical activity
+
+00:00:42.740 --> 00:00:45.380
+from a different axis and allows the cardiologists to
+
+00:00:45.380 --> 00:00:47.750
+examine different parts of the heart or look
+
+00:00:47.750 --> 00:00:50.845
+for specific arrhythmias that only show up in one lead or another.
+
+00:00:50.845 --> 00:00:54.949
+So you might imagine this traditional setup for an EKG,
+
+00:00:54.949 --> 00:00:58.790
+where there's a patient lying on a bed and there's a technician and
+
+00:00:58.790 --> 00:01:03.815
+a giant bedside EKG machine with electrodes all over the chest or limbs.
+
+00:01:03.815 --> 00:01:06.190
+This is certainly not very wearable,
+
+00:01:06.190 --> 00:01:10.940
+but if we remove some of the electrodes and some of the leads,
+
+00:01:10.940 --> 00:01:13.985
+we can then build sensors that are more mobile.
+
+00:01:13.985 --> 00:01:17.465
+For example, the Zio patch is a chest worn device
+
+00:01:17.465 --> 00:01:21.170
+that measures of the EKG continuously over two weeks.
+
+00:01:21.170 --> 00:01:23.210
+Next, we have the AliveCor device,
+
+00:01:23.210 --> 00:01:26.345
+which is a handheld device that can
+
+00:01:26.345 --> 00:01:29.665
+intermittently measure EKG by pairing with a smartphone.
+
+00:01:29.665 --> 00:01:33.110
+We're also starting to see EKG sensors on
+
+00:01:33.110 --> 00:01:37.460
+wrist wearables like the Apple Watch or Verily Study Watch.
+
+00:01:37.460 --> 00:01:41.285
+So the ECG has a very characteristic shape with specific waves,
+
+00:01:41.285 --> 00:01:42.820
+each with their own names.
+
+00:01:42.820 --> 00:01:46.445
+Identification of each of these waves is an important part of
+
+00:01:46.445 --> 00:01:50.600
+ECG signal processing because deviations about these waves,
+
+00:01:50.600 --> 00:01:53.915
+either the shape or the timing can point to problems in the physiology.
+
+00:01:53.915 --> 00:01:57.020
+In lesson 4, we'll dive deeper into the physiology of
+
+00:01:57.020 --> 00:02:01.320
+the heart to understand how these EKG waves are created.
+

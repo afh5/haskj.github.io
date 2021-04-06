@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.355
+Every time you interact with a new sensor,
+
+00:00:02.355 --> 00:00:05.495
+it's always a good idea to go through this exercise that we just did,
+
+00:00:05.495 --> 00:00:08.910
+where we first learned about the physics of the sensor and how it worked.
+
+00:00:08.910 --> 00:00:12.440
+We looked at plots of the signals in various environments.
+
+00:00:12.440 --> 00:00:16.185
+We finally learned about the noise characteristics of each sensor.
+
+00:00:16.185 --> 00:00:19.010
+This is nice when you have someone to guide you through this process.
+
+00:00:19.010 --> 00:00:20.730
+But it's not impossible if you're on your own.
+
+00:00:20.730 --> 00:00:24.440
+A great idea is to go out and buy the sensor so that you can experiment on
+
+00:00:24.440 --> 00:00:28.950
+yourself to build some intuition of how the sensor works as a response to you.
+
+00:00:28.950 --> 00:00:30.500
+You should also make sure to look up
+
+00:00:30.500 --> 00:00:33.080
+the literature on your sensor in the specific context
+
+00:00:33.080 --> 00:00:34.940
+that you are using it so that you can learn
+
+00:00:34.940 --> 00:00:37.795
+information that will generalize beyond yourself.
+
+00:00:37.795 --> 00:00:39.565
+That's it for this lesson.
+
+00:00:39.565 --> 00:00:44.310
+See you in the next one where we build a machine learning algorithm on wearable data.
+

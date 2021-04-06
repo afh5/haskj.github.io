@@ -1,0 +1,290 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Refresher on Signals</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to Digital Sampling &amp; Signal Processing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Refresher on Signals.html">02. Refresher on Signals</a>
+    </li>
+    <li class="">
+      <a href="03. Sampling Analog Signals.html">03. Sampling Analog Signals</a>
+    </li>
+    <li class="">
+      <a href="04. Plotting Signals In Time-domain.html">04. Plotting Signals In Time-domain</a>
+    </li>
+    <li class="">
+      <a href="05. Time-domain Plotting Continued.html">05. Time-domain Plotting Continued</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 1 Plotting.html">06. Exercise 1: Plotting</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise 1 Solution.html">07. Exercise 1: Solution</a>
+    </li>
+    <li class="">
+      <a href="08. Interpolation.html">08. Interpolation</a>
+    </li>
+    <li class="">
+      <a href="09. Interpolation in Review.html">09. Interpolation in Review</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise 2 Interpolation.html">10. Exercise 2: Interpolation</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 2 Solution.html">11. Exercise 2: Solution</a>
+    </li>
+    <li class="">
+      <a href="12. Fourier Transform.html">12. Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="13. Fourier Transform In Practice.html">13. Fourier Transform In Practice</a>
+    </li>
+    <li class="">
+      <a href="14. Fourier Transform in Review.html">14. Fourier Transform in Review</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise 3 The Fourier Transform.html">15. Exercise 3: The Fourier Transform</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise 3 Solution.html">16. Exercise 3: Solution</a>
+    </li>
+    <li class="">
+      <a href="17. Plotting Signals in Frequency Domain.html">17. Plotting Signals in Frequency Domain</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise 4 Spectrograms.html">18. Exercise 4: Spectrograms</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 4 Solution.html">19. Exercise 4: Solution</a>
+    </li>
+    <li class="">
+      <a href="20. Harmonics.html">20. Harmonics</a>
+    </li>
+    <li class="">
+      <a href="21. Recap Intro to Digital Sampling &amp; Signal Processing.html">21. Recap: Intro to Digital Sampling &amp; Signal Processing</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Refresher on Signals</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>heading</p></h3>
+  <div>
+  <h1 id="refresher-on-signals">Refresher on Signals</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C4 L1 02 What Is A Signal-</p></h3>
+  <video controls>
+  <source src="02. ND320 C4 L1 02 What Is A Signal--vMk-KIhyCbA.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Signals Review</p></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>A signal is simply a series of numbers (e.g. [3, 4, 6, 2, 4] is a signal!). Typically these numbers represent a voltage that changes with respect to some physical phenomenon. When the voltage signal changes in time, it’s called a time series signal. Signal processing helps us analyze this sequence of numbers so we can learn more about the physical phenomenon it represents.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nd320-c4-l1-sinusoid-basics.png" alt="Sinusoid Basics" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Sinusoid Basics</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>summary</p></h3>
+  <div>
+  <p>We can use the figure above to explore some properties of signals. The time-invariant part of the signal is the DC level or mean value (black line), here it’s at 10 Volts. The AC component (blue line) is the part of the signal that varies with time. There are many ways to measure the AC component -- e.g., standard deviation, variance, or interquartile range. In this case, we measured the peak-to-peak amplitude, which is 6 volts.  </p>
+<p>This signal is also periodic, meaning that it repeats itself over and over again. The <strong>period</strong> is the amount of time it takes to make one repetition, which in this case is half a second. The <strong>frequency</strong> is the inverse of the period, or the number of repetitions per second, which is 2 <strong>hertz (Hz)</strong>.  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>phase change</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/phase-shift.png" alt="Phase Change" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Phase Change</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>phase change and new vocab</p></h3>
+  <div>
+  <p>The last property of a periodic signal is the <strong>phase shift</strong>, which is similar to a time shift. If two signals are time shifted by one full period, there is no difference between them. For this reason, we express this shift by the fraction of the period that they are shifted. If a signal is shifted by a quarter of a period, we can say the phase shift is 90 degrees (360 being a full period). You can also measure phase shift in radians and there are 2 pi radians in a full period. So this phase shift would be half pi radians.</p>
+<h2 id="new-vocabulary">New Vocabulary</h2>
+<ul>
+<li><strong>Period</strong>: The amount of time it takes to make one repetition. </li>
+<li><strong>Frequency</strong>: The amount of repetitions in a given time period, usually 1 second is the time period. </li>
+<li><strong>Hertz (Hz)</strong>: The units of the sampling rate. 1Hz means 1 sample per second.  </li>
+<li><strong>Phase Shift</strong>: The shift between two similar periodic signals expressed in fractions of a period (multiplied by 2𝛑 radians or 360°).</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Sampling Analog Signals.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Refresher on Signals')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

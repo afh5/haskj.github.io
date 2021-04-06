@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.855
+Welcome to the wearable data science course in the AI for Healthcare Nanodegree.
+
+00:00:03.855 --> 00:00:06.090
+In this course, we're going to talk about data that comes from
+
+00:00:06.090 --> 00:00:09.195
+wearable devices and the techniques we use to process that data.
+
+00:00:09.195 --> 00:00:11.640
+My name is Nikhil and I'll be your instructor.
+
+00:00:11.640 --> 00:00:15.434
+I've spent the past five years working with wearables at Verily Life Sciences,
+
+00:00:15.434 --> 00:00:17.875
+which is Alphabet's life sciences company.
+
+00:00:17.875 --> 00:00:19.940
+I worked across various healthcare domains,
+
+00:00:19.940 --> 00:00:22.835
+from cardiovascular disease to diabetes to
+
+00:00:22.835 --> 00:00:27.310
+neurodegenerative diseases like multiple sclerosis and Parkinson's disease.
+
+00:00:27.310 --> 00:00:28.940
+I'm really excited to be teaching
+
+00:00:28.940 --> 00:00:31.295
+this course and I hope you're excited to be here as well.
+
+00:00:31.295 --> 00:00:32.990
+Wearables have been around for a long time,
+
+00:00:32.990 --> 00:00:34.690
+primarily as fitness devices.
+
+00:00:34.690 --> 00:00:38.330
+Fitbit's first wrist wearable came out in 2009, but before that,
+
+00:00:38.330 --> 00:00:39.500
+there were chest straps for measuring
+
+00:00:39.500 --> 00:00:43.015
+your heart rates and hip devices for counting steps.
+
+00:00:43.015 --> 00:00:45.950
+More recently, wearables are starting to be used in making
+
+00:00:45.950 --> 00:00:48.425
+medical decisions and for clinical research.
+
+00:00:48.425 --> 00:00:52.615
+There are a myriad of stories on wearables catching serious medical conditions early.
+
+00:00:52.615 --> 00:00:55.895
+Take for example the story of a young woman in Florida who's
+
+00:00:55.895 --> 00:00:59.720
+Apple watch alerted her that her heart rate was at a 160 beats per minute,
+
+00:00:59.720 --> 00:01:01.100
+which is abnormally high,
+
+00:01:01.100 --> 00:01:04.625
+especially for healthy young woman at rest, not exercising.
+
+00:01:04.625 --> 00:01:06.349
+After seeing these notifications,
+
+00:01:06.349 --> 00:01:08.525
+her parents took her to the urgent care which confirmed
+
+00:01:08.525 --> 00:01:10.875
+that her heart rate was at a 190 beats per minute,
+
+00:01:10.875 --> 00:01:12.810
+and she also had elevated blood pressure.
+
+00:01:12.810 --> 00:01:15.170
+They recommended that she go to the emergency room,
+
+00:01:15.170 --> 00:01:19.480
+where after doing some lab tests the doctors discovered that she had kidney failure.
+
+00:01:19.480 --> 00:01:22.540
+So this story highlights all of the advantages of wearable devices.
+
+00:01:22.540 --> 00:01:25.040
+They can monitor people continuously and unobtrusively,
+
+00:01:25.040 --> 00:01:26.690
+and discover intermittent abnormalities and
+
+00:01:26.690 --> 00:01:29.660
+their physiology that point to serious medical conditions.
+
+00:01:29.660 --> 00:01:32.810
+In this case, they alerted this woman of her condition before it progressed to
+
+00:01:32.810 --> 00:01:36.440
+the point where her symptoms might have ordinarily put her in the hospital.
+
+00:01:36.440 --> 00:01:38.660
+Let's dive into this course and learn about
+
+00:01:38.660 --> 00:01:41.640
+the algorithms that make wearables so compelling.
+
