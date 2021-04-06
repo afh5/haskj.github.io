@@ -1,0 +1,158 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Udacity 👀 优达学城</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plyr.css">
+  <link rel="stylesheet" href="assets/css/katex.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="">
+
+    <div id="">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <h1 style="">Udacity 👀 优达学城<a href="https://us-udacity.github.io/" >【点击查看目录】</a></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div>
+  
+
+  <hr/>
+
+<div>
+	<h3>2021人工智能系列课程</h3>
+  <p><font style="font-size:18px;font-weight:bold;color:rgb(255, 196, 0);">AI智能医疗 / AI for Healthcare 新课 </font> <a < href="https://us-udacity.github.io/"  >点击学习</a></p>
+	<p>人工智能学习路线</p>
+  <p>Intro to Programming 一站式入门学习Python，Java，前端 （需要的话联系客服购买开通权限）</p>
+  <p>Python 编程入门 学习你的第一个爬虫程序 （需要的话联系客服购买开通权限）</p>
+  <p>Python人工智能入门VIP版 / AI Programming with Python 10.版 （需要的话联系客服购买开通权限）</p>
+  <p>PyTorch机器学习入门 / Machine Learning - Introduction 新开课程 （需要的话联系客服购买开通权限）</p>
+  <p>TensorFlow机器学习入门 / Introduction to Machine Learning with TensorFlow 新开课程（需要的话联系客服购买开通权限）</p>
+  <p>机器学习工程师 / Machine Learning Engineer 5.0版新增软件工程基础内容 （需要的话联系客服购买开通权限）</p>
+  <p>深度学习 / Deep Learning 7.0版新增部署模型内容 （需要的话联系客服购买开通权限）</p>
+  <p>深度强化学习 / Deep Reinforcement Learning 5.0版 （需要的话联系客服购买开通权限）</p>
+  <p>计算机视觉 / Computer Vision 5.0版新增云计算内容 （需要的话联系客服购买开通权限）</p>
+  <p>自然语言处理 / Natural Language Processing 5.0版新增PyTorch内容 （需要的话联系客服购买开通权限）</p>
+  <p>AI量化投资 / AI for Trading 5.0版增加了中文字幕跟修改了部分内容 （需要的话联系客服购买开通权限）</p>
+  <p>AI智能医疗 / AI for Healthcare 新课 【已开通权限】</p>
+  <p>AI产品经理 / AI Product Manager（需要的话联系客服购买开通权限）</p>
+  <p>人工智能 / Artificial Intelligence 3.0版修改了不少内容 （需要的话联系客服购买开通权限）</p>
+  <p>AI 求职直通班 VIP版 一站式学习AI (需要的话联系客服购买开通权限）</p>
+  <p>物联网开发 / Intel® Edge AI for IoT Developers 新课（需要的话联系客服购买开通权限）</p>
+  <p>UiPath 机器人开发 / RPA Developer with UiPath 新开课程（需要的话联系客服购买开通权限）</p>
+  <p>客服微信：udacity6</p>
+</div>
+
+</div>
+
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://shop455562174.taobao.com/?spm=2013.1.1000126.d21.18115fbfthVCiP" target="_blank">更多课程点击进入店铺购买</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/plyr.polyfilled.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('人工智能编程基础')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
